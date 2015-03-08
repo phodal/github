@@ -48,6 +48,6 @@ pdf: markdown
 		--toc \
 		--latex-engine=`which xelatex` 
 
-# mobi: epub
+mobi: epub
 	# Symlink bin: ln -s /path/to/kindlegen /usr/local/bin
-	# kindlegen $(filename).epub
+	kindlegen $(filename).epub
