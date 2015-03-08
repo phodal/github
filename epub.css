@@ -1,0 +1,157 @@
+html, body, div, span,
+h1, h2, h3, h4, h5, h6,
+p, a, em, strong, b, u, i, pre, code, del, strike,
+abbr, acronym, address, q, cite, blockquote,
+big, small, sub, sup, tt, var, center,
+img, dfn, ins, kbd, s, samp,
+dl, dt, dd, ol, ul, li,
+fieldset, legend, label,
+table, caption, tbody, tfoot, thead, tr, th, td
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+@page {
+  margin: 5px;
+}
+
+p {
+    margin-bottom: 9px;
+	line-height: 1.4;
+}
+
+a {
+    color: #0069d6;
+}
+
+	a:hover {
+	    color: #0050a3;
+	    text-decoration: none;
+	}
+
+	a img {
+	    border: none;
+	}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 1.5;
+	margin: 1em 0 0.5em;
+	-webkit-hyphens: none;
+	hyphens: none;
+	adobe-hyphenate: none;
+}
+
+h1 {
+    font-size: 220%;
+	margin-bottom: 1.5em;
+}
+
+h2 {
+    font-size: 190%;
+}
+
+h3 {
+    font-size: 160%;
+}
+
+h4 {
+    font-size: 140%;
+}
+
+h5 {
+    font-size: 130%;
+}
+
+h6 {
+    font-size: 120%;
+}
+
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+
+	blockquote:before {
+	    content: "\201C";
+	    font-size: 300%;
+	    margin-left: -10px;
+	    font-family: serif;
+	    color: #eee;
+	}
+
+	blockquote p {
+	    font-size: 120%;
+	    margin-bottom: 0;
+	    font-style: italic;
+	}
+
+code, pre {
+    font-family: monospace;
+}
+
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+	font-size: 85%;
+}
+
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+	font-size: 85%;
+    line-height: 1.3;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+	-webkit-hyphens: none;
+	hyphens: none;
+	adobe-hyphenate: none;
+}
+
+	pre code {
+	    background-color: #fff;
+	    color: #737373;
+	    padding: 0;
+	}
+
+code.sourceCode span.kw { color: #007020; font-weight: bold; }
+code.sourceCode span.dt { color: #902000; }
+code.sourceCode span.dv { color: #40a070; }
+code.sourceCode span.bn { color: #40a070; }
+code.sourceCode span.fl { color: #40a070; }
+code.sourceCode span.ch { color: #4070a0; }
+code.sourceCode span.st { color: #4070a0; }
+code.sourceCode span.co { color: #60a0b0; font-style: italic; }
+code.sourceCode span.ot { color: #007020; }
+code.sourceCode span.al { color: red; font-weight: bold; }
+code.sourceCode span.fu { color: #06287e; }
+code.sourceCode span.re { }
+code.sourceCode span.er { color: red; font-weight: bold; }
+
+body {
+	font-family: serif;
+}
