@@ -1,6 +1,6 @@
 #介绍
 
-##什么是Github
+###什么是Github
 
 Wiki百科上是这么说的
 
@@ -26,7 +26,7 @@ Wiki百科上是这么说的
 等等。看上去像是大餐，但是你还需要了解点什么?
 
 
-##版本管理与软件部署
+###版本管理与软件部署
 
 jQuery[^jQuery]在发布版本``2.1.3``，一共有152个commit。我们可以看到如下的提交信息:
 
@@ -38,7 +38,7 @@ jQuery[^jQuery]在发布版本``2.1.3``，一共有152个commit。我们可以�
  - ...
  
  
-##Github与Git
+###Github与Git
 
 > Git是一个分布式的版本控制系统，最初由Linus Torvalds编写，用作Linux内核代码的管理。在推出后，Git在其它项目中也取得了很大成功，尤其是在Ruby社区中。目前，包括Rubinius、Merb和Bitcoin在内的很多知名项目都使用了Git。Git同样可以被诸如Capistrano和Vlad the Deployer这样的部署工具所使用。
 
