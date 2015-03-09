@@ -41,9 +41,9 @@
 
 ##Github
 
-![Github Roam](../img/github-roam-create.jpg)
+![Github Roam](./img/github-roam-create.jpg)
 
-![Github Roam](../img/project-init.jpg)
+![Github Roam](./img/project-init.jpg)
 
 多种方式
 
