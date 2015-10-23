@@ -1,4 +1,6 @@
-#Github 100天
+#Github连击 
+
+##100天
 
 我也是蛮拼的，虽然我想的只是在Github上连击100~200天，然而到了今天也算不错。
 
@@ -22,8 +24,7 @@
 
 而现在是``为了填坑而commit``，为自己挖了太多的想法。
 
-
-##40天的提升
+###40天的提升
 
 当时我需要去印度接受毕业生培训，大概有5周左右，想着总不能空手而归。于是在国庆结束后有了第一次commit，当时旅游归来，想着自己在不同的地方有不同的照片，于是这个repo的名字是 [onmap](https://github.com/phodal/onmap)——将自己的照片显示在地图上的拍摄地点(手机是Lumia 920)。然而，中间因为修改账号的原因，丢失了commit。
 
@@ -49,7 +50,7 @@
 - 对于Mock、Stub、FakesServer等用法有更好的掌握
 - 可以持续地交付软件(版本管理、自动测试、CI、部署等等)
 
-##100天的挑战
+###100天的挑战
 
 (ps:从印度回来之后，由于女朋友在泰国实习，有了更多的时间可以看书、写代码)
 
@@ -65,7 +66,7 @@
  - 没有足够的空闲时间，除了周末。
  - 希望去寻找那些有兴趣的人，然而却发现原来没有那么多时间去找人。
 
-##140天的希冀
+###140天的希冀
 
 在经历了100天之后，似乎整个人都轻松了，毕竟目标是100~200天。似乎到现在，也不会有什么特殊的情怀，除了一些希冀。
 
@@ -78,7 +79,7 @@
 - 提了bug，并解决了。(ps:这是最理想的情况)
 
 
-#Github 200天Showcase
+##200天的Showcase
 
 今天是我连续泡在Github上的第200天，也是蛮高兴的，终于到达了:
 
@@ -90,7 +91,7 @@
 
 先让我们来一下ShowCase，然后再然后，下一篇我们再继续。
 
-##一些项目简述
+###一些项目简述
 
 上面说到的培训一开始是用Java写的一个网站，有自动测试、CI、CD等等。由于是内部组队培训，代码不能公开等等因素，加之做得无聊。顺手，拿Node.js +RESTify 做了Server，Backbone + RequireJS + jQuery 做了前台的逻辑。于是在那个日子里，也在维护一些旧的repo，如[iot-coap](https://github.com/phodal/iot-coap)、[iot](https://github.com/phodal/iot)，前者是我拿到WebStorm开源License的Repo，后者则是毕业设计。
 
@@ -134,7 +135,7 @@
 
 这个可以从两部分说起:
 
-#### 重构Skill Tree
+####重构Skill Tree
 
 原来的是
 
@@ -161,7 +162,7 @@
 
 代码: [https://github.com/phodal/sherlock](https://github.com/phodal/sherlock)
 
-###Django Ionic ElasticSearch 地图搜索
+####Django Ionic ElasticSearch 地图搜索
 
 ![Django Elastic Search](./img/elasticsearch_ionit_map.jpg)
 
@@ -172,7 +173,7 @@
 
 代码: [https://github.com/phodal/django-elasticsearch](https://github.com/phodal/django-elasticsearch)
 
-###简历生成器
+####简历生成器
 
 ![Resume](./img/resume.png)
 
@@ -185,7 +186,7 @@
 代码: [https://github.com/phodal/resume](https://github.com/phodal/resume)
 
 
-###Nginx 大数据学习
+####Nginx 大数据学习
 
 ![Nginx Pig](./img/nginx_pig.jpg)
 
@@ -195,7 +196,7 @@
 
 代码: [https://github.com/phodal/learning-data/tree/master/nginx](https://github.com/phodal/learning-data/tree/master/nginx)
 
-###其他
+####其他
 
 虽然技术栈上主要集中在Python、JavaScript，当然还有一些Ruby、Pig、Shell、Java的代码，只是我还是习惯用Python和JavaScript。一些用到觉得不错的框架:
 
@@ -218,15 +219,13 @@
 - MongoDB
 - Redis
 
-#Github 365天
+##365天
   
   给你一年的时间，你会怎样去提高你的水平？？？
 
 ![Github 365](./img/github-365.jpg)
 
 正值这难得的sick leave（万恶的空气），码文一篇来记念一个过去的366天里。尽管想的是在今年里写一个可持续的开源框架，但是到底这依赖于一个好的idea。在我的[Github 孵化器](http://github.com/phodal/ideas) 页面上似乎也没有一个特别让我满意的想法，虽然上面有各种不样有意思的ideas。多数都是在过去的一年是完成的，然而有一些也是还没有做到的。
-
-##说说标题
 
 尽管一直在Github上连击看上去似乎是没有多大必要的，但是人总得有点追求。如果正是漫无目的，却又想着提高技术的同时，为什么不去试试？毕竟技术非常好、不需要太多练习的人只是少数，似乎这样的人是不存在的。大多数的人都是经过练习之后，才会达到别人口中的“技术好”。
 
@@ -238,19 +237,19 @@
 
 于是在想明白了很多事的时候起，便有了Re-Practise这样的计划，而365天只是中间的一个产物。
 
-##编程的基础能力
+###编程的基础能力
 
 虽说算法很重要，但是编码才是基础能力。算法与编程在某种程度上是不同的领域，算法编程是在编程上面的一级。算法写得再好，如果别人很难直接拿来复用，在别人眼里就是shit。想出能work的代码一件简单的事，学会对其重构，使之变得更易读就是一件有意义的事。
 
 于是，在某一时刻在Github上创建了一个组织，叫[Artisan Stack](https://github.com/artisanstack)。当时想的是在Github寻找一些JavaScript项目，对其代码进行重构。但是到底是影响力不够哈，参与的人数比较少。
 
-###重构
+####重构
 
 如果你懂得如何写出高可读的代码，那么我想你是不需要这个的，但是这意味着你花了更多的时候在思考上了。当谈论重构的时候，让我想起了TDD(测试驱动开发)。即使不是TDD，那么如果你写着测试，那也是可以重构的。(之前写过一些利用Intellij IDEA重构的文章：[提炼函数](https://www.phodal.com/blog/intellij-idea-refactor-extract-method/)、[以查询取代临时变量](https://www.phodal.com/blog/intellij-idea-refactor-replace-temp-with-query/)、[重构与Intellij Idea初探](https://www.phodal.com/blog/thoughtworks-refactor-and-intellij-idea/)、[内联函数](https://www.phodal.com/blog/intellij-idea-refactor-inline-method/))
 
 在各种各样的文章里，我们看到过一些相关的内容，最好的参考莫过于《重构》一书。最基础不过的原则便是函数名，取名字很难，取别人能读懂的名字更难。其他的便有诸如长函数、过大的类、重复代码等等。在我有限的面试别人的经历里，这些问题都是最常见的。
 
-###测试
+####测试
 
 而如果没有测试，其他都是扯淡。写好测试很难，写个测试算是一件容易的事。只是有些容易我们会为了测试而测试。
 
@@ -264,7 +263,7 @@
 
 测试是代码的最后一公里。所以，尽可能的为你的Github上的项目添加测试。
 
-###编码的过程
+####编码的过程
 
 初到TW时，Pair时候总会有人教我如何开始编码，这应该也是一项基础的能力。结合日常，重新演绎一下这个过程：
 
@@ -281,7 +280,7 @@
 
 在我们实际工作中也是如此，接到一个任务，然后分解，一步步完成。不过实现会稍微复杂一些，因为事务总会有抢占和优先级的。
 
-##技术与框架设计
+###技术与框架设计
 
 在上上一篇博客中《[After 500: 写了第500篇博客，然后呢?](https://www.phodal.com/blog/after-500-blogposts-analytics-after-tech/)》也深刻地讨论了下这个问题，技术向来都是后发者优势。对于技术人员来说，也是如此，后发者占据很大的优势。
 
@@ -301,7 +300,7 @@
 
 技术同人一样，需要不断地往高一级前进。我们只需要不断地Re-Practise。
 
-##领域与练习 
+###领域与练习 
 
 说业务好像不太适合程序员的口味，那就领域吧。不同行业的人，如百度、阿里、腾讯，他们的领域核心是不一样的。
 
@@ -311,7 +310,7 @@
 
 这也是下一个值得提高的地方。
 
-##其他
+###其他
 
 是时候写这个小结了。从不会写代码，到写代码是从0到1的过程，但是要从1到60都不是一件容易的事。无论是刷Github也好(不要是自动提交)，或者是换工作也好，我们都在不断地练习。
 
