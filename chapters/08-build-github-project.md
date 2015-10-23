@@ -8,8 +8,6 @@
 
 今天就来说说是怎样做的。
 
-##Github项目组成
-
 以之前造的[Lettuce](https://github.com/phodal/lettuce)为例，里面有:
 
  - 代码质量(Code Climate)
@@ -25,7 +23,7 @@
  
 等等。 
 
-##Skillock模块化
+###Skillock模块化
 
 在SkillTree的源码里，大致分为三部分:
 
@@ -122,8 +120,6 @@ return {
 	
 当然函数也是一个对象。	
 
-##Skillock测试
-
 ###自动化测试
 
 一直习惯用Travis CI，于是也继续用Travis Ci，``.travis.yml``配置如下所示:
@@ -161,7 +157,7 @@ branches:
 
 最后的``test/spec``是指定测试的目录。
 
-##Jshint
+###Jshint
 
 > JSLint定义了一组编码约定，这比ECMA定义的语言更为严格。这些编码约定汲取了多年来的丰富编码经验，并以一条年代久远的编程原则 作为宗旨：能做并不意味着应该做。JSLint会对它认为有的编码实践加标志，另外还会指出哪些是明显的错误，从而促使你养成好的 JavaScript编码习惯。
 
@@ -254,7 +250,7 @@ it('should return book label & url', function () {
 
 这就是个问题了，于是偶然间看到了一个叫code climate的网站。
 
-##Code Climate
+###Code Climate
 
 > Code Climate consolidates the results from a suite of static analysis tools into a single, real-time report, giving your team the information it needs to identify hotspots, evaluate new approaches, and improve code quality.
 
@@ -284,11 +280,11 @@ A |	lib/url_handler.js |	9 |	0	| 5 |	2.2	| 94.1% |	0
 
 ![Coverage][1]
 
-##代码的坏味道
+###代码的坏味道
 
 于是我们就打开``lib/database/sqlite_helper.js``，因为其中有两个坏味道
 
-###Similar code found in two :expression_statement nodes (mass = 86)
+Similar code found in two :expression_statement nodes (mass = 86)
 
 在代码的 ``lib/database/sqlite_helper.js:58…61 < >``
 
