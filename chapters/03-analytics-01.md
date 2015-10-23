@@ -141,7 +141,7 @@ draw_date("data/2014-01-01-0.json")
 
 继上篇之后，我们就可以分析用户的每周提交情况，以得出用户的真正的工具效率，每个程序员的工作时间可能是不一样的，如
 
-![Phodal Huang's Report](./img/phodal-results)
+![Phodal Huang's Report](./img/phodal-results.png)
 
 这是我的每周情况，显然如果把星期六移到前面的话，随着工作时间的增长，在github上的使用在下降，作为一个
 

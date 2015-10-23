@@ -345,41 +345,109 @@ CI对于一个开发者在不同城市开发同一项目上来说是很重要的
 
 #Github项目分析一
 
-#用matplotlib生成图表
+##用matplotlib生成图表
 
 如何分析用户的数据是一个有趣的问题，特别是当我们有大量的数据的时候。
 除了``matlab``，我们还可以用``numpy``+``matplotlib``
 
-##python github用户数据分析##
+###python github用户数据分析##
 
 数据可以在这边寻找到
 
 [https://github.com/gmszone/ml](https://github.com/gmszone/ml)
 
 最后效果图
-<img src="https://raw.githubusercontent.com/gmszone/ml/master/screenshots/2014-01-01.png" width=600>
+
+![2014 01 01](./img/2014-01-01.png)
 
 要解析的json文件位于``data/2014-01-01-0.json``，大小6.6M，显然我们可能需要用每次只读一行的策略，这足以解释为什么诸如sublime打开的时候很慢，而现在我们只需要里面的json数据中的创建时间。。
 
-==
- 这个文件代表什么？
+==这个文件代表什么？
 
 **2014年1月1日零时到一时，用户在github上的操作，这里的用户指的是很多。。一共有4814条数据，从commit、create到issues都有。**
 
-##python json文件解析##
+###python json文件解析##
 
-     import json
-     for line in open(jsonfile):
-          line = f.readline()
+```python
+import json
+for line in open(jsonfile):
+    line = f.readline()
+```
 
 然后再解析json
-<pre><code class="python">
+
+```python
 import dateutil.parser
 
 lin = json.loads(line)
 date = dateutil.parser.parse(lin["created_at"])
-</code></pre>
+```
+
 这里用到了``dateutil``，因为新鲜出炉的数据是string需要转换为``dateutil``，再到数据放到数组里头。最后有就有了``parse_data``
+
+```python
+def parse_data(jsonfile):
+    f = open(jsonfile, "r")
+    dataarray = []
+    datacount = 0
+
+    for line in open(jsonfile):
+        line = f.readline()
+        lin = json.loads(line)
+        date = dateutil.parser.parse(lin["created_at"])
+        datacount += 1
+        dataarray.append(date.minute)
+
+    minuteswithcount = [(x, dataarray.count(x)) for x in set(dataarray)]
+    f.close()
+    return minuteswithcount
+```
+
+下面这句代码就是将上面的解析为
+
+```python
+minuteswithcount = [(x, dataarray.count(x)) for x in set(dataarray)]
+```
+
+这样的数组以便于解析
+
+```python
+[(0, 92), (1, 67), (2, 86), (3, 73), (4, 76), (5, 67), (6, 61), (7, 71), (8, 62), (9, 71), (10, 70), (11, 79), (12, 62), (13, 67), (14, 76), (15, 67), (16, 74), (17, 48), (18, 78), (19, 73), (20, 89), (21, 62), (22, 74), (23, 61), (24, 71), (25, 49), (26, 59), (27, 59), (28, 58), (29, 74), (30, 69), (31, 59), (32, 89), (33, 67), (34, 66), (35, 77), (36, 64), (37, 71), (38, 75), (39, 66), (40, 62), (41, 77), (42, 82), (43, 95), (44, 77), (45, 65), (46, 59), (47, 60), (48, 54), (49, 66), (50, 74), (51, 61), (52, 71), (53, 90), (54, 64), (55, 67), (56, 67), (57, 55), (58, 68), (59, 91)]
+```
+
+##matplotlib
+
+开始之前需要安装``matplotlib
+
+```bash
+sudo pip install matplotlib
+```
+然后引入这个库
+
+      import matplotlib.pyplot as plt
+
+如上面的那个结果，只需要
+
+<pre><code class="python">
+    plt.figure(figsize=(8,4))
+    plt.plot(x, y,label = files)
+    plt.legend()
+    plt.show()
+</code></pre>
+  
+最后代码可见
+
+
+```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import json
+import dateutil.parser
+import numpy as np
+import matplotlib.mlab as mlab
+import matplotlib.pyplot as plt
+
 
 def parse_data(jsonfile):
     f = open(jsonfile, "r")
@@ -398,83 +466,27 @@ def parse_data(jsonfile):
     return minuteswithcount
 
 
-下面这句代码就是将上面的解析为
+def draw_date(files):
+    x = []
+    y = []
+    mwcs = parse_data(files)
+    for mwc in mwcs:
+        x.append(mwc[0])
+        y.append(mwc[1])
 
-      minuteswithcount = [(x, dataarray.count(x)) for x in set(dataarray)]
-
-这样的数组以便于解析
-
-      [(0, 92), (1, 67), (2, 86), (3, 73), (4, 76), (5, 67), (6, 61), (7, 71), (8, 62), (9, 71), (10, 70), (11, 79), (12, 62), (13, 67), (14, 76), (15, 67), (16, 74), (17, 48), (18, 78), (19, 73), (20, 89), (21, 62), (22, 74), (23, 61), (24, 71), (25, 49), (26, 59), (27, 59), (28, 58), (29, 74), (30, 69), (31, 59), (32, 89), (33, 67), (34, 66), (35, 77), (36, 64), (37, 71), (38, 75), (39, 66), (40, 62), (41, 77), (42, 82), (43, 95), (44, 77), (45, 65), (46, 59), (47, 60), (48, 54), (49, 66), (50, 74), (51, 61), (52, 71), (53, 90), (54, 64), (55, 67), (56, 67), (57, 55), (58, 68), (59, 91)]
-
-##matplotlib##
-开始之前需要安装``matplotlib
-
-      sudo pip install matplotlib
-
-然后引入这个库
-
-      import matplotlib.pyplot as plt
-
-如上面的那个结果，只需要
-
-<pre><code class="python">
     plt.figure(figsize=(8,4))
     plt.plot(x, y,label = files)
     plt.legend()
     plt.show()
-</code></pre>
-  
-最后代码可见
 
-    #!/usr/bin/env python
-    # -*- coding: utf-8 -*-
-    
-    import json
-    import dateutil.parser
-    import numpy as np
-    import matplotlib.mlab as mlab
-    import matplotlib.pyplot as plt
-    
-    
-    def parse_data(jsonfile):
-        f = open(jsonfile, "r")
-        dataarray = []
-        datacount = 0
-    
-        for line in open(jsonfile):
-            line = f.readline()
-            lin = json.loads(line)
-            date = dateutil.parser.parse(lin["created_at"])
-            datacount += 1
-            dataarray.append(date.minute)
-    
-        minuteswithcount = [(x, dataarray.count(x)) for x in set(dataarray)]
-        f.close()
-        return minuteswithcount
-    
-    
-    def draw_date(files):
-        x = []
-        y = []
-        mwcs = parse_data(files)
-        for mwc in mwcs:
-            x.append(mwc[0])
-            y.append(mwc[1])
-    
-        plt.figure(figsize=(8,4))
-        plt.plot(x, y,label = files)
-        plt.legend()
-        plt.show()
-    
-    draw_date("data/2014-01-01-0.json")
+draw_date("data/2014-01-01-0.json")
+```
 
-
-#每周分析
+##每周分析
 
 继上篇之后，我们就可以分析用户的每周提交情况，以得出用户的真正的工具效率，每个程序员的工作时间可能是不一样的，如
-![Phodal Huang's Report][1]
 
-  [1]: https://www.phodal.com/static/media/uploads/screen_shot_2014-04-12_at_9.58.52_am.png
+![Phodal Huang's Report](./img/phodal-results.png)
 
 这是我的每周情况，显然如果把星期六移到前面的话，随着工作时间的增长，在github上的使用在下降，作为一个
 
@@ -482,11 +494,11 @@ def parse_data(jsonfile):
 
 不过这个是osrc的分析结果。
 
-##python github 每周情况分析##
+###python github 每周情况分析
 
 看一张分析后的结果
 
-<img src="https://raw.githubusercontent.com/gmszone/ml/master/screenshots/feb-results.png" width=600>
+![Feb Results](./img/feb-results.png)
 
 结果正好与我的情况相反？似乎图上是这么说的，但是数据上是这样的情况。
 
@@ -519,67 +531,71 @@ def parse_data(jsonfile):
       8474, 7984, 12933, 13504, 13763, 13544, 12940,
       7119, 7346, 13412, 14008, 12555
 
-##python 数据分析##
+###python 数据分析
 
 重写了一个新的方法用于计算提交数，直至后面才意识到其实我们可以算行数就够了，但是方法上有点hack
 
-<pre><code class="python">
-    def get_minutes_counts_with_id(jsonfile):
-        datacount, dataarray = handle_json(jsonfile)
-        minuteswithcount = [(x, dataarray.count(x)) for x in set(dataarray)]
-        return minuteswithcount
-    
-    
-    def handle_json(jsonfile):
-        f = open(jsonfile, "r")
-        dataarray = []
-        datacount = 0
-    
-        for line in open(jsonfile):
-            line = f.readline()
-            lin = json.loads(line)
-            date = dateutil.parser.parse(lin["created_at"])
-            datacount += 1
-            dataarray.append(date.minute)
-    
-        f.close()
-        return datacount, dataarray
-    
-    
-    def get_minutes_count_num(jsonfile):
-        datacount, dataarray = handle_json(jsonfile)
-        return datacount
-    
-    
-    def get_month_total():
-        """
-    
-        :rtype : object
-        """
-        monthdaycount = []
-        for i in range(1, 20):
-            if i < 10:
-                filename = 'data/2014-02-0' + i.__str__() + '-0.json'
-            else:
-                filename = 'data/2014-02-' + i.__str__() + '-0.json'
-            monthdaycount.append(get_minutes_count_num(filename))
-        return monthdaycount
-</code></pre>
+```python
+def get_minutes_counts_with_id(jsonfile):
+    datacount, dataarray = handle_json(jsonfile)
+    minuteswithcount = [(x, dataarray.count(x)) for x in set(dataarray)]
+    return minuteswithcount
+
+
+def handle_json(jsonfile):
+    f = open(jsonfile, "r")
+    dataarray = []
+    datacount = 0
+
+    for line in open(jsonfile):
+        line = f.readline()
+        lin = json.loads(line)
+        date = dateutil.parser.parse(lin["created_at"])
+        datacount += 1
+        dataarray.append(date.minute)
+
+    f.close()
+    return datacount, dataarray
+
+
+def get_minutes_count_num(jsonfile):
+    datacount, dataarray = handle_json(jsonfile)
+    return datacount
+
+
+def get_month_total():
+    """
+
+    :rtype : object
+    """
+    monthdaycount = []
+    for i in range(1, 20):
+        if i < 10:
+            filename = 'data/2014-02-0' + i.__str__() + '-0.json'
+        else:
+            filename = 'data/2014-02-' + i.__str__() + '-0.json'
+        monthdaycount.append(get_minutes_count_num(filename))
+    return monthdaycount
+```
+
 接着我们需要去遍历每个结果，后面的后面会发现这个效率真的是太低了，为什么木有多线程？
 
-##python matplotlib图表##
+###python matplotlib图表
+
 让我们的matplotlib来做这些图表的工作
 
-    if __name__ == '__main__':
-        results = pd.get_month_total()
-        print results
-    
-        plt.figure(figsize=(8, 4))
-        plt.plot(results.__getslice__(0, 7), label="first week")
-        plt.plot(results.__getslice__(7, 14), label="second week")
-        plt.plot(results.__getslice__(14, 21), label="third week")
-        plt.legend()
-        plt.show()
+```python
+if __name__ == '__main__':
+    results = pd.get_month_total()
+    print results
+
+    plt.figure(figsize=(8, 4))
+    plt.plot(results.__getslice__(0, 7), label="first week")
+    plt.plot(results.__getslice__(7, 14), label="second week")
+    plt.plot(results.__getslice__(14, 21), label="third week")
+    plt.legend()
+    plt.show()
+```
 
 蓝色的是第一周，绿色的是第二周，蓝色的是第三周就有了上面的结果。
 
@@ -592,25 +608,34 @@ def parse_data(jsonfile):
     
 让我们分析之前的程序，然后再想办法做出优化。网上看到一篇文章[http://www.huyng.com/posts/python-performance-analysis/](http://www.huyng.com/posts/python-performance-analysis/)讲的就是分析这部分内容的。
     
-#time python分析#
+##time python分析
+
 分析程序的运行时间
      
-    $time python handle.py
+```bash     
+$time python handle.py
+```
 
 结果便是，但是对于我们的分析没有一点意义
 
-     real	0m43.411s
-     user	0m39.226s
-     sys	0m0.618s
+```
+    real	0m43.411s
+    user	0m39.226s
+    sys	0m0.618s
+```
 
-#line_profiler python#
+##line_profiler python
+
 这是
 ##Mac OS X 10.9 line_profiler Install##
 
-     sudo ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future" easy_install line_profiler
+```bash
+sudo ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future" easy_install line_profiler
+```
 
 然后在我们的``parse_data.py``的``handle_json``前面加上``@profile``
-<pre><code class="python">
+
+```python
 @profile
 def handle_json(jsonfile):
     f = open(jsonfile, "r")
@@ -626,107 +651,127 @@ def handle_json(jsonfile):
 
     f.close()
     return datacount, dataarray
-</pre></code>
+```
+
 Line_profiler带了一个分析脚本``kernprof.py``，so
 
-      kernprof.py -l -v handle.py
+```bash
+kernprof.py -l -v handle.py
+```
 
 我们便会得到下面的结果
 
+```
+Wrote profile results to handle.py.lprof
+Timer unit: 1e-06 s
 
-	Wrote profile results to handle.py.lprof
-	Timer unit: 1e-06 s
+File: parse_data.py
+Function: handle_json at line 15
+Total time: 127.332 s
 
-	File: parse_data.py
-	Function: handle_json at line 15
-	Total time: 127.332 s
-
-	Line #      Hits         Time  Per Hit   % Time  Line Contents
-	==============================================================
-	    15                                           @profile
-	    16                                           def handle_json(jsonfile):
-	    17        19          636     33.5      0.0      f = open(jsonfile, "r")
-	    18        19           21      1.1      0.0      dataarray = []
-	    19        19           16      0.8      0.0      datacount = 0
-	    20
-	    21    212373       730344      3.4      0.6      for line in open(jsonfile):
-	    22    212354      2826826     13.3      2.2          line = f.readline()
-	    23    212354     13848171     65.2     10.9          lin = json.loads(line)
-	    24    212354    109427317    515.3     85.9          date = dateutil.parser.parse(lin["created_at"])
-	    25    212354       238112      1.1      0.2          datacount += 1
-	    26    212354       260227      1.2      0.2          dataarray.append(date.minute)
-	    27
-	    28        19          349     18.4      0.0      f.close()
-	    29        19           20      1.1      0.0      return datacount, dataarray
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    15                                           @profile
+    16                                           def handle_json(jsonfile):
+    17        19          636     33.5      0.0      f = open(jsonfile, "r")
+    18        19           21      1.1      0.0      dataarray = []
+    19        19           16      0.8      0.0      datacount = 0
+    20
+    21    212373       730344      3.4      0.6      for line in open(jsonfile):
+    22    212354      2826826     13.3      2.2          line = f.readline()
+    23    212354     13848171     65.2     10.9          lin = json.loads(line)
+    24    212354    109427317    515.3     85.9          date = dateutil.parser.parse(lin["created_at"])
+    25    212354       238112      1.1      0.2          datacount += 1
+    26    212354       260227      1.2      0.2          dataarray.append(date.minute)
+    27
+    28        19          349     18.4      0.0      f.close()
+    29        19           20      1.1      0.0      return datacount, dataarray
+```
 
 于是我们就发现我们的瓶颈就是从读取``created_at``，即创建时间。。。以及解析json，反而不是我们关心的IO，果然``readline``很强大。
 
-#memory_profiler python#
-##memory_profiler install##
+##memory_profiler python
 
-    $ pip install -U memory_profiler
-    $ pip install psutil
+###memory_profiler install
 
-##memory_profiler python##
+```bash
+$ pip install -U memory_profiler
+$ pip install psutil
+```
+
+###memory_profiler python
+
 如上，我们只需要在``handle_json``前面加上``@profile``
 
-     python -m memory_profiler handle.py
+```bash
+python -m memory_profiler handle.py
+```
 
 于是
 
+```
+Filename: parse_data.py
+    
+Line #    Mem usage    Increment   Line Contents
+================================================
+    13   39.930 MiB    0.000 MiB   @profile
+    14                             def handle_json(jsonfile):
+    15   39.930 MiB    0.000 MiB       f = open(jsonfile, "r")
+    16   39.930 MiB    0.000 MiB       dataarray = []
+    17   39.930 MiB    0.000 MiB       datacount = 0
+    18
+    19   40.055 MiB    0.125 MiB       for line in open(jsonfile):
+    20   40.055 MiB    0.000 MiB           line = f.readline()
+    21   40.066 MiB    0.012 MiB           lin = json.loads(line)
+    22   40.055 MiB   -0.012 MiB           date = dateutil.parser.parse(lin["created_at"])
+    23   40.055 MiB    0.000 MiB           datacount += 1
+    24   40.055 MiB    0.000 MiB           dataarray.append(date.minute)
+    25
+    26                                 f.close()
+    27                                 return datacount, dataarray
+```
 
-	Filename: parse_data.py
-		
-	Line #    Mem usage    Increment   Line Contents
-	================================================
-	    13   39.930 MiB    0.000 MiB   @profile
-	    14                             def handle_json(jsonfile):
-	    15   39.930 MiB    0.000 MiB       f = open(jsonfile, "r")
-	    16   39.930 MiB    0.000 MiB       dataarray = []
-	    17   39.930 MiB    0.000 MiB       datacount = 0
-	    18
-	    19   40.055 MiB    0.125 MiB       for line in open(jsonfile):
-	    20   40.055 MiB    0.000 MiB           line = f.readline()
-	    21   40.066 MiB    0.012 MiB           lin = json.loads(line)
-	    22   40.055 MiB   -0.012 MiB           date = dateutil.parser.parse(lin["created_at"])
-	    23   40.055 MiB    0.000 MiB           datacount += 1
-	    24   40.055 MiB    0.000 MiB           dataarray.append(date.minute)
-	    25
-	    26                                 f.close()
-	    27                                 return datacount, dataarray
+##objgraph python
 
+###objgraph install
 
-#objgraph python#
-
-##objgraph install##
-
-     pip install objgraph
+```bash
+pip install objgraph
+```
 
 我们需要调用他
 
-      import pdb;
+```python
+import pdb;
+```
 
 以及在需要调度的地方加上
 
-     pdb.set_trace()
+```python
+pdb.set_trace()
+```
 
 接着会进入``command``模式
 
-    (pdb) import objgraph
-    (pdb) objgraph.show_most_common_types()
+```python
+(pdb) import objgraph
+(pdb) objgraph.show_most_common_types()
+```
 
 然后我们可以找到。。
 
-	function                   8259
-	dict                       2137
-	tuple                      1949
-	wrapper_descriptor         1625
-	list                       1586
-	weakref                    1145
-	builtin_function_or_method 1117
-	method_descriptor          948
-	getset_descriptor          708
-	type                       705
+```
+function                   8259
+dict                       2137
+tuple                      1949
+wrapper_descriptor         1625
+list                       1586
+weakref                    1145
+builtin_function_or_method 1117
+method_descriptor          948
+getset_descriptor          708
+type                       705
+```
 
 也可以用他生成图形，貌似这里是用``dot``生成的，加上``python-xdot``
 
@@ -734,17 +779,20 @@ Line_profiler带了一个分析脚本``kernprof.py``，so
 
 如果我们每次都要花同样的时间去做一件事，去扫那些数据的话，那么这是最好的打发时间的方法。
 
-##python SQLite3 查询数据##
+##python SQLite3 查询数据
+
 我们创建了一个名为``userdata.db``的数据库文件，然后创建了一个表，里面有owner,language,eventtype,name url
 
-    def init_db():
-        conn = sqlite3.connect('userdata.db')
-        c = conn.cursor()
-        c.execute('''CREATE TABLE userinfo (owner text, language text, eventtype text, name text, url text)''')
+```python
+def init_db():
+    conn = sqlite3.connect('userdata.db')
+    c = conn.cursor()
+    c.execute('''CREATE TABLE userinfo (owner text, language text, eventtype text, name text, url text)''')
+```
 
 接着我们就可以查询数据，这里从结果讲起。
 
-<pre><code class="python">
+```python
 def get_count(username):
     count = 0
     userinfo = []
@@ -754,11 +802,11 @@ def get_count(username):
         userinfo.append(zero)
 
     return count, userinfo
-
-</code></pre>
+```
 
 当我查询``gmszone``的时候，也就是我自己就会有如下的结果
-<pre><code class="bash">
+
+```bash
 (u'gmszone', u'ForkEvent', u'RESUME', u'TeX', u'https://github.com/gmszone/RESUME')
 (u'gmszone', u'WatchEvent', u'iot-dashboard', u'JavaScript', u'https://github.com/gmszone/iot-dashboard')
 (u'gmszone', u'PushEvent', u'wechat-wordpress', u'Ruby', u'https://github.com/gmszone/wechat-wordpress')
@@ -769,43 +817,53 @@ def get_count(username):
 (u'gmszone', u'PushEvent', u'iot-doc', u'TeX', u'https://github.com/gmszone/iot-doc')
 (u'gmszone', u'PushEvent', u'iot-doc', u'TeX', u'https://github.com/gmszone/iot-doc')
 109
-</pre></code>
+````
 
 一共有109个事件，有``Watch``,``Create``,``Push``,``Fork``还有其他的，
 项目主要有``iot``,``RESUME``,``iot-dashboard``,``wechat-wordpress``,
 接着就是语言了，``Tex``,``Javascript``,``Ruby``,接着就是项目的url了。
 
 值得注意的是。
-<pre><code class="bash">
+
+```bash
 -rw-r--r--   1 fdhuang staff 905M Apr 12 14:59 userdata.db
-</code></pre>
+```
+
 这个数据库文件有**905M**，不过查询结果相当让人满意，至少相对于原来的结果来说。
 
-##Python SQLite3##
+##Python SQLite3
 
 Python自带了对SQLite3的支持，然而我们还需要安装SQLite3
 
-      brew install sqlite3
+```bash
+brew install sqlite3
+```
 
 或者是
-   
-     sudo port install sqlite3
+
+```bash   
+sudo port install sqlite3
+```
 
 或者是Ubuntu的
 
-     sudo apt-get install sqlite3
+```bash
+sudo apt-get install sqlite3
+```
 
 openSUSE自然就是
 
-     sudo zypper install sqlite3
+```bash
+sudo zypper install sqlite3
+```
 
 不过，用yast2也很不错，不是么。。
 
-##Pythont Github Sqlite3数据导入##
+##Pythont Github Sqlite3数据导入
 
 需要注意的是这里是需要python2.7，起源于对gzip的上下文管理器的支持问题
 
-<pre><code class="python">
+```python
 def handle_gzip_file(filename):
     userinfo = []
     with gzip.GzipFile(filename) as f:
@@ -853,7 +911,7 @@ def build_db_with_gzip():
 
     conn.commit()
     c.close()
-</code></pre>
+```
 
 ``executemany``可以插入多条数据，对于我们的数据来说，一小时的文件大概有五六千个会符合我们上面的安装，也就是有``actor``又有``type``才是我们需要记录的数据，我们只需要统计用户的那些事件，而非全部的事件。
 
@@ -865,7 +923,9 @@ def build_db_with_gzip():
 
 首先是正规匹配
 
-     date_re = re.compile(r"([0-9]{4})-([0-9]{2})-([0-9]{2})-([0-9]+)\.json.gz")
+```python
+date_re = re.compile(r"([0-9]{4})-([0-9]{2})-([0-9]{2})-([0-9]+)\.json.gz")
+```
 
 不过主要的还是在于``glob.glob``
 
@@ -879,7 +939,7 @@ def build_db_with_gzip():
 
 更好的方案？
 
-###redis###
+###redis
 
 结合了前面两篇我们终于可以成功地读取出用户数据、处理，再接着可以找相近的用户。
 
@@ -887,30 +947,36 @@ def build_db_with_gzip():
 
 查询用户事件总数
 
-     import redis
-     r = redis.StrictRedis(host='localhost', port=6379, db=0)
-     pipe = pipe = r.pipeline()
-     pipe.zscore('osrc:user',"gmszone")
-     pipe.execute()
+```python
+import redis
+r = redis.StrictRedis(host='localhost', port=6379, db=0)
+pipe = pipe = r.pipeline()
+pipe.zscore('osrc:user',"gmszone")
+pipe.execute()
+```
 
 系统返回了``227.0``,试试别人。
 
-    >>> pipe.zscore('osrc:user',"dfm")
-    <redis.client.StrictPipeline object at 0x104fa7f50>
-    >>> pipe.execute()
-    [425.0]
-    >>>
+```bash
+>>> pipe.zscore('osrc:user',"dfm")
+<redis.client.StrictPipeline object at 0x104fa7f50>
+>>> pipe.execute()
+[425.0]
+>>>
+```
 
 看看主要是在哪一天提交的
 
-    >>> pipe.hgetall('osrc:user:gmszone:day')
-    <redis.client.StrictPipeline object at 0x104fa7f50>
-    >>> pipe.execute()
-    [{'1': '51', '0': '41', '3': '17', '2': '34', '5': '28', '4': '22', '6': '34'}]
+```python
+>>> pipe.hgetall('osrc:user:gmszone:day')
+<redis.client.StrictPipeline object at 0x104fa7f50>
+>>> pipe.execute()
+[{'1': '51', '0': '41', '3': '17', '2': '34', '5': '28', '4': '22', '6': '34'}]
+```
 
 结果大致如下图所示:
 
-![SMTWTFS][1]
+![SMTWTFS](./img/smtwtfs.png)
 
 看看主要的事件是？
 
@@ -920,17 +986,17 @@ def build_db_with_gzip():
     [[('PushEvent', 154.0), ('CreateEvent', 41.0), ('WatchEvent', 18.0), ('GollumEvent', 8.0), ('MemberEvent', 3.0), ('ForkEvent', 2.0), ('ReleaseEvent', 1.0)]]
     >>>
 
-![Main Event][2]
+![Main Event](./img/main-events.png)
 
 蓝色的就是push事件，黄色的是create等等。
 
 到这里我们算是知道了OSRC的数据库部分是如何工作的。
 
-##Python redis 查询
+###Python redis 查询
 
 主要代码如下所示
 
-<pre><code class="python">
+```python
 def get_vector(user, pipe=None):
 
     r = redis.StrictRedis(host='localhost', port=6379, db=0)
@@ -953,19 +1019,20 @@ def get_vector(user, pipe=None):
 
     if no_pipe:
         return pipe.execute()
-</code></pre>
+```
 
 结果在上一篇中显示出来了，也就是
 
-      [227.0, {'1': '51', '0': '41', '3': '17', '2': '34', '5': '28', '4': '22', '6': '34'}, [('PushEvent', 154.0), ('CreateEvent', 41.0), ('WatchEvent', 18.0), ('GollumEvent', 8.0), ('MemberEvent', 3.0), ('ForkEvent', 2.0), ('ReleaseEvent', 1.0)], 0, 0, 0, 11, [('CSS', 74.0), ('JavaScript', 60.0), ('Ruby', 12.0), ('TeX', 6.0), ('Python', 6.0), ('Java', 5.0), ('C++', 5.0), ('Assembly', 5.0), ('C', 3.0), ('Emacs Lisp', 2.0), ('Arduino', 2.0)]]
+```
+[227.0, {'1': '51', '0': '41', '3': '17', '2': '34', '5': '28', '4': '22', '6': '34'}, [('PushEvent', 154.0), ('CreateEvent', 41.0), ('WatchEvent', 18.0), ('GollumEvent', 8.0), ('MemberEvent', 3.0), ('ForkEvent', 2.0), ('ReleaseEvent', 1.0)], 0, 0, 0, 11, [('CSS', 74.0), ('JavaScript', 60.0), ('Ruby', 12.0), ('TeX', 6.0), ('Python', 6.0), ('Java', 5.0), ('C++', 5.0), ('Assembly', 5.0), ('C', 3.0), ('Emacs Lisp', 2.0), ('Arduino', 2.0)]]
+```
 
 有意思的是在这里生成了和自己相近的人
 
-     ['alesdokshanin', 'hjiawei', 'andrewreedy', 'christj6', '1995eaton']
+```
+['alesdokshanin', 'hjiawei', 'andrewreedy', 'christj6', '1995eaton']
+```
 
-  [1]: https://www.phodal.com/static/media/uploads/screen_shot_2014-04-15_at_8.11.14_pm.png
-  [2]: https://www.phodal.com/static/media/uploads/screen_shot_2014-04-15_at_8.14.52_pm.png
-  
 osrc最有意思的一部分莫过于flann，当然说的也是系统后台的设计的一个很关键及有意思的部分。
 
 ##Python Github
@@ -975,20 +1042,24 @@ osrc最有意思的一部分莫过于flann，当然说的也是系统后台的�
 
 换句话说，我们需要一些样本来当作我们的分析资料，这里东西用到的就是我们之前的。
 
-     [227.0, {'1': '51', '0': '41', '3': '17', '2': '34', '5': '28', '4': '22', '6': '34'}, [('PushEvent', 154.0), ('CreateEvent', 41.0), ('WatchEvent', 18.0), ('GollumEvent', 8.0), ('MemberEvent', 3.0), ('ForkEvent', 2.0), ('ReleaseEvent', 1.0)], 0, 0, 0, 11, [('CSS', 74.0), ('JavaScript', 60.0), ('Ruby', 12.0), ('TeX', 6.0), ('Python', 6.0), ('Java', 5.0), ('C++', 5.0), ('Assembly', 5.0), ('C', 3.0), ('Emacs Lisp', 2.0), ('Arduino', 2.0)]]
+```
+[227.0, {'1': '51', '0': '41', '3': '17', '2': '34', '5': '28', '4': '22', '6': '34'}, [('PushEvent', 154.0), ('CreateEvent', 41.0), ('WatchEvent', 18.0), ('GollumEvent', 8.0), ('MemberEvent', 3.0), ('ForkEvent', 2.0), ('ReleaseEvent', 1.0)], 0, 0, 0, 11, [('CSS', 74.0), ('JavaScript', 60.0), ('Ruby', 12.0), ('TeX', 6.0), ('Python', 6.0), ('Java', 5.0), ('C++', 5.0), ('Assembly', 5.0), ('C', 3.0), ('Emacs Lisp', 2.0), ('Arduino', 2.0)]]
+```
 
 在代码中是构建了一个points.h5的文件来分析每个用户的points，之后再记录到hdf5文件中。
 
-    [ 0.00438596  0.18061674  0.2246696   0.14977974  0.07488987  0.0969163
-      0.12334802  0.14977974  0.          0.18061674  0.          0.          0.
-      0.00881057  0.          0.          0.03524229  0.          0.
-      0.01321586  0.          0.          0.          0.6784141   0.
-      0.07929515  0.00440529  1.          1.          1.          0.08333333
-      0.26431718  0.02202643  0.05286344  0.02643172  0.          0.01321586
-      0.02202643  0.          0.          0.          0.          0.          0.
-      0.          0.          0.00881057  0.          0.          0.          0.
-      0.          0.          0.          0.          0.          0.          0.
-      0.          0.          0.          0.          0.00881057]
+```
+[ 0.00438596  0.18061674  0.2246696   0.14977974  0.07488987  0.0969163
+    0.12334802  0.14977974  0.          0.18061674  0.          0.          0.
+    0.00881057  0.          0.          0.03524229  0.          0.
+    0.01321586  0.          0.          0.          0.6784141   0.
+    0.07929515  0.00440529  1.          1.          1.          0.08333333
+    0.26431718  0.02202643  0.05286344  0.02643172  0.          0.01321586
+    0.02202643  0.          0.          0.          0.          0.          0.
+    0.          0.          0.00881057  0.          0.          0.          0.
+    0.          0.          0.          0.          0.          0.          0.
+    0.          0.          0.          0.          0.00881057]
+```
 
 这里分析到用户的大部分行为，再找到与其行为相近的用户，主要的行为有下面这些:
 
@@ -999,63 +1070,68 @@ osrc最有意思的一部分莫过于flann，当然说的也是系统后台的�
 
 osrc中用于解析的代码
 
+```python
+def parse_vector(results):
+    points = np.zeros(nvector)
+    total = int(results[0])
 
-    def parse_vector(results):
-        points = np.zeros(nvector)
-        total = int(results[0])
+    points[0] = 1.0 / (total + 1)
 
-        points[0] = 1.0 / (total + 1)
+    # Week means.
+    for k, v in results[1].iteritems():
+        points[1 + int(k)] = float(v) / total
 
-        # Week means.
-        for k, v in results[1].iteritems():
-            points[1 + int(k)] = float(v) / total
+    # Event types.
+    n = 8
+    for k, v in results[2]:
+        points[n + evttypes.index(k)] = float(v) / total
 
-        # Event types.
-        n = 8
-        for k, v in results[2]:
-            points[n + evttypes.index(k)] = float(v) / total
+    # Number of contributions, connections and languages.
+    n += nevts
+    points[n] = 1.0 / (float(results[3]) + 1)
+    points[n + 1] = 1.0 / (float(results[4]) + 1)
+    points[n + 2] = 1.0 / (float(results[5]) + 1)
+    points[n + 3] = 1.0 / (float(results[6]) + 1)
 
-        # Number of contributions, connections and languages.
-        n += nevts
-        points[n] = 1.0 / (float(results[3]) + 1)
-        points[n + 1] = 1.0 / (float(results[4]) + 1)
-        points[n + 2] = 1.0 / (float(results[5]) + 1)
-        points[n + 3] = 1.0 / (float(results[6]) + 1)
+    # Top languages.
+    n += 4
+    for k, v in results[7]:
+        if k in langs:
+            points[n + langs.index(k)] = float(v) / total
+        else:
+            # Unknown language.
+            points[-1] = float(v) / total
 
-        # Top languages.
-        n += 4
-        for k, v in results[7]:
-            if k in langs:
-                points[n + langs.index(k)] = float(v) / total
-            else:
-                # Unknown language.
-                points[-1] = float(v) / total
-
-        return points
+    return points
+```
 
 这样也就返回我们需要的点数，然后我们可以用``get_points``来获取这些
 
-    def get_points(usernames):
-        r = redis.StrictRedis(host='localhost', port=6379, db=0)
-        pipe = r.pipeline()
+```python
+def get_points(usernames):
+    r = redis.StrictRedis(host='localhost', port=6379, db=0)
+    pipe = r.pipeline()
 
-        results = get_vector(usernames)
-        points = np.zeros([len(usernames), nvector])
-        points = parse_vector(results)
-        return points
+    results = get_vector(usernames)
+    points = np.zeros([len(usernames), nvector])
+    points = parse_vector(results)
+    return points
+```
 
 就会得到我们的相应的数据，接着找找和自己邻近的，看看结果。
 
-    [ 0.01298701  0.19736842  0.          0.30263158  0.21052632  0.19736842
-      0.          0.09210526  0.          0.22368421  0.01315789  0.          0.
-      0.          0.          0.          0.01315789  0.          0.
-      0.01315789  0.          0.          0.          0.73684211  0.          0.
-      0.          1.          1.          1.          0.2         0.42105263
-      0.09210526  0.          0.          0.          0.          0.23684211
-      0.          0.          0.03947368  0.          0.          0.          0.
-      0.          0.          0.          0.          0.          0.          0.
-      0.          0.          0.          0.          0.          0.          0.
-      0.          0.          0.          0.        ]
+```
+[ 0.01298701  0.19736842  0.          0.30263158  0.21052632  0.19736842
+    0.          0.09210526  0.          0.22368421  0.01315789  0.          0.
+    0.          0.          0.          0.01315789  0.          0.
+    0.01315789  0.          0.          0.          0.73684211  0.          0.
+    0.          1.          1.          1.          0.2         0.42105263
+    0.09210526  0.          0.          0.          0.          0.23684211
+    0.          0.          0.03947368  0.          0.          0.          0.
+    0.          0.          0.          0.          0.          0.          0.
+    0.          0.          0.          0.          0.          0.          0.
+    0.          0.          0.          0.        ]
+```
 
 真看不出来两者有什么相似的地方 。。。。  
 
@@ -1133,7 +1209,7 @@ C | 2
 
 我也是蛮拼的，虽然我想的只是在Github上连击100~200天，然而到了今天也算不错。
 
-![Longest Streak](../img/longest-streak.png)
+![Longest Streak](./img/longest-streak.png)
 
 ``在停地造轮子的过程中，也不停地造车子。``
 
@@ -1145,7 +1221,7 @@ C | 2
 
 对比了一下365天连击的commit，我发现我在total上整整多了近0.5倍。
 
-![365 Streak](../img/365-streak.jpg)
+![365 Streak](./img/365-streak.jpg)
 
 同时这似乎也意味着，我每天的commit数与之相比多了很多。
 
@@ -1172,10 +1248,7 @@ C | 2
 
 这也就是为什么那个repo有这样的一行:
 
-[![Build Status](https://api.travis-ci.org/phodal/freerice.png)](https://travis-ci.org/phodal/freerice)
-[![Code Climate](https://codeclimate.com/github/phodal/freerice/badges/gpa.svg)](https://codeclimate.com/github/phodal/freerice)
-[![Test Coverage](https://codeclimate.com/github/phodal/freerice/badges/coverage.svg)](https://codeclimate.com/github/phodal/freerice)
-[![Dependencies](https://david-dm.org/phodal/freerice.svg?style=flat)](https://david-dm.org/phodal/freerice.svg?style=flat0)
+![Repo Status](./img/repo-status.png)
 
 做到98%的覆盖率也算蛮拼的，当然还有Code Climate也达到了4.0，也有了112个commits。因此也带来了一些提高:
 
@@ -1189,7 +1262,7 @@ C | 2
 
 有意思的是越到中间的一些时间，commits的次数上去了，除了一些简单的pull request，还有一些新的轮子出现了。
 
-![Problem](../img/problem.jpg)
+![Problem](./img/problem.jpg)
 
 这是上一星期的commits，这也就意味着，在一星期里面，我需要在8个repo里切换。而现在我又有了一个新的idea，这时就发现了一堆的问题:
 
@@ -1216,7 +1289,7 @@ C | 2
 
 今天是我连续泡在Github上的第200天，也是蛮高兴的，终于到达了:
 
-![Github 200 days][1]
+![Github 200 days](./img/github-200-days.png)
 
 故事的背影是: 去年国庆完后要去印度接受毕业生培训——就是那个神奇的国度。但是在去之前已经在项目待了九个多月，项目上的挑战越来越少，在印度的时间又算是比较多。便给自己设定了一个长期的goal，即100~200天的longest streak。
 
@@ -1260,7 +1333,7 @@ C | 2
 
 [google map solr polygon 搜索](http://www.phodal.com/blog/google-map-width-solr-use-polygon-search/)
 
-![google map solr][2]
+![google map solr](./img/solr.png)
 
 代码: [https://github.com/phodal/gmap-solr](https://github.com/phodal/gmap-solr)
 
@@ -1277,7 +1350,7 @@ C | 2
 - jQuery
 - Gulp
 
-![Skill Tree][3]
+![Skill Tree](./img/skilltree.jpg)
 
 代码: [https://github.com/phodal/skillock](https://github.com/phodal/skillock)
 
@@ -1291,13 +1364,13 @@ C | 2
 - Knockout.js
 - Require.js
 
-![Sherlock skill tree][4]
+![Sherlock skill tree](./img/sherlock.png)
 
 代码: [https://github.com/phodal/sherlock](https://github.com/phodal/sherlock)
 
 ###Django Ionic ElasticSearch 地图搜索
 
-![Django Elastic Search][5]
+![Django Elastic Search](./img/elasticsearch_ionit_map.jpg)
 
 - ElasticSearch
 - Django
@@ -1308,7 +1381,7 @@ C | 2
 
 ###简历生成器
 
-![Resume][6]
+![Resume](./img/resume.png)
 
 - React
 - jsPDF
@@ -1321,7 +1394,7 @@ C | 2
 
 ###Nginx 大数据学习
 
-![Nginx Pig][7]
+![Nginx Pig](./img/nginx_pig.jpg)
 
 - ElasticSearch
 - Hadoop
@@ -1352,20 +1425,11 @@ C | 2
 - MongoDB
 - Redis
 
-
-  [1]: https://www.phodal.com/static/media/uploads/github-200-days.png
-  [2]: https://www.phodal.com/static/media/uploads/screenshot.png
-  [3]: https://www.phodal.com/static/media/uploads/skilltree.jpg
-  [4]: https://www.phodal.com/static/media/uploads/screen_shot_2015-05-09_at_23.23.31.png
-  [5]: https://www.phodal.com/static/media/uploads/elasticsearch_ionit_map.jpg
-  [6]: https://www.phodal.com/static/media/uploads/resume.png
-  [7]: https://www.phodal.com/static/media/uploads/nginx_pig.jpg
-  
-  #Github 365天
+#Github 365天
   
   给你一年的时间，你会怎样去提高你的水平？？？
 
-![Github 365][13]
+![Github 365](./img/github-365.jpg)
 
 正值这难得的sick leave（万恶的空气），码文一篇来记念一个过去的366天里。尽管想的是在今年里写一个可持续的开源框架，但是到底这依赖于一个好的idea。在我的[Github 孵化器](http://github.com/phodal/ideas) 页面上似乎也没有一个特别让我满意的想法，虽然上面有各种不样有意思的ideas。多数都是在过去的一年是完成的，然而有一些也是还没有做到的。
 
@@ -1399,9 +1463,9 @@ C | 2
 
 在我写[EchoesWorks](https://github.com/echoesworks/echoesworks)和[Lan](https://github.com/phodal/lan)的过程中，我尽量去保证足够高的测试覆盖率。
 
-![lan][11] 
+![lan](./img/lan.png)
 
-![EchoesWorks][14]
+![EchoesWorks](./img/echoesworks.png)
 
 从测试开始的TDD，会保证方法是可测的。从功能到测试则可以提供工作次效率，但是只会让测试成为测试，而不是代码的一部分。
 
@@ -1438,7 +1502,7 @@ C | 2
 
 想似的我在写[lan](https://github.com/phodal/lan)的时候，也是类似的，但是不同的是我已经设计了一个清晰的架构图。
 
-![Lan IoT][12]
+![Lan IoT](./img/lan-iot.jpg)
 
 而在我们实现的编码过程也是如此，使用不同的框架，并且让他们能工作。如早期玩的[moqi.mobi](https://github.com/echoesworks/moqi.mobi)，基于Backbone、RequireJS、Underscore、Mustache、Pure CSS。在随后的时间里，用React替换了View层，就有了[backbone-react](https://github.com/phodal/backbone-react)的练习。
 
@@ -1464,11 +1528,6 @@ C | 2
 2. 架构
 3. 设计
 4. 。。。
-
-  [11]: https://www.phodal.com/static/media/uploads/lan.png
-  [12]: https://www.phodal.com/static/media/uploads/lan-iot.jpg
-  [13]: https://www.phodal.com/static/media/uploads/github-365.jpg
-  [14]: https://www.phodal.com/static/media/uploads/echoesworks.png
 
 #如何在Github"寻找灵感(fork)"
 

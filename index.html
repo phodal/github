@@ -9,6 +9,43 @@
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width">
 </head>
@@ -55,18 +92,19 @@
 </ul></li>
 <li><a href="#github">Github</a></li>
 </ul></li>
-<li><a href="#github项目分析一">Github项目分析一</a></li>
+<li><a href="#github项目分析一">Github项目分析一</a><ul>
 <li><a href="#用matplotlib生成图表">用matplotlib生成图表</a><ul>
 <li><a href="#python-github用户数据分析">python github用户数据分析</a></li>
 <li><a href="#python-json文件解析">python json文件解析</a></li>
-<li><a href="#matplotlib">matplotlib</a></li>
 </ul></li>
+<li><a href="#matplotlib">matplotlib</a></li>
 <li><a href="#每周分析">每周分析</a><ul>
 <li><a href="#python-github-每周情况分析">python github 每周情况分析</a></li>
 <li><a href="#python-数据分析">python 数据分析</a></li>
 <li><a href="#python-matplotlib图表">python matplotlib图表</a></li>
 </ul></li>
-<li><a href="#github项目分析二">Github项目分析二</a></li>
+</ul></li>
+<li><a href="#github项目分析二">Github项目分析二</a><ul>
 <li><a href="#time-python分析">time python分析</a></li>
 <li><a href="#line_profiler-python">line_profiler python</a></li>
 <li><a href="#memory_profiler-python">memory_profiler python</a><ul>
@@ -75,14 +113,16 @@
 </ul></li>
 <li><a href="#objgraph-python">objgraph python</a><ul>
 <li><a href="#objgraph-install">objgraph install</a></li>
+</ul></li>
 <li><a href="#python-sqlite3-查询数据">python SQLite3 查询数据</a></li>
 <li><a href="#python-sqlite3">Python SQLite3</a></li>
 <li><a href="#pythont-github-sqlite3数据导入">Pythont Github Sqlite3数据导入</a></li>
 <li><a href="#python-遍历文件">python 遍历文件</a><ul>
 <li><a href="#redis">redis</a></li>
 </ul></li>
-<li><a href="#python-redis">Python Redis</a></li>
+<li><a href="#python-redis">Python Redis</a><ul>
 <li><a href="#python-redis-查询">Python redis 查询</a></li>
+</ul></li>
 <li><a href="#python-github">Python Github</a></li>
 </ul></li>
 <li><a href="#github项目分析">Github项目分析</a></li>
@@ -109,6 +149,8 @@
 <li><a href="#nginx-大数据学习">Nginx 大数据学习</a></li>
 <li><a href="#其他">其他</a></li>
 </ul></li>
+</ul></li>
+<li><a href="#github-365天">Github 365天</a><ul>
 <li><a href="#说说标题">说说标题</a></li>
 <li><a href="#编程的基础能力">编程的基础能力</a><ul>
 <li><a href="#重构-2">重构</a></li>
@@ -409,45 +451,50 @@ git push -u origin master</code></pre>
 git push -u origin master
     </code></pre>
 <h1 id="github项目分析一">Github项目分析一</h1>
-<h1 id="用matplotlib生成图表">用matplotlib生成图表</h1>
+<h2 id="用matplotlib生成图表">用matplotlib生成图表</h2>
 <p>如何分析用户的数据是一个有趣的问题，特别是当我们有大量的数据的时候。 除了<code>matlab</code>，我们还可以用<code>numpy</code>+<code>matplotlib</code></p>
-<h2 id="python-github用户数据分析">python github用户数据分析</h2>
+<h3 id="python-github用户数据分析">python github用户数据分析</h3>
 <p>数据可以在这边寻找到</p>
 <p><a href="https://github.com/gmszone/ml" class="uri">https://github.com/gmszone/ml</a></p>
-<p>最后效果图 <img src="https://raw.githubusercontent.com/gmszone/ml/master/screenshots/2014-01-01.png" width=600></p>
+<p>最后效果图</p>
+<figure>
+<img src="./img/2014-01-01.png" alt="2014 01 01" /><figcaption>2014 01 01</figcaption>
+</figure>
 <p>要解析的json文件位于<code>data/2014-01-01-0.json</code>，大小6.6M，显然我们可能需要用每次只读一行的策略，这足以解释为什么诸如sublime打开的时候很慢，而现在我们只需要里面的json数据中的创建时间。。</p>
-<p>== 这个文件代表什么？</p>
+<p>==这个文件代表什么？</p>
 <p><strong>2014年1月1日零时到一时，用户在github上的操作，这里的用户指的是很多。。一共有4814条数据，从commit、create到issues都有。</strong></p>
-<h2 id="python-json文件解析">python json文件解析</h2>
-<pre><code> import json
- for line in open(jsonfile):
-      line = f.readline()</code></pre>
-然后再解析json
-<pre><code class="python">
-import dateutil.parser
+<h3 id="python-json文件解析">python json文件解析</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> json
+<span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
+    line <span class="op">=</span> f.readline()</code></pre></div>
+<p>然后再解析json</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> dateutil.parser
 
-lin = json.loads(line)
-date = dateutil.parser.parse(lin["created_at"])
-</code></pre>
+lin <span class="op">=</span> json.loads(line)
+date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])</code></pre></div>
 <p>这里用到了<code>dateutil</code>，因为新鲜出炉的数据是string需要转换为<code>dateutil</code>，再到数据放到数组里头。最后有就有了<code>parse_data</code></p>
-<p>def parse_data(jsonfile): f = open(jsonfile, “r”) dataarray = [] datacount = 0</p>
-<pre><code>for line in open(jsonfile):
-    line = f.readline()
-    lin = json.loads(line)
-    date = dateutil.parser.parse(lin[&quot;created_at&quot;])
-    datacount += 1
-    dataarray.append(date.minute)
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> parse_data(jsonfile):
+    f <span class="op">=</span> <span class="bu">open</span>(jsonfile, <span class="st">&quot;r&quot;</span>)
+    dataarray <span class="op">=</span> []
+    datacount <span class="op">=</span> <span class="dv">0</span>
 
-minuteswithcount = [(x, dataarray.count(x)) for x in set(dataarray)]
-f.close()
-return minuteswithcount</code></pre>
+    <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
+        line <span class="op">=</span> f.readline()
+        lin <span class="op">=</span> json.loads(line)
+        date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
+        datacount <span class="op">+=</span> <span class="dv">1</span>
+        dataarray.append(date.minute)
+
+    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]
+    f.close()
+    <span class="cf">return</span> minuteswithcount</code></pre></div>
 <p>下面这句代码就是将上面的解析为</p>
-<pre><code>  minuteswithcount = [(x, dataarray.count(x)) for x in set(dataarray)]</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]</code></pre></div>
 <p>这样的数组以便于解析</p>
-<pre><code>  [(0, 92), (1, 67), (2, 86), (3, 73), (4, 76), (5, 67), (6, 61), (7, 71), (8, 62), (9, 71), (10, 70), (11, 79), (12, 62), (13, 67), (14, 76), (15, 67), (16, 74), (17, 48), (18, 78), (19, 73), (20, 89), (21, 62), (22, 74), (23, 61), (24, 71), (25, 49), (26, 59), (27, 59), (28, 58), (29, 74), (30, 69), (31, 59), (32, 89), (33, 67), (34, 66), (35, 77), (36, 64), (37, 71), (38, 75), (39, 66), (40, 62), (41, 77), (42, 82), (43, 95), (44, 77), (45, 65), (46, 59), (47, 60), (48, 54), (49, 66), (50, 74), (51, 61), (52, 71), (53, 90), (54, 64), (55, 67), (56, 67), (57, 55), (58, 68), (59, 91)]</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">[(<span class="dv">0</span>, <span class="dv">92</span>), (<span class="dv">1</span>, <span class="dv">67</span>), (<span class="dv">2</span>, <span class="dv">86</span>), (<span class="dv">3</span>, <span class="dv">73</span>), (<span class="dv">4</span>, <span class="dv">76</span>), (<span class="dv">5</span>, <span class="dv">67</span>), (<span class="dv">6</span>, <span class="dv">61</span>), (<span class="dv">7</span>, <span class="dv">71</span>), (<span class="dv">8</span>, <span class="dv">62</span>), (<span class="dv">9</span>, <span class="dv">71</span>), (<span class="dv">10</span>, <span class="dv">70</span>), (<span class="dv">11</span>, <span class="dv">79</span>), (<span class="dv">12</span>, <span class="dv">62</span>), (<span class="dv">13</span>, <span class="dv">67</span>), (<span class="dv">14</span>, <span class="dv">76</span>), (<span class="dv">15</span>, <span class="dv">67</span>), (<span class="dv">16</span>, <span class="dv">74</span>), (<span class="dv">17</span>, <span class="dv">48</span>), (<span class="dv">18</span>, <span class="dv">78</span>), (<span class="dv">19</span>, <span class="dv">73</span>), (<span class="dv">20</span>, <span class="dv">89</span>), (<span class="dv">21</span>, <span class="dv">62</span>), (<span class="dv">22</span>, <span class="dv">74</span>), (<span class="dv">23</span>, <span class="dv">61</span>), (<span class="dv">24</span>, <span class="dv">71</span>), (<span class="dv">25</span>, <span class="dv">49</span>), (<span class="dv">26</span>, <span class="dv">59</span>), (<span class="dv">27</span>, <span class="dv">59</span>), (<span class="dv">28</span>, <span class="dv">58</span>), (<span class="dv">29</span>, <span class="dv">74</span>), (<span class="dv">30</span>, <span class="dv">69</span>), (<span class="dv">31</span>, <span class="dv">59</span>), (<span class="dv">32</span>, <span class="dv">89</span>), (<span class="dv">33</span>, <span class="dv">67</span>), (<span class="dv">34</span>, <span class="dv">66</span>), (<span class="dv">35</span>, <span class="dv">77</span>), (<span class="dv">36</span>, <span class="dv">64</span>), (<span class="dv">37</span>, <span class="dv">71</span>), (<span class="dv">38</span>, <span class="dv">75</span>), (<span class="dv">39</span>, <span class="dv">66</span>), (<span class="dv">40</span>, <span class="dv">62</span>), (<span class="dv">41</span>, <span class="dv">77</span>), (<span class="dv">42</span>, <span class="dv">82</span>), (<span class="dv">43</span>, <span class="dv">95</span>), (<span class="dv">44</span>, <span class="dv">77</span>), (<span class="dv">45</span>, <span class="dv">65</span>), (<span class="dv">46</span>, <span class="dv">59</span>), (<span class="dv">47</span>, <span class="dv">60</span>), (<span class="dv">48</span>, <span class="dv">54</span>), (<span class="dv">49</span>, <span class="dv">66</span>), (<span class="dv">50</span>, <span class="dv">74</span>), (<span class="dv">51</span>, <span class="dv">61</span>), (<span class="dv">52</span>, <span class="dv">71</span>), (<span class="dv">53</span>, <span class="dv">90</span>), (<span class="dv">54</span>, <span class="dv">64</span>), (<span class="dv">55</span>, <span class="dv">67</span>), (<span class="dv">56</span>, <span class="dv">67</span>), (<span class="dv">57</span>, <span class="dv">55</span>), (<span class="dv">58</span>, <span class="dv">68</span>), (<span class="dv">59</span>, <span class="dv">91</span>)]</code></pre></div>
 <h2 id="matplotlib">matplotlib</h2>
 <p>开始之前需要安装``matplotlib</p>
-<pre><code>  sudo pip install matplotlib</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> pip install matplotlib</code></pre></div>
 <p>然后引入这个库</p>
 <pre><code>  import matplotlib.pyplot as plt</code></pre>
 <p>如上面的那个结果，只需要</p>
@@ -458,55 +505,60 @@ return minuteswithcount</code></pre>
     plt.show()
 </code></pre>
 <p>最后代码可见</p>
-<pre><code>#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/env python</span>
+<span class="co"># -*- coding: utf-8 -*-</span>
 
-import json
-import dateutil.parser
-import numpy as np
-import matplotlib.mlab as mlab
-import matplotlib.pyplot as plt
+<span class="im">import</span> json
+<span class="im">import</span> dateutil.parser
+<span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> matplotlib.mlab <span class="im">as</span> mlab
+<span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
 
 
-def parse_data(jsonfile):
-    f = open(jsonfile, &quot;r&quot;)
-    dataarray = []
-    datacount = 0
+<span class="kw">def</span> parse_data(jsonfile):
+    f <span class="op">=</span> <span class="bu">open</span>(jsonfile, <span class="st">&quot;r&quot;</span>)
+    dataarray <span class="op">=</span> []
+    datacount <span class="op">=</span> <span class="dv">0</span>
 
-    for line in open(jsonfile):
-        line = f.readline()
-        lin = json.loads(line)
-        date = dateutil.parser.parse(lin[&quot;created_at&quot;])
-        datacount += 1
+    <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
+        line <span class="op">=</span> f.readline()
+        lin <span class="op">=</span> json.loads(line)
+        date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
+        datacount <span class="op">+=</span> <span class="dv">1</span>
         dataarray.append(date.minute)
 
-    minuteswithcount = [(x, dataarray.count(x)) for x in set(dataarray)]
+    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]
     f.close()
-    return minuteswithcount
+    <span class="cf">return</span> minuteswithcount
 
 
-def draw_date(files):
-    x = []
-    y = []
-    mwcs = parse_data(files)
-    for mwc in mwcs:
-        x.append(mwc[0])
-        y.append(mwc[1])
+<span class="kw">def</span> draw_date(files):
+    x <span class="op">=</span> []
+    y <span class="op">=</span> []
+    mwcs <span class="op">=</span> parse_data(files)
+    <span class="cf">for</span> mwc <span class="op">in</span> mwcs:
+        x.append(mwc[<span class="dv">0</span>])
+        y.append(mwc[<span class="dv">1</span>])
 
-    plt.figure(figsize=(8,4))
-    plt.plot(x, y,label = files)
+    plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))
+    plt.plot(x, y,label <span class="op">=</span> files)
     plt.legend()
     plt.show()
 
-draw_date(&quot;data/2014-01-01-0.json&quot;)</code></pre>
-<h1 id="每周分析">每周分析</h1>
-<p>继上篇之后，我们就可以分析用户的每周提交情况，以得出用户的真正的工具效率，每个程序员的工作时间可能是不一样的，如 <img src="https://www.phodal.com/static/media/uploads/github-200-days.png" alt="Phodal Huang’s Report" /></p>
+draw_date(<span class="st">&quot;data/2014-01-01-0.json&quot;</span>)</code></pre></div>
+<h2 id="每周分析">每周分析</h2>
+<p>继上篇之后，我们就可以分析用户的每周提交情况，以得出用户的真正的工具效率，每个程序员的工作时间可能是不一样的，如</p>
+<figure>
+<img src="./img/phodal-results.png" alt="Phodal Huang’s Report" /><figcaption>Phodal Huang’s Report</figcaption>
+</figure>
 <p>这是我的每周情况，显然如果把星期六移到前面的话，随着工作时间的增长，在github上的使用在下降，作为一个</p>
 <pre><code>  a fulltime hacker who works best in the evening (around 8 pm).</code></pre>
 <p>不过这个是osrc的分析结果。</p>
-<h2 id="python-github-每周情况分析">python github 每周情况分析</h2>
+<h3 id="python-github-每周情况分析">python github 每周情况分析</h3>
 <p>看一张分析后的结果</p>
-<p><img src="https://raw.githubusercontent.com/gmszone/ml/master/screenshots/feb-results.png" width=600></p>
+<figure>
+<img src="./img/feb-results.png" alt="Feb Results" /><figcaption>Feb Results</figcaption>
+</figure>
 <p>结果正好与我的情况相反？似乎图上是这么说的，但是数据上是这样的情况。</p>
 <pre><code>data
 ├── 2014-01-01-0.json
@@ -534,97 +586,93 @@ draw_date(&quot;data/2014-01-01-0.json&quot;)</code></pre>
 <pre><code>  6570, 7420, 11274, 12073, 12160, 12378, 12897,
   8474, 7984, 12933, 13504, 13763, 13544, 12940,
   7119, 7346, 13412, 14008, 12555</code></pre>
-<h2 id="python-数据分析">python 数据分析</h2>
+<h3 id="python-数据分析">python 数据分析</h3>
 <p>重写了一个新的方法用于计算提交数，直至后面才意识到其实我们可以算行数就够了，但是方法上有点hack</p>
-<pre><code class="python">
-    def get_minutes_counts_with_id(jsonfile):
-        datacount, dataarray = handle_json(jsonfile)
-        minuteswithcount = [(x, dataarray.count(x)) for x in set(dataarray)]
-        return minuteswithcount
-    
-    
-    def handle_json(jsonfile):
-        f = open(jsonfile, "r")
-        dataarray = []
-        datacount = 0
-    
-        for line in open(jsonfile):
-            line = f.readline()
-            lin = json.loads(line)
-            date = dateutil.parser.parse(lin["created_at"])
-            datacount += 1
-            dataarray.append(date.minute)
-    
-        f.close()
-        return datacount, dataarray
-    
-    
-    def get_minutes_count_num(jsonfile):
-        datacount, dataarray = handle_json(jsonfile)
-        return datacount
-    
-    
-    def get_month_total():
-        """
-    
-        :rtype : object
-        """
-        monthdaycount = []
-        for i in range(1, 20):
-            if i < 10:
-                filename = 'data/2014-02-0' + i.__str__() + '-0.json'
-            else:
-                filename = 'data/2014-02-' + i.__str__() + '-0.json'
-            monthdaycount.append(get_minutes_count_num(filename))
-        return monthdaycount
-</code></pre>
-<p>接着我们需要去遍历每个结果，后面的后面会发现这个效率真的是太低了，为什么木有多线程？</p>
-<h2 id="python-matplotlib图表">python matplotlib图表</h2>
-<p>让我们的matplotlib来做这些图表的工作</p>
-<pre><code>if __name__ == &#39;__main__&#39;:
-    results = pd.get_month_total()
-    print results
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_minutes_counts_with_id(jsonfile):
+    datacount, dataarray <span class="op">=</span> handle_json(jsonfile)
+    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]
+    <span class="cf">return</span> minuteswithcount
 
-    plt.figure(figsize=(8, 4))
-    plt.plot(results.__getslice__(0, 7), label=&quot;first week&quot;)
-    plt.plot(results.__getslice__(7, 14), label=&quot;second week&quot;)
-    plt.plot(results.__getslice__(14, 21), label=&quot;third week&quot;)
+
+<span class="kw">def</span> handle_json(jsonfile):
+    f <span class="op">=</span> <span class="bu">open</span>(jsonfile, <span class="st">&quot;r&quot;</span>)
+    dataarray <span class="op">=</span> []
+    datacount <span class="op">=</span> <span class="dv">0</span>
+
+    <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
+        line <span class="op">=</span> f.readline()
+        lin <span class="op">=</span> json.loads(line)
+        date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
+        datacount <span class="op">+=</span> <span class="dv">1</span>
+        dataarray.append(date.minute)
+
+    f.close()
+    <span class="cf">return</span> datacount, dataarray
+
+
+<span class="kw">def</span> get_minutes_count_num(jsonfile):
+    datacount, dataarray <span class="op">=</span> handle_json(jsonfile)
+    <span class="cf">return</span> datacount
+
+
+<span class="kw">def</span> get_month_total():
+    <span class="co">&quot;&quot;&quot;</span>
+
+<span class="co">    :rtype : object</span>
+<span class="co">    &quot;&quot;&quot;</span>
+    monthdaycount <span class="op">=</span> []
+    <span class="cf">for</span> i <span class="op">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">20</span>):
+        <span class="cf">if</span> i <span class="op">&lt;</span> <span class="dv">10</span>:
+            filename <span class="op">=</span> <span class="st">&#39;data/2014-02-0&#39;</span> <span class="op">+</span> i.<span class="fu">__str__</span>() <span class="op">+</span> <span class="st">&#39;-0.json&#39;</span>
+        <span class="cf">else</span>:
+            filename <span class="op">=</span> <span class="st">&#39;data/2014-02-&#39;</span> <span class="op">+</span> i.<span class="fu">__str__</span>() <span class="op">+</span> <span class="st">&#39;-0.json&#39;</span>
+        monthdaycount.append(get_minutes_count_num(filename))
+    <span class="cf">return</span> monthdaycount</code></pre></div>
+<p>接着我们需要去遍历每个结果，后面的后面会发现这个效率真的是太低了，为什么木有多线程？</p>
+<h3 id="python-matplotlib图表">python matplotlib图表</h3>
+<p>让我们的matplotlib来做这些图表的工作</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:
+    results <span class="op">=</span> pd.get_month_total()
+    <span class="bu">print</span> results
+
+    plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))
+    plt.plot(results.<span class="fu">__getslice__</span>(<span class="dv">0</span>, <span class="dv">7</span>), label<span class="op">=</span><span class="st">&quot;first week&quot;</span>)
+    plt.plot(results.<span class="fu">__getslice__</span>(<span class="dv">7</span>, <span class="dv">14</span>), label<span class="op">=</span><span class="st">&quot;second week&quot;</span>)
+    plt.plot(results.<span class="fu">__getslice__</span>(<span class="dv">14</span>, <span class="dv">21</span>), label<span class="op">=</span><span class="st">&quot;third week&quot;</span>)
     plt.legend()
-    plt.show()</code></pre>
+    plt.show()</code></pre></div>
 <p>蓝色的是第一周，绿色的是第二周，蓝色的是第三周就有了上面的结果。</p>
 <p>我们还需要优化方法，以及多线程的支持。</p>
 <h1 id="github项目分析二">Github项目分析二</h1>
 <p>让我们分析之前的程序，然后再想办法做出优化。网上看到一篇文章<a href="http://www.huyng.com/posts/python-performance-analysis/" class="uri">http://www.huyng.com/posts/python-performance-analysis/</a>讲的就是分析这部分内容的。</p>
-<h1 id="time-python分析">time python分析</h1>
+<h2 id="time-python分析">time python分析</h2>
 <p>分析程序的运行时间</p>
-<pre><code>$time python handle.py</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ot">$time</span> <span class="kw">python</span> handle.py</code></pre></div>
 <p>结果便是，但是对于我们的分析没有一点意义</p>
-<pre><code> real   0m43.411s
- user   0m39.226s
- sys    0m0.618s</code></pre>
-<h1 id="line_profiler-python">line_profiler python</h1>
+<pre><code>    real    0m43.411s
+    user    0m39.226s
+    sys 0m0.618s</code></pre>
+<h2 id="line_profiler-python">line_profiler python</h2>
 <p>这是 ##Mac OS X 10.9 line_profiler Install##</p>
-<pre><code> sudo ARCHFLAGS=&quot;-Wno-error=unused-command-line-argument-hard-error-in-future&quot; easy_install line_profiler</code></pre>
-然后在我们的<code>parse_data.py</code>的<code>handle_json</code>前面加上<code>@profile</code>
-<pre><code class="python">
-@profile
-def handle_json(jsonfile):
-    f = open(jsonfile, "r")
-    dataarray = []
-    datacount = 0
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> ARCHFLAGS=<span class="st">&quot;-Wno-error=unused-command-line-argument-hard-error-in-future&quot;</span> easy_install line_profiler</code></pre></div>
+<p>然后在我们的<code>parse_data.py</code>的<code>handle_json</code>前面加上<code>@profile</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="at">@profile</span>
+<span class="kw">def</span> handle_json(jsonfile):
+    f <span class="op">=</span> <span class="bu">open</span>(jsonfile, <span class="st">&quot;r&quot;</span>)
+    dataarray <span class="op">=</span> []
+    datacount <span class="op">=</span> <span class="dv">0</span>
 
-    for line in open(jsonfile):
-        line = f.readline()
-        lin = json.loads(line)
-        date = dateutil.parser.parse(lin["created_at"])
-        datacount += 1
+    <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
+        line <span class="op">=</span> f.readline()
+        lin <span class="op">=</span> json.loads(line)
+        date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
+        datacount <span class="op">+=</span> <span class="dv">1</span>
         dataarray.append(date.minute)
 
     f.close()
-    return datacount, dataarray
-</pre>
-<p></code> Line_profiler带了一个分析脚本<code>kernprof.py</code>，so</p>
-<pre><code>  kernprof.py -l -v handle.py</code></pre>
+    <span class="cf">return</span> datacount, dataarray</code></pre></div>
+<p>Line_profiler带了一个分析脚本<code>kernprof.py</code>，so</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">kernprof.py</span> -l -v handle.py</code></pre></div>
 <p>我们便会得到下面的结果</p>
 <pre><code>Wrote profile results to handle.py.lprof
 Timer unit: 1e-06 s
@@ -651,13 +699,13 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     28        19          349     18.4      0.0      f.close()
     29        19           20      1.1      0.0      return datacount, dataarray</code></pre>
 <p>于是我们就发现我们的瓶颈就是从读取<code>created_at</code>，即创建时间。。。以及解析json，反而不是我们关心的IO，果然<code>readline</code>很强大。</p>
-<h1 id="memory_profiler-python">memory_profiler python</h1>
-<h2 id="memory_profiler-install">memory_profiler install</h2>
-<pre><code>$ pip install -U memory_profiler
-$ pip install psutil</code></pre>
-<h2 id="memory_profiler-python-1">memory_profiler python</h2>
+<h2 id="memory_profiler-python">memory_profiler python</h2>
+<h3 id="memory_profiler-install">memory_profiler install</h3>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">pip</span> install -U memory_profiler
+$ <span class="kw">pip</span> install psutil</code></pre></div>
+<h3 id="memory_profiler-python-1">memory_profiler python</h3>
 <p>如上，我们只需要在<code>handle_json</code>前面加上<code>@profile</code></p>
-<pre><code> python -m memory_profiler handle.py</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">python</span> -m memory_profiler handle.py</code></pre></div>
 <p>于是</p>
 <pre><code>Filename: parse_data.py
     
@@ -678,16 +726,16 @@ Line #    Mem usage    Increment   Line Contents
     25
     26                                 f.close()
     27                                 return datacount, dataarray</code></pre>
-<h1 id="objgraph-python">objgraph python</h1>
-<h2 id="objgraph-install">objgraph install</h2>
-<pre><code> pip install objgraph</code></pre>
+<h2 id="objgraph-python">objgraph python</h2>
+<h3 id="objgraph-install">objgraph install</h3>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">pip</span> install objgraph</code></pre></div>
 <p>我们需要调用他</p>
-<pre><code>  import pdb;</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pdb<span class="op">;</span></code></pre></div>
 <p>以及在需要调度的地方加上</p>
-<pre><code> pdb.set_trace()</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pdb.set_trace()</code></pre></div>
 <p>接着会进入<code>command</code>模式</p>
-<pre><code>(pdb) import objgraph
-(pdb) objgraph.show_most_common_types()</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">(pdb) <span class="im">import</span> objgraph
+(pdb) objgraph.show_most_common_types()</code></pre></div>
 <p>然后我们可以找到。。</p>
 <pre><code>function                   8259
 dict                       2137
@@ -704,110 +752,100 @@ type                       705</code></pre>
 <p>如果我们每次都要花同样的时间去做一件事，去扫那些数据的话，那么这是最好的打发时间的方法。</p>
 <h2 id="python-sqlite3-查询数据">python SQLite3 查询数据</h2>
 <p>我们创建了一个名为<code>userdata.db</code>的数据库文件，然后创建了一个表，里面有owner,language,eventtype,name url</p>
-<pre><code>def init_db():
-    conn = sqlite3.connect(&#39;userdata.db&#39;)
-    c = conn.cursor()
-    c.execute(&#39;&#39;&#39;CREATE TABLE userinfo (owner text, language text, eventtype text, name text, url text)&#39;&#39;&#39;)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> init_db():
+    conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;userdata.db&#39;</span>)
+    c <span class="op">=</span> conn.cursor()
+    c.execute(<span class="st">&#39;&#39;&#39;CREATE TABLE userinfo (owner text, language text, eventtype text, name text, url text)&#39;&#39;&#39;</span>)</code></pre></div>
 <p>接着我们就可以查询数据，这里从结果讲起。</p>
-<pre><code class="python">
-def get_count(username):
-    count = 0
-    userinfo = []
-    condition = 'select * from userinfo where owener = \'' + str(username) + '\''
-    for zero in c.execute(condition):
-        count += 1
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_count(username):
+    count <span class="op">=</span> <span class="dv">0</span>
+    userinfo <span class="op">=</span> []
+    condition <span class="op">=</span> <span class="st">&#39;select * from userinfo where owener = </span><span class="ch">\&#39;</span><span class="st">&#39;</span> <span class="op">+</span> <span class="bu">str</span>(username) <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\&#39;</span><span class="st">&#39;</span>
+    <span class="cf">for</span> zero <span class="op">in</span> c.execute(condition):
+        count <span class="op">+=</span> <span class="dv">1</span>
         userinfo.append(zero)
 
-    return count, userinfo
-
-</code></pre>
-当我查询<code>gmszone</code>的时候，也就是我自己就会有如下的结果
-<pre><code class="bash">
-(u'gmszone', u'ForkEvent', u'RESUME', u'TeX', u'https://github.com/gmszone/RESUME')
-(u'gmszone', u'WatchEvent', u'iot-dashboard', u'JavaScript', u'https://github.com/gmszone/iot-dashboard')
-(u'gmszone', u'PushEvent', u'wechat-wordpress', u'Ruby', u'https://github.com/gmszone/wechat-wordpress')
-(u'gmszone', u'WatchEvent', u'iot', u'JavaScript', u'https://github.com/gmszone/iot')
-(u'gmszone', u'CreateEvent', u'iot-doc', u'None', u'https://github.com/gmszone/iot-doc')
-(u'gmszone', u'CreateEvent', u'iot-doc', u'None', u'https://github.com/gmszone/iot-doc')
-(u'gmszone', u'PushEvent', u'iot-doc', u'TeX', u'https://github.com/gmszone/iot-doc')
-(u'gmszone', u'PushEvent', u'iot-doc', u'TeX', u'https://github.com/gmszone/iot-doc')
-(u'gmszone', u'PushEvent', u'iot-doc', u'TeX', u'https://github.com/gmszone/iot-doc')
-109
-</pre>
-<p></code></p>
+    <span class="cf">return</span> count, userinfo</code></pre></div>
+<p>当我查询<code>gmszone</code>的时候，也就是我自己就会有如下的结果</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;ForkEvent&#39;</span>, u<span class="st">&#39;RESUME&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/RESUME&#39;</span><span class="kw">)</span>
+<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;WatchEvent&#39;</span>, u<span class="st">&#39;iot-dashboard&#39;</span>, u<span class="st">&#39;JavaScript&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-dashboard&#39;</span><span class="kw">)</span>
+<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;wechat-wordpress&#39;</span>, u<span class="st">&#39;Ruby&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/wechat-wordpress&#39;</span><span class="kw">)</span>
+<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;WatchEvent&#39;</span>, u<span class="st">&#39;iot&#39;</span>, u<span class="st">&#39;JavaScript&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot&#39;</span><span class="kw">)</span>
+<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;CreateEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;None&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;CreateEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;None&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="kw">109</span></code></pre></div>
 <p>一共有109个事件，有<code>Watch</code>,<code>Create</code>,<code>Push</code>,<code>Fork</code>还有其他的， 项目主要有<code>iot</code>,<code>RESUME</code>,<code>iot-dashboard</code>,<code>wechat-wordpress</code>, 接着就是语言了，<code>Tex</code>,<code>Javascript</code>,<code>Ruby</code>,接着就是项目的url了。</p>
-值得注意的是。
-<pre><code class="bash">
--rw-r--r--   1 fdhuang staff 905M Apr 12 14:59 userdata.db
-</code></pre>
+<p>值得注意的是。</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">-rw-r--r--</span>   1 fdhuang staff 905M Apr 12 14:59 userdata.db</code></pre></div>
 <p>这个数据库文件有<strong>905M</strong>，不过查询结果相当让人满意，至少相对于原来的结果来说。</p>
 <h2 id="python-sqlite3">Python SQLite3</h2>
 <p>Python自带了对SQLite3的支持，然而我们还需要安装SQLite3</p>
-<pre><code>  brew install sqlite3</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">brew</span> install sqlite3</code></pre></div>
 <p>或者是</p>
-<pre><code> sudo port install sqlite3</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> port install sqlite3</code></pre></div>
 <p>或者是Ubuntu的</p>
-<pre><code> sudo apt-get install sqlite3</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> apt-get install sqlite3</code></pre></div>
 <p>openSUSE自然就是</p>
-<pre><code> sudo zypper install sqlite3</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> zypper install sqlite3</code></pre></div>
 <p>不过，用yast2也很不错，不是么。。</p>
 <h2 id="pythont-github-sqlite3数据导入">Pythont Github Sqlite3数据导入</h2>
 <p>需要注意的是这里是需要python2.7，起源于对gzip的上下文管理器的支持问题</p>
-<pre><code class="python">
-def handle_gzip_file(filename):
-    userinfo = []
-    with gzip.GzipFile(filename) as f:
-        events = [line.decode("utf-8", errors="ignore") for line in f]
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> handle_gzip_file(filename):
+    userinfo <span class="op">=</span> []
+    <span class="cf">with</span> gzip.GzipFile(filename) <span class="im">as</span> f:
+        events <span class="op">=</span> [line.decode(<span class="st">&quot;utf-8&quot;</span>, errors<span class="op">=</span><span class="st">&quot;ignore&quot;</span>) <span class="cf">for</span> line <span class="op">in</span> f]
 
-        for n, line in enumerate(events):
-            try:
-                event = json.loads(line)
-            except:
+        <span class="cf">for</span> n, line <span class="op">in</span> <span class="bu">enumerate</span>(events):
+            <span class="cf">try</span>:
+                event <span class="op">=</span> json.loads(line)
+            <span class="cf">except</span>:
 
-                continue
+                <span class="cf">continue</span>
 
-            actor = event["actor"]
-            attrs = event.get("actor_attributes", {})
-            if actor is None or attrs.get("type") != "User":
-                continue
+            actor <span class="op">=</span> event[<span class="st">&quot;actor&quot;</span>]
+            attrs <span class="op">=</span> event.get(<span class="st">&quot;actor_attributes&quot;</span>, {})
+            <span class="cf">if</span> actor <span class="op">is</span> <span class="va">None</span> <span class="op">or</span> attrs.get(<span class="st">&quot;type&quot;</span>) <span class="op">!=</span> <span class="st">&quot;User&quot;</span>:
+                <span class="cf">continue</span>
 
-            key = actor.lower()
+            key <span class="op">=</span> actor.lower()
 
-            repo = event.get("repository", {})
-            info = str(repo.get("owner")), str(repo.get("language")), str(event["type"]), str(repo.get("name")), str(
-                repo.get("url"))
+            repo <span class="op">=</span> event.get(<span class="st">&quot;repository&quot;</span>, {})
+            info <span class="op">=</span> <span class="bu">str</span>(repo.get(<span class="st">&quot;owner&quot;</span>)), <span class="bu">str</span>(repo.get(<span class="st">&quot;language&quot;</span>)), <span class="bu">str</span>(event[<span class="st">&quot;type&quot;</span>]), <span class="bu">str</span>(repo.get(<span class="st">&quot;name&quot;</span>)), <span class="bu">str</span>(
+                repo.get(<span class="st">&quot;url&quot;</span>))
             userinfo.append(info)
 
-    return userinfo
+    <span class="cf">return</span> userinfo
 
-def build_db_with_gzip():
+<span class="kw">def</span> build_db_with_gzip():
     init_db()
-    conn = sqlite3.connect('userdata.db')
-    c = conn.cursor()
+    conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;userdata.db&#39;</span>)
+    c <span class="op">=</span> conn.cursor()
 
-    year = 2014
-    month = 3
+    year <span class="op">=</span> <span class="dv">2014</span>
+    month <span class="op">=</span> <span class="dv">3</span>
 
-    for day in range(1,31):
-        date_re = re.compile(r"([0-9]{4})-([0-9]{2})-([0-9]{2})-([0-9]+)\.json.gz")
+    <span class="cf">for</span> day <span class="op">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">31</span>):
+        date_re <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&quot;([0-9]</span><span class="sc">{4}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]+)\.json.gz&quot;</span>)
 
-        fn_template = os.path.join("march",
-                                   "{year}-{month:02d}-{day:02d}-{n}.json.gz")
-        kwargs = {"year": year, "month": month, "day": day, "n": "*"}
-        filenames = glob.glob(fn_template.format(**kwargs))
+        fn_template <span class="op">=</span> os.path.join(<span class="st">&quot;march&quot;</span>,
+                                   <span class="co">&quot;{year}-{month:02d}-{day:02d}-{n}.json.gz&quot;</span>)
+        kwargs <span class="op">=</span> {<span class="st">&quot;year&quot;</span>: year, <span class="st">&quot;month&quot;</span>: month, <span class="st">&quot;day&quot;</span>: day, <span class="st">&quot;n&quot;</span>: <span class="st">&quot;*&quot;</span>}
+        filenames <span class="op">=</span> glob.glob(fn_template.<span class="bu">format</span>(<span class="op">**</span>kwargs))
 
-        for filename in filenames:
-            c.executemany('INSERT INTO userinfo VALUES (?,?,?,?,?)', handle_gzip_file(filename))
+        <span class="cf">for</span> filename <span class="op">in</span> filenames:
+            c.executemany(<span class="st">&#39;INSERT INTO userinfo VALUES (?,?,?,?,?)&#39;</span>, handle_gzip_file(filename))
 
     conn.commit()
-    c.close()
-</code></pre>
+    c.close()</code></pre></div>
 <p><code>executemany</code>可以插入多条数据，对于我们的数据来说，一小时的文件大概有五六千个会符合我们上面的安装，也就是有<code>actor</code>又有<code>type</code>才是我们需要记录的数据，我们只需要统计用户的那些事件，而非全部的事件。</p>
 <h2 id="python-遍历文件">python 遍历文件</h2>
 <p>我们需要去遍历文件，然后找到合适的部分，这里只是要找<code>2014-03-01</code>到<code>2014-03-31</code>的全部事件，而光这些数据的gz文件就有1.26G，同上面那些解压为json文件显得不合适，只能用遍历来处理。</p>
 <p>这里参考了osrc项目中的写法，或者说直接复制过来。</p>
 <p>首先是正规匹配</p>
-<pre><code> date_re = re.compile(r&quot;([0-9]{4})-([0-9]{2})-([0-9]{2})-([0-9]+)\.json.gz&quot;)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">date_re <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&quot;([0-9]</span><span class="sc">{4}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]+)\.json.gz&quot;</span>)</code></pre></div>
 <p>不过主要的还是在于<code>glob.glob</code></p>
 <blockquote>
 <p>glob是python自己带的一个文件操作相关模块，用它可以查找符合自己目的的文件，就类似于Windows下的文件搜索，支持通配符操作。</p>
@@ -820,25 +858,25 @@ def build_db_with_gzip():
 <p>结合了前面两篇我们终于可以成功地读取出用户数据、处理，再接着可以找相近的用户。</p>
 <h2 id="python-redis">Python Redis</h2>
 <p>查询用户事件总数</p>
-<pre><code> import redis
- r = redis.StrictRedis(host=&#39;localhost&#39;, port=6379, db=0)
- pipe = pipe = r.pipeline()
- pipe.zscore(&#39;osrc:user&#39;,&quot;gmszone&quot;)
- pipe.execute()</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> redis
+r <span class="op">=</span> redis.StrictRedis(host<span class="op">=</span><span class="st">&#39;localhost&#39;</span>, port<span class="op">=</span><span class="dv">6379</span>, db<span class="op">=</span><span class="dv">0</span>)
+pipe <span class="op">=</span> pipe <span class="op">=</span> r.pipeline()
+pipe.zscore(<span class="st">&#39;osrc:user&#39;</span>,<span class="st">&quot;gmszone&quot;</span>)
+pipe.execute()</code></pre></div>
 <p>系统返回了<code>227.0</code>,试试别人。</p>
-<pre><code>&gt;&gt;&gt; pipe.zscore(&#39;osrc:user&#39;,&quot;dfm&quot;)
-&lt;redis.client.StrictPipeline object at 0x104fa7f50&gt;
-&gt;&gt;&gt; pipe.execute()
-[425.0]
-&gt;&gt;&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">&gt;&gt;&gt;</span> <span class="kw">pipe.zscore</span>(<span class="st">&#39;osrc:user&#39;</span>,<span class="st">&quot;dfm&quot;</span>)
+<span class="kw">&lt;redis.client.StrictPipeline</span> object at 0x104fa7f<span class="kw">50&gt;</span>
+<span class="kw">&gt;&gt;&gt;</span> <span class="kw">pipe.execute</span>()
+[<span class="kw">425.0</span>]
+<span class="kw">&gt;&gt;&gt;</span></code></pre></div>
 <p>看看主要是在哪一天提交的</p>
-<pre><code>&gt;&gt;&gt; pipe.hgetall(&#39;osrc:user:gmszone:day&#39;)
-&lt;redis.client.StrictPipeline object at 0x104fa7f50&gt;
-&gt;&gt;&gt; pipe.execute()
-[{&#39;1&#39;: &#39;51&#39;, &#39;0&#39;: &#39;41&#39;, &#39;3&#39;: &#39;17&#39;, &#39;2&#39;: &#39;34&#39;, &#39;5&#39;: &#39;28&#39;, &#39;4&#39;: &#39;22&#39;, &#39;6&#39;: &#39;34&#39;}]</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> pipe.hgetall(<span class="st">&#39;osrc:user:gmszone:day&#39;</span>)
+<span class="op">&lt;</span>redis.client.StrictPipeline <span class="bu">object</span> at <span class="bn">0x104fa7f50</span><span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> pipe.execute()
+[{<span class="st">&#39;1&#39;</span>: <span class="st">&#39;51&#39;</span>, <span class="st">&#39;0&#39;</span>: <span class="st">&#39;41&#39;</span>, <span class="st">&#39;3&#39;</span>: <span class="st">&#39;17&#39;</span>, <span class="st">&#39;2&#39;</span>: <span class="st">&#39;34&#39;</span>, <span class="st">&#39;5&#39;</span>: <span class="st">&#39;28&#39;</span>, <span class="st">&#39;4&#39;</span>: <span class="st">&#39;22&#39;</span>, <span class="st">&#39;6&#39;</span>: <span class="st">&#39;34&#39;</span>}]</code></pre></div>
 <p>结果大致如下图所示:</p>
 <figure>
-<img src="https://www.phodal.com/static/media/uploads/github-200-days.png" alt="SMTWTFS" /><figcaption>SMTWTFS</figcaption>
+<img src="./img/smtwtfs.png" alt="SMTWTFS" /><figcaption>SMTWTFS</figcaption>
 </figure>
 <p>看看主要的事件是？</p>
 <pre><code>&gt;&gt;&gt; pipe.zrevrange(&quot;osrc:user:gmszone:event&quot;.format(&quot;gmszone&quot;), 0, -1,withscores=True)
@@ -847,40 +885,38 @@ def build_db_with_gzip():
 [[(&#39;PushEvent&#39;, 154.0), (&#39;CreateEvent&#39;, 41.0), (&#39;WatchEvent&#39;, 18.0), (&#39;GollumEvent&#39;, 8.0), (&#39;MemberEvent&#39;, 3.0), (&#39;ForkEvent&#39;, 2.0), (&#39;ReleaseEvent&#39;, 1.0)]]
 &gt;&gt;&gt;</code></pre>
 <figure>
-<img src="https://www.phodal.com/static/media/uploads/screenshot.png" alt="Main Event" /><figcaption>Main Event</figcaption>
+<img src="./img/main-events.png" alt="Main Event" /><figcaption>Main Event</figcaption>
 </figure>
 <p>蓝色的就是push事件，黄色的是create等等。</p>
 <p>到这里我们算是知道了OSRC的数据库部分是如何工作的。</p>
-<h2 id="python-redis-查询">Python redis 查询</h2>
+<h3 id="python-redis-查询">Python redis 查询</h3>
 <p>主要代码如下所示</p>
-<pre><code class="python">
-def get_vector(user, pipe=None):
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_vector(user, pipe<span class="op">=</span><span class="va">None</span>):
 
-    r = redis.StrictRedis(host='localhost', port=6379, db=0)
-    no_pipe = False
-    if pipe is None:
-        pipe = pipe = r.pipeline()
-        no_pipe = True
+    r <span class="op">=</span> redis.StrictRedis(host<span class="op">=</span><span class="st">&#39;localhost&#39;</span>, port<span class="op">=</span><span class="dv">6379</span>, db<span class="op">=</span><span class="dv">0</span>)
+    no_pipe <span class="op">=</span> <span class="va">False</span>
+    <span class="cf">if</span> pipe <span class="op">is</span> <span class="va">None</span>:
+        pipe <span class="op">=</span> pipe <span class="op">=</span> r.pipeline()
+        no_pipe <span class="op">=</span> <span class="va">True</span>
 
-    user = user.lower()
-    pipe.zscore(get_format("user"), user)
-    pipe.hgetall(get_format("user:{0}:day".format(user)))
-    pipe.zrevrange(get_format("user:{0}:event".format(user)), 0, -1,
-                   withscores=True)
-    pipe.zcard(get_format("user:{0}:contribution".format(user)))
-    pipe.zcard(get_format("user:{0}:connection".format(user)))
-    pipe.zcard(get_format("user:{0}:repo".format(user)))
-    pipe.zcard(get_format("user:{0}:lang".format(user)))
-    pipe.zrevrange(get_format("user:{0}:lang".format(user)), 0, -1,
-                   withscores=True)
+    user <span class="op">=</span> user.lower()
+    pipe.zscore(get_format(<span class="st">&quot;user&quot;</span>), user)
+    pipe.hgetall(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:day&quot;</span>.<span class="bu">format</span>(user)))
+    pipe.zrevrange(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:event&quot;</span>.<span class="bu">format</span>(user)), <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>,
+                   withscores<span class="op">=</span><span class="va">True</span>)
+    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:contribution&quot;</span>.<span class="bu">format</span>(user)))
+    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:connection&quot;</span>.<span class="bu">format</span>(user)))
+    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:repo&quot;</span>.<span class="bu">format</span>(user)))
+    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:lang&quot;</span>.<span class="bu">format</span>(user)))
+    pipe.zrevrange(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:lang&quot;</span>.<span class="bu">format</span>(user)), <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>,
+                   withscores<span class="op">=</span><span class="va">True</span>)
 
-    if no_pipe:
-        return pipe.execute()
-</code></pre>
+    <span class="cf">if</span> no_pipe:
+        <span class="cf">return</span> pipe.execute()</code></pre></div>
 <p>结果在上一篇中显示出来了，也就是</p>
-<pre><code>  [227.0, {&#39;1&#39;: &#39;51&#39;, &#39;0&#39;: &#39;41&#39;, &#39;3&#39;: &#39;17&#39;, &#39;2&#39;: &#39;34&#39;, &#39;5&#39;: &#39;28&#39;, &#39;4&#39;: &#39;22&#39;, &#39;6&#39;: &#39;34&#39;}, [(&#39;PushEvent&#39;, 154.0), (&#39;CreateEvent&#39;, 41.0), (&#39;WatchEvent&#39;, 18.0), (&#39;GollumEvent&#39;, 8.0), (&#39;MemberEvent&#39;, 3.0), (&#39;ForkEvent&#39;, 2.0), (&#39;ReleaseEvent&#39;, 1.0)], 0, 0, 0, 11, [(&#39;CSS&#39;, 74.0), (&#39;JavaScript&#39;, 60.0), (&#39;Ruby&#39;, 12.0), (&#39;TeX&#39;, 6.0), (&#39;Python&#39;, 6.0), (&#39;Java&#39;, 5.0), (&#39;C++&#39;, 5.0), (&#39;Assembly&#39;, 5.0), (&#39;C&#39;, 3.0), (&#39;Emacs Lisp&#39;, 2.0), (&#39;Arduino&#39;, 2.0)]]</code></pre>
+<pre><code>[227.0, {&#39;1&#39;: &#39;51&#39;, &#39;0&#39;: &#39;41&#39;, &#39;3&#39;: &#39;17&#39;, &#39;2&#39;: &#39;34&#39;, &#39;5&#39;: &#39;28&#39;, &#39;4&#39;: &#39;22&#39;, &#39;6&#39;: &#39;34&#39;}, [(&#39;PushEvent&#39;, 154.0), (&#39;CreateEvent&#39;, 41.0), (&#39;WatchEvent&#39;, 18.0), (&#39;GollumEvent&#39;, 8.0), (&#39;MemberEvent&#39;, 3.0), (&#39;ForkEvent&#39;, 2.0), (&#39;ReleaseEvent&#39;, 1.0)], 0, 0, 0, 11, [(&#39;CSS&#39;, 74.0), (&#39;JavaScript&#39;, 60.0), (&#39;Ruby&#39;, 12.0), (&#39;TeX&#39;, 6.0), (&#39;Python&#39;, 6.0), (&#39;Java&#39;, 5.0), (&#39;C++&#39;, 5.0), (&#39;Assembly&#39;, 5.0), (&#39;C&#39;, 3.0), (&#39;Emacs Lisp&#39;, 2.0), (&#39;Arduino&#39;, 2.0)]]</code></pre>
 <p>有意思的是在这里生成了和自己相近的人</p>
-<pre><code> [&#39;alesdokshanin&#39;, &#39;hjiawei&#39;, &#39;andrewreedy&#39;, &#39;christj6&#39;, &#39;1995eaton&#39;]</code></pre>
+<pre><code>[&#39;alesdokshanin&#39;, &#39;hjiawei&#39;, &#39;andrewreedy&#39;, &#39;christj6&#39;, &#39;1995eaton&#39;]</code></pre>
 <p>osrc最有意思的一部分莫过于flann，当然说的也是系统后台的设计的一个很关键及有意思的部分。</p>
 <h2 id="python-github">Python Github</h2>
 <p>邻近算法是在这个分析过程中一个很有意思的东西。</p>
@@ -888,18 +924,18 @@ def get_vector(user, pipe=None):
 <p>邻近算法，或者说K最近邻(kNN，k-NearestNeighbor)分类算法可以说是整个数据挖掘分类技术中最简单的方法了。所谓K最近邻，就是k个最近的邻居的意思，说的是每个样本都可以用她最接近的k个邻居来代表。</p>
 </blockquote>
 <p>换句话说，我们需要一些样本来当作我们的分析资料，这里东西用到的就是我们之前的。</p>
-<pre><code> [227.0, {&#39;1&#39;: &#39;51&#39;, &#39;0&#39;: &#39;41&#39;, &#39;3&#39;: &#39;17&#39;, &#39;2&#39;: &#39;34&#39;, &#39;5&#39;: &#39;28&#39;, &#39;4&#39;: &#39;22&#39;, &#39;6&#39;: &#39;34&#39;}, [(&#39;PushEvent&#39;, 154.0), (&#39;CreateEvent&#39;, 41.0), (&#39;WatchEvent&#39;, 18.0), (&#39;GollumEvent&#39;, 8.0), (&#39;MemberEvent&#39;, 3.0), (&#39;ForkEvent&#39;, 2.0), (&#39;ReleaseEvent&#39;, 1.0)], 0, 0, 0, 11, [(&#39;CSS&#39;, 74.0), (&#39;JavaScript&#39;, 60.0), (&#39;Ruby&#39;, 12.0), (&#39;TeX&#39;, 6.0), (&#39;Python&#39;, 6.0), (&#39;Java&#39;, 5.0), (&#39;C++&#39;, 5.0), (&#39;Assembly&#39;, 5.0), (&#39;C&#39;, 3.0), (&#39;Emacs Lisp&#39;, 2.0), (&#39;Arduino&#39;, 2.0)]]</code></pre>
+<pre><code>[227.0, {&#39;1&#39;: &#39;51&#39;, &#39;0&#39;: &#39;41&#39;, &#39;3&#39;: &#39;17&#39;, &#39;2&#39;: &#39;34&#39;, &#39;5&#39;: &#39;28&#39;, &#39;4&#39;: &#39;22&#39;, &#39;6&#39;: &#39;34&#39;}, [(&#39;PushEvent&#39;, 154.0), (&#39;CreateEvent&#39;, 41.0), (&#39;WatchEvent&#39;, 18.0), (&#39;GollumEvent&#39;, 8.0), (&#39;MemberEvent&#39;, 3.0), (&#39;ForkEvent&#39;, 2.0), (&#39;ReleaseEvent&#39;, 1.0)], 0, 0, 0, 11, [(&#39;CSS&#39;, 74.0), (&#39;JavaScript&#39;, 60.0), (&#39;Ruby&#39;, 12.0), (&#39;TeX&#39;, 6.0), (&#39;Python&#39;, 6.0), (&#39;Java&#39;, 5.0), (&#39;C++&#39;, 5.0), (&#39;Assembly&#39;, 5.0), (&#39;C&#39;, 3.0), (&#39;Emacs Lisp&#39;, 2.0), (&#39;Arduino&#39;, 2.0)]]</code></pre>
 <p>在代码中是构建了一个points.h5的文件来分析每个用户的points，之后再记录到hdf5文件中。</p>
 <pre><code>[ 0.00438596  0.18061674  0.2246696   0.14977974  0.07488987  0.0969163
-  0.12334802  0.14977974  0.          0.18061674  0.          0.          0.
-  0.00881057  0.          0.          0.03524229  0.          0.
-  0.01321586  0.          0.          0.          0.6784141   0.
-  0.07929515  0.00440529  1.          1.          1.          0.08333333
-  0.26431718  0.02202643  0.05286344  0.02643172  0.          0.01321586
-  0.02202643  0.          0.          0.          0.          0.          0.
-  0.          0.          0.00881057  0.          0.          0.          0.
-  0.          0.          0.          0.          0.          0.          0.
-  0.          0.          0.          0.          0.00881057]</code></pre>
+    0.12334802  0.14977974  0.          0.18061674  0.          0.          0.
+    0.00881057  0.          0.          0.03524229  0.          0.
+    0.01321586  0.          0.          0.          0.6784141   0.
+    0.07929515  0.00440529  1.          1.          1.          0.08333333
+    0.26431718  0.02202643  0.05286344  0.02643172  0.          0.01321586
+    0.02202643  0.          0.          0.          0.          0.          0.
+    0.          0.          0.00881057  0.          0.          0.          0.
+    0.          0.          0.          0.          0.          0.          0.
+    0.          0.          0.          0.          0.00881057]</code></pre>
 <p>这里分析到用户的大部分行为，再找到与其行为相近的用户，主要的行为有下面这些:</p>
 <ul>
 <li>每星期的情况</li>
@@ -908,58 +944,58 @@ def get_vector(user, pipe=None):
 <li>最多的语言</li>
 </ul>
 <p>osrc中用于解析的代码</p>
-<pre><code>def parse_vector(results):
-    points = np.zeros(nvector)
-    total = int(results[0])
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> parse_vector(results):
+    points <span class="op">=</span> np.zeros(nvector)
+    total <span class="op">=</span> <span class="bu">int</span>(results[<span class="dv">0</span>])
 
-    points[0] = 1.0 / (total + 1)
+    points[<span class="dv">0</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (total <span class="op">+</span> <span class="dv">1</span>)
 
-    # Week means.
-    for k, v in results[1].iteritems():
-        points[1 + int(k)] = float(v) / total
+    <span class="co"># Week means.</span>
+    <span class="cf">for</span> k, v <span class="op">in</span> results[<span class="dv">1</span>].iteritems():
+        points[<span class="dv">1</span> <span class="op">+</span> <span class="bu">int</span>(k)] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
 
-    # Event types.
-    n = 8
-    for k, v in results[2]:
-        points[n + evttypes.index(k)] = float(v) / total
+    <span class="co"># Event types.</span>
+    n <span class="op">=</span> <span class="dv">8</span>
+    <span class="cf">for</span> k, v <span class="op">in</span> results[<span class="dv">2</span>]:
+        points[n <span class="op">+</span> evttypes.index(k)] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
 
-    # Number of contributions, connections and languages.
-    n += nevts
-    points[n] = 1.0 / (float(results[3]) + 1)
-    points[n + 1] = 1.0 / (float(results[4]) + 1)
-    points[n + 2] = 1.0 / (float(results[5]) + 1)
-    points[n + 3] = 1.0 / (float(results[6]) + 1)
+    <span class="co"># Number of contributions, connections and languages.</span>
+    n <span class="op">+=</span> nevts
+    points[n] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">3</span>]) <span class="op">+</span> <span class="dv">1</span>)
+    points[n <span class="op">+</span> <span class="dv">1</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">4</span>]) <span class="op">+</span> <span class="dv">1</span>)
+    points[n <span class="op">+</span> <span class="dv">2</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">5</span>]) <span class="op">+</span> <span class="dv">1</span>)
+    points[n <span class="op">+</span> <span class="dv">3</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">6</span>]) <span class="op">+</span> <span class="dv">1</span>)
 
-    # Top languages.
-    n += 4
-    for k, v in results[7]:
-        if k in langs:
-            points[n + langs.index(k)] = float(v) / total
-        else:
-            # Unknown language.
-            points[-1] = float(v) / total
+    <span class="co"># Top languages.</span>
+    n <span class="op">+=</span> <span class="dv">4</span>
+    <span class="cf">for</span> k, v <span class="op">in</span> results[<span class="dv">7</span>]:
+        <span class="cf">if</span> k <span class="op">in</span> langs:
+            points[n <span class="op">+</span> langs.index(k)] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
+        <span class="cf">else</span>:
+            <span class="co"># Unknown language.</span>
+            points[<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
 
-    return points</code></pre>
+    <span class="cf">return</span> points</code></pre></div>
 <p>这样也就返回我们需要的点数，然后我们可以用<code>get_points</code>来获取这些</p>
-<pre><code>def get_points(usernames):
-    r = redis.StrictRedis(host=&#39;localhost&#39;, port=6379, db=0)
-    pipe = r.pipeline()
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_points(usernames):
+    r <span class="op">=</span> redis.StrictRedis(host<span class="op">=</span><span class="st">&#39;localhost&#39;</span>, port<span class="op">=</span><span class="dv">6379</span>, db<span class="op">=</span><span class="dv">0</span>)
+    pipe <span class="op">=</span> r.pipeline()
 
-    results = get_vector(usernames)
-    points = np.zeros([len(usernames), nvector])
-    points = parse_vector(results)
-    return points</code></pre>
+    results <span class="op">=</span> get_vector(usernames)
+    points <span class="op">=</span> np.zeros([<span class="bu">len</span>(usernames), nvector])
+    points <span class="op">=</span> parse_vector(results)
+    <span class="cf">return</span> points</code></pre></div>
 <p>就会得到我们的相应的数据，接着找找和自己邻近的，看看结果。</p>
 <pre><code>[ 0.01298701  0.19736842  0.          0.30263158  0.21052632  0.19736842
-  0.          0.09210526  0.          0.22368421  0.01315789  0.          0.
-  0.          0.          0.          0.01315789  0.          0.
-  0.01315789  0.          0.          0.          0.73684211  0.          0.
-  0.          1.          1.          1.          0.2         0.42105263
-  0.09210526  0.          0.          0.          0.          0.23684211
-  0.          0.          0.03947368  0.          0.          0.          0.
-  0.          0.          0.          0.          0.          0.          0.
-  0.          0.          0.          0.          0.          0.          0.
-  0.          0.          0.          0.        ]</code></pre>
+    0.          0.09210526  0.          0.22368421  0.01315789  0.          0.
+    0.          0.          0.          0.01315789  0.          0.
+    0.01315789  0.          0.          0.          0.73684211  0.          0.
+    0.          1.          1.          1.          0.2         0.42105263
+    0.09210526  0.          0.          0.          0.          0.23684211
+    0.          0.          0.03947368  0.          0.          0.          0.
+    0.          0.          0.          0.          0.          0.          0.
+    0.          0.          0.          0.          0.          0.          0.
+    0.          0.          0.          0.        ]</code></pre>
 <p>真看不出来两者有什么相似的地方 。。。。</p>
 <h1 id="github项目分析">Github项目分析</h1>
 <p>之前曾经分析过一些Github的用户行为，现在我们先来说说Github上的Star吧。(截止: 2015年3月9日23时。)</p>
@@ -1094,7 +1130,7 @@ def get_vector(user, pipe=None):
 <h1 id="github-100天">Github 100天</h1>
 <p>我也是蛮拼的，虽然我想的只是在Github上连击100~200天，然而到了今天也算不错。</p>
 <figure>
-<img src="../img/longest-streak.png" alt="Longest Streak" /><figcaption>Longest Streak</figcaption>
+<img src="./img/longest-streak.png" alt="Longest Streak" /><figcaption>Longest Streak</figcaption>
 </figure>
 <p><code>在停地造轮子的过程中，也不停地造车子。</code></p>
 <p>在那篇连续冲击365天的文章出现之前，我们公司的大大(<a href="https://github.com/dreamhead" class="uri">https://github.com/dreamhead</a>)也曾经在公司内部说过，天天commit什么的。当然这不是我的动力，在连击140天之前</p>
@@ -1105,7 +1141,7 @@ def get_vector(user, pipe=None):
 </ul>
 <p>对比了一下365天连击的commit，我发现我在total上整整多了近0.5倍。</p>
 <figure>
-<img src="../img/365-streak.jpg" alt="365 Streak" /><figcaption>365 Streak</figcaption>
+<img src="./img/365-streak.jpg" alt="365 Streak" /><figcaption>365 Streak</figcaption>
 </figure>
 <p>同时这似乎也意味着，我每天的commit数与之相比多了很多。</p>
 <p>在连击20的时候，有这样的问题: <em>为了commit而commit代码</em>，最后就放弃了。</p>
@@ -1125,7 +1161,9 @@ def get_vector(user, pipe=None):
 <li>代码整洁</li>
 </ul>
 <p>这也就是为什么那个repo有这样的一行:</p>
-<p><a href="https://travis-ci.org/phodal/freerice"><img src="https://api.travis-ci.org/phodal/freerice.png" alt="Build Status" /></a> <a href="https://codeclimate.com/github/phodal/freerice"><img src="https://codeclimate.com/github/phodal/freerice/badges/gpa.svg" alt="Code Climate" /></a> <a href="https://codeclimate.com/github/phodal/freerice"><img src="https://codeclimate.com/github/phodal/freerice/badges/coverage.svg" alt="Test Coverage" /></a> <a href="https://david-dm.org/phodal/freerice.svg?style=flat0"><img src="https://david-dm.org/phodal/freerice.svg?style=flat" alt="Dependencies" /></a></p>
+<figure>
+<img src="./img/repo-status.png" alt="Repo Status" /><figcaption>Repo Status</figcaption>
+</figure>
 <p>做到98%的覆盖率也算蛮拼的，当然还有Code Climate也达到了4.0，也有了112个commits。因此也带来了一些提高:</p>
 <ul>
 <li>提高了代码的质量(code climate比jslint更注重重复代码等等一些bad smell)。</li>
@@ -1136,7 +1174,7 @@ def get_vector(user, pipe=None):
 <p>(ps:从印度回来之后，由于女朋友在泰国实习，有了更多的时间可以看书、写代码)</p>
 <p>有意思的是越到中间的一些时间，commits的次数上去了，除了一些简单的pull request，还有一些新的轮子出现了。</p>
 <figure>
-<img src="../img/problem.jpg" alt="Problem" /><figcaption>Problem</figcaption>
+<img src="./img/problem.jpg" alt="Problem" /><figcaption>Problem</figcaption>
 </figure>
 <p>这是上一星期的commits，这也就意味着，在一星期里面，我需要在8个repo里切换。而现在我又有了一个新的idea，这时就发现了一堆的问题:</p>
 <ul>
@@ -1159,7 +1197,7 @@ def get_vector(user, pipe=None):
 <h1 id="github-200天showcase">Github 200天Showcase</h1>
 <p>今天是我连续泡在Github上的第200天，也是蛮高兴的，终于到达了:</p>
 <figure>
-<img src="https://www.phodal.com/static/media/uploads/github-200-days.png" alt="Github 200 days" /><figcaption>Github 200 days</figcaption>
+<img src="./img/github-200-days.png" alt="Github 200 days" /><figcaption>Github 200 days</figcaption>
 </figure>
 <p>故事的背影是: 去年国庆完后要去印度接受毕业生培训——就是那个神奇的国度。但是在去之前已经在项目待了九个多月，项目上的挑战越来越少，在印度的时间又算是比较多。便给自己设定了一个长期的goal，即100~200天的longest streak。</p>
 <p>或许之前你看到过一篇文章<a href="https://github.com/phodal/github-roam/blob/master/chapters/12-streak-your-github.md">让我们连击</a>，那时已然140天，只是还是浑浑噩噩。到了今天，渐渐有了一个更清晰地思路。</p>
@@ -1193,7 +1231,7 @@ def get_vector(user, pipe=None):
 <h3 id="google-map-solr-polygon-搜索">google map solr polygon 搜索</h3>
 <p><a href="http://www.phodal.com/blog/google-map-width-solr-use-polygon-search/">google map solr polygon 搜索</a></p>
 <figure>
-<img src="https://www.phodal.com/static/media/uploads/screenshot.png" alt="google map solr" /><figcaption>google map solr</figcaption>
+<img src="./img/solr.png" alt="google map solr" /><figcaption>google map solr</figcaption>
 </figure>
 <p>代码: <a href="https://github.com/phodal/gmap-solr" class="uri">https://github.com/phodal/gmap-solr</a></p>
 <h3 id="技能树">技能树</h3>
@@ -1207,7 +1245,7 @@ def get_vector(user, pipe=None):
 <li>Gulp</li>
 </ul>
 <figure>
-<img src="https://www.phodal.com/static/media/uploads/skilltree.jpg" alt="Skill Tree" /><figcaption>Skill Tree</figcaption>
+<img src="./img/skilltree.jpg" alt="Skill Tree" /><figcaption>Skill Tree</figcaption>
 </figure>
 <p>代码: <a href="https://github.com/phodal/skillock" class="uri">https://github.com/phodal/skillock</a></p>
 <h4 id="技能树sherlock">技能树Sherlock</h4>
@@ -1221,12 +1259,12 @@ def get_vector(user, pipe=None):
 <li>Require.js</li>
 </ul>
 <figure>
-<img src="https://www.phodal.com/static/media/uploads/screen_shot_2015-05-09_at_23.23.31.png" alt="Sherlock skill tree" /><figcaption>Sherlock skill tree</figcaption>
+<img src="./img/sherlock.png" alt="Sherlock skill tree" /><figcaption>Sherlock skill tree</figcaption>
 </figure>
 <p>代码: <a href="https://github.com/phodal/sherlock" class="uri">https://github.com/phodal/sherlock</a></p>
 <h3 id="django-ionic-elasticsearch-地图搜索">Django Ionic ElasticSearch 地图搜索</h3>
 <figure>
-<img src="https://www.phodal.com/static/media/uploads/elasticsearch_ionit_map.jpg" alt="Django Elastic Search" /><figcaption>Django Elastic Search</figcaption>
+<img src="./img/elasticsearch_ionit_map.jpg" alt="Django Elastic Search" /><figcaption>Django Elastic Search</figcaption>
 </figure>
 <ul>
 <li>ElasticSearch</li>
@@ -1237,7 +1275,7 @@ def get_vector(user, pipe=None):
 <p>代码: <a href="https://github.com/phodal/django-elasticsearch" class="uri">https://github.com/phodal/django-elasticsearch</a></p>
 <h3 id="简历生成器">简历生成器</h3>
 <figure>
-<img src="https://www.phodal.com/static/media/uploads/resume.png" alt="Resume" /><figcaption>Resume</figcaption>
+<img src="./img/resume.png" alt="Resume" /><figcaption>Resume</figcaption>
 </figure>
 <ul>
 <li>React</li>
@@ -1249,7 +1287,7 @@ def get_vector(user, pipe=None):
 <p>代码: <a href="https://github.com/phodal/resume" class="uri">https://github.com/phodal/resume</a></p>
 <h3 id="nginx-大数据学习">Nginx 大数据学习</h3>
 <figure>
-<img src="https://www.phodal.com/static/media/uploads/nginx_pig.jpg" alt="Nginx Pig" /><figcaption>Nginx Pig</figcaption>
+<img src="./img/nginx_pig.jpg" alt="Nginx Pig" /><figcaption>Nginx Pig</figcaption>
 </figure>
 <ul>
 <li>ElasticSearch</li>
@@ -1279,10 +1317,10 @@ def get_vector(user, pipe=None):
 <li>MongoDB</li>
 <li>Redis</li>
 </ul>
-<p>#Github 365天</p>
+<h1 id="github-365天">Github 365天</h1>
 <p>给你一年的时间，你会怎样去提高你的水平？？？</p>
 <figure>
-<img src="https://www.phodal.com/static/media/uploads/github-365.jpg" alt="Github 365" /><figcaption>Github 365</figcaption>
+<img src="./img/github-365.jpg" alt="Github 365" /><figcaption>Github 365</figcaption>
 </figure>
 <p>正值这难得的sick leave（万恶的空气），码文一篇来记念一个过去的366天里。尽管想的是在今年里写一个可持续的开源框架，但是到底这依赖于一个好的idea。在我的<a href="http://github.com/phodal/ideas">Github 孵化器</a> 页面上似乎也没有一个特别让我满意的想法，虽然上面有各种不样有意思的ideas。多数都是在过去的一年是完成的，然而有一些也是还没有做到的。</p>
 <h2 id="说说标题">说说标题</h2>
@@ -1301,10 +1339,10 @@ def get_vector(user, pipe=None):
 <p>而如果没有测试，其他都是扯淡。写好测试很难，写个测试算是一件容易的事。只是有些容易我们会为了测试而测试。</p>
 <p>在我写<a href="https://github.com/echoesworks/echoesworks">EchoesWorks</a>和<a href="https://github.com/phodal/lan">Lan</a>的过程中，我尽量去保证足够高的测试覆盖率。</p>
 <figure>
-<img src="https://www.phodal.com/static/media/uploads/lan.png" alt="lan" /><figcaption>lan</figcaption>
+<img src="./img/lan.png" alt="lan" /><figcaption>lan</figcaption>
 </figure>
 <figure>
-<img src="https://www.phodal.com/static/media/uploads/echoesworks.png" alt="EchoesWorks" /><figcaption>EchoesWorks</figcaption>
+<img src="./img/echoesworks.png" alt="EchoesWorks" /><figcaption>EchoesWorks</figcaption>
 </figure>
 <p>从测试开始的TDD，会保证方法是可测的。从功能到测试则可以提供工作次效率，但是只会让测试成为测试，而不是代码的一部分。</p>
 <p>测试是代码的最后一公里。所以，尽可能的为你的Github上的项目添加测试。</p>
@@ -1331,7 +1369,7 @@ def get_vector(user, pipe=None):
 <p>组合相比于创造过程是一个更有挑战性的过程，我们需要在这过程去设计胶水来粘合这些代码，并在最终可以让他工作。这好比是我们在平时接触到的任务划分，每个人负责相应的模块，最后整合。</p>
 <p>想似的我在写<a href="https://github.com/phodal/lan">lan</a>的时候，也是类似的，但是不同的是我已经设计了一个清晰的架构图。</p>
 <figure>
-<img src="https://www.phodal.com/static/media/uploads/lan-iot.jpg" alt="Lan IoT" /><figcaption>Lan IoT</figcaption>
+<img src="./img/lan-iot.jpg" alt="Lan IoT" /><figcaption>Lan IoT</figcaption>
 </figure>
 <p>而在我们实现的编码过程也是如此，使用不同的框架，并且让他们能工作。如早期玩的<a href="https://github.com/echoesworks/moqi.mobi">moqi.mobi</a>，基于Backbone、RequireJS、Underscore、Mustache、Pure CSS。在随后的时间里，用React替换了View层，就有了<a href="https://github.com/phodal/backbone-react">backbone-react</a>的练习。</p>
 <p>技术同人一样，需要不断地往高一级前进。我们只需要不断地Re-Practise。</p>

@@ -2,7 +2,7 @@
 
 我也是蛮拼的，虽然我想的只是在Github上连击100~200天，然而到了今天也算不错。
 
-![Longest Streak](../img/longest-streak.png)
+![Longest Streak](./img/longest-streak.png)
 
 ``在停地造轮子的过程中，也不停地造车子。``
 
@@ -14,7 +14,7 @@
 
 对比了一下365天连击的commit，我发现我在total上整整多了近0.5倍。
 
-![365 Streak](../img/365-streak.jpg)
+![365 Streak](./img/365-streak.jpg)
 
 同时这似乎也意味着，我每天的commit数与之相比多了很多。
 
@@ -41,10 +41,7 @@
 
 这也就是为什么那个repo有这样的一行:
 
-[![Build Status](https://api.travis-ci.org/phodal/freerice.png)](https://travis-ci.org/phodal/freerice)
-[![Code Climate](https://codeclimate.com/github/phodal/freerice/badges/gpa.svg)](https://codeclimate.com/github/phodal/freerice)
-[![Test Coverage](https://codeclimate.com/github/phodal/freerice/badges/coverage.svg)](https://codeclimate.com/github/phodal/freerice)
-[![Dependencies](https://david-dm.org/phodal/freerice.svg?style=flat)](https://david-dm.org/phodal/freerice.svg?style=flat0)
+![Repo Status](./img/repo-status.png)
 
 做到98%的覆盖率也算蛮拼的，当然还有Code Climate也达到了4.0，也有了112个commits。因此也带来了一些提高:
 
@@ -58,7 +55,7 @@
 
 有意思的是越到中间的一些时间，commits的次数上去了，除了一些简单的pull request，还有一些新的轮子出现了。
 
-![Problem](../img/problem.jpg)
+![Problem](./img/problem.jpg)
 
 这是上一星期的commits，这也就意味着，在一星期里面，我需要在8个repo里切换。而现在我又有了一个新的idea，这时就发现了一堆的问题:
 
@@ -85,7 +82,7 @@
 
 今天是我连续泡在Github上的第200天，也是蛮高兴的，终于到达了:
 
-![Github 200 days][1]
+![Github 200 days](./img/github-200-days.png)
 
 故事的背影是: 去年国庆完后要去印度接受毕业生培训——就是那个神奇的国度。但是在去之前已经在项目待了九个多月，项目上的挑战越来越少，在印度的时间又算是比较多。便给自己设定了一个长期的goal，即100~200天的longest streak。
 
@@ -129,7 +126,7 @@
 
 [google map solr polygon 搜索](http://www.phodal.com/blog/google-map-width-solr-use-polygon-search/)
 
-![google map solr][2]
+![google map solr](./img/solr.png)
 
 代码: [https://github.com/phodal/gmap-solr](https://github.com/phodal/gmap-solr)
 
@@ -146,7 +143,7 @@
 - jQuery
 - Gulp
 
-![Skill Tree][3]
+![Skill Tree](./img/skilltree.jpg)
 
 代码: [https://github.com/phodal/skillock](https://github.com/phodal/skillock)
 
@@ -160,13 +157,13 @@
 - Knockout.js
 - Require.js
 
-![Sherlock skill tree][4]
+![Sherlock skill tree](./img/sherlock.png)
 
 代码: [https://github.com/phodal/sherlock](https://github.com/phodal/sherlock)
 
 ###Django Ionic ElasticSearch 地图搜索
 
-![Django Elastic Search][5]
+![Django Elastic Search](./img/elasticsearch_ionit_map.jpg)
 
 - ElasticSearch
 - Django
@@ -177,7 +174,7 @@
 
 ###简历生成器
 
-![Resume][6]
+![Resume](./img/resume.png)
 
 - React
 - jsPDF
@@ -190,7 +187,7 @@
 
 ###Nginx 大数据学习
 
-![Nginx Pig][7]
+![Nginx Pig](./img/nginx_pig.jpg)
 
 - ElasticSearch
 - Hadoop
@@ -221,20 +218,11 @@
 - MongoDB
 - Redis
 
-
-  [1]: https://www.phodal.com/static/media/uploads/github-200-days.png
-  [2]: https://www.phodal.com/static/media/uploads/screenshot.png
-  [3]: https://www.phodal.com/static/media/uploads/skilltree.jpg
-  [4]: https://www.phodal.com/static/media/uploads/screen_shot_2015-05-09_at_23.23.31.png
-  [5]: https://www.phodal.com/static/media/uploads/elasticsearch_ionit_map.jpg
-  [6]: https://www.phodal.com/static/media/uploads/resume.png
-  [7]: https://www.phodal.com/static/media/uploads/nginx_pig.jpg
-  
-  #Github 365天
+#Github 365天
   
   给你一年的时间，你会怎样去提高你的水平？？？
 
-![Github 365][13]
+![Github 365](./img/github-365.jpg)
 
 正值这难得的sick leave（万恶的空气），码文一篇来记念一个过去的366天里。尽管想的是在今年里写一个可持续的开源框架，但是到底这依赖于一个好的idea。在我的[Github 孵化器](http://github.com/phodal/ideas) 页面上似乎也没有一个特别让我满意的想法，虽然上面有各种不样有意思的ideas。多数都是在过去的一年是完成的，然而有一些也是还没有做到的。
 
@@ -268,9 +256,9 @@
 
 在我写[EchoesWorks](https://github.com/echoesworks/echoesworks)和[Lan](https://github.com/phodal/lan)的过程中，我尽量去保证足够高的测试覆盖率。
 
-![lan][11] 
+![lan](./img/lan.png)
 
-![EchoesWorks][14]
+![EchoesWorks](./img/echoesworks.png)
 
 从测试开始的TDD，会保证方法是可测的。从功能到测试则可以提供工作次效率，但是只会让测试成为测试，而不是代码的一部分。
 
@@ -307,7 +295,7 @@
 
 想似的我在写[lan](https://github.com/phodal/lan)的时候，也是类似的，但是不同的是我已经设计了一个清晰的架构图。
 
-![Lan IoT][12]
+![Lan IoT](./img/lan-iot.jpg)
 
 而在我们实现的编码过程也是如此，使用不同的框架，并且让他们能工作。如早期玩的[moqi.mobi](https://github.com/echoesworks/moqi.mobi)，基于Backbone、RequireJS、Underscore、Mustache、Pure CSS。在随后的时间里，用React替换了View层，就有了[backbone-react](https://github.com/phodal/backbone-react)的练习。
 
@@ -333,8 +321,3 @@
 2. 架构
 3. 设计
 4. 。。。
-
-  [11]: https://www.phodal.com/static/media/uploads/lan.png
-  [12]: https://www.phodal.com/static/media/uploads/lan-iot.jpg
-  [13]: https://www.phodal.com/static/media/uploads/github-365.jpg
-  [14]: https://www.phodal.com/static/media/uploads/echoesworks.png
