@@ -137,13 +137,26 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul></li>
 <li><a href="#创建项目文档">创建项目文档</a></li>
-<li><a href="#测试-1">测试</a></li>
+<li><a href="#测试-1">测试</a><ul>
+<li><a href="#一次测试驱动开发">一次测试驱动开发</a><ul>
+<li><a href="#故事">故事</a></li>
+<li><a href="#说说测试驱动开发">说说测试驱动开发</a></li>
+<li><a href="#思考">思考</a></li>
+</ul></li>
+</ul></li>
 <li><a href="#重构-1">重构</a></li>
 <li><a href="#前端技能训练-重构一"><a href="http://www.phodal.com/blog/frontend-improve-refactor-javascript-code/">前端技能训练: 重构一</a></a><ul>
 <li><a href="#为什么重构">为什么重构?</a></li>
 <li><a href="#重构umarkdown">重构uMarkdown</a><ul>
 <li><a href="#代码说明">代码说明</a></li>
 <li><a href="#重构-2">重构</a></li>
+</ul></li>
+<li><a href="#interllij-idea重构">Interllij Idea重构</a><ul>
+<li><a href="#rename">Rename</a></li>
+<li><a href="#extract-method">Extract Method</a></li>
+<li><a href="#inline-method">Inline Method</a></li>
+<li><a href="#pull-members-up">Pull Members Up</a></li>
+<li><a href="#重构之以查询取代临时变量">重构之以查询取代临时变量</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#github连击">Github连击</a><ul>
@@ -1515,6 +1528,54 @@ line 21  col 62   Strings must use singlequote.</code></pre>
 <p>重构完后的代码比原来还长，这似乎是个问题~~</p>
 <h1 id="创建项目文档">创建项目文档</h1>
 <h1 id="测试-1">测试</h1>
+<h2 id="一次测试驱动开发">一次测试驱动开发</h2>
+<p>虽然接触的TDD时间不算短，然而真正在实践TDD上的时候少之又少。除去怎么教人TDD，就是与人结对编程时的switch，或许是受限于当前的开发流程。</p>
+<p>偶然间在开发一个物联网相关的开源项目——<a href="https://github.com/phodal/lan">Lan</a>的时候，重拾了这个过程。不得不说提到的一点是，在我们的开发流程中<strong>测试是由相关功能开发人员写的</strong>，有时候测试是一种很具挑战性的工作。久而久之，为自己的开源项目写测试变成一种自然而然的事。有时没有测试，反而变得<strong>没有安全感</strong>。</p>
+<h3 id="故事">故事</h3>
+<p>之前正在重写一个<a href="http://www.phodal.com/iot">物联网</a>的服务端，主要便是结合CoAP、MQTT、HTTP等协议构成一个物联网的云服务。现在，主要的任务是集中于协议与授权。由于，不同协议间的授权是不一样的，最开始的时候我先写了一个http put授权的功能，而在起先的时候是如何测试的呢?</p>
+<pre><code>curl --user root:root -X PUT -d &#39;{ &quot;dream&quot;: 1 }&#39; -H &quot;Content-Type: application/json&quot; http://localhost:8899/topics/test</code></pre>
+<p>我只要顺利在request中看有无<code>req.headers.authorization</code>，我便可以继续往下，接着给个判断。毕竟，我们对HTTP协议还是蛮清楚的。</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="cf">if</span> (<span class="op">!</span><span class="va">req</span>.<span class="va">headers</span>.<span class="at">authorization</span>) <span class="op">{</span>
+  <span class="va">res</span>.<span class="at">statusCode</span> <span class="op">=</span> <span class="dv">401</span><span class="op">;</span>
+  <span class="va">res</span>.<span class="at">setHeader</span>(<span class="st">&#39;WWW-Authenticate&#39;</span><span class="op">,</span> <span class="st">&#39;Basic realm=&quot;Secure Area&quot;&#39;</span>)<span class="op">;</span>
+  <span class="cf">return</span> <span class="va">res</span>.<span class="at">end</span>(<span class="st">&#39;Unauthorized&#39;</span>)<span class="op">;</span>
+<span class="op">}</span></code></pre></div>
+<p>可是除了HTTP协议，还有MQTT和CoAP。对于MQTT协议来说，那还算好，毕竟自带授权，如:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">mosquitto_pub</span> -u root -P root -h localhost -d -t lettuce -m <span class="st">&quot;Hello, MQTT. This is my first message.&quot;</span></code></pre></div>
+<p>便可以让我们简单地完成这个功能，然而有的协议是没有这样的功能如CoAP协议中是用Option来进行授权的。现在的工具如libcoap只能有如下的简单功能</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap-client</span> -m get coap://127.0.0.1:5683/topics/zero -T</code></pre></div>
+<p>于是，先写了个测试脚本来验证功能。</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> coap     <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;coap&#39;</span>)<span class="op">;</span>
+<span class="kw">var</span> request  <span class="op">=</span> <span class="va">coap</span>.<span class="at">request</span><span class="op">;</span>
+<span class="kw">var</span> req <span class="op">=</span> <span class="at">request</span>(<span class="op">{</span><span class="dt">hostname</span><span class="op">:</span> <span class="st">&#39;localhost&#39;</span><span class="op">,</span><span class="dt">port</span><span class="op">:</span><span class="dv">5683</span><span class="op">,</span><span class="dt">pathname</span><span class="op">:</span> <span class="st">&#39;&#39;</span><span class="op">,</span><span class="dt">method</span><span class="op">:</span> <span class="st">&#39;POST&#39;</span><span class="op">}</span>)<span class="op">;</span>
+
+...
+
+<span class="va">req</span>.<span class="at">setHeader</span>(<span class="st">&quot;Accept&quot;</span><span class="op">,</span> <span class="st">&quot;application/json&quot;</span>)<span class="op">;</span>
+<span class="va">req</span>.<span class="at">setOption</span>(<span class="st">&#39;Block2&#39;</span><span class="op">,</span>  [<span class="kw">new</span> <span class="at">Buffer</span>(<span class="st">&#39;phodal&#39;</span>)<span class="op">,</span> <span class="kw">new</span> <span class="at">Buffer</span>(<span class="st">&#39;phodal&#39;</span>)])<span class="op">;</span>
+
+...
+
+<span class="va">req</span>.<span class="at">end</span>()<span class="op">;</span></code></pre></div>
+<p>写完测试脚本后发现不对了，这个不应该是测试的代码吗? 于是将其放到了spec中，接着发现了上面的全部功能的实现过程为什么不用TDD实现呢？</p>
+<h3 id="说说测试驱动开发">说说测试驱动开发</h3>
+<p>测试驱动开发是一个很“古老”的程序开发方法，然而由于国内的开发流程的问题——即开发人员负责功能的测试，导致这么好的一项技术没有在国内推广。</p>
+<p>测试驱动开发的主要过程是:</p>
+<ol type="1">
+<li>先写功能的测试</li>
+<li>实现功能代码</li>
+<li>提交代码(commit -&gt; 保证功能正常)</li>
+<li>重构功能代码</li>
+</ol>
+<p>而对于这样的一个物联网项目来说，我已经有了几个有利的前提:</p>
+<ol type="1">
+<li>已经有了原型</li>
+<li>框架设计</li>
+</ol>
+<h3 id="思考">思考</h3>
+<p>通常在我的理解下，TDD是可有可无的。既然我知道了我要实现的大部分功能，而且我也知道如何实现。与此同时，对Code Smell也保持着警惕、要保证功能被测试覆盖。那么，总的来说TDD带来的价值并不大。</p>
+<p>然而，在当前这种情况下，我知道我想要的功能，但是我并不理解其深层次的功能。我需要花费大量的时候来理解，它为什么是这样的，需要先有一些脚本来知道它是怎么工作的。TDD变显得很有价值，换句话来说，在现有的情况下，TDD对于我们不了解的一些事情，可以驱动出更多的开发。毕竟在我们完成测试脚本之后，我们也会发现这些测试脚本成为了代码的一部分。</p>
+<p>在这种理想的情况下，我们为什么不TDD呢?</p>
 <h1 id="重构-1">重构</h1>
 <p>或许你应该知道了，重构是怎样的，你也知道重构能带来什么。在我刚开始学重构和设计模式的时候，我需要去找一些好的示例，以便于我更好的学习。有时候不得不创造一些更好的场景，来实现这些功能。</p>
 <p>有一天，我发现当我需要我一次又一次地重复讲述某些内容，于是我就计划着把这些应该掌握的技能放到Github上，也就有了<a href="https://github.com/artisanstack">Artisan Stack</a> 计划。</p>
@@ -1614,6 +1675,188 @@ str <span class="op">=</span> <span class="at">tableHandler</span>(str<span clas
    ✓ should parse ul table
    ✓ should <span class="cf">return</span> correctly <span class="kw">class</span> name</code></pre></div>
 <p>快来试试吧， <a href="https://github.com/artisanstack/js-refactor" class="uri">https://github.com/artisanstack/js-refactor</a></p>
+<p>是时候讨论这个Refactor利器了，最初看到这个重构的过程是从ThoughtWorks郑大晔校开始的，只是之前对于Java的另外一个编辑器Eclipse的坏感。。这些在目前已经不是很重要了，试试这个公司里面应用广泛的编辑器。</p>
+<h2 id="interllij-idea重构">Interllij Idea重构</h2>
+<p>开发的流程大致就是这样子的，测试先行算是推荐的。</p>
+<pre><code>编写测试-&gt;功能代码-&gt;修改测试-&gt;重构</code></pre>
+<p>上次在和buddy聊天的时候，才知道测试在功能简单的时候是后行的，在功能复杂不知道怎么手手的时候是先行的。</p>
+<p>开始之前请原谅我对于Java语言的一些无知，然后，看一下我写的Main函数：</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package com.phodal.learing;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Main {
+
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(String[] args) {
+        <span class="dt">int</span> c=<span class="kw">new</span> <span class="fu">Cal</span>().<span class="fu">add</span>(<span class="dv">1</span>,<span class="dv">2</span>);
+        <span class="dt">int</span> d=<span class="kw">new</span> <span class="fu">Cal2</span>().<span class="fu">sub</span>(<span class="dv">2</span>,<span class="dv">1</span>);
+        System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
+        System.<span class="fu">out</span>.<span class="fu">println</span>(c);
+        System.<span class="fu">out</span>.<span class="fu">println</span>(d);
+    }
+}</code></pre></div>
+<p>代码写得还好(自我感觉)，先不管Cal和Cal2两个类。大部分都能看懂，除了c,d不知道他们表达的是什么意思，于是。</p>
+<h3 id="rename">Rename</h3>
+<p><strong>快捷键:Shift+F6</strong></p>
+<p><strong>作用:重命名</strong></p>
+<ul>
+<li>把光标丢到int c中的c，按下shift+f6，输入result_add</li>
+<li>把光标移到int d中的d，按下shift+f6，输入result_sub</li>
+</ul>
+<p>于是就有</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package com.phodal.learing;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Main {
+
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(String[] args) {
+        <span class="dt">int</span> result_add=<span class="kw">new</span> <span class="fu">Cal</span>().<span class="fu">add</span>(<span class="dv">1</span>,<span class="dv">2</span>);
+        <span class="dt">int</span> result_sub=<span class="kw">new</span> <span class="fu">Cal2</span>().<span class="fu">sub</span>(<span class="dv">2</span>,<span class="dv">1</span>);
+        System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
+        System.<span class="fu">out</span>.<span class="fu">println</span>(result_add);
+        System.<span class="fu">out</span>.<span class="fu">println</span>(result_sub);
+    }
+}</code></pre></div>
+<h3 id="extract-method">Extract Method</h3>
+<p><strong>快捷键:alt+command+m</strong></p>
+<p><strong>作用:扩展方法</strong></p>
+<ul>
+<li>选中System.out.println(result_add);</li>
+<li>按下alt+command+m</li>
+<li>在弹出的窗口中输入mprint</li>
+</ul>
+<p>于是有了</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(String[] args) {
+    <span class="dt">int</span> result_add=<span class="kw">new</span> <span class="fu">Cal</span>().<span class="fu">add</span>(<span class="dv">1</span>,<span class="dv">2</span>);
+    <span class="dt">int</span> result_sub=<span class="kw">new</span> <span class="fu">Cal2</span>().<span class="fu">sub</span>(<span class="dv">2</span>,<span class="dv">1</span>);
+    System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
+    <span class="fu">mprint</span>(result_add);
+    <span class="fu">mprint</span>(result_sub);
+}
+
+<span class="kw">private</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">mprint</span>(<span class="dt">int</span> result_sub) {
+    System.<span class="fu">out</span>.<span class="fu">println</span>(result_sub);
+}</code></pre></div>
+<p>似乎我们不应该这样对待System.out.println，那么让我们内联回去</p>
+<h3 id="inline-method">Inline Method</h3>
+<p><strong>快捷键:alt+command+n</strong></p>
+<p><strong>作用:内联方法</strong></p>
+<ul>
+<li>选中main中的mprint</li>
+<li>alt+command+n</li>
+<li>选中Inline all invocations and remove the method(2 occurrences) 点确定</li>
+</ul>
+<p>然后我们等于什么也没有做了~~:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(String[] args) {
+    <span class="dt">int</span> result_add=<span class="kw">new</span> <span class="fu">Cal</span>().<span class="fu">add</span>(<span class="dv">1</span>,<span class="dv">2</span>);
+    <span class="dt">int</span> result_sub=<span class="kw">new</span> <span class="fu">Cal2</span>().<span class="fu">sub</span>(<span class="dv">2</span>,<span class="dv">1</span>);
+    System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
+    System.<span class="fu">out</span>.<span class="fu">println</span>(result_add);
+    System.<span class="fu">out</span>.<span class="fu">println</span>(result_sub);
+}</code></pre></div>
+<p>似乎这个例子不是很好，但是够用来说明了。</p>
+<h3 id="pull-members-up">Pull Members Up</h3>
+<p>开始之前让我们先看看Cal2类:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Cal2 <span class="kw">extends</span> Cal {
+
+    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">sub</span>(<span class="dt">int</span> a,<span class="dt">int</span> b){
+        <span class="kw">return</span> a-b;
+    }
+}</code></pre></div>
+<p>以及Cal2的父类Cal</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Cal {
+
+    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">add</span>(<span class="dt">int</span> a,<span class="dt">int</span> b){
+        <span class="kw">return</span> a+b;
+    }
+
+}</code></pre></div>
+<p>最后的结果，就是将Cal2类中的sub方法，提到父类:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Cal {
+
+    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">add</span>(<span class="dt">int</span> a,<span class="dt">int</span> b){
+        <span class="kw">return</span> a+b;
+    }
+
+    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">sub</span>(<span class="dt">int</span> a,<span class="dt">int</span> b){
+        <span class="kw">return</span> a-b;
+    }
+}</code></pre></div>
+<p>而我们所要做的就是鼠标右键</p>
+<h3 id="重构之以查询取代临时变量">重构之以查询取代临时变量</h3>
+<p>快捷键</p>
+<p>Mac: 木有</p>
+<p>Windows/Linux: 木有</p>
+<p>或者: <code>Shift</code>+<code>alt</code>+<code>command</code>+<code>T</code> 再选择 <code>Replace Temp with Query</code></p>
+<p>鼠标: <strong>Refactor</strong> | <code>Replace Temp with Query</code></p>
+<h4 id="重构之前">重构之前</h4>
+<p>过多的临时变量会让我们写出更长的函数，函数不应该太多，以便使功能单一。这也是重构的另外的目的所在，只有函数专注于其功能，才会更容易读懂。</p>
+<p>以书中的代码为例</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import java.lang.System;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> replaceTemp {
+    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">count</span>() {
+        <span class="dt">double</span> basePrice = _quantity * _itemPrice;
+        <span class="kw">if</span> (basePrice &gt; <span class="dv">1000</span>) {
+            <span class="kw">return</span> basePrice * <span class="fl">0.95</span>;
+        } <span class="kw">else</span> {
+            <span class="kw">return</span> basePrice * <span class="fl">0.98</span>;
+        }
+    }
+}</code></pre></div>
+<h4 id="重构-3">重构</h4>
+<p>选中<code>basePrice</code>很愉快地拿鼠标点上面的重构</p>
+<figure>
+<img src="./img/replace.jpg" alt="Replace Temp With Query" /><figcaption>Replace Temp With Query</figcaption>
+</figure>
+<p>便会返回</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import java.lang.System;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> replaceTemp {
+    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">count</span>() {
+        <span class="kw">if</span> (<span class="fu">basePrice</span>() &gt; <span class="dv">1000</span>) {
+            <span class="kw">return</span> <span class="fu">basePrice</span>() * <span class="fl">0.95</span>;
+        } <span class="kw">else</span> {
+            <span class="kw">return</span> <span class="fu">basePrice</span>() * <span class="fl">0.98</span>;
+        }
+    }
+
+    <span class="kw">private</span> <span class="dt">double</span> <span class="fu">basePrice</span>() {
+        <span class="kw">return</span> _quantity * _itemPrice;
+    }
+}</code></pre></div>
+<p>而实际上我们也可以</p>
+<ol type="1">
+<li><p>选中</p>
+<p>_quantity * _itemPrice</p></li>
+<li><p>对其进行<code>Extrace Method</code></p></li>
+<li><p>选择<code>basePrice</code>再<code>Inline Method</code></p></li>
+</ol>
+<h4 id="intellij-idea重构">Intellij IDEA重构</h4>
+<p>在Intellij IDEA的文档中对此是这样的例子</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> replaceTemp {
+
+    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">method</span>() {
+        String str = <span class="st">&quot;str&quot;</span>;
+        String aString = <span class="fu">returnString</span>().<span class="fu">concat</span>(str);
+        System.<span class="fu">out</span>.<span class="fu">println</span>(aString);
+    }
+
+}</code></pre></div>
+<p>接着我们选中<code>aString</code>，再打开重构菜单，或者</p>
+<p><code>Command</code>+<code>Alt</code>+<code>Shift</code>+<code>T</code> 再选中Replace Temp with Query</p>
+<p>便会有下面的结果:</p>
+<pre class="javas"><code>import java.lang.String;
+
+public class replaceTemp {
+
+    public void method() {
+        String str = &quot;str&quot;;
+        System.out.println(aString(str));
+    }
+
+    private String aString(String str) {
+        return returnString().concat(str);
+    }
+
+}</code></pre>
 <h1 id="github连击">Github连击</h1>
 <h2 id="天">100天</h2>
 <p>我也是蛮拼的，虽然我想的只是在Github上连击100~200天，然而到了今天也算不错。</p>
@@ -1819,7 +2062,7 @@ str <span class="op">=</span> <span class="at">tableHandler</span>(str<span clas
 <h3 id="编程的基础能力">编程的基础能力</h3>
 <p>虽说算法很重要，但是编码才是基础能力。算法与编程在某种程度上是不同的领域，算法编程是在编程上面的一级。算法写得再好，如果别人很难直接拿来复用，在别人眼里就是shit。想出能work的代码一件简单的事，学会对其重构，使之变得更易读就是一件有意义的事。</p>
 <p>于是，在某一时刻在Github上创建了一个组织，叫<a href="https://github.com/artisanstack">Artisan Stack</a>。当时想的是在Github寻找一些JavaScript项目，对其代码进行重构。但是到底是影响力不够哈，参与的人数比较少。</p>
-<h4 id="重构-3">重构</h4>
+<h4 id="重构-4">重构</h4>
 <p>如果你懂得如何写出高可读的代码，那么我想你是不需要这个的，但是这意味着你花了更多的时候在思考上了。当谈论重构的时候，让我想起了TDD(测试驱动开发)。即使不是TDD，那么如果你写着测试，那也是可以重构的。(之前写过一些利用Intellij IDEA重构的文章：<a href="https://www.phodal.com/blog/intellij-idea-refactor-extract-method/">提炼函数</a>、<a href="https://www.phodal.com/blog/intellij-idea-refactor-replace-temp-with-query/">以查询取代临时变量</a>、<a href="https://www.phodal.com/blog/thoughtworks-refactor-and-intellij-idea/">重构与Intellij Idea初探</a>、<a href="https://www.phodal.com/blog/intellij-idea-refactor-inline-method/">内联函数</a>)</p>
 <p>在各种各样的文章里，我们看到过一些相关的内容，最好的参考莫过于《重构》一书。最基础不过的原则便是函数名，取名字很难，取别人能读懂的名字更难。其他的便有诸如长函数、过大的类、重复代码等等。在我有限的面试别人的经历里，这些问题都是最常见的。</p>
 <h4 id="测试-2">测试</h4>

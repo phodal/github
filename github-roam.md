@@ -1588,6 +1588,83 @@ SQLiteHelper.prototype.getData = function (url, callback) {
 
 #测试
 
+##一次测试驱动开发
+
+虽然接触的TDD时间不算短，然而真正在实践TDD上的时候少之又少。除去怎么教人TDD，就是与人结对编程时的switch，或许是受限于当前的开发流程。
+
+偶然间在开发一个物联网相关的开源项目——[Lan](https://github.com/phodal/lan)的时候，重拾了这个过程。不得不说提到的一点是，在我们的开发流程中**测试是由相关功能开发人员写的**，有时候测试是一种很具挑战性的工作。久而久之，为自己的开源项目写测试变成一种自然而然的事。有时没有测试，反而变得**没有安全感**。
+
+###故事
+
+之前正在重写一个[物联网](http://www.phodal.com/iot)的服务端，主要便是结合CoAP、MQTT、HTTP等协议构成一个物联网的云服务。现在，主要的任务是集中于协议与授权。由于，不同协议间的授权是不一样的，最开始的时候我先写了一个http put授权的功能，而在起先的时候是如何测试的呢?
+
+    curl --user root:root -X PUT -d '{ "dream": 1 }' -H "Content-Type: application/json" http://localhost:8899/topics/test
+
+我只要顺利在request中看有无``req.headers.authorization``，我便可以继续往下，接着给个判断。毕竟，我们对HTTP协议还是蛮清楚的。
+
+```javascript
+if (!req.headers.authorization) {
+  res.statusCode = 401;
+  res.setHeader('WWW-Authenticate', 'Basic realm="Secure Area"');
+  return res.end('Unauthorized');
+}
+```       
+       
+可是除了HTTP协议，还有MQTT和CoAP。对于MQTT协议来说，那还算好，毕竟自带授权，如:
+
+```bash
+mosquitto_pub -u root -P root -h localhost -d -t lettuce -m "Hello, MQTT. This is my first message."
+```
+       
+便可以让我们简单地完成这个功能，然而有的协议是没有这样的功能如CoAP协议中是用Option来进行授权的。现在的工具如libcoap只能有如下的简单功能
+
+```bash
+coap-client -m get coap://127.0.0.1:5683/topics/zero -T
+```
+
+于是，先写了个测试脚本来验证功能。
+
+```javascript
+var coap     = require('coap');
+var request  = coap.request;
+var req = request({hostname: 'localhost',port:5683,pathname: '',method: 'POST'});
+
+...
+
+req.setHeader("Accept", "application/json");
+req.setOption('Block2',  [new Buffer('phodal'), new Buffer('phodal')]);
+
+...
+
+req.end();
+```
+	
+写完测试脚本后发现不对了，这个不应该是测试的代码吗? 于是将其放到了spec中，接着发现了上面的全部功能的实现过程为什么不用TDD实现呢？
+
+###说说测试驱动开发
+
+测试驱动开发是一个很"古老"的程序开发方法，然而由于国内的开发流程的问题——即开发人员负责功能的测试，导致这么好的一项技术没有在国内推广。
+
+测试驱动开发的主要过程是:
+
+1. 先写功能的测试
+2. 实现功能代码
+3. 提交代码(commit -> 保证功能正常)
+4. 重构功能代码
+
+而对于这样的一个物联网项目来说，我已经有了几个有利的前提:
+
+1. 已经有了原型
+2. 框架设计
+
+###思考
+
+通常在我的理解下，TDD是可有可无的。既然我知道了我要实现的大部分功能，而且我也知道如何实现。与此同时，对Code Smell也保持着警惕、要保证功能被测试覆盖。那么，总的来说TDD带来的价值并不大。
+
+然而，在当前这种情况下，我知道我想要的功能，但是我并不理解其深层次的功能。我需要花费大量的时候来理解，它为什么是这样的，需要先有一些脚本来知道它是怎么工作的。TDD变显得很有价值，换句话来说，在现有的情况下，TDD对于我们不了解的一些事情，可以驱动出更多的开发。毕竟在我们完成测试脚本之后，我们也会发现这些测试脚本成为了代码的一部分。
+
+在这种理想的情况下，我们为什么不TDD呢?
+
 #重构
 
 或许你应该知道了，重构是怎样的，你也知道重构能带来什么。在我刚开始学重构和设计模式的时候，我需要去找一些好的示例，以便于我更好的学习。有时候不得不创造一些更好的场景，来实现这些功能。
@@ -1742,6 +1819,265 @@ str = tableHandler(str, execStr, strict);
 ```
 	   
 快来试试吧， [https://github.com/artisanstack/js-refactor](https://github.com/artisanstack/js-refactor)
+
+是时候讨论这个Refactor利器了，最初看到这个重构的过程是从ThoughtWorks郑大晔校开始的，只是之前对于Java的另外一个编辑器Eclipse的坏感。。这些在目前已经不是很重要了，试试这个公司里面应用广泛的编辑器。
+
+##Interllij Idea重构
+
+开发的流程大致就是这样子的，测试先行算是推荐的。
+
+    编写测试->功能代码->修改测试->重构
+    
+上次在和buddy聊天的时候，才知道测试在功能简单的时候是后行的，在功能复杂不知道怎么手手的时候是先行的。
+
+
+开始之前请原谅我对于Java语言的一些无知，然后，看一下我写的Main函数：
+
+```java
+package com.phodal.learing;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int c=new Cal().add(1,2);
+        int d=new Cal2().sub(2,1);
+        System.out.println("Hello,s");
+        System.out.println(c);
+        System.out.println(d);
+    }
+}
+```
+	
+代码写得还好(自我感觉)，先不管Cal和Cal2两个类。大部分都能看懂，除了c,d不知道他们表达的是什么意思，于是。
+
+###Rename
+
+**快捷键:Shift+F6**
+
+**作用:重命名**
+
+ - 把光标丢到int c中的c，按下shift+f6，输入result_add
+ - 把光标移到int d中的d，按下shift+f6，输入result_sub
+
+于是就有
+
+```java
+package com.phodal.learing;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int result_add=new Cal().add(1,2);
+        int result_sub=new Cal2().sub(2,1);
+        System.out.println("Hello,s");
+        System.out.println(result_add);
+        System.out.println(result_sub);
+    }
+}
+```
+	
+###Extract Method
+
+**快捷键:alt+command+m**
+
+**作用:扩展方法**
+
+- 选中System.out.println(result_add);
+- 按下alt+command+m
+- 在弹出的窗口中输入mprint
+
+于是有了
+
+```java
+public static void main(String[] args) {
+    int result_add=new Cal().add(1,2);
+    int result_sub=new Cal2().sub(2,1);
+    System.out.println("Hello,s");
+    mprint(result_add);
+    mprint(result_sub);
+}
+
+private static void mprint(int result_sub) {
+    System.out.println(result_sub);
+}
+```
+    
+似乎我们不应该这样对待System.out.println，那么让我们内联回去
+
+###Inline Method
+
+**快捷键:alt+command+n**
+
+**作用:内联方法**
+
+- 选中main中的mprint
+- alt+command+n
+- 选中Inline all invocations and remove the method(2 occurrences) 点确定
+
+然后我们等于什么也没有做了~~: 
+
+```java
+public static void main(String[] args) {
+    int result_add=new Cal().add(1,2);
+    int result_sub=new Cal2().sub(2,1);
+    System.out.println("Hello,s");
+    System.out.println(result_add);
+    System.out.println(result_sub);
+}
+```
+
+似乎这个例子不是很好，但是够用来说明了。
+
+###Pull Members Up
+
+开始之前让我们先看看Cal2类:
+
+```java
+public class Cal2 extends Cal {
+
+    public int sub(int a,int b){
+        return a-b;
+    }
+}
+```
+	
+以及Cal2的父类Cal
+
+```java
+public class Cal {
+
+    public int add(int a,int b){
+        return a+b;
+    }
+
+}
+```
+	
+最后的结果，就是将Cal2类中的sub方法，提到父类:
+
+```java
+public class Cal {
+
+    public int add(int a,int b){
+        return a+b;
+    }
+
+    public int sub(int a,int b){
+        return a-b;
+    }
+}
+```
+	
+而我们所要做的就是鼠标右键
+
+###重构之以查询取代临时变量
+
+快捷键
+
+Mac:  木有
+
+Windows/Linux:  木有
+
+或者: ``Shift``+``alt``+``command``+``T`` 再选择  ``Replace Temp with Query``
+
+鼠标: **Refactor** | ``Replace Temp with Query``
+
+####重构之前
+
+过多的临时变量会让我们写出更长的函数，函数不应该太多，以便使功能单一。这也是重构的另外的目的所在，只有函数专注于其功能，才会更容易读懂。
+
+以书中的代码为例
+
+```java
+import java.lang.System;
+
+public class replaceTemp {
+    public void count() {
+        double basePrice = _quantity * _itemPrice;
+        if (basePrice > 1000) {
+            return basePrice * 0.95;
+        } else {
+            return basePrice * 0.98;
+        }
+    }
+}
+```
+
+####重构
+
+选中``basePrice``很愉快地拿鼠标点上面的重构
+
+![Replace Temp With Query](./img/replace.jpg)
+
+便会返回
+
+```java
+import java.lang.System;
+
+public class replaceTemp {
+    public void count() {
+        if (basePrice() > 1000) {
+            return basePrice() * 0.95;
+        } else {
+            return basePrice() * 0.98;
+        }
+    }
+
+    private double basePrice() {
+        return _quantity * _itemPrice;
+    }
+}
+```
+
+而实际上我们也可以
+
+1. 选中
+
+    _quantity * _itemPrice
+
+2. 对其进行``Extrace Method``
+
+3. 选择``basePrice``再``Inline Method``
+
+####Intellij IDEA重构
+
+在Intellij IDEA的文档中对此是这样的例子
+
+```java
+public class replaceTemp {
+
+    public void method() {
+        String str = "str";
+        String aString = returnString().concat(str);
+        System.out.println(aString);
+    }
+
+}
+```
+
+接着我们选中``aString``，再打开重构菜单，或者
+
+``Command``+``Alt``+``Shift``+``T`` 再选中Replace Temp with Query
+
+便会有下面的结果:
+
+
+```javas
+import java.lang.String;
+
+public class replaceTemp {
+
+    public void method() {
+        String str = "str";
+        System.out.println(aString(str));
+    }
+
+    private String aString(String str) {
+        return returnString().concat(str);
+    }
+
+}
+```
 
 #Github连击 
 

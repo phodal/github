@@ -152,3 +152,262 @@ str = tableHandler(str, execStr, strict);
 ```
 	   
 快来试试吧， [https://github.com/artisanstack/js-refactor](https://github.com/artisanstack/js-refactor)
+
+是时候讨论这个Refactor利器了，最初看到这个重构的过程是从ThoughtWorks郑大晔校开始的，只是之前对于Java的另外一个编辑器Eclipse的坏感。。这些在目前已经不是很重要了，试试这个公司里面应用广泛的编辑器。
+
+##Interllij Idea重构
+
+开发的流程大致就是这样子的，测试先行算是推荐的。
+
+    编写测试->功能代码->修改测试->重构
+    
+上次在和buddy聊天的时候，才知道测试在功能简单的时候是后行的，在功能复杂不知道怎么手手的时候是先行的。
+
+
+开始之前请原谅我对于Java语言的一些无知，然后，看一下我写的Main函数：
+
+```java
+package com.phodal.learing;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int c=new Cal().add(1,2);
+        int d=new Cal2().sub(2,1);
+        System.out.println("Hello,s");
+        System.out.println(c);
+        System.out.println(d);
+    }
+}
+```
+	
+代码写得还好(自我感觉)，先不管Cal和Cal2两个类。大部分都能看懂，除了c,d不知道他们表达的是什么意思，于是。
+
+###Rename
+
+**快捷键:Shift+F6**
+
+**作用:重命名**
+
+ - 把光标丢到int c中的c，按下shift+f6，输入result_add
+ - 把光标移到int d中的d，按下shift+f6，输入result_sub
+
+于是就有
+
+```java
+package com.phodal.learing;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int result_add=new Cal().add(1,2);
+        int result_sub=new Cal2().sub(2,1);
+        System.out.println("Hello,s");
+        System.out.println(result_add);
+        System.out.println(result_sub);
+    }
+}
+```
+	
+###Extract Method
+
+**快捷键:alt+command+m**
+
+**作用:扩展方法**
+
+- 选中System.out.println(result_add);
+- 按下alt+command+m
+- 在弹出的窗口中输入mprint
+
+于是有了
+
+```java
+public static void main(String[] args) {
+    int result_add=new Cal().add(1,2);
+    int result_sub=new Cal2().sub(2,1);
+    System.out.println("Hello,s");
+    mprint(result_add);
+    mprint(result_sub);
+}
+
+private static void mprint(int result_sub) {
+    System.out.println(result_sub);
+}
+```
+    
+似乎我们不应该这样对待System.out.println，那么让我们内联回去
+
+###Inline Method
+
+**快捷键:alt+command+n**
+
+**作用:内联方法**
+
+- 选中main中的mprint
+- alt+command+n
+- 选中Inline all invocations and remove the method(2 occurrences) 点确定
+
+然后我们等于什么也没有做了~~: 
+
+```java
+public static void main(String[] args) {
+    int result_add=new Cal().add(1,2);
+    int result_sub=new Cal2().sub(2,1);
+    System.out.println("Hello,s");
+    System.out.println(result_add);
+    System.out.println(result_sub);
+}
+```
+
+似乎这个例子不是很好，但是够用来说明了。
+
+###Pull Members Up
+
+开始之前让我们先看看Cal2类:
+
+```java
+public class Cal2 extends Cal {
+
+    public int sub(int a,int b){
+        return a-b;
+    }
+}
+```
+	
+以及Cal2的父类Cal
+
+```java
+public class Cal {
+
+    public int add(int a,int b){
+        return a+b;
+    }
+
+}
+```
+	
+最后的结果，就是将Cal2类中的sub方法，提到父类:
+
+```java
+public class Cal {
+
+    public int add(int a,int b){
+        return a+b;
+    }
+
+    public int sub(int a,int b){
+        return a-b;
+    }
+}
+```
+	
+而我们所要做的就是鼠标右键
+
+###重构之以查询取代临时变量
+
+快捷键
+
+Mac:  木有
+
+Windows/Linux:  木有
+
+或者: ``Shift``+``alt``+``command``+``T`` 再选择  ``Replace Temp with Query``
+
+鼠标: **Refactor** | ``Replace Temp with Query``
+
+####重构之前
+
+过多的临时变量会让我们写出更长的函数，函数不应该太多，以便使功能单一。这也是重构的另外的目的所在，只有函数专注于其功能，才会更容易读懂。
+
+以书中的代码为例
+
+```java
+import java.lang.System;
+
+public class replaceTemp {
+    public void count() {
+        double basePrice = _quantity * _itemPrice;
+        if (basePrice > 1000) {
+            return basePrice * 0.95;
+        } else {
+            return basePrice * 0.98;
+        }
+    }
+}
+```
+
+####重构
+
+选中``basePrice``很愉快地拿鼠标点上面的重构
+
+![Replace Temp With Query](./img/replace.jpg)
+
+便会返回
+
+```java
+import java.lang.System;
+
+public class replaceTemp {
+    public void count() {
+        if (basePrice() > 1000) {
+            return basePrice() * 0.95;
+        } else {
+            return basePrice() * 0.98;
+        }
+    }
+
+    private double basePrice() {
+        return _quantity * _itemPrice;
+    }
+}
+```
+
+而实际上我们也可以
+
+1. 选中
+
+    _quantity * _itemPrice
+
+2. 对其进行``Extrace Method``
+
+3. 选择``basePrice``再``Inline Method``
+
+####Intellij IDEA重构
+
+在Intellij IDEA的文档中对此是这样的例子
+
+```java
+public class replaceTemp {
+
+    public void method() {
+        String str = "str";
+        String aString = returnString().concat(str);
+        System.out.println(aString);
+    }
+
+}
+```
+
+接着我们选中``aString``，再打开重构菜单，或者
+
+``Command``+``Alt``+``Shift``+``T`` 再选中Replace Temp with Query
+
+便会有下面的结果:
+
+
+```javas
+import java.lang.String;
+
+public class replaceTemp {
+
+    public void method() {
+        String str = "str";
+        System.out.println(aString(str));
+    }
+
+    private String aString(String str) {
+        return returnString().concat(str);
+    }
+
+}
+```
