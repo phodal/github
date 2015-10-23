@@ -143,6 +143,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#说说测试驱动开发">说说测试驱动开发</a></li>
 <li><a href="#思考">思考</a></li>
 </ul></li>
+<li><a href="#轻量级网站测试twill">轻量级网站测试TWill</a></li>
+<li><a href="#twill-登陆测试">Twill 登陆测试</a></li>
+<li><a href="#twill-测试脚本">Twill 测试脚本</a></li>
+<li><a href="#fake-server">Fake Server</a></li>
 </ul></li>
 <li><a href="#重构-1">重构</a></li>
 <li><a href="#前端技能训练-重构一"><a href="http://www.phodal.com/blog/frontend-improve-refactor-javascript-code/">前端技能训练: 重构一</a></a><ul>
@@ -1122,6 +1126,13 @@ pipe.execute()</code></pre></div>
     -    , coapPacket  = require(&#39;coap-packet&#39;)
     +    , package     = require(&#39;coap-packet&#39;)</code></pre>
 <h2 id="google-ngx-pagespeed">Google Ngx Pagespeed</h2>
+<p>CLA: Contributor License Agreement</p>
+<figure>
+<img src="./img/google-cla.png" alt="Google CLA" /><figcaption>Google CLA</figcaption>
+</figure>
+<figure>
+<img src="./img/eclipse-cla.png" alt="Eclipse CLA" /><figcaption>Eclipse CLA</figcaption>
+</figure>
 <pre><code> else
    cat &lt;&lt; END
  $0: error: module ngx_pagespeed requires the pagespeed optimization library.
@@ -1576,6 +1587,124 @@ line 21  col 62   Strings must use singlequote.</code></pre>
 <p>通常在我的理解下，TDD是可有可无的。既然我知道了我要实现的大部分功能，而且我也知道如何实现。与此同时，对Code Smell也保持着警惕、要保证功能被测试覆盖。那么，总的来说TDD带来的价值并不大。</p>
 <p>然而，在当前这种情况下，我知道我想要的功能，但是我并不理解其深层次的功能。我需要花费大量的时候来理解，它为什么是这样的，需要先有一些脚本来知道它是怎么工作的。TDD变显得很有价值，换句话来说，在现有的情况下，TDD对于我们不了解的一些事情，可以驱动出更多的开发。毕竟在我们完成测试脚本之后，我们也会发现这些测试脚本成为了代码的一部分。</p>
 <p>在这种理想的情况下，我们为什么不TDD呢?</p>
+<h2 id="轻量级网站测试twill">轻量级网站测试TWill</h2>
+<blockquote>
+<p>twill was initially designed for testing Web sites, although since then people have also figured out that it’s good for browsing unsuspecting Web sites.</p>
+</blockquote>
+<p>之所以说轻量的原因是他是拿命令行测试的，还有DSL，还有Python。</p>
+<p>除此之外，还可以拿它做压力测试，这种压力测试和一般的不一样。可以模拟整个过程，比如同时有多少人登陆你的网站。</p>
+<p>不过，它有一个限制是没有JavaScript。</p>
+<p>看了一下源码，大概原理就是用<code>requests</code>下载html，接着用<code>lxml</code>解析html，比较有意思的是内嵌了一个<code>DSL</code>。</p>
+<p>这是一个Python的库。</p>
+<pre><code> pip install twill</code></pre>
+<h2 id="twill-登陆测试">Twill 登陆测试</h2>
+<p>1.启动我们的应用。</p>
+<p>2.进入twill shell</p>
+<pre><code>twill-sh
+ -= Welcome to twill! =-
+current page:  *empty page*</code></pre>
+<p>3.打开网页</p>
+<pre><code>&gt;&gt; go http://127.0.0.1:5000/login
+==&gt; at http://127.0.0.1:5000/login
+current page: http://127.0.0.1:5000/login</code></pre>
+<p>4.显示表单</p>
+<pre><code>    &gt;&gt; showforms
+
+Form #1
+## ## __Name__________________ __Type___ __ID________ __Value__________________
+1     csrf_token               hidden    csrf_token   1423387196##5005bdf3496e09b8e2fbf450 ...
+2     email                    email     email        None
+3     password                 password  password     None
+4     login                    submit    (None)       登入
+
+current page: http://127.0.0.1:5000/login</code></pre>
+<p>5.填充表单</p>
+<pre><code>formclear 1
+fv 1 email test@tes.com
+fv 1 password test</code></pre>
+<p>6.修改action</p>
+<pre><code>formaction 1 http://127.0.0.1:5000/login</code></pre>
+<p>7.提交表单</p>
+<pre><code>&gt;&gt; submit
+Note: submit is using submit button: name=&quot;login&quot;, value=&quot;登入&quot;
+current page: http://127.0.0.1:5000/</code></pre>
+<p>发现重定向到首页了。</p>
+<h2 id="twill-测试脚本">Twill 测试脚本</h2>
+<p>当然我们也可以用脚本直接来测试<code>login.twill</code>:</p>
+<pre><code>go http://127.0.0.1:5000/login
+
+showforms
+formclear 1
+fv 1 email test@tes.com
+fv 1 password test
+formaction 1 http://127.0.0.1:5000/login
+submit
+
+go http://127.0.0.1:5000/logout</code></pre>
+<p>运行</p>
+<pre><code> twill-sh login.twill</code></pre>
+<p>结果</p>
+<pre><code>&gt;&gt; EXECUTING FILE login.twill
+AT LINE: login.twill:0
+==&gt; at http://127.0.0.1:5000/login
+AT LINE: login.twill:2
+
+Form #1
+## ## __Name__________________ __Type___ __ID________ __Value__________________
+1     csrf_token               hidden    csrf_token   1423387345##7a000b612fef39aceab5ca54 ...
+2     email                    email     email        None
+3     password                 password  password     None
+4     login                    submit    (None)       登入
+
+AT LINE: login.twill:3
+AT LINE: login.twill:4
+AT LINE: login.twill:5
+AT LINE: login.twill:6
+Setting action for form  (&lt;Element form at 0x10e7cbb50&gt;,) to  (&#39;http://127.0.0.1:5000/login&#39;,)
+AT LINE: login.twill:7
+Note: submit is using submit button: name=&quot;login&quot;, value=&quot;登入&quot;
+
+AT LINE: login.twill:9
+==&gt; at http://127.0.0.1:5000/login
+--
+1 of 1 files SUCCEEDED.</code></pre>
+<p>一个成功的测试诞生了。</p>
+<h2 id="fake-server">Fake Server</h2>
+<p>实践了一下怎么用sinon去fake server，还没用respondWith，于是写一下。</p>
+<p>这里需要用到sinon框架来测试。</p>
+<p>当我们fetch的时候，我们就可以返回我们想要fake的结果。</p>
+<pre><code>    var data = {&quot;id&quot;:1,&quot;name&quot;:&quot;Rice&quot;,&quot;type&quot;:&quot;Good&quot;,&quot;price&quot;:12,&quot;quantity&quot;:1,&quot;description&quot;:&quot;Made in China&quot;};
+beforeEach(function() {
+    this.server = sinon.fakeServer.create();
+    this.rices = new Rices();
+    this.server.respondWith(
+        &quot;GET&quot;,
+        &quot;http://localhost:8080/all/rice&quot;,
+        [
+            200,
+            {&quot;Content-Type&quot;: &quot;application/json&quot;},
+            JSON.stringify(data)
+        ]
+    );
+});</code></pre>
+<p>于是在afterEach的时候，我们需要恢复这个server。</p>
+<pre><code>afterEach(function() {
+    this.server.restore();
+});</code></pre>
+<p>接着写一个jasmine测试来测试</p>
+<pre><code>describe(&quot;Collection Test&quot;, function() {
+    it(&quot;should get data from the url&quot;, function() {
+        this.rices.fetch();
+        this.server.respond();
+        var result = JSON.parse(JSON.stringify(this.rices.models[0]));
+        expect(result[&quot;id&quot;])
+            .toEqual(1);
+        expect(result[&quot;price&quot;])
+            .toEqual(12);
+        expect(result)
+            .toEqual(data);
+    });
+});</code></pre>
 <h1 id="重构-1">重构</h1>
 <p>或许你应该知道了，重构是怎样的，你也知道重构能带来什么。在我刚开始学重构和设计模式的时候，我需要去找一些好的示例，以便于我更好的学习。有时候不得不创造一些更好的场景，来实现这些功能。</p>
 <p>有一天，我发现当我需要我一次又一次地重复讲述某些内容，于是我就计划着把这些应该掌握的技能放到Github上，也就有了<a href="https://github.com/artisanstack">Artisan Stack</a> 计划。</p>

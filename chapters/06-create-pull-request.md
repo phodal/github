@@ -9,6 +9,12 @@
 
 ##Google Ngx Pagespeed
 
+CLA: Contributor License Agreement 
+
+![Google CLA](./img/google-cla.png)
+
+![Eclipse CLA](./img/eclipse-cla.png)
+
 ```
  else
    cat << END
