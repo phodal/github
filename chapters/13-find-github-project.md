@@ -4,7 +4,7 @@
 
 最近萌发了一个想法写游戏引擎，之前想着做一个JavaScript前端框架。看看，这个思路是怎么来的。
 
-##一、[Lettuce](https://github.com/phodal/lettuce)构建过程
+##[Lettuce](https://github.com/phodal/lettuce)构建过程
 
 > Lettuce是一个简约的移动开发框架。
 
@@ -65,66 +65,70 @@
 
 但是显然，他们都太重了。事实上，对于一个库来说，80%的人只需要其中20%的代码。于是，找到了[https://github.com/stackp/promisejs](https://github.com/stackp/promisejs)，看了看用法，这就是我们需要的功能:
 
-    function late(n) {
-        var p = new promise.Promise();
-        setTimeout(function() {
-            p.done(null, n);
-        }, n);
-        return p;
-    }
+```javascript
+function late(n) {
+    var p = new promise.Promise();
+    setTimeout(function() {
+        p.done(null, n);
+    }, n);
+    return p;
+}
 
-    late(100).then(
-        function(err, n) {
-            return late(n + 200);
-        }
-    ).then(
-        function(err, n) {
-            return late(n + 300);
-        }
-    ).then(
-        function(err, n) {
-            return late(n + 400);
-        }
-    ).then(
-        function(err, n) {
-            alert(n);
-        }
-    );
+late(100).then(
+    function(err, n) {
+        return late(n + 200);
+    }
+).then(
+    function(err, n) {
+        return late(n + 300);
+    }
+).then(
+    function(err, n) {
+        return late(n + 400);
+    }
+).then(
+    function(err, n) {
+        alert(n);
+    }
+);
+```
 
 接着打开看看Promise对象，有我们需要的功能，但是又有一些功能超出我的需求。接着把自己不需要的需求去掉，这里函数最后就变成了
 
-    function Promise() {
-        this._callbacks = [];
+```javascript
+function Promise() {
+    this._callbacks = [];
+}
+
+Promise.prototype.then = function(func, context) {
+    var p;
+    if (this._isdone) {
+        p = func.apply(context, this.result);
+    } else {
+        p = new Promise();
+        this._callbacks.push(function () {
+            var res = func.apply(context, arguments);
+            if (res && typeof res.then === 'function') {
+                res.then(p.done, p);
+            }
+        });
     }
+    return p;
+};
 
-    Promise.prototype.then = function(func, context) {
-        var p;
-        if (this._isdone) {
-            p = func.apply(context, this.result);
-        } else {
-            p = new Promise();
-            this._callbacks.push(function () {
-                var res = func.apply(context, arguments);
-                if (res && typeof res.then === 'function') {
-                    res.then(p.done, p);
-                }
-            });
-        }
-        return p;
-    };
+Promise.prototype.done = function() {
+    this.result = arguments;
+    this._isdone = true;
+    for (var i = 0; i < this._callbacks.length; i++) {
+        this._callbacks[i].apply(null, arguments);
+    }
+    this._callbacks = [];
+};
 
-    Promise.prototype.done = function() {
-        this.result = arguments;
-        this._isdone = true;
-        for (var i = 0; i < this._callbacks.length; i++) {
-            this._callbacks[i].apply(null, arguments);
-        }
-        this._callbacks = [];
-    };
-
-    var promise = {
-        Promise: Promise
-    };
+var promise = {
+    Promise: Promise
+};
+```
 
 需要注意的是: ``License``，不同的软件有不同的License，如MIT、GPL等等。最好能在遵循协议的情况下，使用别人的代码。
 
@@ -132,34 +136,37 @@
 
 由于，现有的一些Ajax库都比较，最后只好参照着别人的代码自己实现。
 
-    Lettuce.get = function (url, callback) {
-        Lettuce.send(url, 'GET', callback);
-    };
+```javascript
+Lettuce.get = function (url, callback) {
+    Lettuce.send(url, 'GET', callback);
+};
 
-    Lettuce.load = function (url, callback) {
-        Lettuce.send(url, 'GET', callback);
-    };
+Lettuce.load = function (url, callback) {
+    Lettuce.send(url, 'GET', callback);
+};
 
-    Lettuce.post = function (url, data, callback) {
-        Lettuce.send(url, 'POST', callback, data);
-    };
+Lettuce.post = function (url, data, callback) {
+    Lettuce.send(url, 'POST', callback, data);
+};
 
-    Lettuce.send = function (url, method, callback, data) {
-        data = data || null;
-        var request = new XMLHttpRequest();
-        if (callback instanceof Function) {
-            request.onreadystatechange = function () {
-                if (request.readyState === 4 && (request.status === 200 || request.status === 0)) {
-                    callback(request.responseText);
-                }
-            };
-        }
-        request.open(method, url, true);
-        if (data instanceof Object) {
-            data = JSON.stringify(data);
-            request.setRequestHeader('Content-Type', 'application/json');
-        }
-        request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        request.send(data);
-    };
+Lettuce.send = function (url, method, callback, data) {
+    data = data || null;
+    var request = new XMLHttpRequest();
+    if (callback instanceof Function) {
+        request.onreadystatechange = function () {
+            if (request.readyState === 4 && (request.status === 200 || request.status === 0)) {
+                callback(request.responseText);
+            }
+        };
+    }
+    request.open(method, url, true);
+    if (data instanceof Object) {
+        data = JSON.stringify(data);
+        request.setRequestHeader('Content-Type', 'application/json');
+    }
+    request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    request.send(data);
+};
+```
+
 
