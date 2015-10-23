@@ -3,7 +3,7 @@
     
 让我们分析之前的程序，然后再想办法做出优化。网上看到一篇文章[http://www.huyng.com/posts/python-performance-analysis/](http://www.huyng.com/posts/python-performance-analysis/)讲的就是分析这部分内容的。
     
-##time python分析
+##Time Python分析
 
 分析程序的运行时间
      
@@ -20,9 +20,6 @@ $time python handle.py
 ```
 
 ##line_profiler python
-
-这是
-##Mac OS X 10.9 line_profiler Install##
 
 ```bash
 sudo ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future" easy_install line_profiler
@@ -85,16 +82,14 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 
 于是我们就发现我们的瓶颈就是从读取``created_at``，即创建时间。。。以及解析json，反而不是我们关心的IO，果然``readline``很强大。
 
-##memory_profiler python
+##memory_profiler
 
-###memory_profiler install
+首先我们需要install memory_profiler:
 
 ```bash
 $ pip install -U memory_profiler
 $ pip install psutil
 ```
-
-###memory_profiler python
 
 如上，我们只需要在``handle_json``前面加上``@profile``
 
@@ -128,7 +123,7 @@ Line #    Mem usage    Increment   Line Contents
 
 ##objgraph python
 
-###objgraph install
+安装objgraph
 
 ```bash
 pip install objgraph
@@ -226,8 +221,6 @@ def get_count(username):
 
 这个数据库文件有**905M**，不过查询结果相当让人满意，至少相对于原来的结果来说。
 
-##Python SQLite3
-
 Python自带了对SQLite3的支持，然而我们还需要安装SQLite3
 
 ```bash
@@ -254,7 +247,7 @@ sudo zypper install sqlite3
 
 不过，用yast2也很不错，不是么。。
 
-##Pythont Github Sqlite3数据导入
+###数据导入
 
 需要注意的是这里是需要python2.7，起源于对gzip的上下文管理器的支持问题
 
@@ -310,8 +303,6 @@ def build_db_with_gzip():
 
 ``executemany``可以插入多条数据，对于我们的数据来说，一小时的文件大概有五六千个会符合我们上面的安装，也就是有``actor``又有``type``才是我们需要记录的数据，我们只需要统计用户的那些事件，而非全部的事件。
 
-##python 遍历文件##
-
 我们需要去遍历文件，然后找到合适的部分，这里只是要找``2014-03-01``到``2014-03-31``的全部事件，而光这些数据的gz文件就有1.26G，同上面那些解压为json文件显得不合适，只能用遍历来处理。
 
 这里参考了osrc项目中的写法，或者说直接复制过来。
@@ -334,11 +325,7 @@ date_re = re.compile(r"([0-9]{4})-([0-9]{2})-([0-9]{2})-([0-9]+)\.json.gz")
 
 更好的方案？
 
-###redis
-
-结合了前面两篇我们终于可以成功地读取出用户数据、处理，再接着可以找相近的用户。
-
-##Python Redis
+##Redis
 
 查询用户事件总数
 
@@ -387,7 +374,7 @@ pipe.execute()
 
 到这里我们算是知道了OSRC的数据库部分是如何工作的。
 
-###Python redis 查询
+###Redis 查询
 
 主要代码如下所示
 
@@ -430,7 +417,8 @@ def get_vector(user, pipe=None):
 
 osrc最有意思的一部分莫过于flann，当然说的也是系统后台的设计的一个很关键及有意思的部分。
 
-##Python Github
+##邻近算法
+
 邻近算法是在这个分析过程中一个很有意思的东西。
 
 >邻近算法，或者说K最近邻(kNN，k-NearestNeighbor)分类算法可以说是整个数据挖掘分类技术中最简单的方法了。所谓K最近邻，就是k个最近的邻居的意思，说的是每个样本都可以用她最接近的k个邻居来代表。

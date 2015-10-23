@@ -9,11 +9,13 @@
 
 ##Google Ngx Pagespeed
 
-     else
-	   cat << END
-	 $0: error: module ngx_pagespeed requires the pagespeed optimization library.
-	-Look in obj/autoconf.err for more details.
-	+Look in objs/autoconf.err for more details.
-	 END
-	   exit 1
-	 fi
+```
+ else
+   cat << END
+ $0: error: module ngx_pagespeed requires the pagespeed optimization library.
+-Look in obj/autoconf.err for more details.
++Look in objs/autoconf.err for more details.
+ END
+   exit 1
+ fi
+``` 
