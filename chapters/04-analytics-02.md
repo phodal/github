@@ -19,7 +19,7 @@ $time python handle.py
     sys	0m0.618s
 ```
 
-##line_profiler python
+###line_profiler python
 
 ```bash
 sudo ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future" easy_install line_profiler
@@ -82,7 +82,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 
 于是我们就发现我们的瓶颈就是从读取``created_at``，即创建时间。。。以及解析json，反而不是我们关心的IO，果然``readline``很强大。
 
-##memory_profiler
+###memory_profiler
 
 首先我们需要install memory_profiler:
 
@@ -121,7 +121,7 @@ Line #    Mem usage    Increment   Line Contents
     27                                 return datacount, dataarray
 ```
 
-##objgraph python
+###objgraph python
 
 安装objgraph
 

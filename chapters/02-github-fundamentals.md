@@ -24,18 +24,24 @@
 
 如果是第一次使用Git，你需要设置署名和邮箱：
 
-    $ git config --global user.name "用户名"
-    $ git config --global user.email "电子邮箱"
+```
+$ git config --global user.name "用户名"
+$ git config --global user.email "电子邮箱"
+```
 
 将代码仓库clone到本地，其实就是将代码复制到你的机器里，并交由Git来管理：
 
-    $ git clone git@github.com:someone/symfony-docs-chs.git
+```
+$ git clone git@github.com:someone/symfony-docs-chs.git
+```
     
 你可以修改复制到本地的代码了（symfony-docs-chs项目里都是rst格式的文档）。当你觉得完成了一定的工作量，想做个阶段性的提交：
 
 向这个本地的代码仓库添加当前目录的所有改动：
 
-    $ git add .
+```
+$ git add .
+```
     
 或者只是添加某个文件：
 
@@ -49,16 +55,19 @@
 
 > …or create a new repository on the command line
 
-    echo "# github-roam" >> README.md
-	git init
-	git add README.md
-	git commit -m "first commit"
-	git remote add origin git@github.com:phodal/github-roam.git
-	git push -u origin master
+```
+echo "# github-roam" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:phodal/github-roam.git
+git push -u origin master
+```
 	
 > …or push an existing repository from the command line
 
-	git remote add origin git@github.com:phodal/github-roam.git
-	git push -u origin master
-		
+```
+git remote add origin git@github.com:phodal/github-roam.git
+git push -u origin master
+```		
 	

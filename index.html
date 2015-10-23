@@ -104,10 +104,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul></li>
 <li><a href="#github项目分析二">Github项目分析二</a><ul>
-<li><a href="#time-python分析">Time Python分析</a></li>
+<li><a href="#time-python分析">Time Python分析</a><ul>
 <li><a href="#line_profiler-python">line_profiler python</a></li>
 <li><a href="#memory_profiler">memory_profiler</a></li>
 <li><a href="#objgraph-python">objgraph python</a></li>
+</ul></li>
 <li><a href="#python-sqlite3-查询数据">python SQLite3 查询数据</a><ul>
 <li><a href="#数据导入">数据导入</a></li>
 </ul></li>
@@ -145,7 +146,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul></li>
 <li><a href="#如何在github寻找灵感fork">如何在Github“寻找灵感(fork)”</a><ul>
-<li><a href="#一lettuce构建过程">一、<a href="https://github.com/phodal/lettuce">Lettuce</a>构建过程</a><ul>
+<li><a href="#lettuce构建过程"><a href="https://github.com/phodal/lettuce">Lettuce</a>构建过程</a><ul>
 <li><a href="#需求">需求</a></li>
 <li><a href="#计划">计划</a></li>
 <li><a href="#实现第一个需求">实现第一个需求</a></li>
@@ -259,23 +260,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>当只有一个人的时候，你只需要明确知道自己想要什么就够了。我们还需要的是CI、测试，以来提升代码的质量。</p>
 <h3 id="测试">测试</h3>
 <p>通常我们都会找Document，如果没有的话，你会找什么?看源代码，还是看测试?</p>
-<pre><code>it(&quot;specifying response when you need it&quot;, function (done) {
-    var doneFn = jasmine.createSpy(&quot;success&quot;);
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="at">it</span>(<span class="st">&quot;specifying response when you need it&quot;</span><span class="op">,</span> <span class="kw">function</span> (done) <span class="op">{</span>
+    <span class="kw">var</span> doneFn <span class="op">=</span> <span class="va">jasmine</span>.<span class="at">createSpy</span>(<span class="st">&quot;success&quot;</span>)<span class="op">;</span>
 
-    lettuce.get(&#39;/some/cool/url&#39;, function (result) {
-        expect(result).toEqual(&quot;awesome response&quot;);
-        done();
-    });
+    <span class="va">lettuce</span>.<span class="at">get</span>(<span class="st">&#39;/some/cool/url&#39;</span><span class="op">,</span> <span class="kw">function</span> (result) <span class="op">{</span>
+        <span class="at">expect</span>(result).<span class="at">toEqual</span>(<span class="st">&quot;awesome response&quot;</span>)<span class="op">;</span>
+        <span class="at">done</span>()<span class="op">;</span>
+    <span class="op">}</span>)<span class="op">;</span>
 
-    expect(jasmine.Ajax.requests.mostRecent().url).toBe(&#39;/some/cool/url&#39;);
-    expect(doneFn).not.toHaveBeenCalled();
+    <span class="at">expect</span>(<span class="va">jasmine</span>.<span class="va">Ajax</span>.<span class="va">requests</span>.<span class="at">mostRecent</span>().<span class="at">url</span>).<span class="at">toBe</span>(<span class="st">&#39;/some/cool/url&#39;</span>)<span class="op">;</span>
+    <span class="at">expect</span>(doneFn).<span class="va">not</span>.<span class="at">toHaveBeenCalled</span>()<span class="op">;</span>
 
-    jasmine.Ajax.requests.mostRecent().respondWith({
-        &quot;status&quot;: 200,
-        &quot;contentType&quot;: &#39;text/plain&#39;,
-        &quot;responseText&quot;: &#39;awesome response&#39;
-    });
-});</code></pre>
+    <span class="va">jasmine</span>.<span class="va">Ajax</span>.<span class="va">requests</span>.<span class="at">mostRecent</span>().<span class="at">respondWith</span>(<span class="op">{</span>
+        <span class="st">&quot;status&quot;</span><span class="op">:</span> <span class="dv">200</span><span class="op">,</span>
+        <span class="st">&quot;contentType&quot;</span><span class="op">:</span> <span class="st">&#39;text/plain&#39;</span><span class="op">,</span>
+        <span class="st">&quot;responseText&quot;</span><span class="op">:</span> <span class="st">&#39;awesome response&#39;</span>
+    <span class="op">}</span>)<span class="op">;</span>
+<span class="op">}</span>)<span class="op">;</span></code></pre></div>
 <p>代码来源: <a href="https://github.com/phodal/lettuce" class="uri">https://github.com/phodal/lettuce</a></p>
 <p>上面的测试用例，清清楚楚地写明了用法，虽然写得有点扯。</p>
 <p>等等，测试是用来干什么的。那么，先说说我为什么会想去写测试吧:</p>
@@ -322,7 +323,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>本地测试都通过了，于是我们添加了<code>Travis-CI</code>来跑我们的测试</p>
 <h3 id="ci">CI</h3>
 <p>虽然node.js不算是一门语言，但是因为我们用的node，下面的是一个简单的<code>.travis.yml</code>示例:</p>
-<pre><code>language: node_js
+<pre class="yml"><code>language: node_js
 node_js:
     - &quot;0.10&quot;
 
@@ -344,28 +345,28 @@ after_success: CODECLIMATE_REPO_TOKEN=321480822fc37deb0de70a11931b4cb6a2a3cc4116
 </ul>
 <p><code>Code Climate</code>是一个与github集成的工具，我们不仅仅可以看到测试覆盖率，还有代码质量。</p>
 <p>先看看上面的ajax类:</p>
-<pre><code>Lettuce.get = function (url, callback) {
-    Lettuce.send(url, &#39;GET&#39;, callback);
-};
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">Lettuce</span>.<span class="at">get</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> callback) <span class="op">{</span>
+    <span class="va">Lettuce</span>.<span class="at">send</span>(url<span class="op">,</span> <span class="st">&#39;GET&#39;</span><span class="op">,</span> callback)<span class="op">;</span>
+<span class="op">};</span>
 
-Lettuce.send = function (url, method, callback, data) {
-    data = data || null;
-    var request = new XMLHttpRequest();
-    if (callback instanceof Function) {
-        request.onreadystatechange = function () {
-            if (request.readyState === 4 &amp;&amp; (request.status === 200 || request.status === 0)) {
-                callback(request.responseText);
-            }
-        };
-    }
-    request.open(method, url, true);
-    if (data instanceof Object) {
-        data = JSON.stringify(data);
-        request.setRequestHeader(&#39;Content-Type&#39;, &#39;application/json&#39;);
-    }
-    request.setRequestHeader(&#39;X-Requested-With&#39;, &#39;XMLHttpRequest&#39;);
-    request.send(data);
-};</code></pre>
+<span class="va">Lettuce</span>.<span class="at">send</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> method<span class="op">,</span> callback<span class="op">,</span> data) <span class="op">{</span>
+    data <span class="op">=</span> data <span class="op">||</span> <span class="kw">null</span><span class="op">;</span>
+    <span class="kw">var</span> request <span class="op">=</span> <span class="kw">new</span> <span class="at">XMLHttpRequest</span>()<span class="op">;</span>
+    <span class="cf">if</span> (callback <span class="kw">instanceof</span> Function) <span class="op">{</span>
+        <span class="va">request</span>.<span class="at">onreadystatechange</span> <span class="op">=</span> <span class="kw">function</span> () <span class="op">{</span>
+            <span class="cf">if</span> (<span class="va">request</span>.<span class="at">readyState</span> <span class="op">===</span> <span class="dv">4</span> <span class="op">&amp;&amp;</span> (<span class="va">request</span>.<span class="at">status</span> <span class="op">===</span> <span class="dv">200</span> <span class="op">||</span> <span class="va">request</span>.<span class="at">status</span> <span class="op">===</span> <span class="dv">0</span>)) <span class="op">{</span>
+                <span class="at">callback</span>(<span class="va">request</span>.<span class="at">responseText</span>)<span class="op">;</span>
+            <span class="op">}</span>
+        <span class="op">};</span>
+    <span class="op">}</span>
+    <span class="va">request</span>.<span class="at">open</span>(method<span class="op">,</span> url<span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span>
+    <span class="cf">if</span> (data <span class="kw">instanceof</span> Object) <span class="op">{</span>
+        data <span class="op">=</span> <span class="va">JSON</span>.<span class="at">stringify</span>(data)<span class="op">;</span>
+        <span class="va">request</span>.<span class="at">setRequestHeader</span>(<span class="st">&#39;Content-Type&#39;</span><span class="op">,</span> <span class="st">&#39;application/json&#39;</span>)<span class="op">;</span>
+    <span class="op">}</span>
+    <span class="va">request</span>.<span class="at">setRequestHeader</span>(<span class="st">&#39;X-Requested-With&#39;</span><span class="op">,</span> <span class="st">&#39;XMLHttpRequest&#39;</span>)<span class="op">;</span>
+    <span class="va">request</span>.<span class="at">send</span>(data)<span class="op">;</span>
+<span class="op">};</span></code></pre></div>
 <p>代码来源: <a href="https://github.com/phodal/lettuce" class="uri">https://github.com/phodal/lettuce</a></p>
 <p>在<a href="https://codeclimate.com/github/phodal/lettuce/src/ajax.js">Code Climate</a>在出现了一堆问题</p>
 <ul>
@@ -431,8 +432,7 @@ git push -u origin master</code></pre>
 <p>…or push an existing repository from the command line</p>
 </blockquote>
 <pre><code>git remote add origin git@github.com:phodal/github-roam.git
-git push -u origin master
-    </code></pre>
+git push -u origin master</code></pre>
 <h1 id="github项目分析一">Github项目分析一</h1>
 <h2 id="生成图表">生成图表</h2>
 <p>如何分析用户的数据是一个有趣的问题，特别是当我们有大量的数据的时候。除了<code>matlab</code>，我们还可以用<code>numpy</code>+<code>matplotlib</code></p>
@@ -634,7 +634,7 @@ draw_date(<span class="st">&quot;data/2014-01-01-0.json&quot;</span>)</code></pr
 <pre><code>    real    0m43.411s
     user    0m39.226s
     sys 0m0.618s</code></pre>
-<h2 id="line_profiler-python">line_profiler python</h2>
+<h3 id="line_profiler-python">line_profiler python</h3>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> ARCHFLAGS=<span class="st">&quot;-Wno-error=unused-command-line-argument-hard-error-in-future&quot;</span> easy_install line_profiler</code></pre></div>
 <p>然后在我们的<code>parse_data.py</code>的<code>handle_json</code>前面加上<code>@profile</code></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="at">@profile</span>
@@ -680,7 +680,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     28        19          349     18.4      0.0      f.close()
     29        19           20      1.1      0.0      return datacount, dataarray</code></pre>
 <p>于是我们就发现我们的瓶颈就是从读取<code>created_at</code>，即创建时间。。。以及解析json，反而不是我们关心的IO，果然<code>readline</code>很强大。</p>
-<h2 id="memory_profiler">memory_profiler</h2>
+<h3 id="memory_profiler">memory_profiler</h3>
 <p>首先我们需要install memory_profiler:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">pip</span> install -U memory_profiler
 $ <span class="kw">pip</span> install psutil</code></pre></div>
@@ -706,7 +706,7 @@ Line #    Mem usage    Increment   Line Contents
     25
     26                                 f.close()
     27                                 return datacount, dataarray</code></pre>
-<h2 id="objgraph-python">objgraph python</h2>
+<h3 id="objgraph-python">objgraph python</h3>
 <p>安装objgraph</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">pip</span> install objgraph</code></pre></div>
 <p>我们需要调用他</p>
@@ -1368,7 +1368,7 @@ pipe.execute()</code></pre></div>
 <p>重造轮子是重新创造一个已有的或是已被其他人优化的基本方法。</p>
 </blockquote>
 <p>最近萌发了一个想法写游戏引擎，之前想着做一个JavaScript前端框架。看看，这个思路是怎么来的。</p>
-<h2 id="一lettuce构建过程">一、<a href="https://github.com/phodal/lettuce">Lettuce</a>构建过程</h2>
+<h2 id="lettuce构建过程"><a href="https://github.com/phodal/lettuce">Lettuce</a>构建过程</h2>
 <blockquote>
 <p>Lettuce是一个简约的移动开发框架。</p>
 </blockquote>
@@ -1419,97 +1419,97 @@ pipe.execute()</code></pre></div>
 <li><a href="https://github.com/cujojs/when" class="uri">https://github.com/cujojs/when</a></li>
 </ul>
 <p>但是显然，他们都太重了。事实上，对于一个库来说，80%的人只需要其中20%的代码。于是，找到了<a href="https://github.com/stackp/promisejs" class="uri">https://github.com/stackp/promisejs</a>，看了看用法，这就是我们需要的功能:</p>
-<pre><code>function late(n) {
-    var p = new promise.Promise();
-    setTimeout(function() {
-        p.done(null, n);
-    }, n);
-    return p;
-}
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">late</span>(n) <span class="op">{</span>
+    <span class="kw">var</span> p <span class="op">=</span> <span class="kw">new</span> <span class="va">promise</span>.<span class="at">Promise</span>()<span class="op">;</span>
+    <span class="at">setTimeout</span>(<span class="kw">function</span>() <span class="op">{</span>
+        <span class="va">p</span>.<span class="at">done</span>(<span class="kw">null</span><span class="op">,</span> n)<span class="op">;</span>
+    <span class="op">},</span> n)<span class="op">;</span>
+    <span class="cf">return</span> p<span class="op">;</span>
+<span class="op">}</span>
 
-late(100).then(
-    function(err, n) {
-        return late(n + 200);
-    }
-).then(
-    function(err, n) {
-        return late(n + 300);
-    }
-).then(
-    function(err, n) {
-        return late(n + 400);
-    }
-).then(
-    function(err, n) {
-        alert(n);
-    }
-);</code></pre>
+<span class="at">late</span>(<span class="dv">100</span>).<span class="at">then</span>(
+    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
+        <span class="cf">return</span> <span class="at">late</span>(n <span class="op">+</span> <span class="dv">200</span>)<span class="op">;</span>
+    <span class="op">}</span>
+).<span class="at">then</span>(
+    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
+        <span class="cf">return</span> <span class="at">late</span>(n <span class="op">+</span> <span class="dv">300</span>)<span class="op">;</span>
+    <span class="op">}</span>
+).<span class="at">then</span>(
+    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
+        <span class="cf">return</span> <span class="at">late</span>(n <span class="op">+</span> <span class="dv">400</span>)<span class="op">;</span>
+    <span class="op">}</span>
+).<span class="at">then</span>(
+    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
+        <span class="at">alert</span>(n)<span class="op">;</span>
+    <span class="op">}</span>
+)<span class="op">;</span></code></pre></div>
 <p>接着打开看看Promise对象，有我们需要的功能，但是又有一些功能超出我的需求。接着把自己不需要的需求去掉，这里函数最后就变成了</p>
-<pre><code>function Promise() {
-    this._callbacks = [];
-}
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">Promise</span>() <span class="op">{</span>
+    <span class="kw">this</span>.<span class="at">_callbacks</span> <span class="op">=</span> []<span class="op">;</span>
+<span class="op">}</span>
 
-Promise.prototype.then = function(func, context) {
-    var p;
-    if (this._isdone) {
-        p = func.apply(context, this.result);
-    } else {
-        p = new Promise();
-        this._callbacks.push(function () {
-            var res = func.apply(context, arguments);
-            if (res &amp;&amp; typeof res.then === &#39;function&#39;) {
-                res.then(p.done, p);
-            }
-        });
-    }
-    return p;
-};
+<span class="va">Promise</span>.<span class="va">prototype</span>.<span class="at">then</span> <span class="op">=</span> <span class="kw">function</span>(func<span class="op">,</span> context) <span class="op">{</span>
+    <span class="kw">var</span> p<span class="op">;</span>
+    <span class="cf">if</span> (<span class="kw">this</span>.<span class="at">_isdone</span>) <span class="op">{</span>
+        p <span class="op">=</span> <span class="va">func</span>.<span class="at">apply</span>(context<span class="op">,</span> <span class="kw">this</span>.<span class="at">result</span>)<span class="op">;</span>
+    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span>
+        p <span class="op">=</span> <span class="kw">new</span> <span class="at">Promise</span>()<span class="op">;</span>
+        <span class="kw">this</span>.<span class="va">_callbacks</span>.<span class="at">push</span>(<span class="kw">function</span> () <span class="op">{</span>
+            <span class="kw">var</span> res <span class="op">=</span> <span class="va">func</span>.<span class="at">apply</span>(context<span class="op">,</span> arguments)<span class="op">;</span>
+            <span class="cf">if</span> (res <span class="op">&amp;&amp;</span> <span class="kw">typeof</span> <span class="va">res</span>.<span class="at">then</span> <span class="op">===</span> <span class="st">&#39;function&#39;</span>) <span class="op">{</span>
+                <span class="va">res</span>.<span class="at">then</span>(<span class="va">p</span>.<span class="at">done</span><span class="op">,</span> p)<span class="op">;</span>
+            <span class="op">}</span>
+        <span class="op">}</span>)<span class="op">;</span>
+    <span class="op">}</span>
+    <span class="cf">return</span> p<span class="op">;</span>
+<span class="op">};</span>
 
-Promise.prototype.done = function() {
-    this.result = arguments;
-    this._isdone = true;
-    for (var i = 0; i &lt; this._callbacks.length; i++) {
-        this._callbacks[i].apply(null, arguments);
-    }
-    this._callbacks = [];
-};
+<span class="va">Promise</span>.<span class="va">prototype</span>.<span class="at">done</span> <span class="op">=</span> <span class="kw">function</span>() <span class="op">{</span>
+    <span class="kw">this</span>.<span class="at">result</span> <span class="op">=</span> arguments<span class="op">;</span>
+    <span class="kw">this</span>.<span class="at">_isdone</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span>
+    <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="kw">this</span>.<span class="va">_callbacks</span>.<span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span>
+        <span class="kw">this</span>.<span class="at">_callbacks</span>[i].<span class="at">apply</span>(<span class="kw">null</span><span class="op">,</span> arguments)<span class="op">;</span>
+    <span class="op">}</span>
+    <span class="kw">this</span>.<span class="at">_callbacks</span> <span class="op">=</span> []<span class="op">;</span>
+<span class="op">};</span>
 
-var promise = {
-    Promise: Promise
-};</code></pre>
+<span class="kw">var</span> promise <span class="op">=</span> <span class="op">{</span>
+    <span class="dt">Promise</span><span class="op">:</span> Promise
+<span class="op">};</span></code></pre></div>
 <p>需要注意的是: <code>License</code>，不同的软件有不同的License，如MIT、GPL等等。最好能在遵循协议的情况下，使用别人的代码。</p>
 <h3 id="实现第二个需求">实现第二个需求</h3>
 <p>由于，现有的一些Ajax库都比较，最后只好参照着别人的代码自己实现。</p>
-<pre><code>Lettuce.get = function (url, callback) {
-    Lettuce.send(url, &#39;GET&#39;, callback);
-};
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">Lettuce</span>.<span class="at">get</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> callback) <span class="op">{</span>
+    <span class="va">Lettuce</span>.<span class="at">send</span>(url<span class="op">,</span> <span class="st">&#39;GET&#39;</span><span class="op">,</span> callback)<span class="op">;</span>
+<span class="op">};</span>
 
-Lettuce.load = function (url, callback) {
-    Lettuce.send(url, &#39;GET&#39;, callback);
-};
+<span class="va">Lettuce</span>.<span class="at">load</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> callback) <span class="op">{</span>
+    <span class="va">Lettuce</span>.<span class="at">send</span>(url<span class="op">,</span> <span class="st">&#39;GET&#39;</span><span class="op">,</span> callback)<span class="op">;</span>
+<span class="op">};</span>
 
-Lettuce.post = function (url, data, callback) {
-    Lettuce.send(url, &#39;POST&#39;, callback, data);
-};
+<span class="va">Lettuce</span>.<span class="at">post</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> data<span class="op">,</span> callback) <span class="op">{</span>
+    <span class="va">Lettuce</span>.<span class="at">send</span>(url<span class="op">,</span> <span class="st">&#39;POST&#39;</span><span class="op">,</span> callback<span class="op">,</span> data)<span class="op">;</span>
+<span class="op">};</span>
 
-Lettuce.send = function (url, method, callback, data) {
-    data = data || null;
-    var request = new XMLHttpRequest();
-    if (callback instanceof Function) {
-        request.onreadystatechange = function () {
-            if (request.readyState === 4 &amp;&amp; (request.status === 200 || request.status === 0)) {
-                callback(request.responseText);
-            }
-        };
-    }
-    request.open(method, url, true);
-    if (data instanceof Object) {
-        data = JSON.stringify(data);
-        request.setRequestHeader(&#39;Content-Type&#39;, &#39;application/json&#39;);
-    }
-    request.setRequestHeader(&#39;X-Requested-With&#39;, &#39;XMLHttpRequest&#39;);
-    request.send(data);
-};</code></pre>
+<span class="va">Lettuce</span>.<span class="at">send</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> method<span class="op">,</span> callback<span class="op">,</span> data) <span class="op">{</span>
+    data <span class="op">=</span> data <span class="op">||</span> <span class="kw">null</span><span class="op">;</span>
+    <span class="kw">var</span> request <span class="op">=</span> <span class="kw">new</span> <span class="at">XMLHttpRequest</span>()<span class="op">;</span>
+    <span class="cf">if</span> (callback <span class="kw">instanceof</span> Function) <span class="op">{</span>
+        <span class="va">request</span>.<span class="at">onreadystatechange</span> <span class="op">=</span> <span class="kw">function</span> () <span class="op">{</span>
+            <span class="cf">if</span> (<span class="va">request</span>.<span class="at">readyState</span> <span class="op">===</span> <span class="dv">4</span> <span class="op">&amp;&amp;</span> (<span class="va">request</span>.<span class="at">status</span> <span class="op">===</span> <span class="dv">200</span> <span class="op">||</span> <span class="va">request</span>.<span class="at">status</span> <span class="op">===</span> <span class="dv">0</span>)) <span class="op">{</span>
+                <span class="at">callback</span>(<span class="va">request</span>.<span class="at">responseText</span>)<span class="op">;</span>
+            <span class="op">}</span>
+        <span class="op">};</span>
+    <span class="op">}</span>
+    <span class="va">request</span>.<span class="at">open</span>(method<span class="op">,</span> url<span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span>
+    <span class="cf">if</span> (data <span class="kw">instanceof</span> Object) <span class="op">{</span>
+        data <span class="op">=</span> <span class="va">JSON</span>.<span class="at">stringify</span>(data)<span class="op">;</span>
+        <span class="va">request</span>.<span class="at">setRequestHeader</span>(<span class="st">&#39;Content-Type&#39;</span><span class="op">,</span> <span class="st">&#39;application/json&#39;</span>)<span class="op">;</span>
+    <span class="op">}</span>
+    <span class="va">request</span>.<span class="at">setRequestHeader</span>(<span class="st">&#39;X-Requested-With&#39;</span><span class="op">,</span> <span class="st">&#39;XMLHttpRequest&#39;</span>)<span class="op">;</span>
+    <span class="va">request</span>.<span class="at">send</span>(data)<span class="op">;</span>
+<span class="op">};</span></code></pre></div>
 <section class="footnotes">
 <hr />
 <ol>

@@ -46,7 +46,7 @@ pdf: markdown
 		--normalize \
 		--smart \
 		--toc \
-		--latex-engine=xelatex 
+		--latex-engine=`which xelatex`
 
 mobi: epub
 	# Symlink bin: ln -s /path/to/kindlegen /usr/local/bin

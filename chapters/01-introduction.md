@@ -65,23 +65,25 @@ jQuery[^jQuery]在发布版本``2.1.3``，一共有152个commit。我们可以�
 
 通常我们都会找Document，如果没有的话，你会找什么?看源代码，还是看测试?
 
-    it("specifying response when you need it", function (done) {
-        var doneFn = jasmine.createSpy("success");
+```javascript
+it("specifying response when you need it", function (done) {
+	var doneFn = jasmine.createSpy("success");
 
-        lettuce.get('/some/cool/url', function (result) {
-            expect(result).toEqual("awesome response");
-            done();
-        });
+	lettuce.get('/some/cool/url', function (result) {
+		expect(result).toEqual("awesome response");
+		done();
+	});
 
-        expect(jasmine.Ajax.requests.mostRecent().url).toBe('/some/cool/url');
-        expect(doneFn).not.toHaveBeenCalled();
+	expect(jasmine.Ajax.requests.mostRecent().url).toBe('/some/cool/url');
+	expect(doneFn).not.toHaveBeenCalled();
 
-        jasmine.Ajax.requests.mostRecent().respondWith({
-            "status": 200,
-            "contentType": 'text/plain',
-            "responseText": 'awesome response'
-        });
-    });
+	jasmine.Ajax.requests.mostRecent().respondWith({
+		"status": 200,
+		"contentType": 'text/plain',
+		"responseText": 'awesome response'
+	});
+});
+```
 
 代码来源: [https://github.com/phodal/lettuce](https://github.com/phodal/lettuce)
 
@@ -97,17 +99,19 @@ jQuery[^jQuery]在发布版本``2.1.3``，一共有152个commit。我们可以�
 
 也许你已经知道了``Selenium``、``Jasmine``、``Cucumber``等等的框架，看到过类似于下面的测试
 
-	 Ajax
-	   ✓ specifying response when you need it
-	   ✓ specifying html when you need it
-	   ✓ should be post to some where
-	 Class
-	   ✓ respects instanceof
-	   ✓ inherits methods (also super)
-	   ✓ extend methods
-	 Effect
-	   ✓ should be able fadein elements
-	   ✓ should be able fadeout elements
+```
+ Ajax
+   ✓ specifying response when you need it
+   ✓ specifying html when you need it
+   ✓ should be post to some where
+ Class
+   ✓ respects instanceof
+   ✓ inherits methods (also super)
+   ✓ extend methods
+ Effect
+   ✓ should be able fadein elements
+   ✓ should be able fadeout elements
+```
 
 代码来源: [https://github.com/phodal/lettuce](https://github.com/phodal/lettuce)
 	   
@@ -123,17 +127,18 @@ lettuce.js	| 98.58% (209 / 212)| 82.98%(78 / 94) | 100.00% (54 / 54) | 98.58% (2
 
 虽然node.js不算是一门语言，但是因为我们用的node，下面的是一个简单的``.travis.yml``示例:
 
-	language: node_js
-	node_js:
-	    - "0.10"
+```yml
+language: node_js
+node_js:
+	- "0.10"
 
-	notifications:
-	    email: false
+notifications:
+	email: false
 
-	before_install: npm install -g grunt-cli
-	install: npm install
-	after_success: CODECLIMATE_REPO_TOKEN=321480822fc37deb0de70a11931b4cb6a2a3cc411680e8f4569936ac8ffbb0ab codeclimate < coverage/lcov.info
-
+before_install: npm install -g grunt-cli
+install: npm install
+after_success: CODECLIMATE_REPO_TOKEN=321480822fc37deb0de70a11931b4cb6a2a3cc411680e8f4569936ac8ffbb0ab codeclimate < coverage/lcov.info
+```
 
 代码来源: [https://github.com/phodal/lettuce](https://github.com/phodal/lettuce)
 
@@ -153,28 +158,30 @@ CI对于一个开发者在不同城市开发同一项目上来说是很重要的
 
 先看看上面的ajax类:
 
-	Lettuce.get = function (url, callback) {
-	    Lettuce.send(url, 'GET', callback);
-	};
+```javascript
+Lettuce.get = function (url, callback) {
+	Lettuce.send(url, 'GET', callback);
+};
 
-	Lettuce.send = function (url, method, callback, data) {
-	    data = data || null;
-	    var request = new XMLHttpRequest();
-	    if (callback instanceof Function) {
-	        request.onreadystatechange = function () {
-	            if (request.readyState === 4 && (request.status === 200 || request.status === 0)) {
-	                callback(request.responseText);
-	            }
-	        };
-	    }
-	    request.open(method, url, true);
-	    if (data instanceof Object) {
-	        data = JSON.stringify(data);
-	        request.setRequestHeader('Content-Type', 'application/json');
-	    }
-	    request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-	    request.send(data);
-	};
+Lettuce.send = function (url, method, callback, data) {
+	data = data || null;
+	var request = new XMLHttpRequest();
+	if (callback instanceof Function) {
+		request.onreadystatechange = function () {
+			if (request.readyState === 4 && (request.status === 200 || request.status === 0)) {
+				callback(request.responseText);
+			}
+		};
+	}
+	request.open(method, url, true);
+	if (data instanceof Object) {
+		data = JSON.stringify(data);
+		request.setRequestHeader('Content-Type', 'application/json');
+	}
+	request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+	request.send(data);
+};
+```
 
 代码来源: [https://github.com/phodal/lettuce](https://github.com/phodal/lettuce)
 

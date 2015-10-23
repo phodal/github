@@ -144,23 +144,25 @@ jQuery[^jQuery]在发布版本``2.1.3``，一共有152个commit。我们可以�
 
 通常我们都会找Document，如果没有的话，你会找什么?看源代码，还是看测试?
 
-    it("specifying response when you need it", function (done) {
-        var doneFn = jasmine.createSpy("success");
+```javascript
+it("specifying response when you need it", function (done) {
+	var doneFn = jasmine.createSpy("success");
 
-        lettuce.get('/some/cool/url', function (result) {
-            expect(result).toEqual("awesome response");
-            done();
-        });
+	lettuce.get('/some/cool/url', function (result) {
+		expect(result).toEqual("awesome response");
+		done();
+	});
 
-        expect(jasmine.Ajax.requests.mostRecent().url).toBe('/some/cool/url');
-        expect(doneFn).not.toHaveBeenCalled();
+	expect(jasmine.Ajax.requests.mostRecent().url).toBe('/some/cool/url');
+	expect(doneFn).not.toHaveBeenCalled();
 
-        jasmine.Ajax.requests.mostRecent().respondWith({
-            "status": 200,
-            "contentType": 'text/plain',
-            "responseText": 'awesome response'
-        });
-    });
+	jasmine.Ajax.requests.mostRecent().respondWith({
+		"status": 200,
+		"contentType": 'text/plain',
+		"responseText": 'awesome response'
+	});
+});
+```
 
 代码来源: [https://github.com/phodal/lettuce](https://github.com/phodal/lettuce)
 
@@ -176,17 +178,19 @@ jQuery[^jQuery]在发布版本``2.1.3``，一共有152个commit。我们可以�
 
 也许你已经知道了``Selenium``、``Jasmine``、``Cucumber``等等的框架，看到过类似于下面的测试
 
-	 Ajax
-	   ✓ specifying response when you need it
-	   ✓ specifying html when you need it
-	   ✓ should be post to some where
-	 Class
-	   ✓ respects instanceof
-	   ✓ inherits methods (also super)
-	   ✓ extend methods
-	 Effect
-	   ✓ should be able fadein elements
-	   ✓ should be able fadeout elements
+```
+ Ajax
+   ✓ specifying response when you need it
+   ✓ specifying html when you need it
+   ✓ should be post to some where
+ Class
+   ✓ respects instanceof
+   ✓ inherits methods (also super)
+   ✓ extend methods
+ Effect
+   ✓ should be able fadein elements
+   ✓ should be able fadeout elements
+```
 
 代码来源: [https://github.com/phodal/lettuce](https://github.com/phodal/lettuce)
 	   
@@ -202,17 +206,18 @@ lettuce.js	| 98.58% (209 / 212)| 82.98%(78 / 94) | 100.00% (54 / 54) | 98.58% (2
 
 虽然node.js不算是一门语言，但是因为我们用的node，下面的是一个简单的``.travis.yml``示例:
 
-	language: node_js
-	node_js:
-	    - "0.10"
+```yml
+language: node_js
+node_js:
+	- "0.10"
 
-	notifications:
-	    email: false
+notifications:
+	email: false
 
-	before_install: npm install -g grunt-cli
-	install: npm install
-	after_success: CODECLIMATE_REPO_TOKEN=321480822fc37deb0de70a11931b4cb6a2a3cc411680e8f4569936ac8ffbb0ab codeclimate < coverage/lcov.info
-
+before_install: npm install -g grunt-cli
+install: npm install
+after_success: CODECLIMATE_REPO_TOKEN=321480822fc37deb0de70a11931b4cb6a2a3cc411680e8f4569936ac8ffbb0ab codeclimate < coverage/lcov.info
+```
 
 代码来源: [https://github.com/phodal/lettuce](https://github.com/phodal/lettuce)
 
@@ -232,28 +237,30 @@ CI对于一个开发者在不同城市开发同一项目上来说是很重要的
 
 先看看上面的ajax类:
 
-	Lettuce.get = function (url, callback) {
-	    Lettuce.send(url, 'GET', callback);
-	};
+```javascript
+Lettuce.get = function (url, callback) {
+	Lettuce.send(url, 'GET', callback);
+};
 
-	Lettuce.send = function (url, method, callback, data) {
-	    data = data || null;
-	    var request = new XMLHttpRequest();
-	    if (callback instanceof Function) {
-	        request.onreadystatechange = function () {
-	            if (request.readyState === 4 && (request.status === 200 || request.status === 0)) {
-	                callback(request.responseText);
-	            }
-	        };
-	    }
-	    request.open(method, url, true);
-	    if (data instanceof Object) {
-	        data = JSON.stringify(data);
-	        request.setRequestHeader('Content-Type', 'application/json');
-	    }
-	    request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-	    request.send(data);
-	};
+Lettuce.send = function (url, method, callback, data) {
+	data = data || null;
+	var request = new XMLHttpRequest();
+	if (callback instanceof Function) {
+		request.onreadystatechange = function () {
+			if (request.readyState === 4 && (request.status === 200 || request.status === 0)) {
+				callback(request.responseText);
+			}
+		};
+	}
+	request.open(method, url, true);
+	if (data instanceof Object) {
+		data = JSON.stringify(data);
+		request.setRequestHeader('Content-Type', 'application/json');
+	}
+	request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+	request.send(data);
+};
+```
 
 代码来源: [https://github.com/phodal/lettuce](https://github.com/phodal/lettuce)
 
@@ -301,18 +308,24 @@ CI对于一个开发者在不同城市开发同一项目上来说是很重要的
 
 如果是第一次使用Git，你需要设置署名和邮箱：
 
-    $ git config --global user.name "用户名"
-    $ git config --global user.email "电子邮箱"
+```
+$ git config --global user.name "用户名"
+$ git config --global user.email "电子邮箱"
+```
 
 将代码仓库clone到本地，其实就是将代码复制到你的机器里，并交由Git来管理：
 
-    $ git clone git@github.com:someone/symfony-docs-chs.git
+```
+$ git clone git@github.com:someone/symfony-docs-chs.git
+```
     
 你可以修改复制到本地的代码了（symfony-docs-chs项目里都是rst格式的文档）。当你觉得完成了一定的工作量，想做个阶段性的提交：
 
 向这个本地的代码仓库添加当前目录的所有改动：
 
-    $ git add .
+```
+$ git add .
+```
     
 或者只是添加某个文件：
 
@@ -326,18 +339,21 @@ CI对于一个开发者在不同城市开发同一项目上来说是很重要的
 
 > …or create a new repository on the command line
 
-    echo "# github-roam" >> README.md
-	git init
-	git add README.md
-	git commit -m "first commit"
-	git remote add origin git@github.com:phodal/github-roam.git
-	git push -u origin master
+```
+echo "# github-roam" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:phodal/github-roam.git
+git push -u origin master
+```
 	
 > …or push an existing repository from the command line
 
-	git remote add origin git@github.com:phodal/github-roam.git
-	git push -u origin master
-		
+```
+git remote add origin git@github.com:phodal/github-roam.git
+git push -u origin master
+```		
 	
 
 #Github项目分析一
@@ -618,7 +634,7 @@ $time python handle.py
     sys	0m0.618s
 ```
 
-##line_profiler python
+###line_profiler python
 
 ```bash
 sudo ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future" easy_install line_profiler
@@ -681,7 +697,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 
 于是我们就发现我们的瓶颈就是从读取``created_at``，即创建时间。。。以及解析json，反而不是我们关心的IO，果然``readline``很强大。
 
-##memory_profiler
+###memory_profiler
 
 首先我们需要install memory_profiler:
 
@@ -720,7 +736,7 @@ Line #    Mem usage    Increment   Line Contents
     27                                 return datacount, dataarray
 ```
 
-##objgraph python
+###objgraph python
 
 安装objgraph
 
@@ -1518,7 +1534,7 @@ C | 2
 
 最近萌发了一个想法写游戏引擎，之前想着做一个JavaScript前端框架。看看，这个思路是怎么来的。
 
-##一、[Lettuce](https://github.com/phodal/lettuce)构建过程
+##[Lettuce](https://github.com/phodal/lettuce)构建过程
 
 > Lettuce是一个简约的移动开发框架。
 
@@ -1579,66 +1595,70 @@ C | 2
 
 但是显然，他们都太重了。事实上，对于一个库来说，80%的人只需要其中20%的代码。于是，找到了[https://github.com/stackp/promisejs](https://github.com/stackp/promisejs)，看了看用法，这就是我们需要的功能:
 
-    function late(n) {
-        var p = new promise.Promise();
-        setTimeout(function() {
-            p.done(null, n);
-        }, n);
-        return p;
-    }
+```javascript
+function late(n) {
+    var p = new promise.Promise();
+    setTimeout(function() {
+        p.done(null, n);
+    }, n);
+    return p;
+}
 
-    late(100).then(
-        function(err, n) {
-            return late(n + 200);
-        }
-    ).then(
-        function(err, n) {
-            return late(n + 300);
-        }
-    ).then(
-        function(err, n) {
-            return late(n + 400);
-        }
-    ).then(
-        function(err, n) {
-            alert(n);
-        }
-    );
+late(100).then(
+    function(err, n) {
+        return late(n + 200);
+    }
+).then(
+    function(err, n) {
+        return late(n + 300);
+    }
+).then(
+    function(err, n) {
+        return late(n + 400);
+    }
+).then(
+    function(err, n) {
+        alert(n);
+    }
+);
+```
 
 接着打开看看Promise对象，有我们需要的功能，但是又有一些功能超出我的需求。接着把自己不需要的需求去掉，这里函数最后就变成了
 
-    function Promise() {
-        this._callbacks = [];
+```javascript
+function Promise() {
+    this._callbacks = [];
+}
+
+Promise.prototype.then = function(func, context) {
+    var p;
+    if (this._isdone) {
+        p = func.apply(context, this.result);
+    } else {
+        p = new Promise();
+        this._callbacks.push(function () {
+            var res = func.apply(context, arguments);
+            if (res && typeof res.then === 'function') {
+                res.then(p.done, p);
+            }
+        });
     }
+    return p;
+};
 
-    Promise.prototype.then = function(func, context) {
-        var p;
-        if (this._isdone) {
-            p = func.apply(context, this.result);
-        } else {
-            p = new Promise();
-            this._callbacks.push(function () {
-                var res = func.apply(context, arguments);
-                if (res && typeof res.then === 'function') {
-                    res.then(p.done, p);
-                }
-            });
-        }
-        return p;
-    };
+Promise.prototype.done = function() {
+    this.result = arguments;
+    this._isdone = true;
+    for (var i = 0; i < this._callbacks.length; i++) {
+        this._callbacks[i].apply(null, arguments);
+    }
+    this._callbacks = [];
+};
 
-    Promise.prototype.done = function() {
-        this.result = arguments;
-        this._isdone = true;
-        for (var i = 0; i < this._callbacks.length; i++) {
-            this._callbacks[i].apply(null, arguments);
-        }
-        this._callbacks = [];
-    };
-
-    var promise = {
-        Promise: Promise
-    };
+var promise = {
+    Promise: Promise
+};
+```
 
 需要注意的是: ``License``，不同的软件有不同的License，如MIT、GPL等等。最好能在遵循协议的情况下，使用别人的代码。
 
@@ -1646,34 +1666,37 @@ C | 2
 
 由于，现有的一些Ajax库都比较，最后只好参照着别人的代码自己实现。
 
-    Lettuce.get = function (url, callback) {
-        Lettuce.send(url, 'GET', callback);
-    };
+```javascript
+Lettuce.get = function (url, callback) {
+    Lettuce.send(url, 'GET', callback);
+};
 
-    Lettuce.load = function (url, callback) {
-        Lettuce.send(url, 'GET', callback);
-    };
+Lettuce.load = function (url, callback) {
+    Lettuce.send(url, 'GET', callback);
+};
 
-    Lettuce.post = function (url, data, callback) {
-        Lettuce.send(url, 'POST', callback, data);
-    };
+Lettuce.post = function (url, data, callback) {
+    Lettuce.send(url, 'POST', callback, data);
+};
 
-    Lettuce.send = function (url, method, callback, data) {
-        data = data || null;
-        var request = new XMLHttpRequest();
-        if (callback instanceof Function) {
-            request.onreadystatechange = function () {
-                if (request.readyState === 4 && (request.status === 200 || request.status === 0)) {
-                    callback(request.responseText);
-                }
-            };
-        }
-        request.open(method, url, true);
-        if (data instanceof Object) {
-            data = JSON.stringify(data);
-            request.setRequestHeader('Content-Type', 'application/json');
-        }
-        request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        request.send(data);
-    };
+Lettuce.send = function (url, method, callback, data) {
+    data = data || null;
+    var request = new XMLHttpRequest();
+    if (callback instanceof Function) {
+        request.onreadystatechange = function () {
+            if (request.readyState === 4 && (request.status === 200 || request.status === 0)) {
+                callback(request.responseText);
+            }
+        };
+    }
+    request.open(method, url, true);
+    if (data instanceof Object) {
+        data = JSON.stringify(data);
+        request.setRequestHeader('Content-Type', 'application/json');
+    }
+    request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    request.send(data);
+};
+```
+
 
