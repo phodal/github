@@ -92,37 +92,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li><a href="#github">Github</a></li>
 </ul></li>
-<li><a href="#github项目分析一">Github项目分析一</a><ul>
-<li><a href="#生成图表">生成图表</a><ul>
-<li><a href="#数据解析">数据解析</a></li>
-<li><a href="#matplotlib">Matplotlib</a></li>
-</ul></li>
-<li><a href="#每周分析">每周分析</a><ul>
-<li><a href="#python-github-每周情况分析">python github 每周情况分析</a></li>
-<li><a href="#python-数据分析">Python 数据分析</a></li>
-<li><a href="#python-matplotlib图表">Python Matplotlib图表</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#github项目分析二">Github项目分析二</a><ul>
-<li><a href="#time-python分析">Time Python分析</a><ul>
-<li><a href="#line_profiler-python">line_profiler python</a></li>
-<li><a href="#memory_profiler">memory_profiler</a></li>
-<li><a href="#objgraph-python">objgraph python</a></li>
-</ul></li>
-<li><a href="#python-sqlite3-查询数据">python SQLite3 查询数据</a><ul>
-<li><a href="#数据导入">数据导入</a></li>
-</ul></li>
-<li><a href="#redis">Redis</a><ul>
-<li><a href="#redis-查询">Redis 查询</a></li>
-</ul></li>
-<li><a href="#邻近算法">邻近算法</a></li>
-</ul></li>
 <li><a href="#github流行项目分析">Github流行项目分析</a></li>
+<li><a href="#创建你的项目">创建你的项目</a></li>
 <li><a href="#创建pull-request">创建Pull Request</a><ul>
 <li><a href="#第一个">第一个</a></li>
 <li><a href="#google-ngx-pagespeed">Google Ngx Pagespeed</a></li>
 </ul></li>
-<li><a href="#创建你的项目">创建你的项目</a></li>
 <li><a href="#构建github项目">构建Github项目</a><ul>
 <li><a href="#从模块分离到测试">从模块分离到测试</a><ul>
 <li><a href="#skillock模块化">Skillock模块化</a></li>
@@ -188,6 +163,31 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#实现第一个需求">实现第一个需求</a></li>
 <li><a href="#实现第二个需求">实现第二个需求</a></li>
 </ul></li>
+</ul></li>
+<li><a href="#github项目分析一">Github项目分析一</a><ul>
+<li><a href="#生成图表">生成图表</a><ul>
+<li><a href="#数据解析">数据解析</a></li>
+<li><a href="#matplotlib">Matplotlib</a></li>
+</ul></li>
+<li><a href="#每周分析">每周分析</a><ul>
+<li><a href="#python-github-每周情况分析">python github 每周情况分析</a></li>
+<li><a href="#python-数据分析">Python 数据分析</a></li>
+<li><a href="#python-matplotlib图表">Python Matplotlib图表</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#github项目分析二">Github项目分析二</a><ul>
+<li><a href="#time-python分析">Time Python分析</a><ul>
+<li><a href="#line_profiler-python">line_profiler python</a></li>
+<li><a href="#memory_profiler">memory_profiler</a></li>
+<li><a href="#objgraph-python">objgraph python</a></li>
+</ul></li>
+<li><a href="#python-sqlite3-查询数据">python SQLite3 查询数据</a><ul>
+<li><a href="#数据导入">数据导入</a></li>
+</ul></li>
+<li><a href="#redis">Redis</a><ul>
+<li><a href="#redis-查询">Redis 查询</a></li>
+</ul></li>
+<li><a href="#邻近算法">邻近算法</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -469,546 +469,6 @@ git push -u origin master</code></pre>
 </blockquote>
 <pre><code>git remote add origin git@github.com:phodal/github-roam.git
 git push -u origin master</code></pre>
-<h1 id="github项目分析一">Github项目分析一</h1>
-<h2 id="生成图表">生成图表</h2>
-<p>如何分析用户的数据是一个有趣的问题，特别是当我们有大量的数据的时候。除了<code>matlab</code>，我们还可以用<code>numpy</code>+<code>matplotlib</code></p>
-<p>数据可以在这边寻找到</p>
-<p><a href="https://github.com/gmszone/ml" class="uri">https://github.com/gmszone/ml</a></p>
-<p>最后效果图</p>
-<figure>
-<img src="./img/2014-01-01.png" alt="2014 01 01" /><figcaption>2014 01 01</figcaption>
-</figure>
-<p>要解析的json文件位于<code>data/2014-01-01-0.json</code>，大小6.6M，显然我们可能需要用每次只读一行的策略，这足以解释为什么诸如sublime打开的时候很慢，而现在我们只需要里面的json数据中的创建时间。。</p>
-<p>==,这个文件代表什么？</p>
-<p><strong>2014年1月1日零时到一时，用户在github上的操作，这里的用户指的是很多。。一共有4814条数据，从commit、create到issues都有。</strong></p>
-<h3 id="数据解析">数据解析</h3>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> json
-<span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
-    line <span class="op">=</span> f.readline()</code></pre></div>
-<p>然后再解析json</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> dateutil.parser
-
-lin <span class="op">=</span> json.loads(line)
-date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])</code></pre></div>
-<p>这里用到了<code>dateutil</code>，因为新鲜出炉的数据是string需要转换为<code>dateutil</code>，再到数据放到数组里头。最后有就有了<code>parse_data</code></p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> parse_data(jsonfile):
-    f <span class="op">=</span> <span class="bu">open</span>(jsonfile, <span class="st">&quot;r&quot;</span>)
-    dataarray <span class="op">=</span> []
-    datacount <span class="op">=</span> <span class="dv">0</span>
-
-    <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
-        line <span class="op">=</span> f.readline()
-        lin <span class="op">=</span> json.loads(line)
-        date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
-        datacount <span class="op">+=</span> <span class="dv">1</span>
-        dataarray.append(date.minute)
-
-    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]
-    f.close()
-    <span class="cf">return</span> minuteswithcount</code></pre></div>
-<p>下面这句代码就是将上面的解析为</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]</code></pre></div>
-<p>这样的数组以便于解析</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">[(<span class="dv">0</span>, <span class="dv">92</span>), (<span class="dv">1</span>, <span class="dv">67</span>), (<span class="dv">2</span>, <span class="dv">86</span>), (<span class="dv">3</span>, <span class="dv">73</span>), (<span class="dv">4</span>, <span class="dv">76</span>), (<span class="dv">5</span>, <span class="dv">67</span>), (<span class="dv">6</span>, <span class="dv">61</span>), (<span class="dv">7</span>, <span class="dv">71</span>), (<span class="dv">8</span>, <span class="dv">62</span>), (<span class="dv">9</span>, <span class="dv">71</span>), (<span class="dv">10</span>, <span class="dv">70</span>), (<span class="dv">11</span>, <span class="dv">79</span>), (<span class="dv">12</span>, <span class="dv">62</span>), (<span class="dv">13</span>, <span class="dv">67</span>), (<span class="dv">14</span>, <span class="dv">76</span>), (<span class="dv">15</span>, <span class="dv">67</span>), (<span class="dv">16</span>, <span class="dv">74</span>), (<span class="dv">17</span>, <span class="dv">48</span>), (<span class="dv">18</span>, <span class="dv">78</span>), (<span class="dv">19</span>, <span class="dv">73</span>), (<span class="dv">20</span>, <span class="dv">89</span>), (<span class="dv">21</span>, <span class="dv">62</span>), (<span class="dv">22</span>, <span class="dv">74</span>), (<span class="dv">23</span>, <span class="dv">61</span>), (<span class="dv">24</span>, <span class="dv">71</span>), (<span class="dv">25</span>, <span class="dv">49</span>), (<span class="dv">26</span>, <span class="dv">59</span>), (<span class="dv">27</span>, <span class="dv">59</span>), (<span class="dv">28</span>, <span class="dv">58</span>), (<span class="dv">29</span>, <span class="dv">74</span>), (<span class="dv">30</span>, <span class="dv">69</span>), (<span class="dv">31</span>, <span class="dv">59</span>), (<span class="dv">32</span>, <span class="dv">89</span>), (<span class="dv">33</span>, <span class="dv">67</span>), (<span class="dv">34</span>, <span class="dv">66</span>), (<span class="dv">35</span>, <span class="dv">77</span>), (<span class="dv">36</span>, <span class="dv">64</span>), (<span class="dv">37</span>, <span class="dv">71</span>), (<span class="dv">38</span>, <span class="dv">75</span>), (<span class="dv">39</span>, <span class="dv">66</span>), (<span class="dv">40</span>, <span class="dv">62</span>), (<span class="dv">41</span>, <span class="dv">77</span>), (<span class="dv">42</span>, <span class="dv">82</span>), (<span class="dv">43</span>, <span class="dv">95</span>), (<span class="dv">44</span>, <span class="dv">77</span>), (<span class="dv">45</span>, <span class="dv">65</span>), (<span class="dv">46</span>, <span class="dv">59</span>), (<span class="dv">47</span>, <span class="dv">60</span>), (<span class="dv">48</span>, <span class="dv">54</span>), (<span class="dv">49</span>, <span class="dv">66</span>), (<span class="dv">50</span>, <span class="dv">74</span>), (<span class="dv">51</span>, <span class="dv">61</span>), (<span class="dv">52</span>, <span class="dv">71</span>), (<span class="dv">53</span>, <span class="dv">90</span>), (<span class="dv">54</span>, <span class="dv">64</span>), (<span class="dv">55</span>, <span class="dv">67</span>), (<span class="dv">56</span>, <span class="dv">67</span>), (<span class="dv">57</span>, <span class="dv">55</span>), (<span class="dv">58</span>, <span class="dv">68</span>), (<span class="dv">59</span>, <span class="dv">91</span>)]</code></pre></div>
-<h3 id="matplotlib">Matplotlib</h3>
-<p>开始之前需要安装``matplotlib</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> pip install matplotlib</code></pre></div>
-<p>然后引入这个库</p>
-<pre><code>  import matplotlib.pyplot as plt</code></pre>
-<p>如上面的那个结果，只需要</p>
-<pre><code class="python">
-    plt.figure(figsize=(8,4))
-    plt.plot(x, y,label = files)
-    plt.legend()
-    plt.show()
-</code></pre>
-<p>最后代码可见</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/env python</span>
-<span class="co"># -*- coding: utf-8 -*-</span>
-
-<span class="im">import</span> json
-<span class="im">import</span> dateutil.parser
-<span class="im">import</span> numpy <span class="im">as</span> np
-<span class="im">import</span> matplotlib.mlab <span class="im">as</span> mlab
-<span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
-
-
-<span class="kw">def</span> parse_data(jsonfile):
-    f <span class="op">=</span> <span class="bu">open</span>(jsonfile, <span class="st">&quot;r&quot;</span>)
-    dataarray <span class="op">=</span> []
-    datacount <span class="op">=</span> <span class="dv">0</span>
-
-    <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
-        line <span class="op">=</span> f.readline()
-        lin <span class="op">=</span> json.loads(line)
-        date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
-        datacount <span class="op">+=</span> <span class="dv">1</span>
-        dataarray.append(date.minute)
-
-    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]
-    f.close()
-    <span class="cf">return</span> minuteswithcount
-
-
-<span class="kw">def</span> draw_date(files):
-    x <span class="op">=</span> []
-    y <span class="op">=</span> []
-    mwcs <span class="op">=</span> parse_data(files)
-    <span class="cf">for</span> mwc <span class="op">in</span> mwcs:
-        x.append(mwc[<span class="dv">0</span>])
-        y.append(mwc[<span class="dv">1</span>])
-
-    plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))
-    plt.plot(x, y,label <span class="op">=</span> files)
-    plt.legend()
-    plt.show()
-
-draw_date(<span class="st">&quot;data/2014-01-01-0.json&quot;</span>)</code></pre></div>
-<h2 id="每周分析">每周分析</h2>
-<p>继上篇之后，我们就可以分析用户的每周提交情况，以得出用户的真正的工具效率，每个程序员的工作时间可能是不一样的，如</p>
-<figure>
-<img src="./img/phodal-results.png" alt="Phodal Huang’s Report" /><figcaption>Phodal Huang’s Report</figcaption>
-</figure>
-<p>这是我的每周情况，显然如果把星期六移到前面的话，随着工作时间的增长，在github上的使用在下降，作为一个</p>
-<pre><code>  a fulltime hacker who works best in the evening (around 8 pm).</code></pre>
-<p>不过这个是osrc的分析结果。</p>
-<h3 id="python-github-每周情况分析">python github 每周情况分析</h3>
-<p>看一张分析后的结果</p>
-<figure>
-<img src="./img/feb-results.png" alt="Feb Results" /><figcaption>Feb Results</figcaption>
-</figure>
-<p>结果正好与我的情况相反？似乎图上是这么说的，但是数据上是这样的情况。</p>
-<pre><code>data
-├── 2014-01-01-0.json
-├── 2014-02-01-0.json
-├── 2014-02-02-0.json
-├── 2014-02-03-0.json
-├── 2014-02-04-0.json
-├── 2014-02-05-0.json
-├── 2014-02-06-0.json
-├── 2014-02-07-0.json
-├── 2014-02-08-0.json
-├── 2014-02-09-0.json
-├── 2014-02-10-0.json
-├── 2014-02-11-0.json
-├── 2014-02-12-0.json
-├── 2014-02-13-0.json
-├── 2014-02-14-0.json
-├── 2014-02-15-0.json
-├── 2014-02-16-0.json
-├── 2014-02-17-0.json
-├── 2014-02-18-0.json
-├── 2014-02-19-0.json
-└── 2014-02-20-0.json</code></pre>
-<p>我们获取是每天晚上0点时的情况，至于为什么是0点，我想这里的数据量可能会比较少。除去1月1号的情况，就是上面的结果，在只有一周的情况时，总会以为因为在国内那时是假期，但是总觉得不是很靠谱，国内的程序员虽然很多，会在github上活跃的可能没有那么多，直至列出每一周的数据时。</p>
-<pre><code>  6570, 7420, 11274, 12073, 12160, 12378, 12897,
-  8474, 7984, 12933, 13504, 13763, 13544, 12940,
-  7119, 7346, 13412, 14008, 12555</code></pre>
-<h3 id="python-数据分析">Python 数据分析</h3>
-<p>重写了一个新的方法用于计算提交数，直至后面才意识到其实我们可以算行数就够了，但是方法上有点hack</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_minutes_counts_with_id(jsonfile):
-    datacount, dataarray <span class="op">=</span> handle_json(jsonfile)
-    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]
-    <span class="cf">return</span> minuteswithcount
-
-
-<span class="kw">def</span> handle_json(jsonfile):
-    f <span class="op">=</span> <span class="bu">open</span>(jsonfile, <span class="st">&quot;r&quot;</span>)
-    dataarray <span class="op">=</span> []
-    datacount <span class="op">=</span> <span class="dv">0</span>
-
-    <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
-        line <span class="op">=</span> f.readline()
-        lin <span class="op">=</span> json.loads(line)
-        date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
-        datacount <span class="op">+=</span> <span class="dv">1</span>
-        dataarray.append(date.minute)
-
-    f.close()
-    <span class="cf">return</span> datacount, dataarray
-
-
-<span class="kw">def</span> get_minutes_count_num(jsonfile):
-    datacount, dataarray <span class="op">=</span> handle_json(jsonfile)
-    <span class="cf">return</span> datacount
-
-
-<span class="kw">def</span> get_month_total():
-    <span class="co">&quot;&quot;&quot;</span>
-
-<span class="co">    :rtype : object</span>
-<span class="co">    &quot;&quot;&quot;</span>
-    monthdaycount <span class="op">=</span> []
-    <span class="cf">for</span> i <span class="op">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">20</span>):
-        <span class="cf">if</span> i <span class="op">&lt;</span> <span class="dv">10</span>:
-            filename <span class="op">=</span> <span class="st">&#39;data/2014-02-0&#39;</span> <span class="op">+</span> i.<span class="fu">__str__</span>() <span class="op">+</span> <span class="st">&#39;-0.json&#39;</span>
-        <span class="cf">else</span>:
-            filename <span class="op">=</span> <span class="st">&#39;data/2014-02-&#39;</span> <span class="op">+</span> i.<span class="fu">__str__</span>() <span class="op">+</span> <span class="st">&#39;-0.json&#39;</span>
-        monthdaycount.append(get_minutes_count_num(filename))
-    <span class="cf">return</span> monthdaycount</code></pre></div>
-<p>接着我们需要去遍历每个结果，后面的后面会发现这个效率真的是太低了，为什么木有多线程？</p>
-<h3 id="python-matplotlib图表">Python Matplotlib图表</h3>
-<p>让我们的matplotlib来做这些图表的工作</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:
-    results <span class="op">=</span> pd.get_month_total()
-    <span class="bu">print</span> results
-
-    plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))
-    plt.plot(results.<span class="fu">__getslice__</span>(<span class="dv">0</span>, <span class="dv">7</span>), label<span class="op">=</span><span class="st">&quot;first week&quot;</span>)
-    plt.plot(results.<span class="fu">__getslice__</span>(<span class="dv">7</span>, <span class="dv">14</span>), label<span class="op">=</span><span class="st">&quot;second week&quot;</span>)
-    plt.plot(results.<span class="fu">__getslice__</span>(<span class="dv">14</span>, <span class="dv">21</span>), label<span class="op">=</span><span class="st">&quot;third week&quot;</span>)
-    plt.legend()
-    plt.show()</code></pre></div>
-<p>蓝色的是第一周，绿色的是第二周，蓝色的是第三周就有了上面的结果。</p>
-<p>我们还需要优化方法，以及多线程的支持。</p>
-<h1 id="github项目分析二">Github项目分析二</h1>
-<p>让我们分析之前的程序，然后再想办法做出优化。网上看到一篇文章<a href="http://www.huyng.com/posts/python-performance-analysis/" class="uri">http://www.huyng.com/posts/python-performance-analysis/</a>讲的就是分析这部分内容的。</p>
-<h2 id="time-python分析">Time Python分析</h2>
-<p>分析程序的运行时间</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ot">$time</span> <span class="kw">python</span> handle.py</code></pre></div>
-<p>结果便是，但是对于我们的分析没有一点意义</p>
-<pre><code>    real    0m43.411s
-    user    0m39.226s
-    sys 0m0.618s</code></pre>
-<h3 id="line_profiler-python">line_profiler python</h3>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> ARCHFLAGS=<span class="st">&quot;-Wno-error=unused-command-line-argument-hard-error-in-future&quot;</span> easy_install line_profiler</code></pre></div>
-<p>然后在我们的<code>parse_data.py</code>的<code>handle_json</code>前面加上<code>@profile</code></p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="at">@profile</span>
-<span class="kw">def</span> handle_json(jsonfile):
-    f <span class="op">=</span> <span class="bu">open</span>(jsonfile, <span class="st">&quot;r&quot;</span>)
-    dataarray <span class="op">=</span> []
-    datacount <span class="op">=</span> <span class="dv">0</span>
-
-    <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
-        line <span class="op">=</span> f.readline()
-        lin <span class="op">=</span> json.loads(line)
-        date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
-        datacount <span class="op">+=</span> <span class="dv">1</span>
-        dataarray.append(date.minute)
-
-    f.close()
-    <span class="cf">return</span> datacount, dataarray</code></pre></div>
-<p>Line_profiler带了一个分析脚本<code>kernprof.py</code>，so</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">kernprof.py</span> -l -v handle.py</code></pre></div>
-<p>我们便会得到下面的结果</p>
-<pre><code>Wrote profile results to handle.py.lprof
-Timer unit: 1e-06 s
-
-File: parse_data.py
-Function: handle_json at line 15
-Total time: 127.332 s
-
-Line #      Hits         Time  Per Hit   % Time  Line Contents
-==============================================================
-    15                                           @profile
-    16                                           def handle_json(jsonfile):
-    17        19          636     33.5      0.0      f = open(jsonfile, &quot;r&quot;)
-    18        19           21      1.1      0.0      dataarray = []
-    19        19           16      0.8      0.0      datacount = 0
-    20
-    21    212373       730344      3.4      0.6      for line in open(jsonfile):
-    22    212354      2826826     13.3      2.2          line = f.readline()
-    23    212354     13848171     65.2     10.9          lin = json.loads(line)
-    24    212354    109427317    515.3     85.9          date = dateutil.parser.parse(lin[&quot;created_at&quot;])
-    25    212354       238112      1.1      0.2          datacount += 1
-    26    212354       260227      1.2      0.2          dataarray.append(date.minute)
-    27
-    28        19          349     18.4      0.0      f.close()
-    29        19           20      1.1      0.0      return datacount, dataarray</code></pre>
-<p>于是我们就发现我们的瓶颈就是从读取<code>created_at</code>，即创建时间。。。以及解析json，反而不是我们关心的IO，果然<code>readline</code>很强大。</p>
-<h3 id="memory_profiler">memory_profiler</h3>
-<p>首先我们需要install memory_profiler:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">pip</span> install -U memory_profiler
-$ <span class="kw">pip</span> install psutil</code></pre></div>
-<p>如上，我们只需要在<code>handle_json</code>前面加上<code>@profile</code></p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">python</span> -m memory_profiler handle.py</code></pre></div>
-<p>于是</p>
-<pre><code>Filename: parse_data.py
-    
-Line #    Mem usage    Increment   Line Contents
-================================================
-    13   39.930 MiB    0.000 MiB   @profile
-    14                             def handle_json(jsonfile):
-    15   39.930 MiB    0.000 MiB       f = open(jsonfile, &quot;r&quot;)
-    16   39.930 MiB    0.000 MiB       dataarray = []
-    17   39.930 MiB    0.000 MiB       datacount = 0
-    18
-    19   40.055 MiB    0.125 MiB       for line in open(jsonfile):
-    20   40.055 MiB    0.000 MiB           line = f.readline()
-    21   40.066 MiB    0.012 MiB           lin = json.loads(line)
-    22   40.055 MiB   -0.012 MiB           date = dateutil.parser.parse(lin[&quot;created_at&quot;])
-    23   40.055 MiB    0.000 MiB           datacount += 1
-    24   40.055 MiB    0.000 MiB           dataarray.append(date.minute)
-    25
-    26                                 f.close()
-    27                                 return datacount, dataarray</code></pre>
-<h3 id="objgraph-python">objgraph python</h3>
-<p>安装objgraph</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">pip</span> install objgraph</code></pre></div>
-<p>我们需要调用他</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pdb<span class="op">;</span></code></pre></div>
-<p>以及在需要调度的地方加上</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pdb.set_trace()</code></pre></div>
-<p>接着会进入<code>command</code>模式</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">(pdb) <span class="im">import</span> objgraph
-(pdb) objgraph.show_most_common_types()</code></pre></div>
-<p>然后我们可以找到。。</p>
-<pre><code>function                   8259
-dict                       2137
-tuple                      1949
-wrapper_descriptor         1625
-list                       1586
-weakref                    1145
-builtin_function_or_method 1117
-method_descriptor          948
-getset_descriptor          708
-type                       705</code></pre>
-<p>也可以用他生成图形，貌似这里是用<code>dot</code>生成的，加上<code>python-xdot</code></p>
-<p>很明显的我们需要一个数据库。</p>
-<p>如果我们每次都要花同样的时间去做一件事，去扫那些数据的话，那么这是最好的打发时间的方法。</p>
-<h2 id="python-sqlite3-查询数据">python SQLite3 查询数据</h2>
-<p>我们创建了一个名为<code>userdata.db</code>的数据库文件，然后创建了一个表，里面有owner,language,eventtype,name url</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> init_db():
-    conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;userdata.db&#39;</span>)
-    c <span class="op">=</span> conn.cursor()
-    c.execute(<span class="st">&#39;&#39;&#39;CREATE TABLE userinfo (owner text, language text, eventtype text, name text, url text)&#39;&#39;&#39;</span>)</code></pre></div>
-<p>接着我们就可以查询数据，这里从结果讲起。</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_count(username):
-    count <span class="op">=</span> <span class="dv">0</span>
-    userinfo <span class="op">=</span> []
-    condition <span class="op">=</span> <span class="st">&#39;select * from userinfo where owener = </span><span class="ch">\&#39;</span><span class="st">&#39;</span> <span class="op">+</span> <span class="bu">str</span>(username) <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\&#39;</span><span class="st">&#39;</span>
-    <span class="cf">for</span> zero <span class="op">in</span> c.execute(condition):
-        count <span class="op">+=</span> <span class="dv">1</span>
-        userinfo.append(zero)
-
-    <span class="cf">return</span> count, userinfo</code></pre></div>
-<p>当我查询<code>gmszone</code>的时候，也就是我自己就会有如下的结果</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;ForkEvent&#39;</span>, u<span class="st">&#39;RESUME&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/RESUME&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;WatchEvent&#39;</span>, u<span class="st">&#39;iot-dashboard&#39;</span>, u<span class="st">&#39;JavaScript&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-dashboard&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;wechat-wordpress&#39;</span>, u<span class="st">&#39;Ruby&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/wechat-wordpress&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;WatchEvent&#39;</span>, u<span class="st">&#39;iot&#39;</span>, u<span class="st">&#39;JavaScript&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;CreateEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;None&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;CreateEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;None&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
-<span class="kw">109</span></code></pre></div>
-<p>一共有109个事件，有<code>Watch</code>,<code>Create</code>,<code>Push</code>,<code>Fork</code>还有其他的， 项目主要有<code>iot</code>,<code>RESUME</code>,<code>iot-dashboard</code>,<code>wechat-wordpress</code>, 接着就是语言了，<code>Tex</code>,<code>Javascript</code>,<code>Ruby</code>,接着就是项目的url了。</p>
-<p>值得注意的是。</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">-rw-r--r--</span>   1 fdhuang staff 905M Apr 12 14:59 userdata.db</code></pre></div>
-<p>这个数据库文件有<strong>905M</strong>，不过查询结果相当让人满意，至少相对于原来的结果来说。</p>
-<p>Python自带了对SQLite3的支持，然而我们还需要安装SQLite3</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">brew</span> install sqlite3</code></pre></div>
-<p>或者是</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> port install sqlite3</code></pre></div>
-<p>或者是Ubuntu的</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> apt-get install sqlite3</code></pre></div>
-<p>openSUSE自然就是</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> zypper install sqlite3</code></pre></div>
-<p>不过，用yast2也很不错，不是么。。</p>
-<h3 id="数据导入">数据导入</h3>
-<p>需要注意的是这里是需要python2.7，起源于对gzip的上下文管理器的支持问题</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> handle_gzip_file(filename):
-    userinfo <span class="op">=</span> []
-    <span class="cf">with</span> gzip.GzipFile(filename) <span class="im">as</span> f:
-        events <span class="op">=</span> [line.decode(<span class="st">&quot;utf-8&quot;</span>, errors<span class="op">=</span><span class="st">&quot;ignore&quot;</span>) <span class="cf">for</span> line <span class="op">in</span> f]
-
-        <span class="cf">for</span> n, line <span class="op">in</span> <span class="bu">enumerate</span>(events):
-            <span class="cf">try</span>:
-                event <span class="op">=</span> json.loads(line)
-            <span class="cf">except</span>:
-
-                <span class="cf">continue</span>
-
-            actor <span class="op">=</span> event[<span class="st">&quot;actor&quot;</span>]
-            attrs <span class="op">=</span> event.get(<span class="st">&quot;actor_attributes&quot;</span>, {})
-            <span class="cf">if</span> actor <span class="op">is</span> <span class="va">None</span> <span class="op">or</span> attrs.get(<span class="st">&quot;type&quot;</span>) <span class="op">!=</span> <span class="st">&quot;User&quot;</span>:
-                <span class="cf">continue</span>
-
-            key <span class="op">=</span> actor.lower()
-
-            repo <span class="op">=</span> event.get(<span class="st">&quot;repository&quot;</span>, {})
-            info <span class="op">=</span> <span class="bu">str</span>(repo.get(<span class="st">&quot;owner&quot;</span>)), <span class="bu">str</span>(repo.get(<span class="st">&quot;language&quot;</span>)), <span class="bu">str</span>(event[<span class="st">&quot;type&quot;</span>]), <span class="bu">str</span>(repo.get(<span class="st">&quot;name&quot;</span>)), <span class="bu">str</span>(
-                repo.get(<span class="st">&quot;url&quot;</span>))
-            userinfo.append(info)
-
-    <span class="cf">return</span> userinfo
-
-<span class="kw">def</span> build_db_with_gzip():
-    init_db()
-    conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;userdata.db&#39;</span>)
-    c <span class="op">=</span> conn.cursor()
-
-    year <span class="op">=</span> <span class="dv">2014</span>
-    month <span class="op">=</span> <span class="dv">3</span>
-
-    <span class="cf">for</span> day <span class="op">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">31</span>):
-        date_re <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&quot;([0-9]</span><span class="sc">{4}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]+)\.json.gz&quot;</span>)
-
-        fn_template <span class="op">=</span> os.path.join(<span class="st">&quot;march&quot;</span>,
-                                   <span class="co">&quot;{year}-{month:02d}-{day:02d}-{n}.json.gz&quot;</span>)
-        kwargs <span class="op">=</span> {<span class="st">&quot;year&quot;</span>: year, <span class="st">&quot;month&quot;</span>: month, <span class="st">&quot;day&quot;</span>: day, <span class="st">&quot;n&quot;</span>: <span class="st">&quot;*&quot;</span>}
-        filenames <span class="op">=</span> glob.glob(fn_template.<span class="bu">format</span>(<span class="op">**</span>kwargs))
-
-        <span class="cf">for</span> filename <span class="op">in</span> filenames:
-            c.executemany(<span class="st">&#39;INSERT INTO userinfo VALUES (?,?,?,?,?)&#39;</span>, handle_gzip_file(filename))
-
-    conn.commit()
-    c.close()</code></pre></div>
-<p><code>executemany</code>可以插入多条数据，对于我们的数据来说，一小时的文件大概有五六千个会符合我们上面的安装，也就是有<code>actor</code>又有<code>type</code>才是我们需要记录的数据，我们只需要统计用户的那些事件，而非全部的事件。</p>
-<p>我们需要去遍历文件，然后找到合适的部分，这里只是要找<code>2014-03-01</code>到<code>2014-03-31</code>的全部事件，而光这些数据的gz文件就有1.26G，同上面那些解压为json文件显得不合适，只能用遍历来处理。</p>
-<p>这里参考了osrc项目中的写法，或者说直接复制过来。</p>
-<p>首先是正规匹配</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">date_re <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&quot;([0-9]</span><span class="sc">{4}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]+)\.json.gz&quot;</span>)</code></pre></div>
-<p>不过主要的还是在于<code>glob.glob</code></p>
-<blockquote>
-<p>glob是python自己带的一个文件操作相关模块，用它可以查找符合自己目的的文件，就类似于Windows下的文件搜索，支持通配符操作。</p>
-</blockquote>
-<p>这里也就用上了<code>gzip.GzipFile</code>又一个不错的东西。</p>
-<p>最后代码可以见</p>
-<p><a href="http://github.com/gmszone/ml">github.com/gmszone/ml</a></p>
-<p>更好的方案？</p>
-<h2 id="redis">Redis</h2>
-<p>查询用户事件总数</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> redis
-r <span class="op">=</span> redis.StrictRedis(host<span class="op">=</span><span class="st">&#39;localhost&#39;</span>, port<span class="op">=</span><span class="dv">6379</span>, db<span class="op">=</span><span class="dv">0</span>)
-pipe <span class="op">=</span> pipe <span class="op">=</span> r.pipeline()
-pipe.zscore(<span class="st">&#39;osrc:user&#39;</span>,<span class="st">&quot;gmszone&quot;</span>)
-pipe.execute()</code></pre></div>
-<p>系统返回了<code>227.0</code>,试试别人。</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">&gt;&gt;&gt;</span> <span class="kw">pipe.zscore</span>(<span class="st">&#39;osrc:user&#39;</span>,<span class="st">&quot;dfm&quot;</span>)
-<span class="kw">&lt;redis.client.StrictPipeline</span> object at 0x104fa7f<span class="kw">50&gt;</span>
-<span class="kw">&gt;&gt;&gt;</span> <span class="kw">pipe.execute</span>()
-[<span class="kw">425.0</span>]
-<span class="kw">&gt;&gt;&gt;</span></code></pre></div>
-<p>看看主要是在哪一天提交的</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> pipe.hgetall(<span class="st">&#39;osrc:user:gmszone:day&#39;</span>)
-<span class="op">&lt;</span>redis.client.StrictPipeline <span class="bu">object</span> at <span class="bn">0x104fa7f50</span><span class="op">&gt;</span>
-<span class="op">&gt;&gt;&gt;</span> pipe.execute()
-[{<span class="st">&#39;1&#39;</span>: <span class="st">&#39;51&#39;</span>, <span class="st">&#39;0&#39;</span>: <span class="st">&#39;41&#39;</span>, <span class="st">&#39;3&#39;</span>: <span class="st">&#39;17&#39;</span>, <span class="st">&#39;2&#39;</span>: <span class="st">&#39;34&#39;</span>, <span class="st">&#39;5&#39;</span>: <span class="st">&#39;28&#39;</span>, <span class="st">&#39;4&#39;</span>: <span class="st">&#39;22&#39;</span>, <span class="st">&#39;6&#39;</span>: <span class="st">&#39;34&#39;</span>}]</code></pre></div>
-<p>结果大致如下图所示:</p>
-<figure>
-<img src="./img/smtwtfs.png" alt="SMTWTFS" /><figcaption>SMTWTFS</figcaption>
-</figure>
-<p>看看主要的事件是？</p>
-<pre><code>&gt;&gt;&gt; pipe.zrevrange(&quot;osrc:user:gmszone:event&quot;.format(&quot;gmszone&quot;), 0, -1,withscores=True)
-&lt;redis.client.StrictPipeline object at 0x104fa7f50&gt;
-&gt;&gt;&gt; pipe.execute()
-[[(&#39;PushEvent&#39;, 154.0), (&#39;CreateEvent&#39;, 41.0), (&#39;WatchEvent&#39;, 18.0), (&#39;GollumEvent&#39;, 8.0), (&#39;MemberEvent&#39;, 3.0), (&#39;ForkEvent&#39;, 2.0), (&#39;ReleaseEvent&#39;, 1.0)]]
-&gt;&gt;&gt;</code></pre>
-<figure>
-<img src="./img/main-events.png" alt="Main Event" /><figcaption>Main Event</figcaption>
-</figure>
-<p>蓝色的就是push事件，黄色的是create等等。</p>
-<p>到这里我们算是知道了OSRC的数据库部分是如何工作的。</p>
-<h3 id="redis-查询">Redis 查询</h3>
-<p>主要代码如下所示</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_vector(user, pipe<span class="op">=</span><span class="va">None</span>):
-
-    r <span class="op">=</span> redis.StrictRedis(host<span class="op">=</span><span class="st">&#39;localhost&#39;</span>, port<span class="op">=</span><span class="dv">6379</span>, db<span class="op">=</span><span class="dv">0</span>)
-    no_pipe <span class="op">=</span> <span class="va">False</span>
-    <span class="cf">if</span> pipe <span class="op">is</span> <span class="va">None</span>:
-        pipe <span class="op">=</span> pipe <span class="op">=</span> r.pipeline()
-        no_pipe <span class="op">=</span> <span class="va">True</span>
-
-    user <span class="op">=</span> user.lower()
-    pipe.zscore(get_format(<span class="st">&quot;user&quot;</span>), user)
-    pipe.hgetall(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:day&quot;</span>.<span class="bu">format</span>(user)))
-    pipe.zrevrange(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:event&quot;</span>.<span class="bu">format</span>(user)), <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>,
-                   withscores<span class="op">=</span><span class="va">True</span>)
-    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:contribution&quot;</span>.<span class="bu">format</span>(user)))
-    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:connection&quot;</span>.<span class="bu">format</span>(user)))
-    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:repo&quot;</span>.<span class="bu">format</span>(user)))
-    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:lang&quot;</span>.<span class="bu">format</span>(user)))
-    pipe.zrevrange(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:lang&quot;</span>.<span class="bu">format</span>(user)), <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>,
-                   withscores<span class="op">=</span><span class="va">True</span>)
-
-    <span class="cf">if</span> no_pipe:
-        <span class="cf">return</span> pipe.execute()</code></pre></div>
-<p>结果在上一篇中显示出来了，也就是</p>
-<pre><code>[227.0, {&#39;1&#39;: &#39;51&#39;, &#39;0&#39;: &#39;41&#39;, &#39;3&#39;: &#39;17&#39;, &#39;2&#39;: &#39;34&#39;, &#39;5&#39;: &#39;28&#39;, &#39;4&#39;: &#39;22&#39;, &#39;6&#39;: &#39;34&#39;}, [(&#39;PushEvent&#39;, 154.0), (&#39;CreateEvent&#39;, 41.0), (&#39;WatchEvent&#39;, 18.0), (&#39;GollumEvent&#39;, 8.0), (&#39;MemberEvent&#39;, 3.0), (&#39;ForkEvent&#39;, 2.0), (&#39;ReleaseEvent&#39;, 1.0)], 0, 0, 0, 11, [(&#39;CSS&#39;, 74.0), (&#39;JavaScript&#39;, 60.0), (&#39;Ruby&#39;, 12.0), (&#39;TeX&#39;, 6.0), (&#39;Python&#39;, 6.0), (&#39;Java&#39;, 5.0), (&#39;C++&#39;, 5.0), (&#39;Assembly&#39;, 5.0), (&#39;C&#39;, 3.0), (&#39;Emacs Lisp&#39;, 2.0), (&#39;Arduino&#39;, 2.0)]]</code></pre>
-<p>有意思的是在这里生成了和自己相近的人</p>
-<pre><code>[&#39;alesdokshanin&#39;, &#39;hjiawei&#39;, &#39;andrewreedy&#39;, &#39;christj6&#39;, &#39;1995eaton&#39;]</code></pre>
-<p>osrc最有意思的一部分莫过于flann，当然说的也是系统后台的设计的一个很关键及有意思的部分。</p>
-<h2 id="邻近算法">邻近算法</h2>
-<p>邻近算法是在这个分析过程中一个很有意思的东西。</p>
-<blockquote>
-<p>邻近算法，或者说K最近邻(kNN，k-NearestNeighbor)分类算法可以说是整个数据挖掘分类技术中最简单的方法了。所谓K最近邻，就是k个最近的邻居的意思，说的是每个样本都可以用她最接近的k个邻居来代表。</p>
-</blockquote>
-<p>换句话说，我们需要一些样本来当作我们的分析资料，这里东西用到的就是我们之前的。</p>
-<pre><code>[227.0, {&#39;1&#39;: &#39;51&#39;, &#39;0&#39;: &#39;41&#39;, &#39;3&#39;: &#39;17&#39;, &#39;2&#39;: &#39;34&#39;, &#39;5&#39;: &#39;28&#39;, &#39;4&#39;: &#39;22&#39;, &#39;6&#39;: &#39;34&#39;}, [(&#39;PushEvent&#39;, 154.0), (&#39;CreateEvent&#39;, 41.0), (&#39;WatchEvent&#39;, 18.0), (&#39;GollumEvent&#39;, 8.0), (&#39;MemberEvent&#39;, 3.0), (&#39;ForkEvent&#39;, 2.0), (&#39;ReleaseEvent&#39;, 1.0)], 0, 0, 0, 11, [(&#39;CSS&#39;, 74.0), (&#39;JavaScript&#39;, 60.0), (&#39;Ruby&#39;, 12.0), (&#39;TeX&#39;, 6.0), (&#39;Python&#39;, 6.0), (&#39;Java&#39;, 5.0), (&#39;C++&#39;, 5.0), (&#39;Assembly&#39;, 5.0), (&#39;C&#39;, 3.0), (&#39;Emacs Lisp&#39;, 2.0), (&#39;Arduino&#39;, 2.0)]]</code></pre>
-<p>在代码中是构建了一个points.h5的文件来分析每个用户的points，之后再记录到hdf5文件中。</p>
-<pre><code>[ 0.00438596  0.18061674  0.2246696   0.14977974  0.07488987  0.0969163
-    0.12334802  0.14977974  0.          0.18061674  0.          0.          0.
-    0.00881057  0.          0.          0.03524229  0.          0.
-    0.01321586  0.          0.          0.          0.6784141   0.
-    0.07929515  0.00440529  1.          1.          1.          0.08333333
-    0.26431718  0.02202643  0.05286344  0.02643172  0.          0.01321586
-    0.02202643  0.          0.          0.          0.          0.          0.
-    0.          0.          0.00881057  0.          0.          0.          0.
-    0.          0.          0.          0.          0.          0.          0.
-    0.          0.          0.          0.          0.00881057]</code></pre>
-<p>这里分析到用户的大部分行为，再找到与其行为相近的用户，主要的行为有下面这些:</p>
-<ul>
-<li>每星期的情况</li>
-<li>事件的类型</li>
-<li>贡献的数量，连接以及语言</li>
-<li>最多的语言</li>
-</ul>
-<p>osrc中用于解析的代码</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> parse_vector(results):
-    points <span class="op">=</span> np.zeros(nvector)
-    total <span class="op">=</span> <span class="bu">int</span>(results[<span class="dv">0</span>])
-
-    points[<span class="dv">0</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (total <span class="op">+</span> <span class="dv">1</span>)
-
-    <span class="co"># Week means.</span>
-    <span class="cf">for</span> k, v <span class="op">in</span> results[<span class="dv">1</span>].iteritems():
-        points[<span class="dv">1</span> <span class="op">+</span> <span class="bu">int</span>(k)] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
-
-    <span class="co"># Event types.</span>
-    n <span class="op">=</span> <span class="dv">8</span>
-    <span class="cf">for</span> k, v <span class="op">in</span> results[<span class="dv">2</span>]:
-        points[n <span class="op">+</span> evttypes.index(k)] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
-
-    <span class="co"># Number of contributions, connections and languages.</span>
-    n <span class="op">+=</span> nevts
-    points[n] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">3</span>]) <span class="op">+</span> <span class="dv">1</span>)
-    points[n <span class="op">+</span> <span class="dv">1</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">4</span>]) <span class="op">+</span> <span class="dv">1</span>)
-    points[n <span class="op">+</span> <span class="dv">2</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">5</span>]) <span class="op">+</span> <span class="dv">1</span>)
-    points[n <span class="op">+</span> <span class="dv">3</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">6</span>]) <span class="op">+</span> <span class="dv">1</span>)
-
-    <span class="co"># Top languages.</span>
-    n <span class="op">+=</span> <span class="dv">4</span>
-    <span class="cf">for</span> k, v <span class="op">in</span> results[<span class="dv">7</span>]:
-        <span class="cf">if</span> k <span class="op">in</span> langs:
-            points[n <span class="op">+</span> langs.index(k)] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
-        <span class="cf">else</span>:
-            <span class="co"># Unknown language.</span>
-            points[<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
-
-    <span class="cf">return</span> points</code></pre></div>
-<p>这样也就返回我们需要的点数，然后我们可以用<code>get_points</code>来获取这些</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_points(usernames):
-    r <span class="op">=</span> redis.StrictRedis(host<span class="op">=</span><span class="st">&#39;localhost&#39;</span>, port<span class="op">=</span><span class="dv">6379</span>, db<span class="op">=</span><span class="dv">0</span>)
-    pipe <span class="op">=</span> r.pipeline()
-
-    results <span class="op">=</span> get_vector(usernames)
-    points <span class="op">=</span> np.zeros([<span class="bu">len</span>(usernames), nvector])
-    points <span class="op">=</span> parse_vector(results)
-    <span class="cf">return</span> points</code></pre></div>
-<p>就会得到我们的相应的数据，接着找找和自己邻近的，看看结果。</p>
-<pre><code>[ 0.01298701  0.19736842  0.          0.30263158  0.21052632  0.19736842
-    0.          0.09210526  0.          0.22368421  0.01315789  0.          0.
-    0.          0.          0.          0.01315789  0.          0.
-    0.01315789  0.          0.          0.          0.73684211  0.          0.
-    0.          1.          1.          1.          0.2         0.42105263
-    0.09210526  0.          0.          0.          0.          0.23684211
-    0.          0.          0.03947368  0.          0.          0.          0.
-    0.          0.          0.          0.          0.          0.          0.
-    0.          0.          0.          0.          0.          0.          0.
-    0.          0.          0.          0.        ]</code></pre>
-<p>真看不出来两者有什么相似的地方 。。。。</p>
 <h1 id="github流行项目分析">Github流行项目分析</h1>
 <p>之前曾经分析过一些Github的用户行为，现在我们先来说说Github上的Star吧。(截止: 2015年3月9日23时。)</p>
 <table>
@@ -1120,6 +580,7 @@ pipe.execute()</code></pre></div>
 <li>资料收集: 如<code>free programming books</code>，<code>You-Dont-Know-JS</code>，<code>Font-Awesome</code></li>
 <li>其他:简历如<code>Resume</code></li>
 </ul>
+<h1 id="创建你的项目">创建你的项目</h1>
 <h1 id="创建pull-request">创建Pull Request</h1>
 <h2 id="第一个">第一个</h2>
 <pre><code>     const dgram       = require(&#39;dgram&#39;)
@@ -1141,7 +602,6 @@ pipe.execute()</code></pre></div>
  END
    exit 1
  fi</code></pre>
-<h1 id="创建你的项目">创建你的项目</h1>
 <h1 id="构建github项目">构建Github项目</h1>
 <h2 id="从模块分离到测试">从模块分离到测试</h2>
 <p>在之前说到</p>
@@ -2393,6 +1853,546 @@ public class replaceTemp {
     <span class="va">request</span>.<span class="at">setRequestHeader</span>(<span class="st">&#39;X-Requested-With&#39;</span><span class="op">,</span> <span class="st">&#39;XMLHttpRequest&#39;</span>)<span class="op">;</span>
     <span class="va">request</span>.<span class="at">send</span>(data)<span class="op">;</span>
 <span class="op">};</span></code></pre></div>
+<h1 id="github项目分析一">Github项目分析一</h1>
+<h2 id="生成图表">生成图表</h2>
+<p>如何分析用户的数据是一个有趣的问题，特别是当我们有大量的数据的时候。除了<code>matlab</code>，我们还可以用<code>numpy</code>+<code>matplotlib</code></p>
+<p>数据可以在这边寻找到</p>
+<p><a href="https://github.com/gmszone/ml" class="uri">https://github.com/gmszone/ml</a></p>
+<p>最后效果图</p>
+<figure>
+<img src="./img/2014-01-01.png" alt="2014 01 01" /><figcaption>2014 01 01</figcaption>
+</figure>
+<p>要解析的json文件位于<code>data/2014-01-01-0.json</code>，大小6.6M，显然我们可能需要用每次只读一行的策略，这足以解释为什么诸如sublime打开的时候很慢，而现在我们只需要里面的json数据中的创建时间。。</p>
+<p>==,这个文件代表什么？</p>
+<p><strong>2014年1月1日零时到一时，用户在github上的操作，这里的用户指的是很多。。一共有4814条数据，从commit、create到issues都有。</strong></p>
+<h3 id="数据解析">数据解析</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> json
+<span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
+    line <span class="op">=</span> f.readline()</code></pre></div>
+<p>然后再解析json</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> dateutil.parser
+
+lin <span class="op">=</span> json.loads(line)
+date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])</code></pre></div>
+<p>这里用到了<code>dateutil</code>，因为新鲜出炉的数据是string需要转换为<code>dateutil</code>，再到数据放到数组里头。最后有就有了<code>parse_data</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> parse_data(jsonfile):
+    f <span class="op">=</span> <span class="bu">open</span>(jsonfile, <span class="st">&quot;r&quot;</span>)
+    dataarray <span class="op">=</span> []
+    datacount <span class="op">=</span> <span class="dv">0</span>
+
+    <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
+        line <span class="op">=</span> f.readline()
+        lin <span class="op">=</span> json.loads(line)
+        date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
+        datacount <span class="op">+=</span> <span class="dv">1</span>
+        dataarray.append(date.minute)
+
+    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]
+    f.close()
+    <span class="cf">return</span> minuteswithcount</code></pre></div>
+<p>下面这句代码就是将上面的解析为</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]</code></pre></div>
+<p>这样的数组以便于解析</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">[(<span class="dv">0</span>, <span class="dv">92</span>), (<span class="dv">1</span>, <span class="dv">67</span>), (<span class="dv">2</span>, <span class="dv">86</span>), (<span class="dv">3</span>, <span class="dv">73</span>), (<span class="dv">4</span>, <span class="dv">76</span>), (<span class="dv">5</span>, <span class="dv">67</span>), (<span class="dv">6</span>, <span class="dv">61</span>), (<span class="dv">7</span>, <span class="dv">71</span>), (<span class="dv">8</span>, <span class="dv">62</span>), (<span class="dv">9</span>, <span class="dv">71</span>), (<span class="dv">10</span>, <span class="dv">70</span>), (<span class="dv">11</span>, <span class="dv">79</span>), (<span class="dv">12</span>, <span class="dv">62</span>), (<span class="dv">13</span>, <span class="dv">67</span>), (<span class="dv">14</span>, <span class="dv">76</span>), (<span class="dv">15</span>, <span class="dv">67</span>), (<span class="dv">16</span>, <span class="dv">74</span>), (<span class="dv">17</span>, <span class="dv">48</span>), (<span class="dv">18</span>, <span class="dv">78</span>), (<span class="dv">19</span>, <span class="dv">73</span>), (<span class="dv">20</span>, <span class="dv">89</span>), (<span class="dv">21</span>, <span class="dv">62</span>), (<span class="dv">22</span>, <span class="dv">74</span>), (<span class="dv">23</span>, <span class="dv">61</span>), (<span class="dv">24</span>, <span class="dv">71</span>), (<span class="dv">25</span>, <span class="dv">49</span>), (<span class="dv">26</span>, <span class="dv">59</span>), (<span class="dv">27</span>, <span class="dv">59</span>), (<span class="dv">28</span>, <span class="dv">58</span>), (<span class="dv">29</span>, <span class="dv">74</span>), (<span class="dv">30</span>, <span class="dv">69</span>), (<span class="dv">31</span>, <span class="dv">59</span>), (<span class="dv">32</span>, <span class="dv">89</span>), (<span class="dv">33</span>, <span class="dv">67</span>), (<span class="dv">34</span>, <span class="dv">66</span>), (<span class="dv">35</span>, <span class="dv">77</span>), (<span class="dv">36</span>, <span class="dv">64</span>), (<span class="dv">37</span>, <span class="dv">71</span>), (<span class="dv">38</span>, <span class="dv">75</span>), (<span class="dv">39</span>, <span class="dv">66</span>), (<span class="dv">40</span>, <span class="dv">62</span>), (<span class="dv">41</span>, <span class="dv">77</span>), (<span class="dv">42</span>, <span class="dv">82</span>), (<span class="dv">43</span>, <span class="dv">95</span>), (<span class="dv">44</span>, <span class="dv">77</span>), (<span class="dv">45</span>, <span class="dv">65</span>), (<span class="dv">46</span>, <span class="dv">59</span>), (<span class="dv">47</span>, <span class="dv">60</span>), (<span class="dv">48</span>, <span class="dv">54</span>), (<span class="dv">49</span>, <span class="dv">66</span>), (<span class="dv">50</span>, <span class="dv">74</span>), (<span class="dv">51</span>, <span class="dv">61</span>), (<span class="dv">52</span>, <span class="dv">71</span>), (<span class="dv">53</span>, <span class="dv">90</span>), (<span class="dv">54</span>, <span class="dv">64</span>), (<span class="dv">55</span>, <span class="dv">67</span>), (<span class="dv">56</span>, <span class="dv">67</span>), (<span class="dv">57</span>, <span class="dv">55</span>), (<span class="dv">58</span>, <span class="dv">68</span>), (<span class="dv">59</span>, <span class="dv">91</span>)]</code></pre></div>
+<h3 id="matplotlib">Matplotlib</h3>
+<p>开始之前需要安装``matplotlib</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> pip install matplotlib</code></pre></div>
+<p>然后引入这个库</p>
+<pre><code>  import matplotlib.pyplot as plt</code></pre>
+<p>如上面的那个结果，只需要</p>
+<pre><code class="python">
+    plt.figure(figsize=(8,4))
+    plt.plot(x, y,label = files)
+    plt.legend()
+    plt.show()
+</code></pre>
+<p>最后代码可见</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/env python</span>
+<span class="co"># -*- coding: utf-8 -*-</span>
+
+<span class="im">import</span> json
+<span class="im">import</span> dateutil.parser
+<span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> matplotlib.mlab <span class="im">as</span> mlab
+<span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+
+
+<span class="kw">def</span> parse_data(jsonfile):
+    f <span class="op">=</span> <span class="bu">open</span>(jsonfile, <span class="st">&quot;r&quot;</span>)
+    dataarray <span class="op">=</span> []
+    datacount <span class="op">=</span> <span class="dv">0</span>
+
+    <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
+        line <span class="op">=</span> f.readline()
+        lin <span class="op">=</span> json.loads(line)
+        date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
+        datacount <span class="op">+=</span> <span class="dv">1</span>
+        dataarray.append(date.minute)
+
+    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]
+    f.close()
+    <span class="cf">return</span> minuteswithcount
+
+
+<span class="kw">def</span> draw_date(files):
+    x <span class="op">=</span> []
+    y <span class="op">=</span> []
+    mwcs <span class="op">=</span> parse_data(files)
+    <span class="cf">for</span> mwc <span class="op">in</span> mwcs:
+        x.append(mwc[<span class="dv">0</span>])
+        y.append(mwc[<span class="dv">1</span>])
+
+    plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))
+    plt.plot(x, y,label <span class="op">=</span> files)
+    plt.legend()
+    plt.show()
+
+draw_date(<span class="st">&quot;data/2014-01-01-0.json&quot;</span>)</code></pre></div>
+<h2 id="每周分析">每周分析</h2>
+<p>继上篇之后，我们就可以分析用户的每周提交情况，以得出用户的真正的工具效率，每个程序员的工作时间可能是不一样的，如</p>
+<figure>
+<img src="./img/phodal-results.png" alt="Phodal Huang’s Report" /><figcaption>Phodal Huang’s Report</figcaption>
+</figure>
+<p>这是我的每周情况，显然如果把星期六移到前面的话，随着工作时间的增长，在github上的使用在下降，作为一个</p>
+<pre><code>  a fulltime hacker who works best in the evening (around 8 pm).</code></pre>
+<p>不过这个是osrc的分析结果。</p>
+<h3 id="python-github-每周情况分析">python github 每周情况分析</h3>
+<p>看一张分析后的结果</p>
+<figure>
+<img src="./img/feb-results.png" alt="Feb Results" /><figcaption>Feb Results</figcaption>
+</figure>
+<p>结果正好与我的情况相反？似乎图上是这么说的，但是数据上是这样的情况。</p>
+<pre><code>data
+├── 2014-01-01-0.json
+├── 2014-02-01-0.json
+├── 2014-02-02-0.json
+├── 2014-02-03-0.json
+├── 2014-02-04-0.json
+├── 2014-02-05-0.json
+├── 2014-02-06-0.json
+├── 2014-02-07-0.json
+├── 2014-02-08-0.json
+├── 2014-02-09-0.json
+├── 2014-02-10-0.json
+├── 2014-02-11-0.json
+├── 2014-02-12-0.json
+├── 2014-02-13-0.json
+├── 2014-02-14-0.json
+├── 2014-02-15-0.json
+├── 2014-02-16-0.json
+├── 2014-02-17-0.json
+├── 2014-02-18-0.json
+├── 2014-02-19-0.json
+└── 2014-02-20-0.json</code></pre>
+<p>我们获取是每天晚上0点时的情况，至于为什么是0点，我想这里的数据量可能会比较少。除去1月1号的情况，就是上面的结果，在只有一周的情况时，总会以为因为在国内那时是假期，但是总觉得不是很靠谱，国内的程序员虽然很多，会在github上活跃的可能没有那么多，直至列出每一周的数据时。</p>
+<pre><code>  6570, 7420, 11274, 12073, 12160, 12378, 12897,
+  8474, 7984, 12933, 13504, 13763, 13544, 12940,
+  7119, 7346, 13412, 14008, 12555</code></pre>
+<h3 id="python-数据分析">Python 数据分析</h3>
+<p>重写了一个新的方法用于计算提交数，直至后面才意识到其实我们可以算行数就够了，但是方法上有点hack</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_minutes_counts_with_id(jsonfile):
+    datacount, dataarray <span class="op">=</span> handle_json(jsonfile)
+    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]
+    <span class="cf">return</span> minuteswithcount
+
+
+<span class="kw">def</span> handle_json(jsonfile):
+    f <span class="op">=</span> <span class="bu">open</span>(jsonfile, <span class="st">&quot;r&quot;</span>)
+    dataarray <span class="op">=</span> []
+    datacount <span class="op">=</span> <span class="dv">0</span>
+
+    <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
+        line <span class="op">=</span> f.readline()
+        lin <span class="op">=</span> json.loads(line)
+        date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
+        datacount <span class="op">+=</span> <span class="dv">1</span>
+        dataarray.append(date.minute)
+
+    f.close()
+    <span class="cf">return</span> datacount, dataarray
+
+
+<span class="kw">def</span> get_minutes_count_num(jsonfile):
+    datacount, dataarray <span class="op">=</span> handle_json(jsonfile)
+    <span class="cf">return</span> datacount
+
+
+<span class="kw">def</span> get_month_total():
+    <span class="co">&quot;&quot;&quot;</span>
+
+<span class="co">    :rtype : object</span>
+<span class="co">    &quot;&quot;&quot;</span>
+    monthdaycount <span class="op">=</span> []
+    <span class="cf">for</span> i <span class="op">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">20</span>):
+        <span class="cf">if</span> i <span class="op">&lt;</span> <span class="dv">10</span>:
+            filename <span class="op">=</span> <span class="st">&#39;data/2014-02-0&#39;</span> <span class="op">+</span> i.<span class="fu">__str__</span>() <span class="op">+</span> <span class="st">&#39;-0.json&#39;</span>
+        <span class="cf">else</span>:
+            filename <span class="op">=</span> <span class="st">&#39;data/2014-02-&#39;</span> <span class="op">+</span> i.<span class="fu">__str__</span>() <span class="op">+</span> <span class="st">&#39;-0.json&#39;</span>
+        monthdaycount.append(get_minutes_count_num(filename))
+    <span class="cf">return</span> monthdaycount</code></pre></div>
+<p>接着我们需要去遍历每个结果，后面的后面会发现这个效率真的是太低了，为什么木有多线程？</p>
+<h3 id="python-matplotlib图表">Python Matplotlib图表</h3>
+<p>让我们的matplotlib来做这些图表的工作</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:
+    results <span class="op">=</span> pd.get_month_total()
+    <span class="bu">print</span> results
+
+    plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))
+    plt.plot(results.<span class="fu">__getslice__</span>(<span class="dv">0</span>, <span class="dv">7</span>), label<span class="op">=</span><span class="st">&quot;first week&quot;</span>)
+    plt.plot(results.<span class="fu">__getslice__</span>(<span class="dv">7</span>, <span class="dv">14</span>), label<span class="op">=</span><span class="st">&quot;second week&quot;</span>)
+    plt.plot(results.<span class="fu">__getslice__</span>(<span class="dv">14</span>, <span class="dv">21</span>), label<span class="op">=</span><span class="st">&quot;third week&quot;</span>)
+    plt.legend()
+    plt.show()</code></pre></div>
+<p>蓝色的是第一周，绿色的是第二周，蓝色的是第三周就有了上面的结果。</p>
+<p>我们还需要优化方法，以及多线程的支持。</p>
+<h1 id="github项目分析二">Github项目分析二</h1>
+<p>让我们分析之前的程序，然后再想办法做出优化。网上看到一篇文章<a href="http://www.huyng.com/posts/python-performance-analysis/" class="uri">http://www.huyng.com/posts/python-performance-analysis/</a>讲的就是分析这部分内容的。</p>
+<h2 id="time-python分析">Time Python分析</h2>
+<p>分析程序的运行时间</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ot">$time</span> <span class="kw">python</span> handle.py</code></pre></div>
+<p>结果便是，但是对于我们的分析没有一点意义</p>
+<pre><code>    real    0m43.411s
+    user    0m39.226s
+    sys 0m0.618s</code></pre>
+<h3 id="line_profiler-python">line_profiler python</h3>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> ARCHFLAGS=<span class="st">&quot;-Wno-error=unused-command-line-argument-hard-error-in-future&quot;</span> easy_install line_profiler</code></pre></div>
+<p>然后在我们的<code>parse_data.py</code>的<code>handle_json</code>前面加上<code>@profile</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="at">@profile</span>
+<span class="kw">def</span> handle_json(jsonfile):
+    f <span class="op">=</span> <span class="bu">open</span>(jsonfile, <span class="st">&quot;r&quot;</span>)
+    dataarray <span class="op">=</span> []
+    datacount <span class="op">=</span> <span class="dv">0</span>
+
+    <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
+        line <span class="op">=</span> f.readline()
+        lin <span class="op">=</span> json.loads(line)
+        date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
+        datacount <span class="op">+=</span> <span class="dv">1</span>
+        dataarray.append(date.minute)
+
+    f.close()
+    <span class="cf">return</span> datacount, dataarray</code></pre></div>
+<p>Line_profiler带了一个分析脚本<code>kernprof.py</code>，so</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">kernprof.py</span> -l -v handle.py</code></pre></div>
+<p>我们便会得到下面的结果</p>
+<pre><code>Wrote profile results to handle.py.lprof
+Timer unit: 1e-06 s
+
+File: parse_data.py
+Function: handle_json at line 15
+Total time: 127.332 s
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    15                                           @profile
+    16                                           def handle_json(jsonfile):
+    17        19          636     33.5      0.0      f = open(jsonfile, &quot;r&quot;)
+    18        19           21      1.1      0.0      dataarray = []
+    19        19           16      0.8      0.0      datacount = 0
+    20
+    21    212373       730344      3.4      0.6      for line in open(jsonfile):
+    22    212354      2826826     13.3      2.2          line = f.readline()
+    23    212354     13848171     65.2     10.9          lin = json.loads(line)
+    24    212354    109427317    515.3     85.9          date = dateutil.parser.parse(lin[&quot;created_at&quot;])
+    25    212354       238112      1.1      0.2          datacount += 1
+    26    212354       260227      1.2      0.2          dataarray.append(date.minute)
+    27
+    28        19          349     18.4      0.0      f.close()
+    29        19           20      1.1      0.0      return datacount, dataarray</code></pre>
+<p>于是我们就发现我们的瓶颈就是从读取<code>created_at</code>，即创建时间。。。以及解析json，反而不是我们关心的IO，果然<code>readline</code>很强大。</p>
+<h3 id="memory_profiler">memory_profiler</h3>
+<p>首先我们需要install memory_profiler:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">pip</span> install -U memory_profiler
+$ <span class="kw">pip</span> install psutil</code></pre></div>
+<p>如上，我们只需要在<code>handle_json</code>前面加上<code>@profile</code></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">python</span> -m memory_profiler handle.py</code></pre></div>
+<p>于是</p>
+<pre><code>Filename: parse_data.py
+    
+Line #    Mem usage    Increment   Line Contents
+================================================
+    13   39.930 MiB    0.000 MiB   @profile
+    14                             def handle_json(jsonfile):
+    15   39.930 MiB    0.000 MiB       f = open(jsonfile, &quot;r&quot;)
+    16   39.930 MiB    0.000 MiB       dataarray = []
+    17   39.930 MiB    0.000 MiB       datacount = 0
+    18
+    19   40.055 MiB    0.125 MiB       for line in open(jsonfile):
+    20   40.055 MiB    0.000 MiB           line = f.readline()
+    21   40.066 MiB    0.012 MiB           lin = json.loads(line)
+    22   40.055 MiB   -0.012 MiB           date = dateutil.parser.parse(lin[&quot;created_at&quot;])
+    23   40.055 MiB    0.000 MiB           datacount += 1
+    24   40.055 MiB    0.000 MiB           dataarray.append(date.minute)
+    25
+    26                                 f.close()
+    27                                 return datacount, dataarray</code></pre>
+<h3 id="objgraph-python">objgraph python</h3>
+<p>安装objgraph</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">pip</span> install objgraph</code></pre></div>
+<p>我们需要调用他</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pdb<span class="op">;</span></code></pre></div>
+<p>以及在需要调度的地方加上</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pdb.set_trace()</code></pre></div>
+<p>接着会进入<code>command</code>模式</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">(pdb) <span class="im">import</span> objgraph
+(pdb) objgraph.show_most_common_types()</code></pre></div>
+<p>然后我们可以找到。。</p>
+<pre><code>function                   8259
+dict                       2137
+tuple                      1949
+wrapper_descriptor         1625
+list                       1586
+weakref                    1145
+builtin_function_or_method 1117
+method_descriptor          948
+getset_descriptor          708
+type                       705</code></pre>
+<p>也可以用他生成图形，貌似这里是用<code>dot</code>生成的，加上<code>python-xdot</code></p>
+<p>很明显的我们需要一个数据库。</p>
+<p>如果我们每次都要花同样的时间去做一件事，去扫那些数据的话，那么这是最好的打发时间的方法。</p>
+<h2 id="python-sqlite3-查询数据">python SQLite3 查询数据</h2>
+<p>我们创建了一个名为<code>userdata.db</code>的数据库文件，然后创建了一个表，里面有owner,language,eventtype,name url</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> init_db():
+    conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;userdata.db&#39;</span>)
+    c <span class="op">=</span> conn.cursor()
+    c.execute(<span class="st">&#39;&#39;&#39;CREATE TABLE userinfo (owner text, language text, eventtype text, name text, url text)&#39;&#39;&#39;</span>)</code></pre></div>
+<p>接着我们就可以查询数据，这里从结果讲起。</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_count(username):
+    count <span class="op">=</span> <span class="dv">0</span>
+    userinfo <span class="op">=</span> []
+    condition <span class="op">=</span> <span class="st">&#39;select * from userinfo where owener = </span><span class="ch">\&#39;</span><span class="st">&#39;</span> <span class="op">+</span> <span class="bu">str</span>(username) <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\&#39;</span><span class="st">&#39;</span>
+    <span class="cf">for</span> zero <span class="op">in</span> c.execute(condition):
+        count <span class="op">+=</span> <span class="dv">1</span>
+        userinfo.append(zero)
+
+    <span class="cf">return</span> count, userinfo</code></pre></div>
+<p>当我查询<code>gmszone</code>的时候，也就是我自己就会有如下的结果</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;ForkEvent&#39;</span>, u<span class="st">&#39;RESUME&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/RESUME&#39;</span><span class="kw">)</span>
+<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;WatchEvent&#39;</span>, u<span class="st">&#39;iot-dashboard&#39;</span>, u<span class="st">&#39;JavaScript&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-dashboard&#39;</span><span class="kw">)</span>
+<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;wechat-wordpress&#39;</span>, u<span class="st">&#39;Ruby&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/wechat-wordpress&#39;</span><span class="kw">)</span>
+<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;WatchEvent&#39;</span>, u<span class="st">&#39;iot&#39;</span>, u<span class="st">&#39;JavaScript&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot&#39;</span><span class="kw">)</span>
+<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;CreateEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;None&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;CreateEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;None&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="kw">109</span></code></pre></div>
+<p>一共有109个事件，有<code>Watch</code>,<code>Create</code>,<code>Push</code>,<code>Fork</code>还有其他的， 项目主要有<code>iot</code>,<code>RESUME</code>,<code>iot-dashboard</code>,<code>wechat-wordpress</code>, 接着就是语言了，<code>Tex</code>,<code>Javascript</code>,<code>Ruby</code>,接着就是项目的url了。</p>
+<p>值得注意的是。</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">-rw-r--r--</span>   1 fdhuang staff 905M Apr 12 14:59 userdata.db</code></pre></div>
+<p>这个数据库文件有<strong>905M</strong>，不过查询结果相当让人满意，至少相对于原来的结果来说。</p>
+<p>Python自带了对SQLite3的支持，然而我们还需要安装SQLite3</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">brew</span> install sqlite3</code></pre></div>
+<p>或者是</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> port install sqlite3</code></pre></div>
+<p>或者是Ubuntu的</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> apt-get install sqlite3</code></pre></div>
+<p>openSUSE自然就是</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> zypper install sqlite3</code></pre></div>
+<p>不过，用yast2也很不错，不是么。。</p>
+<h3 id="数据导入">数据导入</h3>
+<p>需要注意的是这里是需要python2.7，起源于对gzip的上下文管理器的支持问题</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> handle_gzip_file(filename):
+    userinfo <span class="op">=</span> []
+    <span class="cf">with</span> gzip.GzipFile(filename) <span class="im">as</span> f:
+        events <span class="op">=</span> [line.decode(<span class="st">&quot;utf-8&quot;</span>, errors<span class="op">=</span><span class="st">&quot;ignore&quot;</span>) <span class="cf">for</span> line <span class="op">in</span> f]
+
+        <span class="cf">for</span> n, line <span class="op">in</span> <span class="bu">enumerate</span>(events):
+            <span class="cf">try</span>:
+                event <span class="op">=</span> json.loads(line)
+            <span class="cf">except</span>:
+
+                <span class="cf">continue</span>
+
+            actor <span class="op">=</span> event[<span class="st">&quot;actor&quot;</span>]
+            attrs <span class="op">=</span> event.get(<span class="st">&quot;actor_attributes&quot;</span>, {})
+            <span class="cf">if</span> actor <span class="op">is</span> <span class="va">None</span> <span class="op">or</span> attrs.get(<span class="st">&quot;type&quot;</span>) <span class="op">!=</span> <span class="st">&quot;User&quot;</span>:
+                <span class="cf">continue</span>
+
+            key <span class="op">=</span> actor.lower()
+
+            repo <span class="op">=</span> event.get(<span class="st">&quot;repository&quot;</span>, {})
+            info <span class="op">=</span> <span class="bu">str</span>(repo.get(<span class="st">&quot;owner&quot;</span>)), <span class="bu">str</span>(repo.get(<span class="st">&quot;language&quot;</span>)), <span class="bu">str</span>(event[<span class="st">&quot;type&quot;</span>]), <span class="bu">str</span>(repo.get(<span class="st">&quot;name&quot;</span>)), <span class="bu">str</span>(
+                repo.get(<span class="st">&quot;url&quot;</span>))
+            userinfo.append(info)
+
+    <span class="cf">return</span> userinfo
+
+<span class="kw">def</span> build_db_with_gzip():
+    init_db()
+    conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;userdata.db&#39;</span>)
+    c <span class="op">=</span> conn.cursor()
+
+    year <span class="op">=</span> <span class="dv">2014</span>
+    month <span class="op">=</span> <span class="dv">3</span>
+
+    <span class="cf">for</span> day <span class="op">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">31</span>):
+        date_re <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&quot;([0-9]</span><span class="sc">{4}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]+)\.json.gz&quot;</span>)
+
+        fn_template <span class="op">=</span> os.path.join(<span class="st">&quot;march&quot;</span>,
+                                   <span class="co">&quot;{year}-{month:02d}-{day:02d}-{n}.json.gz&quot;</span>)
+        kwargs <span class="op">=</span> {<span class="st">&quot;year&quot;</span>: year, <span class="st">&quot;month&quot;</span>: month, <span class="st">&quot;day&quot;</span>: day, <span class="st">&quot;n&quot;</span>: <span class="st">&quot;*&quot;</span>}
+        filenames <span class="op">=</span> glob.glob(fn_template.<span class="bu">format</span>(<span class="op">**</span>kwargs))
+
+        <span class="cf">for</span> filename <span class="op">in</span> filenames:
+            c.executemany(<span class="st">&#39;INSERT INTO userinfo VALUES (?,?,?,?,?)&#39;</span>, handle_gzip_file(filename))
+
+    conn.commit()
+    c.close()</code></pre></div>
+<p><code>executemany</code>可以插入多条数据，对于我们的数据来说，一小时的文件大概有五六千个会符合我们上面的安装，也就是有<code>actor</code>又有<code>type</code>才是我们需要记录的数据，我们只需要统计用户的那些事件，而非全部的事件。</p>
+<p>我们需要去遍历文件，然后找到合适的部分，这里只是要找<code>2014-03-01</code>到<code>2014-03-31</code>的全部事件，而光这些数据的gz文件就有1.26G，同上面那些解压为json文件显得不合适，只能用遍历来处理。</p>
+<p>这里参考了osrc项目中的写法，或者说直接复制过来。</p>
+<p>首先是正规匹配</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">date_re <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&quot;([0-9]</span><span class="sc">{4}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]+)\.json.gz&quot;</span>)</code></pre></div>
+<p>不过主要的还是在于<code>glob.glob</code></p>
+<blockquote>
+<p>glob是python自己带的一个文件操作相关模块，用它可以查找符合自己目的的文件，就类似于Windows下的文件搜索，支持通配符操作。</p>
+</blockquote>
+<p>这里也就用上了<code>gzip.GzipFile</code>又一个不错的东西。</p>
+<p>最后代码可以见</p>
+<p><a href="http://github.com/gmszone/ml">github.com/gmszone/ml</a></p>
+<p>更好的方案？</p>
+<h2 id="redis">Redis</h2>
+<p>查询用户事件总数</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> redis
+r <span class="op">=</span> redis.StrictRedis(host<span class="op">=</span><span class="st">&#39;localhost&#39;</span>, port<span class="op">=</span><span class="dv">6379</span>, db<span class="op">=</span><span class="dv">0</span>)
+pipe <span class="op">=</span> pipe <span class="op">=</span> r.pipeline()
+pipe.zscore(<span class="st">&#39;osrc:user&#39;</span>,<span class="st">&quot;gmszone&quot;</span>)
+pipe.execute()</code></pre></div>
+<p>系统返回了<code>227.0</code>,试试别人。</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">&gt;&gt;&gt;</span> <span class="kw">pipe.zscore</span>(<span class="st">&#39;osrc:user&#39;</span>,<span class="st">&quot;dfm&quot;</span>)
+<span class="kw">&lt;redis.client.StrictPipeline</span> object at 0x104fa7f<span class="kw">50&gt;</span>
+<span class="kw">&gt;&gt;&gt;</span> <span class="kw">pipe.execute</span>()
+[<span class="kw">425.0</span>]
+<span class="kw">&gt;&gt;&gt;</span></code></pre></div>
+<p>看看主要是在哪一天提交的</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> pipe.hgetall(<span class="st">&#39;osrc:user:gmszone:day&#39;</span>)
+<span class="op">&lt;</span>redis.client.StrictPipeline <span class="bu">object</span> at <span class="bn">0x104fa7f50</span><span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> pipe.execute()
+[{<span class="st">&#39;1&#39;</span>: <span class="st">&#39;51&#39;</span>, <span class="st">&#39;0&#39;</span>: <span class="st">&#39;41&#39;</span>, <span class="st">&#39;3&#39;</span>: <span class="st">&#39;17&#39;</span>, <span class="st">&#39;2&#39;</span>: <span class="st">&#39;34&#39;</span>, <span class="st">&#39;5&#39;</span>: <span class="st">&#39;28&#39;</span>, <span class="st">&#39;4&#39;</span>: <span class="st">&#39;22&#39;</span>, <span class="st">&#39;6&#39;</span>: <span class="st">&#39;34&#39;</span>}]</code></pre></div>
+<p>结果大致如下图所示:</p>
+<figure>
+<img src="./img/smtwtfs.png" alt="SMTWTFS" /><figcaption>SMTWTFS</figcaption>
+</figure>
+<p>看看主要的事件是？</p>
+<pre><code>&gt;&gt;&gt; pipe.zrevrange(&quot;osrc:user:gmszone:event&quot;.format(&quot;gmszone&quot;), 0, -1,withscores=True)
+&lt;redis.client.StrictPipeline object at 0x104fa7f50&gt;
+&gt;&gt;&gt; pipe.execute()
+[[(&#39;PushEvent&#39;, 154.0), (&#39;CreateEvent&#39;, 41.0), (&#39;WatchEvent&#39;, 18.0), (&#39;GollumEvent&#39;, 8.0), (&#39;MemberEvent&#39;, 3.0), (&#39;ForkEvent&#39;, 2.0), (&#39;ReleaseEvent&#39;, 1.0)]]
+&gt;&gt;&gt;</code></pre>
+<figure>
+<img src="./img/main-events.png" alt="Main Event" /><figcaption>Main Event</figcaption>
+</figure>
+<p>蓝色的就是push事件，黄色的是create等等。</p>
+<p>到这里我们算是知道了OSRC的数据库部分是如何工作的。</p>
+<h3 id="redis-查询">Redis 查询</h3>
+<p>主要代码如下所示</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_vector(user, pipe<span class="op">=</span><span class="va">None</span>):
+
+    r <span class="op">=</span> redis.StrictRedis(host<span class="op">=</span><span class="st">&#39;localhost&#39;</span>, port<span class="op">=</span><span class="dv">6379</span>, db<span class="op">=</span><span class="dv">0</span>)
+    no_pipe <span class="op">=</span> <span class="va">False</span>
+    <span class="cf">if</span> pipe <span class="op">is</span> <span class="va">None</span>:
+        pipe <span class="op">=</span> pipe <span class="op">=</span> r.pipeline()
+        no_pipe <span class="op">=</span> <span class="va">True</span>
+
+    user <span class="op">=</span> user.lower()
+    pipe.zscore(get_format(<span class="st">&quot;user&quot;</span>), user)
+    pipe.hgetall(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:day&quot;</span>.<span class="bu">format</span>(user)))
+    pipe.zrevrange(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:event&quot;</span>.<span class="bu">format</span>(user)), <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>,
+                   withscores<span class="op">=</span><span class="va">True</span>)
+    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:contribution&quot;</span>.<span class="bu">format</span>(user)))
+    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:connection&quot;</span>.<span class="bu">format</span>(user)))
+    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:repo&quot;</span>.<span class="bu">format</span>(user)))
+    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:lang&quot;</span>.<span class="bu">format</span>(user)))
+    pipe.zrevrange(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:lang&quot;</span>.<span class="bu">format</span>(user)), <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>,
+                   withscores<span class="op">=</span><span class="va">True</span>)
+
+    <span class="cf">if</span> no_pipe:
+        <span class="cf">return</span> pipe.execute()</code></pre></div>
+<p>结果在上一篇中显示出来了，也就是</p>
+<pre><code>[227.0, {&#39;1&#39;: &#39;51&#39;, &#39;0&#39;: &#39;41&#39;, &#39;3&#39;: &#39;17&#39;, &#39;2&#39;: &#39;34&#39;, &#39;5&#39;: &#39;28&#39;, &#39;4&#39;: &#39;22&#39;, &#39;6&#39;: &#39;34&#39;}, [(&#39;PushEvent&#39;, 154.0), (&#39;CreateEvent&#39;, 41.0), (&#39;WatchEvent&#39;, 18.0), (&#39;GollumEvent&#39;, 8.0), (&#39;MemberEvent&#39;, 3.0), (&#39;ForkEvent&#39;, 2.0), (&#39;ReleaseEvent&#39;, 1.0)], 0, 0, 0, 11, [(&#39;CSS&#39;, 74.0), (&#39;JavaScript&#39;, 60.0), (&#39;Ruby&#39;, 12.0), (&#39;TeX&#39;, 6.0), (&#39;Python&#39;, 6.0), (&#39;Java&#39;, 5.0), (&#39;C++&#39;, 5.0), (&#39;Assembly&#39;, 5.0), (&#39;C&#39;, 3.0), (&#39;Emacs Lisp&#39;, 2.0), (&#39;Arduino&#39;, 2.0)]]</code></pre>
+<p>有意思的是在这里生成了和自己相近的人</p>
+<pre><code>[&#39;alesdokshanin&#39;, &#39;hjiawei&#39;, &#39;andrewreedy&#39;, &#39;christj6&#39;, &#39;1995eaton&#39;]</code></pre>
+<p>osrc最有意思的一部分莫过于flann，当然说的也是系统后台的设计的一个很关键及有意思的部分。</p>
+<h2 id="邻近算法">邻近算法</h2>
+<p>邻近算法是在这个分析过程中一个很有意思的东西。</p>
+<blockquote>
+<p>邻近算法，或者说K最近邻(kNN，k-NearestNeighbor)分类算法可以说是整个数据挖掘分类技术中最简单的方法了。所谓K最近邻，就是k个最近的邻居的意思，说的是每个样本都可以用她最接近的k个邻居来代表。</p>
+</blockquote>
+<p>换句话说，我们需要一些样本来当作我们的分析资料，这里东西用到的就是我们之前的。</p>
+<pre><code>[227.0, {&#39;1&#39;: &#39;51&#39;, &#39;0&#39;: &#39;41&#39;, &#39;3&#39;: &#39;17&#39;, &#39;2&#39;: &#39;34&#39;, &#39;5&#39;: &#39;28&#39;, &#39;4&#39;: &#39;22&#39;, &#39;6&#39;: &#39;34&#39;}, [(&#39;PushEvent&#39;, 154.0), (&#39;CreateEvent&#39;, 41.0), (&#39;WatchEvent&#39;, 18.0), (&#39;GollumEvent&#39;, 8.0), (&#39;MemberEvent&#39;, 3.0), (&#39;ForkEvent&#39;, 2.0), (&#39;ReleaseEvent&#39;, 1.0)], 0, 0, 0, 11, [(&#39;CSS&#39;, 74.0), (&#39;JavaScript&#39;, 60.0), (&#39;Ruby&#39;, 12.0), (&#39;TeX&#39;, 6.0), (&#39;Python&#39;, 6.0), (&#39;Java&#39;, 5.0), (&#39;C++&#39;, 5.0), (&#39;Assembly&#39;, 5.0), (&#39;C&#39;, 3.0), (&#39;Emacs Lisp&#39;, 2.0), (&#39;Arduino&#39;, 2.0)]]</code></pre>
+<p>在代码中是构建了一个points.h5的文件来分析每个用户的points，之后再记录到hdf5文件中。</p>
+<pre><code>[ 0.00438596  0.18061674  0.2246696   0.14977974  0.07488987  0.0969163
+    0.12334802  0.14977974  0.          0.18061674  0.          0.          0.
+    0.00881057  0.          0.          0.03524229  0.          0.
+    0.01321586  0.          0.          0.          0.6784141   0.
+    0.07929515  0.00440529  1.          1.          1.          0.08333333
+    0.26431718  0.02202643  0.05286344  0.02643172  0.          0.01321586
+    0.02202643  0.          0.          0.          0.          0.          0.
+    0.          0.          0.00881057  0.          0.          0.          0.
+    0.          0.          0.          0.          0.          0.          0.
+    0.          0.          0.          0.          0.00881057]</code></pre>
+<p>这里分析到用户的大部分行为，再找到与其行为相近的用户，主要的行为有下面这些:</p>
+<ul>
+<li>每星期的情况</li>
+<li>事件的类型</li>
+<li>贡献的数量，连接以及语言</li>
+<li>最多的语言</li>
+</ul>
+<p>osrc中用于解析的代码</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> parse_vector(results):
+    points <span class="op">=</span> np.zeros(nvector)
+    total <span class="op">=</span> <span class="bu">int</span>(results[<span class="dv">0</span>])
+
+    points[<span class="dv">0</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (total <span class="op">+</span> <span class="dv">1</span>)
+
+    <span class="co"># Week means.</span>
+    <span class="cf">for</span> k, v <span class="op">in</span> results[<span class="dv">1</span>].iteritems():
+        points[<span class="dv">1</span> <span class="op">+</span> <span class="bu">int</span>(k)] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
+
+    <span class="co"># Event types.</span>
+    n <span class="op">=</span> <span class="dv">8</span>
+    <span class="cf">for</span> k, v <span class="op">in</span> results[<span class="dv">2</span>]:
+        points[n <span class="op">+</span> evttypes.index(k)] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
+
+    <span class="co"># Number of contributions, connections and languages.</span>
+    n <span class="op">+=</span> nevts
+    points[n] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">3</span>]) <span class="op">+</span> <span class="dv">1</span>)
+    points[n <span class="op">+</span> <span class="dv">1</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">4</span>]) <span class="op">+</span> <span class="dv">1</span>)
+    points[n <span class="op">+</span> <span class="dv">2</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">5</span>]) <span class="op">+</span> <span class="dv">1</span>)
+    points[n <span class="op">+</span> <span class="dv">3</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">6</span>]) <span class="op">+</span> <span class="dv">1</span>)
+
+    <span class="co"># Top languages.</span>
+    n <span class="op">+=</span> <span class="dv">4</span>
+    <span class="cf">for</span> k, v <span class="op">in</span> results[<span class="dv">7</span>]:
+        <span class="cf">if</span> k <span class="op">in</span> langs:
+            points[n <span class="op">+</span> langs.index(k)] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
+        <span class="cf">else</span>:
+            <span class="co"># Unknown language.</span>
+            points[<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
+
+    <span class="cf">return</span> points</code></pre></div>
+<p>这样也就返回我们需要的点数，然后我们可以用<code>get_points</code>来获取这些</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_points(usernames):
+    r <span class="op">=</span> redis.StrictRedis(host<span class="op">=</span><span class="st">&#39;localhost&#39;</span>, port<span class="op">=</span><span class="dv">6379</span>, db<span class="op">=</span><span class="dv">0</span>)
+    pipe <span class="op">=</span> r.pipeline()
+
+    results <span class="op">=</span> get_vector(usernames)
+    points <span class="op">=</span> np.zeros([<span class="bu">len</span>(usernames), nvector])
+    points <span class="op">=</span> parse_vector(results)
+    <span class="cf">return</span> points</code></pre></div>
+<p>就会得到我们的相应的数据，接着找找和自己邻近的，看看结果。</p>
+<pre><code>[ 0.01298701  0.19736842  0.          0.30263158  0.21052632  0.19736842
+    0.          0.09210526  0.          0.22368421  0.01315789  0.          0.
+    0.          0.          0.          0.01315789  0.          0.
+    0.01315789  0.          0.          0.          0.73684211  0.          0.
+    0.          1.          1.          1.          0.2         0.42105263
+    0.09210526  0.          0.          0.          0.          0.23684211
+    0.          0.          0.03947368  0.          0.          0.          0.
+    0.          0.          0.          0.          0.          0.          0.
+    0.          0.          0.          0.          0.          0.          0.
+    0.          0.          0.          0.        ]</code></pre>
+<p>真看不出来两者有什么相似的地方 。。。。</p>
 <section class="footnotes">
 <hr />
 <ol>
