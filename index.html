@@ -62,22 +62,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div>
 <nav id="TOC">
 <ul>
-<li><a href="#前言">前言</a></li>
-<li><a href="#为什么你应该深入github">为什么你应该深入Github</a><ul>
+<li><a href="#前言">前言</a><ul>
 <li><a href="#我与github的故事">我与Github的故事</a><ul>
 <li><a href="#github与收获">Github与收获</a></li>
 <li><a href="#github与成长">Github与成长</a></li>
 </ul></li>
-<li><a href="#为什么你应该深入github-1">为什么你应该深入Github</a><ul>
+<li><a href="#为什么你应该深入github">为什么你应该深入Github</a><ul>
 <li><a href="#方便工作">方便工作</a></li>
 <li><a href="#获得一份工作">获得一份工作</a></li>
 <li><a href="#扩大人脉">扩大人脉</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#介绍">介绍</a><ul>
-<li><a href="#什么是github">什么是Github</a></li>
+<li><a href="#github">Github</a><ul>
 <li><a href="#版本管理与软件部署">版本管理与软件部署</a></li>
 <li><a href="#github与git">Github与Git</a></li>
+</ul></li>
 <li><a href="#用好github">用好Github</a><ul>
 <li><a href="#敏捷软件开发">敏捷软件开发</a></li>
 <li><a href="#测试">测试</a></li>
@@ -89,14 +89,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#git基本知识与github使用">Git基本知识与Github使用</a><ul>
 <li><a href="#git">Git</a><ul>
 <li><a href="#git初入">Git初入</a></li>
+<li><a href="#github-1">Github</a></li>
 </ul></li>
-<li><a href="#github">Github</a></li>
 </ul></li>
 <li><a href="#github流行项目分析">Github流行项目分析</a></li>
 <li><a href="#创建你的项目">创建你的项目</a></li>
 <li><a href="#创建pull-request">创建Pull Request</a><ul>
-<li><a href="#第一个">第一个</a></li>
-<li><a href="#google-ngx-pagespeed">Google Ngx Pagespeed</a></li>
+<li><a href="#第一个pr">第一个PR</a></li>
+<li><a href="#cla">CLA</a></li>
 </ul></li>
 <li><a href="#构建github项目">构建Github项目</a><ul>
 <li><a href="#从模块分离到测试">从模块分离到测试</a><ul>
@@ -111,7 +111,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#代码的坏味道">代码的坏味道</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#创建项目文档">创建项目文档</a></li>
+<li><a href="#创建项目文档">创建项目文档</a><ul>
+<li><a href="#readme">README</a></li>
+<li><a href="#在线文档">在线文档</a></li>
+<li><a href="#可用示例">可用示例</a></li>
+</ul></li>
 <li><a href="#测试-1">测试</a><ul>
 <li><a href="#一次测试驱动开发">一次测试驱动开发</a><ul>
 <li><a href="#故事">故事</a></li>
@@ -123,12 +127,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#twill-测试脚本">Twill 测试脚本</a></li>
 <li><a href="#fake-server">Fake Server</a></li>
 </ul></li>
-<li><a href="#重构-1">重构</a></li>
-<li><a href="#前端技能训练-重构一"><a href="http://www.phodal.com/blog/frontend-improve-refactor-javascript-code/">前端技能训练: 重构一</a></a><ul>
+<li><a href="#重构-1">重构</a><ul>
 <li><a href="#为什么重构">为什么重构?</a></li>
 <li><a href="#重构umarkdown">重构uMarkdown</a><ul>
 <li><a href="#代码说明">代码说明</a></li>
-<li><a href="#重构-2">重构</a></li>
 </ul></li>
 <li><a href="#interllij-idea重构">Interllij Idea重构</a><ul>
 <li><a href="#rename">Rename</a></li>
@@ -195,10 +197,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>我的Github主页上写着加入的时间——<code>Joined on Nov 8, 2010</code>，那时才大一，在那之后的那长日子里我都没有过到。也许是因为我学的不是计算机，到了今天——<code>2015.3.9</code>，我也发现这其实是程序员的社交网站。</p>
 <p>过去，曾经有很长的一些时间我试过在Github上连击，也试着去了解别人是如何用好这个工具的。当然粉丝在Github上也是很重要的。</p>
 <p>在这里，我会试着将我在Github上学到的东西一一分享出来。</p>
-<h1 id="为什么你应该深入github">为什么你应该深入Github</h1>
+<h2 id="我与github的故事">我与Github的故事</h2>
 <p>在我大四找工作的时候，试图去寻找一份硬件、物联网相关的工作(ps: 专业是电子信息工程)。尽管简历上写得满满的各种经历、经验，然而并没有卵用。跑了几场校园招聘会后，十份简历(ps: 事先已经有心里准备)一个也没有投出去——因为学校直接被拒。我对霸面什么的一点兴趣都没有，千里马需要伯乐。后来，我加入了Martin Flower所在的公司，当然这是后话了。</p>
 <p>这是一个残酷的世界，在学生时代，如果你长得不帅不高的话，那么多数的附加技能都是白搭(ps: 通常富的是看不到这篇文章的)。在工作时期，如果你上家没有名气，那么将会影响你下一份工作的待遇。而，很多东西却会改变这些，Github就是其中一个。</p>
-<h2 id="我与github的故事">我与Github的故事</h2>
 <p>注册Github的时候大概是大二的时候，我熟悉的时候已经是大四了，现在已经毕业一年了。在过去的近两年里，我试着以几个维度在Github上创建项目:</p>
 <ol type="1">
 <li>快速上手框架来实战，即demo</li>
@@ -225,7 +226,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>如果你在用心做这个项目，那么你看到代码写得不好也会试着改进，即重构。当有了一些，你的技能会不断提升。你开始会试着接触更多的东西，如stub，如mock，如fakeserver。</p>
 <p>有一天，你会发现你离不开测试。</p>
 <p>然后就会相信: <strong>那些没有写测试的项目都是在耍流氓</strong></p>
-<h2 id="为什么你应该深入github-1">为什么你应该深入Github</h2>
+<h2 id="为什么你应该深入github">为什么你应该深入Github</h2>
 <p>上面我们说的都是我们可以收获到的东西，我们开始尝试就意味着我们知道它可能给我们带来好处。上面已经提到很多可以提升自己的例子了，这里再说说其他的。</p>
 <h3 id="方便工作">方便工作</h3>
 <p>我们可以从中获取到不同的知识、内容、信息。每个人都可以从别人的代码中学习，当我们需要构建一个库的时候我们可以在上面寻找不同的库和代码来实现我们的功能。如当我在实现一个库的时候，我会在Github上到相应的组件:</p>
@@ -242,7 +243,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3 id="扩大人脉">扩大人脉</h3>
 <p>如果我们想创造出更好、强大地框架时，那么认识更多的人可能会带来更多的帮助。有时候会同上面那一点一样的效果。</p>
 <h1 id="介绍">介绍</h1>
-<h3 id="什么是github">什么是Github</h3>
+<h2 id="github">Github</h2>
 <p>Wiki百科上是这么说的</p>
 <blockquote>
 <p>GitHub 是一个共享虚拟主机服务，用于存放使用Git版本控制的软件代码和内容项目。它由GitHub公司（曾称Logical Awesome）的开发者Chris Wanstrath、PJ Hyett和Tom Preston-Werner 使用Ruby on Rails编写而成。</p>
@@ -281,6 +282,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>GitHub可以托管各种git库，并提供一个web界面，但与其它像 SourceForge或Google Code这样的服务不同，GitHub的独特卖点在于从另外一个项目进行分支的简易性。为一个项目贡献代码非常简单：首先点击项目站点的“fork”的按钮，然后将代码检出并将修改加入到刚才分出的代码库中，最后通过内建的“pull request”机制向项目负责人申请代码合并。已经有人将GitHub称为代码玩家的MySpace。</p>
 </blockquote>
 <h2 id="用好github">用好Github</h2>
+<p>如何用好Github,并实践一些敏捷软件开发是一个很有意思的事情.我们可以在上面做很多事情,从测试到CI,再到自动部署.</p>
 <h3 id="敏捷软件开发">敏捷软件开发</h3>
 <p>显然我是在扯淡，这和敏捷软件开发没有什么关系。不过我也不知道瀑布流是怎样的。说说我所知道的一个项目的组成吧:</p>
 <ul>
@@ -447,14 +449,16 @@ $ git config --global user.email &quot;电子邮箱&quot;</code></pre>
 <p>向这个本地的代码仓库添加当前目录的所有改动：</p>
 <pre><code>$ git add .</code></pre>
 <p>或者只是添加某个文件：</p>
-<h2 id="github">Github</h2>
+<h3 id="github-1">Github</h3>
+<p>接着,我们试试在上面创建一个项目:</p>
 <figure>
 <img src="./img/github-roam-create.jpg" alt="Github Roam" /><figcaption>Github Roam</figcaption>
 </figure>
+<p>就会有下面的提醒:</p>
 <figure>
 <img src="./img/project-init.jpg" alt="Github Roam" /><figcaption>Github Roam</figcaption>
 </figure>
-<p>多种方式</p>
+<p>它提供多种方式的创建方法:</p>
 <blockquote>
 <p>…or create a new repository on the command line</p>
 </blockquote>
@@ -469,6 +473,7 @@ git push -u origin master</code></pre>
 </blockquote>
 <pre><code>git remote add origin git@github.com:phodal/github-roam.git
 git push -u origin master</code></pre>
+<p>如果你完成了上面的步骤之后,那么我想你想知道你需要怎样的项目.</p>
 <h1 id="github流行项目分析">Github流行项目分析</h1>
 <p>之前曾经分析过一些Github的用户行为，现在我们先来说说Github上的Star吧。(截止: 2015年3月9日23时。)</p>
 <table>
@@ -581,19 +586,16 @@ git push -u origin master</code></pre>
 <li>其他:简历如<code>Resume</code></li>
 </ul>
 <h1 id="创建你的项目">创建你的项目</h1>
+<p>问题来了,我们在上面需要怎样的项目?</p>
+<p><strong>只要是代码相关的,那应该就是可以的</strong></p>
 <h1 id="创建pull-request">创建Pull Request</h1>
-<h2 id="第一个">第一个</h2>
+<p>除了创建项目之外，我们也可以创建Pull Request来做贡献。</p>
+<h2 id="第一个pr">第一个PR</h2>
+<p>我的第一个PR是给一个小的Node的CoAP相关的库的Pull Request。原因比较简单，是因为它的README.md写错了，导致我无法办法进行下一步。</p>
 <pre><code>     const dgram       = require(&#39;dgram&#39;)
     -    , coapPacket  = require(&#39;coap-packet&#39;)
     +    , package     = require(&#39;coap-packet&#39;)</code></pre>
-<h2 id="google-ngx-pagespeed">Google Ngx Pagespeed</h2>
-<p>CLA: Contributor License Agreement</p>
-<figure>
-<img src="./img/google-cla.png" alt="Google CLA" /><figcaption>Google CLA</figcaption>
-</figure>
-<figure>
-<img src="./img/eclipse-cla.png" alt="Eclipse CLA" /><figcaption>Eclipse CLA</figcaption>
-</figure>
+<p>很简单，却又很有用的步骤，另外一个也是：</p>
 <pre><code> else
    cat &lt;&lt; END
  $0: error: module ngx_pagespeed requires the pagespeed optimization library.
@@ -602,6 +604,17 @@ git push -u origin master</code></pre>
  END
    exit 1
  fi</code></pre>
+<h2 id="cla">CLA</h2>
+<p>CLA即Contributor License Agreement，在为一些大的组织、机构提交Pull Request的时候，可能需要签署这个协议。他们会在你的Pull Request里问你，只有你到他们的网站去注册并同意协议才会接受你的PR。</p>
+<p>以下是我为Google提交的一个PR</p>
+<figure>
+<img src="./img/google-cla.png" alt="Google CLA" /><figcaption>Google CLA</figcaption>
+</figure>
+<p>以及Eclipse的一个PR</p>
+<figure>
+<img src="./img/eclipse-cla.png" alt="Eclipse CLA" /><figcaption>Eclipse CLA</figcaption>
+</figure>
+<p>他们都要求我签署CLA。</p>
 <h1 id="构建github项目">构建Github项目</h1>
 <h2 id="从模块分离到测试">从模块分离到测试</h2>
 <p>在之前说到</p>
@@ -998,6 +1011,63 @@ line 21  col 62   Strings must use singlequote.</code></pre>
 <span class="op">};</span></code></pre></div>
 <p>重构完后的代码比原来还长，这似乎是个问题~~</p>
 <h1 id="创建项目文档">创建项目文档</h1>
+<p>我们需要为我们的项目创建一个文档，通常我们可以将核心代码以外的东西都称为文档：</p>
+<ol type="1">
+<li>README</li>
+<li>文档</li>
+<li>示例</li>
+<li>测试</li>
+</ol>
+<p>通常这个会在项目的最上方会有一个项目的简介，如下图所示：</p>
+<figure>
+<img src="./img/github-intro.png" alt="Github Project Introduction" /><figcaption>Github Project Introduction</figcaption>
+</figure>
+<h2 id="readme">README</h2>
+<p>README通常会显示在Github项目的下面，如下图所示：</p>
+<figure>
+<img src="./img/readme-example.png" alt="Github README" /><figcaption>Github README</figcaption>
+</figure>
+<p>通常一个好的README会让你立马对项目产生兴趣。</p>
+<p>如下面的内容是React项目的简介：</p>
+<figure>
+<img src="./img/react-intro.png" alt="React README" /><figcaption>React README</figcaption>
+</figure>
+<p>下面的内容写清楚了他们的用途：</p>
+<ul>
+<li><strong>Just the UI:</strong> Lots of people use React as the V in MVC. Since React makes no assumptions about the rest of your technology stack, it’s easy to try it out on a small feature in an existing project.</li>
+<li><strong>Virtual DOM:</strong> React abstracts away the DOM from you, giving a simpler programming model and better performance. React can also render on the server using Node, and it can power native apps using <a href="https://facebook.github.io/react-native/">React Native</a>.</li>
+<li><strong>Data flow:</strong> React implements one-way reactive data flow which reduces boilerplate and is easier to reason about than traditional data binding.</li>
+</ul>
+<p>通常在这个README里，还会有：</p>
+<ul>
+<li>针对人群</li>
+<li>安装指南</li>
+<li>示例</li>
+<li>运行的平台</li>
+<li>如何参与贡献</li>
+<li>协议</li>
+</ul>
+<h2 id="在线文档">在线文档</h2>
+<p>很多开源项目都会有自己的网站，并在上面有一个文档，而有的则会放在<a href="https://readthedocs.org/" class="uri">https://readthedocs.org/</a>。</p>
+<blockquote>
+<p>Read the Docs 托管文档，让文档可以被全文搜索和更易查找。您可以导入您使用任何常用的版本控制系统管理的文档，包括 Mercurial、Git、Subversion 和 Bazaar。 我们支持 webhooks，因此可以在您提交代码时自动构建文档。并且同样也支持版本功能，因此您可以构建来自您代码仓库中某个标签或分支的文档。查看完整的功能列表 。</p>
+</blockquote>
+<p>在一个开源项目中，良好和专业的文档是相当重要的，有时他可能会比软件还会重要。因为如果一个开源项目好用的话，多数人可能不会去查看软件的代码。这就意味着，多数时候他在和你的文档打交道。文档一般会有：API 文档、 配置文档、帮助文档、用户手册、教程等等</p>
+<p>写文档的软件有很多，如Markdown、Doxygen、Docbook等等。</p>
+<h2 id="可用示例">可用示例</h2>
+<p>一个简单上手的示例非常重要，特别是通常我们是在为着某个目的而去使用一个开源项目的是时候，我们希望能马上使用到我们的项目中。</p>
+<p>你希望看到的是，你打开浏览器，输入下面的代码，然后<strong>It Works</strong>:</p>
+<pre><code>var HelloMessage = React.createClass({
+  render: function() {
+    return &lt;div&gt;Hello {this.props.name}&lt;/div&gt;;
+  }
+});
+
+React.render(
+  &lt;HelloMessage name=&quot;John&quot; /&gt;,
+  document.getElementById(&#39;container&#39;)
+);</code></pre>
+<p>而不是需要繁琐的步骤才能进行下一步。</p>
 <h1 id="测试-1">测试</h1>
 <h2 id="一次测试驱动开发">一次测试驱动开发</h2>
 <p>虽然接触的TDD时间不算短，然而真正在实践TDD上的时候少之又少。除去怎么教人TDD，就是与人结对编程时的switch，或许是受限于当前的开发流程。</p>
@@ -1170,7 +1240,6 @@ beforeEach(function() {
 <p>有一天，我发现当我需要我一次又一次地重复讲述某些内容，于是我就计划着把这些应该掌握的技能放到Github上，也就有了<a href="https://github.com/artisanstack">Artisan Stack</a> 计划。</p>
 <p>每个程序员都不可避免地是一个Coder，一个没有掌握好技能的Coder，算不上是手工艺人，但是是手工人。</p>
 <p>艺，需要有创造性的方法。</p>
-<h1 id="前端技能训练-重构一"><a href="http://www.phodal.com/blog/frontend-improve-refactor-javascript-code/">前端技能训练: 重构一</a></h1>
 <h2 id="为什么重构">为什么重构?</h2>
 <blockquote>
 <p>为了更好的代码。</p>
@@ -1210,7 +1279,6 @@ beforeEach(function() {
     <span class="dt">code</span><span class="op">:</span> <span class="ss">/</span><span class="sc">\s\`\`\`\n?([^`]+)\`\`\`</span><span class="ss">/g</span></code></pre></div>
 <p>他会匹配对应的Markdown类型，随后进行替换和处理。而``str```，就是管理口的输入和输出。</p>
 <p>接着，我们就可以对其进行简单的重构。</p>
-<h3 id="重构-2">重构</h3>
 <p>(ps: 推荐用WebStrom来做重构，自带重构功能)</p>
 <p>作为一个示例，我们先提出codeHandler方法，即将上面的</p>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">/* code */</span>
@@ -1390,7 +1458,7 @@ str <span class="op">=</span> <span class="at">tableHandler</span>(str<span clas
         }
     }
 }</code></pre></div>
-<h4 id="重构-3">重构</h4>
+<h4 id="重构-2">重构</h4>
 <p>选中<code>basePrice</code>很愉快地拿鼠标点上面的重构</p>
 <figure>
 <img src="./img/replace.jpg" alt="Replace Temp With Query" /><figcaption>Replace Temp With Query</figcaption>
@@ -1651,7 +1719,7 @@ public class replaceTemp {
 <h3 id="编程的基础能力">编程的基础能力</h3>
 <p>虽说算法很重要，但是编码才是基础能力。算法与编程在某种程度上是不同的领域，算法编程是在编程上面的一级。算法写得再好，如果别人很难直接拿来复用，在别人眼里就是shit。想出能work的代码一件简单的事，学会对其重构，使之变得更易读就是一件有意义的事。</p>
 <p>于是，在某一时刻在Github上创建了一个组织，叫<a href="https://github.com/artisanstack">Artisan Stack</a>。当时想的是在Github寻找一些JavaScript项目，对其代码进行重构。但是到底是影响力不够哈，参与的人数比较少。</p>
-<h4 id="重构-4">重构</h4>
+<h4 id="重构-3">重构</h4>
 <p>如果你懂得如何写出高可读的代码，那么我想你是不需要这个的，但是这意味着你花了更多的时候在思考上了。当谈论重构的时候，让我想起了TDD(测试驱动开发)。即使不是TDD，那么如果你写着测试，那也是可以重构的。(之前写过一些利用Intellij IDEA重构的文章：<a href="https://www.phodal.com/blog/intellij-idea-refactor-extract-method/">提炼函数</a>、<a href="https://www.phodal.com/blog/intellij-idea-refactor-replace-temp-with-query/">以查询取代临时变量</a>、<a href="https://www.phodal.com/blog/thoughtworks-refactor-and-intellij-idea/">重构与Intellij Idea初探</a>、<a href="https://www.phodal.com/blog/intellij-idea-refactor-inline-method/">内联函数</a>)</p>
 <p>在各种各样的文章里，我们看到过一些相关的内容，最好的参考莫过于《重构》一书。最基础不过的原则便是函数名，取名字很难，取别人能读懂的名字更难。其他的便有诸如长函数、过大的类、重复代码等等。在我有限的面试别人的经历里，这些问题都是最常见的。</p>
 <h4 id="测试-2">测试</h4>

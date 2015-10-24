@@ -45,13 +45,17 @@ $ git add .
     
 或者只是添加某个文件：
 
-##Github
+###Github
+
+接着,我们试试在上面创建一个项目:
 
 ![Github Roam](./img/github-roam-create.jpg)
 
+就会有下面的提醒:
+
 ![Github Roam](./img/project-init.jpg)
 
-多种方式
+它提供多种方式的创建方法:
 
 > …or create a new repository on the command line
 
@@ -71,3 +75,4 @@ git remote add origin git@github.com:phodal/github-roam.git
 git push -u origin master
 ```		
 	
+如果你完成了上面的步骤之后,那么我想你想知道你需要怎样的项目.	

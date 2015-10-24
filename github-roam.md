@@ -7,13 +7,11 @@
 
 在这里，我会试着将我在Github上学到的东西一一分享出来。
 
-#为什么你应该深入Github
+##我与Github的故事
 
 在我大四找工作的时候，试图去寻找一份硬件、物联网相关的工作(ps: 专业是电子信息工程)。尽管简历上写得满满的各种经历、经验，然而并没有卵用。跑了几场校园招聘会后，十份简历(ps: 事先已经有心里准备)一个也没有投出去——因为学校直接被拒。我对霸面什么的一点兴趣都没有，千里马需要伯乐。后来，我加入了Martin Flower所在的公司，当然这是后话了。
 
 这是一个残酷的世界，在学生时代，如果你长得不帅不高的话，那么多数的附加技能都是白搭(ps: 通常富的是看不到这篇文章的)。在工作时期，如果你上家没有名气，那么将会影响你下一份工作的待遇。而，很多东西却会改变这些，Github就是其中一个。
-
-##我与Github的故事
 
 注册Github的时候大概是大二的时候，我熟悉的时候已经是大四了，现在已经毕业一年了。在过去的近两年里，我试着以几个维度在Github上创建项目:
 
@@ -79,7 +77,7 @@
 
 #介绍
 
-###什么是Github
+##Github
 
 Wiki百科上是这么说的
 
@@ -124,6 +122,8 @@ jQuery[^jQuery]在发布版本``2.1.3``，一共有152个commit。我们可以�
 [^jQuery]: jQuery是一套跨浏览器的JavaScript库，简化HTML与JavaScript之间的操作。
 
 ##用好Github
+
+如何用好Github,并实践一些敏捷软件开发是一个很有意思的事情.我们可以在上面做很多事情,从测试到CI,再到自动部署.
 
 ###敏捷软件开发
 
@@ -329,13 +329,17 @@ $ git add .
     
 或者只是添加某个文件：
 
-##Github
+###Github
+
+接着,我们试试在上面创建一个项目:
 
 ![Github Roam](./img/github-roam-create.jpg)
 
+就会有下面的提醒:
+
 ![Github Roam](./img/project-init.jpg)
 
-多种方式
+它提供多种方式的创建方法:
 
 > …or create a new repository on the command line
 
@@ -355,6 +359,7 @@ git remote add origin git@github.com:phodal/github-roam.git
 git push -u origin master
 ```		
 	
+如果你完成了上面的步骤之后,那么我想你想知道你需要怎样的项目.	
 
 #Github流行项目分析
 
@@ -398,22 +403,23 @@ C | 2
 
 #创建你的项目
 
+问题来了,我们在上面需要怎样的项目?
+
+**只要是代码相关的,那应该就是可以的**
+
 #创建Pull Request
 
+除了创建项目之外，我们也可以创建Pull Request来做贡献。
 
-##第一个
+##第一个PR
+
+我的第一个PR是给一个小的Node的CoAP相关的库的Pull Request。原因比较简单，是因为它的README.md写错了，导致我无法办法进行下一步。
 
 		 const dgram       = require('dgram')
 		-    , coapPacket  = require('coap-packet')
 		+    , package     = require('coap-packet')
 
-##Google Ngx Pagespeed
-
-CLA: Contributor License Agreement 
-
-![Google CLA](./img/google-cla.png)
-
-![Eclipse CLA](./img/eclipse-cla.png)
+很简单，却又很有用的步骤，另外一个也是：
 
 ```
  else
@@ -425,6 +431,20 @@ CLA: Contributor License Agreement
    exit 1
  fi
 ``` 
+
+##CLA
+
+CLA即Contributor License Agreement，在为一些大的组织、机构提交Pull Request的时候，可能需要签署这个协议。他们会在你的Pull Request里问你，只有你到他们的网站去注册并同意协议才会接受你的PR。
+
+以下是我为Google提交的一个PR
+
+![Google CLA](./img/google-cla.png)
+
+以及Eclipse的一个PR
+
+![Eclipse CLA](./img/eclipse-cla.png)
+
+他们都要求我签署CLA。
 
 #构建Github项目
 
@@ -815,6 +835,75 @@ SQLiteHelper.prototype.getData = function (url, callback) {
 
 #创建项目文档
 
+我们需要为我们的项目创建一个文档，通常我们可以将核心代码以外的东西都称为文档：
+
+1. README
+2. 文档
+3. 示例 
+4. 测试
+
+通常这个会在项目的最上方会有一个项目的简介，如下图所示：
+
+![Github Project Introduction](./img/github-intro.png)
+
+##README
+
+README通常会显示在Github项目的下面，如下图所示：
+
+![Github README](./img/readme-example.png)
+
+通常一个好的README会让你立马对项目产生兴趣。
+
+如下面的内容是React项目的简介：
+
+![React README](./img/react-intro.png)
+
+下面的内容写清楚了他们的用途：
+
+* **Just the UI:** Lots of people use React as the V in MVC. Since React makes no assumptions about the rest of your technology stack, it's easy to try it out on a small feature in an existing project.
+* **Virtual DOM:** React abstracts away the DOM from you, giving a simpler programming model and better performance. React can also render on the server using Node, and it can power native apps using [React Native](https://facebook.github.io/react-native/).
+* **Data flow:** React implements one-way reactive data flow which reduces boilerplate and is easier to reason about than traditional data binding.
+
+通常在这个README里，还会有：
+
+* 针对人群
+* 安装指南
+* 示例
+* 运行的平台
+* 如何参与贡献
+* 协议
+
+##在线文档
+
+很多开源项目都会有自己的网站，并在上面有一个文档，而有的则会放在[https://readthedocs.org/](https://readthedocs.org/)。
+
+> Read the Docs 托管文档，让文档可以被全文搜索和更易查找。您可以导入您使用任何常用的版本控制系统管理的文档，包括 Mercurial、Git、Subversion 和 Bazaar。 我们支持 webhooks，因此可以在您提交代码时自动构建文档。并且同样也支持版本功能，因此您可以构建来自您代码仓库中某个标签或分支的文档。查看完整的功能列表 。
+
+在一个开源项目中，良好和专业的文档是相当重要的，有时他可能会比软件还会重要。因为如果一个开源项目好用的话，多数人可能不会去查看软件的代码。这就意味着，多数时候他在和你的文档打交道。文档一般会有：API 文档、 配置文档、帮助文档、用户手册、教程等等
+
+写文档的软件有很多，如Markdown、Doxygen、Docbook等等。
+
+##可用示例
+
+一个简单上手的示例非常重要，特别是通常我们是在为着某个目的而去使用一个开源项目的是时候，我们希望能马上使用到我们的项目中。
+
+你希望看到的是，你打开浏览器，输入下面的代码，然后**It Works**:
+
+```
+var HelloMessage = React.createClass({
+  render: function() {
+    return <div>Hello {this.props.name}</div>;
+  }
+});
+
+React.render(
+  <HelloMessage name="John" />,
+  document.getElementById('container')
+);
+```
+
+而不是需要繁琐的步骤才能进行下一步。
+
 #测试
 
 ##一次测试驱动开发
@@ -1061,8 +1150,6 @@ req.end();
 
 艺，需要有创造性的方法。
 
-#[前端技能训练: 重构一](http://www.phodal.com/blog/frontend-improve-refactor-javascript-code/)
-
 ##为什么重构?
 
 > 为了更好的代码。
@@ -1120,8 +1207,6 @@ regexobject: {
 他会匹配对应的Markdown类型，随后进行替换和处理。而``str```，就是管理口的输入和输出。
 
 接着，我们就可以对其进行简单的重构。
-
-###重构
 
 (ps: 推荐用WebStrom来做重构，自带重构功能)
 
