@@ -154,3 +154,53 @@ ul li ul a {
         margin: 40px auto;
     }
 }
+
+
+table {
+    margin-bottom: 10px
+}
+
+thead {
+    font-size: 120%;
+    font-weight: 1000;
+    cursor: pointer;
+    background: #c9dff0
+}
+
+thead tr th {
+    text-align: center;
+    font-weight: bold;
+    padding: 12px 30px;
+    padding-left: 42px
+}
+
+thead tr th span {
+    padding-right: 20px;
+    background-repeat: no-repeat;
+    background-position: 100% 100%
+}
+
+tbody tr td {
+    padding: 15px 10px
+}
+
+tbody tr td.lalign {
+    text-align: left
+}
+
+tbody tr:nth-child(even) {
+    background: #fff
+}
+
+tbody tr:nth-child(odd) {
+    background: #eee
+}
+
+td,th {
+    border-left: 1px solid #cbcbcb;
+    border-width: 0 0 0 1px;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible;
+    padding: .5em 1em
+}
