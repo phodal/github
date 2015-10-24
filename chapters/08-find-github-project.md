@@ -169,5 +169,4 @@ Lettuce.send = function (url, method, callback, data) {
 };
 ```
 
-
- <hr>
+---

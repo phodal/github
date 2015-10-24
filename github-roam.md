@@ -75,57 +75,13 @@
 
 因而，在Github寻找合适的候选人，已经是一种趋势。
 
-###扩大人脉
+###扩大交际
 
 如果我们想创造出更好、强大地框架时，那么认识更多的人可能会带来更多的帮助。有时候会同上面那一点一样的效果 
 
- <hr>
+---
 
 #Git基本知识与Github使用
-
-##Github
-
-Wiki百科上是这么说的
-
-> GitHub 是一个共享虚拟主机服务，用于存放使用Git版本控制的软件代码和内容项目。它由GitHub公司（曾称Logical Awesome）的开发者Chris Wanstrath、PJ Hyett和Tom Preston-Werner
-使用Ruby on Rails编写而成。
-
-当然让我们看看官方的介绍:
-
-> GitHub is the best place to share code with friends, co-workers, classmates, and complete strangers. Over eight million people use GitHub to build amazing things together.
-
-
-它还是什么?
-
-- 网站
-- 免费博客
-- 管理配置文件
-- 收集资料
-- 简历
-- 管理代码片段
-- 托管编程环境
-- 写作
-
-等等。看上去像是大餐，但是你还需要了解点什么?
-
-###版本管理与软件部署
-
-jQuery[^jQuery]在发布版本``2.1.3``，一共有152个commit。我们可以看到如下的提交信息:
-
- - Ajax: Always use script injection in globalEval …	 bbdfbb4
- - Effects: Reintroduce use of requestAnimationFrame …	 72119e0
- - Effects: Improve raf logic …	 708764f
- - Build: Move test to appropriate module	 fbdbb6f
- - Build: Update commitplease dev dependency
- - ...
-
-###Github与Git
-
-> Git是一个分布式的版本控制系统，最初由Linus Torvalds编写，用作Linux内核代码的管理。在推出后，Git在其它项目中也取得了很大成功，尤其是在Ruby社区中。目前，包括Rubinius、Merb和Bitcoin在内的很多知名项目都使用了Git。Git同样可以被诸如Capistrano和Vlad the Deployer这样的部署工具所使用。
-
-> GitHub可以托管各种git库，并提供一个web界面，但与其它像 SourceForge或Google Code这样的服务不同，GitHub的独特卖点在于从另外一个项目进行分支的简易性。为一个项目贡献代码非常简单：首先点击项目站点的“fork”的按钮，然后将代码检出并将修改加入到刚才分出的代码库中，最后通过内建的“pull request”机制向项目负责人申请代码合并。已经有人将GitHub称为代码玩家的MySpace。
-
-[^jQuery]: jQuery是一套跨浏览器的JavaScript库，简化HTML与JavaScript之间的操作。
 
 ##Git
 
@@ -190,6 +146,49 @@ $git status
 ![After add](./img/after-add.png)
 
 可以看到状态的变化是从黄色到绿色，即unstage到add。
+
+
+##Github
+
+Wiki百科上是这么说的
+
+> GitHub 是一个共享虚拟主机服务，用于存放使用Git版本控制的软件代码和内容项目。它由GitHub公司（曾称Logical Awesome）的开发者Chris Wanstrath、PJ Hyett和Tom Preston-Werner
+使用Ruby on Rails编写而成。
+
+当然让我们看看官方的介绍:
+
+> GitHub is the best place to share code with friends, co-workers, classmates, and complete strangers. Over eight million people use GitHub to build amazing things together.
+
+
+它还是什么?
+
+- 网站
+- 免费博客
+- 管理配置文件
+- 收集资料
+- 简历
+- 管理代码片段
+- 托管编程环境
+- 写作
+
+等等。看上去像是大餐，但是你还需要了解点什么?
+
+###版本管理与软件部署
+
+jQuery[^jQuery]在发布版本``2.1.3``，一共有152个commit。我们可以看到如下的提交信息:
+
+ - Ajax: Always use script injection in globalEval …	 bbdfbb4
+ - Effects: Reintroduce use of requestAnimationFrame …	 72119e0
+ - Effects: Improve raf logic …	 708764f
+ - Build: Move test to appropriate module	 fbdbb6f
+ - Build: Update commitplease dev dependency
+ - ...
+
+###Github与Git
+
+> Git是一个分布式的版本控制系统，最初由Linus Torvalds编写，用作Linux内核代码的管理。在推出后，Git在其它项目中也取得了很大成功，尤其是在Ruby社区中。目前，包括Rubinius、Merb和Bitcoin在内的很多知名项目都使用了Git。Git同样可以被诸如Capistrano和Vlad the Deployer这样的部署工具所使用。
+
+> GitHub可以托管各种git库，并提供一个web界面，但与其它像 SourceForge或Google Code这样的服务不同，GitHub的独特卖点在于从另外一个项目进行分支的简易性。为一个项目贡献代码非常简单：首先点击项目站点的“fork”的按钮，然后将代码检出并将修改加入到刚才分出的代码库中，最后通过内建的“pull request”机制向项目负责人申请代码合并。已经有人将GitHub称为代码玩家的MySpace。
 
 ###在Github创建项目
 
@@ -261,7 +260,7 @@ C | 2
  - 资料收集: 如``free programming books``，``You-Dont-Know-JS``，``Font-Awesome``
  - 其他:简历如``Resume``
  
-##创建Pull Request
+##Pull Request
 
 除了创建项目之外，我们也可以创建Pull Request来做贡献。
 
@@ -304,7 +303,7 @@ CLA即Contributor License Agreement，在为一些大的组织、机构提交Pul
 
 #构建Github项目
 
-##用好Github
+##如何用好Github
 
 如何用好Github,并实践一些敏捷软件开发是一个很有意思的事情.我们可以在上面做很多事情,从测试到CI,再到自动部署.
 
@@ -459,13 +458,7 @@ Lettuce.send = function (url, method, callback, data) {
 
 这就意味着我们可以对上面的代码进行重构，他们是重复的代码。
 
-###重构
-
-不想在这里说太多关于``重构``的东西，可以参考Martin Flower的《重构》一书去多了解一些重构的细节。
-
-这时想说的是，只有代码被测试覆盖住了，那么才能保证重构的过程没有出错。
-
-##从模块分离到测试
+##模块分离与测试
 
 在之前说到
 
@@ -488,7 +481,7 @@ Lettuce.send = function (url, method, callback, data) {
  
 等等。 
 
-###Skillock模块化
+###代码模块化
 
 在SkillTree的源码里，大致分为三部分:
 
@@ -646,7 +639,7 @@ branches:
       Link Test
         ✓ should return link label & url
 
-###测试用例
+###测试示例
 
 简单地看一下Book的测试:
 
@@ -708,7 +701,7 @@ it('should return book label & url', function () {
 
 最后的断言，也算是测试的核心，保证测试是有用的。	  
 
-##Code Climate来clean code与重构
+##代码质量与重构
 
  - 当你写了一大堆代码,你没有意识到里面有一大堆重复。
  - 当你写了一大堆测试,却不知道覆盖率有多少。
@@ -850,7 +843,7 @@ SQLiteHelper.prototype.getData = function (url, callback) {
 
 重构完后的代码比原来还长，这似乎是个问题~~
 
- <hr>
+ ---
 
 #创建项目文档
 
@@ -923,7 +916,7 @@ React.render(
 
 而不是需要繁琐的步骤才能进行下一步。
 
- <hr>
+---
 
 #测试
 
@@ -1161,7 +1154,7 @@ req.end();
 		});
 	});
 	
- <hr>	
+---
 
 #重构
 
@@ -1573,7 +1566,7 @@ public class replaceTemp {
 }
 ```
 
- <hr>
+---
 
 #Github连击 
 
@@ -1898,7 +1891,7 @@ public class replaceTemp {
 3. 设计
 4. 。。。
 
- <hr>
+---
 
 #如何在Github"寻找灵感(fork)"
 
@@ -2071,8 +2064,7 @@ Lettuce.send = function (url, method, callback, data) {
 };
 ```
 
-
- <hr>
+---
 
 #Github用户分析
 

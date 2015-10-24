@@ -1,6 +1,6 @@
 #构建Github项目
 
-##用好Github
+##如何用好Github
 
 如何用好Github,并实践一些敏捷软件开发是一个很有意思的事情.我们可以在上面做很多事情,从测试到CI,再到自动部署.
 
@@ -155,13 +155,7 @@ Lettuce.send = function (url, method, callback, data) {
 
 这就意味着我们可以对上面的代码进行重构，他们是重复的代码。
 
-###重构
-
-不想在这里说太多关于``重构``的东西，可以参考Martin Flower的《重构》一书去多了解一些重构的细节。
-
-这时想说的是，只有代码被测试覆盖住了，那么才能保证重构的过程没有出错。
-
-##从模块分离到测试
+##模块分离与测试
 
 在之前说到
 
@@ -184,7 +178,7 @@ Lettuce.send = function (url, method, callback, data) {
  
 等等。 
 
-###Skillock模块化
+###代码模块化
 
 在SkillTree的源码里，大致分为三部分:
 
@@ -342,7 +336,7 @@ branches:
       Link Test
         ✓ should return link label & url
 
-###测试用例
+###测试示例
 
 简单地看一下Book的测试:
 
@@ -404,7 +398,7 @@ it('should return book label & url', function () {
 
 最后的断言，也算是测试的核心，保证测试是有用的。	  
 
-##Code Climate来clean code与重构
+##代码质量与重构
 
  - 当你写了一大堆代码,你没有意识到里面有一大堆重复。
  - 当你写了一大堆测试,却不知道覆盖率有多少。
@@ -546,4 +540,4 @@ SQLiteHelper.prototype.getData = function (url, callback) {
 
 重构完后的代码比原来还长，这似乎是个问题~~
 
- <hr>
+ ---
