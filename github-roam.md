@@ -920,13 +920,13 @@ React.render(
 
 #测试
 
-##一次测试驱动开发
+##TDD
 
 虽然接触的TDD时间不算短，然而真正在实践TDD上的时候少之又少。除去怎么教人TDD，就是与人结对编程时的switch，或许是受限于当前的开发流程。
 
 偶然间在开发一个物联网相关的开源项目——[Lan](https://github.com/phodal/lan)的时候，重拾了这个过程。不得不说提到的一点是，在我们的开发流程中**测试是由相关功能开发人员写的**，有时候测试是一种很具挑战性的工作。久而久之，为自己的开源项目写测试变成一种自然而然的事。有时没有测试，反而变得**没有安全感**。
 
-###故事
+###一次测试驱动开发
 
 之前正在重写一个[物联网](http://www.phodal.com/iot)的服务端，主要便是结合CoAP、MQTT、HTTP等协议构成一个物联网的云服务。现在，主要的任务是集中于协议与授权。由于，不同协议间的授权是不一样的，最开始的时候我先写了一个http put授权的功能，而在起先的时候是如何测试的呢?
 
@@ -973,7 +973,7 @@ req.end();
 	
 写完测试脚本后发现不对了，这个不应该是测试的代码吗? 于是将其放到了spec中，接着发现了上面的全部功能的实现过程为什么不用TDD实现呢？
 
-###说说测试驱动开发
+###说说TDD
 
 测试驱动开发是一个很"古老"的程序开发方法，然而由于国内的开发流程的问题——即开发人员负责功能的测试，导致这么好的一项技术没有在国内推广。
 
@@ -989,7 +989,7 @@ req.end();
 1. 已经有了原型
 2. 框架设计
 
-###思考
+###TDD思考
 
 通常在我的理解下，TDD是可有可无的。既然我知道了我要实现的大部分功能，而且我也知道如何实现。与此同时，对Code Smell也保持着警惕、要保证功能被测试覆盖。那么，总的来说TDD带来的价值并不大。
 
@@ -998,7 +998,9 @@ req.end();
 在这种理想的情况下，我们为什么不TDD呢?
 
 
-##轻量级网站测试TWill
+##功能测试
+
+###轻量级网站测试TWill
 
 > twill was initially designed for testing Web sites, although since then people have also figured out that it's good for browsing unsuspecting Web sites.
 
@@ -1568,6 +1570,179 @@ public class replaceTemp {
 
 ---
 
+#如何在Github"寻找灵感(fork)"
+
+> 重造轮子是重新创造一个已有的或是已被其他人优化的基本方法。
+
+最近萌发了一个想法写游戏引擎，之前想着做一个JavaScript前端框架。看看，这个思路是怎么来的。
+
+##[Lettuce](https://github.com/phodal/lettuce)构建过程
+
+> Lettuce是一个简约的移动开发框架。
+
+故事的出发点是这样的:``写了很多代码,用的都是框架，最后不知道收获什么了``?事实也是如此，当自己做了一些项目之后，发现最后什么也没有收获到。于是，就想着做一个框架。
+
+###需求
+
+有这样的几个前提
+
+ - 为什么我只需要jQuery里的选择器、Ajax要引入那么重的库呢?
+ - 为什么我只需要一个Template，却想着用Mustache
+ - 为什么我需要一个Router，却要用Backbone呢?
+ - 为什么我需要的是一个isObject函数，却要用到整个Underscore?
+
+我想要的只是一个简单的功能，而我不想引入一个庞大的库。换句话说，我只需要不同库里面的一小部分功能，而不是一个库。
+
+实际上想要的是:
+
+> 构建一个库，里面从不同的库里面抽取出不同的函数。
+
+###计划
+
+这时候我参考了一本电子书《Build JavaScript FrameWork》，加上一些平时的需求，于是很快的就知道自己需要什么样的功能:
+
+ - Promise 支持
+ - Class类(ps:没有一个好的类使用的方式)
+ - Template 一个简单的模板引擎
+ - Router 用来控制页面的路由 
+ - Ajax 基本的Ajax Get/Post请求 
+
+在做一些实际的项目中，还遇到了这样的一些功能支持:
+
+ - Effect 简单的一些页面效果
+ - AMD支持
+
+而我们有一个前提是要保持这个库尽可能的小、同时我们还需要有测试。
+
+###实现第一个需求
+
+简单说说是如何实现一个简单的需求。
+
+####生成框架
+
+因为Yeoman可以生成一个简单的轮廓，所以我们可以用它来生成这个项目的骨架。
+
+ - Gulp
+ - Jasmine
+
+####寻找
+
+在Github上搜索了一个看到了下面的几个结果:
+
+- [https://github.com/then/promise](https://github.com/then/promise)
+- [https://github.com/reactphp/promise](https://github.com/reactphp/promise)
+- [https://github.com/kriskowal/q](https://github.com/kriskowal/q)
+- [https://github.com/petkaantonov/bluebird](https://github.com/petkaantonov/bluebird)
+- [https://github.com/cujojs/when](https://github.com/cujojs/when)
+
+但是显然，他们都太重了。事实上，对于一个库来说，80%的人只需要其中20%的代码。于是，找到了[https://github.com/stackp/promisejs](https://github.com/stackp/promisejs)，看了看用法，这就是我们需要的功能:
+
+```javascript
+function late(n) {
+    var p = new promise.Promise();
+    setTimeout(function() {
+        p.done(null, n);
+    }, n);
+    return p;
+}
+
+late(100).then(
+    function(err, n) {
+        return late(n + 200);
+    }
+).then(
+    function(err, n) {
+        return late(n + 300);
+    }
+).then(
+    function(err, n) {
+        return late(n + 400);
+    }
+).then(
+    function(err, n) {
+        alert(n);
+    }
+);
+```
+
+接着打开看看Promise对象，有我们需要的功能，但是又有一些功能超出我的需求。接着把自己不需要的需求去掉，这里函数最后就变成了
+
+```javascript
+function Promise() {
+    this._callbacks = [];
+}
+
+Promise.prototype.then = function(func, context) {
+    var p;
+    if (this._isdone) {
+        p = func.apply(context, this.result);
+    } else {
+        p = new Promise();
+        this._callbacks.push(function () {
+            var res = func.apply(context, arguments);
+            if (res && typeof res.then === 'function') {
+                res.then(p.done, p);
+            }
+        });
+    }
+    return p;
+};
+
+Promise.prototype.done = function() {
+    this.result = arguments;
+    this._isdone = true;
+    for (var i = 0; i < this._callbacks.length; i++) {
+        this._callbacks[i].apply(null, arguments);
+    }
+    this._callbacks = [];
+};
+
+var promise = {
+    Promise: Promise
+};
+```
+
+需要注意的是: ``License``，不同的软件有不同的License，如MIT、GPL等等。最好能在遵循协议的情况下，使用别人的代码。
+
+###实现第二个需求
+
+由于，现有的一些Ajax库都比较，最后只好参照着别人的代码自己实现。
+
+```javascript
+Lettuce.get = function (url, callback) {
+    Lettuce.send(url, 'GET', callback);
+};
+
+Lettuce.load = function (url, callback) {
+    Lettuce.send(url, 'GET', callback);
+};
+
+Lettuce.post = function (url, data, callback) {
+    Lettuce.send(url, 'POST', callback, data);
+};
+
+Lettuce.send = function (url, method, callback, data) {
+    data = data || null;
+    var request = new XMLHttpRequest();
+    if (callback instanceof Function) {
+        request.onreadystatechange = function () {
+            if (request.readyState === 4 && (request.status === 200 || request.status === 0)) {
+                callback(request.responseText);
+            }
+        };
+    }
+    request.open(method, url, true);
+    if (data instanceof Object) {
+        data = JSON.stringify(data);
+        request.setRequestHeader('Content-Type', 'application/json');
+    }
+    request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    request.send(data);
+};
+```
+
+---
+
 #Github连击 
 
 ##100天
@@ -1890,179 +2065,6 @@ public class replaceTemp {
 2. 架构
 3. 设计
 4. 。。。
-
----
-
-#如何在Github"寻找灵感(fork)"
-
-> 重造轮子是重新创造一个已有的或是已被其他人优化的基本方法。
-
-最近萌发了一个想法写游戏引擎，之前想着做一个JavaScript前端框架。看看，这个思路是怎么来的。
-
-##[Lettuce](https://github.com/phodal/lettuce)构建过程
-
-> Lettuce是一个简约的移动开发框架。
-
-故事的出发点是这样的:``写了很多代码,用的都是框架，最后不知道收获什么了``?事实也是如此，当自己做了一些项目之后，发现最后什么也没有收获到。于是，就想着做一个框架。
-
-###需求
-
-有这样的几个前提
-
- - 为什么我只需要jQuery里的选择器、Ajax要引入那么重的库呢?
- - 为什么我只需要一个Template，却想着用Mustache
- - 为什么我需要一个Router，却要用Backbone呢?
- - 为什么我需要的是一个isObject函数，却要用到整个Underscore?
-
-我想要的只是一个简单的功能，而我不想引入一个庞大的库。换句话说，我只需要不同库里面的一小部分功能，而不是一个库。
-
-实际上想要的是:
-
-> 构建一个库，里面从不同的库里面抽取出不同的函数。
-
-###计划
-
-这时候我参考了一本电子书《Build JavaScript FrameWork》，加上一些平时的需求，于是很快的就知道自己需要什么样的功能:
-
- - Promise 支持
- - Class类(ps:没有一个好的类使用的方式)
- - Template 一个简单的模板引擎
- - Router 用来控制页面的路由 
- - Ajax 基本的Ajax Get/Post请求 
-
-在做一些实际的项目中，还遇到了这样的一些功能支持:
-
- - Effect 简单的一些页面效果
- - AMD支持
-
-而我们有一个前提是要保持这个库尽可能的小、同时我们还需要有测试。
-
-###实现第一个需求
-
-简单说说是如何实现一个简单的需求。
-
-####生成框架
-
-因为Yeoman可以生成一个简单的轮廓，所以我们可以用它来生成这个项目的骨架。
-
- - Gulp
- - Jasmine
-
-####寻找
-
-在Github上搜索了一个看到了下面的几个结果:
-
-- [https://github.com/then/promise](https://github.com/then/promise)
-- [https://github.com/reactphp/promise](https://github.com/reactphp/promise)
-- [https://github.com/kriskowal/q](https://github.com/kriskowal/q)
-- [https://github.com/petkaantonov/bluebird](https://github.com/petkaantonov/bluebird)
-- [https://github.com/cujojs/when](https://github.com/cujojs/when)
-
-但是显然，他们都太重了。事实上，对于一个库来说，80%的人只需要其中20%的代码。于是，找到了[https://github.com/stackp/promisejs](https://github.com/stackp/promisejs)，看了看用法，这就是我们需要的功能:
-
-```javascript
-function late(n) {
-    var p = new promise.Promise();
-    setTimeout(function() {
-        p.done(null, n);
-    }, n);
-    return p;
-}
-
-late(100).then(
-    function(err, n) {
-        return late(n + 200);
-    }
-).then(
-    function(err, n) {
-        return late(n + 300);
-    }
-).then(
-    function(err, n) {
-        return late(n + 400);
-    }
-).then(
-    function(err, n) {
-        alert(n);
-    }
-);
-```
-
-接着打开看看Promise对象，有我们需要的功能，但是又有一些功能超出我的需求。接着把自己不需要的需求去掉，这里函数最后就变成了
-
-```javascript
-function Promise() {
-    this._callbacks = [];
-}
-
-Promise.prototype.then = function(func, context) {
-    var p;
-    if (this._isdone) {
-        p = func.apply(context, this.result);
-    } else {
-        p = new Promise();
-        this._callbacks.push(function () {
-            var res = func.apply(context, arguments);
-            if (res && typeof res.then === 'function') {
-                res.then(p.done, p);
-            }
-        });
-    }
-    return p;
-};
-
-Promise.prototype.done = function() {
-    this.result = arguments;
-    this._isdone = true;
-    for (var i = 0; i < this._callbacks.length; i++) {
-        this._callbacks[i].apply(null, arguments);
-    }
-    this._callbacks = [];
-};
-
-var promise = {
-    Promise: Promise
-};
-```
-
-需要注意的是: ``License``，不同的软件有不同的License，如MIT、GPL等等。最好能在遵循协议的情况下，使用别人的代码。
-
-###实现第二个需求
-
-由于，现有的一些Ajax库都比较，最后只好参照着别人的代码自己实现。
-
-```javascript
-Lettuce.get = function (url, callback) {
-    Lettuce.send(url, 'GET', callback);
-};
-
-Lettuce.load = function (url, callback) {
-    Lettuce.send(url, 'GET', callback);
-};
-
-Lettuce.post = function (url, data, callback) {
-    Lettuce.send(url, 'POST', callback, data);
-};
-
-Lettuce.send = function (url, method, callback, data) {
-    data = data || null;
-    var request = new XMLHttpRequest();
-    if (callback instanceof Function) {
-        request.onreadystatechange = function () {
-            if (request.readyState === 4 && (request.status === 200 || request.status === 0)) {
-                callback(request.responseText);
-            }
-        };
-    }
-    request.open(method, url, true);
-    if (data instanceof Object) {
-        data = JSON.stringify(data);
-        request.setRequestHeader('Content-Type', 'application/json');
-    }
-    request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-    request.send(data);
-};
-```
 
 ---
 

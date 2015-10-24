@@ -114,12 +114,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#可用示例">可用示例</a></li>
 </ul></li>
 <li><a href="#测试-1">测试</a><ul>
-<li><a href="#一次测试驱动开发">一次测试驱动开发</a><ul>
-<li><a href="#故事">故事</a></li>
-<li><a href="#说说测试驱动开发">说说测试驱动开发</a></li>
-<li><a href="#思考">思考</a></li>
+<li><a href="#tdd">TDD</a><ul>
+<li><a href="#一次测试驱动开发">一次测试驱动开发</a></li>
+<li><a href="#说说tdd">说说TDD</a></li>
+<li><a href="#tdd思考">TDD思考</a></li>
 </ul></li>
-<li><a href="#轻量级网站测试twill">轻量级网站测试TWill</a><ul>
+<li><a href="#功能测试">功能测试</a><ul>
+<li><a href="#轻量级网站测试twill">轻量级网站测试TWill</a></li>
 <li><a href="#twill-登陆测试">Twill 登陆测试</a></li>
 <li><a href="#twill-测试脚本">Twill 测试脚本</a></li>
 </ul></li>
@@ -138,6 +139,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#重构之以查询取代临时变量">重构之以查询取代临时变量</a></li>
 </ul></li>
 </ul></li>
+<li><a href="#如何在github寻找灵感fork">如何在Github“寻找灵感(fork)”</a><ul>
+<li><a href="#lettuce构建过程"><a href="https://github.com/phodal/lettuce">Lettuce</a>构建过程</a><ul>
+<li><a href="#需求">需求</a></li>
+<li><a href="#计划">计划</a></li>
+<li><a href="#实现第一个需求">实现第一个需求</a></li>
+<li><a href="#实现第二个需求">实现第二个需求</a></li>
+</ul></li>
+</ul></li>
 <li><a href="#github连击">Github连击</a><ul>
 <li><a href="#天">100天</a><ul>
 <li><a href="#天的提升">40天的提升</a></li>
@@ -154,14 +163,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#技术与框架设计">技术与框架设计</a></li>
 <li><a href="#领域与练习">领域与练习</a></li>
 <li><a href="#其他-1">其他</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#如何在github寻找灵感fork">如何在Github“寻找灵感(fork)”</a><ul>
-<li><a href="#lettuce构建过程"><a href="https://github.com/phodal/lettuce">Lettuce</a>构建过程</a><ul>
-<li><a href="#需求">需求</a></li>
-<li><a href="#计划">计划</a></li>
-<li><a href="#实现第一个需求">实现第一个需求</a></li>
-<li><a href="#实现第二个需求">实现第二个需求</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#github用户分析">Github用户分析</a><ul>
@@ -1072,10 +1073,10 @@ React.render(
 <p>而不是需要繁琐的步骤才能进行下一步。</p>
 <hr />
 <h1 id="测试-1">测试</h1>
-<h2 id="一次测试驱动开发">一次测试驱动开发</h2>
+<h2 id="tdd">TDD</h2>
 <p>虽然接触的TDD时间不算短，然而真正在实践TDD上的时候少之又少。除去怎么教人TDD，就是与人结对编程时的switch，或许是受限于当前的开发流程。</p>
 <p>偶然间在开发一个物联网相关的开源项目——<a href="https://github.com/phodal/lan">Lan</a>的时候，重拾了这个过程。不得不说提到的一点是，在我们的开发流程中<strong>测试是由相关功能开发人员写的</strong>，有时候测试是一种很具挑战性的工作。久而久之，为自己的开源项目写测试变成一种自然而然的事。有时没有测试，反而变得<strong>没有安全感</strong>。</p>
-<h3 id="故事">故事</h3>
+<h3 id="一次测试驱动开发">一次测试驱动开发</h3>
 <p>之前正在重写一个<a href="http://www.phodal.com/iot">物联网</a>的服务端，主要便是结合CoAP、MQTT、HTTP等协议构成一个物联网的云服务。现在，主要的任务是集中于协议与授权。由于，不同协议间的授权是不一样的，最开始的时候我先写了一个http put授权的功能，而在起先的时候是如何测试的呢?</p>
 <pre><code>curl --user root:root -X PUT -d &#39;{ &quot;dream&quot;: 1 }&#39; -H &quot;Content-Type: application/json&quot; http://localhost:8899/topics/test</code></pre>
 <p>我只要顺利在request中看有无<code>req.headers.authorization</code>，我便可以继续往下，接着给个判断。毕竟，我们对HTTP协议还是蛮清楚的。</p>
@@ -1102,7 +1103,7 @@ React.render(
 
 <span class="va">req</span>.<span class="at">end</span>()<span class="op">;</span></code></pre></div>
 <p>写完测试脚本后发现不对了，这个不应该是测试的代码吗? 于是将其放到了spec中，接着发现了上面的全部功能的实现过程为什么不用TDD实现呢？</p>
-<h3 id="说说测试驱动开发">说说测试驱动开发</h3>
+<h3 id="说说tdd">说说TDD</h3>
 <p>测试驱动开发是一个很“古老”的程序开发方法，然而由于国内的开发流程的问题——即开发人员负责功能的测试，导致这么好的一项技术没有在国内推广。</p>
 <p>测试驱动开发的主要过程是:</p>
 <ol type="1">
@@ -1116,11 +1117,12 @@ React.render(
 <li>已经有了原型</li>
 <li>框架设计</li>
 </ol>
-<h3 id="思考">思考</h3>
+<h3 id="tdd思考">TDD思考</h3>
 <p>通常在我的理解下，TDD是可有可无的。既然我知道了我要实现的大部分功能，而且我也知道如何实现。与此同时，对Code Smell也保持着警惕、要保证功能被测试覆盖。那么，总的来说TDD带来的价值并不大。</p>
 <p>然而，在当前这种情况下，我知道我想要的功能，但是我并不理解其深层次的功能。我需要花费大量的时候来理解，它为什么是这样的，需要先有一些脚本来知道它是怎么工作的。TDD变显得很有价值，换句话来说，在现有的情况下，TDD对于我们不了解的一些事情，可以驱动出更多的开发。毕竟在我们完成测试脚本之后，我们也会发现这些测试脚本成为了代码的一部分。</p>
 <p>在这种理想的情况下，我们为什么不TDD呢?</p>
-<h2 id="轻量级网站测试twill">轻量级网站测试TWill</h2>
+<h2 id="功能测试">功能测试</h2>
+<h3 id="轻量级网站测试twill">轻量级网站测试TWill</h3>
 <blockquote>
 <p>twill was initially designed for testing Web sites, although since then people have also figured out that it’s good for browsing unsuspecting Web sites.</p>
 </blockquote>
@@ -1519,6 +1521,154 @@ public class replaceTemp {
 
 }</code></pre>
 <hr />
+<h1 id="如何在github寻找灵感fork">如何在Github“寻找灵感(fork)”</h1>
+<blockquote>
+<p>重造轮子是重新创造一个已有的或是已被其他人优化的基本方法。</p>
+</blockquote>
+<p>最近萌发了一个想法写游戏引擎，之前想着做一个JavaScript前端框架。看看，这个思路是怎么来的。</p>
+<h2 id="lettuce构建过程"><a href="https://github.com/phodal/lettuce">Lettuce</a>构建过程</h2>
+<blockquote>
+<p>Lettuce是一个简约的移动开发框架。</p>
+</blockquote>
+<p>故事的出发点是这样的:<code>写了很多代码,用的都是框架，最后不知道收获什么了</code>?事实也是如此，当自己做了一些项目之后，发现最后什么也没有收获到。于是，就想着做一个框架。</p>
+<h3 id="需求">需求</h3>
+<p>有这样的几个前提</p>
+<ul>
+<li>为什么我只需要jQuery里的选择器、Ajax要引入那么重的库呢?</li>
+<li>为什么我只需要一个Template，却想着用Mustache</li>
+<li>为什么我需要一个Router，却要用Backbone呢?</li>
+<li>为什么我需要的是一个isObject函数，却要用到整个Underscore?</li>
+</ul>
+<p>我想要的只是一个简单的功能，而我不想引入一个庞大的库。换句话说，我只需要不同库里面的一小部分功能，而不是一个库。</p>
+<p>实际上想要的是:</p>
+<blockquote>
+<p>构建一个库，里面从不同的库里面抽取出不同的函数。</p>
+</blockquote>
+<h3 id="计划">计划</h3>
+<p>这时候我参考了一本电子书《Build JavaScript FrameWork》，加上一些平时的需求，于是很快的就知道自己需要什么样的功能:</p>
+<ul>
+<li>Promise 支持</li>
+<li>Class类(ps:没有一个好的类使用的方式)</li>
+<li>Template 一个简单的模板引擎</li>
+<li>Router 用来控制页面的路由</li>
+<li>Ajax 基本的Ajax Get/Post请求</li>
+</ul>
+<p>在做一些实际的项目中，还遇到了这样的一些功能支持:</p>
+<ul>
+<li>Effect 简单的一些页面效果</li>
+<li>AMD支持</li>
+</ul>
+<p>而我们有一个前提是要保持这个库尽可能的小、同时我们还需要有测试。</p>
+<h3 id="实现第一个需求">实现第一个需求</h3>
+<p>简单说说是如何实现一个简单的需求。</p>
+<h4 id="生成框架">生成框架</h4>
+<p>因为Yeoman可以生成一个简单的轮廓，所以我们可以用它来生成这个项目的骨架。</p>
+<ul>
+<li>Gulp</li>
+<li>Jasmine</li>
+</ul>
+<h4 id="寻找">寻找</h4>
+<p>在Github上搜索了一个看到了下面的几个结果:</p>
+<ul>
+<li><a href="https://github.com/then/promise" class="uri">https://github.com/then/promise</a></li>
+<li><a href="https://github.com/reactphp/promise" class="uri">https://github.com/reactphp/promise</a></li>
+<li><a href="https://github.com/kriskowal/q" class="uri">https://github.com/kriskowal/q</a></li>
+<li><a href="https://github.com/petkaantonov/bluebird" class="uri">https://github.com/petkaantonov/bluebird</a></li>
+<li><a href="https://github.com/cujojs/when" class="uri">https://github.com/cujojs/when</a></li>
+</ul>
+<p>但是显然，他们都太重了。事实上，对于一个库来说，80%的人只需要其中20%的代码。于是，找到了<a href="https://github.com/stackp/promisejs" class="uri">https://github.com/stackp/promisejs</a>，看了看用法，这就是我们需要的功能:</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">late</span>(n) <span class="op">{</span>
+    <span class="kw">var</span> p <span class="op">=</span> <span class="kw">new</span> <span class="va">promise</span>.<span class="at">Promise</span>()<span class="op">;</span>
+    <span class="at">setTimeout</span>(<span class="kw">function</span>() <span class="op">{</span>
+        <span class="va">p</span>.<span class="at">done</span>(<span class="kw">null</span><span class="op">,</span> n)<span class="op">;</span>
+    <span class="op">},</span> n)<span class="op">;</span>
+    <span class="cf">return</span> p<span class="op">;</span>
+<span class="op">}</span>
+
+<span class="at">late</span>(<span class="dv">100</span>).<span class="at">then</span>(
+    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
+        <span class="cf">return</span> <span class="at">late</span>(n <span class="op">+</span> <span class="dv">200</span>)<span class="op">;</span>
+    <span class="op">}</span>
+).<span class="at">then</span>(
+    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
+        <span class="cf">return</span> <span class="at">late</span>(n <span class="op">+</span> <span class="dv">300</span>)<span class="op">;</span>
+    <span class="op">}</span>
+).<span class="at">then</span>(
+    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
+        <span class="cf">return</span> <span class="at">late</span>(n <span class="op">+</span> <span class="dv">400</span>)<span class="op">;</span>
+    <span class="op">}</span>
+).<span class="at">then</span>(
+    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
+        <span class="at">alert</span>(n)<span class="op">;</span>
+    <span class="op">}</span>
+)<span class="op">;</span></code></pre></div>
+<p>接着打开看看Promise对象，有我们需要的功能，但是又有一些功能超出我的需求。接着把自己不需要的需求去掉，这里函数最后就变成了</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">Promise</span>() <span class="op">{</span>
+    <span class="kw">this</span>.<span class="at">_callbacks</span> <span class="op">=</span> []<span class="op">;</span>
+<span class="op">}</span>
+
+<span class="va">Promise</span>.<span class="va">prototype</span>.<span class="at">then</span> <span class="op">=</span> <span class="kw">function</span>(func<span class="op">,</span> context) <span class="op">{</span>
+    <span class="kw">var</span> p<span class="op">;</span>
+    <span class="cf">if</span> (<span class="kw">this</span>.<span class="at">_isdone</span>) <span class="op">{</span>
+        p <span class="op">=</span> <span class="va">func</span>.<span class="at">apply</span>(context<span class="op">,</span> <span class="kw">this</span>.<span class="at">result</span>)<span class="op">;</span>
+    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span>
+        p <span class="op">=</span> <span class="kw">new</span> <span class="at">Promise</span>()<span class="op">;</span>
+        <span class="kw">this</span>.<span class="va">_callbacks</span>.<span class="at">push</span>(<span class="kw">function</span> () <span class="op">{</span>
+            <span class="kw">var</span> res <span class="op">=</span> <span class="va">func</span>.<span class="at">apply</span>(context<span class="op">,</span> arguments)<span class="op">;</span>
+            <span class="cf">if</span> (res <span class="op">&amp;&amp;</span> <span class="kw">typeof</span> <span class="va">res</span>.<span class="at">then</span> <span class="op">===</span> <span class="st">&#39;function&#39;</span>) <span class="op">{</span>
+                <span class="va">res</span>.<span class="at">then</span>(<span class="va">p</span>.<span class="at">done</span><span class="op">,</span> p)<span class="op">;</span>
+            <span class="op">}</span>
+        <span class="op">}</span>)<span class="op">;</span>
+    <span class="op">}</span>
+    <span class="cf">return</span> p<span class="op">;</span>
+<span class="op">};</span>
+
+<span class="va">Promise</span>.<span class="va">prototype</span>.<span class="at">done</span> <span class="op">=</span> <span class="kw">function</span>() <span class="op">{</span>
+    <span class="kw">this</span>.<span class="at">result</span> <span class="op">=</span> arguments<span class="op">;</span>
+    <span class="kw">this</span>.<span class="at">_isdone</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span>
+    <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="kw">this</span>.<span class="va">_callbacks</span>.<span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span>
+        <span class="kw">this</span>.<span class="at">_callbacks</span>[i].<span class="at">apply</span>(<span class="kw">null</span><span class="op">,</span> arguments)<span class="op">;</span>
+    <span class="op">}</span>
+    <span class="kw">this</span>.<span class="at">_callbacks</span> <span class="op">=</span> []<span class="op">;</span>
+<span class="op">};</span>
+
+<span class="kw">var</span> promise <span class="op">=</span> <span class="op">{</span>
+    <span class="dt">Promise</span><span class="op">:</span> Promise
+<span class="op">};</span></code></pre></div>
+<p>需要注意的是: <code>License</code>，不同的软件有不同的License，如MIT、GPL等等。最好能在遵循协议的情况下，使用别人的代码。</p>
+<h3 id="实现第二个需求">实现第二个需求</h3>
+<p>由于，现有的一些Ajax库都比较，最后只好参照着别人的代码自己实现。</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">Lettuce</span>.<span class="at">get</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> callback) <span class="op">{</span>
+    <span class="va">Lettuce</span>.<span class="at">send</span>(url<span class="op">,</span> <span class="st">&#39;GET&#39;</span><span class="op">,</span> callback)<span class="op">;</span>
+<span class="op">};</span>
+
+<span class="va">Lettuce</span>.<span class="at">load</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> callback) <span class="op">{</span>
+    <span class="va">Lettuce</span>.<span class="at">send</span>(url<span class="op">,</span> <span class="st">&#39;GET&#39;</span><span class="op">,</span> callback)<span class="op">;</span>
+<span class="op">};</span>
+
+<span class="va">Lettuce</span>.<span class="at">post</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> data<span class="op">,</span> callback) <span class="op">{</span>
+    <span class="va">Lettuce</span>.<span class="at">send</span>(url<span class="op">,</span> <span class="st">&#39;POST&#39;</span><span class="op">,</span> callback<span class="op">,</span> data)<span class="op">;</span>
+<span class="op">};</span>
+
+<span class="va">Lettuce</span>.<span class="at">send</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> method<span class="op">,</span> callback<span class="op">,</span> data) <span class="op">{</span>
+    data <span class="op">=</span> data <span class="op">||</span> <span class="kw">null</span><span class="op">;</span>
+    <span class="kw">var</span> request <span class="op">=</span> <span class="kw">new</span> <span class="at">XMLHttpRequest</span>()<span class="op">;</span>
+    <span class="cf">if</span> (callback <span class="kw">instanceof</span> Function) <span class="op">{</span>
+        <span class="va">request</span>.<span class="at">onreadystatechange</span> <span class="op">=</span> <span class="kw">function</span> () <span class="op">{</span>
+            <span class="cf">if</span> (<span class="va">request</span>.<span class="at">readyState</span> <span class="op">===</span> <span class="dv">4</span> <span class="op">&amp;&amp;</span> (<span class="va">request</span>.<span class="at">status</span> <span class="op">===</span> <span class="dv">200</span> <span class="op">||</span> <span class="va">request</span>.<span class="at">status</span> <span class="op">===</span> <span class="dv">0</span>)) <span class="op">{</span>
+                <span class="at">callback</span>(<span class="va">request</span>.<span class="at">responseText</span>)<span class="op">;</span>
+            <span class="op">}</span>
+        <span class="op">};</span>
+    <span class="op">}</span>
+    <span class="va">request</span>.<span class="at">open</span>(method<span class="op">,</span> url<span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span>
+    <span class="cf">if</span> (data <span class="kw">instanceof</span> Object) <span class="op">{</span>
+        data <span class="op">=</span> <span class="va">JSON</span>.<span class="at">stringify</span>(data)<span class="op">;</span>
+        <span class="va">request</span>.<span class="at">setRequestHeader</span>(<span class="st">&#39;Content-Type&#39;</span><span class="op">,</span> <span class="st">&#39;application/json&#39;</span>)<span class="op">;</span>
+    <span class="op">}</span>
+    <span class="va">request</span>.<span class="at">setRequestHeader</span>(<span class="st">&#39;X-Requested-With&#39;</span><span class="op">,</span> <span class="st">&#39;XMLHttpRequest&#39;</span>)<span class="op">;</span>
+    <span class="va">request</span>.<span class="at">send</span>(data)<span class="op">;</span>
+<span class="op">};</span></code></pre></div>
+<hr />
 <h1 id="github连击">Github连击</h1>
 <h2 id="天">100天</h2>
 <p>我也是蛮拼的，虽然我想的只是在Github上连击100~200天，然而到了今天也算不错。</p>
@@ -1779,154 +1929,6 @@ public class replaceTemp {
 <li>设计</li>
 <li>。。。</li>
 </ol>
-<hr />
-<h1 id="如何在github寻找灵感fork">如何在Github“寻找灵感(fork)”</h1>
-<blockquote>
-<p>重造轮子是重新创造一个已有的或是已被其他人优化的基本方法。</p>
-</blockquote>
-<p>最近萌发了一个想法写游戏引擎，之前想着做一个JavaScript前端框架。看看，这个思路是怎么来的。</p>
-<h2 id="lettuce构建过程"><a href="https://github.com/phodal/lettuce">Lettuce</a>构建过程</h2>
-<blockquote>
-<p>Lettuce是一个简约的移动开发框架。</p>
-</blockquote>
-<p>故事的出发点是这样的:<code>写了很多代码,用的都是框架，最后不知道收获什么了</code>?事实也是如此，当自己做了一些项目之后，发现最后什么也没有收获到。于是，就想着做一个框架。</p>
-<h3 id="需求">需求</h3>
-<p>有这样的几个前提</p>
-<ul>
-<li>为什么我只需要jQuery里的选择器、Ajax要引入那么重的库呢?</li>
-<li>为什么我只需要一个Template，却想着用Mustache</li>
-<li>为什么我需要一个Router，却要用Backbone呢?</li>
-<li>为什么我需要的是一个isObject函数，却要用到整个Underscore?</li>
-</ul>
-<p>我想要的只是一个简单的功能，而我不想引入一个庞大的库。换句话说，我只需要不同库里面的一小部分功能，而不是一个库。</p>
-<p>实际上想要的是:</p>
-<blockquote>
-<p>构建一个库，里面从不同的库里面抽取出不同的函数。</p>
-</blockquote>
-<h3 id="计划">计划</h3>
-<p>这时候我参考了一本电子书《Build JavaScript FrameWork》，加上一些平时的需求，于是很快的就知道自己需要什么样的功能:</p>
-<ul>
-<li>Promise 支持</li>
-<li>Class类(ps:没有一个好的类使用的方式)</li>
-<li>Template 一个简单的模板引擎</li>
-<li>Router 用来控制页面的路由</li>
-<li>Ajax 基本的Ajax Get/Post请求</li>
-</ul>
-<p>在做一些实际的项目中，还遇到了这样的一些功能支持:</p>
-<ul>
-<li>Effect 简单的一些页面效果</li>
-<li>AMD支持</li>
-</ul>
-<p>而我们有一个前提是要保持这个库尽可能的小、同时我们还需要有测试。</p>
-<h3 id="实现第一个需求">实现第一个需求</h3>
-<p>简单说说是如何实现一个简单的需求。</p>
-<h4 id="生成框架">生成框架</h4>
-<p>因为Yeoman可以生成一个简单的轮廓，所以我们可以用它来生成这个项目的骨架。</p>
-<ul>
-<li>Gulp</li>
-<li>Jasmine</li>
-</ul>
-<h4 id="寻找">寻找</h4>
-<p>在Github上搜索了一个看到了下面的几个结果:</p>
-<ul>
-<li><a href="https://github.com/then/promise" class="uri">https://github.com/then/promise</a></li>
-<li><a href="https://github.com/reactphp/promise" class="uri">https://github.com/reactphp/promise</a></li>
-<li><a href="https://github.com/kriskowal/q" class="uri">https://github.com/kriskowal/q</a></li>
-<li><a href="https://github.com/petkaantonov/bluebird" class="uri">https://github.com/petkaantonov/bluebird</a></li>
-<li><a href="https://github.com/cujojs/when" class="uri">https://github.com/cujojs/when</a></li>
-</ul>
-<p>但是显然，他们都太重了。事实上，对于一个库来说，80%的人只需要其中20%的代码。于是，找到了<a href="https://github.com/stackp/promisejs" class="uri">https://github.com/stackp/promisejs</a>，看了看用法，这就是我们需要的功能:</p>
-<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">late</span>(n) <span class="op">{</span>
-    <span class="kw">var</span> p <span class="op">=</span> <span class="kw">new</span> <span class="va">promise</span>.<span class="at">Promise</span>()<span class="op">;</span>
-    <span class="at">setTimeout</span>(<span class="kw">function</span>() <span class="op">{</span>
-        <span class="va">p</span>.<span class="at">done</span>(<span class="kw">null</span><span class="op">,</span> n)<span class="op">;</span>
-    <span class="op">},</span> n)<span class="op">;</span>
-    <span class="cf">return</span> p<span class="op">;</span>
-<span class="op">}</span>
-
-<span class="at">late</span>(<span class="dv">100</span>).<span class="at">then</span>(
-    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
-        <span class="cf">return</span> <span class="at">late</span>(n <span class="op">+</span> <span class="dv">200</span>)<span class="op">;</span>
-    <span class="op">}</span>
-).<span class="at">then</span>(
-    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
-        <span class="cf">return</span> <span class="at">late</span>(n <span class="op">+</span> <span class="dv">300</span>)<span class="op">;</span>
-    <span class="op">}</span>
-).<span class="at">then</span>(
-    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
-        <span class="cf">return</span> <span class="at">late</span>(n <span class="op">+</span> <span class="dv">400</span>)<span class="op">;</span>
-    <span class="op">}</span>
-).<span class="at">then</span>(
-    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
-        <span class="at">alert</span>(n)<span class="op">;</span>
-    <span class="op">}</span>
-)<span class="op">;</span></code></pre></div>
-<p>接着打开看看Promise对象，有我们需要的功能，但是又有一些功能超出我的需求。接着把自己不需要的需求去掉，这里函数最后就变成了</p>
-<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">Promise</span>() <span class="op">{</span>
-    <span class="kw">this</span>.<span class="at">_callbacks</span> <span class="op">=</span> []<span class="op">;</span>
-<span class="op">}</span>
-
-<span class="va">Promise</span>.<span class="va">prototype</span>.<span class="at">then</span> <span class="op">=</span> <span class="kw">function</span>(func<span class="op">,</span> context) <span class="op">{</span>
-    <span class="kw">var</span> p<span class="op">;</span>
-    <span class="cf">if</span> (<span class="kw">this</span>.<span class="at">_isdone</span>) <span class="op">{</span>
-        p <span class="op">=</span> <span class="va">func</span>.<span class="at">apply</span>(context<span class="op">,</span> <span class="kw">this</span>.<span class="at">result</span>)<span class="op">;</span>
-    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span>
-        p <span class="op">=</span> <span class="kw">new</span> <span class="at">Promise</span>()<span class="op">;</span>
-        <span class="kw">this</span>.<span class="va">_callbacks</span>.<span class="at">push</span>(<span class="kw">function</span> () <span class="op">{</span>
-            <span class="kw">var</span> res <span class="op">=</span> <span class="va">func</span>.<span class="at">apply</span>(context<span class="op">,</span> arguments)<span class="op">;</span>
-            <span class="cf">if</span> (res <span class="op">&amp;&amp;</span> <span class="kw">typeof</span> <span class="va">res</span>.<span class="at">then</span> <span class="op">===</span> <span class="st">&#39;function&#39;</span>) <span class="op">{</span>
-                <span class="va">res</span>.<span class="at">then</span>(<span class="va">p</span>.<span class="at">done</span><span class="op">,</span> p)<span class="op">;</span>
-            <span class="op">}</span>
-        <span class="op">}</span>)<span class="op">;</span>
-    <span class="op">}</span>
-    <span class="cf">return</span> p<span class="op">;</span>
-<span class="op">};</span>
-
-<span class="va">Promise</span>.<span class="va">prototype</span>.<span class="at">done</span> <span class="op">=</span> <span class="kw">function</span>() <span class="op">{</span>
-    <span class="kw">this</span>.<span class="at">result</span> <span class="op">=</span> arguments<span class="op">;</span>
-    <span class="kw">this</span>.<span class="at">_isdone</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span>
-    <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="kw">this</span>.<span class="va">_callbacks</span>.<span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span>
-        <span class="kw">this</span>.<span class="at">_callbacks</span>[i].<span class="at">apply</span>(<span class="kw">null</span><span class="op">,</span> arguments)<span class="op">;</span>
-    <span class="op">}</span>
-    <span class="kw">this</span>.<span class="at">_callbacks</span> <span class="op">=</span> []<span class="op">;</span>
-<span class="op">};</span>
-
-<span class="kw">var</span> promise <span class="op">=</span> <span class="op">{</span>
-    <span class="dt">Promise</span><span class="op">:</span> Promise
-<span class="op">};</span></code></pre></div>
-<p>需要注意的是: <code>License</code>，不同的软件有不同的License，如MIT、GPL等等。最好能在遵循协议的情况下，使用别人的代码。</p>
-<h3 id="实现第二个需求">实现第二个需求</h3>
-<p>由于，现有的一些Ajax库都比较，最后只好参照着别人的代码自己实现。</p>
-<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">Lettuce</span>.<span class="at">get</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> callback) <span class="op">{</span>
-    <span class="va">Lettuce</span>.<span class="at">send</span>(url<span class="op">,</span> <span class="st">&#39;GET&#39;</span><span class="op">,</span> callback)<span class="op">;</span>
-<span class="op">};</span>
-
-<span class="va">Lettuce</span>.<span class="at">load</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> callback) <span class="op">{</span>
-    <span class="va">Lettuce</span>.<span class="at">send</span>(url<span class="op">,</span> <span class="st">&#39;GET&#39;</span><span class="op">,</span> callback)<span class="op">;</span>
-<span class="op">};</span>
-
-<span class="va">Lettuce</span>.<span class="at">post</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> data<span class="op">,</span> callback) <span class="op">{</span>
-    <span class="va">Lettuce</span>.<span class="at">send</span>(url<span class="op">,</span> <span class="st">&#39;POST&#39;</span><span class="op">,</span> callback<span class="op">,</span> data)<span class="op">;</span>
-<span class="op">};</span>
-
-<span class="va">Lettuce</span>.<span class="at">send</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> method<span class="op">,</span> callback<span class="op">,</span> data) <span class="op">{</span>
-    data <span class="op">=</span> data <span class="op">||</span> <span class="kw">null</span><span class="op">;</span>
-    <span class="kw">var</span> request <span class="op">=</span> <span class="kw">new</span> <span class="at">XMLHttpRequest</span>()<span class="op">;</span>
-    <span class="cf">if</span> (callback <span class="kw">instanceof</span> Function) <span class="op">{</span>
-        <span class="va">request</span>.<span class="at">onreadystatechange</span> <span class="op">=</span> <span class="kw">function</span> () <span class="op">{</span>
-            <span class="cf">if</span> (<span class="va">request</span>.<span class="at">readyState</span> <span class="op">===</span> <span class="dv">4</span> <span class="op">&amp;&amp;</span> (<span class="va">request</span>.<span class="at">status</span> <span class="op">===</span> <span class="dv">200</span> <span class="op">||</span> <span class="va">request</span>.<span class="at">status</span> <span class="op">===</span> <span class="dv">0</span>)) <span class="op">{</span>
-                <span class="at">callback</span>(<span class="va">request</span>.<span class="at">responseText</span>)<span class="op">;</span>
-            <span class="op">}</span>
-        <span class="op">};</span>
-    <span class="op">}</span>
-    <span class="va">request</span>.<span class="at">open</span>(method<span class="op">,</span> url<span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span>
-    <span class="cf">if</span> (data <span class="kw">instanceof</span> Object) <span class="op">{</span>
-        data <span class="op">=</span> <span class="va">JSON</span>.<span class="at">stringify</span>(data)<span class="op">;</span>
-        <span class="va">request</span>.<span class="at">setRequestHeader</span>(<span class="st">&#39;Content-Type&#39;</span><span class="op">,</span> <span class="st">&#39;application/json&#39;</span>)<span class="op">;</span>
-    <span class="op">}</span>
-    <span class="va">request</span>.<span class="at">setRequestHeader</span>(<span class="st">&#39;X-Requested-With&#39;</span><span class="op">,</span> <span class="st">&#39;XMLHttpRequest&#39;</span>)<span class="op">;</span>
-    <span class="va">request</span>.<span class="at">send</span>(data)<span class="op">;</span>
-<span class="op">};</span></code></pre></div>
 <hr />
 <h1 id="github用户分析">Github用户分析</h1>
 <h2 id="生成图表">生成图表</h2>
