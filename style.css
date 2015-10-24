@@ -32,6 +32,7 @@ a img {
 }
 
 p {
+    text-indent: 2em;
     margin-bottom: 12px;
 }
 
