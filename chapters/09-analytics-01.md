@@ -1,34 +1,199 @@
-#Github项目分析二
+#Github用户分析
 
-    
-让我们分析之前的程序，然后再想办法做出优化。网上看到一篇文章[http://www.huyng.com/posts/python-performance-analysis/](http://www.huyng.com/posts/python-performance-analysis/)讲的就是分析这部分内容的。
-    
-##Time Python分析
+##生成图表
 
-分析程序的运行时间
-     
-```bash     
-$time python handle.py
-```
+如何分析用户的数据是一个有趣的问题，特别是当我们有大量的数据的时候。除了``matlab``，我们还可以用``numpy``+``matplotlib``
 
-结果便是，但是对于我们的分析没有一点意义
+数据可以在这边寻找到
 
-```
-    real	0m43.411s
-    user	0m39.226s
-    sys	0m0.618s
-```
+[https://github.com/gmszone/ml](https://github.com/gmszone/ml)
 
-###line_profiler python
+最后效果图
 
-```bash
-sudo ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future" easy_install line_profiler
-```
+![2014 01 01](./img/2014-01-01.png)
 
-然后在我们的``parse_data.py``的``handle_json``前面加上``@profile``
+要解析的json文件位于``data/2014-01-01-0.json``，大小6.6M，显然我们可能需要用每次只读一行的策略，这足以解释为什么诸如sublime打开的时候很慢，而现在我们只需要里面的json数据中的创建时间。。
+
+==,这个文件代表什么？
+
+**2014年1月1日零时到一时，用户在github上的操作，这里的用户指的是很多。。一共有4814条数据，从commit、create到issues都有。**
+
+###数据解析
 
 ```python
-@profile
+import json
+for line in open(jsonfile):
+    line = f.readline()
+```
+
+然后再解析json
+
+```python
+import dateutil.parser
+
+lin = json.loads(line)
+date = dateutil.parser.parse(lin["created_at"])
+```
+
+这里用到了``dateutil``，因为新鲜出炉的数据是string需要转换为``dateutil``，再到数据放到数组里头。最后有就有了``parse_data``
+
+```python
+def parse_data(jsonfile):
+    f = open(jsonfile, "r")
+    dataarray = []
+    datacount = 0
+
+    for line in open(jsonfile):
+        line = f.readline()
+        lin = json.loads(line)
+        date = dateutil.parser.parse(lin["created_at"])
+        datacount += 1
+        dataarray.append(date.minute)
+
+    minuteswithcount = [(x, dataarray.count(x)) for x in set(dataarray)]
+    f.close()
+    return minuteswithcount
+```
+
+下面这句代码就是将上面的解析为
+
+```python
+minuteswithcount = [(x, dataarray.count(x)) for x in set(dataarray)]
+```
+
+这样的数组以便于解析
+
+```python
+[(0, 92), (1, 67), (2, 86), (3, 73), (4, 76), (5, 67), (6, 61), (7, 71), (8, 62), (9, 71), (10, 70), (11, 79), (12, 62), (13, 67), (14, 76), (15, 67), (16, 74), (17, 48), (18, 78), (19, 73), (20, 89), (21, 62), (22, 74), (23, 61), (24, 71), (25, 49), (26, 59), (27, 59), (28, 58), (29, 74), (30, 69), (31, 59), (32, 89), (33, 67), (34, 66), (35, 77), (36, 64), (37, 71), (38, 75), (39, 66), (40, 62), (41, 77), (42, 82), (43, 95), (44, 77), (45, 65), (46, 59), (47, 60), (48, 54), (49, 66), (50, 74), (51, 61), (52, 71), (53, 90), (54, 64), (55, 67), (56, 67), (57, 55), (58, 68), (59, 91)]
+```
+
+###Matplotlib
+
+开始之前需要安装``matplotlib
+
+```bash
+sudo pip install matplotlib
+```
+然后引入这个库
+
+      import matplotlib.pyplot as plt
+
+如上面的那个结果，只需要
+
+<pre><code class="python">
+    plt.figure(figsize=(8,4))
+    plt.plot(x, y,label = files)
+    plt.legend()
+    plt.show()
+</code></pre>
+  
+最后代码可见
+
+
+```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import json
+import dateutil.parser
+import numpy as np
+import matplotlib.mlab as mlab
+import matplotlib.pyplot as plt
+
+
+def parse_data(jsonfile):
+    f = open(jsonfile, "r")
+    dataarray = []
+    datacount = 0
+
+    for line in open(jsonfile):
+        line = f.readline()
+        lin = json.loads(line)
+        date = dateutil.parser.parse(lin["created_at"])
+        datacount += 1
+        dataarray.append(date.minute)
+
+    minuteswithcount = [(x, dataarray.count(x)) for x in set(dataarray)]
+    f.close()
+    return minuteswithcount
+
+
+def draw_date(files):
+    x = []
+    y = []
+    mwcs = parse_data(files)
+    for mwc in mwcs:
+        x.append(mwc[0])
+        y.append(mwc[1])
+
+    plt.figure(figsize=(8,4))
+    plt.plot(x, y,label = files)
+    plt.legend()
+    plt.show()
+
+draw_date("data/2014-01-01-0.json")
+```
+
+##每周分析
+
+继上篇之后，我们就可以分析用户的每周提交情况，以得出用户的真正的工具效率，每个程序员的工作时间可能是不一样的，如
+
+![Phodal Huang's Report](./img/phodal-results.png)
+
+这是我的每周情况，显然如果把星期六移到前面的话，随着工作时间的增长，在github上的使用在下降，作为一个
+
+      a fulltime hacker who works best in the evening (around 8 pm).
+
+不过这个是osrc的分析结果。
+
+###python github 每周情况分析
+
+看一张分析后的结果
+
+![Feb Results](./img/feb-results.png)
+
+结果正好与我的情况相反？似乎图上是这么说的，但是数据上是这样的情况。
+
+	data
+	├── 2014-01-01-0.json
+	├── 2014-02-01-0.json
+	├── 2014-02-02-0.json
+	├── 2014-02-03-0.json
+	├── 2014-02-04-0.json
+	├── 2014-02-05-0.json
+	├── 2014-02-06-0.json
+	├── 2014-02-07-0.json
+	├── 2014-02-08-0.json
+	├── 2014-02-09-0.json
+	├── 2014-02-10-0.json
+	├── 2014-02-11-0.json
+	├── 2014-02-12-0.json
+	├── 2014-02-13-0.json
+	├── 2014-02-14-0.json
+	├── 2014-02-15-0.json
+	├── 2014-02-16-0.json
+	├── 2014-02-17-0.json
+	├── 2014-02-18-0.json
+	├── 2014-02-19-0.json
+	└── 2014-02-20-0.json
+
+我们获取是每天晚上0点时的情况，至于为什么是0点，我想这里的数据量可能会比较少。除去1月1号的情况，就是上面的结果，在只有一周的情况时，总会以为因为在国内那时是假期，但是总觉得不是很靠谱，国内的程序员虽然很多，会在github上活跃的可能没有那么多，直至列出每一周的数据时。
+
+      6570, 7420, 11274, 12073, 12160, 12378, 12897,
+      8474, 7984, 12933, 13504, 13763, 13544, 12940,
+      7119, 7346, 13412, 14008, 12555
+
+###Python 数据分析
+
+重写了一个新的方法用于计算提交数，直至后面才意识到其实我们可以算行数就够了，但是方法上有点hack
+
+```python
+def get_minutes_counts_with_id(jsonfile):
+    datacount, dataarray = handle_json(jsonfile)
+    minuteswithcount = [(x, dataarray.count(x)) for x in set(dataarray)]
+    return minuteswithcount
+
+
 def handle_json(jsonfile):
     f = open(jsonfile, "r")
     dataarray = []
@@ -43,133 +208,56 @@ def handle_json(jsonfile):
 
     f.close()
     return datacount, dataarray
+
+
+def get_minutes_count_num(jsonfile):
+    datacount, dataarray = handle_json(jsonfile)
+    return datacount
+
+
+def get_month_total():
+    """
+
+    :rtype : object
+    """
+    monthdaycount = []
+    for i in range(1, 20):
+        if i < 10:
+            filename = 'data/2014-02-0' + i.__str__() + '-0.json'
+        else:
+            filename = 'data/2014-02-' + i.__str__() + '-0.json'
+        monthdaycount.append(get_minutes_count_num(filename))
+    return monthdaycount
 ```
 
-Line_profiler带了一个分析脚本``kernprof.py``，so
+接着我们需要去遍历每个结果，后面的后面会发现这个效率真的是太低了，为什么木有多线程？
 
-```bash
-kernprof.py -l -v handle.py
-```
+###Python Matplotlib图表
 
-我们便会得到下面的结果
-
-```
-Wrote profile results to handle.py.lprof
-Timer unit: 1e-06 s
-
-File: parse_data.py
-Function: handle_json at line 15
-Total time: 127.332 s
-
-Line #      Hits         Time  Per Hit   % Time  Line Contents
-==============================================================
-    15                                           @profile
-    16                                           def handle_json(jsonfile):
-    17        19          636     33.5      0.0      f = open(jsonfile, "r")
-    18        19           21      1.1      0.0      dataarray = []
-    19        19           16      0.8      0.0      datacount = 0
-    20
-    21    212373       730344      3.4      0.6      for line in open(jsonfile):
-    22    212354      2826826     13.3      2.2          line = f.readline()
-    23    212354     13848171     65.2     10.9          lin = json.loads(line)
-    24    212354    109427317    515.3     85.9          date = dateutil.parser.parse(lin["created_at"])
-    25    212354       238112      1.1      0.2          datacount += 1
-    26    212354       260227      1.2      0.2          dataarray.append(date.minute)
-    27
-    28        19          349     18.4      0.0      f.close()
-    29        19           20      1.1      0.0      return datacount, dataarray
-```
-
-于是我们就发现我们的瓶颈就是从读取``created_at``，即创建时间。。。以及解析json，反而不是我们关心的IO，果然``readline``很强大。
-
-###memory_profiler
-
-首先我们需要install memory_profiler:
-
-```bash
-$ pip install -U memory_profiler
-$ pip install psutil
-```
-
-如上，我们只需要在``handle_json``前面加上``@profile``
-
-```bash
-python -m memory_profiler handle.py
-```
-
-于是
-
-```
-Filename: parse_data.py
-    
-Line #    Mem usage    Increment   Line Contents
-================================================
-    13   39.930 MiB    0.000 MiB   @profile
-    14                             def handle_json(jsonfile):
-    15   39.930 MiB    0.000 MiB       f = open(jsonfile, "r")
-    16   39.930 MiB    0.000 MiB       dataarray = []
-    17   39.930 MiB    0.000 MiB       datacount = 0
-    18
-    19   40.055 MiB    0.125 MiB       for line in open(jsonfile):
-    20   40.055 MiB    0.000 MiB           line = f.readline()
-    21   40.066 MiB    0.012 MiB           lin = json.loads(line)
-    22   40.055 MiB   -0.012 MiB           date = dateutil.parser.parse(lin["created_at"])
-    23   40.055 MiB    0.000 MiB           datacount += 1
-    24   40.055 MiB    0.000 MiB           dataarray.append(date.minute)
-    25
-    26                                 f.close()
-    27                                 return datacount, dataarray
-```
-
-###objgraph python
-
-安装objgraph
-
-```bash
-pip install objgraph
-```
-
-我们需要调用他
+让我们的matplotlib来做这些图表的工作
 
 ```python
-import pdb;
+if __name__ == '__main__':
+    results = pd.get_month_total()
+    print results
+
+    plt.figure(figsize=(8, 4))
+    plt.plot(results.__getslice__(0, 7), label="first week")
+    plt.plot(results.__getslice__(7, 14), label="second week")
+    plt.plot(results.__getslice__(14, 21), label="third week")
+    plt.legend()
+    plt.show()
 ```
 
-以及在需要调度的地方加上
+蓝色的是第一周，绿色的是第二周，蓝色的是第三周就有了上面的结果。
 
-```python
-pdb.set_trace()
-```
+我们还需要优化方法，以及多线程的支持。
 
-接着会进入``command``模式
+让我们分析之前的程序，然后再想办法做出优化。网上看到一篇文章[http://www.huyng.com/posts/python-performance-analysis/](http://www.huyng.com/posts/python-performance-analysis/)讲的就是分析这部分内容的。
 
-```python
-(pdb) import objgraph
-(pdb) objgraph.show_most_common_types()
-```
+##存储到数据库中
 
-然后我们可以找到。。
-
-```
-function                   8259
-dict                       2137
-tuple                      1949
-wrapper_descriptor         1625
-list                       1586
-weakref                    1145
-builtin_function_or_method 1117
-method_descriptor          948
-getset_descriptor          708
-type                       705
-```
-
-也可以用他生成图形，貌似这里是用``dot``生成的，加上``python-xdot``
-
-很明显的我们需要一个数据库。
-
-如果我们每次都要花同样的时间去做一件事，去扫那些数据的话，那么这是最好的打发时间的方法。
-
-##python SQLite3 查询数据
+###SQLite3
 
 我们创建了一个名为``userdata.db``的数据库文件，然后创建了一个表，里面有owner,language,eventtype,name url
 
@@ -325,7 +413,7 @@ date_re = re.compile(r"([0-9]{4})-([0-9]{2})-([0-9]{2})-([0-9]+)\.json.gz")
 
 更好的方案？
 
-##Redis
+###Redis
 
 查询用户事件总数
 
@@ -374,7 +462,7 @@ pipe.execute()
 
 到这里我们算是知道了OSRC的数据库部分是如何工作的。
 
-###Redis 查询
+####Redis 查询
 
 主要代码如下所示
 
@@ -417,7 +505,7 @@ def get_vector(user, pipe=None):
 
 osrc最有意思的一部分莫过于flann，当然说的也是系统后台的设计的一个很关键及有意思的部分。
 
-##邻近算法
+##邻近算法与相似用户
 
 邻近算法是在这个分析过程中一个很有意思的东西。
 

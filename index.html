@@ -165,7 +165,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#实现第二个需求">实现第二个需求</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#github项目分析一">Github项目分析一</a><ul>
+<li><a href="#github用户分析">Github用户分析</a><ul>
 <li><a href="#生成图表">生成图表</a><ul>
 <li><a href="#数据解析">数据解析</a></li>
 <li><a href="#matplotlib">Matplotlib</a></li>
@@ -175,20 +175,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#python-数据分析">Python 数据分析</a></li>
 <li><a href="#python-matplotlib图表">Python Matplotlib图表</a></li>
 </ul></li>
-</ul></li>
-<li><a href="#github项目分析二">Github项目分析二</a><ul>
-<li><a href="#time-python分析">Time Python分析</a><ul>
-<li><a href="#line_profiler-python">line_profiler python</a></li>
-<li><a href="#memory_profiler">memory_profiler</a></li>
-<li><a href="#objgraph-python">objgraph python</a></li>
-</ul></li>
-<li><a href="#python-sqlite3-查询数据">python SQLite3 查询数据</a><ul>
+<li><a href="#存储到数据库中">存储到数据库中</a><ul>
+<li><a href="#sqlite3">SQLite3</a></li>
 <li><a href="#数据导入">数据导入</a></li>
+<li><a href="#redis">Redis</a></li>
 </ul></li>
-<li><a href="#redis">Redis</a><ul>
-<li><a href="#redis-查询">Redis 查询</a></li>
-</ul></li>
-<li><a href="#邻近算法">邻近算法</a></li>
+<li><a href="#邻近算法与相似用户">邻近算法与相似用户</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -1940,7 +1932,7 @@ public class replaceTemp {
     <span class="va">request</span>.<span class="at">send</span>(data)<span class="op">;</span>
 <span class="op">};</span></code></pre></div>
 <hr>
-<h1 id="github项目分析一">Github项目分析一</h1>
+<h1 id="github用户分析">Github用户分析</h1>
 <h2 id="生成图表">生成图表</h2>
 <p>如何分析用户的数据是一个有趣的问题，特别是当我们有大量的数据的时候。除了<code>matlab</code>，我们还可以用<code>numpy</code>+<code>matplotlib</code></p>
 <p>数据可以在这边寻找到</p>
@@ -2132,113 +2124,9 @@ draw_date(<span class="st">&quot;data/2014-01-01-0.json&quot;</span>)</code></pr
     plt.show()</code></pre></div>
 <p>蓝色的是第一周，绿色的是第二周，蓝色的是第三周就有了上面的结果。</p>
 <p>我们还需要优化方法，以及多线程的支持。</p>
-<hr>
-<h1 id="github项目分析二">Github项目分析二</h1>
 <p>让我们分析之前的程序，然后再想办法做出优化。网上看到一篇文章<a href="http://www.huyng.com/posts/python-performance-analysis/" class="uri">http://www.huyng.com/posts/python-performance-analysis/</a>讲的就是分析这部分内容的。</p>
-<h2 id="time-python分析">Time Python分析</h2>
-<p>分析程序的运行时间</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ot">$time</span> <span class="kw">python</span> handle.py</code></pre></div>
-<p>结果便是，但是对于我们的分析没有一点意义</p>
-<pre><code>    real    0m43.411s
-    user    0m39.226s
-    sys 0m0.618s</code></pre>
-<h3 id="line_profiler-python">line_profiler python</h3>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> ARCHFLAGS=<span class="st">&quot;-Wno-error=unused-command-line-argument-hard-error-in-future&quot;</span> easy_install line_profiler</code></pre></div>
-<p>然后在我们的<code>parse_data.py</code>的<code>handle_json</code>前面加上<code>@profile</code></p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="at">@profile</span>
-<span class="kw">def</span> handle_json(jsonfile):
-    f <span class="op">=</span> <span class="bu">open</span>(jsonfile, <span class="st">&quot;r&quot;</span>)
-    dataarray <span class="op">=</span> []
-    datacount <span class="op">=</span> <span class="dv">0</span>
-
-    <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
-        line <span class="op">=</span> f.readline()
-        lin <span class="op">=</span> json.loads(line)
-        date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
-        datacount <span class="op">+=</span> <span class="dv">1</span>
-        dataarray.append(date.minute)
-
-    f.close()
-    <span class="cf">return</span> datacount, dataarray</code></pre></div>
-<p>Line_profiler带了一个分析脚本<code>kernprof.py</code>，so</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">kernprof.py</span> -l -v handle.py</code></pre></div>
-<p>我们便会得到下面的结果</p>
-<pre><code>Wrote profile results to handle.py.lprof
-Timer unit: 1e-06 s
-
-File: parse_data.py
-Function: handle_json at line 15
-Total time: 127.332 s
-
-Line #      Hits         Time  Per Hit   % Time  Line Contents
-==============================================================
-    15                                           @profile
-    16                                           def handle_json(jsonfile):
-    17        19          636     33.5      0.0      f = open(jsonfile, &quot;r&quot;)
-    18        19           21      1.1      0.0      dataarray = []
-    19        19           16      0.8      0.0      datacount = 0
-    20
-    21    212373       730344      3.4      0.6      for line in open(jsonfile):
-    22    212354      2826826     13.3      2.2          line = f.readline()
-    23    212354     13848171     65.2     10.9          lin = json.loads(line)
-    24    212354    109427317    515.3     85.9          date = dateutil.parser.parse(lin[&quot;created_at&quot;])
-    25    212354       238112      1.1      0.2          datacount += 1
-    26    212354       260227      1.2      0.2          dataarray.append(date.minute)
-    27
-    28        19          349     18.4      0.0      f.close()
-    29        19           20      1.1      0.0      return datacount, dataarray</code></pre>
-<p>于是我们就发现我们的瓶颈就是从读取<code>created_at</code>，即创建时间。。。以及解析json，反而不是我们关心的IO，果然<code>readline</code>很强大。</p>
-<h3 id="memory_profiler">memory_profiler</h3>
-<p>首先我们需要install memory_profiler:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">pip</span> install -U memory_profiler
-$ <span class="kw">pip</span> install psutil</code></pre></div>
-<p>如上，我们只需要在<code>handle_json</code>前面加上<code>@profile</code></p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">python</span> -m memory_profiler handle.py</code></pre></div>
-<p>于是</p>
-<pre><code>Filename: parse_data.py
-    
-Line #    Mem usage    Increment   Line Contents
-================================================
-    13   39.930 MiB    0.000 MiB   @profile
-    14                             def handle_json(jsonfile):
-    15   39.930 MiB    0.000 MiB       f = open(jsonfile, &quot;r&quot;)
-    16   39.930 MiB    0.000 MiB       dataarray = []
-    17   39.930 MiB    0.000 MiB       datacount = 0
-    18
-    19   40.055 MiB    0.125 MiB       for line in open(jsonfile):
-    20   40.055 MiB    0.000 MiB           line = f.readline()
-    21   40.066 MiB    0.012 MiB           lin = json.loads(line)
-    22   40.055 MiB   -0.012 MiB           date = dateutil.parser.parse(lin[&quot;created_at&quot;])
-    23   40.055 MiB    0.000 MiB           datacount += 1
-    24   40.055 MiB    0.000 MiB           dataarray.append(date.minute)
-    25
-    26                                 f.close()
-    27                                 return datacount, dataarray</code></pre>
-<h3 id="objgraph-python">objgraph python</h3>
-<p>安装objgraph</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">pip</span> install objgraph</code></pre></div>
-<p>我们需要调用他</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pdb<span class="op">;</span></code></pre></div>
-<p>以及在需要调度的地方加上</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pdb.set_trace()</code></pre></div>
-<p>接着会进入<code>command</code>模式</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">(pdb) <span class="im">import</span> objgraph
-(pdb) objgraph.show_most_common_types()</code></pre></div>
-<p>然后我们可以找到。。</p>
-<pre><code>function                   8259
-dict                       2137
-tuple                      1949
-wrapper_descriptor         1625
-list                       1586
-weakref                    1145
-builtin_function_or_method 1117
-method_descriptor          948
-getset_descriptor          708
-type                       705</code></pre>
-<p>也可以用他生成图形，貌似这里是用<code>dot</code>生成的，加上<code>python-xdot</code></p>
-<p>很明显的我们需要一个数据库。</p>
-<p>如果我们每次都要花同样的时间去做一件事，去扫那些数据的话，那么这是最好的打发时间的方法。</p>
-<h2 id="python-sqlite3-查询数据">python SQLite3 查询数据</h2>
+<h2 id="存储到数据库中">存储到数据库中</h2>
+<h3 id="sqlite3">SQLite3</h3>
 <p>我们创建了一个名为<code>userdata.db</code>的数据库文件，然后创建了一个表，里面有owner,language,eventtype,name url</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> init_db():
     conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;userdata.db&#39;</span>)
@@ -2340,7 +2228,7 @@ type                       705</code></pre>
 <p>最后代码可以见</p>
 <p><a href="http://github.com/gmszone/ml">github.com/gmszone/ml</a></p>
 <p>更好的方案？</p>
-<h2 id="redis">Redis</h2>
+<h3 id="redis">Redis</h3>
 <p>查询用户事件总数</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> redis
 r <span class="op">=</span> redis.StrictRedis(host<span class="op">=</span><span class="st">&#39;localhost&#39;</span>, port<span class="op">=</span><span class="dv">6379</span>, db<span class="op">=</span><span class="dv">0</span>)
@@ -2373,7 +2261,7 @@ pipe.execute()</code></pre></div>
 </figure>
 <p>蓝色的就是push事件，黄色的是create等等。</p>
 <p>到这里我们算是知道了OSRC的数据库部分是如何工作的。</p>
-<h3 id="redis-查询">Redis 查询</h3>
+<h4 id="redis-查询">Redis 查询</h4>
 <p>主要代码如下所示</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_vector(user, pipe<span class="op">=</span><span class="va">None</span>):
 
@@ -2402,7 +2290,7 @@ pipe.execute()</code></pre></div>
 <p>有意思的是在这里生成了和自己相近的人</p>
 <pre><code>[&#39;alesdokshanin&#39;, &#39;hjiawei&#39;, &#39;andrewreedy&#39;, &#39;christj6&#39;, &#39;1995eaton&#39;]</code></pre>
 <p>osrc最有意思的一部分莫过于flann，当然说的也是系统后台的设计的一个很关键及有意思的部分。</p>
-<h2 id="邻近算法">邻近算法</h2>
+<h2 id="邻近算法与相似用户">邻近算法与相似用户</h2>
 <p>邻近算法是在这个分析过程中一个很有意思的东西。</p>
 <blockquote>
 <p>邻近算法，或者说K最近邻(kNN，k-NearestNeighbor)分类算法可以说是整个数据挖掘分类技术中最简单的方法了。所谓K最近邻，就是k个最近的邻居的意思，说的是每个样本都可以用她最接近的k个邻居来代表。</p>

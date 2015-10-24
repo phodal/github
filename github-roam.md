@@ -2074,7 +2074,7 @@ Lettuce.send = function (url, method, callback, data) {
 
  <hr>
 
-#Github项目分析一
+#Github用户分析
 
 ##生成图表
 
@@ -2329,182 +2329,11 @@ if __name__ == '__main__':
 
 我们还需要优化方法，以及多线程的支持。
 
-
-
- <hr>
-
-#Github项目分析二
-
-    
 让我们分析之前的程序，然后再想办法做出优化。网上看到一篇文章[http://www.huyng.com/posts/python-performance-analysis/](http://www.huyng.com/posts/python-performance-analysis/)讲的就是分析这部分内容的。
-    
-##Time Python分析
 
-分析程序的运行时间
-     
-```bash     
-$time python handle.py
-```
+##存储到数据库中
 
-结果便是，但是对于我们的分析没有一点意义
-
-```
-    real	0m43.411s
-    user	0m39.226s
-    sys	0m0.618s
-```
-
-###line_profiler python
-
-```bash
-sudo ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future" easy_install line_profiler
-```
-
-然后在我们的``parse_data.py``的``handle_json``前面加上``@profile``
-
-```python
-@profile
-def handle_json(jsonfile):
-    f = open(jsonfile, "r")
-    dataarray = []
-    datacount = 0
-
-    for line in open(jsonfile):
-        line = f.readline()
-        lin = json.loads(line)
-        date = dateutil.parser.parse(lin["created_at"])
-        datacount += 1
-        dataarray.append(date.minute)
-
-    f.close()
-    return datacount, dataarray
-```
-
-Line_profiler带了一个分析脚本``kernprof.py``，so
-
-```bash
-kernprof.py -l -v handle.py
-```
-
-我们便会得到下面的结果
-
-```
-Wrote profile results to handle.py.lprof
-Timer unit: 1e-06 s
-
-File: parse_data.py
-Function: handle_json at line 15
-Total time: 127.332 s
-
-Line #      Hits         Time  Per Hit   % Time  Line Contents
-==============================================================
-    15                                           @profile
-    16                                           def handle_json(jsonfile):
-    17        19          636     33.5      0.0      f = open(jsonfile, "r")
-    18        19           21      1.1      0.0      dataarray = []
-    19        19           16      0.8      0.0      datacount = 0
-    20
-    21    212373       730344      3.4      0.6      for line in open(jsonfile):
-    22    212354      2826826     13.3      2.2          line = f.readline()
-    23    212354     13848171     65.2     10.9          lin = json.loads(line)
-    24    212354    109427317    515.3     85.9          date = dateutil.parser.parse(lin["created_at"])
-    25    212354       238112      1.1      0.2          datacount += 1
-    26    212354       260227      1.2      0.2          dataarray.append(date.minute)
-    27
-    28        19          349     18.4      0.0      f.close()
-    29        19           20      1.1      0.0      return datacount, dataarray
-```
-
-于是我们就发现我们的瓶颈就是从读取``created_at``，即创建时间。。。以及解析json，反而不是我们关心的IO，果然``readline``很强大。
-
-###memory_profiler
-
-首先我们需要install memory_profiler:
-
-```bash
-$ pip install -U memory_profiler
-$ pip install psutil
-```
-
-如上，我们只需要在``handle_json``前面加上``@profile``
-
-```bash
-python -m memory_profiler handle.py
-```
-
-于是
-
-```
-Filename: parse_data.py
-    
-Line #    Mem usage    Increment   Line Contents
-================================================
-    13   39.930 MiB    0.000 MiB   @profile
-    14                             def handle_json(jsonfile):
-    15   39.930 MiB    0.000 MiB       f = open(jsonfile, "r")
-    16   39.930 MiB    0.000 MiB       dataarray = []
-    17   39.930 MiB    0.000 MiB       datacount = 0
-    18
-    19   40.055 MiB    0.125 MiB       for line in open(jsonfile):
-    20   40.055 MiB    0.000 MiB           line = f.readline()
-    21   40.066 MiB    0.012 MiB           lin = json.loads(line)
-    22   40.055 MiB   -0.012 MiB           date = dateutil.parser.parse(lin["created_at"])
-    23   40.055 MiB    0.000 MiB           datacount += 1
-    24   40.055 MiB    0.000 MiB           dataarray.append(date.minute)
-    25
-    26                                 f.close()
-    27                                 return datacount, dataarray
-```
-
-###objgraph python
-
-安装objgraph
-
-```bash
-pip install objgraph
-```
-
-我们需要调用他
-
-```python
-import pdb;
-```
-
-以及在需要调度的地方加上
-
-```python
-pdb.set_trace()
-```
-
-接着会进入``command``模式
-
-```python
-(pdb) import objgraph
-(pdb) objgraph.show_most_common_types()
-```
-
-然后我们可以找到。。
-
-```
-function                   8259
-dict                       2137
-tuple                      1949
-wrapper_descriptor         1625
-list                       1586
-weakref                    1145
-builtin_function_or_method 1117
-method_descriptor          948
-getset_descriptor          708
-type                       705
-```
-
-也可以用他生成图形，貌似这里是用``dot``生成的，加上``python-xdot``
-
-很明显的我们需要一个数据库。
-
-如果我们每次都要花同样的时间去做一件事，去扫那些数据的话，那么这是最好的打发时间的方法。
-
-##python SQLite3 查询数据
+###SQLite3
 
 我们创建了一个名为``userdata.db``的数据库文件，然后创建了一个表，里面有owner,language,eventtype,name url
 
@@ -2660,7 +2489,7 @@ date_re = re.compile(r"([0-9]{4})-([0-9]{2})-([0-9]{2})-([0-9]+)\.json.gz")
 
 更好的方案？
 
-##Redis
+###Redis
 
 查询用户事件总数
 
@@ -2709,7 +2538,7 @@ pipe.execute()
 
 到这里我们算是知道了OSRC的数据库部分是如何工作的。
 
-###Redis 查询
+####Redis 查询
 
 主要代码如下所示
 
@@ -2752,7 +2581,7 @@ def get_vector(user, pipe=None):
 
 osrc最有意思的一部分莫过于flann，当然说的也是系统后台的设计的一个很关键及有意思的部分。
 
-##邻近算法
+##邻近算法与相似用户
 
 邻近算法是在这个分析过程中一个很有意思的东西。
 
