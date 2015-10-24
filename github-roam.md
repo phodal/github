@@ -81,7 +81,7 @@
 
  <hr>
 
-#介绍
+#Git基本知识与Github使用
 
 ##Github
 
@@ -127,12 +127,7 @@ jQuery[^jQuery]在发布版本``2.1.3``，一共有152个commit。我们可以�
 
 [^jQuery]: jQuery是一套跨浏览器的JavaScript库，简化HTML与JavaScript之间的操作。
 
- <hr>
-
-#Git基本知识与Github使用
-
 ##Git
-
 
 从一般开发者的角度来看，git有以下功能：
 
@@ -228,7 +223,86 @@ git push -u origin master
 	
 如果你完成了上面的步骤之后,那么我想你想知道你需要怎样的项目。
 
-<hr />
+##Github流行项目分析
+
+之前曾经分析过一些Github的用户行为，现在我们先来说说Github上的Star吧。(截止: 2015年3月9日23时。)
+
+用户  | 项目名    | Language | Star | Url
+-----|---------- |----------|------|----
+twbs | Bootstrap | CSS      | 78490 | [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
+vhf |free-programming books | - | 37240 | [https://github.com/vhf/free-programming-books](https://github.com/vhf/free-programming-books)
+angular | angular.js | JavaScript | 36,061 | [https://github.com/angular/angular.js](https://github.com/angular/angular.js)
+mbostock | d3 | JavaScript | 35,257 | [https://github.com/mbostock/d3](https://github.com/mbostock/d3)
+joyent | node | JavaScript | 35,077 | [https://github.com/joyent/node](https://github.com/joyent/node)
+
+上面列出来的是前5的，看看大于1万个stars的项目的分布，一共有82个:
+
+语言 | 项目数
+-----|-----
+JavaScript | 37
+Ruby | 6 
+CSS | 6 
+Python | 4 
+HTML | 3 
+C++ | 3 
+VimL | 2 
+Shell | 2 
+Go | 2 
+C | 2 
+
+类型分布:
+
+
+ - 库和框架: 和``jQuery`` 
+ - 系统: 如``Linux``、``hhvm``、``docker``
+ - 配置集: 如``dotfiles``
+ - 辅助工具: 如``oh-my-zsh``
+ - 工具: 如``Homewbrew``和``Bower``
+ - 资料收集: 如``free programming books``，``You-Dont-Know-JS``，``Font-Awesome``
+ - 其他:简历如``Resume``
+ 
+##创建Pull Request
+
+除了创建项目之外，我们也可以创建Pull Request来做贡献。
+
+###我的第一个PR
+
+我的第一个PR是给一个小的Node的CoAP相关的库的Pull Request。原因比较简单，是因为它的README.md写错了，导致我无法办法进行下一步。
+
+		 const dgram       = require('dgram')
+		-    , coapPacket  = require('coap-packet')
+		+    , package     = require('coap-packet')
+
+很简单，却又很有用的步骤，另外一个也是：
+
+```
+ else
+   cat << END
+ $0: error: module ngx_pagespeed requires the pagespeed optimization library.
+-Look in obj/autoconf.err for more details.
++Look in objs/autoconf.err for more details.
+ END
+   exit 1
+ fi
+``` 
+
+###CLA
+
+CLA即Contributor License Agreement，在为一些大的组织、机构提交Pull Request的时候，可能需要签署这个协议。他们会在你的Pull Request里问你，只有你到他们的网站去注册并同意协议才会接受你的PR。
+
+以下是我为Google提交的一个PR
+
+![Google CLA](./img/google-cla.png)
+
+以及Eclipse的一个PR
+
+![Eclipse CLA](./img/eclipse-cla.png)
+
+他们都要求我签署CLA。
+
+ <hr>
+
+#构建Github项目
 
 ##用好Github
 
@@ -390,112 +464,6 @@ Lettuce.send = function (url, method, callback, data) {
 不想在这里说太多关于``重构``的东西，可以参考Martin Flower的《重构》一书去多了解一些重构的细节。
 
 这时想说的是，只有代码被测试覆盖住了，那么才能保证重构的过程没有出错。
-
- <hr>
-
-#Github流行项目分析
-
-之前曾经分析过一些Github的用户行为，现在我们先来说说Github上的Star吧。(截止: 2015年3月9日23时。)
-
-用户  | 项目名    | Language | Star | Url
------|---------- |----------|------|----
-twbs | Bootstrap | CSS      | 78490 | [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
-vhf |free-programming books | - | 37240 | [https://github.com/vhf/free-programming-books](https://github.com/vhf/free-programming-books)
-angular | angular.js | JavaScript | 36,061 | [https://github.com/angular/angular.js](https://github.com/angular/angular.js)
-mbostock | d3 | JavaScript | 35,257 | [https://github.com/mbostock/d3](https://github.com/mbostock/d3)
-joyent | node | JavaScript | 35,077 | [https://github.com/joyent/node](https://github.com/joyent/node)
-
-上面列出来的是前5的，看看大于1万个stars的项目的分布，一共有82个:
-
-语言 | 项目数
------|-----
-JavaScript | 37
-Ruby | 6 
-CSS | 6 
-Python | 4 
-HTML | 3 
-C++ | 3 
-VimL | 2 
-Shell | 2 
-Go | 2 
-C | 2 
-
-类型分布:
-
-
- - 库和框架: 和``jQuery`` 
- - 系统: 如``Linux``、``hhvm``、``docker``
- - 配置集: 如``dotfiles``
- - 辅助工具: 如``oh-my-zsh``
- - 工具: 如``Homewbrew``和``Bower``
- - 资料收集: 如``free programming books``，``You-Dont-Know-JS``，``Font-Awesome``
- - 其他:简历如``Resume``
- 
- 
-  <hr>
-
-#创建你的项目
-
-问题来了,我们在上面需要怎样的项目? 在上章中，我们说到了下面的内容会比较受欢迎：
-
-- 库和框架: 和``jQuery`` 
-- 系统: 如``Linux``、``hhvm``、``docker``
-- 配置集: 如``dotfiles``
-- 辅助工具: 如``oh-my-zsh``
-- 工具: 如``Homewbrew``和``Bower``
-- 资料收集: 如``free programming books``，``You-Dont-Know-JS``，``Font-Awesome``
-- 其他:简历如``Resume``
- 
-不过，在多数情况下，我想文档类如资料收集会比较受欢迎。但是，并非所有喜欢的程序员都喜欢去收集这样的内容，有时候我们想创造的是一个流行的库，这也是我最想做的开源项目。
-
-##Hello,World
-
-So，你可以从Hello,World开始试试。
-
- <hr>
-
-#创建Pull Request
-
-除了创建项目之外，我们也可以创建Pull Request来做贡献。
-
-##第一个PR
-
-我的第一个PR是给一个小的Node的CoAP相关的库的Pull Request。原因比较简单，是因为它的README.md写错了，导致我无法办法进行下一步。
-
-		 const dgram       = require('dgram')
-		-    , coapPacket  = require('coap-packet')
-		+    , package     = require('coap-packet')
-
-很简单，却又很有用的步骤，另外一个也是：
-
-```
- else
-   cat << END
- $0: error: module ngx_pagespeed requires the pagespeed optimization library.
--Look in obj/autoconf.err for more details.
-+Look in objs/autoconf.err for more details.
- END
-   exit 1
- fi
-``` 
-
-##CLA
-
-CLA即Contributor License Agreement，在为一些大的组织、机构提交Pull Request的时候，可能需要签署这个协议。他们会在你的Pull Request里问你，只有你到他们的网站去注册并同意协议才会接受你的PR。
-
-以下是我为Google提交的一个PR
-
-![Google CLA](./img/google-cla.png)
-
-以及Eclipse的一个PR
-
-![Eclipse CLA](./img/eclipse-cla.png)
-
-他们都要求我签署CLA。
-
- <hr>
-
-#构建Github项目
 
 ##从模块分离到测试
 
