@@ -32,7 +32,7 @@ a img {
 }
 
 p {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 
 h1,
@@ -46,8 +46,10 @@ h6 {
 }
 
 h1 {
-    margin-bottom: 18px;
+    margin-bottom: 32px;
+    margin-top: 32px;
     font-size: 30px;
+    color: #0050a3;
 }
 
 h1 a {
@@ -57,10 +59,12 @@ h1 a {
 
 h2 {
     font-size: 24px;
+    margin-bottom: 28px;
 }
 
 h3 {
     font-size: 18px;
+    margin-bottom: 24px;
 }
 
 h4 {
@@ -82,8 +86,8 @@ hr {
 }
 
 blockquote {
-    padding: 13px 13px 21px 15px;
-    margin-bottom: 18px;
+    padding: 2px 13px 21px 2px;
+    margin-bottom: 12px;
     font-family: georgia,serif;
     font-style: italic;
 }
