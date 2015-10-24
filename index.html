@@ -78,18 +78,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#版本管理与软件部署">版本管理与软件部署</a></li>
 <li><a href="#github与git">Github与Git</a></li>
 </ul></li>
+</ul></li>
+<li><a href="#git基本知识与github使用">Git基本知识与Github使用</a><ul>
+<li><a href="#git">Git</a><ul>
+<li><a href="#git初入">Git初入</a></li>
+<li><a href="#在github创建项目">在Github创建项目</a></li>
+</ul></li>
 <li><a href="#用好github">用好Github</a><ul>
 <li><a href="#敏捷软件开发">敏捷软件开发</a></li>
 <li><a href="#测试">测试</a></li>
 <li><a href="#ci">CI</a></li>
 <li><a href="#代码质量">代码质量</a></li>
 <li><a href="#重构">重构</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#git基本知识与github使用">Git基本知识与Github使用</a><ul>
-<li><a href="#git">Git</a><ul>
-<li><a href="#git初入">Git初入</a></li>
-<li><a href="#github-1">Github</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#github流行项目分析">Github流行项目分析</a></li>
@@ -289,6 +289,74 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <blockquote>
 <p>GitHub可以托管各种git库，并提供一个web界面，但与其它像 SourceForge或Google Code这样的服务不同，GitHub的独特卖点在于从另外一个项目进行分支的简易性。为一个项目贡献代码非常简单：首先点击项目站点的“fork”的按钮，然后将代码检出并将修改加入到刚才分出的代码库中，最后通过内建的“pull request”机制向项目负责人申请代码合并。已经有人将GitHub称为代码玩家的MySpace。</p>
 </blockquote>
+<hr>
+<h1 id="git基本知识与github使用">Git基本知识与Github使用</h1>
+<h2 id="git">Git</h2>
+<p>从一般开发者的角度来看，git有以下功能：</p>
+<ol type="1">
+<li>从服务器上克隆数据库（包括代码和版本信息）到单机上。</li>
+<li>在自己的机器上创建分支，修改代码。</li>
+<li>在单机上自己创建的分支上提交代码。</li>
+<li>在单机上合并分支。</li>
+<li>新建一个分支，把服务器上最新版的代码fetch下来，然后跟自己的主分支合并。</li>
+<li>生成补丁（patch），把补丁发送给主开发者。</li>
+<li>看主开发者的反馈，如果主开发者发现两个一般开发者之间有冲突（他们之间可以合作解决的冲突），就会要求他们先解决冲突，然后再由其中一个人提交。如果主开发者可以自己解决，或者没有冲突，就通过。</li>
+<li>一般开发者之间解决冲突的方法，开发者之间可以使用pull 命令解决冲突，解决完冲突之后再向主开发者提交补丁。</li>
+</ol>
+<p>从主开发者的角度（假设主开发者不用开发代码）看，git有以下功能：</p>
+<ol type="1">
+<li>查看邮件或者通过其它方式查看一般开发者的提交状态。</li>
+<li>打上补丁，解决冲突（可以自己解决，也可以要求开发者之间解决以后再重新提交，如果是开源项目，还要决定哪些补丁有用，哪些不用）。</li>
+<li>向公共服务器提交结果，然后通知所有开发人员。</li>
+</ol>
+<h3 id="git初入">Git初入</h3>
+<p>如果是第一次使用Git，你需要设置署名和邮箱：</p>
+<pre><code>$ git config --global user.name &quot;用户名&quot;
+$ git config --global user.email &quot;电子邮箱&quot;</code></pre>
+<p>将代码仓库clone到本地，其实就是将代码复制到你的机器里，并交由Git来管理：</p>
+<pre><code>$ git clone git@github.com:someone/symfony-docs-chs.git</code></pre>
+<p>你可以修改复制到本地的代码了（symfony-docs-chs项目里都是rst格式的文档）。当你觉得完成了一定的工作量，想做个阶段性的提交：</p>
+<p>向这个本地的代码仓库添加当前目录的所有改动：</p>
+<pre><code>$ git add .</code></pre>
+<p>或者只是添加某个文件：</p>
+<pre><code>$ git add -p</code></pre>
+<p>我们可以输入</p>
+<pre><code>$git status</code></pre>
+<p>来看现在的状态，如下图是添加之前的：</p>
+<figure>
+<img src="./img/before-add.png" alt="Before add" /><figcaption>Before add</figcaption>
+</figure>
+<p>下面是添加之后 的</p>
+<figure>
+<img src="./img/after-add.png" alt="After add" /><figcaption>After add</figcaption>
+</figure>
+<p>可以看到状态的变化是从黄色到绿色，即unstage到add。</p>
+<h3 id="在github创建项目">在Github创建项目</h3>
+<p>接着,我们试试在上面创建一个项目:</p>
+<figure>
+<img src="./img/github-roam-create.jpg" alt="Github Roam" /><figcaption>Github Roam</figcaption>
+</figure>
+<p>就会有下面的提醒:</p>
+<figure>
+<img src="./img/project-init.jpg" alt="Github Roam" /><figcaption>Github Roam</figcaption>
+</figure>
+<p>它提供多种方式的创建方法:</p>
+<blockquote>
+<p>…or create a new repository on the command line</p>
+</blockquote>
+<pre><code>echo &quot;# github-roam&quot; &gt;&gt; README.md
+git init
+git add README.md
+git commit -m &quot;first commit&quot;
+git remote add origin git@github.com:phodal/github-roam.git
+git push -u origin master</code></pre>
+<blockquote>
+<p>…or push an existing repository from the command line</p>
+</blockquote>
+<pre><code>git remote add origin git@github.com:phodal/github-roam.git
+git push -u origin master</code></pre>
+<p>如果你完成了上面的步骤之后,那么我想你想知道你需要怎样的项目。</p>
+<hr />
 <h2 id="用好github">用好Github</h2>
 <p>如何用好Github,并实践一些敏捷软件开发是一个很有意思的事情.我们可以在上面做很多事情,从测试到CI,再到自动部署.</p>
 <h3 id="敏捷软件开发">敏捷软件开发</h3>
@@ -428,61 +496,6 @@ after_success: CODECLIMATE_REPO_TOKEN=321480822fc37deb0de70a11931b4cb6a2a3cc4116
 <h3 id="重构">重构</h3>
 <p>不想在这里说太多关于<code>重构</code>的东西，可以参考Martin Flower的《重构》一书去多了解一些重构的细节。</p>
 <p>这时想说的是，只有代码被测试覆盖住了，那么才能保证重构的过程没有出错。</p>
-<hr>
-<h1 id="git基本知识与github使用">Git基本知识与Github使用</h1>
-<h2 id="git">Git</h2>
-<p>从一般开发者的角度来看，git有以下功能：</p>
-<ol type="1">
-<li>从服务器上克隆数据库（包括代码和版本信息）到单机上。</li>
-<li>在自己的机器上创建分支，修改代码。</li>
-<li>在单机上自己创建的分支上提交代码。</li>
-<li>在单机上合并分支。</li>
-<li>新建一个分支，把服务器上最新版的代码fetch下来，然后跟自己的主分支合并。</li>
-<li>生成补丁（patch），把补丁发送给主开发者。</li>
-<li>看主开发者的反馈，如果主开发者发现两个一般开发者之间有冲突（他们之间可以合作解决的冲突），就会要求他们先解决冲突，然后再由其中一个人提交。如果主开发者可以自己解决，或者没有冲突，就通过。</li>
-<li>一般开发者之间解决冲突的方法，开发者之间可以使用pull 命令解决冲突，解决完冲突之后再向主开发者提交补丁。</li>
-</ol>
-<p>从主开发者的角度（假设主开发者不用开发代码）看，git有以下功能：</p>
-<ol type="1">
-<li>查看邮件或者通过其它方式查看一般开发者的提交状态。</li>
-<li>打上补丁，解决冲突（可以自己解决，也可以要求开发者之间解决以后再重新提交，如果是开源项目，还要决定哪些补丁有用，哪些不用）。</li>
-<li>向公共服务器提交结果，然后通知所有开发人员。</li>
-</ol>
-<h3 id="git初入">Git初入</h3>
-<p>如果是第一次使用Git，你需要设置署名和邮箱：</p>
-<pre><code>$ git config --global user.name &quot;用户名&quot;
-$ git config --global user.email &quot;电子邮箱&quot;</code></pre>
-<p>将代码仓库clone到本地，其实就是将代码复制到你的机器里，并交由Git来管理：</p>
-<pre><code>$ git clone git@github.com:someone/symfony-docs-chs.git</code></pre>
-<p>你可以修改复制到本地的代码了（symfony-docs-chs项目里都是rst格式的文档）。当你觉得完成了一定的工作量，想做个阶段性的提交：</p>
-<p>向这个本地的代码仓库添加当前目录的所有改动：</p>
-<pre><code>$ git add .</code></pre>
-<p>或者只是添加某个文件：</p>
-<h3 id="github-1">Github</h3>
-<p>接着,我们试试在上面创建一个项目:</p>
-<figure>
-<img src="./img/github-roam-create.jpg" alt="Github Roam" /><figcaption>Github Roam</figcaption>
-</figure>
-<p>就会有下面的提醒:</p>
-<figure>
-<img src="./img/project-init.jpg" alt="Github Roam" /><figcaption>Github Roam</figcaption>
-</figure>
-<p>它提供多种方式的创建方法:</p>
-<blockquote>
-<p>…or create a new repository on the command line</p>
-</blockquote>
-<pre><code>echo &quot;# github-roam&quot; &gt;&gt; README.md
-git init
-git add README.md
-git commit -m &quot;first commit&quot;
-git remote add origin git@github.com:phodal/github-roam.git
-git push -u origin master</code></pre>
-<blockquote>
-<p>…or push an existing repository from the command line</p>
-</blockquote>
-<pre><code>git remote add origin git@github.com:phodal/github-roam.git
-git push -u origin master</code></pre>
-<p>如果你完成了上面的步骤之后,那么我想你想知道你需要怎样的项目。</p>
 <hr>
 <h1 id="github流行项目分析">Github流行项目分析</h1>
 <p>之前曾经分析过一些Github的用户行为，现在我们先来说说Github上的Star吧。(截止: 2015年3月9日23时。)</p>
