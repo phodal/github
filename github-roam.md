@@ -13,7 +13,7 @@
 
 这是一个残酷的世界，在学生时代，如果你长得不帅不高的话，那么多数的附加技能都是白搭(ps: 通常富的是看不到这篇文章的)。在工作时期，如果你上家没有名气，那么将会影响你下一份工作的待遇。而，很多东西却会改变这些，Github就是其中一个。
 
-注册Github的时候大概是大二的时候，我熟悉的时候已经是大四了，现在已经毕业一年了。在过去的近两年里，我试着以几个维度在Github上创建项目:
+注册Github的时候大概是大一的时候，我熟悉的时候已经是大四了，现在已经毕业一年了。在过去的近两年里，我试着以几个维度在Github上创建项目:
 
 1. 快速上手框架来实战，即demo
 2. 重构别人的代码
@@ -25,7 +25,11 @@
 
 先说说**与技能无关的收获**吧，毕业设计做的是一个《[最小物联网系统](https://github.com/phodal/iot)》，考虑到我们专业老师没有这方面知识，答辩时会带来问题，尽量往这方面靠拢。当我毕业后，这个项目已经有过百个star了，这样易上手的东西还是比较受欢迎的(ps: 不过这种硬件相关的项目通常受限于Github上硬件开发工程师比较少的困扰)。
 
-毕业后一个月收到PACKT出版社的邮件(ps: 他们是在github上找到我的)，内容是关于Review一本[物联网](iot)书籍，即在《[从Review到翻译IT书籍](http://www.phodal.com/blog/review-it-books-with-translate-book/)》中提到的《Learning Internet of Things》。作为一个四级没过的"物联网专家"，去审阅一本英文的物联网书籍。。。当然，后来是审阅完了，书上有我的英文简介。
+毕业后一个月收到PACKT出版社的邮件(ps: 他们是在github上找到我的)，内容是关于Review一本[物联网](iot)书籍，即在《[从Review到翻译IT书籍](http://www.phodal.com/blog/review-it-books-with-translate-book/)》中提到的《Learning Internet of Things》。作为一个四级没过的"物联网专家"，去审阅一本英文的物联网书籍。。。
+
+当然，后来是审阅完了，书上有我的英文简介。
+
+![Phodal Huang Introduction](./img/phodal-intro.jpg)
 
 一个月前，收到MANNING出版社的邮件(ps: 也是在github上)，关于Review一本[物联网](iot)书籍的目录，并提出建议。
 
@@ -73,7 +77,9 @@
 
 ###扩大人脉
 
-如果我们想创造出更好、强大地框架时，那么认识更多的人可能会带来更多的帮助。有时候会同上面那一点一样的效果。
+如果我们想创造出更好、强大地框架时，那么认识更多的人可能会带来更多的帮助。有时候会同上面那一点一样的效果 
+
+ <hr>
 
 #介绍
 
@@ -282,6 +288,8 @@ Lettuce.send = function (url, method, callback, data) {
 
 这时想说的是，只有代码被测试覆盖住了，那么才能保证重构的过程没有出错。
 
+ <hr>
+
 #Git基本知识与Github使用
 
 ##Git
@@ -359,7 +367,9 @@ git remote add origin git@github.com:phodal/github-roam.git
 git push -u origin master
 ```		
 	
-如果你完成了上面的步骤之后,那么我想你想知道你需要怎样的项目.	
+如果你完成了上面的步骤之后,那么我想你想知道你需要怎样的项目。
+
+ <hr>
 
 #Github流行项目分析
 
@@ -400,6 +410,7 @@ C | 2
  - 其他:简历如``Resume``
  
  
+  <hr>
 
 #创建你的项目
 
@@ -418,6 +429,8 @@ C | 2
 ##Hello,World
 
 So，你可以从Hello,World开始试试。
+
+ <hr>
 
 #创建Pull Request
 
@@ -457,6 +470,8 @@ CLA即Contributor License Agreement，在为一些大的组织、机构提交Pul
 ![Eclipse CLA](./img/eclipse-cla.png)
 
 他们都要求我签署CLA。
+
+ <hr>
 
 #构建Github项目
 
@@ -845,6 +860,8 @@ SQLiteHelper.prototype.getData = function (url, callback) {
 
 重构完后的代码比原来还长，这似乎是个问题~~
 
+ <hr>
+
 #创建项目文档
 
 我们需要为我们的项目创建一个文档，通常我们可以将核心代码以外的东西都称为文档：
@@ -915,6 +932,8 @@ React.render(
 ```
 
 而不是需要繁琐的步骤才能进行下一步。
+
+ <hr>
 
 #测试
 
@@ -1151,6 +1170,8 @@ req.end();
 				.toEqual(data);
 		});
 	});
+	
+ <hr>	
 
 #重构
 
@@ -1562,6 +1583,8 @@ public class replaceTemp {
 }
 ```
 
+ <hr>
+
 #Github连击 
 
 ##100天
@@ -1885,6 +1908,8 @@ public class replaceTemp {
 3. 设计
 4. 。。。
 
+ <hr>
+
 #如何在Github"寻找灵感(fork)"
 
 > 重造轮子是重新创造一个已有的或是已被其他人优化的基本方法。
@@ -2057,6 +2082,7 @@ Lettuce.send = function (url, method, callback, data) {
 ```
 
 
+ <hr>
 
 #Github项目分析一
 
@@ -2314,6 +2340,8 @@ if __name__ == '__main__':
 我们还需要优化方法，以及多线程的支持。
 
 
+
+ <hr>
 
 #Github项目分析二
 
@@ -2834,3 +2862,5 @@ def get_points(usernames):
 ```
 
 真看不出来两者有什么相似的地方 。。。。  
+
+ <hr>

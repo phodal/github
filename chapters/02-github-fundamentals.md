@@ -75,4 +75,6 @@ git remote add origin git@github.com:phodal/github-roam.git
 git push -u origin master
 ```		
 	
-如果你完成了上面的步骤之后,那么我想你想知道你需要怎样的项目.	
+如果你完成了上面的步骤之后,那么我想你想知道你需要怎样的项目。
+
+ <hr>

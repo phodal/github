@@ -517,3 +517,5 @@ def get_points(usernames):
 ```
 
 真看不出来两者有什么相似的地方 。。。。  
+
+ <hr>

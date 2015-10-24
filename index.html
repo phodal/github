@@ -216,7 +216,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>毕业后一个月收到PACKT出版社的邮件(ps: 他们是在github上找到我的)，内容是关于Review一本<a href="iot">物联网</a>书籍，即在《<a href="http://www.phodal.com/blog/review-it-books-with-translate-book/">从Review到翻译IT书籍</a>》中提到的《Learning Internet of Things》。作为一个四级没过的“物联网专家”，去审阅一本英文的物联网书籍。。。</p>
 <p>当然，后来是审阅完了，书上有我的英文简介。</p>
 <figure>
-<img src="./img/phdoal-intro.jpg" alt="Phodal Huang Introduction" /><figcaption>Phodal Huang Introduction</figcaption>
+<img src="./img/phodal-intro.jpg" alt="Phodal Huang Introduction" /><figcaption>Phodal Huang Introduction</figcaption>
 </figure>
 <p>一个月前，收到MANNING出版社的邮件(ps: 也是在github上)，关于Review一本<a href="iot">物联网</a>书籍的目录，并提出建议。</p>
 <p>也因此带来了其他更多的东西，当然不是这里的主题。在这里，我们就不讨论各种骚扰邮件，或者中文合作。从没有想象过，我也可以在英语世界有一片小天地。</p>
@@ -249,6 +249,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>因而，在Github寻找合适的候选人，已经是一种趋势。</p>
 <h3 id="扩大人脉">扩大人脉</h3>
 <p>如果我们想创造出更好、强大地框架时，那么认识更多的人可能会带来更多的帮助。有时候会同上面那一点一样的效果</p>
+<hr>
 <h1 id="介绍">介绍</h1>
 <h2 id="github">Github</h2>
 <p>Wiki百科上是这么说的</p>
@@ -427,6 +428,7 @@ after_success: CODECLIMATE_REPO_TOKEN=321480822fc37deb0de70a11931b4cb6a2a3cc4116
 <h3 id="重构">重构</h3>
 <p>不想在这里说太多关于<code>重构</code>的东西，可以参考Martin Flower的《重构》一书去多了解一些重构的细节。</p>
 <p>这时想说的是，只有代码被测试覆盖住了，那么才能保证重构的过程没有出错。</p>
+<hr>
 <h1 id="git基本知识与github使用">Git基本知识与Github使用</h1>
 <h2 id="git">Git</h2>
 <p>从一般开发者的角度来看，git有以下功能：</p>
@@ -480,7 +482,8 @@ git push -u origin master</code></pre>
 </blockquote>
 <pre><code>git remote add origin git@github.com:phodal/github-roam.git
 git push -u origin master</code></pre>
-<p>如果你完成了上面的步骤之后,那么我想你想知道你需要怎样的项目.</p>
+<p>如果你完成了上面的步骤之后,那么我想你想知道你需要怎样的项目。</p>
+<hr>
 <h1 id="github流行项目分析">Github流行项目分析</h1>
 <p>之前曾经分析过一些Github的用户行为，现在我们先来说说Github上的Star吧。(截止: 2015年3月9日23时。)</p>
 <table>
@@ -592,6 +595,7 @@ git push -u origin master</code></pre>
 <li>资料收集: 如<code>free programming books</code>，<code>You-Dont-Know-JS</code>，<code>Font-Awesome</code></li>
 <li>其他:简历如<code>Resume</code></li>
 </ul>
+<hr>
 <h1 id="创建你的项目">创建你的项目</h1>
 <p>问题来了,我们在上面需要怎样的项目? 在上章中，我们说到了下面的内容会比较受欢迎：</p>
 <ul>
@@ -606,6 +610,7 @@ git push -u origin master</code></pre>
 <p>不过，在多数情况下，我想文档类如资料收集会比较受欢迎。但是，并非所有喜欢的程序员都喜欢去收集这样的内容，有时候我们想创造的是一个流行的库，这也是我最想做的开源项目。</p>
 <h2 id="helloworld">Hello,World</h2>
 <p>So，你可以从Hello,World开始试试。</p>
+<hr>
 <h1 id="创建pull-request">创建Pull Request</h1>
 <p>除了创建项目之外，我们也可以创建Pull Request来做贡献。</p>
 <h2 id="第一个pr">第一个PR</h2>
@@ -633,6 +638,7 @@ git push -u origin master</code></pre>
 <img src="./img/eclipse-cla.png" alt="Eclipse CLA" /><figcaption>Eclipse CLA</figcaption>
 </figure>
 <p>他们都要求我签署CLA。</p>
+<hr>
 <h1 id="构建github项目">构建Github项目</h1>
 <h2 id="从模块分离到测试">从模块分离到测试</h2>
 <p>在之前说到</p>
@@ -1028,6 +1034,7 @@ line 21  col 62   Strings must use singlequote.</code></pre>
     <span class="va">SQLiteHelper</span>.<span class="va">prototype</span>.<span class="at">basic</span>(sql_command<span class="op">,</span> callback)<span class="op">;</span>
 <span class="op">};</span></code></pre></div>
 <p>重构完后的代码比原来还长，这似乎是个问题~~</p>
+<hr>
 <h1 id="创建项目文档">创建项目文档</h1>
 <p>我们需要为我们的项目创建一个文档，通常我们可以将核心代码以外的东西都称为文档：</p>
 <ol type="1">
@@ -1086,6 +1093,7 @@ React.render(
   document.getElementById(&#39;container&#39;)
 );</code></pre>
 <p>而不是需要繁琐的步骤才能进行下一步。</p>
+<hr>
 <h1 id="测试-1">测试</h1>
 <h2 id="一次测试驱动开发">一次测试驱动开发</h2>
 <p>虽然接触的TDD时间不算短，然而真正在实践TDD上的时候少之又少。除去怎么教人TDD，就是与人结对编程时的switch，或许是受限于当前的开发流程。</p>
@@ -1253,6 +1261,7 @@ beforeEach(function() {
             .toEqual(data);
     });
 });</code></pre>
+<hr>
 <h1 id="重构-1">重构</h1>
 <p>或许你应该知道了，重构是怎样的，你也知道重构能带来什么。在我刚开始学重构和设计模式的时候，我需要去找一些好的示例，以便于我更好的学习。有时候不得不创造一些更好的场景，来实现这些功能。</p>
 <p>有一天，我发现当我需要我一次又一次地重复讲述某些内容，于是我就计划着把这些应该掌握的技能放到Github上，也就有了<a href="https://github.com/artisanstack">Artisan Stack</a> 计划。</p>
@@ -1532,6 +1541,7 @@ public class replaceTemp {
     }
 
 }</code></pre>
+<hr>
 <h1 id="github连击">Github连击</h1>
 <h2 id="天">100天</h2>
 <p>我也是蛮拼的，虽然我想的只是在Github上连击100~200天，然而到了今天也算不错。</p>
@@ -1792,6 +1802,7 @@ public class replaceTemp {
 <li>设计</li>
 <li>。。。</li>
 </ol>
+<hr>
 <h1 id="如何在github寻找灵感fork">如何在Github“寻找灵感(fork)”</h1>
 <blockquote>
 <p>重造轮子是重新创造一个已有的或是已被其他人优化的基本方法。</p>
@@ -1939,6 +1950,7 @@ public class replaceTemp {
     <span class="va">request</span>.<span class="at">setRequestHeader</span>(<span class="st">&#39;X-Requested-With&#39;</span><span class="op">,</span> <span class="st">&#39;XMLHttpRequest&#39;</span>)<span class="op">;</span>
     <span class="va">request</span>.<span class="at">send</span>(data)<span class="op">;</span>
 <span class="op">};</span></code></pre></div>
+<hr>
 <h1 id="github项目分析一">Github项目分析一</h1>
 <h2 id="生成图表">生成图表</h2>
 <p>如何分析用户的数据是一个有趣的问题，特别是当我们有大量的数据的时候。除了<code>matlab</code>，我们还可以用<code>numpy</code>+<code>matplotlib</code></p>
@@ -2131,6 +2143,7 @@ draw_date(<span class="st">&quot;data/2014-01-01-0.json&quot;</span>)</code></pr
     plt.show()</code></pre></div>
 <p>蓝色的是第一周，绿色的是第二周，蓝色的是第三周就有了上面的结果。</p>
 <p>我们还需要优化方法，以及多线程的支持。</p>
+<hr>
 <h1 id="github项目分析二">Github项目分析二</h1>
 <p>让我们分析之前的程序，然后再想办法做出优化。网上看到一篇文章<a href="http://www.huyng.com/posts/python-performance-analysis/" class="uri">http://www.huyng.com/posts/python-performance-analysis/</a>讲的就是分析这部分内容的。</p>
 <h2 id="time-python分析">Time Python分析</h2>
@@ -2479,6 +2492,7 @@ pipe.execute()</code></pre></div>
     0.          0.          0.          0.          0.          0.          0.
     0.          0.          0.          0.        ]</code></pre>
 <p>真看不出来两者有什么相似的地方 。。。。</p>
+<hr>
 <section class="footnotes">
 <hr />
 <ol>

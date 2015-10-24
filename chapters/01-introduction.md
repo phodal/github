@@ -204,3 +204,5 @@ Lettuce.send = function (url, method, callback, data) {
 不想在这里说太多关于``重构``的东西，可以参考Martin Flower的《重构》一书去多了解一些重构的细节。
 
 这时想说的是，只有代码被测试覆盖住了，那么才能保证重构的过程没有出错。
+
+ <hr>

@@ -384,3 +384,5 @@ SQLiteHelper.prototype.getData = function (url, callback) {
 ```
 
 重构完后的代码比原来还长，这似乎是个问题~~
+
+ <hr>
