@@ -403,9 +403,21 @@ C | 2
 
 #创建你的项目
 
-问题来了,我们在上面需要怎样的项目?
+问题来了,我们在上面需要怎样的项目? 在上章中，我们说到了下面的内容会比较受欢迎：
 
-**只要是代码相关的,那应该就是可以的**
+- 库和框架: 和``jQuery`` 
+- 系统: 如``Linux``、``hhvm``、``docker``
+- 配置集: 如``dotfiles``
+- 辅助工具: 如``oh-my-zsh``
+- 工具: 如``Homewbrew``和``Bower``
+- 资料收集: 如``free programming books``，``You-Dont-Know-JS``，``Font-Awesome``
+- 其他:简历如``Resume``
+ 
+不过，在多数情况下，我想文档类如资料收集会比较受欢迎。但是，并非所有喜欢的程序员都喜欢去收集这样的内容，有时候我们想创造的是一个流行的库，这也是我最想做的开源项目。
+
+##Hello,World
+
+So，你可以从Hello,World开始试试。
 
 #创建Pull Request
 
@@ -1000,7 +1012,7 @@ req.end();
 
      pip install twill
 
-##Twill 登陆测试
+###Twill 登陆测试
 
 1.启动我们的应用。
 
@@ -1047,7 +1059,7 @@ req.end();
 
 发现重定向到首页了。
 
-##Twill 测试脚本
+###Twill 测试脚本
 
 当然我们也可以用脚本直接来测试``login.twill``:
 
