@@ -8,8 +8,6 @@
 
 艺，需要有创造性的方法。
 
-#[前端技能训练: 重构一](http://www.phodal.com/blog/frontend-improve-refactor-javascript-code/)
-
 ##为什么重构?
 
 > 为了更好的代码。
@@ -67,8 +65,6 @@ regexobject: {
 他会匹配对应的Markdown类型，随后进行替换和处理。而``str```，就是管理口的输入和输出。
 
 接着，我们就可以对其进行简单的重构。
-
-###重构
 
 (ps: 推荐用WebStrom来做重构，自带重构功能)
 
