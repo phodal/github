@@ -9,13 +9,13 @@
 
 通常这个会在项目的最上方会有一个项目的简介，如下图所示：
 
-![Github Project Introduction](./img/github-intro.png)
+![GitHub Project Introduction](./img/github-intro.png)
 
 ##README
 
-README通常会显示在Github项目的下面，如下图所示：
+README通常会显示在GitHub项目的下面，如下图所示：
 
-![Github README](./img/readme-example.png)
+![GitHub README](./img/readme-example.png)
 
 通常一个好的README会让你立马对项目产生兴趣。
 

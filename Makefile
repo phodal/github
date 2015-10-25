@@ -1,6 +1,6 @@
 include_dir=build
 source=chapters/*.md
-title='Github 漫游指南'
+title='GitHub 漫游指南'
 filename='github-roam'
 
 

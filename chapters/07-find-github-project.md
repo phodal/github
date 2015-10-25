@@ -1,4 +1,4 @@
-#如何在Github"寻找灵感(fork)"
+#如何在GitHub"寻找灵感(fork)"
 
 > 重造轮子是重新创造一个已有的或是已被其他人优化的基本方法。
 
@@ -55,7 +55,7 @@
 
 ####寻找
 
-在Github上搜索了一个看到了下面的几个结果:
+在GitHub上搜索了一个看到了下面的几个结果:
 
 - [https://github.com/then/promise](https://github.com/then/promise)
 - [https://github.com/reactphp/promise](https://github.com/reactphp/promise)

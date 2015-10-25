@@ -1,2 +1,2 @@
-% Github 漫游指南
+% GitHub 漫游指南
 % Phodal Huang
