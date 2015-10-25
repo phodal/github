@@ -8,7 +8,7 @@
 
 ![qrcode](./img/qrcode.jpg)
 
-2014年，写了一个《[一步步搭建物联网系统](https://github.com/phodal/designiot)》。
+2014年，写了《[一步步搭建物联网系统](https://github.com/phodal/designiot)》（电子书）。
 
 2015.3.9号，想着写个《[GitHub漫游指南](http://github.phodal.com/)》，于是在最开始的地方写着：
 
