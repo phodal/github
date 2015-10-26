@@ -252,7 +252,7 @@ C | 2
 类型分布:
 
 
- - 库和框架: 和``jQuery`` 
+ - 库和框架: 如``jQuery`` 
  - 系统: 如``Linux``、``hhvm``、``docker``
  - 配置集: 如``dotfiles``
  - 辅助工具: 如``oh-my-zsh``
@@ -485,7 +485,7 @@ Lettuce.send = function (url, method, callback, data) {
 
 在SkillTree的源码里，大致分为三部分:
 
- - namespace函数: 故名思意
+ - namespace函数: 顾名思义
  - Calculator也就是TalentTree，主要负责解析、生成url，头像，依赖等等
  - Skill 主要是tips部分。
  
@@ -680,7 +680,7 @@ describe('Book,Link', function () {
 });
 ```
 
-因为我们用``require.js``来管理浏览器端，在后台写测试来测试的时候，我们也需要用他来管理我们的依赖，这也就是为什么这个测试这么从的原因，多数情况下一个测试类似于这样子的。(用Jasmine似乎会是一个更好的主意，但是用习惯Jasmine了)
+因为我们用``require.js``来管理浏览器端，在后台写测试来测试的时候，我们也需要用他来管理我们的依赖，这也就是为什么这个测试这么长的原因，多数情况下一个测试类似于这样子的。(用Jasmine似乎会是一个更好的主意，但是用习惯Jasmine了)
 
 ```javascript
 describe('Book Test', function () {

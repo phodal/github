@@ -447,7 +447,7 @@ git push -u origin master</code></pre>
 </table>
 <p>类型分布:</p>
 <ul>
-<li>库和框架: 和<code>jQuery</code></li>
+<li>库和框架: 如<code>jQuery</code></li>
 <li>系统: 如<code>Linux</code>、<code>hhvm</code>、<code>docker</code></li>
 <li>配置集: 如<code>dotfiles</code></li>
 <li>辅助工具: 如<code>oh-my-zsh</code></li>
@@ -643,7 +643,7 @@ after_success: CODECLIMATE_REPO_TOKEN=321480822fc37deb0de70a11931b4cb6a2a3cc4116
 <h3 id="代码模块化">代码模块化</h3>
 <p>在SkillTree的源码里，大致分为三部分:</p>
 <ul>
-<li>namespace函数: 故名思意</li>
+<li>namespace函数: 顾名思义</li>
 <li>Calculator也就是TalentTree，主要负责解析、生成url，头像，依赖等等</li>
 <li>Skill 主要是tips部分。</li>
 </ul>
@@ -790,7 +790,7 @@ line 21  col 62   Strings must use singlequote.</code></pre>
     <span class="op">}</span>)<span class="op">;</span>
   <span class="op">}</span>)<span class="op">;</span>
 <span class="op">}</span>)<span class="op">;</span></code></pre></div>
-<p>因为我们用<code>require.js</code>来管理浏览器端，在后台写测试来测试的时候，我们也需要用他来管理我们的依赖，这也就是为什么这个测试这么从的原因，多数情况下一个测试类似于这样子的。(用Jasmine似乎会是一个更好的主意，但是用习惯Jasmine了)</p>
+<p>因为我们用<code>require.js</code>来管理浏览器端，在后台写测试来测试的时候，我们也需要用他来管理我们的依赖，这也就是为什么这个测试这么长的原因，多数情况下一个测试类似于这样子的。(用Jasmine似乎会是一个更好的主意，但是用习惯Jasmine了)</p>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="at">describe</span>(<span class="st">&#39;Book Test&#39;</span><span class="op">,</span> <span class="kw">function</span> () <span class="op">{</span>
 <span class="at">it</span>(<span class="st">&#39;should return book label &amp; url&#39;</span><span class="op">,</span> <span class="kw">function</span> () <span class="op">{</span>
   <span class="kw">var</span> book_name <span class="op">=</span> <span class="st">&#39;Head First HTML与CSS&#39;</span><span class="op">;</span>
