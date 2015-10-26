@@ -169,7 +169,7 @@ C | 2
 类型分布:
 
 
- - 库和框架: 和``jQuery`` 
+ - 库和框架: 如``jQuery`` 
  - 系统: 如``Linux``、``hhvm``、``docker``
  - 配置集: 如``dotfiles``
  - 辅助工具: 如``oh-my-zsh``
