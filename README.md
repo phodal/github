@@ -4,9 +4,9 @@
 
 关注我的微信公众号：
 
-##简介
-
 ![qrcode](./img/qrcode.jpg)
+
+##简介
 
 2014年，写了《[一步步搭建物联网系统](https://github.com/phodal/designiot)》（电子书）。
 
