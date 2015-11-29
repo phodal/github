@@ -2,8 +2,6 @@
 
 在线阅读: [GitHub 漫游指南](http://github.phodal.com/)， 下载: [pdf](https://github.com/phodal/github-roam/raw/gh-pages/github-roam.pdf)、[mobi](https://github.com/phodal/github-roam/raw/gh-pages/github-roam.mobi)、[epub](https://github.com/phodal/github-roam/raw/gh-pages/github-roam.epub)
 
-下载: [pdf](https://github.com/phodal/github-roam/raw/gh-pages/github-roam.pdf)、[mobi](https://github.com/phodal/github-roam/raw/gh-pages/github-roam.mobi)、[epub](https://github.com/phodal/github-roam/raw/gh-pages/github-roam.epub)
-
 2014年，写了《[一步步搭建物联网系统](https://github.com/phodal/designiot)》（电子书）。
 
 2015.3.9号，想着写个《[GitHub漫游指南](http://github.phodal.com/)》，于是在最开始的地方写着：
