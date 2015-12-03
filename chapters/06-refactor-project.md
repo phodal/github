@@ -151,7 +151,7 @@ str = tableHandler(str, execStr, strict);
 
 是时候讨论这个Refactor利器了，最初看到这个重构的过程是从ThoughtWorks郑大晔校开始的，只是之前对于Java的另外一个编辑器Eclipse的坏感。。这些在目前已经不是很重要了，试试这个公司里面应用广泛的编辑器。
 
-##Interllij Idea重构
+##Intellij Idea重构
 
 开发的流程大致就是这样子的，测试先行算是推荐的。
 
