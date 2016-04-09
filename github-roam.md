@@ -1814,7 +1814,7 @@ minuteswithcount = [(x, dataarray.count(x)) for x in set(dataarray)]
 
 ###Matplotlib
 
-开始之前需要安装``matplotlib
+开始之前需要安装``matplotlib``
 
 ```bash
 sudo pip install matplotlib
@@ -2740,8 +2740,8 @@ def get_points(usernames):
 
 好的一点是：这些项目可能在未来很受初学者欢迎。
 
-小结
-###---
+###小结
+---
 
 每个人都有自己的方向，都有一个不错的发展路线，分享和创造都是不错的路。
 
