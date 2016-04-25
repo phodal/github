@@ -116,5 +116,5 @@
 
 [![Phodal's Articles](http://brand.phodal.com/shields/article-small.svg)](http://articles.phodal.com/)
 
-© 2015~2016 [Phodal Huang](http://www.phodal.com)。[待我代码编成，娶你为妻可好](http://www.xuntayizhan.com/person/ji-ke-ai-qing-zhi-er-shi-dai-wo-dai-ma-bian-cheng-qu-ni-wei-qi-ke-hao-wan/)。
+[待我代码编成，娶你为妻可好](http://www.xuntayizhan.com/person/ji-ke-ai-qing-zhi-er-shi-dai-wo-dai-ma-bian-cheng-qu-ni-wei-qi-ke-hao-wan/)。
 
