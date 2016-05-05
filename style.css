@@ -130,7 +130,7 @@ pre {
     line-height: 16px;
     font-size: 11px;
     border: 1px solid #d9d9d9;
-    white-space: pre-wrap;
+    white-space: pre-line;
     word-wrap: break-word;
 }
 
@@ -139,7 +139,9 @@ pre code {
     color: #737373;
     font-size: 11px;
     padding: 0;
+    white-space: pre-wrap;
 }
+
 
 figure img {
     display: block;
