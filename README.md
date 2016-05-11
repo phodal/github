@@ -64,7 +64,7 @@
     -   [为什么重构?](http://github.phodal.com/#为什么重构)
     -   [重构uMarkdown](http://github.phodal.com/#重构umarkdown)
         -   [代码说明](http://github.phodal.com/#代码说明)
-    -   [Interllij
+    -   [Intellij
         Idea重构](http://github.phodal.com/#interllij-idea重构)
         -   [Rename](http://github.phodal.com/#rename)
         -   [Extract Method](http://github.phodal.com/#extract-method)
