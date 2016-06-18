@@ -134,7 +134,7 @@ var promise = {
 
 ###实现第二个需求
 
-由于，现有的一些Ajax库都比较，最后只好参照着别人的代码自己实现。
+由于已经有了现有的很多库，所以就可以直接参照（抄）别人写的代码。
 
 ```javascript
 Lettuce.get = function (url, callback) {
