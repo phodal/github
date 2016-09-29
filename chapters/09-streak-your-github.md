@@ -395,3 +395,102 @@ THE ONLY FAIR IS NOT FAIR . ENJOY CREATE & SHARE.
 
 欢迎关注我的GitHub: [https://github.com/phodal](https://github.com/phodal)。
 
+365*2 - 7 天
+---
+
+刚毕业的时候，有一段时间我一直困惑于如何去提高编码能力——因为项目上做的东西多数时候和自己想要的是不一样的，我便想着自己去找一些有意思的东西做着玩，在这个过程中边练习技能。
+
+> 如果你知道自己代码能力不够，为什么不花两年时间去提高这方面的能力呢？
+
+### 编码的练习
+
+编码是一件值得练习的事，你从书中、互联网上看到的那一个个的编程大牛无一不是从一点点的小技能积累起来的。从小接触可以让你有一个好的开始，一段好好的练习也会帮助你更好的前进。
+
+记得我在最开始练习的时候，我分几个不同的阶段去练习:
+
+ - 按照《重构：改善即有代码的设计》一书边寻找一些 bad smell 的代码，一边想方设法去让代码变得优雅。
+ - 按照《设计模式》以及《重构与模式》来将代码重构成某种设计模式。
+ - 按照《面向模式的软件架构》去设计一些软件架构。
+
+而这些并不是一种容易的事，很多时候有一些模式，我们都很难有一个好的实践。只是这些东西都不是一些可以生搬硬套的，我们更需要的是知道有这些东西的存在，以便于在某一天，我们可以从我们的仓库里将这些知识取出来。
+
+![10000 hours](./img/10000.png)
+
+我们的刻意练习加上我们的持之以恒总是会取得长足的进步。不过在我们练习之前，你需要有一个目标。这个目标可以是一个 Idea、一个设计模式、一个模仿等等，这些内容都可以以 Issue 的好好管理着。
+
+在最开始我们下定目标的几天里，我们可以很容易做到这样的事。同样的，我们也可以很容易达到 21 天。只是，我们很容易在 21 天后失去一些目标。所以在练习开始之前，你需要创建一个帮助你提高技术的列表，然后一点点加以提高。比如说：
+
+1. 尝试使用 React + Redux + Koa 2、或者Angular 2 + TypeScript，这样我们就能凭此来学习新的技术。
+2. 尝试使用 CQRS 架构来设计 CMS，这样我们就可以练习在架构方面的能力。
+
+在我们想到一点我们可以练习的技术的时候，这就是一个可以变成 Issue 管理的内容，我们就可以针对性的提高。
+
+通常在这种情况下，我们知道自己不知道什么东西，当我们处于不知道自己不知道、不知道自己知道时，那我们就需要网上的各种技能图谱——如StuQ的技能图谱。
+
+![skilmap](./img/skillmap.png)
+
+然后了解图谱上的一个个的内容，尽可能依照此构建自己的体系——以让自己走向知道自己不知道的地步，然后我们才依此来展开练习。
+
+建议试试我们家的Growth哈，地址：http://growth.ren。
+
+文章的剩下部分就让我分享一下：在这723天里，我创造出了哪些有意思的东西（ps：让我装逼一下）——其实我不仅仅只是 Markdown 写得好
+
+#### 2014年
+
+时间：2014.10.08-2014.12.30
+
+![2014.png](./img/2014.png)
+
+在这一段时间里，我创建的项目大部分都是一些物联网项目：
+
+ - [iot-coap](https://github.com/phodal/iot-coap) 一个基于CoAP协议的物联网
+ - [designiot](https://github.com/phodal/designiot) 即电子书《教你设计物联网系统》
+ - [iot-document](https://github.com/phodal/awesome-iot-document) 收集一些物联网相关的资料，和Awesome不是一个性质
+ - [iot](https://github.com/phodal/iot) 基于PHP框架Laravel的物联网
+ - iot-android 一个与iot项目相配套的Android程序
+ - 等等
+
+正是这几个IoT项目，让Packt出版社找到了我，才有了后来和国内外出版社打交道的故事。也开始了技术审阅、翻译、写书的各种故事，想想就觉得这个开头真的很好。
+
+期间还创建了一个很有意思的Chrome插件，叫onebuttonapp——没错，就是模仿Amazon的一键下单写的。这个插件的目的就是难证当时在项目上用的Backbone、Require.js的这一套可以在插件上好好玩。
+
+OnMap项目是为了让我用Nokia Lumia 920拍照的照片，可以在地图上显示而创建的项目。
+
+当然还有其他的一些小项目啦。
+
+#### 2015年
+
+![2015.png](./img/2015.png)
+
+整个区间就是刷各种前端的技术栈，创建了各种有意思的项目：
+
+ - [Lettuce框架](https://github.com/phodal/lettuce)，一个基于简单的SPA框架
+ - [echoesworks](https://github.com/phodal/echoesworks)，一个支持字幕、Markdown、动画的Slide框架
+ - [diaonan](https://github.com/phodal/diaonan)，一个支持CoAP、MQTT、HTTP的物联网项目
+ - [developer](https://github.com/phodal/developer)，收集各种 Web Developer 成长路线，以及读书图谱
+
+ 
+期间还创建了几个混合应用项目：
+ 
+  - [learning-ionic](https://github.com/phodal/learning-ionic)，程序语言答人，各种hello,world的小应用
+  - [ionic-elasticsearch](https://github.com/phodal/ionic-elasticsearch), Django ElasticSearch Ionic 打造 GIS 移动应用 
+  - [designiot-app](https://github.com/phodal/designiot-app)，教你设计物联网APP版
+
+更多内容可以见我的Idea列表：[https://github.com/phodal/ideas](https://github.com/phodal/ideas)，我实在是不想写了。
+
+#### 2016年
+
+![2016.png](./img/2016.png)
+
+我们有了Growth系列的电子书、APP，还有Mole，几个极具代表性的项目就够了。
+
+ - [Growth](https://github.com/phodal/growth)，一款专注于Web开发者成长的应用，涵盖Web开发的流程及技术栈，Web开发的学习路线、成长衡量等各方面。
+ - [Growth: 全栈增长工程师指南](https://github.com/phodal/growth-ebook)，一本关于如何成为全栈增长工程师的指南
+ - [Growth: 全栈增长工程师实战](https://github.com/phodal/growth-in-action)，在Growth中我们介绍的只是一系列的实践，而Growth实战则会带领读者去履行这些实践
+
+### See you Again
+
+停止这次连击，只是为了有一个更好的开始。
+
+如果你也想提高自己，不妨从创建你的 ideas 项目开始，如我的[Ideas](https://github.com/phodal/ideas)项目一样，上面已经有了大量的 Idea。然后，我们还可以依据这一个个的项目，创建出一本电子书，即 [ideabook](https://github.com/phodal/ideabook)。
+

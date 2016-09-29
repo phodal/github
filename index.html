@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>GitHub 漫游指南 - </title>
+  <title>GitHub 漫游指南 – </title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 div.sourceCode { overflow-x: auto; }
@@ -189,6 +189,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#有意图的练习">有意图的练习</a></li>
 <li><a href="#预见性练习">预见性练习</a></li>
 <li><a href="#小结">小结</a></li>
+<li><a href="#编码的练习">编码的练习</a></li>
+<li><a href="#see-you-again">See you Again</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -353,51 +355,58 @@ git push -u origin master</code></pre>
 <p>如果你完成了上面的步骤之后,那么我想你想知道你需要怎样的项目。</p>
 <h2 id="github流行项目分析">GitHub流行项目分析</h2>
 <p>之前曾经分析过一些GitHub的用户行为，现在我们先来说说GitHub上的Star吧。(截止: 2015年3月9日23时。)</p>
-<table>
+<table style="width:56%;">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 9%" />
+<col style="width: 6%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">用户</th>
-<th style="text-align: left;">项目名</th>
-<th style="text-align: left;">Language</th>
-<th style="text-align: left;">Star</th>
-<th style="text-align: left;">Url</th>
+<th>用户</th>
+<th>项目名</th>
+<th>Language</th>
+<th>Star</th>
+<th>Url</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">twbs</td>
-<td style="text-align: left;">Bootstrap</td>
-<td style="text-align: left;">CSS</td>
-<td style="text-align: left;">78490</td>
-<td style="text-align: left;"><a href="https://github.com/twbs/bootstrap" class="uri">https://github.com/twbs/bootstrap</a></td>
+<td>twbs</td>
+<td>Bootstrap</td>
+<td>CSS</td>
+<td>78490</td>
+<td><a href="https://github.com/twbs/bootstrap" class="uri">https://github.com/twbs/bootstrap</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">vhf</td>
-<td style="text-align: left;">free-programming books</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">37240</td>
-<td style="text-align: left;"><a href="https://github.com/vhf/free-programming-books" class="uri">https://github.com/vhf/free-programming-books</a></td>
+<td>vhf</td>
+<td>free-programming books</td>
+<td>-</td>
+<td>37240</td>
+<td><a href="https://github.com/vhf/free-programming-books" class="uri">https://github.com/vhf/free-programming-books</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">angular</td>
-<td style="text-align: left;">angular.js</td>
-<td style="text-align: left;">JavaScript</td>
-<td style="text-align: left;">36,061</td>
-<td style="text-align: left;"><a href="https://github.com/angular/angular.js" class="uri">https://github.com/angular/angular.js</a></td>
+<td>angular</td>
+<td>angular.js</td>
+<td>JavaScript</td>
+<td>36,061</td>
+<td><a href="https://github.com/angular/angular.js" class="uri">https://github.com/angular/angular.js</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">mbostock</td>
-<td style="text-align: left;">d3</td>
-<td style="text-align: left;">JavaScript</td>
-<td style="text-align: left;">35,257</td>
-<td style="text-align: left;"><a href="https://github.com/mbostock/d3" class="uri">https://github.com/mbostock/d3</a></td>
+<td>mbostock</td>
+<td>d3</td>
+<td>JavaScript</td>
+<td>35,257</td>
+<td><a href="https://github.com/mbostock/d3" class="uri">https://github.com/mbostock/d3</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">joyent</td>
-<td style="text-align: left;">node</td>
-<td style="text-align: left;">JavaScript</td>
-<td style="text-align: left;">35,077</td>
-<td style="text-align: left;"><a href="https://github.com/joyent/node" class="uri">https://github.com/joyent/node</a></td>
+<td>joyent</td>
+<td>node</td>
+<td>JavaScript</td>
+<td>35,077</td>
+<td><a href="https://github.com/joyent/node" class="uri">https://github.com/joyent/node</a></td>
 </tr>
 </tbody>
 </table>
@@ -405,50 +414,50 @@ git push -u origin master</code></pre>
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: left;">语言</th>
-<th style="text-align: left;">项目数</th>
+<th>语言</th>
+<th>项目数</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">JavaScript</td>
-<td style="text-align: left;">37</td>
+<td>JavaScript</td>
+<td>37</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Ruby</td>
-<td style="text-align: left;">6</td>
+<td>Ruby</td>
+<td>6</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">CSS</td>
-<td style="text-align: left;">6</td>
+<td>CSS</td>
+<td>6</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Python</td>
-<td style="text-align: left;">4</td>
+<td>Python</td>
+<td>4</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">HTML</td>
-<td style="text-align: left;">3</td>
+<td>HTML</td>
+<td>3</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">C++</td>
-<td style="text-align: left;">3</td>
+<td>C++</td>
+<td>3</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">VimL</td>
-<td style="text-align: left;">2</td>
+<td>VimL</td>
+<td>2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Shell</td>
-<td style="text-align: left;">2</td>
+<td>Shell</td>
+<td>2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Go</td>
-<td style="text-align: left;">2</td>
+<td>Go</td>
+<td>2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">C</td>
-<td style="text-align: left;">2</td>
+<td>C</td>
+<td>2</td>
 </tr>
 </tbody>
 </table>
@@ -548,39 +557,46 @@ git push -u origin master</code></pre>
    ✓ should be able fadeout elements</code></pre>
 <p>代码来源: <a href="https://github.com/phodal/lettuce" class="uri">https://github.com/phodal/lettuce</a></p>
 <p>看上去似乎每个测试都很小，不过补完每一个测试之后我们就得到了测试覆盖率</p>
-<table>
+<table style="width:68%;">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 18%" />
+<col style="width: 15%" />
+<col style="width: 16%" />
+<col style="width: 9%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">File</th>
-<th style="text-align: left;">Statements</th>
-<th style="text-align: left;">Branches</th>
-<th style="text-align: left;">Functions</th>
-<th style="text-align: left;">Lines</th>
+<th>File</th>
+<th>Statements</th>
+<th>Branches</th>
+<th>Functions</th>
+<th>Lines</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">lettuce.js</td>
-<td style="text-align: left;">98.58% (209 / 212)</td>
-<td style="text-align: left;">82.98%(78 / 94)</td>
-<td style="text-align: left;">100.00% (54 / 54)</td>
-<td style="text-align: left;">98.58% (209 / 212)</td>
+<td>lettuce.js</td>
+<td>98.58% (209 / 212)</td>
+<td>82.98%(78 / 94)</td>
+<td>100.00% (54 / 54)</td>
+<td>98.58% (209 / 212)</td>
 </tr>
 </tbody>
 </table>
 <p>本地测试都通过了，于是我们添加了<code>Travis-CI</code>来跑我们的测试</p>
 <h3 id="ci">CI</h3>
 <p>虽然node.js不算是一门语言，但是因为我们用的node，下面的是一个简单的<code>.travis.yml</code>示例:</p>
-<pre class="yml"><code>language: node_js
-node_js:
-    - &quot;0.10&quot;
+<div class="sourceCode"><pre class="sourceCode yml"><code class="sourceCode yaml"><span class="fu">language:</span> node_js
+<span class="fu">node_js:</span>
+    <span class="kw">-</span> <span class="st">&quot;0.10&quot;</span>
 
-notifications:
-    email: false
+<span class="fu">notifications:</span>
+    <span class="fu">email:</span> false
 
-before_install: npm install -g grunt-cli
-install: npm install
-after_success: CODECLIMATE_REPO_TOKEN=321480822fc37deb0de70a11931b4cb6a2a3cc411680e8f4569936ac8ffbb0ab codeclimate &lt; coverage/lcov.info</code></pre>
+<span class="fu">before_install:</span> npm install -g grunt-cli
+<span class="fu">install:</span> npm install
+<span class="fu">after_success:</span> CODECLIMATE_REPO_TOKEN=321480822fc37deb0de70a11931b4cb6a2a3cc411680e8f4569936ac8ffbb0ab codeclimate &lt; coverage/lcov.info</code></pre></div>
 <p>代码来源: <a href="https://github.com/phodal/lettuce" class="uri">https://github.com/phodal/lettuce</a></p>
 <p>我们把这些集成到<code>README.md</code>之后，就有了之前那张图。</p>
 <p>CI对于一个开发者在不同城市开发同一项目上来说是很重要的，这意味着当你添加的部分功能有测试覆盖的时候，项目代码会更加强壮。</p>
@@ -721,16 +737,16 @@ after_success: CODECLIMATE_REPO_TOKEN=321480822fc37deb0de70a11931b4cb6a2a3cc4116
 <p>当然函数也是一个对象。</p>
 <h3 id="自动化测试">自动化测试</h3>
 <p>一直习惯用Travis CI，于是也继续用Travis Ci，<code>.travis.yml</code>配置如下所示:</p>
-<pre class="yml"><code>language: node_js
-node_js:
-  - &quot;0.10&quot;
+<div class="sourceCode"><pre class="sourceCode yml"><code class="sourceCode yaml"><span class="fu">language:</span> node_js
+<span class="fu">node_js:</span>
+  <span class="kw">-</span> <span class="st">&quot;0.10&quot;</span>
 
-notifications:
-  email: false
+<span class="fu">notifications:</span>
+  <span class="fu">email:</span> false
 
-branches:
-  only:
-    - gh-pages</code></pre>
+<span class="fu">branches:</span>
+  <span class="fu">only:</span>
+    <span class="kw">-</span> gh-pages</code></pre></div>
 <p>使用gh-pages的原因是，我们一push代码的时候，就可以自动测试、部署等等，好处一堆堆的。</p>
 <p>接着我们需要在<code>package.json</code>里面添加脚本</p>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="st">&quot;scripts&quot;</span><span class="op">:</span> <span class="op">{</span>
@@ -833,105 +849,105 @@ line 21  col 62   Strings must use singlequote.</code></pre>
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Rating</th>
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Complexity</th>
-<th style="text-align: left;">Duplication</th>
-<th style="text-align: left;">Churn</th>
-<th style="text-align: left;">C/M</th>
-<th style="text-align: left;">Coverage</th>
+<th>Rating</th>
+<th>Name</th>
+<th>Complexity</th>
+<th>Duplication</th>
+<th>Churn</th>
+<th>C/M</th>
+<th>Coverage</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">A</td>
-<td style="text-align: left;">lib/coap/coap_request_handler.js</td>
-<td style="text-align: left;">24</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">2.6</td>
-<td style="text-align: left;">46.4%</td>
+<td>A</td>
+<td>lib/coap/coap_request_handler.js</td>
+<td>24</td>
+<td>0</td>
+<td>6</td>
+<td>2.6</td>
+<td>46.4%</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">A</td>
-<td style="text-align: left;">lib/coap/coap_result_helper.js</td>
-<td style="text-align: left;">14</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">3.4</td>
-<td style="text-align: left;">80.0%</td>
+<td>A</td>
+<td>lib/coap/coap_result_helper.js</td>
+<td>14</td>
+<td>0</td>
+<td>2</td>
+<td>3.4</td>
+<td>80.0%</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">A</td>
-<td style="text-align: left;">lib/coap/coap_server.js</td>
-<td style="text-align: left;">16</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">5.2</td>
-<td style="text-align: left;">44.0%</td>
+<td>A</td>
+<td>lib/coap/coap_server.js</td>
+<td>16</td>
+<td>0</td>
+<td>5</td>
+<td>5.2</td>
+<td>44.0%</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">A</td>
-<td style="text-align: left;">lib/database/db_factory.js</td>
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">3.8</td>
-<td style="text-align: left;">92.3%</td>
+<td>A</td>
+<td>lib/database/db_factory.js</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>3.8</td>
+<td>92.3%</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">A</td>
-<td style="text-align: left;">lib/database/iot_db.js</td>
-<td style="text-align: left;">7</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">1.0</td>
-<td style="text-align: left;">58.8%</td>
+<td>A</td>
+<td>lib/database/iot_db.js</td>
+<td>7</td>
+<td>0</td>
+<td>6</td>
+<td>1.0</td>
+<td>58.8%</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">A</td>
-<td style="text-align: left;">lib/database/mongodb_helper.js</td>
-<td style="text-align: left;">63</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">11</td>
-<td style="text-align: left;">4.5</td>
-<td style="text-align: left;">35.0%</td>
+<td>A</td>
+<td>lib/database/mongodb_helper.js</td>
+<td>63</td>
+<td>0</td>
+<td>11</td>
+<td>4.5</td>
+<td>35.0%</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">C</td>
-<td style="text-align: left;">lib/database/sqlite_helper.js</td>
-<td style="text-align: left;">32</td>
-<td style="text-align: left;">86</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">4.5</td>
-<td style="text-align: left;">35.0%</td>
+<td>C</td>
+<td>lib/database/sqlite_helper.js</td>
+<td>32</td>
+<td>86</td>
+<td>10</td>
+<td>4.5</td>
+<td>35.0%</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">B</td>
-<td style="text-align: left;">lib/rest/rest_helper.js</td>
-<td style="text-align: left;">19</td>
-<td style="text-align: left;">62</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">4.7</td>
-<td style="text-align: left;">37.5%</td>
+<td>B</td>
+<td>lib/rest/rest_helper.js</td>
+<td>19</td>
+<td>62</td>
+<td>3</td>
+<td>4.7</td>
+<td>37.5%</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">A</td>
-<td style="text-align: left;">lib/rest/rest_server.js</td>
-<td style="text-align: left;">17</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">8.6</td>
-<td style="text-align: left;">88.9%</td>
+<td>A</td>
+<td>lib/rest/rest_server.js</td>
+<td>17</td>
+<td>0</td>
+<td>2</td>
+<td>8.6</td>
+<td>88.9%</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">A</td>
-<td style="text-align: left;">lib/url_handler.js</td>
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">2.2</td>
-<td style="text-align: left;">94.1%</td>
+<td>A</td>
+<td>lib/url_handler.js</td>
+<td>9</td>
+<td>0</td>
+<td>5</td>
+<td>2.2</td>
+<td>94.1%</td>
 </tr>
 </tbody>
 </table>
@@ -2426,5 +2442,85 @@ pipe.execute()</code></pre></div>
 <p>每个人都有自己的方向，都有一个不错的发展路线，分享和创造都是不错的路。</p>
 <p>THE ONLY FAIR IS NOT FAIR . ENJOY CREATE &amp; SHARE.</p>
 <p>欢迎关注我的GitHub: <a href="https://github.com/phodal" class="uri">https://github.com/phodal</a>。</p>
+<p>365*2 - 7 天 —</p>
+<p>刚毕业的时候，有一段时间我一直困惑于如何去提高编码能力——因为项目上做的东西多数时候和自己想要的是不一样的，我便想着自己去找一些有意思的东西做着玩，在这个过程中边练习技能。</p>
+<blockquote>
+<p>如果你知道自己代码能力不够，为什么不花两年时间去提高这方面的能力呢？</p>
+</blockquote>
+<h3 id="编码的练习">编码的练习</h3>
+<p>编码是一件值得练习的事，你从书中、互联网上看到的那一个个的编程大牛无一不是从一点点的小技能积累起来的。从小接触可以让你有一个好的开始，一段好好的练习也会帮助你更好的前进。</p>
+<p>记得我在最开始练习的时候，我分几个不同的阶段去练习:</p>
+<ul>
+<li>按照《重构：改善即有代码的设计》一书边寻找一些 bad smell 的代码，一边想方设法去让代码变得优雅。</li>
+<li>按照《设计模式》以及《重构与模式》来将代码重构成某种设计模式。</li>
+<li>按照《面向模式的软件架构》去设计一些软件架构。</li>
+</ul>
+<p>而这些并不是一种容易的事，很多时候有一些模式，我们都很难有一个好的实践。只是这些东西都不是一些可以生搬硬套的，我们更需要的是知道有这些东西的存在，以便于在某一天，我们可以从我们的仓库里将这些知识取出来。</p>
+<figure>
+<img src="./img/10000.png" alt="10000 hours" /><figcaption>10000 hours</figcaption>
+</figure>
+<p>我们的刻意练习加上我们的持之以恒总是会取得长足的进步。不过在我们练习之前，你需要有一个目标。这个目标可以是一个 Idea、一个设计模式、一个模仿等等，这些内容都可以以 Issue 的好好管理着。</p>
+<p>在最开始我们下定目标的几天里，我们可以很容易做到这样的事。同样的，我们也可以很容易达到 21 天。只是，我们很容易在 21 天后失去一些目标。所以在练习开始之前，你需要创建一个帮助你提高技术的列表，然后一点点加以提高。比如说：</p>
+<ol type="1">
+<li>尝试使用 React + Redux + Koa 2、或者Angular 2 + TypeScript，这样我们就能凭此来学习新的技术。</li>
+<li>尝试使用 CQRS 架构来设计 CMS，这样我们就可以练习在架构方面的能力。</li>
+</ol>
+<p>在我们想到一点我们可以练习的技术的时候，这就是一个可以变成 Issue 管理的内容，我们就可以针对性的提高。</p>
+<p>通常在这种情况下，我们知道自己不知道什么东西，当我们处于不知道自己不知道、不知道自己知道时，那我们就需要网上的各种技能图谱——如StuQ的技能图谱。</p>
+<figure>
+<img src="./img/skillmap.png" alt="skilmap" /><figcaption>skilmap</figcaption>
+</figure>
+<p>然后了解图谱上的一个个的内容，尽可能依照此构建自己的体系——以让自己走向知道自己不知道的地步，然后我们才依此来展开练习。</p>
+<p>建议试试我们家的Growth哈，地址：http://growth.ren。</p>
+<p>文章的剩下部分就让我分享一下：在这723天里，我创造出了哪些有意思的东西（ps：让我装逼一下）——其实我不仅仅只是 Markdown 写得好</p>
+<h4 id="年">2014年</h4>
+<p>时间：2014.10.08-2014.12.30</p>
+<figure>
+<img src="./img/2014.png" alt="2014.png" /><figcaption>2014.png</figcaption>
+</figure>
+<p>在这一段时间里，我创建的项目大部分都是一些物联网项目：</p>
+<ul>
+<li><a href="https://github.com/phodal/iot-coap">iot-coap</a> 一个基于CoAP协议的物联网</li>
+<li><a href="https://github.com/phodal/designiot">designiot</a> 即电子书《教你设计物联网系统》</li>
+<li><a href="https://github.com/phodal/awesome-iot-document">iot-document</a> 收集一些物联网相关的资料，和Awesome不是一个性质</li>
+<li><a href="https://github.com/phodal/iot">iot</a> 基于PHP框架Laravel的物联网</li>
+<li>iot-android 一个与iot项目相配套的Android程序</li>
+<li>等等</li>
+</ul>
+<p>正是这几个IoT项目，让Packt出版社找到了我，才有了后来和国内外出版社打交道的故事。也开始了技术审阅、翻译、写书的各种故事，想想就觉得这个开头真的很好。</p>
+<p>期间还创建了一个很有意思的Chrome插件，叫onebuttonapp——没错，就是模仿Amazon的一键下单写的。这个插件的目的就是难证当时在项目上用的Backbone、Require.js的这一套可以在插件上好好玩。</p>
+<p>OnMap项目是为了让我用Nokia Lumia 920拍照的照片，可以在地图上显示而创建的项目。</p>
+<p>当然还有其他的一些小项目啦。</p>
+<h4 id="年-1">2015年</h4>
+<figure>
+<img src="./img/2015.png" alt="2015.png" /><figcaption>2015.png</figcaption>
+</figure>
+<p>整个区间就是刷各种前端的技术栈，创建了各种有意思的项目：</p>
+<ul>
+<li><a href="https://github.com/phodal/lettuce">Lettuce框架</a>，一个基于简单的SPA框架</li>
+<li><a href="https://github.com/phodal/echoesworks">echoesworks</a>，一个支持字幕、Markdown、动画的Slide框架</li>
+<li><a href="https://github.com/phodal/diaonan">diaonan</a>，一个支持CoAP、MQTT、HTTP的物联网项目</li>
+<li><a href="https://github.com/phodal/developer">developer</a>，收集各种 Web Developer 成长路线，以及读书图谱</li>
+</ul>
+<p>期间还创建了几个混合应用项目：</p>
+<ul>
+<li><a href="https://github.com/phodal/learning-ionic">learning-ionic</a>，程序语言答人，各种hello,world的小应用</li>
+<li><a href="https://github.com/phodal/ionic-elasticsearch">ionic-elasticsearch</a>, Django ElasticSearch Ionic 打造 GIS 移动应用</li>
+<li><a href="https://github.com/phodal/designiot-app">designiot-app</a>，教你设计物联网APP版</li>
+</ul>
+<p>更多内容可以见我的Idea列表：<a href="https://github.com/phodal/ideas" class="uri">https://github.com/phodal/ideas</a>，我实在是不想写了。</p>
+<h4 id="年-2">2016年</h4>
+<figure>
+<img src="./img/2016.png" alt="2016.png" /><figcaption>2016.png</figcaption>
+</figure>
+<p>我们有了Growth系列的电子书、APP，还有Mole，几个极具代表性的项目就够了。</p>
+<ul>
+<li><a href="https://github.com/phodal/growth">Growth</a>，一款专注于Web开发者成长的应用，涵盖Web开发的流程及技术栈，Web开发的学习路线、成长衡量等各方面。</li>
+<li><a href="https://github.com/phodal/growth-ebook">Growth: 全栈增长工程师指南</a>，一本关于如何成为全栈增长工程师的指南</li>
+<li><a href="https://github.com/phodal/growth-in-action">Growth: 全栈增长工程师实战</a>，在Growth中我们介绍的只是一系列的实践，而Growth实战则会带领读者去履行这些实践</li>
+</ul>
+<h3 id="see-you-again">See you Again</h3>
+<p>停止这次连击，只是为了有一个更好的开始。</p>
+<p>如果你也想提高自己，不妨从创建你的 ideas 项目开始，如我的<a href="https://github.com/phodal/ideas">Ideas</a>项目一样，上面已经有了大量的 Idea。然后，我们还可以依据这一个个的项目，创建出一本电子书，即 <a href="https://github.com/phodal/ideabook">ideabook</a>。</p>
 </body>
 </html>
