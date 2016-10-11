@@ -71,7 +71,7 @@
         *   [Pull Members Up](http://github.phodal.com/#pull-members-up)
         *   [重构之以查询取代临时变量](http://github.phodal.com/#重构之以查询取代临时变量)
 *   [如何在GitHub“寻找灵感(fork)”](http://github.phodal.com/#如何在github寻找灵感fork)
-    *   [](http://github.phodal.com/#lettuce构建过程)[Lettuce](https://github.com/phodal/lettuce)构建过程
+    *   [Lettuce构建过程](http://github.phodal.com/#lettuce构建过程)
         *   [需求](http://github.phodal.com/#需求)
         *   [计划](http://github.phodal.com/#计划)
         *   [实现第一个需求](http://github.phodal.com/#实现第一个需求)

@@ -1576,7 +1576,7 @@ public class replaceTemp {
 
 最近萌发了一个想法写游戏引擎，之前想着做一个JavaScript前端框架。看看，这个思路是怎么来的。
 
-##[Lettuce](https://github.com/phodal/lettuce)构建过程
+##Lettuce构建过程
 
 > Lettuce是一个简约的移动开发框架。
 
