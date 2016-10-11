@@ -393,10 +393,7 @@
 
 THE ONLY FAIR IS NOT FAIR . ENJOY CREATE & SHARE.
 
-欢迎关注我的GitHub: [https://github.com/phodal](https://github.com/phodal)。
-
-365*2 - 7 天
----
+## 365*2-7天里
 
 刚毕业的时候，有一段时间我一直困惑于如何去提高编码能力——因为项目上做的东西多数时候和自己想要的是不一样的，我便想着自己去找一些有意思的东西做着玩，在这个过程中边练习技能。
 
