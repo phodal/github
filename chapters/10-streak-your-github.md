@@ -6,7 +6,7 @@
 
 ![Longest Streak](./img/longest-streak.png)
 
-``在停地造轮子的过程中，也不停地造车子。``
+``在不停地造轮子的过程中，也不停地造车子。``
 
 在那篇连续冲击365天的文章出现之前，我们公司的大大([https://github.com/dreamhead](https://github.com/dreamhead))也曾经在公司内部说过，天天commit什么的。当然这不是我的动力，在连击140天之前
 
