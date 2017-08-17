@@ -1,4 +1,4 @@
-#GitHub 漫游指南
+# GitHub 漫游指南
 
 在线阅读: [GitHub 漫游指南](http://github.phodal.com/)， 下载: [pdf](https://github.com/phodal/github-roam/raw/gh-pages/github-roam.pdf)、[mobi](https://github.com/phodal/github-roam/raw/gh-pages/github-roam.mobi)、[epub](https://github.com/phodal/github-roam/raw/gh-pages/github-roam.epub)
 
@@ -10,7 +10,7 @@
 
 但是过了很久都没有动静，今天是2015.10.24，我想是时候完成这个目标了。
 
-##目录
+## 目录
 
 *   [前言](http://github.phodal.com/#前言)
     *   [我与GitHub的故事](http://github.phodal.com/#我与github的故事)
