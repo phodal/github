@@ -2,7 +2,7 @@
 
 或许你应该知道了，重构是怎样的，你也知道重构能带来什么。在我刚开始学重构和设计模式的时候，我需要去找一些好的示例，以便于我更好的学习。有时候不得不创造一些更好的场景，来实现这些功能。
 
-有一天，我发现当我需要我一次又一次地重复讲述某些内容，于是我就计划着把这些应该掌握的技能放到GitHub上，也就有了[Artisan Stack](https://github.com/artisanstack) 计划。
+有一天，我发现当我需要我一次又一次地重复讲述某些内容，于是我就计划着把这些应该掌握的技能放到GitHub上，也就有了[Artisan Stack](https://github.com/phodal-archive/artisanstack.github.io) 计划。
 
 每个程序员都不可避免地是一个Coder，一个没有掌握好技能的Coder，算不上是手工艺人，但是是手工人。
 
@@ -123,7 +123,7 @@ str = tableHandler(str, execStr, strict);
 }
 ```
 	  
-然后你也看到了，上面有一堆重复的代码，接着让我们用JavaScript的``奇技浮巧``，即apply方法，把上面的重复代码变成。
+然后你也看到了，上面有一堆重复的代码，接着让我们用JavaScript的``奇技淫巧``，即apply方法，把上面的重复代码变成。
 
 ```javascript
 ['code', 'headline', 'lists', 'tables', 'links', 'mail', 'url', 'smlinks', 'hr'].forEach(function (type) {
