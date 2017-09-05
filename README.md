@@ -89,6 +89,9 @@
         *   [数据导入](http://github.phodal.com/#数据导入)
         *   [Redis](http://github.phodal.com/#redis)
     *   [邻近算法与相似用户](http://github.phodal.com/#邻近算法与相似用户)
+*   [如何以“正确的姿势”阅读开源软件代码](http://github.phodal.com/#如何以正确的姿势阅读开源软件代码)
+    *   [阅读过程](http://github.phodal.com/#阅读过程)
+    *   [示例](http://github.phodal.com/#示例)
 *   [GitHub连击](http://github.phodal.com/#github连击)
     *   [100天](http://github.phodal.com/#天)
         *   [40天的提升](http://github.phodal.com/#天的提升)
@@ -112,6 +115,10 @@
     *   [365*2-7天里](http://github.phodal.com/#天里)
         *   [编码的练习](http://github.phodal.com/#编码的练习)
         *   [See you Again](http://github.phodal.com/#see-you-again)
+*   [GitHub 里程碑](http://github.phodal.com/#github-里程碑)
+    *   [写在GitHub 的第 19999 个 star 时](http://github.phodal.com/#写在github-的第-19999-个-star-时)
+        *   [从创建开源框架说起](http://github.phodal.com/#从创建开源框架说起)
+        *   [下一个开源项目](http://github.phodal.com/#下一个开源项目)
 
 
 ## License
