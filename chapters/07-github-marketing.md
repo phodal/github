@@ -193,7 +193,7 @@ WTF！
 
 这一点可以在 README，以及介绍上体现：
 
-![Feel free to contribute!](feel-free-to.png)
+![Feel free to contribute!](./img/feel-free-to.png)
 
 哪怕只是一个错误字的 PR，那么你也可以 merge，啊哈哈~。然后，就有人帮你宣传了，『我给 xxx 项目一个 PR 了』。刚毕业的时候，我也是从这种类型的 PR 做起的~~。
 
