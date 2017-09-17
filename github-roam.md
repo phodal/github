@@ -82,7 +82,7 @@
 ---
 
 创建开源项目
----
+===
 
 
 取一个好的名字
@@ -99,9 +99,9 @@
 GitHub Pages
 
 
-#Git基本知识与GitHub使用
+# Git基本知识与GitHub使用
 
-##Git
+## Git
 
 从一般开发者的角度来看，git有以下功能：
 
@@ -120,7 +120,7 @@ GitHub Pages
 2. 打上补丁，解决冲突（可以自己解决，也可以要求开发者之间解决以后再重新提交，如果是开源项目，还要决定哪些补丁有用，哪些不用）。
 3. 向公共服务器提交结果，然后通知所有开发人员。
 
-###Git初入
+### Git初入
 
 如果是第一次使用Git，你需要设置署名和邮箱：
 
@@ -166,7 +166,7 @@ $git status
 可以看到状态的变化是从黄色到绿色，即unstage到add。
 
 
-##GitHub
+## GitHub
 
 Wiki百科上是这么说的
 
@@ -191,7 +191,7 @@ Wiki百科上是这么说的
 
 等等。看上去像是大餐，但是你还需要了解点什么?
 
-###版本管理与软件部署
+### 版本管理与软件部署
 
 jQuery[^jQuery]在发布版本``2.1.3``，一共有152个commit。我们可以看到如下的提交信息:
 
@@ -202,13 +202,13 @@ jQuery[^jQuery]在发布版本``2.1.3``，一共有152个commit。我们可以�
  - Build: Update commitplease dev dependency
  - ...
 
-###GitHub与Git
+### GitHub与Git
 
 > Git是一个分布式的版本控制系统，最初由Linus Torvalds编写，用作Linux内核代码的管理。在推出后，Git在其它项目中也取得了很大成功，尤其是在Ruby社区中。目前，包括Rubinius、Merb和Bitcoin在内的很多知名项目都使用了Git。Git同样可以被诸如Capistrano和Vlad the Deployer这样的部署工具所使用。
 
 > GitHub可以托管各种git库，并提供一个web界面，但与其它像 SourceForge或Google Code这样的服务不同，GitHub的独特卖点在于从另外一个项目进行分支的简易性。为一个项目贡献代码非常简单：首先点击项目站点的“fork”的按钮，然后将代码检出并将修改加入到刚才分出的代码库中，最后通过内建的“pull request”机制向项目负责人申请代码合并。已经有人将GitHub称为代码玩家的MySpace。
 
-###在GitHub创建项目
+### 在GitHub创建项目
 
 接着,我们试试在上面创建一个项目:
 
@@ -278,11 +278,11 @@ C | 2
  - 资料收集: 如``free programming books``，``You-Dont-Know-JS``，``Font-Awesome``
  - 其他:简历如``Resume``
  
-##Pull Request
+## Pull Request
 
 除了创建项目之外，我们也可以创建Pull Request来做贡献。
 
-###我的第一个PR
+### 我的第一个PR
 
 我的第一个PR是给一个小的Node的CoAP相关的库的Pull Request。原因比较简单，是因为它的README.md写错了，导致我无法办法进行下一步。
 
@@ -303,7 +303,7 @@ C | 2
  fi
 ``` 
 
-###CLA
+### CLA
 
 CLA即Contributor License Agreement，在为一些大的组织、机构提交Pull Request的时候，可能需要签署这个协议。他们会在你的Pull Request里问你，只有你到他们的网站去注册并同意协议才会接受你的PR。
 
@@ -316,8 +316,6 @@ CLA即Contributor License Agreement，在为一些大的组织、机构提交Pul
 ![Eclipse CLA](./img/eclipse-cla.png)
 
 他们都要求我签署CLA。
-
- <hr>
 
 # 创建项目文档
 
@@ -332,7 +330,7 @@ CLA即Contributor License Agreement，在为一些大的组织、机构提交Pul
 
 ![GitHub Project Introduction](./img/github-intro.png)
 
-##README
+## README
 
 README通常会显示在GitHub项目的下面，如下图所示：
 
@@ -359,7 +357,7 @@ README通常会显示在GitHub项目的下面，如下图所示：
 * 如何参与贡献
 * 协议
 
-##在线文档
+## 在线文档
 
 很多开源项目都会有自己的网站，并在上面有一个文档，而有的则会放在[https://readthedocs.org/](https://readthedocs.org/)。
 
@@ -369,7 +367,7 @@ README通常会显示在GitHub项目的下面，如下图所示：
 
 写文档的软件有很多，如Markdown、Doxygen、Docbook等等。
 
-##可用示例
+## 可用示例
 
 一个简单上手的示例非常重要，特别是通常我们是在为着某个目的而去使用一个开源项目的是时候，我们希望能马上使用到我们的项目中。
 
@@ -389,8 +387,6 @@ React.render(
 ```
 
 而不是需要繁琐的步骤才能进行下一步。
-
----
 
 # 构建GitHub项目
 
@@ -413,7 +409,7 @@ React.render(
 
 当只有一个人的时候，你只需要明确知道自己想要什么就够了。我们还需要的是CI、测试，以来提升代码的质量。
 
-###测试
+### 测试
 
 通常我们都会找Document，如果没有的话，你会找什么?看源代码，还是看测试?
 
@@ -475,7 +471,7 @@ lettuce.js	| 98.58% (209 / 212)| 82.98%(78 / 94) | 100.00% (54 / 54) | 98.58% (2
 
 本地测试都通过了，于是我们添加了``Travis-CI``来跑我们的测试
 
-###CI
+### CI
 
 虽然node.js不算是一门语言，但是因为我们用的node，下面的是一个简单的``.travis.yml``示例:
 
@@ -498,7 +494,7 @@ after_success: CODECLIMATE_REPO_TOKEN=321480822fc37deb0de70a11931b4cb6a2a3cc4116
 
 CI对于一个开发者在不同城市开发同一项目上来说是很重要的，这意味着当你添加的部分功能有测试覆盖的时候，项目代码会更加强壮。
 
-###代码质量
+### 代码质量
 
 像``jslint``这类的工具，只能保证代码在语法上是正确的，但是不能保证你写了一堆bad smell的代码。
 
@@ -549,7 +545,7 @@ Lettuce.send = function (url, method, callback, data) {
 
 这就意味着我们可以对上面的代码进行重构，他们是重复的代码。
 
-##模块分离与测试
+## 模块分离与测试
 
 在之前说到
 
@@ -572,7 +568,7 @@ Lettuce.send = function (url, method, callback, data) {
  
 等等。 
 
-###代码模块化
+### 代码模块化
 
 在SkillTree的源码里，大致分为三部分:
 
@@ -669,7 +665,7 @@ return {
 	
 当然函数也是一个对象。	
 
-###自动化测试
+### 自动化测试
 
 一直习惯用Travis CI，于是也继续用Travis Ci，``.travis.yml``配置如下所示:
 
@@ -706,7 +702,7 @@ branches:
 
 最后的``test/spec``是指定测试的目录。
 
-###Jshint
+### Jshint
 
 > JSLint定义了一组编码约定，这比ECMA定义的语言更为严格。这些编码约定汲取了多年来的丰富编码经验，并以一条年代久远的编程原则 作为宗旨：能做并不意味着应该做。JSLint会对它认为有的编码实践加标志，另外还会指出哪些是明显的错误，从而促使你养成好的 JavaScript编码习惯。
 
@@ -730,7 +726,7 @@ branches:
       Link Test
         ✓ should return link label & url
 
-###测试示例
+### 测试示例
 
 简单地看一下Book的测试:
 
@@ -792,7 +788,7 @@ it('should return book label & url', function () {
 
 最后的断言，也算是测试的核心，保证测试是有用的。	  
 
-##代码质量与重构
+## 代码质量与重构
 
  - 当你写了一大堆代码,你没有意识到里面有一大堆重复。
  - 当你写了一大堆测试,却不知道覆盖率有多少。
@@ -1588,6 +1584,9 @@ public class replaceTemp {
 
 ---
 
+如何推广
+===
+
 除了擅长编写 md 电子书来攒 star，我还写了一系列的开源软件，也掌握了一些项目运营的技巧。
 
 **开源并不是你把软件、README 写好就行了，还有详细的文档、示例程序等等**。
@@ -1721,6 +1720,10 @@ ReactDOM.render(
 
 
 
+开源项目维护
+===
+
+
 如何以“正确的姿势”阅读开源软件代码
 ===
 
@@ -1808,13 +1811,13 @@ ReactDOM.render(
 - 。。。
 - 最新的0.10.1版本
 
-#如何在GitHub"寻找灵感(fork)"
+# 如何在GitHub"寻找灵感(fork)"
 
 > 重造轮子是重新创造一个已有的或是已被其他人优化的基本方法。
 
 最近萌发了一个想法写游戏引擎，之前想着做一个JavaScript前端框架。看看，这个思路是怎么来的。
 
-##Lettuce构建过程
+## Lettuce构建过程
 
 > Lettuce是一个简约的移动开发框架。
 
@@ -1835,7 +1838,7 @@ ReactDOM.render(
 
 > 构建一个库，里面从不同的库里面抽取出不同的函数。
 
-###计划
+### 计划
 
 这时候我参考了一本电子书《Build JavaScript FrameWork》，加上一些平时的需求，于是很快的就知道自己需要什么样的功能:
 
@@ -1852,18 +1855,18 @@ ReactDOM.render(
 
 而我们有一个前提是要保持这个库尽可能的小、同时我们还需要有测试。
 
-###实现第一个需求
+### 实现第一个需求
 
 简单说说是如何实现一个简单的需求。
 
-####生成框架
+#### 生成框架
 
 因为Yeoman可以生成一个简单的轮廓，所以我们可以用它来生成这个项目的骨架。
 
  - Gulp
  - Jasmine
 
-####寻找
+#### 寻找
 
 在GitHub上搜索了一个看到了下面的几个结果:
 
@@ -1942,7 +1945,7 @@ var promise = {
 
 需要注意的是: ``License``，不同的软件有不同的License，如MIT、GPL等等。最好能在遵循协议的情况下，使用别人的代码。
 
-###实现第二个需求
+### 实现第二个需求
 
 由于已经有了现有的很多库，所以就可以直接参照（抄）别人写的代码。
 
@@ -1979,11 +1982,9 @@ Lettuce.send = function (url, method, callback, data) {
 };
 ```
 
----
+# GitHub连击 
 
-#GitHub连击 
-
-##100天
+## 100天
 
 我也是蛮拼的，虽然我想的只是在GitHub上连击100~200天，然而到了今天也算不错。
 
@@ -2007,7 +2008,7 @@ Lettuce.send = function (url, method, callback, data) {
 
 而现在是``为了填坑而commit``，为自己挖了太多的想法。
 
-###40天的提升
+### 40天的提升
 
 当时我需要去印度接受毕业生培训，大概有5周左右，想着总不能空手而归。于是在国庆结束后有了第一次commit，当时旅游归来，想着自己在不同的地方有不同的照片，于是这个repo的名字是 [onmap](https://github.com/phodal/onmap)——将自己的照片显示在地图上的拍摄地点(手机是Lumia 920)。然而，中间因为修改账号的原因，丢失了commit。
 
@@ -2033,7 +2034,7 @@ Lettuce.send = function (url, method, callback, data) {
 - 对于Mock、Stub、FakesServer等用法有更好的掌握
 - 可以持续地交付软件(版本管理、自动测试、CI、部署等等)
 
-###100天的挑战
+### 100天的挑战
 
 (ps:从印度回来之后，由于女朋友在泰国实习，有了更多的时间可以看书、写代码)
 
@@ -2049,7 +2050,7 @@ Lettuce.send = function (url, method, callback, data) {
  - 没有足够的空闲时间，除了周末。
  - 希望去寻找那些有兴趣的人，然而却发现原来没有那么多时间去找人。
 
-###140天的希冀
+### 140天的希冀
 
 在经历了100天之后，似乎整个人都轻松了，毕竟目标是100~200天。似乎到现在，也不会有什么特殊的情怀，除了一些希冀。
 
@@ -2062,7 +2063,7 @@ Lettuce.send = function (url, method, callback, data) {
 - 提了bug，并解决了。(ps:这是最理想的情况)
 
 
-##200天的Showcase
+## 200天的Showcase
 
 今天是我连续泡在GitHub上的第200天，也是蛮高兴的，终于到达了:
 
@@ -2074,13 +2075,13 @@ Lettuce.send = function (url, method, callback, data) {
 
 先让我们来一下ShowCase，然后再然后，下一篇我们再继续。
 
-###一些项目简述
+### 一些项目简述
 
 上面说到的培训一开始是用Java写的一个网站，有自动测试、CI、CD等等。由于是内部组队培训，代码不能公开等等因素，加之做得无聊。顺手，拿Node.js +RESTify 做了Server，Backbone + RequireJS + jQuery 做了前台的逻辑。于是在那个日子里，也在维护一些旧的repo，如[iot-coap](https://github.com/phodal/iot-coap)、[iot](https://github.com/phodal/iot)，前者是我拿到WebStorm开源License的Repo，后者则是毕业设计。
 
 对于这样一个项目也需要有测试、自动化测试、CI等等。CI用的是Travics-CI。总体的技术构架如下:
 
-####技术栈
+#### 技术栈
 
 前台:
 
@@ -2106,7 +2107,7 @@ Lettuce.send = function (url, method, callback, data) {
 
 过程中还有一些有意思的小项目，如:
 
-###google map solr polygon 搜索
+### google map solr polygon 搜索
 
 [google map solr polygon 搜索](http://www.phodal.com/blog/google-map-width-solr-use-polygon-search/)
 
@@ -2114,7 +2115,7 @@ Lettuce.send = function (url, method, callback, data) {
 
 代码: [https://github.com/phodal/gmap-solr](https://github.com/phodal/gmap-solr)
 
-###技能树
+### 技能树
 
 这个可以从两部分说起:
 
@@ -2145,7 +2146,7 @@ Lettuce.send = function (url, method, callback, data) {
 
 代码: [https://github.com/phodal/sherlock](https://github.com/phodal/sherlock)
 
-####Django Ionic ElasticSearch 地图搜索
+#### Django Ionic ElasticSearch 地图搜索
 
 ![Django Elastic Search](./img/elasticsearch_ionit_map.jpg)
 
@@ -2156,7 +2157,7 @@ Lettuce.send = function (url, method, callback, data) {
 
 代码: [https://github.com/phodal/django-elasticsearch](https://github.com/phodal/django-elasticsearch)
 
-####简历生成器
+#### 简历生成器
 
 ![Resume](./img/resume.png)
 
@@ -2169,7 +2170,7 @@ Lettuce.send = function (url, method, callback, data) {
 代码: [https://github.com/phodal/resume](https://github.com/phodal/resume)
 
 
-####Nginx 大数据学习
+#### Nginx 大数据学习
 
 ![Nginx Pig](./img/nginx_pig.jpg)
 
@@ -2178,8 +2179,8 @@ Lettuce.send = function (url, method, callback, data) {
 - Pig
 
 代码: [https://github.com/phodal/learning-data/tree/master/nginx](https://github.com/phodal/learning-data/tree/master/nginx)
-
-####其他
+ 
+#### 其他
 
 虽然技术栈上主要集中在Python、JavaScript，当然还有一些Ruby、Pig、Shell、Java的代码，只是我还是习惯用Python和JavaScript。一些用到觉得不错的框架:
 
@@ -2202,9 +2203,9 @@ Lettuce.send = function (url, method, callback, data) {
 - MongoDB
 - Redis
 
-##365天
+## 365天
   
-  给你一年的时间，你会怎样去提高你的水平？？？
+> 给你一年的时间，你会怎样去提高你的水平？？？
 
 ![GitHub 365](./img/github-365.jpg)
 
@@ -2220,19 +2221,19 @@ Lettuce.send = function (url, method, callback, data) {
 
 于是在想明白了很多事的时候起，便有了Re-Practise这样的计划，而365天只是中间的一个产物。
 
-###编程的基础能力
+### 编程的基础能力
 
 虽说算法很重要，但是编码才是基础能力。算法与编程在某种程度上是不同的领域，算法编程是在编程上面的一级。算法写得再好，如果别人很难直接拿来复用，在别人眼里就是shit。想出能work的代码一件简单的事，学会对其重构，使之变得更易读就是一件有意义的事。
 
 于是，在某一时刻在GitHub上创建了一个组织，叫[Artisan Stack](https://github.com/artisanstack)。当时想的是在GitHub寻找一些JavaScript项目，对其代码进行重构。但是到底是影响力不够哈，参与的人数比较少。
 
-####重构
+#### 重构
 
 如果你懂得如何写出高可读的代码，那么我想你是不需要这个的，但是这意味着你花了更多的时候在思考上了。当谈论重构的时候，让我想起了TDD(测试驱动开发)。即使不是TDD，那么如果你写着测试，那也是可以重构的。(之前写过一些利用Intellij IDEA重构的文章：[提炼函数](https://www.phodal.com/blog/intellij-idea-refactor-extract-method/)、[以查询取代临时变量](https://www.phodal.com/blog/intellij-idea-refactor-replace-temp-with-query/)、[重构与Intellij Idea初探](https://www.phodal.com/blog/thoughtworks-refactor-and-intellij-idea/)、[内联函数](https://www.phodal.com/blog/intellij-idea-refactor-inline-method/))
 
 在各种各样的文章里，我们看到过一些相关的内容，最好的参考莫过于《重构》一书。最基础不过的原则便是函数名，取名字很难，取别人能读懂的名字更难。其他的便有诸如长函数、过大的类、重复代码等等。在我有限的面试别人的经历里，这些问题都是最常见的。
 
-####测试
+#### 测试
 
 而如果没有测试，其他都是扯淡。写好测试很难，写个测试算是一件容易的事。只是有些容易我们会为了测试而测试。
 
@@ -2246,7 +2247,7 @@ Lettuce.send = function (url, method, callback, data) {
 
 测试是代码的最后一公里。所以，尽可能的为你的GitHub上的项目添加测试。
 
-####编码的过程
+#### 编码的过程
 
 初到TW时，Pair时候总会有人教我如何开始编码，这应该也是一项基础的能力。结合日常，重新演绎一下这个过程：
 
@@ -2263,7 +2264,7 @@ Lettuce.send = function (url, method, callback, data) {
 
 在我们实际工作中也是如此，接到一个任务，然后分解，一步步完成。不过实现会稍微复杂一些，因为事务总会有抢占和优先级的。
 
-###技术与框架设计
+### 技术与框架设计
 
 在上上一篇博客中《[After 500: 写了第500篇博客，然后呢?](https://www.phodal.com/blog/after-500-blogposts-analytics-after-tech/)》也深刻地讨论了下这个问题，技术向来都是后发者优势。对于技术人员来说，也是如此，后发者占据很大的优势。
 
@@ -2283,7 +2284,7 @@ Lettuce.send = function (url, method, callback, data) {
 
 技术同人一样，需要不断地往高一级前进。我们只需要不断地Re-Practise。
 
-###领域与练习 
+### 领域与练习 
 
 说业务好像不太适合程序员的口味，那就领域吧。不同行业的人，如百度、阿里、腾讯，他们的领域核心是不一样的。
 
@@ -2306,7 +2307,7 @@ Lettuce.send = function (url, method, callback, data) {
 
 ---
 
-##500天
+## 500天
 
 尽管之前已经有100天、200天、365天的文章，但是这不是一篇象征性的500天的文章。对这样的一个事物，每个人都会有不同听看法。有的会说这是一件好事，有的则不是。但是别人的看法终究不重要，因为了解你自己的只有你自己。别人都只是以他们的角度来提出观点。
 
@@ -2319,7 +2320,7 @@ Lettuce.send = function (url, method, callback, data) {
 
 我想你也听过一万小时天才理论的说法：要成为某个领域的专家，需要10000小时。而在这其中每重要的一点是有意图的练习——而不是一直重复性地用不同的语言去写一个相同的算法。如果我们有一天8小时的工作时间  + 2 小时的提高时间，那么我们还是需要1000天才能实现一万小时。
 
-###500天与10000小时
+### 500天与10000小时
 
 当然如果你连做梦也在写代码的话，那么我想500天就够了，哈哈~~。
 
@@ -2331,7 +2332,7 @@ Lettuce.send = function (url, method, callback, data) {
 
 时间则是一件很讽刺的事，因为人们要加班。加班的原因，要么是因为工作的内容很有意思，要么是因为钱。如果不是因为钱的话，为什么不去换个工作呢？比如我司。看似两者间存在很多的对立，但是我总在想技术的提升可以在后期解决收入的问题，而不需要靠加班来解决这个问题。人总是要活着的，钱是必需的，但是程序员的收入都不低。
 
-###编程的情绪周期
+### 编程的情绪周期
 
 接着，我观察到了一些有意思的现象——编程的情绪周期也很明显。
 
@@ -2345,7 +2346,7 @@ Lettuce.send = function (url, method, callback, data) {
 
 但是总来说，我习惯在一些时间造一些轮子、创建文档，这就是为什么我的GitHub会有一些开源电子书的缘故。
 
-###有意图的练习
+### 有意图的练习
 
 编程需要很长的学习时间，也需要很长的练习时间。尽管我是从小学编程，自认为天赋不错，但是突破了上个门槛还是花费了三四年的时间。其中的很大一部分原因是，没有找对一个合适的方向。而在这期间也没有好好的练习，随后的日子里我意识到我会遇到下一个门槛，便开始试图有意识的练习。
 
@@ -2364,13 +2365,13 @@ Lettuce.send = function (url, method, callback, data) {
 
 随后，我开始一些错误的练习，如对设计模式和架构的练习。试图去练习一些在生产上用不到的设计模式，以及一些架构模式。而这时就意味着，需要生搬一些设计模式。最后，我开始以项目为目的的练习，这就是为什么我的GitHub上的提交数会有如此多的原因。
 
-###预见性练习
+### 预见性练习
 
 还有一种练习比较有意思，算是以工作为导向的练习。当我们预见到我们的项目需要某一些技术，我们可能在未来采用某些技术的时候，我们就需要开始预见性的练习这些技术。
 
 好的一点是：这些项目可能在未来很受初学者欢迎。
 
-###小结
+### 小结
 
 每个人都有自己的方向，都有一个不错的发展路线，分享和创造都是不错的路。
 
@@ -2538,9 +2539,9 @@ GitHub 里程碑
 
 [https://phodal.github.io/20k/](https://phodal.github.io/20k/)
 
-#GitHub用户分析
+# GitHub用户分析
 
-##生成图表
+## 生成图表
 
 如何分析用户的数据是一个有趣的问题，特别是当我们有大量的数据的时候。除了``matlab``，我们还可以用``numpy``+``matplotlib``
 
@@ -2554,11 +2555,11 @@ GitHub 里程碑
 
 要解析的json文件位于``data/2014-01-01-0.json``，大小6.6M，显然我们可能需要用每次只读一行的策略，这足以解释为什么诸如sublime打开的时候很慢，而现在我们只需要里面的json数据中的创建时间。。
 
-==,这个文件代表什么？
+==, 这个文件代表什么？
 
 **2014年1月1日零时到一时，用户在github上的操作，这里的用户指的是很多。。一共有4814条数据，从commit、create到issues都有。**
 
-###数据解析
+### 数据解析
 
 ```python
 import json
@@ -2607,7 +2608,7 @@ minuteswithcount = [(x, dataarray.count(x)) for x in set(dataarray)]
 [(0, 92), (1, 67), (2, 86), (3, 73), (4, 76), (5, 67), (6, 61), (7, 71), (8, 62), (9, 71), (10, 70), (11, 79), (12, 62), (13, 67), (14, 76), (15, 67), (16, 74), (17, 48), (18, 78), (19, 73), (20, 89), (21, 62), (22, 74), (23, 61), (24, 71), (25, 49), (26, 59), (27, 59), (28, 58), (29, 74), (30, 69), (31, 59), (32, 89), (33, 67), (34, 66), (35, 77), (36, 64), (37, 71), (38, 75), (39, 66), (40, 62), (41, 77), (42, 82), (43, 95), (44, 77), (45, 65), (46, 59), (47, 60), (48, 54), (49, 66), (50, 74), (51, 61), (52, 71), (53, 90), (54, 64), (55, 67), (56, 67), (57, 55), (58, 68), (59, 91)]
 ```
 
-###Matplotlib
+### Matplotlib
 
 开始之前需要安装``matplotlib
 
@@ -2674,7 +2675,7 @@ def draw_date(files):
 draw_date("data/2014-01-01-0.json")
 ```
 
-##每周分析
+## 每周分析
 
 继上篇之后，我们就可以分析用户的每周提交情况，以得出用户的真正的工具效率，每个程序员的工作时间可能是不一样的，如
 
@@ -2795,9 +2796,9 @@ if __name__ == '__main__':
 
 让我们分析之前的程序，然后再想办法做出优化。网上看到一篇文章[http://www.huyng.com/posts/python-performance-analysis/](http://www.huyng.com/posts/python-performance-analysis/)讲的就是分析这部分内容的。
 
-##存储到数据库中
+## 存储到数据库中
 
-###SQLite3
+### SQLite3
 
 我们创建了一个名为``userdata.db``的数据库文件，然后创建了一个表，里面有owner,language,eventtype,name url
 

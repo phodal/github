@@ -1,6 +1,6 @@
-#Git基本知识与GitHub使用
+# Git基本知识与GitHub使用
 
-##Git
+## Git
 
 从一般开发者的角度来看，git有以下功能：
 
@@ -19,7 +19,7 @@
 2. 打上补丁，解决冲突（可以自己解决，也可以要求开发者之间解决以后再重新提交，如果是开源项目，还要决定哪些补丁有用，哪些不用）。
 3. 向公共服务器提交结果，然后通知所有开发人员。
 
-###Git初入
+### Git初入
 
 如果是第一次使用Git，你需要设置署名和邮箱：
 
@@ -65,7 +65,7 @@ $git status
 可以看到状态的变化是从黄色到绿色，即unstage到add。
 
 
-##GitHub
+## GitHub
 
 Wiki百科上是这么说的
 
@@ -90,7 +90,7 @@ Wiki百科上是这么说的
 
 等等。看上去像是大餐，但是你还需要了解点什么?
 
-###版本管理与软件部署
+### 版本管理与软件部署
 
 jQuery[^jQuery]在发布版本``2.1.3``，一共有152个commit。我们可以看到如下的提交信息:
 
@@ -101,13 +101,13 @@ jQuery[^jQuery]在发布版本``2.1.3``，一共有152个commit。我们可以�
  - Build: Update commitplease dev dependency
  - ...
 
-###GitHub与Git
+### GitHub与Git
 
 > Git是一个分布式的版本控制系统，最初由Linus Torvalds编写，用作Linux内核代码的管理。在推出后，Git在其它项目中也取得了很大成功，尤其是在Ruby社区中。目前，包括Rubinius、Merb和Bitcoin在内的很多知名项目都使用了Git。Git同样可以被诸如Capistrano和Vlad the Deployer这样的部署工具所使用。
 
 > GitHub可以托管各种git库，并提供一个web界面，但与其它像 SourceForge或Google Code这样的服务不同，GitHub的独特卖点在于从另外一个项目进行分支的简易性。为一个项目贡献代码非常简单：首先点击项目站点的“fork”的按钮，然后将代码检出并将修改加入到刚才分出的代码库中，最后通过内建的“pull request”机制向项目负责人申请代码合并。已经有人将GitHub称为代码玩家的MySpace。
 
-###在GitHub创建项目
+### 在GitHub创建项目
 
 接着,我们试试在上面创建一个项目:
 
@@ -177,11 +177,11 @@ C | 2
  - 资料收集: 如``free programming books``，``You-Dont-Know-JS``，``Font-Awesome``
  - 其他:简历如``Resume``
  
-##Pull Request
+## Pull Request
 
 除了创建项目之外，我们也可以创建Pull Request来做贡献。
 
-###我的第一个PR
+### 我的第一个PR
 
 我的第一个PR是给一个小的Node的CoAP相关的库的Pull Request。原因比较简单，是因为它的README.md写错了，导致我无法办法进行下一步。
 
@@ -202,7 +202,7 @@ C | 2
  fi
 ``` 
 
-###CLA
+### CLA
 
 CLA即Contributor License Agreement，在为一些大的组织、机构提交Pull Request的时候，可能需要签署这个协议。他们会在你的Pull Request里问你，只有你到他们的网站去注册并同意协议才会接受你的PR。
 
@@ -215,5 +215,3 @@ CLA即Contributor License Agreement，在为一些大的组织、机构提交Pul
 ![Eclipse CLA](./img/eclipse-cla.png)
 
 他们都要求我签署CLA。
-
- <hr>

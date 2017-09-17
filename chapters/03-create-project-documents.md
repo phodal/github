@@ -11,7 +11,7 @@
 
 ![GitHub Project Introduction](./img/github-intro.png)
 
-##README
+## README
 
 README通常会显示在GitHub项目的下面，如下图所示：
 
@@ -38,7 +38,7 @@ README通常会显示在GitHub项目的下面，如下图所示：
 * 如何参与贡献
 * 协议
 
-##在线文档
+## 在线文档
 
 很多开源项目都会有自己的网站，并在上面有一个文档，而有的则会放在[https://readthedocs.org/](https://readthedocs.org/)。
 
@@ -48,7 +48,7 @@ README通常会显示在GitHub项目的下面，如下图所示：
 
 写文档的软件有很多，如Markdown、Doxygen、Docbook等等。
 
-##可用示例
+## 可用示例
 
 一个简单上手的示例非常重要，特别是通常我们是在为着某个目的而去使用一个开源项目的是时候，我们希望能马上使用到我们的项目中。
 
@@ -68,5 +68,3 @@ React.render(
 ```
 
 而不是需要繁琐的步骤才能进行下一步。
-
----

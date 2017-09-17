@@ -75,7 +75,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#获得一份工作">获得一份工作</a></li>
 <li><a href="#扩大交际">扩大交际</a></li>
 </ul></li>
-<li><a href="#创建开源项目">创建开源项目</a></li>
+</ul></li>
+<li><a href="#创建开源项目">创建开源项目</a><ul>
 <li><a href="#取一个好的名字">取一个好的名字</a></li>
 <li><a href="#挑选好-license">挑选好 LICENSE</a></li>
 <li><a href="#官方主页">官方主页</a></li>
@@ -144,6 +145,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#pull-members-up">Pull Members Up</a></li>
 <li><a href="#重构之以查询取代临时变量">重构之以查询取代临时变量</a></li>
 </ul></li>
+</ul></li>
+<li><a href="#如何推广">如何推广</a><ul>
 <li><a href="#marketing-first">Marketing First</a></li>
 <li><a href="#编写-readme">编写 README</a><ul>
 <li><a href="#这个项目做什么一句话文案">这个项目做什么——一句话文案</a></li>
@@ -155,6 +158,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#示例程序">示例程序</a></li>
 <li><a href="#吸引贡献者">吸引贡献者</a></li>
 </ul></li>
+<li><a href="#开源项目维护">开源项目维护</a></li>
 <li><a href="#如何以正确的姿势阅读开源软件代码">如何以“正确的姿势”阅读开源软件代码</a><ul>
 <li><a href="#阅读过程">阅读过程</a></li>
 <li><a href="#示例">示例</a></li>
@@ -275,7 +279,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3 id="扩大交际">扩大交际</h3>
 <p>如果我们想创造出更好、强大地框架时，那么认识更多的人可能会带来更多的帮助。有时候会同上面那一点一样的效果</p>
 <hr />
-<h2 id="创建开源项目">创建开源项目</h2>
+<h1 id="创建开源项目">创建开源项目</h1>
 <h2 id="取一个好的名字">取一个好的名字</h2>
 <h2 id="挑选好-license">挑选好 LICENSE</h2>
 <h2 id="官方主页">官方主页</h2>
@@ -529,7 +533,6 @@ git push -u origin master</code></pre>
 <img src="./img/eclipse-cla.png" alt="Eclipse CLA" /><figcaption>Eclipse CLA</figcaption>
 </figure>
 <p>他们都要求我签署CLA。</p>
-<hr>
 <h1 id="创建项目文档">创建项目文档</h1>
 <p>我们需要为我们的项目创建一个文档，通常我们可以将核心代码以外的东西都称为文档：</p>
 <ol type="1">
@@ -588,7 +591,6 @@ React.render(
   document.getElementById(&#39;container&#39;)
 );</code></pre>
 <p>而不是需要繁琐的步骤才能进行下一步。</p>
-<hr />
 <h1 id="构建github项目">构建GitHub项目</h1>
 <h2 id="如何用好github">如何用好GitHub</h2>
 <p>如何用好GitHub,并实践一些敏捷软件开发是一个很有意思的事情.我们可以在上面做很多事情,从测试到CI,再到自动部署.</p>
@@ -1577,6 +1579,7 @@ public class replaceTemp {
 
 }</code></pre>
 <hr />
+<h1 id="如何推广">如何推广</h1>
 <p>除了擅长编写 md 电子书来攒 star，我还写了一系列的开源软件，也掌握了一些项目运营的技巧。</p>
 <p><strong>开源并不是你把软件、README 写好就行了，还有详细的文档、示例程序等等</strong>。</p>
 <p><strong>开源也不是你的项目好了，就会有一堆人参与进来</strong>。</p>
@@ -1668,6 +1671,7 @@ ReactDOM.render(
 <h2 id="技术文档手把手教会别人">技术文档——手把手教会别人</h2>
 <h2 id="示例程序">示例程序</h2>
 <h2 id="吸引贡献者">吸引贡献者</h2>
+<h1 id="开源项目维护">开源项目维护</h1>
 <h1 id="如何以正确的姿势阅读开源软件代码">如何以“正确的姿势”阅读开源软件代码</h1>
 <blockquote>
 <p>所有让你直接看最新源码的文章都是在扯淡，你应该从“某个版本”开始阅读代码。</p>
@@ -1878,7 +1882,6 @@ ReactDOM.render(
     <span class="va">request</span>.<span class="at">setRequestHeader</span>(<span class="st">&#39;X-Requested-With&#39;</span><span class="op">,</span> <span class="st">&#39;XMLHttpRequest&#39;</span>)<span class="op">;</span>
     <span class="va">request</span>.<span class="at">send</span>(data)<span class="op">;</span>
 <span class="op">};</span></code></pre></div>
-<hr />
 <h1 id="github连击">GitHub连击</h1>
 <h2 id="天">100天</h2>
 <p>我也是蛮拼的，虽然我想的只是在GitHub上连击100~200天，然而到了今天也算不错。</p>
@@ -2071,7 +2074,9 @@ ReactDOM.render(
 <li>Redis</li>
 </ul>
 <h2 id="天-1">365天</h2>
+<blockquote>
 <p>给你一年的时间，你会怎样去提高你的水平？？？</p>
+</blockquote>
 <figure>
 <img src="./img/github-365.jpg" alt="GitHub 365" /><figcaption>GitHub 365</figcaption>
 </figure>
@@ -2316,7 +2321,7 @@ ReactDOM.render(
 <img src="./img/2014-01-01.png" alt="2014 01 01" /><figcaption>2014 01 01</figcaption>
 </figure>
 <p>要解析的json文件位于<code>data/2014-01-01-0.json</code>，大小6.6M，显然我们可能需要用每次只读一行的策略，这足以解释为什么诸如sublime打开的时候很慢，而现在我们只需要里面的json数据中的创建时间。。</p>
-<p>==,这个文件代表什么？</p>
+<p>==, 这个文件代表什么？</p>
 <p><strong>2014年1月1日零时到一时，用户在github上的操作，这里的用户指的是很多。。一共有4814条数据，从commit、create到issues都有。</strong></p>
 <h3 id="数据解析">数据解析</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> json
