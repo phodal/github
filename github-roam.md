@@ -940,7 +940,7 @@ SQLiteHelper.prototype.getData = function (url, callback) {
 
 偶然间在开发一个物联网相关的开源项目——[Lan](https://github.com/phodal/lan)的时候，重拾了这个过程。不得不说提到的一点是，在我们的开发流程中**测试是由相关功能开发人员写的**，有时候测试是一种很具挑战性的工作。久而久之，为自己的开源项目写测试变成一种自然而然的事。有时没有测试，反而变得**没有安全感**。
 
-###一次测试驱动开发
+### 一次测试驱动开发
 
 之前正在重写一个[物联网](http://www.phodal.com/iot)的服务端，主要便是结合CoAP、MQTT、HTTP等协议构成一个物联网的云服务。现在，主要的任务是集中于协议与授权。由于，不同协议间的授权是不一样的，最开始的时候我先写了一个http put授权的功能，而在起先的时候是如何测试的呢?
 
@@ -1619,7 +1619,7 @@ Vue 不是因为好用，而一下子火了。这一点我印象特别深，当�
 
 除此，还有一种可能是，你的 ID 不够 fancy，即你在社区的影响上比较少。此时，就需要**一点点慢慢积累人气**了。当你积累了一些人气，你就能和松本行弘一样，在创建 mRuby 的时候就有 1000+ 的 star。并且，在社区上还有一些相关的文章介绍，各个头条也由他的粉丝发了上去。如，一年多以前，我创建了 [mole](https://github.com/phodal/mole) 项目。
 
-![Mole](mole.png)
+![Mole](./img/mole.png)
 
 当时，是为了给自己做一个基于 GitHub 云笔记的工具，在完成度到一定程度的时候。我在我的微信公从号上发了相关的介绍，第二天就有 100+ 的 star 了，还接收至最一些鼓舞的话语。对应于国内则有：
 
@@ -1632,7 +1632,7 @@ Vue 不是因为好用，而一下子火了。这一点我印象特别深，当�
 
 所以，你觉得呢？
 
-编写 README
+编写一个好的 README
 ---
 
 在一个开源项目里，README 是最重要的内容。它快速地介绍了这个项目，并决定了它能不能吸引用户：
@@ -1687,35 +1687,80 @@ numbers, objects, strings, etc. Lodash’s modular methods are great for:
 
 你会怎么写？
 
-### hello, world 示例
+### 安装及hello, world 示例
 
-在我们看完了上面的介绍之后，紧接着就是一个 hello, world 的示例。如 React 的示例：
+在我们看完了上面的介绍之后，紧接着接一个 hello, world 的示例。在运行 hello, world 之前，我们可能需要一些额外的安装工作，如：
 
 ```
-class HelloMessage extends React.Component {
-  render() {
-    return <div>Hello {this.props.name}</div>;
-  }
-}
-
-ReactDOM.render(
-  <HelloMessage name="John" />,
-  document.getElementById('container')
-);
+npm install koa
 ```
 
-这个
+如 Koa 的示例：
 
-技术文档——手把手教会别人
+```
+const Koa = require('koa');
+const app = new Koa();
+
+// response
+app.use(ctx => {
+  ctx.body = 'Hello Koa';
+});
+
+app.listen(3000);
+```
+
+作为一个程序员，你应该懂得它的重要性。
+
+好在这里的安装工作只有两步，而不是：
+
+![Lan 安装过程](./img/lan-example.png)
+
+对于那些需要复杂的安装过程的软件，应该简化安装过程，如提供 Docker 镜像，或者直接提供一个可运行的 Demo 环境。以免用户在看完 README 之后，直接放弃了使用该库。
+
+技术文档
 ---
 
+好了，依一个开发人员的角度，如果上面的步骤一切顺利的话，接下来，便是使用这个开源项目来完成我们的功能。这个时候，我们开始转移注意力到文档上了。
 
-示例程序
----
+由于，之前在某一个项目，经历过一个第三方 API 文档的大坑——文档中只罗列了 API 的用法。如下 Intellij Idea 生成的结构图：
+
+![API 示例](./img/api-examples.png)
+
+文档中上，罗列了每个函数，以及每个函数需要的参数。我使用 Intellij Idea 直接反编译 jar 包，看到的信息都比文档多多了。文档上，没有任务示例，甚至连怎么初始化这个库的代码都没有。
+
+WTF！
+
+### 技术文档
+
+对于一个复杂的开源项目来说，文档上要写明安装、编译、配置等等的过程。如下图所示：
+
+![Python Social Auth 文档](./img/python-social-auth-example.png)
+
+并且在我们发布包的时候，就要不断地去重复这个过程——如果你使用了自动化测试，那么这个过程便自动完成了。
+
+如果我们的项目使用起来相当的简单，那么我们就可以只写一些示例代码即可。
+
+并且，我们可以将文档直接入到代码里。它可以有效地减少文档不同步，带来的一些问题。
+
+![Lodash 示例](./img/lodash-code-example.png)
+
+上图是使用了 jsdoc 的 Lodash 示例。
+
+### 更多的示例程序
+
+示例代码本身也是文档的一部分，不要问我为什么~~。
+
+反正，除了一个 hello, world，你还要有各种场景下的示例：
+
+![Redux](./img/redux-examples.png)
+
+没有这么多示例，敢说自己是好用的开源项目？
+
+### 编写技术文章
 
 
 
-吸引贡献者
+鼓励、吸引贡献者
 ---
 
 
