@@ -157,7 +157,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#技术文档">技术文档</a><ul>
 <li><a href="#技术文档-1">技术文档</a></li>
 <li><a href="#更多的示例程序">更多的示例程序</a></li>
-<li><a href="#编写技术文章">编写技术文章</a></li>
+<li><a href="#编写技术文章书籍">编写技术文章、书籍</a></li>
 </ul></li>
 <li><a href="#鼓励吸引贡献者">鼓励、吸引贡献者</a></li>
 </ul></li>
@@ -1657,7 +1657,11 @@ public class replaceTemp {
 <li>Manipulating &amp; testing values</li>
 <li>Creating composite functions</li>
 </ul>
-<p>你会怎么写？</p>
+<p>你会怎么写？脸皮够厚的话，可以直接写一下，与其它项目的对比，blabla：</p>
+<figure>
+<img src="./img/comparison.png" alt="对比其它项目" /><figcaption>对比其它项目</figcaption>
+</figure>
+<p>当然了，这种事不能太过，要不是会招来一堆黑。</p>
 <h3 id="安装及hello-world-示例">安装及hello, world 示例</h3>
 <p>在我们看完了上面的介绍之后，紧接着接一个 hello, world 的示例。在运行 hello, world 之前，我们可能需要一些额外的安装工作，如：</p>
 <pre><code>npm install koa</code></pre>
@@ -1697,6 +1701,7 @@ app.listen(3000);</code></pre>
 <img src="./img/lodash-code-example.png" alt="Lodash 示例" /><figcaption>Lodash 示例</figcaption>
 </figure>
 <p>上图是使用了 jsdoc 的 Lodash 示例。</p>
+<p>除了上面的示例，我们还可以录制一些视频，写一些文章说明项目的思考、架构等等。</p>
 <h3 id="更多的示例程序">更多的示例程序</h3>
 <p>示例代码本身也是文档的一部分，不要问我为什么~~。</p>
 <p>反正，除了一个 hello, world，你还要有各种场景下的示例：</p>
@@ -1704,8 +1709,18 @@ app.listen(3000);</code></pre>
 <img src="./img/redux-examples.png" alt="Redux" /><figcaption>Redux</figcaption>
 </figure>
 <p>没有这么多示例，敢说自己是好用的开源项目？</p>
-<h3 id="编写技术文章">编写技术文章</h3>
+<h3 id="编写技术文章书籍">编写技术文章、书籍</h3>
+<p>到目前为止，我们做了一系列 markdown 相关的工作，却也还没有结束。要知道只有真正写过一系列开源项目的人，才能体会到什么是 markdown 程序员~~。</p>
+<p>官方文档，一般要以比较正式的口吻来描述过程，这种写法相当的压抑。如果要用轻松诙谐的口气，那么就可以写一系列的技术文章。假如这是一个前端框架，那么我们可以介绍它如何与某个后端框架配合使用；又或者是，它与某个框架的对比等等。</p>
+<p>好了，一切顺利了，那么下一步就是吸引更多的人参与到项目上来了。</p>
 <h2 id="鼓励吸引贡献者">鼓励、吸引贡献者</h2>
+<p>要吸引其它开发人员来到你的项目，不是一件容易的事。</p>
+<p>你需要不断地鼓励他/她们，并适时地帮他/她们解决问题，以避免他/她们在提 pull request 的过程中放弃了。这一点特别的有意思，当有一个开发人员发现了项目中的 bug，那么他/她会尝试去解决这个问题。与此同时，他/她还会为你的项目带来 pull request，但是在这个过程中，因为测试等等的问题，可能会阻碍他的 PR。这个时候，就需要我们主要去提示/教他们怎么做，又或者是帮他/她们解决完剩下的问题。那么，下次他/她提一个 PR 的时候，他/她就能解决问题了。</p>
+<p>这一点可以在 README，以及介绍上体现：</p>
+<figure>
+<img src="feel-free-to.png" alt="Feel free to contribute!" /><figcaption>Feel free to contribute!</figcaption>
+</figure>
+<p>哪怕只是一个错误字的 PR，那么你也可以 merge，啊哈哈~。然后，就有人帮你宣传了，『我给 xxx 项目一个 PR 了』。刚毕业的时候，我也是从这种类型的 PR 做起的~~。</p>
 <h1 id="开源项目维护">开源项目维护</h1>
 <h1 id="如何以正确的姿势阅读开源软件代码">如何以“正确的姿势”阅读开源软件代码</h1>
 <blockquote>
