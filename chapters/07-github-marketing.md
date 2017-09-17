@@ -1,0 +1,132 @@
+除了擅长编写 md 电子书来攒 star，我还写了一系列的开源软件，也掌握了一些项目运营的技巧。
+
+**开源并不是你把软件、README 写好就行了，还有详细的文档、示例程序等等**。
+
+**开源也不是你的项目好了，就会有一堆人参与进来**。
+
+**开源还要你帮助别人解决 Bug，……**。
+
+**人们做事都是有原因的**，即动机。再举例一下，如果你的项目不够火，别人都没听过，那么**写到简历上可能没啥用**。
+
+Marketing First
+---
+
+开源需要一些营销的技巧，这些技巧可以帮你吸引关注。举个简单的例子，司徒正美的 [avalon](https://github.com/RubyLouvre/avalon) 框架出身得很早，也 MV* 方面也做得很不错，但是在 marketing 上就……。以至于国内的很多前端，都不了解这个框架，要不今天在国内可能就是 AVRR 四大框架了。
+
+Vue 不是因为好用，而一下子火了。这一点我印象特别深，当时在 GitHub Trending 上看到了这个项目，发现它还不能很好地 work。
+
+而如文章 《[FIRST WEEK OF LAUNCHING VUE.JS](http://blog.evanyou.me/2014/02/11/first-week-of-launching-an-oss-project/)》所说，项目刚开始的时候作者做了一系列的营销计划：
+
+ - HackerNews
+ - Reddit /r/javascript
+ - EchoJS
+ - The DailyJS blog
+ - JavaScript Weekly
+ - Maintain a project Twitter account（维护项目的 Vue 账户）
+
+除此，文中还提到了一篇文章《[How to Spread The Word About Your Code](https://hacks.mozilla.org/2013/05/how-to-spread-the-word-about-your-code/?utm_source=statuscode&utm_medium=email)》 。
+
+这一点相当的有意思，如果你的想法好的话，那么大家都会肯定，点下链接，为你来个 star。那么，你就获得更好的动力去做这件事。项目也在开头的时候，获得了相当多的关注。而如果大家觉得你的项目没有新意的话，那么你懂的~。
+
+除此，还有一种可能是，你的 ID 不够 fancy，即你在社区的影响上比较少。此时，就需要**一点点慢慢积累人气**了。当你积累了一些人气，你就能和松本行弘一样，在创建 mRuby 的时候就有 1000+ 的 star。并且，在社区上还有一些相关的文章介绍，各个头条也由他的粉丝发了上去。如，一年多以前，我创建了 [mole](https://github.com/phodal/mole) 项目。
+
+![Mole](mole.png)
+
+当时，是为了给自己做一个基于 GitHub 云笔记的工具，在完成度到一定程度的时候。我在我的微信公从号上发了相关的介绍，第二天就有 100+ 的 star 了，还接收至最一些鼓舞的话语。对应于国内则有：
+
+ - 极客头条
+ - 掘金
+ - 开发者头条
+ - v2ex
+ - 知乎
+ - 不成器的微博
+
+所以，你觉得呢？
+
+编写 README
+---
+
+在一个开源项目里，README 是最重要的内容。它快速地介绍了这个项目，并决定了它能不能吸引用户：
+
+ - **这个项目做什么？**
+ - **它解决了什么问题**
+ - **它有什么特性**
+ — **hello, world 示例**
+
+### 这个项目做什么——一句话文案
+
+GitHub 的 Description 是我们在 Hacking News、GitHub Trneding 等等，第一时间看到的介绍。也是我们能快速介绍给别人的东西，如下图所示：
+
+![GitHub Trending](./img/github-trending-example.png)
+
+这一句话，必须简单明了也介绍，它是干什么的。
+
+如 Angular 的一句话方案是：One framework. Mobile & desktop.
+
+而 React 是：A declarative, efficient, and flexible JavaScript library for building user interfaces. 
+
+Vue 则是：A progressive, incrementally-adoptable JavaScript framework for building UI on the web.
+
+### 它解决了什么问题
+
+上面的一句话描述，它不能很好地说明，它能解决什么问题。
+
+如下是今天在 GitHub Trending 上榜的 RPC 项目的简介：
+
+> Most machines on internet communicate with each other via TCP/IP. However TCP/IP only guarantees reliable data transmissions, we need to abstract more to build services:
+
+![RPC 开源项目](./img/rpc-example.png)
+
+以上便是这个项目能解决的问题，不过这个项目能解决的问题倒是比较长，哈哈哈。
+
+### 它有什么特性
+
+当我们有 A、B、C 几个不同的框架的时候，作为一个开发人员，就需要对比他们的特性，。如下是 Go 语言实现的 MQTT 示例：
+
+![GO MQTT 示例](./img/go-mqtt.png)
+
+这个项目只支持的 Qos 级别为 0。如果我们需要的级别是 1，那么就不能用这个项目了。
+
+又比如 lodash 项目：
+
+> Lodash makes JavaScript easier by taking the hassle out of working with arrays,
+numbers, objects, strings, etc. Lodash’s modular methods are great for:
+
+ - Iterating arrays, objects, & strings
+ - Manipulating & testing values
+ - Creating composite functions
+
+你会怎么写？
+
+### hello, world 示例
+
+在我们看完了上面的介绍之后，紧接着就是一个 hello, world 的示例。如 React 的示例：
+
+```
+class HelloMessage extends React.Component {
+  render() {
+    return <div>Hello {this.props.name}</div>;
+  }
+}
+
+ReactDOM.render(
+  <HelloMessage name="John" />,
+  document.getElementById('container')
+);
+```
+
+这个
+
+技术文档——手把手教会别人
+---
+
+
+示例程序
+---
+
+
+
+吸引贡献者
+---
+
+

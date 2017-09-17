@@ -75,6 +75,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#获得一份工作">获得一份工作</a></li>
 <li><a href="#扩大交际">扩大交际</a></li>
 </ul></li>
+<li><a href="#创建开源项目">创建开源项目</a></li>
+<li><a href="#取一个好的名字">取一个好的名字</a></li>
+<li><a href="#挑选好-license">挑选好 LICENSE</a></li>
+<li><a href="#官方主页">官方主页</a></li>
 </ul></li>
 <li><a href="#git基本知识与github使用">Git基本知识与GitHub使用</a><ul>
 <li><a href="#git">Git</a><ul>
@@ -90,6 +94,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#我的第一个pr">我的第一个PR</a></li>
 <li><a href="#cla">CLA</a></li>
 </ul></li>
+</ul></li>
+<li><a href="#创建项目文档">创建项目文档</a><ul>
+<li><a href="#readme">README</a></li>
+<li><a href="#在线文档">在线文档</a></li>
+<li><a href="#可用示例">可用示例</a></li>
 </ul></li>
 <li><a href="#构建github项目">构建GitHub项目</a><ul>
 <li><a href="#如何用好github">如何用好GitHub</a><ul>
@@ -110,12 +119,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#代码的坏味道">代码的坏味道</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#创建项目文档">创建项目文档</a><ul>
-<li><a href="#readme">README</a></li>
-<li><a href="#在线文档">在线文档</a></li>
-<li><a href="#可用示例">可用示例</a></li>
-</ul></li>
-<li><a href="#测试-1">测试</a><ul>
+<li><a href="#改善-github-项目代码质量测试">改善 GitHub 项目代码质量：测试</a><ul>
 <li><a href="#tdd">TDD</a><ul>
 <li><a href="#一次测试驱动开发">一次测试驱动开发</a></li>
 <li><a href="#说说tdd">说说TDD</a></li>
@@ -128,7 +132,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li><a href="#fake-server">Fake Server</a></li>
 </ul></li>
-<li><a href="#重构">重构</a><ul>
+<li><a href="#改善-github-项目代码质量重构">改善 GitHub 项目代码质量：重构</a><ul>
 <li><a href="#为什么重构">为什么重构?</a></li>
 <li><a href="#重构umarkdown">重构uMarkdown</a><ul>
 <li><a href="#代码说明">代码说明</a></li>
@@ -140,6 +144,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#pull-members-up">Pull Members Up</a></li>
 <li><a href="#重构之以查询取代临时变量">重构之以查询取代临时变量</a></li>
 </ul></li>
+<li><a href="#marketing-first">Marketing First</a></li>
+<li><a href="#编写-readme">编写 README</a><ul>
+<li><a href="#这个项目做什么一句话文案">这个项目做什么——一句话文案</a></li>
+<li><a href="#它解决了什么问题">它解决了什么问题</a></li>
+<li><a href="#它有什么特性">它有什么特性</a></li>
+<li><a href="#hello-world-示例">hello, world 示例</a></li>
+</ul></li>
+<li><a href="#技术文档手把手教会别人">技术文档——手把手教会别人</a></li>
+<li><a href="#示例程序">示例程序</a></li>
+<li><a href="#吸引贡献者">吸引贡献者</a></li>
+</ul></li>
+<li><a href="#如何以正确的姿势阅读开源软件代码">如何以“正确的姿势”阅读开源软件代码</a><ul>
+<li><a href="#阅读过程">阅读过程</a></li>
+<li><a href="#示例">示例</a></li>
 </ul></li>
 <li><a href="#如何在github寻找灵感fork">如何在GitHub“寻找灵感(fork)”</a><ul>
 <li><a href="#lettuce构建过程">Lettuce构建过程</a><ul>
@@ -148,27 +166,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#实现第一个需求">实现第一个需求</a></li>
 <li><a href="#实现第二个需求">实现第二个需求</a></li>
 </ul></li>
-</ul></li>
-<li><a href="#github用户分析">GitHub用户分析</a><ul>
-<li><a href="#生成图表">生成图表</a><ul>
-<li><a href="#数据解析">数据解析</a></li>
-<li><a href="#matplotlib">Matplotlib</a></li>
-</ul></li>
-<li><a href="#每周分析">每周分析</a><ul>
-<li><a href="#python-github-每周情况分析">python github 每周情况分析</a></li>
-<li><a href="#python-数据分析">Python 数据分析</a></li>
-<li><a href="#python-matplotlib图表">Python Matplotlib图表</a></li>
-</ul></li>
-<li><a href="#存储到数据库中">存储到数据库中</a><ul>
-<li><a href="#sqlite3">SQLite3</a></li>
-<li><a href="#数据导入">数据导入</a></li>
-<li><a href="#redis">Redis</a></li>
-</ul></li>
-<li><a href="#邻近算法与相似用户">邻近算法与相似用户</a></li>
-</ul></li>
-<li><a href="#如何以正确的姿势阅读开源软件代码">如何以“正确的姿势”阅读开源软件代码</a><ul>
-<li><a href="#阅读过程">阅读过程</a></li>
-<li><a href="#示例">示例</a></li>
 </ul></li>
 <li><a href="#github连击">GitHub连击</a><ul>
 <li><a href="#天">100天</a><ul>
@@ -204,6 +201,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#从创建开源框架说起">从创建开源框架说起</a></li>
 <li><a href="#下一个开源项目">下一个开源项目</a></li>
 </ul></li>
+</ul></li>
+<li><a href="#github用户分析">GitHub用户分析</a><ul>
+<li><a href="#生成图表">生成图表</a><ul>
+<li><a href="#数据解析">数据解析</a></li>
+<li><a href="#matplotlib">Matplotlib</a></li>
+</ul></li>
+<li><a href="#每周分析">每周分析</a><ul>
+<li><a href="#python-github-每周情况分析">python github 每周情况分析</a></li>
+<li><a href="#python-数据分析">Python 数据分析</a></li>
+<li><a href="#python-matplotlib图表">Python Matplotlib图表</a></li>
+</ul></li>
+<li><a href="#存储到数据库中">存储到数据库中</a><ul>
+<li><a href="#sqlite3">SQLite3</a></li>
+<li><a href="#数据导入">数据导入</a></li>
+<li><a href="#redis">Redis</a></li>
+</ul></li>
+<li><a href="#邻近算法与相似用户">邻近算法与相似用户</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -261,6 +275,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3 id="扩大交际">扩大交际</h3>
 <p>如果我们想创造出更好、强大地框架时，那么认识更多的人可能会带来更多的帮助。有时候会同上面那一点一样的效果</p>
 <hr />
+<h2 id="创建开源项目">创建开源项目</h2>
+<h2 id="取一个好的名字">取一个好的名字</h2>
+<h2 id="挑选好-license">挑选好 LICENSE</h2>
+<h2 id="官方主页">官方主页</h2>
+<p>GitHub Pages</p>
 <h1 id="git基本知识与github使用">Git基本知识与GitHub使用</h1>
 <h2 id="git">Git</h2>
 <p>从一般开发者的角度来看，git有以下功能：</p>
@@ -511,6 +530,65 @@ git push -u origin master</code></pre>
 </figure>
 <p>他们都要求我签署CLA。</p>
 <hr>
+<h1 id="创建项目文档">创建项目文档</h1>
+<p>我们需要为我们的项目创建一个文档，通常我们可以将核心代码以外的东西都称为文档：</p>
+<ol type="1">
+<li>README</li>
+<li>文档</li>
+<li>示例</li>
+<li>测试</li>
+</ol>
+<p>通常这个会在项目的最上方会有一个项目的简介，如下图所示：</p>
+<figure>
+<img src="./img/github-intro.png" alt="GitHub Project Introduction" /><figcaption>GitHub Project Introduction</figcaption>
+</figure>
+<h2 id="readme">README</h2>
+<p>README通常会显示在GitHub项目的下面，如下图所示：</p>
+<figure>
+<img src="./img/readme-example.png" alt="GitHub README" /><figcaption>GitHub README</figcaption>
+</figure>
+<p>通常一个好的README会让你立马对项目产生兴趣。</p>
+<p>如下面的内容是React项目的简介：</p>
+<figure>
+<img src="./img/react-intro.png" alt="React README" /><figcaption>React README</figcaption>
+</figure>
+<p>下面的内容写清楚了他们的用途：</p>
+<ul>
+<li><strong>Just the UI:</strong> Lots of people use React as the V in MVC. Since React makes no assumptions about the rest of your technology stack, it’s easy to try it out on a small feature in an existing project.</li>
+<li><strong>Virtual DOM:</strong> React abstracts away the DOM from you, giving a simpler programming model and better performance. React can also render on the server using Node, and it can power native apps using <a href="https://facebook.github.io/react-native/">React Native</a>.</li>
+<li><strong>Data flow:</strong> React implements one-way reactive data flow which reduces boilerplate and is easier to reason about than traditional data binding.</li>
+</ul>
+<p>通常在这个README里，还会有：</p>
+<ul>
+<li>针对人群</li>
+<li>安装指南</li>
+<li>示例</li>
+<li>运行的平台</li>
+<li>如何参与贡献</li>
+<li>协议</li>
+</ul>
+<h2 id="在线文档">在线文档</h2>
+<p>很多开源项目都会有自己的网站，并在上面有一个文档，而有的则会放在<a href="https://readthedocs.org/" class="uri">https://readthedocs.org/</a>。</p>
+<blockquote>
+<p>Read the Docs 托管文档，让文档可以被全文搜索和更易查找。您可以导入您使用任何常用的版本控制系统管理的文档，包括 Mercurial、Git、Subversion 和 Bazaar。 我们支持 webhooks，因此可以在您提交代码时自动构建文档。并且同样也支持版本功能，因此您可以构建来自您代码仓库中某个标签或分支的文档。查看完整的功能列表 。</p>
+</blockquote>
+<p>在一个开源项目中，良好和专业的文档是相当重要的，有时他可能会比软件还会重要。因为如果一个开源项目好用的话，多数人可能不会去查看软件的代码。这就意味着，多数时候他在和你的文档打交道。文档一般会有：API 文档、 配置文档、帮助文档、用户手册、教程等等</p>
+<p>写文档的软件有很多，如Markdown、Doxygen、Docbook等等。</p>
+<h2 id="可用示例">可用示例</h2>
+<p>一个简单上手的示例非常重要，特别是通常我们是在为着某个目的而去使用一个开源项目的是时候，我们希望能马上使用到我们的项目中。</p>
+<p>你希望看到的是，你打开浏览器，输入下面的代码，然后<strong>It Works</strong>:</p>
+<pre><code>var HelloMessage = React.createClass({
+  render: function() {
+    return &lt;div&gt;Hello {this.props.name}&lt;/div&gt;;
+  }
+});
+
+React.render(
+  &lt;HelloMessage name=&quot;John&quot; /&gt;,
+  document.getElementById(&#39;container&#39;)
+);</code></pre>
+<p>而不是需要繁琐的步骤才能进行下一步。</p>
+<hr />
 <h1 id="构建github项目">构建GitHub项目</h1>
 <h2 id="如何用好github">如何用好GitHub</h2>
 <p>如何用好GitHub,并实践一些敏捷软件开发是一个很有意思的事情.我们可以在上面做很多事情,从测试到CI,再到自动部署.</p>
@@ -1050,66 +1128,7 @@ line 21  col 62   Strings must use singlequote.</code></pre>
 <span class="op">};</span></code></pre></div>
 <p>重构完后的代码比原来还长，这似乎是个问题~~</p>
 <hr />
-<h1 id="创建项目文档">创建项目文档</h1>
-<p>我们需要为我们的项目创建一个文档，通常我们可以将核心代码以外的东西都称为文档：</p>
-<ol type="1">
-<li>README</li>
-<li>文档</li>
-<li>示例</li>
-<li>测试</li>
-</ol>
-<p>通常这个会在项目的最上方会有一个项目的简介，如下图所示：</p>
-<figure>
-<img src="./img/github-intro.png" alt="GitHub Project Introduction" /><figcaption>GitHub Project Introduction</figcaption>
-</figure>
-<h2 id="readme">README</h2>
-<p>README通常会显示在GitHub项目的下面，如下图所示：</p>
-<figure>
-<img src="./img/readme-example.png" alt="GitHub README" /><figcaption>GitHub README</figcaption>
-</figure>
-<p>通常一个好的README会让你立马对项目产生兴趣。</p>
-<p>如下面的内容是React项目的简介：</p>
-<figure>
-<img src="./img/react-intro.png" alt="React README" /><figcaption>React README</figcaption>
-</figure>
-<p>下面的内容写清楚了他们的用途：</p>
-<ul>
-<li><strong>Just the UI:</strong> Lots of people use React as the V in MVC. Since React makes no assumptions about the rest of your technology stack, it’s easy to try it out on a small feature in an existing project.</li>
-<li><strong>Virtual DOM:</strong> React abstracts away the DOM from you, giving a simpler programming model and better performance. React can also render on the server using Node, and it can power native apps using <a href="https://facebook.github.io/react-native/">React Native</a>.</li>
-<li><strong>Data flow:</strong> React implements one-way reactive data flow which reduces boilerplate and is easier to reason about than traditional data binding.</li>
-</ul>
-<p>通常在这个README里，还会有：</p>
-<ul>
-<li>针对人群</li>
-<li>安装指南</li>
-<li>示例</li>
-<li>运行的平台</li>
-<li>如何参与贡献</li>
-<li>协议</li>
-</ul>
-<h2 id="在线文档">在线文档</h2>
-<p>很多开源项目都会有自己的网站，并在上面有一个文档，而有的则会放在<a href="https://readthedocs.org/" class="uri">https://readthedocs.org/</a>。</p>
-<blockquote>
-<p>Read the Docs 托管文档，让文档可以被全文搜索和更易查找。您可以导入您使用任何常用的版本控制系统管理的文档，包括 Mercurial、Git、Subversion 和 Bazaar。 我们支持 webhooks，因此可以在您提交代码时自动构建文档。并且同样也支持版本功能，因此您可以构建来自您代码仓库中某个标签或分支的文档。查看完整的功能列表 。</p>
-</blockquote>
-<p>在一个开源项目中，良好和专业的文档是相当重要的，有时他可能会比软件还会重要。因为如果一个开源项目好用的话，多数人可能不会去查看软件的代码。这就意味着，多数时候他在和你的文档打交道。文档一般会有：API 文档、 配置文档、帮助文档、用户手册、教程等等</p>
-<p>写文档的软件有很多，如Markdown、Doxygen、Docbook等等。</p>
-<h2 id="可用示例">可用示例</h2>
-<p>一个简单上手的示例非常重要，特别是通常我们是在为着某个目的而去使用一个开源项目的是时候，我们希望能马上使用到我们的项目中。</p>
-<p>你希望看到的是，你打开浏览器，输入下面的代码，然后<strong>It Works</strong>:</p>
-<pre><code>var HelloMessage = React.createClass({
-  render: function() {
-    return &lt;div&gt;Hello {this.props.name}&lt;/div&gt;;
-  }
-});
-
-React.render(
-  &lt;HelloMessage name=&quot;John&quot; /&gt;,
-  document.getElementById(&#39;container&#39;)
-);</code></pre>
-<p>而不是需要繁琐的步骤才能进行下一步。</p>
-<hr />
-<h1 id="测试-1">测试</h1>
+<h1 id="改善-github-项目代码质量测试">改善 GitHub 项目代码质量：测试</h1>
 <h2 id="tdd">TDD</h2>
 <p>虽然接触的TDD时间不算短，然而真正在实践TDD上的时候少之又少。除去怎么教人TDD，就是与人结对编程时的switch，或许是受限于当前的开发流程。</p>
 <p>偶然间在开发一个物联网相关的开源项目——<a href="https://github.com/phodal/lan">Lan</a>的时候，重拾了这个过程。不得不说提到的一点是，在我们的开发流程中<strong>测试是由相关功能开发人员写的</strong>，有时候测试是一种很具挑战性的工作。久而久之，为自己的开源项目写测试变成一种自然而然的事。有时没有测试，反而变得<strong>没有安全感</strong>。</p>
@@ -1123,9 +1142,9 @@ React.render(
   <span class="cf">return</span> <span class="va">res</span>.<span class="at">end</span>(<span class="st">&#39;Unauthorized&#39;</span>)<span class="op">;</span>
 <span class="op">}</span></code></pre></div>
 <p>可是除了HTTP协议，还有MQTT和CoAP。对于MQTT协议来说，那还算好，毕竟自带授权，如:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">mosquitto_pub</span> -u root -P root -h localhost -d -t lettuce -m <span class="st">&quot;Hello, MQTT. This is my first message.&quot;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">mosquitto_pub</span> -u root -P root -h localhost -d -t lettuce -m <span class="st">&quot;Hello, MQTT. This is my first message.&quot;</span></code></pre></div>
 <p>便可以让我们简单地完成这个功能，然而有的协议是没有这样的功能如CoAP协议中是用Option来进行授权的。现在的工具如libcoap只能有如下的简单功能</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap-client</span> -m get coap://127.0.0.1:5683/topics/zero -T</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">coap-client</span> -m get coap://127.0.0.1:5683/topics/zero -T</code></pre></div>
 <p>于是，先写了个测试脚本来验证功能。</p>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> coap     <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;coap&#39;</span>)<span class="op">;</span>
 <span class="kw">var</span> request  <span class="op">=</span> <span class="va">coap</span>.<span class="at">request</span><span class="op">;</span>
@@ -1278,7 +1297,7 @@ beforeEach(function() {
     });
 });</code></pre>
 <hr />
-<h1 id="重构">重构</h1>
+<h1 id="改善-github-项目代码质量重构">改善 GitHub 项目代码质量：重构</h1>
 <p>或许你应该知道了，重构是怎样的，你也知道重构能带来什么。在我刚开始学重构和设计模式的时候，我需要去找一些好的示例，以便于我更好的学习。有时候不得不创造一些更好的场景，来实现这些功能。</p>
 <p>有一天，我发现当我需要我一次又一次地重复讲述某些内容，于是我就计划着把这些应该掌握的技能放到GitHub上，也就有了<a href="https://github.com/phodal-archive/artisanstack.github.io">Artisan Stack</a> 计划。</p>
 <p>每个程序员都不可避免地是一个Coder，一个没有掌握好技能的Coder，算不上是手工艺人，但是是手工人。</p>
@@ -1381,16 +1400,16 @@ str <span class="op">=</span> <span class="at">tableHandler</span>(str<span clas
 <pre><code>编写测试-&gt;功能代码-&gt;修改测试-&gt;重构</code></pre>
 <p>上次在和buddy聊天的时候，才知道测试在功能简单的时候是后行的，在功能复杂不知道怎么下手的时候是先行的。</p>
 <p>开始之前请原谅我对于Java语言的一些无知，然后，看一下我写的Main函数：</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package com.phodal.learing;</span>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> com.phodal.learing;</span>
 
 <span class="kw">public</span> <span class="kw">class</span> Main {
 
-    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(String[] args) {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
         <span class="dt">int</span> c=<span class="kw">new</span> <span class="fu">Cal</span>().<span class="fu">add</span>(<span class="dv">1</span>,<span class="dv">2</span>);
         <span class="dt">int</span> d=<span class="kw">new</span> <span class="fu">Cal2</span>().<span class="fu">sub</span>(<span class="dv">2</span>,<span class="dv">1</span>);
-        System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
-        System.<span class="fu">out</span>.<span class="fu">println</span>(c);
-        System.<span class="fu">out</span>.<span class="fu">println</span>(d);
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(c);
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(d);
     }
 }</code></pre></div>
 <p>代码写得还好(自我感觉)，先不管Cal和Cal2两个类。大部分都能看懂，除了c,d不知道他们表达的是什么意思，于是。</p>
@@ -1402,16 +1421,16 @@ str <span class="op">=</span> <span class="at">tableHandler</span>(str<span clas
 <li>把光标移到int d中的d，按下shift+f6，输入result_sub</li>
 </ul>
 <p>于是就有</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package com.phodal.learing;</span>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> com.phodal.learing;</span>
 
 <span class="kw">public</span> <span class="kw">class</span> Main {
 
-    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(String[] args) {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
         <span class="dt">int</span> result_add=<span class="kw">new</span> <span class="fu">Cal</span>().<span class="fu">add</span>(<span class="dv">1</span>,<span class="dv">2</span>);
         <span class="dt">int</span> result_sub=<span class="kw">new</span> <span class="fu">Cal2</span>().<span class="fu">sub</span>(<span class="dv">2</span>,<span class="dv">1</span>);
-        System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
-        System.<span class="fu">out</span>.<span class="fu">println</span>(result_add);
-        System.<span class="fu">out</span>.<span class="fu">println</span>(result_sub);
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(result_add);
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(result_sub);
     }
 }</code></pre></div>
 <h3 id="extract-method">Extract Method</h3>
@@ -1423,16 +1442,16 @@ str <span class="op">=</span> <span class="at">tableHandler</span>(str<span clas
 <li>在弹出的窗口中输入mprint</li>
 </ul>
 <p>于是有了</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(String[] args) {
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
     <span class="dt">int</span> result_add=<span class="kw">new</span> <span class="fu">Cal</span>().<span class="fu">add</span>(<span class="dv">1</span>,<span class="dv">2</span>);
     <span class="dt">int</span> result_sub=<span class="kw">new</span> <span class="fu">Cal2</span>().<span class="fu">sub</span>(<span class="dv">2</span>,<span class="dv">1</span>);
-    System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
     <span class="fu">mprint</span>(result_add);
     <span class="fu">mprint</span>(result_sub);
 }
 
 <span class="kw">private</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">mprint</span>(<span class="dt">int</span> result_sub) {
-    System.<span class="fu">out</span>.<span class="fu">println</span>(result_sub);
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(result_sub);
 }</code></pre></div>
 <p>似乎我们不应该这样对待System.out.println，那么让我们内联回去</p>
 <h3 id="inline-method">Inline Method</h3>
@@ -1444,12 +1463,12 @@ str <span class="op">=</span> <span class="at">tableHandler</span>(str<span clas
 <li>选中Inline all invocations and remove the method(2 occurrences) 点确定</li>
 </ul>
 <p>然后我们等于什么也没有做了~~:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(String[] args) {
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
     <span class="dt">int</span> result_add=<span class="kw">new</span> <span class="fu">Cal</span>().<span class="fu">add</span>(<span class="dv">1</span>,<span class="dv">2</span>);
     <span class="dt">int</span> result_sub=<span class="kw">new</span> <span class="fu">Cal2</span>().<span class="fu">sub</span>(<span class="dv">2</span>,<span class="dv">1</span>);
-    System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
-    System.<span class="fu">out</span>.<span class="fu">println</span>(result_add);
-    System.<span class="fu">out</span>.<span class="fu">println</span>(result_sub);
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(result_add);
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(result_sub);
 }</code></pre></div>
 <p>似乎这个例子不是很好，但是够用来说明了。</p>
 <h3 id="pull-members-up">Pull Members Up</h3>
@@ -1489,7 +1508,7 @@ str <span class="op">=</span> <span class="at">tableHandler</span>(str<span clas
 <h4 id="重构之前">重构之前</h4>
 <p>过多的临时变量会让我们写出更长的函数，函数不应该太多，以便使功能单一。这也是重构的另外的目的所在，只有函数专注于其功能，才会更容易读懂。</p>
 <p>以书中的代码为例</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import java.lang.System;</span>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import</span><span class="im"> java.lang.System;</span>
 
 <span class="kw">public</span> <span class="kw">class</span> replaceTemp {
     <span class="kw">public</span> <span class="dt">void</span> <span class="fu">count</span>() {
@@ -1501,13 +1520,13 @@ str <span class="op">=</span> <span class="at">tableHandler</span>(str<span clas
         }
     }
 }</code></pre></div>
-<h4 id="重构-1">重构</h4>
+<h4 id="重构">重构</h4>
 <p>选中<code>basePrice</code>很愉快地拿鼠标点上面的重构</p>
 <figure>
 <img src="./img/replace.jpg" alt="Replace Temp With Query" /><figcaption>Replace Temp With Query</figcaption>
 </figure>
 <p>便会返回</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import java.lang.System;</span>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import</span><span class="im"> java.lang.System;</span>
 
 <span class="kw">public</span> <span class="kw">class</span> replaceTemp {
     <span class="kw">public</span> <span class="dt">void</span> <span class="fu">count</span>() {
@@ -1534,9 +1553,9 @@ str <span class="op">=</span> <span class="at">tableHandler</span>(str<span clas
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> replaceTemp {
 
     <span class="kw">public</span> <span class="dt">void</span> <span class="fu">method</span>() {
-        String str = <span class="st">&quot;str&quot;</span>;
-        String aString = <span class="fu">returnString</span>().<span class="fu">concat</span>(str);
-        System.<span class="fu">out</span>.<span class="fu">println</span>(aString);
+        <span class="bu">String</span> str = <span class="st">&quot;str&quot;</span>;
+        <span class="bu">String</span> aString = <span class="fu">returnString</span>().<span class="fu">concat</span>(str);
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(aString);
     }
 
 }</code></pre></div>
@@ -1558,6 +1577,160 @@ public class replaceTemp {
 
 }</code></pre>
 <hr />
+<p>除了擅长编写 md 电子书来攒 star，我还写了一系列的开源软件，也掌握了一些项目运营的技巧。</p>
+<p><strong>开源并不是你把软件、README 写好就行了，还有详细的文档、示例程序等等</strong>。</p>
+<p><strong>开源也不是你的项目好了，就会有一堆人参与进来</strong>。</p>
+<p><strong>开源还要你帮助别人解决 Bug，……</strong>。</p>
+<p><strong>人们做事都是有原因的</strong>，即动机。再举例一下，如果你的项目不够火，别人都没听过，那么<strong>写到简历上可能没啥用</strong>。</p>
+<h2 id="marketing-first">Marketing First</h2>
+<p>开源需要一些营销的技巧，这些技巧可以帮你吸引关注。举个简单的例子，司徒正美的 <a href="https://github.com/RubyLouvre/avalon">avalon</a> 框架出身得很早，也 MV* 方面也做得很不错，但是在 marketing 上就……。以至于国内的很多前端，都不了解这个框架，要不今天在国内可能就是 AVRR 四大框架了。</p>
+<p>Vue 不是因为好用，而一下子火了。这一点我印象特别深，当时在 GitHub Trending 上看到了这个项目，发现它还不能很好地 work。</p>
+<p>而如文章 《<a href="http://blog.evanyou.me/2014/02/11/first-week-of-launching-an-oss-project/">FIRST WEEK OF LAUNCHING VUE.JS</a>》所说，项目刚开始的时候作者做了一系列的营销计划：</p>
+<ul>
+<li>HackerNews</li>
+<li>Reddit /r/javascript</li>
+<li>EchoJS</li>
+<li>The DailyJS blog</li>
+<li>JavaScript Weekly</li>
+<li>Maintain a project Twitter account（维护项目的 Vue 账户）</li>
+</ul>
+<p>除此，文中还提到了一篇文章《<a href="https://hacks.mozilla.org/2013/05/how-to-spread-the-word-about-your-code/?utm_source=statuscode&amp;utm_medium=email">How to Spread The Word About Your Code</a>》 。</p>
+<p>这一点相当的有意思，如果你的想法好的话，那么大家都会肯定，点下链接，为你来个 star。那么，你就获得更好的动力去做这件事。项目也在开头的时候，获得了相当多的关注。而如果大家觉得你的项目没有新意的话，那么你懂的~。</p>
+<p>除此，还有一种可能是，你的 ID 不够 fancy，即你在社区的影响上比较少。此时，就需要<strong>一点点慢慢积累人气</strong>了。当你积累了一些人气，你就能和松本行弘一样，在创建 mRuby 的时候就有 1000+ 的 star。并且，在社区上还有一些相关的文章介绍，各个头条也由他的粉丝发了上去。如，一年多以前，我创建了 <a href="https://github.com/phodal/mole">mole</a> 项目。</p>
+<figure>
+<img src="mole.png" alt="Mole" /><figcaption>Mole</figcaption>
+</figure>
+<p>当时，是为了给自己做一个基于 GitHub 云笔记的工具，在完成度到一定程度的时候。我在我的微信公从号上发了相关的介绍，第二天就有 100+ 的 star 了，还接收至最一些鼓舞的话语。对应于国内则有：</p>
+<ul>
+<li>极客头条</li>
+<li>掘金</li>
+<li>开发者头条</li>
+<li>v2ex</li>
+<li>知乎</li>
+<li>不成器的微博</li>
+</ul>
+<p>所以，你觉得呢？</p>
+<h2 id="编写-readme">编写 README</h2>
+<p>在一个开源项目里，README 是最重要的内容。它快速地介绍了这个项目，并决定了它能不能吸引用户：</p>
+<ul>
+<li><strong>这个项目做什么？</strong></li>
+<li><strong>它解决了什么问题</strong></li>
+<li><strong>它有什么特性</strong> — <strong>hello, world 示例</strong></li>
+</ul>
+<h3 id="这个项目做什么一句话文案">这个项目做什么——一句话文案</h3>
+<p>GitHub 的 Description 是我们在 Hacking News、GitHub Trneding 等等，第一时间看到的介绍。也是我们能快速介绍给别人的东西，如下图所示：</p>
+<figure>
+<img src="./img/github-trending-example.png" alt="GitHub Trending" /><figcaption>GitHub Trending</figcaption>
+</figure>
+<p>这一句话，必须简单明了也介绍，它是干什么的。</p>
+<p>如 Angular 的一句话方案是：One framework. Mobile &amp; desktop.</p>
+<p>而 React 是：A declarative, efficient, and flexible JavaScript library for building user interfaces.</p>
+<p>Vue 则是：A progressive, incrementally-adoptable JavaScript framework for building UI on the web.</p>
+<h3 id="它解决了什么问题">它解决了什么问题</h3>
+<p>上面的一句话描述，它不能很好地说明，它能解决什么问题。</p>
+<p>如下是今天在 GitHub Trending 上榜的 RPC 项目的简介：</p>
+<blockquote>
+<p>Most machines on internet communicate with each other via TCP/IP. However TCP/IP only guarantees reliable data transmissions, we need to abstract more to build services:</p>
+</blockquote>
+<figure>
+<img src="./img/rpc-example.png" alt="RPC 开源项目" /><figcaption>RPC 开源项目</figcaption>
+</figure>
+<p>以上便是这个项目能解决的问题，不过这个项目能解决的问题倒是比较长，哈哈哈。</p>
+<h3 id="它有什么特性">它有什么特性</h3>
+<p>当我们有 A、B、C 几个不同的框架的时候，作为一个开发人员，就需要对比他们的特性，。如下是 Go 语言实现的 MQTT 示例：</p>
+<figure>
+<img src="./img/go-mqtt.png" alt="GO MQTT 示例" /><figcaption>GO MQTT 示例</figcaption>
+</figure>
+<p>这个项目只支持的 Qos 级别为 0。如果我们需要的级别是 1，那么就不能用这个项目了。</p>
+<p>又比如 lodash 项目：</p>
+<blockquote>
+<p>Lodash makes JavaScript easier by taking the hassle out of working with arrays, numbers, objects, strings, etc. Lodash’s modular methods are great for:</p>
+</blockquote>
+<ul>
+<li>Iterating arrays, objects, &amp; strings</li>
+<li>Manipulating &amp; testing values</li>
+<li>Creating composite functions</li>
+</ul>
+<p>你会怎么写？</p>
+<h3 id="hello-world-示例">hello, world 示例</h3>
+<p>在我们看完了上面的介绍之后，紧接着就是一个 hello, world 的示例。如 React 的示例：</p>
+<pre><code>class HelloMessage extends React.Component {
+  render() {
+    return &lt;div&gt;Hello {this.props.name}&lt;/div&gt;;
+  }
+}
+
+ReactDOM.render(
+  &lt;HelloMessage name=&quot;John&quot; /&gt;,
+  document.getElementById(&#39;container&#39;)
+);</code></pre>
+<p>这个</p>
+<h2 id="技术文档手把手教会别人">技术文档——手把手教会别人</h2>
+<h2 id="示例程序">示例程序</h2>
+<h2 id="吸引贡献者">吸引贡献者</h2>
+<h1 id="如何以正确的姿势阅读开源软件代码">如何以“正确的姿势”阅读开源软件代码</h1>
+<blockquote>
+<p>所有让你直接看最新源码的文章都是在扯淡，你应该从“某个版本”开始阅读代码。</p>
+</blockquote>
+<p>我们并不建议所有的读者都直接看最新的代码，正确的姿势应该是：</p>
+<ul>
+<li>clone某个项目的代码到本地</li>
+<li>查看这个项目的release列表</li>
+<li>找到一个看得懂的release版本，如1.0或者更早的版本</li>
+<li>读懂上一个版本的代码</li>
+<li>向后阅读大版本的源码</li>
+<li>读最新的源码</li>
+</ul>
+<p>最好的在这个过程中，<strong>可以自己造轮子来实现一遍</strong>。</p>
+<h2 id="阅读过程">阅读过程</h2>
+<p>在我阅读的前端库、Python后台库的过程中，我们都是以造轮子为目的展开的。所以在最开始的时候，我需要一个可以工作，并且拥有我想要的功能的版本。</p>
+<figure>
+<img src="./img/it-works-cms.png" alt="it-works-cms.png" /><figcaption>it-works-cms.png</figcaption>
+</figure>
+<p>紧接着，我就可以开始去实践这个版本中的一些功能，并理解他们是怎么工作的。再用<code>git</code>大法展开之前修改的内容，可以使用IDE自带的Diff工具：</p>
+<figure>
+<img src="./img/pycharm-diff.jpg" alt="pycharm-diff.jpg" /><figcaption>pycharm-diff.jpg</figcaption>
+</figure>
+<p>或者类似于<code>SourceTree</code>这样的工具，来查看修改的内容。</p>
+<p>在我们理解了基本的核心功能后，我们就可以向后查看大、中版本的更新内容了。</p>
+<p>开始之前，我们希望大家对版本号管理有一些基本的认识。 ## 版本号管理</p>
+<p>我最早阅读的开始软件是Linux，而下面则是Linux的Release过程：</p>
+<figure>
+<img src="./img/linux-history.png" alt="linux-history.png" /><figcaption>linux-history.png</figcaption>
+</figure>
+<p>表格源自一本书叫《Linux内核0.11(0.95)完全注释》，简单地再介绍一下： - 版本0.00是一个hello,world程序 - 版本0.01包含了可以工作的代码 - 版本0.11是基本可以正常的版本</p>
+<p>这里就要扯到《GNU 风格的版本号管理策略》：</p>
+<p>1．项目初版本时，版本号可以为 0.1 或 0.1.0, 也可以为 1.0 或 1.0.0，如果你为人很低调，我想你会选择那个主版本号为 0 的方式； 2．当项目在进行了局部修改或 bug 修正时，主版本号和子版本号都不变，修正版本号加 1； 3. 当项目在原有的基础上增加了部分功能时，主版本号不变，子版本号加 1，修正版本号复位为 0，因而可以被忽略掉； 4．当项目在进行了重大修改或局部修正累积较多，而导致项目整体发生全局变化时，主版本号加 1； 5．另外，编译版本号一般是编译器在编译过程中自动生成的，我们只定义其格式，并不进行人为控制。</p>
+<p>因此，我们可以得到几个简单的结论： - 我们需要阅读最早的有核心代码的版本 - 我们需要阅读1.0版本的Release - 往后每一次大的Release我们都需要了解一下</p>
+<h2 id="示例">示例</h2>
+<p>以Flask为例：</p>
+<p>一、先Clone它。</p>
+<figure>
+<img src="./img/clone-flask.png" alt="clone-flask.png" /><figcaption>clone-flask.png</figcaption>
+</figure>
+<p>二、从Release页面找到它的早期版本：</p>
+<figure>
+<img src="./img/flask.png" alt="flask.png" /><figcaption>flask.png</figcaption>
+</figure>
+<p>三、 从上面拿到它的提交号<code>8605cc3</code>，然后checkout到这次提交，查看功能。在这个版本里，一共有六百多行代码</p>
+<figure>
+<img src="./img/flask-0.1.png" alt="flask-0.1.png" /><figcaption>flask-0.1.png</figcaption>
+</figure>
+<p>还是有点长</p>
+<p>四、我们可以找到它的最早版本:</p>
+<figure>
+<img src="./img/flask-init.png" alt="flask-init.png" /><figcaption>flask-init.png</figcaption>
+</figure>
+<p>然后查看它的<code>flask.py</code>文件，只有简单的三百多行，并且还包含一系列注释：</p>
+<figure>
+<img src="./img/flask-init.png" alt="flask-init.png" /><figcaption>flask-init.png</figcaption>
+</figure>
+<p>五、接着，再回过头去阅读</p>
+<ul>
+<li>0.1版本</li>
+<li>。。。</li>
+<li>最新的0.10.1版本</li>
+</ul>
 <h1 id="如何在github寻找灵感fork">如何在GitHub“寻找灵感(fork)”</h1>
 <blockquote>
 <p>重造轮子是重新创造一个已有的或是已被其他人优化的基本方法。</p>
@@ -1706,506 +1879,6 @@ public class replaceTemp {
     <span class="va">request</span>.<span class="at">send</span>(data)<span class="op">;</span>
 <span class="op">};</span></code></pre></div>
 <hr />
-<h1 id="github用户分析">GitHub用户分析</h1>
-<h2 id="生成图表">生成图表</h2>
-<p>如何分析用户的数据是一个有趣的问题，特别是当我们有大量的数据的时候。除了<code>matlab</code>，我们还可以用<code>numpy</code>+<code>matplotlib</code></p>
-<p>数据可以在这边寻找到</p>
-<p><a href="https://github.com/gmszone/ml" class="uri">https://github.com/gmszone/ml</a></p>
-<p>最后效果图</p>
-<figure>
-<img src="./img/2014-01-01.png" alt="2014 01 01" /><figcaption>2014 01 01</figcaption>
-</figure>
-<p>要解析的json文件位于<code>data/2014-01-01-0.json</code>，大小6.6M，显然我们可能需要用每次只读一行的策略，这足以解释为什么诸如sublime打开的时候很慢，而现在我们只需要里面的json数据中的创建时间。。</p>
-<p>==,这个文件代表什么？</p>
-<p><strong>2014年1月1日零时到一时，用户在github上的操作，这里的用户指的是很多。。一共有4814条数据，从commit、create到issues都有。</strong></p>
-<h3 id="数据解析">数据解析</h3>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> json
-<span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
-    line <span class="op">=</span> f.readline()</code></pre></div>
-<p>然后再解析json</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> dateutil.parser
-
-lin <span class="op">=</span> json.loads(line)
-date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])</code></pre></div>
-<p>这里用到了<code>dateutil</code>，因为新鲜出炉的数据是string需要转换为<code>dateutil</code>，再到数据放到数组里头。最后有就有了<code>parse_data</code></p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> parse_data(jsonfile):
-    f <span class="op">=</span> <span class="bu">open</span>(jsonfile, <span class="st">&quot;r&quot;</span>)
-    dataarray <span class="op">=</span> []
-    datacount <span class="op">=</span> <span class="dv">0</span>
-
-    <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
-        line <span class="op">=</span> f.readline()
-        lin <span class="op">=</span> json.loads(line)
-        date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
-        datacount <span class="op">+=</span> <span class="dv">1</span>
-        dataarray.append(date.minute)
-
-    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]
-    f.close()
-    <span class="cf">return</span> minuteswithcount</code></pre></div>
-<p>下面这句代码就是将上面的解析为</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]</code></pre></div>
-<p>这样的数组以便于解析</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">[(<span class="dv">0</span>, <span class="dv">92</span>), (<span class="dv">1</span>, <span class="dv">67</span>), (<span class="dv">2</span>, <span class="dv">86</span>), (<span class="dv">3</span>, <span class="dv">73</span>), (<span class="dv">4</span>, <span class="dv">76</span>), (<span class="dv">5</span>, <span class="dv">67</span>), (<span class="dv">6</span>, <span class="dv">61</span>), (<span class="dv">7</span>, <span class="dv">71</span>), (<span class="dv">8</span>, <span class="dv">62</span>), (<span class="dv">9</span>, <span class="dv">71</span>), (<span class="dv">10</span>, <span class="dv">70</span>), (<span class="dv">11</span>, <span class="dv">79</span>), (<span class="dv">12</span>, <span class="dv">62</span>), (<span class="dv">13</span>, <span class="dv">67</span>), (<span class="dv">14</span>, <span class="dv">76</span>), (<span class="dv">15</span>, <span class="dv">67</span>), (<span class="dv">16</span>, <span class="dv">74</span>), (<span class="dv">17</span>, <span class="dv">48</span>), (<span class="dv">18</span>, <span class="dv">78</span>), (<span class="dv">19</span>, <span class="dv">73</span>), (<span class="dv">20</span>, <span class="dv">89</span>), (<span class="dv">21</span>, <span class="dv">62</span>), (<span class="dv">22</span>, <span class="dv">74</span>), (<span class="dv">23</span>, <span class="dv">61</span>), (<span class="dv">24</span>, <span class="dv">71</span>), (<span class="dv">25</span>, <span class="dv">49</span>), (<span class="dv">26</span>, <span class="dv">59</span>), (<span class="dv">27</span>, <span class="dv">59</span>), (<span class="dv">28</span>, <span class="dv">58</span>), (<span class="dv">29</span>, <span class="dv">74</span>), (<span class="dv">30</span>, <span class="dv">69</span>), (<span class="dv">31</span>, <span class="dv">59</span>), (<span class="dv">32</span>, <span class="dv">89</span>), (<span class="dv">33</span>, <span class="dv">67</span>), (<span class="dv">34</span>, <span class="dv">66</span>), (<span class="dv">35</span>, <span class="dv">77</span>), (<span class="dv">36</span>, <span class="dv">64</span>), (<span class="dv">37</span>, <span class="dv">71</span>), (<span class="dv">38</span>, <span class="dv">75</span>), (<span class="dv">39</span>, <span class="dv">66</span>), (<span class="dv">40</span>, <span class="dv">62</span>), (<span class="dv">41</span>, <span class="dv">77</span>), (<span class="dv">42</span>, <span class="dv">82</span>), (<span class="dv">43</span>, <span class="dv">95</span>), (<span class="dv">44</span>, <span class="dv">77</span>), (<span class="dv">45</span>, <span class="dv">65</span>), (<span class="dv">46</span>, <span class="dv">59</span>), (<span class="dv">47</span>, <span class="dv">60</span>), (<span class="dv">48</span>, <span class="dv">54</span>), (<span class="dv">49</span>, <span class="dv">66</span>), (<span class="dv">50</span>, <span class="dv">74</span>), (<span class="dv">51</span>, <span class="dv">61</span>), (<span class="dv">52</span>, <span class="dv">71</span>), (<span class="dv">53</span>, <span class="dv">90</span>), (<span class="dv">54</span>, <span class="dv">64</span>), (<span class="dv">55</span>, <span class="dv">67</span>), (<span class="dv">56</span>, <span class="dv">67</span>), (<span class="dv">57</span>, <span class="dv">55</span>), (<span class="dv">58</span>, <span class="dv">68</span>), (<span class="dv">59</span>, <span class="dv">91</span>)]</code></pre></div>
-<h3 id="matplotlib">Matplotlib</h3>
-<p>开始之前需要安装``matplotlib</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> pip install matplotlib</code></pre></div>
-<p>然后引入这个库</p>
-<pre><code>  import matplotlib.pyplot as plt</code></pre>
-<p>如上面的那个结果，只需要</p>
-<pre><code class="python">
-    plt.figure(figsize=(8,4))
-    plt.plot(x, y,label = files)
-    plt.legend()
-    plt.show()
-</code></pre>
-<p>最后代码可见</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/env python</span>
-<span class="co"># -*- coding: utf-8 -*-</span>
-
-<span class="im">import</span> json
-<span class="im">import</span> dateutil.parser
-<span class="im">import</span> numpy <span class="im">as</span> np
-<span class="im">import</span> matplotlib.mlab <span class="im">as</span> mlab
-<span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
-
-
-<span class="kw">def</span> parse_data(jsonfile):
-    f <span class="op">=</span> <span class="bu">open</span>(jsonfile, <span class="st">&quot;r&quot;</span>)
-    dataarray <span class="op">=</span> []
-    datacount <span class="op">=</span> <span class="dv">0</span>
-
-    <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
-        line <span class="op">=</span> f.readline()
-        lin <span class="op">=</span> json.loads(line)
-        date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
-        datacount <span class="op">+=</span> <span class="dv">1</span>
-        dataarray.append(date.minute)
-
-    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]
-    f.close()
-    <span class="cf">return</span> minuteswithcount
-
-
-<span class="kw">def</span> draw_date(files):
-    x <span class="op">=</span> []
-    y <span class="op">=</span> []
-    mwcs <span class="op">=</span> parse_data(files)
-    <span class="cf">for</span> mwc <span class="op">in</span> mwcs:
-        x.append(mwc[<span class="dv">0</span>])
-        y.append(mwc[<span class="dv">1</span>])
-
-    plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))
-    plt.plot(x, y,label <span class="op">=</span> files)
-    plt.legend()
-    plt.show()
-
-draw_date(<span class="st">&quot;data/2014-01-01-0.json&quot;</span>)</code></pre></div>
-<h2 id="每周分析">每周分析</h2>
-<p>继上篇之后，我们就可以分析用户的每周提交情况，以得出用户的真正的工具效率，每个程序员的工作时间可能是不一样的，如</p>
-<figure>
-<img src="./img/phodal-results.png" alt="Phodal Huang’s Report" /><figcaption>Phodal Huang’s Report</figcaption>
-</figure>
-<p>这是我的每周情况，显然如果把星期六移到前面的话，随着工作时间的增长，在github上的使用在下降，作为一个</p>
-<pre><code>  a fulltime hacker who works best in the evening (around 8 pm).</code></pre>
-<p>不过这个是osrc的分析结果。</p>
-<h3 id="python-github-每周情况分析">python github 每周情况分析</h3>
-<p>看一张分析后的结果</p>
-<figure>
-<img src="./img/feb-results.png" alt="Feb Results" /><figcaption>Feb Results</figcaption>
-</figure>
-<p>结果正好与我的情况相反？似乎图上是这么说的，但是数据上是这样的情况。</p>
-<pre><code>data
-├── 2014-01-01-0.json
-├── 2014-02-01-0.json
-├── 2014-02-02-0.json
-├── 2014-02-03-0.json
-├── 2014-02-04-0.json
-├── 2014-02-05-0.json
-├── 2014-02-06-0.json
-├── 2014-02-07-0.json
-├── 2014-02-08-0.json
-├── 2014-02-09-0.json
-├── 2014-02-10-0.json
-├── 2014-02-11-0.json
-├── 2014-02-12-0.json
-├── 2014-02-13-0.json
-├── 2014-02-14-0.json
-├── 2014-02-15-0.json
-├── 2014-02-16-0.json
-├── 2014-02-17-0.json
-├── 2014-02-18-0.json
-├── 2014-02-19-0.json
-└── 2014-02-20-0.json</code></pre>
-<p>我们获取是每天晚上0点时的情况，至于为什么是0点，我想这里的数据量可能会比较少。除去1月1号的情况，就是上面的结果，在只有一周的情况时，总会以为因为在国内那时是假期，但是总觉得不是很靠谱，国内的程序员虽然很多，会在github上活跃的可能没有那么多，直至列出每一周的数据时。</p>
-<pre><code>  6570, 7420, 11274, 12073, 12160, 12378, 12897,
-  8474, 7984, 12933, 13504, 13763, 13544, 12940,
-  7119, 7346, 13412, 14008, 12555</code></pre>
-<h3 id="python-数据分析">Python 数据分析</h3>
-<p>重写了一个新的方法用于计算提交数，直至后面才意识到其实我们可以算行数就够了，但是方法上有点hack</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_minutes_counts_with_id(jsonfile):
-    datacount, dataarray <span class="op">=</span> handle_json(jsonfile)
-    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]
-    <span class="cf">return</span> minuteswithcount
-
-
-<span class="kw">def</span> handle_json(jsonfile):
-    f <span class="op">=</span> <span class="bu">open</span>(jsonfile, <span class="st">&quot;r&quot;</span>)
-    dataarray <span class="op">=</span> []
-    datacount <span class="op">=</span> <span class="dv">0</span>
-
-    <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
-        line <span class="op">=</span> f.readline()
-        lin <span class="op">=</span> json.loads(line)
-        date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
-        datacount <span class="op">+=</span> <span class="dv">1</span>
-        dataarray.append(date.minute)
-
-    f.close()
-    <span class="cf">return</span> datacount, dataarray
-
-
-<span class="kw">def</span> get_minutes_count_num(jsonfile):
-    datacount, dataarray <span class="op">=</span> handle_json(jsonfile)
-    <span class="cf">return</span> datacount
-
-
-<span class="kw">def</span> get_month_total():
-    <span class="co">&quot;&quot;&quot;</span>
-
-<span class="co">    :rtype : object</span>
-<span class="co">    &quot;&quot;&quot;</span>
-    monthdaycount <span class="op">=</span> []
-    <span class="cf">for</span> i <span class="op">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">20</span>):
-        <span class="cf">if</span> i <span class="op">&lt;</span> <span class="dv">10</span>:
-            filename <span class="op">=</span> <span class="st">&#39;data/2014-02-0&#39;</span> <span class="op">+</span> i.<span class="fu">__str__</span>() <span class="op">+</span> <span class="st">&#39;-0.json&#39;</span>
-        <span class="cf">else</span>:
-            filename <span class="op">=</span> <span class="st">&#39;data/2014-02-&#39;</span> <span class="op">+</span> i.<span class="fu">__str__</span>() <span class="op">+</span> <span class="st">&#39;-0.json&#39;</span>
-        monthdaycount.append(get_minutes_count_num(filename))
-    <span class="cf">return</span> monthdaycount</code></pre></div>
-<p>接着我们需要去遍历每个结果，后面的后面会发现这个效率真的是太低了，为什么木有多线程？</p>
-<h3 id="python-matplotlib图表">Python Matplotlib图表</h3>
-<p>让我们的matplotlib来做这些图表的工作</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:
-    results <span class="op">=</span> pd.get_month_total()
-    <span class="bu">print</span> results
-
-    plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))
-    plt.plot(results.<span class="fu">__getslice__</span>(<span class="dv">0</span>, <span class="dv">7</span>), label<span class="op">=</span><span class="st">&quot;first week&quot;</span>)
-    plt.plot(results.<span class="fu">__getslice__</span>(<span class="dv">7</span>, <span class="dv">14</span>), label<span class="op">=</span><span class="st">&quot;second week&quot;</span>)
-    plt.plot(results.<span class="fu">__getslice__</span>(<span class="dv">14</span>, <span class="dv">21</span>), label<span class="op">=</span><span class="st">&quot;third week&quot;</span>)
-    plt.legend()
-    plt.show()</code></pre></div>
-<p>蓝色的是第一周，绿色的是第二周，红色的是第三周就有了上面的结果。</p>
-<p>我们还需要优化方法，以及多线程的支持。</p>
-<p>让我们分析之前的程序，然后再想办法做出优化。网上看到一篇文章<a href="http://www.huyng.com/posts/python-performance-analysis/" class="uri">http://www.huyng.com/posts/python-performance-analysis/</a>讲的就是分析这部分内容的。</p>
-<h2 id="存储到数据库中">存储到数据库中</h2>
-<h3 id="sqlite3">SQLite3</h3>
-<p>我们创建了一个名为<code>userdata.db</code>的数据库文件，然后创建了一个表，里面有owner,language,eventtype,name url</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> init_db():
-    conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;userdata.db&#39;</span>)
-    c <span class="op">=</span> conn.cursor()
-    c.execute(<span class="st">&#39;&#39;&#39;CREATE TABLE userinfo (owner text, language text, eventtype text, name text, url text)&#39;&#39;&#39;</span>)</code></pre></div>
-<p>接着我们就可以查询数据，这里从结果讲起。</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_count(username):
-    count <span class="op">=</span> <span class="dv">0</span>
-    userinfo <span class="op">=</span> []
-    condition <span class="op">=</span> <span class="st">&#39;select * from userinfo where owener = </span><span class="ch">\&#39;</span><span class="st">&#39;</span> <span class="op">+</span> <span class="bu">str</span>(username) <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\&#39;</span><span class="st">&#39;</span>
-    <span class="cf">for</span> zero <span class="op">in</span> c.execute(condition):
-        count <span class="op">+=</span> <span class="dv">1</span>
-        userinfo.append(zero)
-
-    <span class="cf">return</span> count, userinfo</code></pre></div>
-<p>当我查询<code>gmszone</code>的时候，也就是我自己就会有如下的结果</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;ForkEvent&#39;</span>, u<span class="st">&#39;RESUME&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/RESUME&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;WatchEvent&#39;</span>, u<span class="st">&#39;iot-dashboard&#39;</span>, u<span class="st">&#39;JavaScript&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-dashboard&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;wechat-wordpress&#39;</span>, u<span class="st">&#39;Ruby&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/wechat-wordpress&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;WatchEvent&#39;</span>, u<span class="st">&#39;iot&#39;</span>, u<span class="st">&#39;JavaScript&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;CreateEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;None&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;CreateEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;None&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
-<span class="kw">109</span></code></pre></div>
-<p>一共有109个事件，有<code>Watch</code>,<code>Create</code>,<code>Push</code>,<code>Fork</code>还有其他的， 项目主要有<code>iot</code>,<code>RESUME</code>,<code>iot-dashboard</code>,<code>wechat-wordpress</code>, 接着就是语言了，<code>Tex</code>,<code>Javascript</code>,<code>Ruby</code>,接着就是项目的url了。</p>
-<p>值得注意的是。</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">-rw-r--r--</span>   1 fdhuang staff 905M Apr 12 14:59 userdata.db</code></pre></div>
-<p>这个数据库文件有<strong>905M</strong>，不过查询结果相当让人满意，至少相对于原来的结果来说。</p>
-<p>Python自带了对SQLite3的支持，然而我们还需要安装SQLite3</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">brew</span> install sqlite3</code></pre></div>
-<p>或者是</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> port install sqlite3</code></pre></div>
-<p>或者是Ubuntu的</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> apt-get install sqlite3</code></pre></div>
-<p>openSUSE自然就是</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> zypper install sqlite3</code></pre></div>
-<p>不过，用yast2也很不错，不是么。。</p>
-<h3 id="数据导入">数据导入</h3>
-<p>需要注意的是这里是需要python2.7，起源于对gzip的上下文管理器的支持问题</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> handle_gzip_file(filename):
-    userinfo <span class="op">=</span> []
-    <span class="cf">with</span> gzip.GzipFile(filename) <span class="im">as</span> f:
-        events <span class="op">=</span> [line.decode(<span class="st">&quot;utf-8&quot;</span>, errors<span class="op">=</span><span class="st">&quot;ignore&quot;</span>) <span class="cf">for</span> line <span class="op">in</span> f]
-
-        <span class="cf">for</span> n, line <span class="op">in</span> <span class="bu">enumerate</span>(events):
-            <span class="cf">try</span>:
-                event <span class="op">=</span> json.loads(line)
-            <span class="cf">except</span>:
-
-                <span class="cf">continue</span>
-
-            actor <span class="op">=</span> event[<span class="st">&quot;actor&quot;</span>]
-            attrs <span class="op">=</span> event.get(<span class="st">&quot;actor_attributes&quot;</span>, {})
-            <span class="cf">if</span> actor <span class="op">is</span> <span class="va">None</span> <span class="op">or</span> attrs.get(<span class="st">&quot;type&quot;</span>) <span class="op">!=</span> <span class="st">&quot;User&quot;</span>:
-                <span class="cf">continue</span>
-
-            key <span class="op">=</span> actor.lower()
-
-            repo <span class="op">=</span> event.get(<span class="st">&quot;repository&quot;</span>, {})
-            info <span class="op">=</span> <span class="bu">str</span>(repo.get(<span class="st">&quot;owner&quot;</span>)), <span class="bu">str</span>(repo.get(<span class="st">&quot;language&quot;</span>)), <span class="bu">str</span>(event[<span class="st">&quot;type&quot;</span>]), <span class="bu">str</span>(repo.get(<span class="st">&quot;name&quot;</span>)), <span class="bu">str</span>(
-                repo.get(<span class="st">&quot;url&quot;</span>))
-            userinfo.append(info)
-
-    <span class="cf">return</span> userinfo
-
-<span class="kw">def</span> build_db_with_gzip():
-    init_db()
-    conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;userdata.db&#39;</span>)
-    c <span class="op">=</span> conn.cursor()
-
-    year <span class="op">=</span> <span class="dv">2014</span>
-    month <span class="op">=</span> <span class="dv">3</span>
-
-    <span class="cf">for</span> day <span class="op">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">31</span>):
-        date_re <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&quot;([0-9]</span><span class="sc">{4}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]+)\.json.gz&quot;</span>)
-
-        fn_template <span class="op">=</span> os.path.join(<span class="st">&quot;march&quot;</span>,
-                                   <span class="co">&quot;{year}-{month:02d}-{day:02d}-{n}.json.gz&quot;</span>)
-        kwargs <span class="op">=</span> {<span class="st">&quot;year&quot;</span>: year, <span class="st">&quot;month&quot;</span>: month, <span class="st">&quot;day&quot;</span>: day, <span class="st">&quot;n&quot;</span>: <span class="st">&quot;*&quot;</span>}
-        filenames <span class="op">=</span> glob.glob(fn_template.<span class="bu">format</span>(<span class="op">**</span>kwargs))
-
-        <span class="cf">for</span> filename <span class="op">in</span> filenames:
-            c.executemany(<span class="st">&#39;INSERT INTO userinfo VALUES (?,?,?,?,?)&#39;</span>, handle_gzip_file(filename))
-
-    conn.commit()
-    c.close()</code></pre></div>
-<p><code>executemany</code>可以插入多条数据，对于我们的数据来说，一小时的文件大概有五六千个会符合我们上面的安装，也就是有<code>actor</code>又有<code>type</code>才是我们需要记录的数据，我们只需要统计用户的那些事件，而非全部的事件。</p>
-<p>我们需要去遍历文件，然后找到合适的部分，这里只是要找<code>2014-03-01</code>到<code>2014-03-31</code>的全部事件，而光这些数据的gz文件就有1.26G，同上面那些解压为json文件显得不合适，只能用遍历来处理。</p>
-<p>这里参考了osrc项目中的写法，或者说直接复制过来。</p>
-<p>首先是正规匹配</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">date_re <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&quot;([0-9]</span><span class="sc">{4}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]+)\.json.gz&quot;</span>)</code></pre></div>
-<p>不过主要的还是在于<code>glob.glob</code></p>
-<blockquote>
-<p>glob是python自己带的一个文件操作相关模块，用它可以查找符合自己目的的文件，就类似于Windows下的文件搜索，支持通配符操作。</p>
-</blockquote>
-<p>这里也就用上了<code>gzip.GzipFile</code>又一个不错的东西。</p>
-<p>最后代码可以见</p>
-<p><a href="http://github.com/gmszone/ml">github.com/gmszone/ml</a></p>
-<p>更好的方案？</p>
-<h3 id="redis">Redis</h3>
-<p>查询用户事件总数</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> redis
-r <span class="op">=</span> redis.StrictRedis(host<span class="op">=</span><span class="st">&#39;localhost&#39;</span>, port<span class="op">=</span><span class="dv">6379</span>, db<span class="op">=</span><span class="dv">0</span>)
-pipe <span class="op">=</span> pipe <span class="op">=</span> r.pipeline()
-pipe.zscore(<span class="st">&#39;osrc:user&#39;</span>,<span class="st">&quot;gmszone&quot;</span>)
-pipe.execute()</code></pre></div>
-<p>系统返回了<code>227.0</code>,试试别人。</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">&gt;&gt;&gt;</span> <span class="kw">pipe.zscore</span>(<span class="st">&#39;osrc:user&#39;</span>,<span class="st">&quot;dfm&quot;</span>)
-<span class="kw">&lt;redis.client.StrictPipeline</span> object at 0x104fa7f<span class="kw">50&gt;</span>
-<span class="kw">&gt;&gt;&gt;</span> <span class="kw">pipe.execute</span>()
-[<span class="kw">425.0</span>]
-<span class="kw">&gt;&gt;&gt;</span></code></pre></div>
-<p>看看主要是在哪一天提交的</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> pipe.hgetall(<span class="st">&#39;osrc:user:gmszone:day&#39;</span>)
-<span class="op">&lt;</span>redis.client.StrictPipeline <span class="bu">object</span> at <span class="bn">0x104fa7f50</span><span class="op">&gt;</span>
-<span class="op">&gt;&gt;&gt;</span> pipe.execute()
-[{<span class="st">&#39;1&#39;</span>: <span class="st">&#39;51&#39;</span>, <span class="st">&#39;0&#39;</span>: <span class="st">&#39;41&#39;</span>, <span class="st">&#39;3&#39;</span>: <span class="st">&#39;17&#39;</span>, <span class="st">&#39;2&#39;</span>: <span class="st">&#39;34&#39;</span>, <span class="st">&#39;5&#39;</span>: <span class="st">&#39;28&#39;</span>, <span class="st">&#39;4&#39;</span>: <span class="st">&#39;22&#39;</span>, <span class="st">&#39;6&#39;</span>: <span class="st">&#39;34&#39;</span>}]</code></pre></div>
-<p>结果大致如下图所示:</p>
-<figure>
-<img src="./img/smtwtfs.png" alt="SMTWTFS" /><figcaption>SMTWTFS</figcaption>
-</figure>
-<p>看看主要的事件是？</p>
-<pre><code>&gt;&gt;&gt; pipe.zrevrange(&quot;osrc:user:gmszone:event&quot;.format(&quot;gmszone&quot;), 0, -1,withscores=True)
-&lt;redis.client.StrictPipeline object at 0x104fa7f50&gt;
-&gt;&gt;&gt; pipe.execute()
-[[(&#39;PushEvent&#39;, 154.0), (&#39;CreateEvent&#39;, 41.0), (&#39;WatchEvent&#39;, 18.0), (&#39;GollumEvent&#39;, 8.0), (&#39;MemberEvent&#39;, 3.0), (&#39;ForkEvent&#39;, 2.0), (&#39;ReleaseEvent&#39;, 1.0)]]
-&gt;&gt;&gt;</code></pre>
-<figure>
-<img src="./img/main-events.png" alt="Main Event" /><figcaption>Main Event</figcaption>
-</figure>
-<p>蓝色的就是push事件，黄色的是create等等。</p>
-<p>到这里我们算是知道了OSRC的数据库部分是如何工作的。</p>
-<h4 id="redis-查询">Redis 查询</h4>
-<p>主要代码如下所示</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_vector(user, pipe<span class="op">=</span><span class="va">None</span>):
-
-    r <span class="op">=</span> redis.StrictRedis(host<span class="op">=</span><span class="st">&#39;localhost&#39;</span>, port<span class="op">=</span><span class="dv">6379</span>, db<span class="op">=</span><span class="dv">0</span>)
-    no_pipe <span class="op">=</span> <span class="va">False</span>
-    <span class="cf">if</span> pipe <span class="op">is</span> <span class="va">None</span>:
-        pipe <span class="op">=</span> pipe <span class="op">=</span> r.pipeline()
-        no_pipe <span class="op">=</span> <span class="va">True</span>
-
-    user <span class="op">=</span> user.lower()
-    pipe.zscore(get_format(<span class="st">&quot;user&quot;</span>), user)
-    pipe.hgetall(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:day&quot;</span>.<span class="bu">format</span>(user)))
-    pipe.zrevrange(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:event&quot;</span>.<span class="bu">format</span>(user)), <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>,
-                   withscores<span class="op">=</span><span class="va">True</span>)
-    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:contribution&quot;</span>.<span class="bu">format</span>(user)))
-    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:connection&quot;</span>.<span class="bu">format</span>(user)))
-    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:repo&quot;</span>.<span class="bu">format</span>(user)))
-    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:lang&quot;</span>.<span class="bu">format</span>(user)))
-    pipe.zrevrange(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:lang&quot;</span>.<span class="bu">format</span>(user)), <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>,
-                   withscores<span class="op">=</span><span class="va">True</span>)
-
-    <span class="cf">if</span> no_pipe:
-        <span class="cf">return</span> pipe.execute()</code></pre></div>
-<p>结果在上一篇中显示出来了，也就是</p>
-<pre><code>[227.0, {&#39;1&#39;: &#39;51&#39;, &#39;0&#39;: &#39;41&#39;, &#39;3&#39;: &#39;17&#39;, &#39;2&#39;: &#39;34&#39;, &#39;5&#39;: &#39;28&#39;, &#39;4&#39;: &#39;22&#39;, &#39;6&#39;: &#39;34&#39;}, [(&#39;PushEvent&#39;, 154.0), (&#39;CreateEvent&#39;, 41.0), (&#39;WatchEvent&#39;, 18.0), (&#39;GollumEvent&#39;, 8.0), (&#39;MemberEvent&#39;, 3.0), (&#39;ForkEvent&#39;, 2.0), (&#39;ReleaseEvent&#39;, 1.0)], 0, 0, 0, 11, [(&#39;CSS&#39;, 74.0), (&#39;JavaScript&#39;, 60.0), (&#39;Ruby&#39;, 12.0), (&#39;TeX&#39;, 6.0), (&#39;Python&#39;, 6.0), (&#39;Java&#39;, 5.0), (&#39;C++&#39;, 5.0), (&#39;Assembly&#39;, 5.0), (&#39;C&#39;, 3.0), (&#39;Emacs Lisp&#39;, 2.0), (&#39;Arduino&#39;, 2.0)]]</code></pre>
-<p>有意思的是在这里生成了和自己相近的人</p>
-<pre><code>[&#39;alesdokshanin&#39;, &#39;hjiawei&#39;, &#39;andrewreedy&#39;, &#39;christj6&#39;, &#39;1995eaton&#39;]</code></pre>
-<p>osrc最有意思的一部分莫过于flann，当然说的也是系统后台的设计的一个很关键及有意思的部分。</p>
-<h2 id="邻近算法与相似用户">邻近算法与相似用户</h2>
-<p>邻近算法是在这个分析过程中一个很有意思的东西。</p>
-<blockquote>
-<p>邻近算法，或者说K最近邻(kNN，k-NearestNeighbor)分类算法可以说是整个数据挖掘分类技术中最简单的方法了。所谓K最近邻，就是k个最近的邻居的意思，说的是每个样本都可以用她最接近的k个邻居来代表。</p>
-</blockquote>
-<p>换句话说，我们需要一些样本来当作我们的分析资料，这里东西用到的就是我们之前的。</p>
-<pre><code>[227.0, {&#39;1&#39;: &#39;51&#39;, &#39;0&#39;: &#39;41&#39;, &#39;3&#39;: &#39;17&#39;, &#39;2&#39;: &#39;34&#39;, &#39;5&#39;: &#39;28&#39;, &#39;4&#39;: &#39;22&#39;, &#39;6&#39;: &#39;34&#39;}, [(&#39;PushEvent&#39;, 154.0), (&#39;CreateEvent&#39;, 41.0), (&#39;WatchEvent&#39;, 18.0), (&#39;GollumEvent&#39;, 8.0), (&#39;MemberEvent&#39;, 3.0), (&#39;ForkEvent&#39;, 2.0), (&#39;ReleaseEvent&#39;, 1.0)], 0, 0, 0, 11, [(&#39;CSS&#39;, 74.0), (&#39;JavaScript&#39;, 60.0), (&#39;Ruby&#39;, 12.0), (&#39;TeX&#39;, 6.0), (&#39;Python&#39;, 6.0), (&#39;Java&#39;, 5.0), (&#39;C++&#39;, 5.0), (&#39;Assembly&#39;, 5.0), (&#39;C&#39;, 3.0), (&#39;Emacs Lisp&#39;, 2.0), (&#39;Arduino&#39;, 2.0)]]</code></pre>
-<p>在代码中是构建了一个points.h5的文件来分析每个用户的points，之后再记录到hdf5文件中。</p>
-<pre><code>[ 0.00438596  0.18061674  0.2246696   0.14977974  0.07488987  0.0969163
-    0.12334802  0.14977974  0.          0.18061674  0.          0.          0.
-    0.00881057  0.          0.          0.03524229  0.          0.
-    0.01321586  0.          0.          0.          0.6784141   0.
-    0.07929515  0.00440529  1.          1.          1.          0.08333333
-    0.26431718  0.02202643  0.05286344  0.02643172  0.          0.01321586
-    0.02202643  0.          0.          0.          0.          0.          0.
-    0.          0.          0.00881057  0.          0.          0.          0.
-    0.          0.          0.          0.          0.          0.          0.
-    0.          0.          0.          0.          0.00881057]</code></pre>
-<p>这里分析到用户的大部分行为，再找到与其行为相近的用户，主要的行为有下面这些:</p>
-<ul>
-<li>每星期的情况</li>
-<li>事件的类型</li>
-<li>贡献的数量，连接以及语言</li>
-<li>最多的语言</li>
-</ul>
-<p>osrc中用于解析的代码</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> parse_vector(results):
-    points <span class="op">=</span> np.zeros(nvector)
-    total <span class="op">=</span> <span class="bu">int</span>(results[<span class="dv">0</span>])
-
-    points[<span class="dv">0</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (total <span class="op">+</span> <span class="dv">1</span>)
-
-    <span class="co"># Week means.</span>
-    <span class="cf">for</span> k, v <span class="op">in</span> results[<span class="dv">1</span>].iteritems():
-        points[<span class="dv">1</span> <span class="op">+</span> <span class="bu">int</span>(k)] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
-
-    <span class="co"># Event types.</span>
-    n <span class="op">=</span> <span class="dv">8</span>
-    <span class="cf">for</span> k, v <span class="op">in</span> results[<span class="dv">2</span>]:
-        points[n <span class="op">+</span> evttypes.index(k)] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
-
-    <span class="co"># Number of contributions, connections and languages.</span>
-    n <span class="op">+=</span> nevts
-    points[n] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">3</span>]) <span class="op">+</span> <span class="dv">1</span>)
-    points[n <span class="op">+</span> <span class="dv">1</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">4</span>]) <span class="op">+</span> <span class="dv">1</span>)
-    points[n <span class="op">+</span> <span class="dv">2</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">5</span>]) <span class="op">+</span> <span class="dv">1</span>)
-    points[n <span class="op">+</span> <span class="dv">3</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">6</span>]) <span class="op">+</span> <span class="dv">1</span>)
-
-    <span class="co"># Top languages.</span>
-    n <span class="op">+=</span> <span class="dv">4</span>
-    <span class="cf">for</span> k, v <span class="op">in</span> results[<span class="dv">7</span>]:
-        <span class="cf">if</span> k <span class="op">in</span> langs:
-            points[n <span class="op">+</span> langs.index(k)] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
-        <span class="cf">else</span>:
-            <span class="co"># Unknown language.</span>
-            points[<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
-
-    <span class="cf">return</span> points</code></pre></div>
-<p>这样也就返回我们需要的点数，然后我们可以用<code>get_points</code>来获取这些</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_points(usernames):
-    r <span class="op">=</span> redis.StrictRedis(host<span class="op">=</span><span class="st">&#39;localhost&#39;</span>, port<span class="op">=</span><span class="dv">6379</span>, db<span class="op">=</span><span class="dv">0</span>)
-    pipe <span class="op">=</span> r.pipeline()
-
-    results <span class="op">=</span> get_vector(usernames)
-    points <span class="op">=</span> np.zeros([<span class="bu">len</span>(usernames), nvector])
-    points <span class="op">=</span> parse_vector(results)
-    <span class="cf">return</span> points</code></pre></div>
-<p>就会得到我们的相应的数据，接着找找和自己邻近的，看看结果。</p>
-<pre><code>[ 0.01298701  0.19736842  0.          0.30263158  0.21052632  0.19736842
-    0.          0.09210526  0.          0.22368421  0.01315789  0.          0.
-    0.          0.          0.          0.01315789  0.          0.
-    0.01315789  0.          0.          0.          0.73684211  0.          0.
-    0.          1.          1.          1.          0.2         0.42105263
-    0.09210526  0.          0.          0.          0.          0.23684211
-    0.          0.          0.03947368  0.          0.          0.          0.
-    0.          0.          0.          0.          0.          0.          0.
-    0.          0.          0.          0.          0.          0.          0.
-    0.          0.          0.          0.        ]</code></pre>
-<p>真看不出来两者有什么相似的地方 。。。。</p>
-<h1 id="如何以正确的姿势阅读开源软件代码">如何以“正确的姿势”阅读开源软件代码</h1>
-<blockquote>
-<p>所有让你直接看最新源码的文章都是在扯淡，你应该从“某个版本”开始阅读代码。</p>
-</blockquote>
-<p>我们并不建议所有的读者都直接看最新的代码，正确的姿势应该是：</p>
-<ul>
-<li>clone某个项目的代码到本地</li>
-<li>查看这个项目的release列表</li>
-<li>找到一个看得懂的release版本，如1.0或者更早的版本</li>
-<li>读懂上一个版本的代码</li>
-<li>向后阅读大版本的源码</li>
-<li>读最新的源码</li>
-</ul>
-<p>最好的在这个过程中，<strong>可以自己造轮子来实现一遍</strong>。</p>
-<h2 id="阅读过程">阅读过程</h2>
-<p>在我阅读的前端库、Python后台库的过程中，我们都是以造轮子为目的展开的。所以在最开始的时候，我需要一个可以工作，并且拥有我想要的功能的版本。</p>
-<figure>
-<img src="./img/it-works-cms.png" alt="it-works-cms.png" /><figcaption>it-works-cms.png</figcaption>
-</figure>
-<p>紧接着，我就可以开始去实践这个版本中的一些功能，并理解他们是怎么工作的。再用<code>git</code>大法展开之前修改的内容，可以使用IDE自带的Diff工具：</p>
-<figure>
-<img src="./img/pycharm-diff.jpg" alt="pycharm-diff.jpg" /><figcaption>pycharm-diff.jpg</figcaption>
-</figure>
-<p>或者类似于<code>SourceTree</code>这样的工具，来查看修改的内容。</p>
-<p>在我们理解了基本的核心功能后，我们就可以向后查看大、中版本的更新内容了。</p>
-<p>开始之前，我们希望大家对版本号管理有一些基本的认识。 ## 版本号管理</p>
-<p>我最早阅读的开始软件是Linux，而下面则是Linux的Release过程：</p>
-<figure>
-<img src="./img/linux-history.png" alt="linux-history.png" /><figcaption>linux-history.png</figcaption>
-</figure>
-<p>表格源自一本书叫《Linux内核0.11(0.95)完全注释》，简单地再介绍一下： - 版本0.00是一个hello,world程序 - 版本0.01包含了可以工作的代码 - 版本0.11是基本可以正常的版本</p>
-<p>这里就要扯到《GNU 风格的版本号管理策略》：</p>
-<p>1．项目初版本时，版本号可以为 0.1 或 0.1.0, 也可以为 1.0 或 1.0.0，如果你为人很低调，我想你会选择那个主版本号为 0 的方式； 2．当项目在进行了局部修改或 bug 修正时，主版本号和子版本号都不变，修正版本号加 1； 3. 当项目在原有的基础上增加了部分功能时，主版本号不变，子版本号加 1，修正版本号复位为 0，因而可以被忽略掉； 4．当项目在进行了重大修改或局部修正累积较多，而导致项目整体发生全局变化时，主版本号加 1； 5．另外，编译版本号一般是编译器在编译过程中自动生成的，我们只定义其格式，并不进行人为控制。</p>
-<p>因此，我们可以得到几个简单的结论： - 我们需要阅读最早的有核心代码的版本 - 我们需要阅读1.0版本的Release - 往后每一次大的Release我们都需要了解一下</p>
-<h2 id="示例">示例</h2>
-<p>以Flask为例：</p>
-<p>一、先Clone它。</p>
-<figure>
-<img src="./img/clone-flask.png" alt="clone-flask.png" /><figcaption>clone-flask.png</figcaption>
-</figure>
-<p>二、从Release页面找到它的早期版本：</p>
-<figure>
-<img src="./img/flask.png" alt="flask.png" /><figcaption>flask.png</figcaption>
-</figure>
-<p>三、 从上面拿到它的提交号<code>8605cc3</code>，然后checkout到这次提交，查看功能。在这个版本里，一共有六百多行代码</p>
-<figure>
-<img src="./img/flask-0.1.png" alt="flask-0.1.png" /><figcaption>flask-0.1.png</figcaption>
-</figure>
-<p>还是有点长</p>
-<p>四、我们可以找到它的最早版本:</p>
-<figure>
-<img src="./img/flask-init.png" alt="flask-init.png" /><figcaption>flask-init.png</figcaption>
-</figure>
-<p>然后查看它的<code>flask.py</code>文件，只有简单的三百多行，并且还包含一系列注释：</p>
-<figure>
-<img src="./img/flask-init.png" alt="flask-init.png" /><figcaption>flask-init.png</figcaption>
-</figure>
-<p>五、接着，再回过头去阅读</p>
-<ul>
-<li>0.1版本</li>
-<li>。。。</li>
-<li>最新的0.10.1版本</li>
-</ul>
 <h1 id="github连击">GitHub连击</h1>
 <h2 id="天">100天</h2>
 <p>我也是蛮拼的，虽然我想的只是在GitHub上连击100~200天，然而到了今天也算不错。</p>
@@ -2411,10 +2084,10 @@ pipe.execute()</code></pre></div>
 <h3 id="编程的基础能力">编程的基础能力</h3>
 <p>虽说算法很重要，但是编码才是基础能力。算法与编程在某种程度上是不同的领域，算法编程是在编程上面的一级。算法写得再好，如果别人很难直接拿来复用，在别人眼里就是shit。想出能work的代码一件简单的事，学会对其重构，使之变得更易读就是一件有意义的事。</p>
 <p>于是，在某一时刻在GitHub上创建了一个组织，叫<a href="https://github.com/artisanstack">Artisan Stack</a>。当时想的是在GitHub寻找一些JavaScript项目，对其代码进行重构。但是到底是影响力不够哈，参与的人数比较少。</p>
-<h4 id="重构-2">重构</h4>
+<h4 id="重构-1">重构</h4>
 <p>如果你懂得如何写出高可读的代码，那么我想你是不需要这个的，但是这意味着你花了更多的时候在思考上了。当谈论重构的时候，让我想起了TDD(测试驱动开发)。即使不是TDD，那么如果你写着测试，那也是可以重构的。(之前写过一些利用Intellij IDEA重构的文章：<a href="https://www.phodal.com/blog/intellij-idea-refactor-extract-method/">提炼函数</a>、<a href="https://www.phodal.com/blog/intellij-idea-refactor-replace-temp-with-query/">以查询取代临时变量</a>、<a href="https://www.phodal.com/blog/thoughtworks-refactor-and-intellij-idea/">重构与Intellij Idea初探</a>、<a href="https://www.phodal.com/blog/intellij-idea-refactor-inline-method/">内联函数</a>)</p>
 <p>在各种各样的文章里，我们看到过一些相关的内容，最好的参考莫过于《重构》一书。最基础不过的原则便是函数名，取名字很难，取别人能读懂的名字更难。其他的便有诸如长函数、过大的类、重复代码等等。在我有限的面试别人的经历里，这些问题都是最常见的。</p>
-<h4 id="测试-2">测试</h4>
+<h4 id="测试-1">测试</h4>
 <p>而如果没有测试，其他都是扯淡。写好测试很难，写个测试算是一件容易的事。只是有些容易我们会为了测试而测试。</p>
 <p>在我写<a href="https://github.com/echoesworks/echoesworks">EchoesWorks</a>和<a href="https://github.com/phodal/lan">Lan</a>的过程中，我尽量去保证足够高的测试覆盖率。</p>
 <figure>
@@ -2633,5 +2306,442 @@ pipe.execute()</code></pre></div>
 <p>不过，最好的开源项目就是自己平时用的。于是，我开始将写各种工作来提自己使用——如现在在用的这篇微信编辑工具：<a href="https://github.com/phodal/mdpub">mdpub</a>。</p>
 <p>最后，我做了一个简单的 HTML 5 动画来记录这一时刻，作为这一个里程碑的记念：</p>
 <p><a href="https://phodal.github.io/20k/" class="uri">https://phodal.github.io/20k/</a></p>
+<h1 id="github用户分析">GitHub用户分析</h1>
+<h2 id="生成图表">生成图表</h2>
+<p>如何分析用户的数据是一个有趣的问题，特别是当我们有大量的数据的时候。除了<code>matlab</code>，我们还可以用<code>numpy</code>+<code>matplotlib</code></p>
+<p>数据可以在这边寻找到</p>
+<p><a href="https://github.com/gmszone/ml" class="uri">https://github.com/gmszone/ml</a></p>
+<p>最后效果图</p>
+<figure>
+<img src="./img/2014-01-01.png" alt="2014 01 01" /><figcaption>2014 01 01</figcaption>
+</figure>
+<p>要解析的json文件位于<code>data/2014-01-01-0.json</code>，大小6.6M，显然我们可能需要用每次只读一行的策略，这足以解释为什么诸如sublime打开的时候很慢，而现在我们只需要里面的json数据中的创建时间。。</p>
+<p>==,这个文件代表什么？</p>
+<p><strong>2014年1月1日零时到一时，用户在github上的操作，这里的用户指的是很多。。一共有4814条数据，从commit、create到issues都有。</strong></p>
+<h3 id="数据解析">数据解析</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> json
+<span class="cf">for</span> line <span class="kw">in</span> <span class="bu">open</span>(jsonfile):
+    line <span class="op">=</span> f.readline()</code></pre></div>
+<p>然后再解析json</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> dateutil.parser
+
+lin <span class="op">=</span> json.loads(line)
+date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])</code></pre></div>
+<p>这里用到了<code>dateutil</code>，因为新鲜出炉的数据是string需要转换为<code>dateutil</code>，再到数据放到数组里头。最后有就有了<code>parse_data</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> parse_data(jsonfile):
+    f <span class="op">=</span> <span class="bu">open</span>(jsonfile, <span class="st">&quot;r&quot;</span>)
+    dataarray <span class="op">=</span> []
+    datacount <span class="op">=</span> <span class="dv">0</span>
+
+    <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">open</span>(jsonfile):
+        line <span class="op">=</span> f.readline()
+        lin <span class="op">=</span> json.loads(line)
+        date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
+        datacount <span class="op">+=</span> <span class="dv">1</span>
+        dataarray.append(date.minute)
+
+    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">set</span>(dataarray)]
+    f.close()
+    <span class="cf">return</span> minuteswithcount</code></pre></div>
+<p>下面这句代码就是将上面的解析为</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">set</span>(dataarray)]</code></pre></div>
+<p>这样的数组以便于解析</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">[(<span class="dv">0</span>, <span class="dv">92</span>), (<span class="dv">1</span>, <span class="dv">67</span>), (<span class="dv">2</span>, <span class="dv">86</span>), (<span class="dv">3</span>, <span class="dv">73</span>), (<span class="dv">4</span>, <span class="dv">76</span>), (<span class="dv">5</span>, <span class="dv">67</span>), (<span class="dv">6</span>, <span class="dv">61</span>), (<span class="dv">7</span>, <span class="dv">71</span>), (<span class="dv">8</span>, <span class="dv">62</span>), (<span class="dv">9</span>, <span class="dv">71</span>), (<span class="dv">10</span>, <span class="dv">70</span>), (<span class="dv">11</span>, <span class="dv">79</span>), (<span class="dv">12</span>, <span class="dv">62</span>), (<span class="dv">13</span>, <span class="dv">67</span>), (<span class="dv">14</span>, <span class="dv">76</span>), (<span class="dv">15</span>, <span class="dv">67</span>), (<span class="dv">16</span>, <span class="dv">74</span>), (<span class="dv">17</span>, <span class="dv">48</span>), (<span class="dv">18</span>, <span class="dv">78</span>), (<span class="dv">19</span>, <span class="dv">73</span>), (<span class="dv">20</span>, <span class="dv">89</span>), (<span class="dv">21</span>, <span class="dv">62</span>), (<span class="dv">22</span>, <span class="dv">74</span>), (<span class="dv">23</span>, <span class="dv">61</span>), (<span class="dv">24</span>, <span class="dv">71</span>), (<span class="dv">25</span>, <span class="dv">49</span>), (<span class="dv">26</span>, <span class="dv">59</span>), (<span class="dv">27</span>, <span class="dv">59</span>), (<span class="dv">28</span>, <span class="dv">58</span>), (<span class="dv">29</span>, <span class="dv">74</span>), (<span class="dv">30</span>, <span class="dv">69</span>), (<span class="dv">31</span>, <span class="dv">59</span>), (<span class="dv">32</span>, <span class="dv">89</span>), (<span class="dv">33</span>, <span class="dv">67</span>), (<span class="dv">34</span>, <span class="dv">66</span>), (<span class="dv">35</span>, <span class="dv">77</span>), (<span class="dv">36</span>, <span class="dv">64</span>), (<span class="dv">37</span>, <span class="dv">71</span>), (<span class="dv">38</span>, <span class="dv">75</span>), (<span class="dv">39</span>, <span class="dv">66</span>), (<span class="dv">40</span>, <span class="dv">62</span>), (<span class="dv">41</span>, <span class="dv">77</span>), (<span class="dv">42</span>, <span class="dv">82</span>), (<span class="dv">43</span>, <span class="dv">95</span>), (<span class="dv">44</span>, <span class="dv">77</span>), (<span class="dv">45</span>, <span class="dv">65</span>), (<span class="dv">46</span>, <span class="dv">59</span>), (<span class="dv">47</span>, <span class="dv">60</span>), (<span class="dv">48</span>, <span class="dv">54</span>), (<span class="dv">49</span>, <span class="dv">66</span>), (<span class="dv">50</span>, <span class="dv">74</span>), (<span class="dv">51</span>, <span class="dv">61</span>), (<span class="dv">52</span>, <span class="dv">71</span>), (<span class="dv">53</span>, <span class="dv">90</span>), (<span class="dv">54</span>, <span class="dv">64</span>), (<span class="dv">55</span>, <span class="dv">67</span>), (<span class="dv">56</span>, <span class="dv">67</span>), (<span class="dv">57</span>, <span class="dv">55</span>), (<span class="dv">58</span>, <span class="dv">68</span>), (<span class="dv">59</span>, <span class="dv">91</span>)]</code></pre></div>
+<h3 id="matplotlib">Matplotlib</h3>
+<p>开始之前需要安装``matplotlib</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> pip install matplotlib</code></pre></div>
+<p>然后引入这个库</p>
+<pre><code>  import matplotlib.pyplot as plt</code></pre>
+<p>如上面的那个结果，只需要</p>
+<pre><code class="python">
+    plt.figure(figsize=(8,4))
+    plt.plot(x, y,label = files)
+    plt.legend()
+    plt.show()
+</code></pre>
+<p>最后代码可见</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/env python</span>
+<span class="co"># -*- coding: utf-8 -*-</span>
+
+<span class="im">import</span> json
+<span class="im">import</span> dateutil.parser
+<span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> matplotlib.mlab <span class="im">as</span> mlab
+<span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+
+
+<span class="kw">def</span> parse_data(jsonfile):
+    f <span class="op">=</span> <span class="bu">open</span>(jsonfile, <span class="st">&quot;r&quot;</span>)
+    dataarray <span class="op">=</span> []
+    datacount <span class="op">=</span> <span class="dv">0</span>
+
+    <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">open</span>(jsonfile):
+        line <span class="op">=</span> f.readline()
+        lin <span class="op">=</span> json.loads(line)
+        date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
+        datacount <span class="op">+=</span> <span class="dv">1</span>
+        dataarray.append(date.minute)
+
+    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">set</span>(dataarray)]
+    f.close()
+    <span class="cf">return</span> minuteswithcount
+
+
+<span class="kw">def</span> draw_date(files):
+    x <span class="op">=</span> []
+    y <span class="op">=</span> []
+    mwcs <span class="op">=</span> parse_data(files)
+    <span class="cf">for</span> mwc <span class="kw">in</span> mwcs:
+        x.append(mwc[<span class="dv">0</span>])
+        y.append(mwc[<span class="dv">1</span>])
+
+    plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))
+    plt.plot(x, y,label <span class="op">=</span> files)
+    plt.legend()
+    plt.show()
+
+draw_date(<span class="st">&quot;data/2014-01-01-0.json&quot;</span>)</code></pre></div>
+<h2 id="每周分析">每周分析</h2>
+<p>继上篇之后，我们就可以分析用户的每周提交情况，以得出用户的真正的工具效率，每个程序员的工作时间可能是不一样的，如</p>
+<figure>
+<img src="./img/phodal-results.png" alt="Phodal Huang’s Report" /><figcaption>Phodal Huang’s Report</figcaption>
+</figure>
+<p>这是我的每周情况，显然如果把星期六移到前面的话，随着工作时间的增长，在github上的使用在下降，作为一个</p>
+<pre><code>  a fulltime hacker who works best in the evening (around 8 pm).</code></pre>
+<p>不过这个是osrc的分析结果。</p>
+<h3 id="python-github-每周情况分析">python github 每周情况分析</h3>
+<p>看一张分析后的结果</p>
+<figure>
+<img src="./img/feb-results.png" alt="Feb Results" /><figcaption>Feb Results</figcaption>
+</figure>
+<p>结果正好与我的情况相反？似乎图上是这么说的，但是数据上是这样的情况。</p>
+<pre><code>data
+├── 2014-01-01-0.json
+├── 2014-02-01-0.json
+├── 2014-02-02-0.json
+├── 2014-02-03-0.json
+├── 2014-02-04-0.json
+├── 2014-02-05-0.json
+├── 2014-02-06-0.json
+├── 2014-02-07-0.json
+├── 2014-02-08-0.json
+├── 2014-02-09-0.json
+├── 2014-02-10-0.json
+├── 2014-02-11-0.json
+├── 2014-02-12-0.json
+├── 2014-02-13-0.json
+├── 2014-02-14-0.json
+├── 2014-02-15-0.json
+├── 2014-02-16-0.json
+├── 2014-02-17-0.json
+├── 2014-02-18-0.json
+├── 2014-02-19-0.json
+└── 2014-02-20-0.json</code></pre>
+<p>我们获取是每天晚上0点时的情况，至于为什么是0点，我想这里的数据量可能会比较少。除去1月1号的情况，就是上面的结果，在只有一周的情况时，总会以为因为在国内那时是假期，但是总觉得不是很靠谱，国内的程序员虽然很多，会在github上活跃的可能没有那么多，直至列出每一周的数据时。</p>
+<pre><code>  6570, 7420, 11274, 12073, 12160, 12378, 12897,
+  8474, 7984, 12933, 13504, 13763, 13544, 12940,
+  7119, 7346, 13412, 14008, 12555</code></pre>
+<h3 id="python-数据分析">Python 数据分析</h3>
+<p>重写了一个新的方法用于计算提交数，直至后面才意识到其实我们可以算行数就够了，但是方法上有点hack</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_minutes_counts_with_id(jsonfile):
+    datacount, dataarray <span class="op">=</span> handle_json(jsonfile)
+    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">set</span>(dataarray)]
+    <span class="cf">return</span> minuteswithcount
+
+
+<span class="kw">def</span> handle_json(jsonfile):
+    f <span class="op">=</span> <span class="bu">open</span>(jsonfile, <span class="st">&quot;r&quot;</span>)
+    dataarray <span class="op">=</span> []
+    datacount <span class="op">=</span> <span class="dv">0</span>
+
+    <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">open</span>(jsonfile):
+        line <span class="op">=</span> f.readline()
+        lin <span class="op">=</span> json.loads(line)
+        date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
+        datacount <span class="op">+=</span> <span class="dv">1</span>
+        dataarray.append(date.minute)
+
+    f.close()
+    <span class="cf">return</span> datacount, dataarray
+
+
+<span class="kw">def</span> get_minutes_count_num(jsonfile):
+    datacount, dataarray <span class="op">=</span> handle_json(jsonfile)
+    <span class="cf">return</span> datacount
+
+
+<span class="kw">def</span> get_month_total():
+    <span class="co">&quot;&quot;&quot;</span>
+
+<span class="co">    :rtype : object</span>
+<span class="co">    &quot;&quot;&quot;</span>
+    monthdaycount <span class="op">=</span> []
+    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">20</span>):
+        <span class="cf">if</span> i <span class="op">&lt;</span> <span class="dv">10</span>:
+            filename <span class="op">=</span> <span class="st">&#39;data/2014-02-0&#39;</span> <span class="op">+</span> i.<span class="fu">__str__</span>() <span class="op">+</span> <span class="st">&#39;-0.json&#39;</span>
+        <span class="cf">else</span>:
+            filename <span class="op">=</span> <span class="st">&#39;data/2014-02-&#39;</span> <span class="op">+</span> i.<span class="fu">__str__</span>() <span class="op">+</span> <span class="st">&#39;-0.json&#39;</span>
+        monthdaycount.append(get_minutes_count_num(filename))
+    <span class="cf">return</span> monthdaycount</code></pre></div>
+<p>接着我们需要去遍历每个结果，后面的后面会发现这个效率真的是太低了，为什么木有多线程？</p>
+<h3 id="python-matplotlib图表">Python Matplotlib图表</h3>
+<p>让我们的matplotlib来做这些图表的工作</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:
+    results <span class="op">=</span> pd.get_month_total()
+    <span class="bu">print</span> results
+
+    plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))
+    plt.plot(results.<span class="fu">__getslice__</span>(<span class="dv">0</span>, <span class="dv">7</span>), label<span class="op">=</span><span class="st">&quot;first week&quot;</span>)
+    plt.plot(results.<span class="fu">__getslice__</span>(<span class="dv">7</span>, <span class="dv">14</span>), label<span class="op">=</span><span class="st">&quot;second week&quot;</span>)
+    plt.plot(results.<span class="fu">__getslice__</span>(<span class="dv">14</span>, <span class="dv">21</span>), label<span class="op">=</span><span class="st">&quot;third week&quot;</span>)
+    plt.legend()
+    plt.show()</code></pre></div>
+<p>蓝色的是第一周，绿色的是第二周，红色的是第三周就有了上面的结果。</p>
+<p>我们还需要优化方法，以及多线程的支持。</p>
+<p>让我们分析之前的程序，然后再想办法做出优化。网上看到一篇文章<a href="http://www.huyng.com/posts/python-performance-analysis/" class="uri">http://www.huyng.com/posts/python-performance-analysis/</a>讲的就是分析这部分内容的。</p>
+<h2 id="存储到数据库中">存储到数据库中</h2>
+<h3 id="sqlite3">SQLite3</h3>
+<p>我们创建了一个名为<code>userdata.db</code>的数据库文件，然后创建了一个表，里面有owner,language,eventtype,name url</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> init_db():
+    conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;userdata.db&#39;</span>)
+    c <span class="op">=</span> conn.cursor()
+    c.execute(<span class="st">&#39;&#39;&#39;CREATE TABLE userinfo (owner text, language text, eventtype text, name text, url text)&#39;&#39;&#39;</span>)</code></pre></div>
+<p>接着我们就可以查询数据，这里从结果讲起。</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_count(username):
+    count <span class="op">=</span> <span class="dv">0</span>
+    userinfo <span class="op">=</span> []
+    condition <span class="op">=</span> <span class="st">&#39;select * from userinfo where owener = </span><span class="ch">\&#39;</span><span class="st">&#39;</span> <span class="op">+</span> <span class="bu">str</span>(username) <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\&#39;</span><span class="st">&#39;</span>
+    <span class="cf">for</span> zero <span class="kw">in</span> c.execute(condition):
+        count <span class="op">+=</span> <span class="dv">1</span>
+        userinfo.append(zero)
+
+    <span class="cf">return</span> count, userinfo</code></pre></div>
+<p>当我查询<code>gmszone</code>的时候，也就是我自己就会有如下的结果</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">(</span><span class="ex">u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;ForkEvent&#39;</span>, u<span class="st">&#39;RESUME&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/RESUME&#39;</span><span class="kw">)</span>
+<span class="kw">(</span><span class="ex">u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;WatchEvent&#39;</span>, u<span class="st">&#39;iot-dashboard&#39;</span>, u<span class="st">&#39;JavaScript&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-dashboard&#39;</span><span class="kw">)</span>
+<span class="kw">(</span><span class="ex">u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;wechat-wordpress&#39;</span>, u<span class="st">&#39;Ruby&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/wechat-wordpress&#39;</span><span class="kw">)</span>
+<span class="kw">(</span><span class="ex">u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;WatchEvent&#39;</span>, u<span class="st">&#39;iot&#39;</span>, u<span class="st">&#39;JavaScript&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot&#39;</span><span class="kw">)</span>
+<span class="kw">(</span><span class="ex">u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;CreateEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;None&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="kw">(</span><span class="ex">u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;CreateEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;None&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="kw">(</span><span class="ex">u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="kw">(</span><span class="ex">u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="kw">(</span><span class="ex">u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="ex">109</span></code></pre></div>
+<p>一共有109个事件，有<code>Watch</code>,<code>Create</code>,<code>Push</code>,<code>Fork</code>还有其他的， 项目主要有<code>iot</code>,<code>RESUME</code>,<code>iot-dashboard</code>,<code>wechat-wordpress</code>, 接着就是语言了，<code>Tex</code>,<code>Javascript</code>,<code>Ruby</code>,接着就是项目的url了。</p>
+<p>值得注意的是。</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">-rw-r--r--</span>   1 fdhuang staff 905M Apr 12 14:59 userdata.db</code></pre></div>
+<p>这个数据库文件有<strong>905M</strong>，不过查询结果相当让人满意，至少相对于原来的结果来说。</p>
+<p>Python自带了对SQLite3的支持，然而我们还需要安装SQLite3</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">brew</span> install sqlite3</code></pre></div>
+<p>或者是</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> port install sqlite3</code></pre></div>
+<p>或者是Ubuntu的</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt-get install sqlite3</code></pre></div>
+<p>openSUSE自然就是</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> zypper install sqlite3</code></pre></div>
+<p>不过，用yast2也很不错，不是么。。</p>
+<h3 id="数据导入">数据导入</h3>
+<p>需要注意的是这里是需要python2.7，起源于对gzip的上下文管理器的支持问题</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> handle_gzip_file(filename):
+    userinfo <span class="op">=</span> []
+    <span class="cf">with</span> gzip.GzipFile(filename) <span class="im">as</span> f:
+        events <span class="op">=</span> [line.decode(<span class="st">&quot;utf-8&quot;</span>, errors<span class="op">=</span><span class="st">&quot;ignore&quot;</span>) <span class="cf">for</span> line <span class="kw">in</span> f]
+
+        <span class="cf">for</span> n, line <span class="kw">in</span> <span class="bu">enumerate</span>(events):
+            <span class="cf">try</span>:
+                event <span class="op">=</span> json.loads(line)
+            <span class="cf">except</span>:
+
+                <span class="cf">continue</span>
+
+            actor <span class="op">=</span> event[<span class="st">&quot;actor&quot;</span>]
+            attrs <span class="op">=</span> event.get(<span class="st">&quot;actor_attributes&quot;</span>, {})
+            <span class="cf">if</span> actor <span class="kw">is</span> <span class="va">None</span> <span class="kw">or</span> attrs.get(<span class="st">&quot;type&quot;</span>) <span class="op">!=</span> <span class="st">&quot;User&quot;</span>:
+                <span class="cf">continue</span>
+
+            key <span class="op">=</span> actor.lower()
+
+            repo <span class="op">=</span> event.get(<span class="st">&quot;repository&quot;</span>, {})
+            info <span class="op">=</span> <span class="bu">str</span>(repo.get(<span class="st">&quot;owner&quot;</span>)), <span class="bu">str</span>(repo.get(<span class="st">&quot;language&quot;</span>)), <span class="bu">str</span>(event[<span class="st">&quot;type&quot;</span>]), <span class="bu">str</span>(repo.get(<span class="st">&quot;name&quot;</span>)), <span class="bu">str</span>(
+                repo.get(<span class="st">&quot;url&quot;</span>))
+            userinfo.append(info)
+
+    <span class="cf">return</span> userinfo
+
+<span class="kw">def</span> build_db_with_gzip():
+    init_db()
+    conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;userdata.db&#39;</span>)
+    c <span class="op">=</span> conn.cursor()
+
+    year <span class="op">=</span> <span class="dv">2014</span>
+    month <span class="op">=</span> <span class="dv">3</span>
+
+    <span class="cf">for</span> day <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">31</span>):
+        date_re <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&quot;([0-9]</span><span class="sc">{4}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]+)\.json.gz&quot;</span>)
+
+        fn_template <span class="op">=</span> os.path.join(<span class="st">&quot;march&quot;</span>,
+                                   <span class="co">&quot;{year}-{month:02d}-{day:02d}-{n}.json.gz&quot;</span>)
+        kwargs <span class="op">=</span> {<span class="st">&quot;year&quot;</span>: year, <span class="st">&quot;month&quot;</span>: month, <span class="st">&quot;day&quot;</span>: day, <span class="st">&quot;n&quot;</span>: <span class="st">&quot;*&quot;</span>}
+        filenames <span class="op">=</span> glob.glob(fn_template.<span class="bu">format</span>(<span class="op">**</span>kwargs))
+
+        <span class="cf">for</span> filename <span class="kw">in</span> filenames:
+            c.executemany(<span class="st">&#39;INSERT INTO userinfo VALUES (?,?,?,?,?)&#39;</span>, handle_gzip_file(filename))
+
+    conn.commit()
+    c.close()</code></pre></div>
+<p><code>executemany</code>可以插入多条数据，对于我们的数据来说，一小时的文件大概有五六千个会符合我们上面的安装，也就是有<code>actor</code>又有<code>type</code>才是我们需要记录的数据，我们只需要统计用户的那些事件，而非全部的事件。</p>
+<p>我们需要去遍历文件，然后找到合适的部分，这里只是要找<code>2014-03-01</code>到<code>2014-03-31</code>的全部事件，而光这些数据的gz文件就有1.26G，同上面那些解压为json文件显得不合适，只能用遍历来处理。</p>
+<p>这里参考了osrc项目中的写法，或者说直接复制过来。</p>
+<p>首先是正规匹配</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">date_re <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&quot;([0-9]</span><span class="sc">{4}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]+)\.json.gz&quot;</span>)</code></pre></div>
+<p>不过主要的还是在于<code>glob.glob</code></p>
+<blockquote>
+<p>glob是python自己带的一个文件操作相关模块，用它可以查找符合自己目的的文件，就类似于Windows下的文件搜索，支持通配符操作。</p>
+</blockquote>
+<p>这里也就用上了<code>gzip.GzipFile</code>又一个不错的东西。</p>
+<p>最后代码可以见</p>
+<p><a href="http://github.com/gmszone/ml">github.com/gmszone/ml</a></p>
+<p>更好的方案？</p>
+<h3 id="redis">Redis</h3>
+<p>查询用户事件总数</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> redis
+r <span class="op">=</span> redis.StrictRedis(host<span class="op">=</span><span class="st">&#39;localhost&#39;</span>, port<span class="op">=</span><span class="dv">6379</span>, db<span class="op">=</span><span class="dv">0</span>)
+pipe <span class="op">=</span> pipe <span class="op">=</span> r.pipeline()
+pipe.zscore(<span class="st">&#39;osrc:user&#39;</span>,<span class="st">&quot;gmszone&quot;</span>)
+pipe.execute()</code></pre></div>
+<p>系统返回了<code>227.0</code>,试试别人。</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&gt;&gt;&gt;</span> <span class="ex">pipe.zscore</span>(<span class="st">&#39;osrc:user&#39;</span>,<span class="st">&quot;dfm&quot;</span>)
+<span class="op">&lt;</span><span class="ex">redis.client.StrictPipeline</span> object at 0x104fa7f<span class="op">50&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">pipe.execute</span>()
+[<span class="ex">425.0</span>]
+<span class="op">&gt;&gt;&gt;</span></code></pre></div>
+<p>看看主要是在哪一天提交的</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> pipe.hgetall(<span class="st">&#39;osrc:user:gmszone:day&#39;</span>)
+<span class="op">&lt;</span>redis.client.StrictPipeline <span class="bu">object</span> at <span class="bn">0x104fa7f50</span><span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> pipe.execute()
+[{<span class="st">&#39;1&#39;</span>: <span class="st">&#39;51&#39;</span>, <span class="st">&#39;0&#39;</span>: <span class="st">&#39;41&#39;</span>, <span class="st">&#39;3&#39;</span>: <span class="st">&#39;17&#39;</span>, <span class="st">&#39;2&#39;</span>: <span class="st">&#39;34&#39;</span>, <span class="st">&#39;5&#39;</span>: <span class="st">&#39;28&#39;</span>, <span class="st">&#39;4&#39;</span>: <span class="st">&#39;22&#39;</span>, <span class="st">&#39;6&#39;</span>: <span class="st">&#39;34&#39;</span>}]</code></pre></div>
+<p>结果大致如下图所示:</p>
+<figure>
+<img src="./img/smtwtfs.png" alt="SMTWTFS" /><figcaption>SMTWTFS</figcaption>
+</figure>
+<p>看看主要的事件是？</p>
+<pre><code>&gt;&gt;&gt; pipe.zrevrange(&quot;osrc:user:gmszone:event&quot;.format(&quot;gmszone&quot;), 0, -1,withscores=True)
+&lt;redis.client.StrictPipeline object at 0x104fa7f50&gt;
+&gt;&gt;&gt; pipe.execute()
+[[(&#39;PushEvent&#39;, 154.0), (&#39;CreateEvent&#39;, 41.0), (&#39;WatchEvent&#39;, 18.0), (&#39;GollumEvent&#39;, 8.0), (&#39;MemberEvent&#39;, 3.0), (&#39;ForkEvent&#39;, 2.0), (&#39;ReleaseEvent&#39;, 1.0)]]
+&gt;&gt;&gt;</code></pre>
+<figure>
+<img src="./img/main-events.png" alt="Main Event" /><figcaption>Main Event</figcaption>
+</figure>
+<p>蓝色的就是push事件，黄色的是create等等。</p>
+<p>到这里我们算是知道了OSRC的数据库部分是如何工作的。</p>
+<h4 id="redis-查询">Redis 查询</h4>
+<p>主要代码如下所示</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_vector(user, pipe<span class="op">=</span><span class="va">None</span>):
+
+    r <span class="op">=</span> redis.StrictRedis(host<span class="op">=</span><span class="st">&#39;localhost&#39;</span>, port<span class="op">=</span><span class="dv">6379</span>, db<span class="op">=</span><span class="dv">0</span>)
+    no_pipe <span class="op">=</span> <span class="va">False</span>
+    <span class="cf">if</span> pipe <span class="kw">is</span> <span class="va">None</span>:
+        pipe <span class="op">=</span> pipe <span class="op">=</span> r.pipeline()
+        no_pipe <span class="op">=</span> <span class="va">True</span>
+
+    user <span class="op">=</span> user.lower()
+    pipe.zscore(get_format(<span class="st">&quot;user&quot;</span>), user)
+    pipe.hgetall(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:day&quot;</span>.<span class="bu">format</span>(user)))
+    pipe.zrevrange(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:event&quot;</span>.<span class="bu">format</span>(user)), <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>,
+                   withscores<span class="op">=</span><span class="va">True</span>)
+    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:contribution&quot;</span>.<span class="bu">format</span>(user)))
+    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:connection&quot;</span>.<span class="bu">format</span>(user)))
+    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:repo&quot;</span>.<span class="bu">format</span>(user)))
+    pipe.zcard(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:lang&quot;</span>.<span class="bu">format</span>(user)))
+    pipe.zrevrange(get_format(<span class="st">&quot;user:</span><span class="sc">{0}</span><span class="st">:lang&quot;</span>.<span class="bu">format</span>(user)), <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>,
+                   withscores<span class="op">=</span><span class="va">True</span>)
+
+    <span class="cf">if</span> no_pipe:
+        <span class="cf">return</span> pipe.execute()</code></pre></div>
+<p>结果在上一篇中显示出来了，也就是</p>
+<pre><code>[227.0, {&#39;1&#39;: &#39;51&#39;, &#39;0&#39;: &#39;41&#39;, &#39;3&#39;: &#39;17&#39;, &#39;2&#39;: &#39;34&#39;, &#39;5&#39;: &#39;28&#39;, &#39;4&#39;: &#39;22&#39;, &#39;6&#39;: &#39;34&#39;}, [(&#39;PushEvent&#39;, 154.0), (&#39;CreateEvent&#39;, 41.0), (&#39;WatchEvent&#39;, 18.0), (&#39;GollumEvent&#39;, 8.0), (&#39;MemberEvent&#39;, 3.0), (&#39;ForkEvent&#39;, 2.0), (&#39;ReleaseEvent&#39;, 1.0)], 0, 0, 0, 11, [(&#39;CSS&#39;, 74.0), (&#39;JavaScript&#39;, 60.0), (&#39;Ruby&#39;, 12.0), (&#39;TeX&#39;, 6.0), (&#39;Python&#39;, 6.0), (&#39;Java&#39;, 5.0), (&#39;C++&#39;, 5.0), (&#39;Assembly&#39;, 5.0), (&#39;C&#39;, 3.0), (&#39;Emacs Lisp&#39;, 2.0), (&#39;Arduino&#39;, 2.0)]]</code></pre>
+<p>有意思的是在这里生成了和自己相近的人</p>
+<pre><code>[&#39;alesdokshanin&#39;, &#39;hjiawei&#39;, &#39;andrewreedy&#39;, &#39;christj6&#39;, &#39;1995eaton&#39;]</code></pre>
+<p>osrc最有意思的一部分莫过于flann，当然说的也是系统后台的设计的一个很关键及有意思的部分。</p>
+<h2 id="邻近算法与相似用户">邻近算法与相似用户</h2>
+<p>邻近算法是在这个分析过程中一个很有意思的东西。</p>
+<blockquote>
+<p>邻近算法，或者说K最近邻(kNN，k-NearestNeighbor)分类算法可以说是整个数据挖掘分类技术中最简单的方法了。所谓K最近邻，就是k个最近的邻居的意思，说的是每个样本都可以用她最接近的k个邻居来代表。</p>
+</blockquote>
+<p>换句话说，我们需要一些样本来当作我们的分析资料，这里东西用到的就是我们之前的。</p>
+<pre><code>[227.0, {&#39;1&#39;: &#39;51&#39;, &#39;0&#39;: &#39;41&#39;, &#39;3&#39;: &#39;17&#39;, &#39;2&#39;: &#39;34&#39;, &#39;5&#39;: &#39;28&#39;, &#39;4&#39;: &#39;22&#39;, &#39;6&#39;: &#39;34&#39;}, [(&#39;PushEvent&#39;, 154.0), (&#39;CreateEvent&#39;, 41.0), (&#39;WatchEvent&#39;, 18.0), (&#39;GollumEvent&#39;, 8.0), (&#39;MemberEvent&#39;, 3.0), (&#39;ForkEvent&#39;, 2.0), (&#39;ReleaseEvent&#39;, 1.0)], 0, 0, 0, 11, [(&#39;CSS&#39;, 74.0), (&#39;JavaScript&#39;, 60.0), (&#39;Ruby&#39;, 12.0), (&#39;TeX&#39;, 6.0), (&#39;Python&#39;, 6.0), (&#39;Java&#39;, 5.0), (&#39;C++&#39;, 5.0), (&#39;Assembly&#39;, 5.0), (&#39;C&#39;, 3.0), (&#39;Emacs Lisp&#39;, 2.0), (&#39;Arduino&#39;, 2.0)]]</code></pre>
+<p>在代码中是构建了一个points.h5的文件来分析每个用户的points，之后再记录到hdf5文件中。</p>
+<pre><code>[ 0.00438596  0.18061674  0.2246696   0.14977974  0.07488987  0.0969163
+    0.12334802  0.14977974  0.          0.18061674  0.          0.          0.
+    0.00881057  0.          0.          0.03524229  0.          0.
+    0.01321586  0.          0.          0.          0.6784141   0.
+    0.07929515  0.00440529  1.          1.          1.          0.08333333
+    0.26431718  0.02202643  0.05286344  0.02643172  0.          0.01321586
+    0.02202643  0.          0.          0.          0.          0.          0.
+    0.          0.          0.00881057  0.          0.          0.          0.
+    0.          0.          0.          0.          0.          0.          0.
+    0.          0.          0.          0.          0.00881057]</code></pre>
+<p>这里分析到用户的大部分行为，再找到与其行为相近的用户，主要的行为有下面这些:</p>
+<ul>
+<li>每星期的情况</li>
+<li>事件的类型</li>
+<li>贡献的数量，连接以及语言</li>
+<li>最多的语言</li>
+</ul>
+<p>osrc中用于解析的代码</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> parse_vector(results):
+    points <span class="op">=</span> np.zeros(nvector)
+    total <span class="op">=</span> <span class="bu">int</span>(results[<span class="dv">0</span>])
+
+    points[<span class="dv">0</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (total <span class="op">+</span> <span class="dv">1</span>)
+
+    <span class="co"># Week means.</span>
+    <span class="cf">for</span> k, v <span class="kw">in</span> results[<span class="dv">1</span>].iteritems():
+        points[<span class="dv">1</span> <span class="op">+</span> <span class="bu">int</span>(k)] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
+
+    <span class="co"># Event types.</span>
+    n <span class="op">=</span> <span class="dv">8</span>
+    <span class="cf">for</span> k, v <span class="kw">in</span> results[<span class="dv">2</span>]:
+        points[n <span class="op">+</span> evttypes.index(k)] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
+
+    <span class="co"># Number of contributions, connections and languages.</span>
+    n <span class="op">+=</span> nevts
+    points[n] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">3</span>]) <span class="op">+</span> <span class="dv">1</span>)
+    points[n <span class="op">+</span> <span class="dv">1</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">4</span>]) <span class="op">+</span> <span class="dv">1</span>)
+    points[n <span class="op">+</span> <span class="dv">2</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">5</span>]) <span class="op">+</span> <span class="dv">1</span>)
+    points[n <span class="op">+</span> <span class="dv">3</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (<span class="bu">float</span>(results[<span class="dv">6</span>]) <span class="op">+</span> <span class="dv">1</span>)
+
+    <span class="co"># Top languages.</span>
+    n <span class="op">+=</span> <span class="dv">4</span>
+    <span class="cf">for</span> k, v <span class="kw">in</span> results[<span class="dv">7</span>]:
+        <span class="cf">if</span> k <span class="kw">in</span> langs:
+            points[n <span class="op">+</span> langs.index(k)] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
+        <span class="cf">else</span>:
+            <span class="co"># Unknown language.</span>
+            points[<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
+
+    <span class="cf">return</span> points</code></pre></div>
+<p>这样也就返回我们需要的点数，然后我们可以用<code>get_points</code>来获取这些</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_points(usernames):
+    r <span class="op">=</span> redis.StrictRedis(host<span class="op">=</span><span class="st">&#39;localhost&#39;</span>, port<span class="op">=</span><span class="dv">6379</span>, db<span class="op">=</span><span class="dv">0</span>)
+    pipe <span class="op">=</span> r.pipeline()
+
+    results <span class="op">=</span> get_vector(usernames)
+    points <span class="op">=</span> np.zeros([<span class="bu">len</span>(usernames), nvector])
+    points <span class="op">=</span> parse_vector(results)
+    <span class="cf">return</span> points</code></pre></div>
+<p>就会得到我们的相应的数据，接着找找和自己邻近的，看看结果。</p>
+<pre><code>[ 0.01298701  0.19736842  0.          0.30263158  0.21052632  0.19736842
+    0.          0.09210526  0.          0.22368421  0.01315789  0.          0.
+    0.          0.          0.          0.01315789  0.          0.
+    0.01315789  0.          0.          0.          0.73684211  0.          0.
+    0.          1.          1.          1.          0.2         0.42105263
+    0.09210526  0.          0.          0.          0.          0.23684211
+    0.          0.          0.03947368  0.          0.          0.          0.
+    0.          0.          0.          0.          0.          0.          0.
+    0.          0.          0.          0.          0.          0.          0.
+    0.          0.          0.          0.        ]</code></pre>
+<p>真看不出来两者有什么相似的地方 。。。。</p>
 </body>
 </html>
