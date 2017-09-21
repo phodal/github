@@ -1,5 +1,6 @@
 
-#前言
+前言
+===
 
 我的GitHub主页上写着加入的时间——``Joined on Nov 8, 2010``，那时才大一，在那之后的那么长的日子里我都没有登录过。也许是因为我学的不是计算机，到了今天——``2015.3.9``，我才发现这其实是程序员的社交网站。
 
@@ -7,7 +8,7 @@
 
 在这里，我会试着将我在GitHub上学到的东西一一分享出来。
 
-##我与GitHub的故事
+## 我与GitHub的故事
 
 在我大四找工作的时候，试图去寻找一份硬件、物联网相关的工作(ps: 专业是电子信息工程)。尽管简历上写得满满的各种经历、经验，然而并没有卵用。跑了几场校园招聘会后，十份简历(ps: 事先已经有心里准备)一个也没有投出去——因为学校直接被拒。我对霸面什么的一点兴趣都没有，千里马需要伯乐。后来，我加入了[Martin Flower](https://martinfowler.com/)所在的公司，当然这是后话了。
 
@@ -21,7 +22,7 @@
 4. 快速构建大型应用
 5. 构建通用的框架
 
-###GitHub与收获
+### GitHub与收获
 
 先说说**与技能无关的收获**吧，毕业设计做的是一个《[最小物联网系统](https://github.com/phodal/iot)》，考虑到我们专业老师没有这方面知识，答辩时会带来问题，尽量往这方面靠拢。当我毕业后，这个项目已经有过百个star了，这样易上手的东西还是比较受欢迎的(ps: 不过这种硬件相关的项目通常受限于GitHub上硬件开发工程师比较少的困扰)。
 
@@ -37,7 +38,7 @@
 
 这些告诉我们，GitHub上找一个你擅长的主题，那么会有很多人找上你的。
 
-###GitHub与成长
+### GitHub与成长
 
 过去写过一篇《[如何通过github提升自己](http://www.phodal.com/blog/use-github-grow-self/)》的文章，现在只想说三点:
 
@@ -55,11 +56,11 @@
 
 然后就会相信: **那些没有写测试的项目都是在耍流氓**
 
-##为什么你应该深入GitHub
+## 为什么你应该深入GitHub
 
 上面我们说的都是我们可以收获到的东西，我们开始尝试就意味着我们知道它可能给我们带来好处。上面已经提到很多可以提升自己的例子了，这里再说说其他的。
 
-###方便工作
+### 方便工作
 
 我们可以从中获取到不同的知识、内容、信息。每个人都可以从别人的代码中学习，当我们需要构建一个库的时候，我们可以在上面寻找不同的库和代码来实现我们的功能。如当我在实现一个库的时候，我会在GitHub上找到相应的组件:
 
@@ -69,24 +70,24 @@
 - Router 用来控制页面的路由
 - Ajax 基本的Ajax Get/Post请求
 
-###获得一份工作
+### 获得一份工作
 
 越来越多的人因为GitHub获得工作，因为他们的做的东西正好符合一些公司的要求。那么，这些公司在寻找代码的时候，就会试着邀请他们。
 
 因而，在GitHub寻找合适的候选人，已经是一种趋势。
 
-###扩大交际
+### 扩大交际
 
 如果我们想创造出更好、强大地框架时，那么认识更多的人可能会带来更多的帮助。有时候会同上面那一点一样的效果 
-
----
 
 创建开源项目
 ===
 
+人们创建
 
 取一个好的名字
 ---
+
 
 
 挑选好 LICENSE
@@ -96,8 +97,12 @@
 官方主页
 ---
 
-GitHub Pages
+一个好的例子是 GitHub Pages
 
+
+
+
+然后，创建
 
 # Git基本知识与GitHub使用
 
@@ -859,8 +864,6 @@ SQLiteHelper.prototype.getData = function (url, callback) {
 
 重构完后的代码比原来还长，这似乎是个问题~~
 
- ---
-
 Git 提交信息及几种不同的规范
 ===
 
@@ -1057,7 +1060,7 @@ React.render(
 
 代码及setup请见github: [js-refactor](https://github.com/artisanstack/js-refactor)
 
-###代码说明
+### 代码说明
 
 ``uMarkdown``是一个用于将Markdown转化为HTML的库。代码看上去就像一个很典型的过程代码:
 
@@ -1180,7 +1183,7 @@ str = tableHandler(str, execStr, strict);
 
 是时候讨论这个Refactor利器了，最初看到这个重构的过程是从ThoughtWorks郑大晔校开始的，只是之前对于Java的另外一个编辑器Eclipse的坏感。。这些在目前已经不是很重要了，试试这个公司里面应用广泛的编辑器。
 
-##Intellij Idea重构
+## Intellij Idea重构
 
 开发的流程大致就是这样子的，测试先行算是推荐的。
 
@@ -1208,7 +1211,7 @@ public class Main {
 	
 代码写得还好(自我感觉)，先不管Cal和Cal2两个类。大部分都能看懂，除了c,d不知道他们表达的是什么意思，于是。
 
-###Rename
+### Rename
 
 **快捷键:Shift+F6**
 
@@ -1234,7 +1237,7 @@ public class Main {
 }
 ```
 	
-###Extract Method
+### Extract Method
 
 **快捷键:alt+command+m**
 
@@ -1262,7 +1265,7 @@ private static void mprint(int result_sub) {
     
 似乎我们不应该这样对待System.out.println，那么让我们内联回去
 
-###Inline Method
+### Inline Method
 
 **快捷键:alt+command+n**
 
@@ -1286,7 +1289,7 @@ public static void main(String[] args) {
 
 似乎这个例子不是很好，但是够用来说明了。
 
-###Pull Members Up
+### Pull Members Up
 
 开始之前让我们先看看Cal2类:
 
@@ -1328,7 +1331,7 @@ public class Cal {
 	
 而我们所要做的就是鼠标右键
 
-###重构之以查询取代临时变量
+### 重构之以查询取代临时变量
 
 快捷键
 
@@ -1361,7 +1364,7 @@ public class replaceTemp {
 }
 ```
 
-####重构
+#### 重构
 
 选中``basePrice``很愉快地拿鼠标点上面的重构
 
@@ -1437,11 +1440,9 @@ public class replaceTemp {
 }
 ```
 
----
-
 # 改善 GitHub 项目代码质量：测试
 
-##TDD
+## TDD
 
 虽然接触的TDD时间不算短，然而真正在实践TDD上的时候少之又少。除去怎么教人TDD，就是与人结对编程时的switch，或许是受限于当前的开发流程。
 
@@ -1494,7 +1495,7 @@ req.end();
 	
 写完测试脚本后发现不对了，这个不应该是测试的代码吗? 于是将其放到了spec中，接着发现了上面的全部功能的实现过程为什么不用TDD实现呢？
 
-###说说TDD
+### 说说TDD
 
 测试驱动开发是一个很"古老"的程序开发方法，然而由于国内的开发流程的问题——即开发人员负责功能的测试，导致这么好的一项技术没有在国内推广。
 
@@ -1510,7 +1511,7 @@ req.end();
 1. 已经有了原型
 2. 框架设计
 
-###TDD思考
+### TDD思考
 
 通常在我的理解下，TDD是可有可无的。既然我知道了我要实现的大部分功能，而且我也知道如何实现。与此同时，对Code Smell也保持着警惕、要保证功能被测试覆盖。那么，总的来说TDD带来的价值并不大。
 
@@ -1519,9 +1520,9 @@ req.end();
 在这种理想的情况下，我们为什么不TDD呢?
 
 
-##功能测试
+## 功能测试
 
-###轻量级网站测试TWill
+### 轻量级网站测试TWill
 
 > twill was initially designed for testing Web sites, although since then people have also figured out that it's good for browsing unsuspecting Web sites.
 
@@ -1632,7 +1633,7 @@ req.end();
 
 一个成功的测试诞生了。
 
-##Fake Server
+## Fake Server
 
 实践了一下怎么用sinon去fake server，还没用respondWith，于是写一下。
 
@@ -1655,7 +1656,7 @@ req.end();
 		);
 	});
 
-于是在afterEach的时候，我们需要恢复这个server。
+于是在 afterEach 的时候，我们需要恢复这个server。
 
 	afterEach(function() {
 		this.server.restore();
@@ -1676,8 +1677,7 @@ req.end();
 				.toEqual(data);
 		});
 	});
-	
----
+
 
 如何推广
 ===
@@ -2504,7 +2504,8 @@ def get_points(usernames):
 
 真看不出来两者有什么相似的地方 。。。。  
 
-# 如何在GitHub"寻找灵感(fork)"
+如何在GitHub"寻找灵感(fork)"
+===
 
 > 重造轮子是重新创造一个已有的或是已被其他人优化的基本方法。
 
@@ -2516,7 +2517,7 @@ def get_points(usernames):
 
 故事的出发点是这样的:``写了很多代码,用的都是框架，最后不知道收获什么了``?事实也是如此，当自己做了一些项目之后，发现最后什么也没有收获到。于是，就想着做一个框架。
 
-###需求
+### 需求
 
 有这样的几个前提
 
@@ -2762,7 +2763,8 @@ Lettuce.send = function (url, method, callback, data) {
 - 。。。
 - 最新的0.10.1版本
 
-# GitHub连击 
+GitHub连击 
+===
 
 ## 100天
 

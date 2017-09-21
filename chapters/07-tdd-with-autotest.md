@@ -1,6 +1,6 @@
 # 改善 GitHub 项目代码质量：测试
 
-##TDD
+## TDD
 
 虽然接触的TDD时间不算短，然而真正在实践TDD上的时候少之又少。除去怎么教人TDD，就是与人结对编程时的switch，或许是受限于当前的开发流程。
 
@@ -53,7 +53,7 @@ req.end();
 	
 写完测试脚本后发现不对了，这个不应该是测试的代码吗? 于是将其放到了spec中，接着发现了上面的全部功能的实现过程为什么不用TDD实现呢？
 
-###说说TDD
+### 说说TDD
 
 测试驱动开发是一个很"古老"的程序开发方法，然而由于国内的开发流程的问题——即开发人员负责功能的测试，导致这么好的一项技术没有在国内推广。
 
@@ -69,7 +69,7 @@ req.end();
 1. 已经有了原型
 2. 框架设计
 
-###TDD思考
+### TDD思考
 
 通常在我的理解下，TDD是可有可无的。既然我知道了我要实现的大部分功能，而且我也知道如何实现。与此同时，对Code Smell也保持着警惕、要保证功能被测试覆盖。那么，总的来说TDD带来的价值并不大。
 
@@ -78,9 +78,9 @@ req.end();
 在这种理想的情况下，我们为什么不TDD呢?
 
 
-##功能测试
+## 功能测试
 
-###轻量级网站测试TWill
+### 轻量级网站测试TWill
 
 > twill was initially designed for testing Web sites, although since then people have also figured out that it's good for browsing unsuspecting Web sites.
 
@@ -191,7 +191,7 @@ req.end();
 
 一个成功的测试诞生了。
 
-##Fake Server
+## Fake Server
 
 实践了一下怎么用sinon去fake server，还没用respondWith，于是写一下。
 
@@ -214,7 +214,7 @@ req.end();
 		);
 	});
 
-于是在afterEach的时候，我们需要恢复这个server。
+于是在 afterEach 的时候，我们需要恢复这个server。
 
 	afterEach(function() {
 		this.server.restore();
@@ -235,5 +235,4 @@ req.end();
 				.toEqual(data);
 		});
 	});
-	
----
+

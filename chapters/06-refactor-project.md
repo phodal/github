@@ -28,7 +28,7 @@
 
 代码及setup请见github: [js-refactor](https://github.com/artisanstack/js-refactor)
 
-###代码说明
+### 代码说明
 
 ``uMarkdown``是一个用于将Markdown转化为HTML的库。代码看上去就像一个很典型的过程代码:
 
@@ -151,7 +151,7 @@ str = tableHandler(str, execStr, strict);
 
 是时候讨论这个Refactor利器了，最初看到这个重构的过程是从ThoughtWorks郑大晔校开始的，只是之前对于Java的另外一个编辑器Eclipse的坏感。。这些在目前已经不是很重要了，试试这个公司里面应用广泛的编辑器。
 
-##Intellij Idea重构
+## Intellij Idea重构
 
 开发的流程大致就是这样子的，测试先行算是推荐的。
 
@@ -179,7 +179,7 @@ public class Main {
 	
 代码写得还好(自我感觉)，先不管Cal和Cal2两个类。大部分都能看懂，除了c,d不知道他们表达的是什么意思，于是。
 
-###Rename
+### Rename
 
 **快捷键:Shift+F6**
 
@@ -205,7 +205,7 @@ public class Main {
 }
 ```
 	
-###Extract Method
+### Extract Method
 
 **快捷键:alt+command+m**
 
@@ -233,7 +233,7 @@ private static void mprint(int result_sub) {
     
 似乎我们不应该这样对待System.out.println，那么让我们内联回去
 
-###Inline Method
+### Inline Method
 
 **快捷键:alt+command+n**
 
@@ -257,7 +257,7 @@ public static void main(String[] args) {
 
 似乎这个例子不是很好，但是够用来说明了。
 
-###Pull Members Up
+### Pull Members Up
 
 开始之前让我们先看看Cal2类:
 
@@ -299,7 +299,7 @@ public class Cal {
 	
 而我们所要做的就是鼠标右键
 
-###重构之以查询取代临时变量
+### 重构之以查询取代临时变量
 
 快捷键
 
@@ -332,7 +332,7 @@ public class replaceTemp {
 }
 ```
 
-####重构
+#### 重构
 
 选中``basePrice``很愉快地拿鼠标点上面的重构
 
@@ -407,5 +407,3 @@ public class replaceTemp {
 
 }
 ```
-
----
