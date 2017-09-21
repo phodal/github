@@ -169,7 +169,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#开源项目维护">开源项目维护</a><ul>
 <li><a href="#release">Release</a></li>
 </ul></li>
-<li><a href="#git-工具推荐">Git 工具推荐</a></li>
+<li><a href="#git-与-github-工具推荐">Git 与 GitHub 工具推荐</a><ul>
+<li><a href="#git-命令行增强">Git 命令行增强</a><ul>
+<li><a href="#diff-so-fancy"><a href="https://github.com/so-fancy/diff-so-fancy">diff-so-fancy</a></a></li>
+<li><a href="#git-extras"><a href="https://github.com/tj/git-extras">git-extras</a></a></li>
+</ul></li>
+<li><a href="#intellij-idea">Intellij IDEA</a></li>
+<li><a href="#gitgithub桌面增强">Git、GitHub桌面增强</a><ul>
+<li><a href="#sourcetree">SourceTree</a></li>
+<li><a href="#github-desktop">GitHub Desktop</a></li>
+</ul></li>
+<li><a href="#git-娱乐">Git 娱乐</a><ul>
+<li><a href="#githug">githug</a></li>
+<li><a href="#gource">Gource</a></li>
+</ul></li>
+</ul></li>
 <li><a href="#github用户分析">GitHub用户分析</a><ul>
 <li><a href="#生成图表">生成图表</a><ul>
 <li><a href="#数据解析">数据解析</a></li>
@@ -1790,10 +1804,103 @@ app.listen(3000);</code></pre>
 <p>哪怕只是一个错误字的 PR，那么你也可以 merge，啊哈哈~。然后，就有人帮你宣传了，『我给 xxx 项目一个 PR 了』。刚毕业的时候，我也是从这种类型的 PR 做起的~~。</p>
 <h1 id="开源项目维护">开源项目维护</h1>
 <h2 id="release">Release</h2>
-<h1 id="git-工具推荐">Git 工具推荐</h1>
+<h1 id="git-与-github-工具推荐">Git 与 GitHub 工具推荐</h1>
 <p>至于我的日常用的 Git 观看工具，一个是 WebStorm 和 Intellij IDEA 自带的，一个则是 SourceTree。</p>
 <p>由于日常用的开发工是 Intellij IDEA 企业版，所以就有点依赖于这个工具了。最常用的功能便是：<strong>修复 Bug 时，对于文件修改的追溯</strong>。了解某行代码修改的原因，对应的修改人等等。</p>
 <p>而 SourceTree 则方便用来查看一些非我写的项目，寻找其中的一些问题。个中缘由便是：<strong>Intelli IDEA 刚打开某个项目的时候，需要花费大量的时间 index</strong>，只可惜现有的 SourceTree 客户端都需要登录 Atlassian 账户了。</p>
+<h2 id="git-命令行增强">Git 命令行增强</h2>
+<h3 id="diff-so-fancy"><a href="https://github.com/so-fancy/diff-so-fancy">diff-so-fancy</a></h3>
+<figure>
+<img src="git-diff-screenshot.png" alt="diff so fancy 截图" /><figcaption>diff so fancy 截图</figcaption>
+</figure>
+<h3 id="git-extras"><a href="https://github.com/tj/git-extras">git-extras</a></h3>
+<p><strong>Ubuntu</strong></p>
+<pre><code>$ sudo apt-get install git-extras</code></pre>
+<p><strong>Mac OS X with Homebrew</strong></p>
+<pre><code>$ brew install git-extras</code></pre>
+<pre><code>$ git-summary
+
+
+ project  : github-roam
+ repo age : 2 years, 7 months
+ active   : 40 days
+ commits  : 124
+ files    : 101
+ authors  :
+    72  Fengda HUANG  58.1%
+    29  Fengda Huang  23.4%
+     8  Phodal HUANG  6.5%
+     3  Phodal Huang  2.4%
+     2  yangpei3720   1.6%
+     2  WangXiaolong  1.6%
+     2  TZS           1.6%
+     1  安正超        0.8%
+     1  Li            0.8%
+     1  Qiuer         0.8%
+     1  SCaffrey      0.8%
+     1  oncealong     0.8%
+     1  zminds        0.8%</code></pre>
+<h2 id="intellij-idea">Intellij IDEA</h2>
+<p>Intellij IDEA</p>
+<h2 id="gitgithub桌面增强">Git、GitHub桌面增强</h2>
+<h3 id="sourcetree">SourceTree</h3>
+<p>gitflow 分支合并、查看</p>
+<figure>
+<img src="sourcetree.jpg" alt="SourceTree 截图" /><figcaption>SourceTree 截图</figcaption>
+</figure>
+<h3 id="github-desktop">GitHub Desktop</h3>
+<figure>
+<img src="github-desktop.jpg" alt="GitHub Desktop" /><figcaption>GitHub Desktop</figcaption>
+</figure>
+<h2 id="git-娱乐">Git 娱乐</h2>
+<h3 id="githug">githug</h3>
+<pre><code>$ githug 
+
+********************************************************************************
+*                                    Githug                                    *
+********************************************************************************
+No githug directory found, do you wish to create one? [yn]  y
+Welcome to Githug!
+
+Name: init
+Level: 1
+Difficulty: *
+
+A new directory, `git_hug`, has been created; initialize an empty repository in it.</code></pre>
+<pre><code>$ githug play                                                                                              
+
+********************************************************************************
+*                                    Githug                                    *
+********************************************************************************
+Congratulations, you have solved the level!
+
+Name: config
+Level: 2
+Difficulty: *
+
+Set up your git name and email, this is important so that your commits can be identified.</code></pre>
+<pre><code>#1: init
+#2: config
+#3: add
+#4: commit
+#5: clone
+#6: clone_to_folder
+#7: ignore
+#8: include
+#9: status
+#10: number_of_files_committed
+#11: rm
+#12: rm_cached
+#13: stash
+#14: rename
+#15: restructure
+#16: log
+#17: tag
+#...</code></pre>
+<h3 id="gource">Gource</h3>
+<figure>
+<img src="gource.jpg" alt="Gource 历史" /><figcaption>Gource 历史</figcaption>
+</figure>
 <h1 id="github用户分析">GitHub用户分析</h1>
 <h2 id="生成图表">生成图表</h2>
 <p>如何分析用户的数据是一个有趣的问题，特别是当我们有大量的数据的时候。除了<code>matlab</code>，我们还可以用<code>numpy</code>+<code>matplotlib</code></p>
