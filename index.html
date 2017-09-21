@@ -96,11 +96,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#cla">CLA</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#创建项目文档">创建项目文档</a><ul>
-<li><a href="#readme">README</a></li>
-<li><a href="#在线文档">在线文档</a></li>
-<li><a href="#可用示例">可用示例</a></li>
-</ul></li>
 <li><a href="#构建github项目">构建GitHub项目</a><ul>
 <li><a href="#如何用好github">如何用好GitHub</a><ul>
 <li><a href="#敏捷软件开发">敏捷软件开发</a></li>
@@ -120,18 +115,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#代码的坏味道">代码的坏味道</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#改善-github-项目代码质量测试">改善 GitHub 项目代码质量：测试</a><ul>
-<li><a href="#tdd">TDD</a><ul>
-<li><a href="#一次测试驱动开发">一次测试驱动开发</a></li>
-<li><a href="#说说tdd">说说TDD</a></li>
-<li><a href="#tdd思考">TDD思考</a></li>
+<li><a href="#git-提交信息及几种不同的规范">Git 提交信息及几种不同的规范</a><ul>
+<li><a href="#工作写法">工作写法</a></li>
+<li><a href="#常规写法">常规写法</a></li>
+<li><a href="#开源应用开源库写法">开源应用、开源库写法</a></li>
 </ul></li>
-<li><a href="#功能测试">功能测试</a><ul>
-<li><a href="#轻量级网站测试twill">轻量级网站测试TWill</a></li>
-<li><a href="#twill-登陆测试">Twill 登陆测试</a></li>
-<li><a href="#twill-测试脚本">Twill 测试脚本</a></li>
-</ul></li>
-<li><a href="#fake-server">Fake Server</a></li>
+<li><a href="#创建项目文档">创建项目文档</a><ul>
+<li><a href="#readme">README</a></li>
+<li><a href="#在线文档">在线文档</a></li>
+<li><a href="#可用示例">可用示例</a></li>
 </ul></li>
 <li><a href="#改善-github-项目代码质量重构">改善 GitHub 项目代码质量：重构</a><ul>
 <li><a href="#为什么重构">为什么重构?</a></li>
@@ -145,6 +137,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#pull-members-up">Pull Members Up</a></li>
 <li><a href="#重构之以查询取代临时变量">重构之以查询取代临时变量</a></li>
 </ul></li>
+</ul></li>
+<li><a href="#改善-github-项目代码质量测试">改善 GitHub 项目代码质量：测试</a><ul>
+<li><a href="#tdd">TDD</a><ul>
+<li><a href="#一次测试驱动开发">一次测试驱动开发</a></li>
+<li><a href="#说说tdd">说说TDD</a></li>
+<li><a href="#tdd思考">TDD思考</a></li>
+</ul></li>
+<li><a href="#功能测试">功能测试</a><ul>
+<li><a href="#轻量级网站测试twill">轻量级网站测试TWill</a></li>
+<li><a href="#twill-登陆测试">Twill 登陆测试</a></li>
+<li><a href="#twill-测试脚本">Twill 测试脚本</a></li>
+</ul></li>
+<li><a href="#fake-server">Fake Server</a></li>
 </ul></li>
 <li><a href="#如何推广">如何推广</a><ul>
 <li><a href="#marketing-first">Marketing First</a></li>
@@ -161,10 +166,26 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li><a href="#鼓励吸引贡献者">鼓励、吸引贡献者</a></li>
 </ul></li>
-<li><a href="#开源项目维护">开源项目维护</a></li>
-<li><a href="#如何以正确的姿势阅读开源软件代码">如何以“正确的姿势”阅读开源软件代码</a><ul>
-<li><a href="#阅读过程">阅读过程</a></li>
-<li><a href="#示例">示例</a></li>
+<li><a href="#开源项目维护">开源项目维护</a><ul>
+<li><a href="#release">Release</a></li>
+</ul></li>
+<li><a href="#git-工具推荐">Git 工具推荐</a></li>
+<li><a href="#github用户分析">GitHub用户分析</a><ul>
+<li><a href="#生成图表">生成图表</a><ul>
+<li><a href="#数据解析">数据解析</a></li>
+<li><a href="#matplotlib">Matplotlib</a></li>
+</ul></li>
+<li><a href="#每周分析">每周分析</a><ul>
+<li><a href="#python-github-每周情况分析">python github 每周情况分析</a></li>
+<li><a href="#python-数据分析">Python 数据分析</a></li>
+<li><a href="#python-matplotlib图表">Python Matplotlib图表</a></li>
+</ul></li>
+<li><a href="#存储到数据库中">存储到数据库中</a><ul>
+<li><a href="#sqlite3">SQLite3</a></li>
+<li><a href="#数据导入">数据导入</a></li>
+<li><a href="#redis">Redis</a></li>
+</ul></li>
+<li><a href="#邻近算法与相似用户">邻近算法与相似用户</a></li>
 </ul></li>
 <li><a href="#如何在github寻找灵感fork">如何在GitHub“寻找灵感(fork)”</a><ul>
 <li><a href="#lettuce构建过程">Lettuce构建过程</a><ul>
@@ -173,6 +194,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#实现第一个需求">实现第一个需求</a></li>
 <li><a href="#实现第二个需求">实现第二个需求</a></li>
 </ul></li>
+</ul></li>
+<li><a href="#如何以正确的姿势阅读开源软件代码">如何以“正确的姿势”阅读开源软件代码</a><ul>
+<li><a href="#阅读过程">阅读过程</a></li>
+<li><a href="#示例">示例</a></li>
 </ul></li>
 <li><a href="#github连击">GitHub连击</a><ul>
 <li><a href="#天">100天</a><ul>
@@ -208,23 +233,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#从创建开源框架说起">从创建开源框架说起</a></li>
 <li><a href="#下一个开源项目">下一个开源项目</a></li>
 </ul></li>
-</ul></li>
-<li><a href="#github用户分析">GitHub用户分析</a><ul>
-<li><a href="#生成图表">生成图表</a><ul>
-<li><a href="#数据解析">数据解析</a></li>
-<li><a href="#matplotlib">Matplotlib</a></li>
-</ul></li>
-<li><a href="#每周分析">每周分析</a><ul>
-<li><a href="#python-github-每周情况分析">python github 每周情况分析</a></li>
-<li><a href="#python-数据分析">Python 数据分析</a></li>
-<li><a href="#python-matplotlib图表">Python Matplotlib图表</a></li>
-</ul></li>
-<li><a href="#存储到数据库中">存储到数据库中</a><ul>
-<li><a href="#sqlite3">SQLite3</a></li>
-<li><a href="#数据导入">数据导入</a></li>
-<li><a href="#redis">Redis</a></li>
-</ul></li>
-<li><a href="#邻近算法与相似用户">邻近算法与相似用户</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -536,64 +544,6 @@ git push -u origin master</code></pre>
 <img src="./img/eclipse-cla.png" alt="Eclipse CLA" /><figcaption>Eclipse CLA</figcaption>
 </figure>
 <p>他们都要求我签署CLA。</p>
-<h1 id="创建项目文档">创建项目文档</h1>
-<p>我们需要为我们的项目创建一个文档，通常我们可以将核心代码以外的东西都称为文档：</p>
-<ol type="1">
-<li>README</li>
-<li>文档</li>
-<li>示例</li>
-<li>测试</li>
-</ol>
-<p>通常这个会在项目的最上方会有一个项目的简介，如下图所示：</p>
-<figure>
-<img src="./img/github-intro.png" alt="GitHub Project Introduction" /><figcaption>GitHub Project Introduction</figcaption>
-</figure>
-<h2 id="readme">README</h2>
-<p>README通常会显示在GitHub项目的下面，如下图所示：</p>
-<figure>
-<img src="./img/readme-example.png" alt="GitHub README" /><figcaption>GitHub README</figcaption>
-</figure>
-<p>通常一个好的README会让你立马对项目产生兴趣。</p>
-<p>如下面的内容是React项目的简介：</p>
-<figure>
-<img src="./img/react-intro.png" alt="React README" /><figcaption>React README</figcaption>
-</figure>
-<p>下面的内容写清楚了他们的用途：</p>
-<ul>
-<li><strong>Just the UI:</strong> Lots of people use React as the V in MVC. Since React makes no assumptions about the rest of your technology stack, it’s easy to try it out on a small feature in an existing project.</li>
-<li><strong>Virtual DOM:</strong> React abstracts away the DOM from you, giving a simpler programming model and better performance. React can also render on the server using Node, and it can power native apps using <a href="https://facebook.github.io/react-native/">React Native</a>.</li>
-<li><strong>Data flow:</strong> React implements one-way reactive data flow which reduces boilerplate and is easier to reason about than traditional data binding.</li>
-</ul>
-<p>通常在这个README里，还会有：</p>
-<ul>
-<li>针对人群</li>
-<li>安装指南</li>
-<li>示例</li>
-<li>运行的平台</li>
-<li>如何参与贡献</li>
-<li>协议</li>
-</ul>
-<h2 id="在线文档">在线文档</h2>
-<p>很多开源项目都会有自己的网站，并在上面有一个文档，而有的则会放在<a href="https://readthedocs.org/" class="uri">https://readthedocs.org/</a>。</p>
-<blockquote>
-<p>Read the Docs 托管文档，让文档可以被全文搜索和更易查找。您可以导入您使用任何常用的版本控制系统管理的文档，包括 Mercurial、Git、Subversion 和 Bazaar。 我们支持 webhooks，因此可以在您提交代码时自动构建文档。并且同样也支持版本功能，因此您可以构建来自您代码仓库中某个标签或分支的文档。查看完整的功能列表 。</p>
-</blockquote>
-<p>在一个开源项目中，良好和专业的文档是相当重要的，有时他可能会比软件还会重要。因为如果一个开源项目好用的话，多数人可能不会去查看软件的代码。这就意味着，多数时候他在和你的文档打交道。文档一般会有：API 文档、 配置文档、帮助文档、用户手册、教程等等</p>
-<p>写文档的软件有很多，如Markdown、Doxygen、Docbook等等。</p>
-<h2 id="可用示例">可用示例</h2>
-<p>一个简单上手的示例非常重要，特别是通常我们是在为着某个目的而去使用一个开源项目的是时候，我们希望能马上使用到我们的项目中。</p>
-<p>你希望看到的是，你打开浏览器，输入下面的代码，然后<strong>It Works</strong>:</p>
-<pre><code>var HelloMessage = React.createClass({
-  render: function() {
-    return &lt;div&gt;Hello {this.props.name}&lt;/div&gt;;
-  }
-});
-
-React.render(
-  &lt;HelloMessage name=&quot;John&quot; /&gt;,
-  document.getElementById(&#39;container&#39;)
-);</code></pre>
-<p>而不是需要繁琐的步骤才能进行下一步。</p>
 <h1 id="构建github项目">构建GitHub项目</h1>
 <h2 id="如何用好github">如何用好GitHub</h2>
 <p>如何用好GitHub,并实践一些敏捷软件开发是一个很有意思的事情.我们可以在上面做很多事情,从测试到CI,再到自动部署.</p>
@@ -1133,175 +1083,125 @@ line 21  col 62   Strings must use singlequote.</code></pre>
 <span class="op">};</span></code></pre></div>
 <p>重构完后的代码比原来还长，这似乎是个问题~~</p>
 <hr />
-<h1 id="改善-github-项目代码质量测试">改善 GitHub 项目代码质量：测试</h1>
-<h2 id="tdd">TDD</h2>
-<p>虽然接触的TDD时间不算短，然而真正在实践TDD上的时候少之又少。除去怎么教人TDD，就是与人结对编程时的switch，或许是受限于当前的开发流程。</p>
-<p>偶然间在开发一个物联网相关的开源项目——<a href="https://github.com/phodal/lan">Lan</a>的时候，重拾了这个过程。不得不说提到的一点是，在我们的开发流程中<strong>测试是由相关功能开发人员写的</strong>，有时候测试是一种很具挑战性的工作。久而久之，为自己的开源项目写测试变成一种自然而然的事。有时没有测试，反而变得<strong>没有安全感</strong>。</p>
-<h3 id="一次测试驱动开发">一次测试驱动开发</h3>
-<p>之前正在重写一个<a href="http://www.phodal.com/iot">物联网</a>的服务端，主要便是结合CoAP、MQTT、HTTP等协议构成一个物联网的云服务。现在，主要的任务是集中于协议与授权。由于，不同协议间的授权是不一样的，最开始的时候我先写了一个http put授权的功能，而在起先的时候是如何测试的呢?</p>
-<pre><code>curl --user root:root -X PUT -d &#39;{ &quot;dream&quot;: 1 }&#39; -H &quot;Content-Type: application/json&quot; http://localhost:8899/topics/test</code></pre>
-<p>我只要顺利在request中看有无<code>req.headers.authorization</code>，我便可以继续往下，接着给个判断。毕竟，我们对HTTP协议还是蛮清楚的。</p>
-<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="cf">if</span> (<span class="op">!</span><span class="va">req</span>.<span class="va">headers</span>.<span class="at">authorization</span>) <span class="op">{</span>
-  <span class="va">res</span>.<span class="at">statusCode</span> <span class="op">=</span> <span class="dv">401</span><span class="op">;</span>
-  <span class="va">res</span>.<span class="at">setHeader</span>(<span class="st">&#39;WWW-Authenticate&#39;</span><span class="op">,</span> <span class="st">&#39;Basic realm=&quot;Secure Area&quot;&#39;</span>)<span class="op">;</span>
-  <span class="cf">return</span> <span class="va">res</span>.<span class="at">end</span>(<span class="st">&#39;Unauthorized&#39;</span>)<span class="op">;</span>
-<span class="op">}</span></code></pre></div>
-<p>可是除了HTTP协议，还有MQTT和CoAP。对于MQTT协议来说，那还算好，毕竟自带授权，如:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">mosquitto_pub</span> -u root -P root -h localhost -d -t lettuce -m <span class="st">&quot;Hello, MQTT. This is my first message.&quot;</span></code></pre></div>
-<p>便可以让我们简单地完成这个功能，然而有的协议是没有这样的功能如CoAP协议中是用Option来进行授权的。现在的工具如libcoap只能有如下的简单功能</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">coap-client</span> -m get coap://127.0.0.1:5683/topics/zero -T</code></pre></div>
-<p>于是，先写了个测试脚本来验证功能。</p>
-<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> coap     <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;coap&#39;</span>)<span class="op">;</span>
-<span class="kw">var</span> request  <span class="op">=</span> <span class="va">coap</span>.<span class="at">request</span><span class="op">;</span>
-<span class="kw">var</span> req <span class="op">=</span> <span class="at">request</span>(<span class="op">{</span><span class="dt">hostname</span><span class="op">:</span> <span class="st">&#39;localhost&#39;</span><span class="op">,</span><span class="dt">port</span><span class="op">:</span><span class="dv">5683</span><span class="op">,</span><span class="dt">pathname</span><span class="op">:</span> <span class="st">&#39;&#39;</span><span class="op">,</span><span class="dt">method</span><span class="op">:</span> <span class="st">&#39;POST&#39;</span><span class="op">}</span>)<span class="op">;</span>
-
-...
-
-<span class="va">req</span>.<span class="at">setHeader</span>(<span class="st">&quot;Accept&quot;</span><span class="op">,</span> <span class="st">&quot;application/json&quot;</span>)<span class="op">;</span>
-<span class="va">req</span>.<span class="at">setOption</span>(<span class="st">&#39;Block2&#39;</span><span class="op">,</span>  [<span class="kw">new</span> <span class="at">Buffer</span>(<span class="st">&#39;phodal&#39;</span>)<span class="op">,</span> <span class="kw">new</span> <span class="at">Buffer</span>(<span class="st">&#39;phodal&#39;</span>)])<span class="op">;</span>
-
-...
-
-<span class="va">req</span>.<span class="at">end</span>()<span class="op">;</span></code></pre></div>
-<p>写完测试脚本后发现不对了，这个不应该是测试的代码吗? 于是将其放到了spec中，接着发现了上面的全部功能的实现过程为什么不用TDD实现呢？</p>
-<h3 id="说说tdd">说说TDD</h3>
-<p>测试驱动开发是一个很“古老”的程序开发方法，然而由于国内的开发流程的问题——即开发人员负责功能的测试，导致这么好的一项技术没有在国内推广。</p>
-<p>测试驱动开发的主要过程是:</p>
-<ol type="1">
-<li>先写功能的测试</li>
-<li>实现功能代码</li>
-<li>提交代码(commit -&gt; 保证功能正常)</li>
-<li>重构功能代码</li>
-</ol>
-<p>而对于这样的一个物联网项目来说，我已经有了几个有利的前提:</p>
-<ol type="1">
-<li>已经有了原型</li>
-<li>框架设计</li>
-</ol>
-<h3 id="tdd思考">TDD思考</h3>
-<p>通常在我的理解下，TDD是可有可无的。既然我知道了我要实现的大部分功能，而且我也知道如何实现。与此同时，对Code Smell也保持着警惕、要保证功能被测试覆盖。那么，总的来说TDD带来的价值并不大。</p>
-<p>然而，在当前这种情况下，我知道我想要的功能，但是我并不理解其深层次的功能。我需要花费大量的时候来理解，它为什么是这样的，需要先有一些脚本来知道它是怎么工作的。TDD变显得很有价值，换句话来说，在现有的情况下，TDD对于我们不了解的一些事情，可以驱动出更多的开发。毕竟在我们完成测试脚本之后，我们也会发现这些测试脚本成为了代码的一部分。</p>
-<p>在这种理想的情况下，我们为什么不TDD呢?</p>
-<h2 id="功能测试">功能测试</h2>
-<h3 id="轻量级网站测试twill">轻量级网站测试TWill</h3>
+<h1 id="git-提交信息及几种不同的规范">Git 提交信息及几种不同的规范</h1>
 <blockquote>
-<p>twill was initially designed for testing Web sites, although since then people have also figured out that it’s good for browsing unsuspecting Web sites.</p>
+<p>受 Growth 3.0 开发的影响，最近更新文章的频率会有所降低。今天，让我们来谈谈一个好的 Git、SVN 提交信息是怎样规范出来的。</p>
 </blockquote>
-<p>之所以说轻量的原因是他是拿命令行测试的，还有DSL，还有Python。</p>
-<p>除此之外，还可以拿它做压力测试，这种压力测试和一般的不一样。可以模拟整个过程，比如同时有多少人登陆你的网站。</p>
-<p>不过，它有一个限制是没有JavaScript。</p>
-<p>看了一下源码，大概原理就是用<code>requests</code>下载html，接着用<code>lxml</code>解析html，比较有意思的是内嵌了一个<code>DSL</code>。</p>
-<p>这是一个Python的库。</p>
-<pre><code> pip install twill</code></pre>
-<h3 id="twill-登陆测试">Twill 登陆测试</h3>
-<p>1.启动我们的应用。</p>
-<p>2.进入twill shell</p>
-<pre><code>twill-sh
- -= Welcome to twill! =-
-current page:  *empty page*</code></pre>
-<p>3.打开网页</p>
-<pre><code>&gt;&gt; go http://127.0.0.1:5000/login
-==&gt; at http://127.0.0.1:5000/login
-current page: http://127.0.0.1:5000/login</code></pre>
-<p>4.显示表单</p>
-<pre><code>    &gt;&gt; showforms
+<p>在团队协作中，使用版本管理工具 Git、SVN 几乎都是这个行业的标准。当我们提交代码的时候，需要编写提交信息（commit message）。</p>
+<p>而提交信息的主要用途是：<strong>告诉这个项目的人，这次代码提交里做了些什么</strong>。如，我更新了 React Native Elements 的版本，那么它就可以是：<code>[T] upgrade react native elements</code>。对应的我修改的代码就是：<code>package.json</code> 和 <code>yarn.lock</code> 中的文件。一般来说，建议<strong>小步提交</strong>，即按自己的 Tasking 步骤来的提交，每一小步都有对应的提交信息。这样做的主要目的是：<strong>防止一次修改中，修改过多的文件，导致后期修改、维护、撤销等等困难</strong>。</p>
+<p>而对于不同的团队来说，都会遵循一定的规范，本文主要会介绍以下几种写法：</p>
+<ul>
+<li>工作写法</li>
+<li>常规写法</li>
+<li>开源库写法</li>
+</ul>
+<p>那么，先从我习惯的做法说起。</p>
+<h2 id="工作写法">工作写法</h2>
+<p>在我的第一个项目里，我们使用 Jira 作为看板工具，Bamboo 作为持续集成服务器，并采用结对编程的方式进行。</p>
+<p>在 Jira 里每一个功能卡都有对应的卡号，而 Bamboo 支持使用 Jira 的任务卡号关联的功能。即在持续构建服务器上示例对应的任务卡号，即相应的提交人。</p>
+<p>因此，这个时候我们的规范稍微有一些特别：</p>
+<pre><code>[任务卡号] xx &amp; xx: do something </code></pre>
+<p>比如：<code>[PHODAL-0001] ladohp &amp; phodal: update documents</code>，解释如下：</p>
+<ul>
+<li><code>PHODAL-0001</code>，业务的任务卡号，它可以帮我们找到某个业务修改的原因，即点出相应 bug 的来源</li>
+<li><code>ladohp &amp; phodal</code> ，结对编程的两个人的名字，后者（phodal）一般是写代码的人，出于礼貌就放在后面了。由于 Git 的提交人只显示一个，所以写上两个的名字。当提交的人不在时，就可以问另外一个人修改的原因。</li>
+<li><code>update documents</code>，我们做了什么事情</li>
+</ul>
+<p>缺点：而对于采用看板的团队来说，并不存在任务卡号这种东西，因此就需要一种额外的作法。</p>
+<h2 id="常规写法">常规写法</h2>
+<p>对于我来说，我则习惯这种的写法：</p>
+<pre><code>[任务分类] 主要修改组件（可选）：修改内容</code></pre>
+<p>示例 1，<code>[T] tabs: add icons</code> 。其中的 <code>T</code> 表示这是一个技术卡，<code>tabs</code> 表示修改的是 Tabs，<code>add icons</code> 则表示添加了图标。</p>
+<p>示例 2，<code>[SkillTree] detail: add link data</code>。其中的 <code>SkillTree</code> 表示修改的是技能树 Tab 下的内容，<code>detail</code> 则表示修改的是详情页，<code>add link data</code> 则表示是添加了技能的数据</p>
+<p>这样做的主要原因是，它可以轻松也帮我** filter 出相应业务的内容**。</p>
+<p>缺点：要这样做需要团队达到一致，因此付出一些额外的成本。</p>
+<h2 id="开源应用开源库写法">开源应用、开源库写法</h2>
+<p>与我们日常工作稍有不同的是：工作中的 Release 计划一般都是事先安排好的，不需要一些 CHANGELOG 什么的。而开源应用、开源库需要有对应的 CHANELOG，则添加了什么功能、修改了什么等等。毕竟有很多东西是由社区来维护的。</p>
+<p>因此，这里以做得比较好的开源项目 Angular 中为例展示。Angular 团队建议采用以下的形式：</p>
+<pre><code>&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+&lt;BLANK LINE&gt;
+&lt;body&gt;
+&lt;BLANK LINE&gt;
+&lt;footer&gt;</code></pre>
+<p>诸如：<code>docs(changelog): update change log to beta.5</code> 中：</p>
+<ul>
+<li>docs 则对应修改的类型</li>
+<li>changelog 则是影响的范围</li>
+<li>subject 则是对应做的事件</li>
+</ul>
+<p>对应的类型有：</p>
+<ul>
+<li>build: 影响构建系统或外部依赖关系的更改（示例范围：gulp，broccoli，npm）</li>
+<li>ci: 更改我们的持续集成文件和脚本（示例范围：Travis，Circle，BrowserStack，SauceLabs）</li>
+<li>docs: 仅文档更改</li>
+<li>feat: 一个新功能</li>
+<li>fix: 修复错误</li>
+<li>perf: 改进性能的代码更改</li>
+<li>refactor: 代码更改，既不修复错误也不添加功能</li>
+<li>style: 不影响代码含义的变化（空白，格式化，缺少分号等）</li>
+<li>test: 添加缺失测试或更正现有测试</li>
+</ul>
+<p>同时还对应了 20+ 的 Scope，可以说这种提交比上面的提交更有挑战。</p>
+<p>（以上的 10 个类型，感谢 Google Translate 提供的快速翻译支持）</p>
+<p>而这样做的优点是，它可以轻松地生成一个 CHANGELOG。与些同时还有一个名为 <code>Conventional Commits</code> 的规范，建议采用相似的形式。</p>
+<h1 id="创建项目文档">创建项目文档</h1>
+<p>我们需要为我们的项目创建一个文档，通常我们可以将核心代码以外的东西都称为文档：</p>
+<ol type="1">
+<li>README</li>
+<li>文档</li>
+<li>示例</li>
+<li>测试</li>
+</ol>
+<p>通常这个会在项目的最上方会有一个项目的简介，如下图所示：</p>
+<figure>
+<img src="./img/github-intro.png" alt="GitHub Project Introduction" /><figcaption>GitHub Project Introduction</figcaption>
+</figure>
+<h2 id="readme">README</h2>
+<p>README通常会显示在GitHub项目的下面，如下图所示：</p>
+<figure>
+<img src="./img/readme-example.png" alt="GitHub README" /><figcaption>GitHub README</figcaption>
+</figure>
+<p>通常一个好的README会让你立马对项目产生兴趣。</p>
+<p>如下面的内容是React项目的简介：</p>
+<figure>
+<img src="./img/react-intro.png" alt="React README" /><figcaption>React README</figcaption>
+</figure>
+<p>下面的内容写清楚了他们的用途：</p>
+<ul>
+<li><strong>Just the UI:</strong> Lots of people use React as the V in MVC. Since React makes no assumptions about the rest of your technology stack, it’s easy to try it out on a small feature in an existing project.</li>
+<li><strong>Virtual DOM:</strong> React abstracts away the DOM from you, giving a simpler programming model and better performance. React can also render on the server using Node, and it can power native apps using <a href="https://facebook.github.io/react-native/">React Native</a>.</li>
+<li><strong>Data flow:</strong> React implements one-way reactive data flow which reduces boilerplate and is easier to reason about than traditional data binding.</li>
+</ul>
+<p>通常在这个README里，还会有：</p>
+<ul>
+<li>针对人群</li>
+<li>安装指南</li>
+<li>示例</li>
+<li>运行的平台</li>
+<li>如何参与贡献</li>
+<li>协议</li>
+</ul>
+<h2 id="在线文档">在线文档</h2>
+<p>很多开源项目都会有自己的网站，并在上面有一个文档，而有的则会放在<a href="https://readthedocs.org/" class="uri">https://readthedocs.org/</a>。</p>
+<blockquote>
+<p>Read the Docs 托管文档，让文档可以被全文搜索和更易查找。您可以导入您使用任何常用的版本控制系统管理的文档，包括 Mercurial、Git、Subversion 和 Bazaar。 我们支持 webhooks，因此可以在您提交代码时自动构建文档。并且同样也支持版本功能，因此您可以构建来自您代码仓库中某个标签或分支的文档。查看完整的功能列表 。</p>
+</blockquote>
+<p>在一个开源项目中，良好和专业的文档是相当重要的，有时他可能会比软件还会重要。因为如果一个开源项目好用的话，多数人可能不会去查看软件的代码。这就意味着，多数时候他在和你的文档打交道。文档一般会有：API 文档、 配置文档、帮助文档、用户手册、教程等等</p>
+<p>写文档的软件有很多，如Markdown、Doxygen、Docbook等等。</p>
+<h2 id="可用示例">可用示例</h2>
+<p>一个简单上手的示例非常重要，特别是通常我们是在为着某个目的而去使用一个开源项目的是时候，我们希望能马上使用到我们的项目中。</p>
+<p>你希望看到的是，你打开浏览器，输入下面的代码，然后<strong>It Works</strong>:</p>
+<pre><code>var HelloMessage = React.createClass({
+  render: function() {
+    return &lt;div&gt;Hello {this.props.name}&lt;/div&gt;;
+  }
+});
 
-Form #1
-## ## __Name__________________ __Type___ __ID________ __Value__________________
-1     csrf_token               hidden    csrf_token   1423387196##5005bdf3496e09b8e2fbf450 ...
-2     email                    email     email        None
-3     password                 password  password     None
-4     login                    submit    (None)       登入
-
-current page: http://127.0.0.1:5000/login</code></pre>
-<p>5.填充表单</p>
-<pre><code>formclear 1
-fv 1 email test@tes.com
-fv 1 password test</code></pre>
-<p>6.修改action</p>
-<pre><code>formaction 1 http://127.0.0.1:5000/login</code></pre>
-<p>7.提交表单</p>
-<pre><code>&gt;&gt; submit
-Note: submit is using submit button: name=&quot;login&quot;, value=&quot;登入&quot;
-current page: http://127.0.0.1:5000/</code></pre>
-<p>发现重定向到首页了。</p>
-<h3 id="twill-测试脚本">Twill 测试脚本</h3>
-<p>当然我们也可以用脚本直接来测试<code>login.twill</code>:</p>
-<pre><code>go http://127.0.0.1:5000/login
-
-showforms
-formclear 1
-fv 1 email test@tes.com
-fv 1 password test
-formaction 1 http://127.0.0.1:5000/login
-submit
-
-go http://127.0.0.1:5000/logout</code></pre>
-<p>运行</p>
-<pre><code> twill-sh login.twill</code></pre>
-<p>结果</p>
-<pre><code>&gt;&gt; EXECUTING FILE login.twill
-AT LINE: login.twill:0
-==&gt; at http://127.0.0.1:5000/login
-AT LINE: login.twill:2
-
-Form #1
-## ## __Name__________________ __Type___ __ID________ __Value__________________
-1     csrf_token               hidden    csrf_token   1423387345##7a000b612fef39aceab5ca54 ...
-2     email                    email     email        None
-3     password                 password  password     None
-4     login                    submit    (None)       登入
-
-AT LINE: login.twill:3
-AT LINE: login.twill:4
-AT LINE: login.twill:5
-AT LINE: login.twill:6
-Setting action for form  (&lt;Element form at 0x10e7cbb50&gt;,) to  (&#39;http://127.0.0.1:5000/login&#39;,)
-AT LINE: login.twill:7
-Note: submit is using submit button: name=&quot;login&quot;, value=&quot;登入&quot;
-
-AT LINE: login.twill:9
-==&gt; at http://127.0.0.1:5000/login
---
-1 of 1 files SUCCEEDED.</code></pre>
-<p>一个成功的测试诞生了。</p>
-<h2 id="fake-server">Fake Server</h2>
-<p>实践了一下怎么用sinon去fake server，还没用respondWith，于是写一下。</p>
-<p>这里需要用到sinon框架来测试。</p>
-<p>当我们fetch的时候，我们就可以返回我们想要fake的结果。</p>
-<pre><code>    var data = {&quot;id&quot;:1,&quot;name&quot;:&quot;Rice&quot;,&quot;type&quot;:&quot;Good&quot;,&quot;price&quot;:12,&quot;quantity&quot;:1,&quot;description&quot;:&quot;Made in China&quot;};
-beforeEach(function() {
-    this.server = sinon.fakeServer.create();
-    this.rices = new Rices();
-    this.server.respondWith(
-        &quot;GET&quot;,
-        &quot;http://localhost:8080/all/rice&quot;,
-        [
-            200,
-            {&quot;Content-Type&quot;: &quot;application/json&quot;},
-            JSON.stringify(data)
-        ]
-    );
-});</code></pre>
-<p>于是在afterEach的时候，我们需要恢复这个server。</p>
-<pre><code>afterEach(function() {
-    this.server.restore();
-});</code></pre>
-<p>接着写一个jasmine测试来测试</p>
-<pre><code>describe(&quot;Collection Test&quot;, function() {
-    it(&quot;should get data from the url&quot;, function() {
-        this.rices.fetch();
-        this.server.respond();
-        var result = JSON.parse(JSON.stringify(this.rices.models[0]));
-        expect(result[&quot;id&quot;])
-            .toEqual(1);
-        expect(result[&quot;price&quot;])
-            .toEqual(12);
-        expect(result)
-            .toEqual(data);
-    });
-});</code></pre>
-<hr />
+React.render(
+  &lt;HelloMessage name=&quot;John&quot; /&gt;,
+  document.getElementById(&#39;container&#39;)
+);</code></pre>
+<p>而不是需要繁琐的步骤才能进行下一步。</p>
 <h1 id="改善-github-项目代码质量重构">改善 GitHub 项目代码质量：重构</h1>
 <p>或许你应该知道了，重构是怎样的，你也知道重构能带来什么。在我刚开始学重构和设计模式的时候，我需要去找一些好的示例，以便于我更好的学习。有时候不得不创造一些更好的场景，来实现这些功能。</p>
 <p>有一天，我发现当我需要我一次又一次地重复讲述某些内容，于是我就计划着把这些应该掌握的技能放到GitHub上，也就有了<a href="https://github.com/phodal-archive/artisanstack.github.io">Artisan Stack</a> 计划。</p>
@@ -1582,6 +1482,175 @@ public class replaceTemp {
 
 }</code></pre>
 <hr />
+<h1 id="改善-github-项目代码质量测试">改善 GitHub 项目代码质量：测试</h1>
+<h2 id="tdd">TDD</h2>
+<p>虽然接触的TDD时间不算短，然而真正在实践TDD上的时候少之又少。除去怎么教人TDD，就是与人结对编程时的switch，或许是受限于当前的开发流程。</p>
+<p>偶然间在开发一个物联网相关的开源项目——<a href="https://github.com/phodal/lan">Lan</a>的时候，重拾了这个过程。不得不说提到的一点是，在我们的开发流程中<strong>测试是由相关功能开发人员写的</strong>，有时候测试是一种很具挑战性的工作。久而久之，为自己的开源项目写测试变成一种自然而然的事。有时没有测试，反而变得<strong>没有安全感</strong>。</p>
+<h3 id="一次测试驱动开发">一次测试驱动开发</h3>
+<p>之前正在重写一个<a href="http://www.phodal.com/iot">物联网</a>的服务端，主要便是结合CoAP、MQTT、HTTP等协议构成一个物联网的云服务。现在，主要的任务是集中于协议与授权。由于，不同协议间的授权是不一样的，最开始的时候我先写了一个http put授权的功能，而在起先的时候是如何测试的呢?</p>
+<pre><code>curl --user root:root -X PUT -d &#39;{ &quot;dream&quot;: 1 }&#39; -H &quot;Content-Type: application/json&quot; http://localhost:8899/topics/test</code></pre>
+<p>我只要顺利在request中看有无<code>req.headers.authorization</code>，我便可以继续往下，接着给个判断。毕竟，我们对HTTP协议还是蛮清楚的。</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="cf">if</span> (<span class="op">!</span><span class="va">req</span>.<span class="va">headers</span>.<span class="at">authorization</span>) <span class="op">{</span>
+  <span class="va">res</span>.<span class="at">statusCode</span> <span class="op">=</span> <span class="dv">401</span><span class="op">;</span>
+  <span class="va">res</span>.<span class="at">setHeader</span>(<span class="st">&#39;WWW-Authenticate&#39;</span><span class="op">,</span> <span class="st">&#39;Basic realm=&quot;Secure Area&quot;&#39;</span>)<span class="op">;</span>
+  <span class="cf">return</span> <span class="va">res</span>.<span class="at">end</span>(<span class="st">&#39;Unauthorized&#39;</span>)<span class="op">;</span>
+<span class="op">}</span></code></pre></div>
+<p>可是除了HTTP协议，还有MQTT和CoAP。对于MQTT协议来说，那还算好，毕竟自带授权，如:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">mosquitto_pub</span> -u root -P root -h localhost -d -t lettuce -m <span class="st">&quot;Hello, MQTT. This is my first message.&quot;</span></code></pre></div>
+<p>便可以让我们简单地完成这个功能，然而有的协议是没有这样的功能如CoAP协议中是用Option来进行授权的。现在的工具如libcoap只能有如下的简单功能</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">coap-client</span> -m get coap://127.0.0.1:5683/topics/zero -T</code></pre></div>
+<p>于是，先写了个测试脚本来验证功能。</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> coap     <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;coap&#39;</span>)<span class="op">;</span>
+<span class="kw">var</span> request  <span class="op">=</span> <span class="va">coap</span>.<span class="at">request</span><span class="op">;</span>
+<span class="kw">var</span> req <span class="op">=</span> <span class="at">request</span>(<span class="op">{</span><span class="dt">hostname</span><span class="op">:</span> <span class="st">&#39;localhost&#39;</span><span class="op">,</span><span class="dt">port</span><span class="op">:</span><span class="dv">5683</span><span class="op">,</span><span class="dt">pathname</span><span class="op">:</span> <span class="st">&#39;&#39;</span><span class="op">,</span><span class="dt">method</span><span class="op">:</span> <span class="st">&#39;POST&#39;</span><span class="op">}</span>)<span class="op">;</span>
+
+...
+
+<span class="va">req</span>.<span class="at">setHeader</span>(<span class="st">&quot;Accept&quot;</span><span class="op">,</span> <span class="st">&quot;application/json&quot;</span>)<span class="op">;</span>
+<span class="va">req</span>.<span class="at">setOption</span>(<span class="st">&#39;Block2&#39;</span><span class="op">,</span>  [<span class="kw">new</span> <span class="at">Buffer</span>(<span class="st">&#39;phodal&#39;</span>)<span class="op">,</span> <span class="kw">new</span> <span class="at">Buffer</span>(<span class="st">&#39;phodal&#39;</span>)])<span class="op">;</span>
+
+...
+
+<span class="va">req</span>.<span class="at">end</span>()<span class="op">;</span></code></pre></div>
+<p>写完测试脚本后发现不对了，这个不应该是测试的代码吗? 于是将其放到了spec中，接着发现了上面的全部功能的实现过程为什么不用TDD实现呢？</p>
+<h3 id="说说tdd">说说TDD</h3>
+<p>测试驱动开发是一个很“古老”的程序开发方法，然而由于国内的开发流程的问题——即开发人员负责功能的测试，导致这么好的一项技术没有在国内推广。</p>
+<p>测试驱动开发的主要过程是:</p>
+<ol type="1">
+<li>先写功能的测试</li>
+<li>实现功能代码</li>
+<li>提交代码(commit -&gt; 保证功能正常)</li>
+<li>重构功能代码</li>
+</ol>
+<p>而对于这样的一个物联网项目来说，我已经有了几个有利的前提:</p>
+<ol type="1">
+<li>已经有了原型</li>
+<li>框架设计</li>
+</ol>
+<h3 id="tdd思考">TDD思考</h3>
+<p>通常在我的理解下，TDD是可有可无的。既然我知道了我要实现的大部分功能，而且我也知道如何实现。与此同时，对Code Smell也保持着警惕、要保证功能被测试覆盖。那么，总的来说TDD带来的价值并不大。</p>
+<p>然而，在当前这种情况下，我知道我想要的功能，但是我并不理解其深层次的功能。我需要花费大量的时候来理解，它为什么是这样的，需要先有一些脚本来知道它是怎么工作的。TDD变显得很有价值，换句话来说，在现有的情况下，TDD对于我们不了解的一些事情，可以驱动出更多的开发。毕竟在我们完成测试脚本之后，我们也会发现这些测试脚本成为了代码的一部分。</p>
+<p>在这种理想的情况下，我们为什么不TDD呢?</p>
+<h2 id="功能测试">功能测试</h2>
+<h3 id="轻量级网站测试twill">轻量级网站测试TWill</h3>
+<blockquote>
+<p>twill was initially designed for testing Web sites, although since then people have also figured out that it’s good for browsing unsuspecting Web sites.</p>
+</blockquote>
+<p>之所以说轻量的原因是他是拿命令行测试的，还有DSL，还有Python。</p>
+<p>除此之外，还可以拿它做压力测试，这种压力测试和一般的不一样。可以模拟整个过程，比如同时有多少人登陆你的网站。</p>
+<p>不过，它有一个限制是没有JavaScript。</p>
+<p>看了一下源码，大概原理就是用<code>requests</code>下载html，接着用<code>lxml</code>解析html，比较有意思的是内嵌了一个<code>DSL</code>。</p>
+<p>这是一个Python的库。</p>
+<pre><code> pip install twill</code></pre>
+<h3 id="twill-登陆测试">Twill 登陆测试</h3>
+<p>1.启动我们的应用。</p>
+<p>2.进入twill shell</p>
+<pre><code>twill-sh
+ -= Welcome to twill! =-
+current page:  *empty page*</code></pre>
+<p>3.打开网页</p>
+<pre><code>&gt;&gt; go http://127.0.0.1:5000/login
+==&gt; at http://127.0.0.1:5000/login
+current page: http://127.0.0.1:5000/login</code></pre>
+<p>4.显示表单</p>
+<pre><code>    &gt;&gt; showforms
+
+Form #1
+## ## __Name__________________ __Type___ __ID________ __Value__________________
+1     csrf_token               hidden    csrf_token   1423387196##5005bdf3496e09b8e2fbf450 ...
+2     email                    email     email        None
+3     password                 password  password     None
+4     login                    submit    (None)       登入
+
+current page: http://127.0.0.1:5000/login</code></pre>
+<p>5.填充表单</p>
+<pre><code>formclear 1
+fv 1 email test@tes.com
+fv 1 password test</code></pre>
+<p>6.修改action</p>
+<pre><code>formaction 1 http://127.0.0.1:5000/login</code></pre>
+<p>7.提交表单</p>
+<pre><code>&gt;&gt; submit
+Note: submit is using submit button: name=&quot;login&quot;, value=&quot;登入&quot;
+current page: http://127.0.0.1:5000/</code></pre>
+<p>发现重定向到首页了。</p>
+<h3 id="twill-测试脚本">Twill 测试脚本</h3>
+<p>当然我们也可以用脚本直接来测试<code>login.twill</code>:</p>
+<pre><code>go http://127.0.0.1:5000/login
+
+showforms
+formclear 1
+fv 1 email test@tes.com
+fv 1 password test
+formaction 1 http://127.0.0.1:5000/login
+submit
+
+go http://127.0.0.1:5000/logout</code></pre>
+<p>运行</p>
+<pre><code> twill-sh login.twill</code></pre>
+<p>结果</p>
+<pre><code>&gt;&gt; EXECUTING FILE login.twill
+AT LINE: login.twill:0
+==&gt; at http://127.0.0.1:5000/login
+AT LINE: login.twill:2
+
+Form #1
+## ## __Name__________________ __Type___ __ID________ __Value__________________
+1     csrf_token               hidden    csrf_token   1423387345##7a000b612fef39aceab5ca54 ...
+2     email                    email     email        None
+3     password                 password  password     None
+4     login                    submit    (None)       登入
+
+AT LINE: login.twill:3
+AT LINE: login.twill:4
+AT LINE: login.twill:5
+AT LINE: login.twill:6
+Setting action for form  (&lt;Element form at 0x10e7cbb50&gt;,) to  (&#39;http://127.0.0.1:5000/login&#39;,)
+AT LINE: login.twill:7
+Note: submit is using submit button: name=&quot;login&quot;, value=&quot;登入&quot;
+
+AT LINE: login.twill:9
+==&gt; at http://127.0.0.1:5000/login
+--
+1 of 1 files SUCCEEDED.</code></pre>
+<p>一个成功的测试诞生了。</p>
+<h2 id="fake-server">Fake Server</h2>
+<p>实践了一下怎么用sinon去fake server，还没用respondWith，于是写一下。</p>
+<p>这里需要用到sinon框架来测试。</p>
+<p>当我们fetch的时候，我们就可以返回我们想要fake的结果。</p>
+<pre><code>    var data = {&quot;id&quot;:1,&quot;name&quot;:&quot;Rice&quot;,&quot;type&quot;:&quot;Good&quot;,&quot;price&quot;:12,&quot;quantity&quot;:1,&quot;description&quot;:&quot;Made in China&quot;};
+beforeEach(function() {
+    this.server = sinon.fakeServer.create();
+    this.rices = new Rices();
+    this.server.respondWith(
+        &quot;GET&quot;,
+        &quot;http://localhost:8080/all/rice&quot;,
+        [
+            200,
+            {&quot;Content-Type&quot;: &quot;application/json&quot;},
+            JSON.stringify(data)
+        ]
+    );
+});</code></pre>
+<p>于是在afterEach的时候，我们需要恢复这个server。</p>
+<pre><code>afterEach(function() {
+    this.server.restore();
+});</code></pre>
+<p>接着写一个jasmine测试来测试</p>
+<pre><code>describe(&quot;Collection Test&quot;, function() {
+    it(&quot;should get data from the url&quot;, function() {
+        this.rices.fetch();
+        this.server.respond();
+        var result = JSON.parse(JSON.stringify(this.rices.models[0]));
+        expect(result[&quot;id&quot;])
+            .toEqual(1);
+        expect(result[&quot;price&quot;])
+            .toEqual(12);
+        expect(result)
+            .toEqual(data);
+    });
+});</code></pre>
+<hr />
 <h1 id="如何推广">如何推广</h1>
 <p>除了擅长编写 md 电子书来攒 star，我还写了一系列的开源软件，也掌握了一些项目运营的技巧。</p>
 <p><strong>开源并不是你把软件、README 写好就行了，还有详细的文档、示例程序等等</strong>。</p>
@@ -1722,645 +1791,11 @@ app.listen(3000);</code></pre>
 </figure>
 <p>哪怕只是一个错误字的 PR，那么你也可以 merge，啊哈哈~。然后，就有人帮你宣传了，『我给 xxx 项目一个 PR 了』。刚毕业的时候，我也是从这种类型的 PR 做起的~~。</p>
 <h1 id="开源项目维护">开源项目维护</h1>
-<h1 id="如何以正确的姿势阅读开源软件代码">如何以“正确的姿势”阅读开源软件代码</h1>
-<blockquote>
-<p>所有让你直接看最新源码的文章都是在扯淡，你应该从“某个版本”开始阅读代码。</p>
-</blockquote>
-<p>我们并不建议所有的读者都直接看最新的代码，正确的姿势应该是：</p>
-<ul>
-<li>clone某个项目的代码到本地</li>
-<li>查看这个项目的release列表</li>
-<li>找到一个看得懂的release版本，如1.0或者更早的版本</li>
-<li>读懂上一个版本的代码</li>
-<li>向后阅读大版本的源码</li>
-<li>读最新的源码</li>
-</ul>
-<p>最好的在这个过程中，<strong>可以自己造轮子来实现一遍</strong>。</p>
-<h2 id="阅读过程">阅读过程</h2>
-<p>在我阅读的前端库、Python后台库的过程中，我们都是以造轮子为目的展开的。所以在最开始的时候，我需要一个可以工作，并且拥有我想要的功能的版本。</p>
-<figure>
-<img src="./img/it-works-cms.png" alt="it-works-cms.png" /><figcaption>it-works-cms.png</figcaption>
-</figure>
-<p>紧接着，我就可以开始去实践这个版本中的一些功能，并理解他们是怎么工作的。再用<code>git</code>大法展开之前修改的内容，可以使用IDE自带的Diff工具：</p>
-<figure>
-<img src="./img/pycharm-diff.jpg" alt="pycharm-diff.jpg" /><figcaption>pycharm-diff.jpg</figcaption>
-</figure>
-<p>或者类似于<code>SourceTree</code>这样的工具，来查看修改的内容。</p>
-<p>在我们理解了基本的核心功能后，我们就可以向后查看大、中版本的更新内容了。</p>
-<p>开始之前，我们希望大家对版本号管理有一些基本的认识。 ## 版本号管理</p>
-<p>我最早阅读的开始软件是Linux，而下面则是Linux的Release过程：</p>
-<figure>
-<img src="./img/linux-history.png" alt="linux-history.png" /><figcaption>linux-history.png</figcaption>
-</figure>
-<p>表格源自一本书叫《Linux内核0.11(0.95)完全注释》，简单地再介绍一下： - 版本0.00是一个hello,world程序 - 版本0.01包含了可以工作的代码 - 版本0.11是基本可以正常的版本</p>
-<p>这里就要扯到《GNU 风格的版本号管理策略》：</p>
-<p>1．项目初版本时，版本号可以为 0.1 或 0.1.0, 也可以为 1.0 或 1.0.0，如果你为人很低调，我想你会选择那个主版本号为 0 的方式； 2．当项目在进行了局部修改或 bug 修正时，主版本号和子版本号都不变，修正版本号加 1； 3. 当项目在原有的基础上增加了部分功能时，主版本号不变，子版本号加 1，修正版本号复位为 0，因而可以被忽略掉； 4．当项目在进行了重大修改或局部修正累积较多，而导致项目整体发生全局变化时，主版本号加 1； 5．另外，编译版本号一般是编译器在编译过程中自动生成的，我们只定义其格式，并不进行人为控制。</p>
-<p>因此，我们可以得到几个简单的结论： - 我们需要阅读最早的有核心代码的版本 - 我们需要阅读1.0版本的Release - 往后每一次大的Release我们都需要了解一下</p>
-<h2 id="示例">示例</h2>
-<p>以Flask为例：</p>
-<p>一、先Clone它。</p>
-<figure>
-<img src="./img/clone-flask.png" alt="clone-flask.png" /><figcaption>clone-flask.png</figcaption>
-</figure>
-<p>二、从Release页面找到它的早期版本：</p>
-<figure>
-<img src="./img/flask.png" alt="flask.png" /><figcaption>flask.png</figcaption>
-</figure>
-<p>三、 从上面拿到它的提交号<code>8605cc3</code>，然后checkout到这次提交，查看功能。在这个版本里，一共有六百多行代码</p>
-<figure>
-<img src="./img/flask-0.1.png" alt="flask-0.1.png" /><figcaption>flask-0.1.png</figcaption>
-</figure>
-<p>还是有点长</p>
-<p>四、我们可以找到它的最早版本:</p>
-<figure>
-<img src="./img/flask-init.png" alt="flask-init.png" /><figcaption>flask-init.png</figcaption>
-</figure>
-<p>然后查看它的<code>flask.py</code>文件，只有简单的三百多行，并且还包含一系列注释：</p>
-<figure>
-<img src="./img/flask-init.png" alt="flask-init.png" /><figcaption>flask-init.png</figcaption>
-</figure>
-<p>五、接着，再回过头去阅读</p>
-<ul>
-<li>0.1版本</li>
-<li>。。。</li>
-<li>最新的0.10.1版本</li>
-</ul>
-<h1 id="如何在github寻找灵感fork">如何在GitHub“寻找灵感(fork)”</h1>
-<blockquote>
-<p>重造轮子是重新创造一个已有的或是已被其他人优化的基本方法。</p>
-</blockquote>
-<p>最近萌发了一个想法写游戏引擎，之前想着做一个JavaScript前端框架。看看，这个思路是怎么来的。</p>
-<h2 id="lettuce构建过程">Lettuce构建过程</h2>
-<blockquote>
-<p>Lettuce是一个简约的移动开发框架。</p>
-</blockquote>
-<p>故事的出发点是这样的:<code>写了很多代码,用的都是框架，最后不知道收获什么了</code>?事实也是如此，当自己做了一些项目之后，发现最后什么也没有收获到。于是，就想着做一个框架。</p>
-<h3 id="需求">需求</h3>
-<p>有这样的几个前提</p>
-<ul>
-<li>为什么我只需要jQuery里的选择器、Ajax要引入那么重的库呢?</li>
-<li>为什么我只需要一个Template，却想着用Mustache</li>
-<li>为什么我需要一个Router，却要用Backbone呢?</li>
-<li>为什么我需要的是一个isObject函数，却要用到整个Underscore?</li>
-</ul>
-<p>我想要的只是一个简单的功能，而我不想引入一个庞大的库。换句话说，我只需要不同库里面的一小部分功能，而不是一个库。</p>
-<p>实际上想要的是:</p>
-<blockquote>
-<p>构建一个库，里面从不同的库里面抽取出不同的函数。</p>
-</blockquote>
-<h3 id="计划">计划</h3>
-<p>这时候我参考了一本电子书《Build JavaScript FrameWork》，加上一些平时的需求，于是很快的就知道自己需要什么样的功能:</p>
-<ul>
-<li>Promise 支持</li>
-<li>Class类(ps:没有一个好的类使用的方式)</li>
-<li>Template 一个简单的模板引擎</li>
-<li>Router 用来控制页面的路由</li>
-<li>Ajax 基本的Ajax Get/Post请求</li>
-</ul>
-<p>在做一些实际的项目中，还遇到了这样的一些功能支持:</p>
-<ul>
-<li>Effect 简单的一些页面效果</li>
-<li>AMD支持</li>
-</ul>
-<p>而我们有一个前提是要保持这个库尽可能的小、同时我们还需要有测试。</p>
-<h3 id="实现第一个需求">实现第一个需求</h3>
-<p>简单说说是如何实现一个简单的需求。</p>
-<h4 id="生成框架">生成框架</h4>
-<p>因为Yeoman可以生成一个简单的轮廓，所以我们可以用它来生成这个项目的骨架。</p>
-<ul>
-<li>Gulp</li>
-<li>Jasmine</li>
-</ul>
-<h4 id="寻找">寻找</h4>
-<p>在GitHub上搜索了一个看到了下面的几个结果:</p>
-<ul>
-<li><a href="https://github.com/then/promise" class="uri">https://github.com/then/promise</a></li>
-<li><a href="https://github.com/reactphp/promise" class="uri">https://github.com/reactphp/promise</a></li>
-<li><a href="https://github.com/kriskowal/q" class="uri">https://github.com/kriskowal/q</a></li>
-<li><a href="https://github.com/petkaantonov/bluebird" class="uri">https://github.com/petkaantonov/bluebird</a></li>
-<li><a href="https://github.com/cujojs/when" class="uri">https://github.com/cujojs/when</a></li>
-</ul>
-<p>但是显然，他们都太重了。事实上，对于一个库来说，80%的人只需要其中20%的代码。于是，找到了<a href="https://github.com/stackp/promisejs" class="uri">https://github.com/stackp/promisejs</a>，看了看用法，这就是我们需要的功能:</p>
-<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">late</span>(n) <span class="op">{</span>
-    <span class="kw">var</span> p <span class="op">=</span> <span class="kw">new</span> <span class="va">promise</span>.<span class="at">Promise</span>()<span class="op">;</span>
-    <span class="at">setTimeout</span>(<span class="kw">function</span>() <span class="op">{</span>
-        <span class="va">p</span>.<span class="at">done</span>(<span class="kw">null</span><span class="op">,</span> n)<span class="op">;</span>
-    <span class="op">},</span> n)<span class="op">;</span>
-    <span class="cf">return</span> p<span class="op">;</span>
-<span class="op">}</span>
-
-<span class="at">late</span>(<span class="dv">100</span>).<span class="at">then</span>(
-    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
-        <span class="cf">return</span> <span class="at">late</span>(n <span class="op">+</span> <span class="dv">200</span>)<span class="op">;</span>
-    <span class="op">}</span>
-).<span class="at">then</span>(
-    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
-        <span class="cf">return</span> <span class="at">late</span>(n <span class="op">+</span> <span class="dv">300</span>)<span class="op">;</span>
-    <span class="op">}</span>
-).<span class="at">then</span>(
-    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
-        <span class="cf">return</span> <span class="at">late</span>(n <span class="op">+</span> <span class="dv">400</span>)<span class="op">;</span>
-    <span class="op">}</span>
-).<span class="at">then</span>(
-    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
-        <span class="at">alert</span>(n)<span class="op">;</span>
-    <span class="op">}</span>
-)<span class="op">;</span></code></pre></div>
-<p>接着打开看看Promise对象，有我们需要的功能，但是又有一些功能超出我的需求。接着把自己不需要的需求去掉，这里函数最后就变成了</p>
-<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">Promise</span>() <span class="op">{</span>
-    <span class="kw">this</span>.<span class="at">_callbacks</span> <span class="op">=</span> []<span class="op">;</span>
-<span class="op">}</span>
-
-<span class="va">Promise</span>.<span class="va">prototype</span>.<span class="at">then</span> <span class="op">=</span> <span class="kw">function</span>(func<span class="op">,</span> context) <span class="op">{</span>
-    <span class="kw">var</span> p<span class="op">;</span>
-    <span class="cf">if</span> (<span class="kw">this</span>.<span class="at">_isdone</span>) <span class="op">{</span>
-        p <span class="op">=</span> <span class="va">func</span>.<span class="at">apply</span>(context<span class="op">,</span> <span class="kw">this</span>.<span class="at">result</span>)<span class="op">;</span>
-    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span>
-        p <span class="op">=</span> <span class="kw">new</span> <span class="at">Promise</span>()<span class="op">;</span>
-        <span class="kw">this</span>.<span class="va">_callbacks</span>.<span class="at">push</span>(<span class="kw">function</span> () <span class="op">{</span>
-            <span class="kw">var</span> res <span class="op">=</span> <span class="va">func</span>.<span class="at">apply</span>(context<span class="op">,</span> arguments)<span class="op">;</span>
-            <span class="cf">if</span> (res <span class="op">&amp;&amp;</span> <span class="kw">typeof</span> <span class="va">res</span>.<span class="at">then</span> <span class="op">===</span> <span class="st">&#39;function&#39;</span>) <span class="op">{</span>
-                <span class="va">res</span>.<span class="at">then</span>(<span class="va">p</span>.<span class="at">done</span><span class="op">,</span> p)<span class="op">;</span>
-            <span class="op">}</span>
-        <span class="op">}</span>)<span class="op">;</span>
-    <span class="op">}</span>
-    <span class="cf">return</span> p<span class="op">;</span>
-<span class="op">};</span>
-
-<span class="va">Promise</span>.<span class="va">prototype</span>.<span class="at">done</span> <span class="op">=</span> <span class="kw">function</span>() <span class="op">{</span>
-    <span class="kw">this</span>.<span class="at">result</span> <span class="op">=</span> arguments<span class="op">;</span>
-    <span class="kw">this</span>.<span class="at">_isdone</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span>
-    <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="kw">this</span>.<span class="va">_callbacks</span>.<span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span>
-        <span class="kw">this</span>.<span class="at">_callbacks</span>[i].<span class="at">apply</span>(<span class="kw">null</span><span class="op">,</span> arguments)<span class="op">;</span>
-    <span class="op">}</span>
-    <span class="kw">this</span>.<span class="at">_callbacks</span> <span class="op">=</span> []<span class="op">;</span>
-<span class="op">};</span>
-
-<span class="kw">var</span> promise <span class="op">=</span> <span class="op">{</span>
-    <span class="dt">Promise</span><span class="op">:</span> Promise
-<span class="op">};</span></code></pre></div>
-<p>需要注意的是: <code>License</code>，不同的软件有不同的License，如MIT、GPL等等。最好能在遵循协议的情况下，使用别人的代码。</p>
-<h3 id="实现第二个需求">实现第二个需求</h3>
-<p>由于已经有了现有的很多库，所以就可以直接参照（抄）别人写的代码。</p>
-<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">Lettuce</span>.<span class="at">get</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> callback) <span class="op">{</span>
-    <span class="va">Lettuce</span>.<span class="at">send</span>(url<span class="op">,</span> <span class="st">&#39;GET&#39;</span><span class="op">,</span> callback)<span class="op">;</span>
-<span class="op">};</span>
-
-<span class="va">Lettuce</span>.<span class="at">load</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> callback) <span class="op">{</span>
-    <span class="va">Lettuce</span>.<span class="at">send</span>(url<span class="op">,</span> <span class="st">&#39;GET&#39;</span><span class="op">,</span> callback)<span class="op">;</span>
-<span class="op">};</span>
-
-<span class="va">Lettuce</span>.<span class="at">post</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> data<span class="op">,</span> callback) <span class="op">{</span>
-    <span class="va">Lettuce</span>.<span class="at">send</span>(url<span class="op">,</span> <span class="st">&#39;POST&#39;</span><span class="op">,</span> callback<span class="op">,</span> data)<span class="op">;</span>
-<span class="op">};</span>
-
-<span class="va">Lettuce</span>.<span class="at">send</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> method<span class="op">,</span> callback<span class="op">,</span> data) <span class="op">{</span>
-    data <span class="op">=</span> data <span class="op">||</span> <span class="kw">null</span><span class="op">;</span>
-    <span class="kw">var</span> request <span class="op">=</span> <span class="kw">new</span> <span class="at">XMLHttpRequest</span>()<span class="op">;</span>
-    <span class="cf">if</span> (callback <span class="kw">instanceof</span> Function) <span class="op">{</span>
-        <span class="va">request</span>.<span class="at">onreadystatechange</span> <span class="op">=</span> <span class="kw">function</span> () <span class="op">{</span>
-            <span class="cf">if</span> (<span class="va">request</span>.<span class="at">readyState</span> <span class="op">===</span> <span class="dv">4</span> <span class="op">&amp;&amp;</span> (<span class="va">request</span>.<span class="at">status</span> <span class="op">===</span> <span class="dv">200</span> <span class="op">||</span> <span class="va">request</span>.<span class="at">status</span> <span class="op">===</span> <span class="dv">0</span>)) <span class="op">{</span>
-                <span class="at">callback</span>(<span class="va">request</span>.<span class="at">responseText</span>)<span class="op">;</span>
-            <span class="op">}</span>
-        <span class="op">};</span>
-    <span class="op">}</span>
-    <span class="va">request</span>.<span class="at">open</span>(method<span class="op">,</span> url<span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span>
-    <span class="cf">if</span> (data <span class="kw">instanceof</span> Object) <span class="op">{</span>
-        data <span class="op">=</span> <span class="va">JSON</span>.<span class="at">stringify</span>(data)<span class="op">;</span>
-        <span class="va">request</span>.<span class="at">setRequestHeader</span>(<span class="st">&#39;Content-Type&#39;</span><span class="op">,</span> <span class="st">&#39;application/json&#39;</span>)<span class="op">;</span>
-    <span class="op">}</span>
-    <span class="va">request</span>.<span class="at">setRequestHeader</span>(<span class="st">&#39;X-Requested-With&#39;</span><span class="op">,</span> <span class="st">&#39;XMLHttpRequest&#39;</span>)<span class="op">;</span>
-    <span class="va">request</span>.<span class="at">send</span>(data)<span class="op">;</span>
-<span class="op">};</span></code></pre></div>
-<h1 id="github连击">GitHub连击</h1>
-<h2 id="天">100天</h2>
-<p>我也是蛮拼的，虽然我想的只是在GitHub上连击100~200天，然而到了今天也算不错。</p>
-<figure>
-<img src="./img/longest-streak.png" alt="Longest Streak" /><figcaption>Longest Streak</figcaption>
-</figure>
-<p><code>在不停地造轮子的过程中，也不停地造车子。</code></p>
-<p>在那篇连续冲击365天的文章出现之前，我们公司的大大(<a href="https://github.com/dreamhead" class="uri">https://github.com/dreamhead</a>)也曾经在公司内部说过，天天commit什么的。当然这不是我的动力，在连击140天之前</p>
-<ul>
-<li>给过google的<code>ngx_speed</code>、<code>node-coap</code>等项目创建过pull request</li>
-<li>也有<code>free-programming-books</code>、<code>free-programming-books-zh_CN</code>这样的项目。</li>
-<li>当然还有一个连击20天。</li>
-</ul>
-<p>对比了一下365天连击的commit，我发现我在total上整整多了近0.5倍。</p>
-<figure>
-<img src="./img/365-streak.jpg" alt="365 Streak" /><figcaption>365 Streak</figcaption>
-</figure>
-<p>同时这似乎也意味着，我每天的commit数与之相比多了很多。</p>
-<p>在连击20的时候，有这样的问题: <em>为了commit而commit代码</em>，最后就放弃了。</p>
-<p>而现在是<code>为了填坑而commit</code>，为自己挖了太多的想法。</p>
-<h3 id="天的提升">40天的提升</h3>
-<p>当时我需要去印度接受毕业生培训，大概有5周左右，想着总不能空手而归。于是在国庆结束后有了第一次commit，当时旅游归来，想着自己在不同的地方有不同的照片，于是这个repo的名字是 <a href="https://github.com/phodal/onmap">onmap</a>——将自己的照片显示在地图上的拍摄地点(手机是Lumia 920)。然而，中间因为修改账号的原因，丢失了commit。</p>
-<p>再从印度说起，当时主要维护三个repo:</p>
-<ul>
-<li>物联网的CoAP协议</li>
-<li><a href="https://github.com/phodal/designiot">一步步设计物联网系统</a>的电子书</li>
-<li>一个Node.js + JS的网站</li>
-</ul>
-<p>说说最后一个，最后一个是练习的项目。因为当时培训比较无聊，业余时间比较多，英语不好，加上听不懂印度人的话。晚上基本上是在住的地方默默地写代码，所以当时的目标有这么几个:</p>
-<ul>
-<li>TDD</li>
-<li>测试覆盖率</li>
-<li>代码整洁</li>
-</ul>
-<p>这也就是为什么那个repo有这样的一行:</p>
-<figure>
-<img src="./img/repo-status.png" alt="Repo Status" /><figcaption>Repo Status</figcaption>
-</figure>
-<p>做到98%的覆盖率也算蛮拼的，当然还有Code Climate也达到了4.0，也有了112个commits。因此也带来了一些提高:</p>
-<ul>
-<li>提高了代码的质量(code climate比jslint更注重重复代码等等一些bad smell)。</li>
-<li>对于Mock、Stub、FakesServer等用法有更好的掌握</li>
-<li>可以持续地交付软件(版本管理、自动测试、CI、部署等等)</li>
-</ul>
-<h3 id="天的挑战">100天的挑战</h3>
-<p>(ps:从印度回来之后，由于女朋友在泰国实习，有了更多的时间可以看书、写代码)</p>
-<p>有意思的是越到中间的一些时间，commits的次数上去了，除了一些简单的pull request，还有一些新的轮子出现了。</p>
-<figure>
-<img src="./img/problem.jpg" alt="Problem" /><figcaption>Problem</figcaption>
-</figure>
-<p>这是上一星期的commits，这也就意味着，在一星期里面，我需要在8个repo里切换。而现在我又有了一个新的idea，这时就发现了一堆的问题:</p>
-<ul>
-<li>今天工作在这个repo上，突然发现那个repo上有issue，需要去修复，于是就放下了当前的代码。</li>
-<li>在不同的repo间切换容易分散精力</li>
-<li>很容易就发现有太多的功能可以实现，但是时间是有限的。</li>
-<li>没有足够的空闲时间，除了周末。</li>
-<li>希望去寻找那些有兴趣的人，然而却发现原来没有那么多时间去找人。</li>
-</ul>
-<h3 id="天的希冀">140天的希冀</h3>
-<p>在经历了100天之后，似乎整个人都轻松了，毕竟目标是100~200天。似乎到现在，也不会有什么特殊的情怀，除了一些希冀。</p>
-<p>当然，对于一个开源项目的作者来说，最好有下面的情况:</p>
-<ul>
-<li>很多人知道了这个项目</li>
-<li>很多人用它的项目。</li>
-<li>在某些可以用这个项目快速解决问题的地方提到了这个项目</li>
-<li>提了bug、issue、问题。</li>
-<li>提了bug，并解决了。(ps:这是最理想的情况)</li>
-</ul>
-<h2 id="天的showcase">200天的Showcase</h2>
-<p>今天是我连续泡在GitHub上的第200天，也是蛮高兴的，终于到达了:</p>
-<figure>
-<img src="./img/github-200-days.png" alt="GitHub 200 days" /><figcaption>GitHub 200 days</figcaption>
-</figure>
-<p>故事的背影是: 去年国庆完后要去印度接受毕业生培训——就是那个神奇的国度。但是在去之前已经在项目待了九个多月，项目上的挑战越来越少，在印度的时间又算是比较多。便给自己设定了一个长期的goal，即100~200天的longest streak。</p>
-<p>或许之前你看到过一篇文章<a href="https://github.com/phodal/github-roam/blob/master/chapters/12-streak-your-github.md">让我们连击</a>，那时已然140天，只是还是浑浑噩噩。到了今天，渐渐有了一个更清晰地思路。</p>
-<p>先让我们来一下ShowCase，然后再然后，下一篇我们再继续。</p>
-<h3 id="一些项目简述">一些项目简述</h3>
-<p>上面说到的培训一开始是用Java写的一个网站，有自动测试、CI、CD等等。由于是内部组队培训，代码不能公开等等因素，加之做得无聊。顺手，拿Node.js +RESTify 做了Server，Backbone + RequireJS + jQuery 做了前台的逻辑。于是在那个日子里，也在维护一些旧的repo，如<a href="https://github.com/phodal/iot-coap">iot-coap</a>、<a href="https://github.com/phodal/iot">iot</a>，前者是我拿到WebStorm开源License的Repo，后者则是毕业设计。</p>
-<p>对于这样一个项目也需要有测试、自动化测试、CI等等。CI用的是Travics-CI。总体的技术构架如下:</p>
-<h4 id="技术栈">技术栈</h4>
-<p>前台:</p>
-<ul>
-<li>Backbone</li>
-<li>RequireJS</li>
-<li>Underscore</li>
-<li>Mustache</li>
-<li>Pure CSS</li>
-</ul>
-<p>后台:</p>
-<ul>
-<li>RESTify</li>
-</ul>
-<p>测试:</p>
-<ul>
-<li>Jasmine</li>
-<li>Chai</li>
-<li>Sinon</li>
-<li>Mocha</li>
-<li>Jasmine-jQuery</li>
-</ul>
-<p>一直写到五星期的培训结束， 只是没有自动部署。想想就觉得可以用github-page的项目多好~~。</p>
-<p>过程中还有一些有意思的小项目，如:</p>
-<h3 id="google-map-solr-polygon-搜索">google map solr polygon 搜索</h3>
-<p><a href="http://www.phodal.com/blog/google-map-width-solr-use-polygon-search/">google map solr polygon 搜索</a></p>
-<figure>
-<img src="./img/solr.png" alt="google map solr" /><figcaption>google map solr</figcaption>
-</figure>
-<p>代码: <a href="https://github.com/phodal/gmap-solr" class="uri">https://github.com/phodal/gmap-solr</a></p>
-<h3 id="技能树">技能树</h3>
-<p>这个可以从两部分说起:</p>
-<h4 id="重构skill-tree">重构Skill Tree</h4>
-<p>原来的是</p>
-<ul>
-<li>Knockout</li>
-<li>RequireJS</li>
-<li>jQuery</li>
-<li>Gulp</li>
-</ul>
-<figure>
-<img src="./img/skilltree.jpg" alt="Skill Tree" /><figcaption>Skill Tree</figcaption>
-</figure>
-<p>代码: <a href="https://github.com/phodal/skillock" class="uri">https://github.com/phodal/skillock</a></p>
-<h4 id="技能树sherlock">技能树Sherlock</h4>
-<ul>
-<li>D3.js</li>
-<li>Dagre-D3.js</li>
-<li>jquery.tooltipster.js</li>
-<li>jQuery</li>
-<li>Lettuce</li>
-<li>Knockout.js</li>
-<li>Require.js</li>
-</ul>
-<figure>
-<img src="./img/sherlock.png" alt="Sherlock skill tree" /><figcaption>Sherlock skill tree</figcaption>
-</figure>
-<p>代码: <a href="https://github.com/phodal/sherlock" class="uri">https://github.com/phodal/sherlock</a></p>
-<h4 id="django-ionic-elasticsearch-地图搜索">Django Ionic ElasticSearch 地图搜索</h4>
-<figure>
-<img src="./img/elasticsearch_ionit_map.jpg" alt="Django Elastic Search" /><figcaption>Django Elastic Search</figcaption>
-</figure>
-<ul>
-<li>ElasticSearch</li>
-<li>Django</li>
-<li>Ionic</li>
-<li>OpenLayers 3</li>
-</ul>
-<p>代码: <a href="https://github.com/phodal/django-elasticsearch" class="uri">https://github.com/phodal/django-elasticsearch</a></p>
-<h4 id="简历生成器">简历生成器</h4>
-<figure>
-<img src="./img/resume.png" alt="Resume" /><figcaption>Resume</figcaption>
-</figure>
-<ul>
-<li>React</li>
-<li>jsPDF</li>
-<li>jQuery</li>
-<li>RequireJS</li>
-<li>Showdown</li>
-</ul>
-<p>代码: <a href="https://github.com/phodal/resume" class="uri">https://github.com/phodal/resume</a></p>
-<h4 id="nginx-大数据学习">Nginx 大数据学习</h4>
-<figure>
-<img src="./img/nginx_pig.jpg" alt="Nginx Pig" /><figcaption>Nginx Pig</figcaption>
-</figure>
-<ul>
-<li>ElasticSearch</li>
-<li>Hadoop</li>
-<li>Pig</li>
-</ul>
-<p>代码: <a href="https://github.com/phodal/learning-data/tree/master/nginx" class="uri">https://github.com/phodal/learning-data/tree/master/nginx</a></p>
-<h4 id="其他">其他</h4>
-<p>虽然技术栈上主要集中在Python、JavaScript，当然还有一些Ruby、Pig、Shell、Java的代码，只是我还是习惯用Python和JavaScript。一些用到觉得不错的框架:</p>
-<ul>
-<li>Ionic: 开始Hybird移动应用。</li>
-<li>Django: Python Web开发利器。</li>
-<li>Flask: Python Web开发小刀。</li>
-<li>RequireJS: 管理js依赖。</li>
-<li>Backbone: Model + View + Router。</li>
-<li>Angluar: …。</li>
-<li>Knockout: MVV*。</li>
-<li>React: 据说会火。</li>
-<li>Cordova: Hybird应用基础。</li>
-</ul>
-<p>还应该有:</p>
-<ul>
-<li>ElasticSearch</li>
-<li>Solr</li>
-<li>Hadoop</li>
-<li>Pig</li>
-<li>MongoDB</li>
-<li>Redis</li>
-</ul>
-<h2 id="天-1">365天</h2>
-<blockquote>
-<p>给你一年的时间，你会怎样去提高你的水平？？？</p>
-</blockquote>
-<figure>
-<img src="./img/github-365.jpg" alt="GitHub 365" /><figcaption>GitHub 365</figcaption>
-</figure>
-<p>正值这难得的sick leave（万恶的空气），码文一篇来记念一个过去的366天里。尽管想的是在今年里写一个可持续的开源框架，但是到底这依赖于一个好的idea。在我的<a href="http://github.com/phodal/ideas">GitHub 孵化器</a> 页面上似乎也没有一个特别让我满意的想法，虽然上面有各种不样有意思的ideas。多数都是在过去的一年是完成的，然而有一些也是还没有做到的。</p>
-<p>尽管一直在GitHub上连击看上去似乎是没有多大必要的，但是人总得有点追求。如果正是漫无目的，却又想着提高技术的同时，为什么不去试试？毕竟技术非常好、不需要太多练习的人只是少数，似乎这样的人是不存在的。大多数的人都是经过练习之后，才会达到别人口中的“技术好”。</p>
-<p>这让我想起了充斥着各种气味的知乎上的一些问题，在一些智商被完虐的话题里，无一不是因为那些人学得比别人早——哪来的天才？所谓的天才，应该是未来的智能生命一般，一出生什么都知道。如果并非如此，那只是说明他练习到位了。</p>
-<p>练习不到位便意味着，即使你练习的时候是一万小时的两倍，那也是无济于事的。如果你学得比别人晚，在<strong>很长的一段时间里</strong>(可能直到进棺材)输给别人是必然的——落后就要挨打。就好像我等毕业于一所二本垫底的学校里，如果在过去我一直保持着和别人(各种重点)一样的学习速度，那么我只能一直是Loser。</p>
-<p>需要注意的是，对你来说考上二本很难，并不是因为你比别人笨。教育资源分配不均的问题，在某种程度上导致了新的阶级制度的出现。如<a href="https://www.phodal.com/">我的首页</a>说的那样: <strong>THE ONLY FAIR IS NOT FAIR</strong>——唯一公平的是它是不公平的。我们可以做的还有很多——<strong>CREATE &amp; SHARE</strong>。真正的不幸是，因为营养不良导致的教育问题。</p>
-<p>于是在想明白了很多事的时候起，便有了Re-Practise这样的计划，而365天只是中间的一个产物。</p>
-<h3 id="编程的基础能力">编程的基础能力</h3>
-<p>虽说算法很重要，但是编码才是基础能力。算法与编程在某种程度上是不同的领域，算法编程是在编程上面的一级。算法写得再好，如果别人很难直接拿来复用，在别人眼里就是shit。想出能work的代码一件简单的事，学会对其重构，使之变得更易读就是一件有意义的事。</p>
-<p>于是，在某一时刻在GitHub上创建了一个组织，叫<a href="https://github.com/artisanstack">Artisan Stack</a>。当时想的是在GitHub寻找一些JavaScript项目，对其代码进行重构。但是到底是影响力不够哈，参与的人数比较少。</p>
-<h4 id="重构-1">重构</h4>
-<p>如果你懂得如何写出高可读的代码，那么我想你是不需要这个的，但是这意味着你花了更多的时候在思考上了。当谈论重构的时候，让我想起了TDD(测试驱动开发)。即使不是TDD，那么如果你写着测试，那也是可以重构的。(之前写过一些利用Intellij IDEA重构的文章：<a href="https://www.phodal.com/blog/intellij-idea-refactor-extract-method/">提炼函数</a>、<a href="https://www.phodal.com/blog/intellij-idea-refactor-replace-temp-with-query/">以查询取代临时变量</a>、<a href="https://www.phodal.com/blog/thoughtworks-refactor-and-intellij-idea/">重构与Intellij Idea初探</a>、<a href="https://www.phodal.com/blog/intellij-idea-refactor-inline-method/">内联函数</a>)</p>
-<p>在各种各样的文章里，我们看到过一些相关的内容，最好的参考莫过于《重构》一书。最基础不过的原则便是函数名，取名字很难，取别人能读懂的名字更难。其他的便有诸如长函数、过大的类、重复代码等等。在我有限的面试别人的经历里，这些问题都是最常见的。</p>
-<h4 id="测试-1">测试</h4>
-<p>而如果没有测试，其他都是扯淡。写好测试很难，写个测试算是一件容易的事。只是有些容易我们会为了测试而测试。</p>
-<p>在我写<a href="https://github.com/echoesworks/echoesworks">EchoesWorks</a>和<a href="https://github.com/phodal/lan">Lan</a>的过程中，我尽量去保证足够高的测试覆盖率。</p>
-<figure>
-<img src="./img/lan.png" alt="lan" /><figcaption>lan</figcaption>
-</figure>
-<figure>
-<img src="./img/echoesworks.png" alt="EchoesWorks" /><figcaption>EchoesWorks</figcaption>
-</figure>
-<p>从测试开始的TDD，会保证方法是可测的。从功能到测试则可以提供工作次效率，但是只会让测试成为测试，而不是代码的一部分。</p>
-<p>测试是代码的最后一公里。所以，尽可能的为你的GitHub上的项目添加测试。</p>
-<h4 id="编码的过程">编码的过程</h4>
-<p>初到TW时，Pair时候总会有人教我如何开始编码，这应该也是一项基础的能力。结合日常，重新演绎一下这个过程：</p>
-<ol type="1">
-<li>有一个可衡量、可实现、过程可测的目标</li>
-<li>Tasking (即对要实现的目标过程进行分解)</li>
-<li>一步步实现 (如TDD)</li>
-<li>实现目标</li>
-</ol>
-<p>放到当前的场景就是：</p>
-<ol type="1">
-<li>我想在GitHub上连击365天。对应于每一个时候段的目标都应该是可以衡量、测试的——即每天都会有Contributions。</li>
-<li>分解就是一个痛苦的过程。理想情况下，我们应该会有每天提交，但是这取决于你的repo的数量，如果没有新的idea出现，那么这个就变成为了Contributions而Commit。</li>
-<li>一步步实现</li>
-</ol>
-<p>在我们实际工作中也是如此，接到一个任务，然后分解，一步步完成。不过实现会稍微复杂一些，因为事务总会有抢占和优先级的。</p>
-<h3 id="技术与框架设计">技术与框架设计</h3>
-<p>在上上一篇博客中《<a href="https://www.phodal.com/blog/after-500-blogposts-analytics-after-tech/">After 500: 写了第500篇博客，然后呢?</a>》也深刻地讨论了下这个问题，技术向来都是后发者优势。对于技术人员来说，也是如此，后发者占据很大的优势。</p>
-<p>如果我们只是单纯地把我们的关注点仅仅放置于技术上，那么我们就不具有任何的优势。而依赖于我们的编程经验，我们可以在特定的时候创造一些框架。而架构的设计本身就是一件有意思的事，大抵是因为程序员都喜欢创造。(ps:之前曾经写过这样一篇文章，《<a href="https://www.phodal.com/blog/sorry-i-don&#39;t-like-programming/">对不起，我并不热爱编程，我只喜欢创造</a>》)</p>
-<p><strong>创造是一种知识的再掌握过程。</strong></p>
-<p>回顾一下写echoesworks的过程，一开始我需要的是一个网页版的PPT，当然这类的东西已经有很多了，如impress.js、bespoke.js等等。分析一下所需要的功能：markdown解析器、键盘事件处理、Ajax、进度条显示、图片处理、Slide。我们可以在GitHub上找到各式各样的模块，我们所要做的就是将之结合在一样。在那之前，我试着用类似的原理写（组合）了<a href="https://github.com/phodal/lettuce">Lettuce</a>。</p>
-<p>组合相比于创造过程是一个更有挑战性的过程，我们需要在这过程去设计胶水来粘合这些代码，并在最终可以让他工作。这好比是我们在平时接触到的任务划分，每个人负责相应的模块，最后整合。</p>
-<p>我在写<a href="https://github.com/phodal/lan">lan</a>的时候，也是类似的，但是不同的是我已经设计了一个清晰的架构图。</p>
-<figure>
-<img src="./img/lan-iot.jpg" alt="Lan IoT" /><figcaption>Lan IoT</figcaption>
-</figure>
-<p>而在我们实现的编码过程也是如此，使用不同的框架，并且让他们能工作。如早期玩的<a href="https://github.com/echoesworks/moqi.mobi">moqi.mobi</a>，基于Backbone、RequireJS、Underscore、Mustache、Pure CSS。在随后的时间里，用React替换了View层，就有了<a href="https://github.com/phodal/backbone-react">backbone-react</a>的练习。</p>
-<p>技术同人一样，需要不断地往高一级前进。我们只需要不断地Re-Practise。</p>
-<h3 id="领域与练习">领域与练习</h3>
-<p>说业务好像不太适合程序员的口味，那就领域吧。不同行业的人，如百度、阿里、腾讯，他们的领域核心是不一样的。</p>
-<p>而领域本身也是相似的，这可以解释为什么互联网公司都喜欢互相挖人，而一般都不会去华为、中兴等非互联网领域挖人。出了这个领域，你可能连个毕业生都不如。领域、业务同技术一样是不断强化知识的一个过程。Ritchie先实现了BCPL语言，而后设计了C语言，而BCPL语言一开始是基于CPL语言。</p>
-<p>领域本身也在不断进化。</p>
-<p>这也是下一个值得提高的地方。</p>
-<h3 id="其他-1">其他</h3>
-<p>是时候写这个小结了。从不会写代码，到写代码是从0到1的过程，但是要从1到60都不是一件容易的事。无论是刷GitHub也好(不要是自动提交)，或者是换工作也好，我们都在不断地练习。</p>
-<p>而练习是要分成不同的几个步骤，不仅仅局限于技术：</p>
-<ol type="1">
-<li>编码</li>
-<li>架构</li>
-<li>设计</li>
-<li>。。。</li>
-</ol>
-<hr />
-<h2 id="天-2">500天</h2>
-<p>尽管之前已经有100天、200天、365天的文章，但是这不是一篇象征性的500天的文章。对这样的一个事物，每个人都会有不同听看法。有的会说这是一件好事，有的则不是。但是别人的看法终究不重要，因为了解你自己的只有你自己。别人都只是以他们的角度来提出观点。</p>
-<p>在这500天里，我发现两点有意思的事，也是总结的时候才意识到的：</p>
-<ol type="1">
-<li>编程的情绪周期</li>
-<li>有意图的练习</li>
-</ol>
-<p>那么，当我们不断地练习的时候，我们就可以写出更好的代码。</p>
-<p>我想你也听过一万小时天才理论的说法：要成为某个领域的专家，需要10000小时。而在这其中每重要的一点是有意图的练习——而不是一直重复性地用不同的语言去写一个相同的算法。如果我们有一天8小时的工作时间 + 2 小时的提高时间，那么我们还是需要1000天才能实现一万小时。</p>
-<h3 id="天与10000小时">500天与10000小时</h3>
-<p>当然如果你连做梦也在写代码的话，那么我想500天就够了，哈哈~~。</p>
-<figure>
-<img src="./img/github-500.jpg" alt="Gtihub 500" /><figcaption>Gtihub 500</figcaption>
-</figure>
-<p>虽然不是连击次数最多的，但是根据<a href="http://git.io/top">Most active GitHub users</a>的结果来说，好似是大陆提交数最多的人，没有之一。再考虑到提交都是有意义的——不是机器刷出来的，不是有意识的去刷，我觉得还是有很大成就感的。</p>
-<p>而要实现500天连击很重要的两点是：时间和idea。但是我觉得idea并不是非常重要的，我们可以造轮子，这一点就是在早期我做得最多的一件事，不断地造轮子——如《<a href="https://www.phodal.com/blog/create-framework-from-github/">造轮子与从Github生成轮子</a>》一文中所说。除此，你还可以用《<a href="https://www.phodal.com/blog/use-github-manage-idea/">GitHub去管理你的idea</a>》，每当你想到一个Idea以及完成一个idea的时间你就会多一次提交。</p>
-<p>时间则是一件很讽刺的事，因为人们要加班。加班的原因，要么是因为工作的内容很有意思，要么是因为钱。如果不是因为钱的话，为什么不去换个工作呢？比如我司。看似两者间存在很多的对立，但是我总在想技术的提升可以在后期解决收入的问题，而不需要靠加班来解决这个问题。人总是要活着的，钱是必需的，但是程序员的收入都不低。</p>
-<h3 id="编程的情绪周期">编程的情绪周期</h3>
-<p>接着，我观察到了一些有意思的现象——编程的情绪周期也很明显。</p>
-<blockquote>
-<p>所谓“情绪周期”，是指一个人的情绪高潮和低潮的交替过程所经历的时间。</p>
-</blockquote>
-<p>如下图所示的就是情绪周期：</p>
-<figure>
-<img src="./img/qingxu.jpg" alt="情绪周期" /><figcaption>情绪周期</figcaption>
-</figure>
-<p>简单地来说，就是<strong>有一个时间段写代码的感觉超级爽，有一个时间段不想写代码</strong>，但是如果换一个说法就是：<strong>有一个时间段看书、写文档的感觉很爽，有一时间段不想看书、写文档的感觉</strong>。这也就是为什么在我的GitHub首页上的绿色各种花。不过因为《物联网周报》的原因，我会定期地更新一个相关的开源项目。</p>
-<p>但是总来说，我习惯在一些时间造一些轮子、创建文档，这就是为什么我的GitHub会有一些开源电子书的缘故。</p>
-<h3 id="有意图的练习">有意图的练习</h3>
-<p>编程需要很长的学习时间，也需要很长的练习时间。尽管我是从小学编程，自认为天赋不错，但是突破了上个门槛还是花费了三四年的时间。其中的很大一部分原因是，没有找对一个合适的方向。而在这期间也没有好好的练习，随后的日子里我意识到我会遇到下一个门槛，便开始试图有意识的练习。</p>
-<p>在我开始工作的时候，我写了一篇名为《<a href="https://www.phodal.com/blog/rethink-about-the-work/">重新思考工作</a>》的文章。在文章中我提到了几点练习的点：</p>
-<ul>
-<li>加强码代码的准确性</li>
-<li>写出更整洁的代码</li>
-<li>英语口语 （外企）</li>
-<li>针对性的加强语言技能</li>
-</ul>
-<p>在一些日子的练习后，我发现这还是太无聊了。天生就喜欢一些有意思的东西，有趣才更有激情吧~~。不过，像下图的打字练习还是挺有意思的：</p>
-<figure>
-<img src="./img/huovd.png" alt="打字练习" /><figcaption>打字练习</figcaption>
-</figure>
-<p>还是能打出了一堆错误的字符。但是对比了一下大多数人的人，还算不错，至少是盲打。但是，还是存在着很大的提升空间。</p>
-<p>随后，我开始一些错误的练习，如对设计模式和架构的练习。试图去练习一些在生产上用不到的设计模式，以及一些架构模式。而这时就意味着，需要生搬一些设计模式。最后，我开始以项目为目的的练习，这就是为什么我的GitHub上的提交数会有如此多的原因。</p>
-<h3 id="预见性练习">预见性练习</h3>
-<p>还有一种练习比较有意思，算是以工作为导向的练习。当我们预见到我们的项目需要某一些技术，我们可能在未来采用某些技术的时候，我们就需要开始预见性的练习这些技术。</p>
-<p>好的一点是：这些项目可能在未来很受初学者欢迎。</p>
-<h3 id="小结">小结</h3>
-<p>每个人都有自己的方向，都有一个不错的发展路线，分享和创造都是不错的路。</p>
-<p>THE ONLY FAIR IS NOT FAIR . ENJOY CREATE &amp; SHARE.</p>
-<h2 id="天里">365*2-7天里</h2>
-<p>刚毕业的时候，有一段时间我一直困惑于如何去提高编码能力——因为项目上做的东西多数时候和自己想要的是不一样的，我便想着自己去找一些有意思的东西做着玩，在这个过程中边练习技能。</p>
-<blockquote>
-<p>如果你知道自己代码能力不够，为什么不花两年时间去提高这方面的能力呢？</p>
-</blockquote>
-<h3 id="编码的练习">编码的练习</h3>
-<p>编码是一件值得练习的事，你从书中、互联网上看到的那一个个的编程大牛无一不是从一点点的小技能积累起来的。从小接触可以让你有一个好的开始，一段好好的练习也会帮助你更好的前进。</p>
-<p>记得我在最开始练习的时候，我分几个不同的阶段去练习:</p>
-<ul>
-<li>按照《重构：改善即有代码的设计》一书边寻找一些 bad smell 的代码，一边想方设法去让代码变得优雅。</li>
-<li>按照《设计模式》以及《重构与模式》来将代码重构成某种设计模式。</li>
-<li>按照《面向模式的软件架构》去设计一些软件架构。</li>
-</ul>
-<p>而这些并不是一种容易的事，很多时候有一些模式，我们都很难有一个好的实践。只是这些东西都不是一些可以生搬硬套的，我们更需要的是知道有这些东西的存在，以便于在某一天，我们可以从我们的仓库里将这些知识取出来。</p>
-<figure>
-<img src="./img/10000.png" alt="10000 hours" /><figcaption>10000 hours</figcaption>
-</figure>
-<p>我们的刻意练习加上我们的持之以恒总是会取得长足的进步。不过在我们练习之前，你需要有一个目标。这个目标可以是一个 Idea、一个设计模式、一个模仿等等，这些内容都可以以 Issue 的好好管理着。</p>
-<p>在最开始我们下定目标的几天里，我们可以很容易做到这样的事。同样的，我们也可以很容易达到 21 天。只是，我们很容易在 21 天后失去一些目标。所以在练习开始之前，你需要创建一个帮助你提高技术的列表，然后一点点加以提高。比如说：</p>
-<ol type="1">
-<li>尝试使用 React + Redux + Koa 2、或者Angular 2 + TypeScript，这样我们就能凭此来学习新的技术。</li>
-<li>尝试使用 CQRS 架构来设计 CMS，这样我们就可以练习在架构方面的能力。</li>
-</ol>
-<p>在我们想到一点我们可以练习的技术的时候，这就是一个可以变成 Issue 管理的内容，我们就可以针对性的提高。</p>
-<p>通常在这种情况下，我们知道自己不知道什么东西，当我们处于不知道自己不知道、不知道自己知道时，那我们就需要网上的各种技能图谱——如StuQ的技能图谱。</p>
-<figure>
-<img src="./img/skillmap.png" alt="skilmap" /><figcaption>skilmap</figcaption>
-</figure>
-<p>然后了解图谱上的一个个的内容，尽可能依照此构建自己的体系——以让自己走向知道自己不知道的地步，然后我们才依此来展开练习。</p>
-<p>建议试试我们家的Growth哈，地址：http://growth.ren。</p>
-<p>文章的剩下部分就让我分享一下：在这723天里，我创造出了哪些有意思的东西（ps：让我装逼一下）——其实我不仅仅只是 Markdown 写得好</p>
-<h4 id="年">2014年</h4>
-<p>时间：2014.10.08-2014.12.30</p>
-<figure>
-<img src="./img/2014.png" alt="2014.png" /><figcaption>2014.png</figcaption>
-</figure>
-<p>在这一段时间里，我创建的项目大部分都是一些物联网项目：</p>
-<ul>
-<li><a href="https://github.com/phodal/iot-coap">iot-coap</a> 一个基于CoAP协议的物联网</li>
-<li><a href="https://github.com/phodal/designiot">designiot</a> 即电子书《教你设计物联网系统》</li>
-<li><a href="https://github.com/phodal/awesome-iot-document">iot-document</a> 收集一些物联网相关的资料，和Awesome不是一个性质</li>
-<li><a href="https://github.com/phodal/iot">iot</a> 基于PHP框架Laravel的物联网</li>
-<li>iot-android 一个与iot项目相配套的Android程序</li>
-<li>等等</li>
-</ul>
-<p>正是这几个IoT项目，让Packt出版社找到了我，才有了后来和国内外出版社打交道的故事。也开始了技术审阅、翻译、写书的各种故事，想想就觉得这个开头真的很好。</p>
-<p>期间还创建了一个很有意思的Chrome插件，叫onebuttonapp——没错，就是模仿Amazon的一键下单写的。这个插件的目的就是难证当时在项目上用的Backbone、Require.js的这一套可以在插件上好好玩。</p>
-<p>OnMap项目是为了让我用Nokia Lumia 920拍照的照片，可以在地图上显示而创建的项目。</p>
-<p>当然还有其他的一些小项目啦。</p>
-<h4 id="年-1">2015年</h4>
-<figure>
-<img src="./img/2015.png" alt="2015.png" /><figcaption>2015.png</figcaption>
-</figure>
-<p>整个区间就是刷各种前端的技术栈，创建了各种有意思的项目：</p>
-<ul>
-<li><a href="https://github.com/phodal/lettuce">Lettuce框架</a>，一个基于简单的SPA框架</li>
-<li><a href="https://github.com/phodal/echoesworks">echoesworks</a>，一个支持字幕、Markdown、动画的Slide框架</li>
-<li><a href="https://github.com/phodal/diaonan">diaonan</a>，一个支持CoAP、MQTT、HTTP的物联网项目</li>
-<li><a href="https://github.com/phodal/developer">developer</a>，收集各种 Web Developer 成长路线，以及读书图谱</li>
-</ul>
-<p>期间还创建了几个混合应用项目：</p>
-<ul>
-<li><a href="https://github.com/phodal/learning-ionic">learning-ionic</a>，程序语言答人，各种hello,world的小应用</li>
-<li><a href="https://github.com/phodal/ionic-elasticsearch">ionic-elasticsearch</a>, Django ElasticSearch Ionic 打造 GIS 移动应用</li>
-<li><a href="https://github.com/phodal/designiot-app">designiot-app</a>，教你设计物联网APP版</li>
-</ul>
-<p>更多内容可以见我的Idea列表：<a href="https://github.com/phodal/ideas" class="uri">https://github.com/phodal/ideas</a>，我实在是不想写了。</p>
-<h4 id="年-2">2016年</h4>
-<figure>
-<img src="./img/2016.png" alt="2016.png" /><figcaption>2016.png</figcaption>
-</figure>
-<p>我们有了Growth系列的电子书、APP，还有Mole，几个极具代表性的项目就够了。</p>
-<ul>
-<li><a href="https://github.com/phodal/growth">Growth</a>，一款专注于Web开发者成长的应用，涵盖Web开发的流程及技术栈，Web开发的学习路线、成长衡量等各方面。</li>
-<li><a href="https://github.com/phodal/growth-ebook">Growth: 全栈增长工程师指南</a>，一本关于如何成为全栈增长工程师的指南</li>
-<li><a href="https://github.com/phodal/growth-in-action">Growth: 全栈增长工程师实战</a>，在Growth中我们介绍的只是一系列的实践，而Growth实战则会带领读者去履行这些实践</li>
-</ul>
-<h3 id="see-you-again">See you Again</h3>
-<p>停止这次连击，只是为了有一个更好的开始。</p>
-<p>如果你也想提高自己，不妨从创建你的 ideas 项目开始，如我的<a href="https://github.com/phodal/ideas">Ideas</a>项目一样，上面已经有了大量的 Idea。然后，我们还可以依据这一个个的项目，创建出一本电子书，即 <a href="https://github.com/phodal/ideabook">ideabook</a>。</p>
-<h1 id="github-里程碑">GitHub 里程碑</h1>
-<h2 id="写在github-的第-19999-个-star-时">写在GitHub 的第 19999 个 star 时</h2>
-<blockquote>
-<p>Star 虽好，可不要贪杯哦。 两年前在做 Annual Review 订下一年的目标时，想着写一个开源框架。去年订下今年的目标时，仍然继续着这样的想法。今年又要制定下一年的目标，2333~~。</p>
-</blockquote>
-<p>不久前，在 GitHub Ranking 上看到自己的 star 数（star 不是设计用于做“点赞”的，而是用来收藏的）时，发现已经快 20000 了。然后把自己的项目过了一遍，发现没有一个比较好的<strong>代表性框架，</strong>要么是应用，要么是电子书。</p>
-<p>前 8 个项目里，除了 Growth 应用以外，其他的都是电子书内容——六本电子书加起来的 star 数有 <strong>10619</strong>，果然是骗 star 的。我只能尽力地去想想：为什么事情会变成这样了？</p>
-<h3 id="从创建开源框架说起">从创建开源框架说起</h3>
-<p>创建开源框架和创建创建开源项目是不一样的，前者你服务于开发者，后者你服务于用户。</p>
-<p>两年前在做 Annual Review 的时候，想着未来的一年里可以做一个开源框架试试。那时刚毕业不久，对开源世界的各种游戏规则不是很了解：<strong>开源并不是将代码提交上去，然后就会一下子火起来</strong>。虽然我们可以在短期内赚上一些眼球，但是真正要将它采用到项目上的人不多。</p>
-<p>当时，我遇到的最主要的问题是：<strong>想参与到项目的人并没有遇到足够的能力</strong>。你还需要花费大量的时间去教他们，鼓励 GitHub 新手并不是一件容易的事。有时我需要在接受他的 PR 后，再修改他的代码。并且人们提交 PR 可能是出于不同的原因。</p>
-<p>然后，知道了开源世界还有一个游戏规则是：<strong>谁的影响力大，谁就能产生更广泛的影响</strong>。如 Virtual Dom 并不是 Facebook 首创的，但是却因为 FB 火的； 松本行弘在写下 mruby 的 README 时（印象中是这个项目），star 数就已经过 1k 了。这种例子数不胜数，要么是在推广上花了力气，要么个人、公司有着更大的影响力。</p>
-<p>一年前，稍微改变了下策略：暂时以<strong>培养人为主</strong>，同时想着做一个合适的开源框架——只是在今年看来，前端领域已经没有合适的地方可以造轮子了。</p>
-<p>在 GitHub 上有一个很常见的问题是，<strong>大多部分项目的维护者就是发起人</strong>——如果这个发起人发生意外了，那么这个项目怎么办。如果这是一个很火的项目，它就存在着巨大的风险；同时这可能也说明了，缺乏一套合理的机制。</p>
-<p>你的开源项目不仅仅需要一个使用文档，还需要一个相关设计思想的文档、路线图、未来计划等等。</p>
-<p>去年年底写总结的时候，想到可以 RePractise 文章为基础来培养人，于是就有了 Growth 的三个项目：</p>
-<ul>
-<li>应用：<a href="https://github.com/phodal/growth">Growth</a></li>
-<li>电子书：《<a href="https://github.com/phodal/growth-ebook">Growth：全栈增长工程师指南</a>》</li>
-<li>电子书：《<a href="https://github.com/phodal/growth-in-action">Growth：全栈增长工程师实战</a>》</li>
-</ul>
-<p>如今 Growth 已经有了过万的用户，每天活跃的用户数也接近 300 了。第一步看上去很成功，但是下一步怎么走呢？</p>
-<h3 id="下一个开源项目">下一个开源项目</h3>
-<p>后来我开始在思索一个问题，创建一个开源框架是必须的吗？</p>
-<p>在编写 Growth 电子书的时候，我发现一个好的软件工程实践远远比一个易上手的框架重要多了。框架本身是易变的东西，过去你在用 Backbone，现在你在用 React.js；过去你在用 Angular.js，现在你在用 Vue。会不会使用某个框架，并不是区分你是不是一个有经验的开发者的标准。</p>
-<p>一直将焦点关注于<strong>学习不同的框架的使用</strong>是有问题的，一个在校生可以轻松地比你了解某个框架的原理——你白天在工作，而他整天在学习。这时你很容易就失去竞争力了，你需要从框架之外了解更深层次的东西。<strong>一个好的框架并不能让你写出一段好的代码</strong>。</p>
-<blockquote>
-<p>如果中国人的思想不觉悟，即使治好了他们的病，也只是做毫无意义。</p>
-</blockquote>
-<p>这算是我为自己在 GitHub 下的 Markdown 的自辩吧——谁让我一直有写作的冲动呢。</p>
-<p>不过我仍然还有一些想法，只是还没有抽出足够的时间去思考这样的事。</p>
-<p><strong>GNU/Linux 的桌面</strong>。这是几年前的一个想法了，当时 GNU/Linux 的那些操作系统上都没有一个好玩的桌面，不过感觉这个坑太深了，就没有进行了。</p>
-<p><strong>家居智能中心</strong>。我仍然对于大学学的知识有点念念不忘，虽然已经写了一本书，但是硬件还是相当的刺激。唯一的问题是：连房子都没有，怎么做智能家居。</p>
-<p><strong>图形框架</strong>。这是我之前在做一个图形界面的时候，发生没有一个合适的框架可以满足我的要求。然后我就在想，还是自己做一个吧。</p>
-<p>不过，最好的开源项目就是自己平时用的。于是，我开始将写各种工作来提自己使用——如现在在用的这篇微信编辑工具：<a href="https://github.com/phodal/mdpub">mdpub</a>。</p>
-<p>最后，我做了一个简单的 HTML 5 动画来记录这一时刻，作为这一个里程碑的记念：</p>
-<p><a href="https://phodal.github.io/20k/" class="uri">https://phodal.github.io/20k/</a></p>
+<h2 id="release">Release</h2>
+<h1 id="git-工具推荐">Git 工具推荐</h1>
+<p>至于我的日常用的 Git 观看工具，一个是 WebStorm 和 Intellij IDEA 自带的，一个则是 SourceTree。</p>
+<p>由于日常用的开发工是 Intellij IDEA 企业版，所以就有点依赖于这个工具了。最常用的功能便是：<strong>修复 Bug 时，对于文件修改的追溯</strong>。了解某行代码修改的原因，对应的修改人等等。</p>
+<p>而 SourceTree 则方便用来查看一些非我写的项目，寻找其中的一些问题。个中缘由便是：<strong>Intelli IDEA 刚打开某个项目的时候，需要花费大量的时间 index</strong>，只可惜现有的 SourceTree 客户端都需要登录 Atlassian 账户了。</p>
 <h1 id="github用户分析">GitHub用户分析</h1>
 <h2 id="生成图表">生成图表</h2>
 <p>如何分析用户的数据是一个有趣的问题，特别是当我们有大量的数据的时候。除了<code>matlab</code>，我们还可以用<code>numpy</code>+<code>matplotlib</code></p>
@@ -2798,5 +2233,644 @@ pipe.execute()</code></pre></div>
     0.          0.          0.          0.          0.          0.          0.
     0.          0.          0.          0.        ]</code></pre>
 <p>真看不出来两者有什么相似的地方 。。。。</p>
+<h1 id="如何在github寻找灵感fork">如何在GitHub“寻找灵感(fork)”</h1>
+<blockquote>
+<p>重造轮子是重新创造一个已有的或是已被其他人优化的基本方法。</p>
+</blockquote>
+<p>最近萌发了一个想法写游戏引擎，之前想着做一个JavaScript前端框架。看看，这个思路是怎么来的。</p>
+<h2 id="lettuce构建过程">Lettuce构建过程</h2>
+<blockquote>
+<p>Lettuce是一个简约的移动开发框架。</p>
+</blockquote>
+<p>故事的出发点是这样的:<code>写了很多代码,用的都是框架，最后不知道收获什么了</code>?事实也是如此，当自己做了一些项目之后，发现最后什么也没有收获到。于是，就想着做一个框架。</p>
+<h3 id="需求">需求</h3>
+<p>有这样的几个前提</p>
+<ul>
+<li>为什么我只需要jQuery里的选择器、Ajax要引入那么重的库呢?</li>
+<li>为什么我只需要一个Template，却想着用Mustache</li>
+<li>为什么我需要一个Router，却要用Backbone呢?</li>
+<li>为什么我需要的是一个isObject函数，却要用到整个Underscore?</li>
+</ul>
+<p>我想要的只是一个简单的功能，而我不想引入一个庞大的库。换句话说，我只需要不同库里面的一小部分功能，而不是一个库。</p>
+<p>实际上想要的是:</p>
+<blockquote>
+<p>构建一个库，里面从不同的库里面抽取出不同的函数。</p>
+</blockquote>
+<h3 id="计划">计划</h3>
+<p>这时候我参考了一本电子书《Build JavaScript FrameWork》，加上一些平时的需求，于是很快的就知道自己需要什么样的功能:</p>
+<ul>
+<li>Promise 支持</li>
+<li>Class类(ps:没有一个好的类使用的方式)</li>
+<li>Template 一个简单的模板引擎</li>
+<li>Router 用来控制页面的路由</li>
+<li>Ajax 基本的Ajax Get/Post请求</li>
+</ul>
+<p>在做一些实际的项目中，还遇到了这样的一些功能支持:</p>
+<ul>
+<li>Effect 简单的一些页面效果</li>
+<li>AMD支持</li>
+</ul>
+<p>而我们有一个前提是要保持这个库尽可能的小、同时我们还需要有测试。</p>
+<h3 id="实现第一个需求">实现第一个需求</h3>
+<p>简单说说是如何实现一个简单的需求。</p>
+<h4 id="生成框架">生成框架</h4>
+<p>因为Yeoman可以生成一个简单的轮廓，所以我们可以用它来生成这个项目的骨架。</p>
+<ul>
+<li>Gulp</li>
+<li>Jasmine</li>
+</ul>
+<h4 id="寻找">寻找</h4>
+<p>在GitHub上搜索了一个看到了下面的几个结果:</p>
+<ul>
+<li><a href="https://github.com/then/promise" class="uri">https://github.com/then/promise</a></li>
+<li><a href="https://github.com/reactphp/promise" class="uri">https://github.com/reactphp/promise</a></li>
+<li><a href="https://github.com/kriskowal/q" class="uri">https://github.com/kriskowal/q</a></li>
+<li><a href="https://github.com/petkaantonov/bluebird" class="uri">https://github.com/petkaantonov/bluebird</a></li>
+<li><a href="https://github.com/cujojs/when" class="uri">https://github.com/cujojs/when</a></li>
+</ul>
+<p>但是显然，他们都太重了。事实上，对于一个库来说，80%的人只需要其中20%的代码。于是，找到了<a href="https://github.com/stackp/promisejs" class="uri">https://github.com/stackp/promisejs</a>，看了看用法，这就是我们需要的功能:</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">late</span>(n) <span class="op">{</span>
+    <span class="kw">var</span> p <span class="op">=</span> <span class="kw">new</span> <span class="va">promise</span>.<span class="at">Promise</span>()<span class="op">;</span>
+    <span class="at">setTimeout</span>(<span class="kw">function</span>() <span class="op">{</span>
+        <span class="va">p</span>.<span class="at">done</span>(<span class="kw">null</span><span class="op">,</span> n)<span class="op">;</span>
+    <span class="op">},</span> n)<span class="op">;</span>
+    <span class="cf">return</span> p<span class="op">;</span>
+<span class="op">}</span>
+
+<span class="at">late</span>(<span class="dv">100</span>).<span class="at">then</span>(
+    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
+        <span class="cf">return</span> <span class="at">late</span>(n <span class="op">+</span> <span class="dv">200</span>)<span class="op">;</span>
+    <span class="op">}</span>
+).<span class="at">then</span>(
+    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
+        <span class="cf">return</span> <span class="at">late</span>(n <span class="op">+</span> <span class="dv">300</span>)<span class="op">;</span>
+    <span class="op">}</span>
+).<span class="at">then</span>(
+    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
+        <span class="cf">return</span> <span class="at">late</span>(n <span class="op">+</span> <span class="dv">400</span>)<span class="op">;</span>
+    <span class="op">}</span>
+).<span class="at">then</span>(
+    <span class="kw">function</span>(err<span class="op">,</span> n) <span class="op">{</span>
+        <span class="at">alert</span>(n)<span class="op">;</span>
+    <span class="op">}</span>
+)<span class="op">;</span></code></pre></div>
+<p>接着打开看看Promise对象，有我们需要的功能，但是又有一些功能超出我的需求。接着把自己不需要的需求去掉，这里函数最后就变成了</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">Promise</span>() <span class="op">{</span>
+    <span class="kw">this</span>.<span class="at">_callbacks</span> <span class="op">=</span> []<span class="op">;</span>
+<span class="op">}</span>
+
+<span class="va">Promise</span>.<span class="va">prototype</span>.<span class="at">then</span> <span class="op">=</span> <span class="kw">function</span>(func<span class="op">,</span> context) <span class="op">{</span>
+    <span class="kw">var</span> p<span class="op">;</span>
+    <span class="cf">if</span> (<span class="kw">this</span>.<span class="at">_isdone</span>) <span class="op">{</span>
+        p <span class="op">=</span> <span class="va">func</span>.<span class="at">apply</span>(context<span class="op">,</span> <span class="kw">this</span>.<span class="at">result</span>)<span class="op">;</span>
+    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span>
+        p <span class="op">=</span> <span class="kw">new</span> <span class="at">Promise</span>()<span class="op">;</span>
+        <span class="kw">this</span>.<span class="va">_callbacks</span>.<span class="at">push</span>(<span class="kw">function</span> () <span class="op">{</span>
+            <span class="kw">var</span> res <span class="op">=</span> <span class="va">func</span>.<span class="at">apply</span>(context<span class="op">,</span> arguments)<span class="op">;</span>
+            <span class="cf">if</span> (res <span class="op">&amp;&amp;</span> <span class="kw">typeof</span> <span class="va">res</span>.<span class="at">then</span> <span class="op">===</span> <span class="st">&#39;function&#39;</span>) <span class="op">{</span>
+                <span class="va">res</span>.<span class="at">then</span>(<span class="va">p</span>.<span class="at">done</span><span class="op">,</span> p)<span class="op">;</span>
+            <span class="op">}</span>
+        <span class="op">}</span>)<span class="op">;</span>
+    <span class="op">}</span>
+    <span class="cf">return</span> p<span class="op">;</span>
+<span class="op">};</span>
+
+<span class="va">Promise</span>.<span class="va">prototype</span>.<span class="at">done</span> <span class="op">=</span> <span class="kw">function</span>() <span class="op">{</span>
+    <span class="kw">this</span>.<span class="at">result</span> <span class="op">=</span> arguments<span class="op">;</span>
+    <span class="kw">this</span>.<span class="at">_isdone</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span>
+    <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="kw">this</span>.<span class="va">_callbacks</span>.<span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span>
+        <span class="kw">this</span>.<span class="at">_callbacks</span>[i].<span class="at">apply</span>(<span class="kw">null</span><span class="op">,</span> arguments)<span class="op">;</span>
+    <span class="op">}</span>
+    <span class="kw">this</span>.<span class="at">_callbacks</span> <span class="op">=</span> []<span class="op">;</span>
+<span class="op">};</span>
+
+<span class="kw">var</span> promise <span class="op">=</span> <span class="op">{</span>
+    <span class="dt">Promise</span><span class="op">:</span> Promise
+<span class="op">};</span></code></pre></div>
+<p>需要注意的是: <code>License</code>，不同的软件有不同的License，如MIT、GPL等等。最好能在遵循协议的情况下，使用别人的代码。</p>
+<h3 id="实现第二个需求">实现第二个需求</h3>
+<p>由于已经有了现有的很多库，所以就可以直接参照（抄）别人写的代码。</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">Lettuce</span>.<span class="at">get</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> callback) <span class="op">{</span>
+    <span class="va">Lettuce</span>.<span class="at">send</span>(url<span class="op">,</span> <span class="st">&#39;GET&#39;</span><span class="op">,</span> callback)<span class="op">;</span>
+<span class="op">};</span>
+
+<span class="va">Lettuce</span>.<span class="at">load</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> callback) <span class="op">{</span>
+    <span class="va">Lettuce</span>.<span class="at">send</span>(url<span class="op">,</span> <span class="st">&#39;GET&#39;</span><span class="op">,</span> callback)<span class="op">;</span>
+<span class="op">};</span>
+
+<span class="va">Lettuce</span>.<span class="at">post</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> data<span class="op">,</span> callback) <span class="op">{</span>
+    <span class="va">Lettuce</span>.<span class="at">send</span>(url<span class="op">,</span> <span class="st">&#39;POST&#39;</span><span class="op">,</span> callback<span class="op">,</span> data)<span class="op">;</span>
+<span class="op">};</span>
+
+<span class="va">Lettuce</span>.<span class="at">send</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> method<span class="op">,</span> callback<span class="op">,</span> data) <span class="op">{</span>
+    data <span class="op">=</span> data <span class="op">||</span> <span class="kw">null</span><span class="op">;</span>
+    <span class="kw">var</span> request <span class="op">=</span> <span class="kw">new</span> <span class="at">XMLHttpRequest</span>()<span class="op">;</span>
+    <span class="cf">if</span> (callback <span class="kw">instanceof</span> Function) <span class="op">{</span>
+        <span class="va">request</span>.<span class="at">onreadystatechange</span> <span class="op">=</span> <span class="kw">function</span> () <span class="op">{</span>
+            <span class="cf">if</span> (<span class="va">request</span>.<span class="at">readyState</span> <span class="op">===</span> <span class="dv">4</span> <span class="op">&amp;&amp;</span> (<span class="va">request</span>.<span class="at">status</span> <span class="op">===</span> <span class="dv">200</span> <span class="op">||</span> <span class="va">request</span>.<span class="at">status</span> <span class="op">===</span> <span class="dv">0</span>)) <span class="op">{</span>
+                <span class="at">callback</span>(<span class="va">request</span>.<span class="at">responseText</span>)<span class="op">;</span>
+            <span class="op">}</span>
+        <span class="op">};</span>
+    <span class="op">}</span>
+    <span class="va">request</span>.<span class="at">open</span>(method<span class="op">,</span> url<span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span>
+    <span class="cf">if</span> (data <span class="kw">instanceof</span> Object) <span class="op">{</span>
+        data <span class="op">=</span> <span class="va">JSON</span>.<span class="at">stringify</span>(data)<span class="op">;</span>
+        <span class="va">request</span>.<span class="at">setRequestHeader</span>(<span class="st">&#39;Content-Type&#39;</span><span class="op">,</span> <span class="st">&#39;application/json&#39;</span>)<span class="op">;</span>
+    <span class="op">}</span>
+    <span class="va">request</span>.<span class="at">setRequestHeader</span>(<span class="st">&#39;X-Requested-With&#39;</span><span class="op">,</span> <span class="st">&#39;XMLHttpRequest&#39;</span>)<span class="op">;</span>
+    <span class="va">request</span>.<span class="at">send</span>(data)<span class="op">;</span>
+<span class="op">};</span></code></pre></div>
+<h1 id="如何以正确的姿势阅读开源软件代码">如何以“正确的姿势”阅读开源软件代码</h1>
+<blockquote>
+<p>所有让你直接看最新源码的文章都是在扯淡，你应该从“某个版本”开始阅读代码。</p>
+</blockquote>
+<p>我们并不建议所有的读者都直接看最新的代码，正确的姿势应该是：</p>
+<ul>
+<li>clone某个项目的代码到本地</li>
+<li>查看这个项目的release列表</li>
+<li>找到一个看得懂的release版本，如1.0或者更早的版本</li>
+<li>读懂上一个版本的代码</li>
+<li>向后阅读大版本的源码</li>
+<li>读最新的源码</li>
+</ul>
+<p>最好的在这个过程中，<strong>可以自己造轮子来实现一遍</strong>。</p>
+<h2 id="阅读过程">阅读过程</h2>
+<p>在我阅读的前端库、Python后台库的过程中，我们都是以造轮子为目的展开的。所以在最开始的时候，我需要一个可以工作，并且拥有我想要的功能的版本。</p>
+<figure>
+<img src="./img/it-works-cms.png" alt="it-works-cms.png" /><figcaption>it-works-cms.png</figcaption>
+</figure>
+<p>紧接着，我就可以开始去实践这个版本中的一些功能，并理解他们是怎么工作的。再用<code>git</code>大法展开之前修改的内容，可以使用IDE自带的Diff工具：</p>
+<figure>
+<img src="./img/pycharm-diff.jpg" alt="pycharm-diff.jpg" /><figcaption>pycharm-diff.jpg</figcaption>
+</figure>
+<p>或者类似于<code>SourceTree</code>这样的工具，来查看修改的内容。</p>
+<p>在我们理解了基本的核心功能后，我们就可以向后查看大、中版本的更新内容了。</p>
+<p>开始之前，我们希望大家对版本号管理有一些基本的认识。 ## 版本号管理</p>
+<p>我最早阅读的开始软件是Linux，而下面则是Linux的Release过程：</p>
+<figure>
+<img src="./img/linux-history.png" alt="linux-history.png" /><figcaption>linux-history.png</figcaption>
+</figure>
+<p>表格源自一本书叫《Linux内核0.11(0.95)完全注释》，简单地再介绍一下： - 版本0.00是一个hello,world程序 - 版本0.01包含了可以工作的代码 - 版本0.11是基本可以正常的版本</p>
+<p>这里就要扯到《GNU 风格的版本号管理策略》：</p>
+<p>1．项目初版本时，版本号可以为 0.1 或 0.1.0, 也可以为 1.0 或 1.0.0，如果你为人很低调，我想你会选择那个主版本号为 0 的方式； 2．当项目在进行了局部修改或 bug 修正时，主版本号和子版本号都不变，修正版本号加 1； 3. 当项目在原有的基础上增加了部分功能时，主版本号不变，子版本号加 1，修正版本号复位为 0，因而可以被忽略掉； 4．当项目在进行了重大修改或局部修正累积较多，而导致项目整体发生全局变化时，主版本号加 1； 5．另外，编译版本号一般是编译器在编译过程中自动生成的，我们只定义其格式，并不进行人为控制。</p>
+<p>因此，我们可以得到几个简单的结论： - 我们需要阅读最早的有核心代码的版本 - 我们需要阅读1.0版本的Release - 往后每一次大的Release我们都需要了解一下</p>
+<h2 id="示例">示例</h2>
+<p>以Flask为例：</p>
+<p>一、先Clone它。</p>
+<figure>
+<img src="./img/clone-flask.png" alt="clone-flask.png" /><figcaption>clone-flask.png</figcaption>
+</figure>
+<p>二、从Release页面找到它的早期版本：</p>
+<figure>
+<img src="./img/flask.png" alt="flask.png" /><figcaption>flask.png</figcaption>
+</figure>
+<p>三、 从上面拿到它的提交号<code>8605cc3</code>，然后checkout到这次提交，查看功能。在这个版本里，一共有六百多行代码</p>
+<figure>
+<img src="./img/flask-0.1.png" alt="flask-0.1.png" /><figcaption>flask-0.1.png</figcaption>
+</figure>
+<p>还是有点长</p>
+<p>四、我们可以找到它的最早版本:</p>
+<figure>
+<img src="./img/flask-init.png" alt="flask-init.png" /><figcaption>flask-init.png</figcaption>
+</figure>
+<p>然后查看它的<code>flask.py</code>文件，只有简单的三百多行，并且还包含一系列注释：</p>
+<figure>
+<img src="./img/flask-init.png" alt="flask-init.png" /><figcaption>flask-init.png</figcaption>
+</figure>
+<p>五、接着，再回过头去阅读</p>
+<ul>
+<li>0.1版本</li>
+<li>。。。</li>
+<li>最新的0.10.1版本</li>
+</ul>
+<h1 id="github连击">GitHub连击</h1>
+<h2 id="天">100天</h2>
+<p>我也是蛮拼的，虽然我想的只是在GitHub上连击100~200天，然而到了今天也算不错。</p>
+<figure>
+<img src="./img/longest-streak.png" alt="Longest Streak" /><figcaption>Longest Streak</figcaption>
+</figure>
+<p><code>在不停地造轮子的过程中，也不停地造车子。</code></p>
+<p>在那篇连续冲击365天的文章出现之前，我们公司的大大(<a href="https://github.com/dreamhead" class="uri">https://github.com/dreamhead</a>)也曾经在公司内部说过，天天commit什么的。当然这不是我的动力，在连击140天之前</p>
+<ul>
+<li>给过google的<code>ngx_speed</code>、<code>node-coap</code>等项目创建过pull request</li>
+<li>也有<code>free-programming-books</code>、<code>free-programming-books-zh_CN</code>这样的项目。</li>
+<li>当然还有一个连击20天。</li>
+</ul>
+<p>对比了一下365天连击的commit，我发现我在total上整整多了近0.5倍。</p>
+<figure>
+<img src="./img/365-streak.jpg" alt="365 Streak" /><figcaption>365 Streak</figcaption>
+</figure>
+<p>同时这似乎也意味着，我每天的commit数与之相比多了很多。</p>
+<p>在连击20的时候，有这样的问题: <em>为了commit而commit代码</em>，最后就放弃了。</p>
+<p>而现在是<code>为了填坑而commit</code>，为自己挖了太多的想法。</p>
+<h3 id="天的提升">40天的提升</h3>
+<p>当时我需要去印度接受毕业生培训，大概有5周左右，想着总不能空手而归。于是在国庆结束后有了第一次commit，当时旅游归来，想着自己在不同的地方有不同的照片，于是这个repo的名字是 <a href="https://github.com/phodal/onmap">onmap</a>——将自己的照片显示在地图上的拍摄地点(手机是Lumia 920)。然而，中间因为修改账号的原因，丢失了commit。</p>
+<p>再从印度说起，当时主要维护三个repo:</p>
+<ul>
+<li>物联网的CoAP协议</li>
+<li><a href="https://github.com/phodal/designiot">一步步设计物联网系统</a>的电子书</li>
+<li>一个Node.js + JS的网站</li>
+</ul>
+<p>说说最后一个，最后一个是练习的项目。因为当时培训比较无聊，业余时间比较多，英语不好，加上听不懂印度人的话。晚上基本上是在住的地方默默地写代码，所以当时的目标有这么几个:</p>
+<ul>
+<li>TDD</li>
+<li>测试覆盖率</li>
+<li>代码整洁</li>
+</ul>
+<p>这也就是为什么那个repo有这样的一行:</p>
+<figure>
+<img src="./img/repo-status.png" alt="Repo Status" /><figcaption>Repo Status</figcaption>
+</figure>
+<p>做到98%的覆盖率也算蛮拼的，当然还有Code Climate也达到了4.0，也有了112个commits。因此也带来了一些提高:</p>
+<ul>
+<li>提高了代码的质量(code climate比jslint更注重重复代码等等一些bad smell)。</li>
+<li>对于Mock、Stub、FakesServer等用法有更好的掌握</li>
+<li>可以持续地交付软件(版本管理、自动测试、CI、部署等等)</li>
+</ul>
+<h3 id="天的挑战">100天的挑战</h3>
+<p>(ps:从印度回来之后，由于女朋友在泰国实习，有了更多的时间可以看书、写代码)</p>
+<p>有意思的是越到中间的一些时间，commits的次数上去了，除了一些简单的pull request，还有一些新的轮子出现了。</p>
+<figure>
+<img src="./img/problem.jpg" alt="Problem" /><figcaption>Problem</figcaption>
+</figure>
+<p>这是上一星期的commits，这也就意味着，在一星期里面，我需要在8个repo里切换。而现在我又有了一个新的idea，这时就发现了一堆的问题:</p>
+<ul>
+<li>今天工作在这个repo上，突然发现那个repo上有issue，需要去修复，于是就放下了当前的代码。</li>
+<li>在不同的repo间切换容易分散精力</li>
+<li>很容易就发现有太多的功能可以实现，但是时间是有限的。</li>
+<li>没有足够的空闲时间，除了周末。</li>
+<li>希望去寻找那些有兴趣的人，然而却发现原来没有那么多时间去找人。</li>
+</ul>
+<h3 id="天的希冀">140天的希冀</h3>
+<p>在经历了100天之后，似乎整个人都轻松了，毕竟目标是100~200天。似乎到现在，也不会有什么特殊的情怀，除了一些希冀。</p>
+<p>当然，对于一个开源项目的作者来说，最好有下面的情况:</p>
+<ul>
+<li>很多人知道了这个项目</li>
+<li>很多人用它的项目。</li>
+<li>在某些可以用这个项目快速解决问题的地方提到了这个项目</li>
+<li>提了bug、issue、问题。</li>
+<li>提了bug，并解决了。(ps:这是最理想的情况)</li>
+</ul>
+<h2 id="天的showcase">200天的Showcase</h2>
+<p>今天是我连续泡在GitHub上的第200天，也是蛮高兴的，终于到达了:</p>
+<figure>
+<img src="./img/github-200-days.png" alt="GitHub 200 days" /><figcaption>GitHub 200 days</figcaption>
+</figure>
+<p>故事的背影是: 去年国庆完后要去印度接受毕业生培训——就是那个神奇的国度。但是在去之前已经在项目待了九个多月，项目上的挑战越来越少，在印度的时间又算是比较多。便给自己设定了一个长期的goal，即100~200天的longest streak。</p>
+<p>或许之前你看到过一篇文章<a href="https://github.com/phodal/github-roam/blob/master/chapters/12-streak-your-github.md">让我们连击</a>，那时已然140天，只是还是浑浑噩噩。到了今天，渐渐有了一个更清晰地思路。</p>
+<p>先让我们来一下ShowCase，然后再然后，下一篇我们再继续。</p>
+<h3 id="一些项目简述">一些项目简述</h3>
+<p>上面说到的培训一开始是用Java写的一个网站，有自动测试、CI、CD等等。由于是内部组队培训，代码不能公开等等因素，加之做得无聊。顺手，拿Node.js +RESTify 做了Server，Backbone + RequireJS + jQuery 做了前台的逻辑。于是在那个日子里，也在维护一些旧的repo，如<a href="https://github.com/phodal/iot-coap">iot-coap</a>、<a href="https://github.com/phodal/iot">iot</a>，前者是我拿到WebStorm开源License的Repo，后者则是毕业设计。</p>
+<p>对于这样一个项目也需要有测试、自动化测试、CI等等。CI用的是Travics-CI。总体的技术构架如下:</p>
+<h4 id="技术栈">技术栈</h4>
+<p>前台:</p>
+<ul>
+<li>Backbone</li>
+<li>RequireJS</li>
+<li>Underscore</li>
+<li>Mustache</li>
+<li>Pure CSS</li>
+</ul>
+<p>后台:</p>
+<ul>
+<li>RESTify</li>
+</ul>
+<p>测试:</p>
+<ul>
+<li>Jasmine</li>
+<li>Chai</li>
+<li>Sinon</li>
+<li>Mocha</li>
+<li>Jasmine-jQuery</li>
+</ul>
+<p>一直写到五星期的培训结束， 只是没有自动部署。想想就觉得可以用github-page的项目多好~~。</p>
+<p>过程中还有一些有意思的小项目，如:</p>
+<h3 id="google-map-solr-polygon-搜索">google map solr polygon 搜索</h3>
+<p><a href="http://www.phodal.com/blog/google-map-width-solr-use-polygon-search/">google map solr polygon 搜索</a></p>
+<figure>
+<img src="./img/solr.png" alt="google map solr" /><figcaption>google map solr</figcaption>
+</figure>
+<p>代码: <a href="https://github.com/phodal/gmap-solr" class="uri">https://github.com/phodal/gmap-solr</a></p>
+<h3 id="技能树">技能树</h3>
+<p>这个可以从两部分说起:</p>
+<h4 id="重构skill-tree">重构Skill Tree</h4>
+<p>原来的是</p>
+<ul>
+<li>Knockout</li>
+<li>RequireJS</li>
+<li>jQuery</li>
+<li>Gulp</li>
+</ul>
+<figure>
+<img src="./img/skilltree.jpg" alt="Skill Tree" /><figcaption>Skill Tree</figcaption>
+</figure>
+<p>代码: <a href="https://github.com/phodal/skillock" class="uri">https://github.com/phodal/skillock</a></p>
+<h4 id="技能树sherlock">技能树Sherlock</h4>
+<ul>
+<li>D3.js</li>
+<li>Dagre-D3.js</li>
+<li>jquery.tooltipster.js</li>
+<li>jQuery</li>
+<li>Lettuce</li>
+<li>Knockout.js</li>
+<li>Require.js</li>
+</ul>
+<figure>
+<img src="./img/sherlock.png" alt="Sherlock skill tree" /><figcaption>Sherlock skill tree</figcaption>
+</figure>
+<p>代码: <a href="https://github.com/phodal/sherlock" class="uri">https://github.com/phodal/sherlock</a></p>
+<h4 id="django-ionic-elasticsearch-地图搜索">Django Ionic ElasticSearch 地图搜索</h4>
+<figure>
+<img src="./img/elasticsearch_ionit_map.jpg" alt="Django Elastic Search" /><figcaption>Django Elastic Search</figcaption>
+</figure>
+<ul>
+<li>ElasticSearch</li>
+<li>Django</li>
+<li>Ionic</li>
+<li>OpenLayers 3</li>
+</ul>
+<p>代码: <a href="https://github.com/phodal/django-elasticsearch" class="uri">https://github.com/phodal/django-elasticsearch</a></p>
+<h4 id="简历生成器">简历生成器</h4>
+<figure>
+<img src="./img/resume.png" alt="Resume" /><figcaption>Resume</figcaption>
+</figure>
+<ul>
+<li>React</li>
+<li>jsPDF</li>
+<li>jQuery</li>
+<li>RequireJS</li>
+<li>Showdown</li>
+</ul>
+<p>代码: <a href="https://github.com/phodal/resume" class="uri">https://github.com/phodal/resume</a></p>
+<h4 id="nginx-大数据学习">Nginx 大数据学习</h4>
+<figure>
+<img src="./img/nginx_pig.jpg" alt="Nginx Pig" /><figcaption>Nginx Pig</figcaption>
+</figure>
+<ul>
+<li>ElasticSearch</li>
+<li>Hadoop</li>
+<li>Pig</li>
+</ul>
+<p>代码: <a href="https://github.com/phodal/learning-data/tree/master/nginx" class="uri">https://github.com/phodal/learning-data/tree/master/nginx</a></p>
+<h4 id="其他">其他</h4>
+<p>虽然技术栈上主要集中在Python、JavaScript，当然还有一些Ruby、Pig、Shell、Java的代码，只是我还是习惯用Python和JavaScript。一些用到觉得不错的框架:</p>
+<ul>
+<li>Ionic: 开始Hybird移动应用。</li>
+<li>Django: Python Web开发利器。</li>
+<li>Flask: Python Web开发小刀。</li>
+<li>RequireJS: 管理js依赖。</li>
+<li>Backbone: Model + View + Router。</li>
+<li>Angluar: …。</li>
+<li>Knockout: MVV*。</li>
+<li>React: 据说会火。</li>
+<li>Cordova: Hybird应用基础。</li>
+</ul>
+<p>还应该有:</p>
+<ul>
+<li>ElasticSearch</li>
+<li>Solr</li>
+<li>Hadoop</li>
+<li>Pig</li>
+<li>MongoDB</li>
+<li>Redis</li>
+</ul>
+<h2 id="天-1">365天</h2>
+<blockquote>
+<p>给你一年的时间，你会怎样去提高你的水平？？？</p>
+</blockquote>
+<figure>
+<img src="./img/github-365.jpg" alt="GitHub 365" /><figcaption>GitHub 365</figcaption>
+</figure>
+<p>正值这难得的sick leave（万恶的空气），码文一篇来记念一个过去的366天里。尽管想的是在今年里写一个可持续的开源框架，但是到底这依赖于一个好的idea。在我的<a href="http://github.com/phodal/ideas">GitHub 孵化器</a> 页面上似乎也没有一个特别让我满意的想法，虽然上面有各种不样有意思的ideas。多数都是在过去的一年是完成的，然而有一些也是还没有做到的。</p>
+<p>尽管一直在GitHub上连击看上去似乎是没有多大必要的，但是人总得有点追求。如果正是漫无目的，却又想着提高技术的同时，为什么不去试试？毕竟技术非常好、不需要太多练习的人只是少数，似乎这样的人是不存在的。大多数的人都是经过练习之后，才会达到别人口中的“技术好”。</p>
+<p>这让我想起了充斥着各种气味的知乎上的一些问题，在一些智商被完虐的话题里，无一不是因为那些人学得比别人早——哪来的天才？所谓的天才，应该是未来的智能生命一般，一出生什么都知道。如果并非如此，那只是说明他练习到位了。</p>
+<p>练习不到位便意味着，即使你练习的时候是一万小时的两倍，那也是无济于事的。如果你学得比别人晚，在<strong>很长的一段时间里</strong>(可能直到进棺材)输给别人是必然的——落后就要挨打。就好像我等毕业于一所二本垫底的学校里，如果在过去我一直保持着和别人(各种重点)一样的学习速度，那么我只能一直是Loser。</p>
+<p>需要注意的是，对你来说考上二本很难，并不是因为你比别人笨。教育资源分配不均的问题，在某种程度上导致了新的阶级制度的出现。如<a href="https://www.phodal.com/">我的首页</a>说的那样: <strong>THE ONLY FAIR IS NOT FAIR</strong>——唯一公平的是它是不公平的。我们可以做的还有很多——<strong>CREATE &amp; SHARE</strong>。真正的不幸是，因为营养不良导致的教育问题。</p>
+<p>于是在想明白了很多事的时候起，便有了Re-Practise这样的计划，而365天只是中间的一个产物。</p>
+<h3 id="编程的基础能力">编程的基础能力</h3>
+<p>虽说算法很重要，但是编码才是基础能力。算法与编程在某种程度上是不同的领域，算法编程是在编程上面的一级。算法写得再好，如果别人很难直接拿来复用，在别人眼里就是shit。想出能work的代码一件简单的事，学会对其重构，使之变得更易读就是一件有意义的事。</p>
+<p>于是，在某一时刻在GitHub上创建了一个组织，叫<a href="https://github.com/artisanstack">Artisan Stack</a>。当时想的是在GitHub寻找一些JavaScript项目，对其代码进行重构。但是到底是影响力不够哈，参与的人数比较少。</p>
+<h4 id="重构-1">重构</h4>
+<p>如果你懂得如何写出高可读的代码，那么我想你是不需要这个的，但是这意味着你花了更多的时候在思考上了。当谈论重构的时候，让我想起了TDD(测试驱动开发)。即使不是TDD，那么如果你写着测试，那也是可以重构的。(之前写过一些利用Intellij IDEA重构的文章：<a href="https://www.phodal.com/blog/intellij-idea-refactor-extract-method/">提炼函数</a>、<a href="https://www.phodal.com/blog/intellij-idea-refactor-replace-temp-with-query/">以查询取代临时变量</a>、<a href="https://www.phodal.com/blog/thoughtworks-refactor-and-intellij-idea/">重构与Intellij Idea初探</a>、<a href="https://www.phodal.com/blog/intellij-idea-refactor-inline-method/">内联函数</a>)</p>
+<p>在各种各样的文章里，我们看到过一些相关的内容，最好的参考莫过于《重构》一书。最基础不过的原则便是函数名，取名字很难，取别人能读懂的名字更难。其他的便有诸如长函数、过大的类、重复代码等等。在我有限的面试别人的经历里，这些问题都是最常见的。</p>
+<h4 id="测试-1">测试</h4>
+<p>而如果没有测试，其他都是扯淡。写好测试很难，写个测试算是一件容易的事。只是有些容易我们会为了测试而测试。</p>
+<p>在我写<a href="https://github.com/echoesworks/echoesworks">EchoesWorks</a>和<a href="https://github.com/phodal/lan">Lan</a>的过程中，我尽量去保证足够高的测试覆盖率。</p>
+<figure>
+<img src="./img/lan.png" alt="lan" /><figcaption>lan</figcaption>
+</figure>
+<figure>
+<img src="./img/echoesworks.png" alt="EchoesWorks" /><figcaption>EchoesWorks</figcaption>
+</figure>
+<p>从测试开始的TDD，会保证方法是可测的。从功能到测试则可以提供工作次效率，但是只会让测试成为测试，而不是代码的一部分。</p>
+<p>测试是代码的最后一公里。所以，尽可能的为你的GitHub上的项目添加测试。</p>
+<h4 id="编码的过程">编码的过程</h4>
+<p>初到TW时，Pair时候总会有人教我如何开始编码，这应该也是一项基础的能力。结合日常，重新演绎一下这个过程：</p>
+<ol type="1">
+<li>有一个可衡量、可实现、过程可测的目标</li>
+<li>Tasking (即对要实现的目标过程进行分解)</li>
+<li>一步步实现 (如TDD)</li>
+<li>实现目标</li>
+</ol>
+<p>放到当前的场景就是：</p>
+<ol type="1">
+<li>我想在GitHub上连击365天。对应于每一个时候段的目标都应该是可以衡量、测试的——即每天都会有Contributions。</li>
+<li>分解就是一个痛苦的过程。理想情况下，我们应该会有每天提交，但是这取决于你的repo的数量，如果没有新的idea出现，那么这个就变成为了Contributions而Commit。</li>
+<li>一步步实现</li>
+</ol>
+<p>在我们实际工作中也是如此，接到一个任务，然后分解，一步步完成。不过实现会稍微复杂一些，因为事务总会有抢占和优先级的。</p>
+<h3 id="技术与框架设计">技术与框架设计</h3>
+<p>在上上一篇博客中《<a href="https://www.phodal.com/blog/after-500-blogposts-analytics-after-tech/">After 500: 写了第500篇博客，然后呢?</a>》也深刻地讨论了下这个问题，技术向来都是后发者优势。对于技术人员来说，也是如此，后发者占据很大的优势。</p>
+<p>如果我们只是单纯地把我们的关注点仅仅放置于技术上，那么我们就不具有任何的优势。而依赖于我们的编程经验，我们可以在特定的时候创造一些框架。而架构的设计本身就是一件有意思的事，大抵是因为程序员都喜欢创造。(ps:之前曾经写过这样一篇文章，《<a href="https://www.phodal.com/blog/sorry-i-don&#39;t-like-programming/">对不起，我并不热爱编程，我只喜欢创造</a>》)</p>
+<p><strong>创造是一种知识的再掌握过程。</strong></p>
+<p>回顾一下写echoesworks的过程，一开始我需要的是一个网页版的PPT，当然这类的东西已经有很多了，如impress.js、bespoke.js等等。分析一下所需要的功能：markdown解析器、键盘事件处理、Ajax、进度条显示、图片处理、Slide。我们可以在GitHub上找到各式各样的模块，我们所要做的就是将之结合在一样。在那之前，我试着用类似的原理写（组合）了<a href="https://github.com/phodal/lettuce">Lettuce</a>。</p>
+<p>组合相比于创造过程是一个更有挑战性的过程，我们需要在这过程去设计胶水来粘合这些代码，并在最终可以让他工作。这好比是我们在平时接触到的任务划分，每个人负责相应的模块，最后整合。</p>
+<p>我在写<a href="https://github.com/phodal/lan">lan</a>的时候，也是类似的，但是不同的是我已经设计了一个清晰的架构图。</p>
+<figure>
+<img src="./img/lan-iot.jpg" alt="Lan IoT" /><figcaption>Lan IoT</figcaption>
+</figure>
+<p>而在我们实现的编码过程也是如此，使用不同的框架，并且让他们能工作。如早期玩的<a href="https://github.com/echoesworks/moqi.mobi">moqi.mobi</a>，基于Backbone、RequireJS、Underscore、Mustache、Pure CSS。在随后的时间里，用React替换了View层，就有了<a href="https://github.com/phodal/backbone-react">backbone-react</a>的练习。</p>
+<p>技术同人一样，需要不断地往高一级前进。我们只需要不断地Re-Practise。</p>
+<h3 id="领域与练习">领域与练习</h3>
+<p>说业务好像不太适合程序员的口味，那就领域吧。不同行业的人，如百度、阿里、腾讯，他们的领域核心是不一样的。</p>
+<p>而领域本身也是相似的，这可以解释为什么互联网公司都喜欢互相挖人，而一般都不会去华为、中兴等非互联网领域挖人。出了这个领域，你可能连个毕业生都不如。领域、业务同技术一样是不断强化知识的一个过程。Ritchie先实现了BCPL语言，而后设计了C语言，而BCPL语言一开始是基于CPL语言。</p>
+<p>领域本身也在不断进化。</p>
+<p>这也是下一个值得提高的地方。</p>
+<h3 id="其他-1">其他</h3>
+<p>是时候写这个小结了。从不会写代码，到写代码是从0到1的过程，但是要从1到60都不是一件容易的事。无论是刷GitHub也好(不要是自动提交)，或者是换工作也好，我们都在不断地练习。</p>
+<p>而练习是要分成不同的几个步骤，不仅仅局限于技术：</p>
+<ol type="1">
+<li>编码</li>
+<li>架构</li>
+<li>设计</li>
+<li>。。。</li>
+</ol>
+<hr />
+<h2 id="天-2">500天</h2>
+<p>尽管之前已经有100天、200天、365天的文章，但是这不是一篇象征性的500天的文章。对这样的一个事物，每个人都会有不同听看法。有的会说这是一件好事，有的则不是。但是别人的看法终究不重要，因为了解你自己的只有你自己。别人都只是以他们的角度来提出观点。</p>
+<p>在这500天里，我发现两点有意思的事，也是总结的时候才意识到的：</p>
+<ol type="1">
+<li>编程的情绪周期</li>
+<li>有意图的练习</li>
+</ol>
+<p>那么，当我们不断地练习的时候，我们就可以写出更好的代码。</p>
+<p>我想你也听过一万小时天才理论的说法：要成为某个领域的专家，需要10000小时。而在这其中每重要的一点是有意图的练习——而不是一直重复性地用不同的语言去写一个相同的算法。如果我们有一天8小时的工作时间 + 2 小时的提高时间，那么我们还是需要1000天才能实现一万小时。</p>
+<h3 id="天与10000小时">500天与10000小时</h3>
+<p>当然如果你连做梦也在写代码的话，那么我想500天就够了，哈哈~~。</p>
+<figure>
+<img src="./img/github-500.jpg" alt="Gtihub 500" /><figcaption>Gtihub 500</figcaption>
+</figure>
+<p>虽然不是连击次数最多的，但是根据<a href="http://git.io/top">Most active GitHub users</a>的结果来说，好似是大陆提交数最多的人，没有之一。再考虑到提交都是有意义的——不是机器刷出来的，不是有意识的去刷，我觉得还是有很大成就感的。</p>
+<p>而要实现500天连击很重要的两点是：时间和idea。但是我觉得idea并不是非常重要的，我们可以造轮子，这一点就是在早期我做得最多的一件事，不断地造轮子——如《<a href="https://www.phodal.com/blog/create-framework-from-github/">造轮子与从Github生成轮子</a>》一文中所说。除此，你还可以用《<a href="https://www.phodal.com/blog/use-github-manage-idea/">GitHub去管理你的idea</a>》，每当你想到一个Idea以及完成一个idea的时间你就会多一次提交。</p>
+<p>时间则是一件很讽刺的事，因为人们要加班。加班的原因，要么是因为工作的内容很有意思，要么是因为钱。如果不是因为钱的话，为什么不去换个工作呢？比如我司。看似两者间存在很多的对立，但是我总在想技术的提升可以在后期解决收入的问题，而不需要靠加班来解决这个问题。人总是要活着的，钱是必需的，但是程序员的收入都不低。</p>
+<h3 id="编程的情绪周期">编程的情绪周期</h3>
+<p>接着，我观察到了一些有意思的现象——编程的情绪周期也很明显。</p>
+<blockquote>
+<p>所谓“情绪周期”，是指一个人的情绪高潮和低潮的交替过程所经历的时间。</p>
+</blockquote>
+<p>如下图所示的就是情绪周期：</p>
+<figure>
+<img src="./img/qingxu.jpg" alt="情绪周期" /><figcaption>情绪周期</figcaption>
+</figure>
+<p>简单地来说，就是<strong>有一个时间段写代码的感觉超级爽，有一个时间段不想写代码</strong>，但是如果换一个说法就是：<strong>有一个时间段看书、写文档的感觉很爽，有一时间段不想看书、写文档的感觉</strong>。这也就是为什么在我的GitHub首页上的绿色各种花。不过因为《物联网周报》的原因，我会定期地更新一个相关的开源项目。</p>
+<p>但是总来说，我习惯在一些时间造一些轮子、创建文档，这就是为什么我的GitHub会有一些开源电子书的缘故。</p>
+<h3 id="有意图的练习">有意图的练习</h3>
+<p>编程需要很长的学习时间，也需要很长的练习时间。尽管我是从小学编程，自认为天赋不错，但是突破了上个门槛还是花费了三四年的时间。其中的很大一部分原因是，没有找对一个合适的方向。而在这期间也没有好好的练习，随后的日子里我意识到我会遇到下一个门槛，便开始试图有意识的练习。</p>
+<p>在我开始工作的时候，我写了一篇名为《<a href="https://www.phodal.com/blog/rethink-about-the-work/">重新思考工作</a>》的文章。在文章中我提到了几点练习的点：</p>
+<ul>
+<li>加强码代码的准确性</li>
+<li>写出更整洁的代码</li>
+<li>英语口语 （外企）</li>
+<li>针对性的加强语言技能</li>
+</ul>
+<p>在一些日子的练习后，我发现这还是太无聊了。天生就喜欢一些有意思的东西，有趣才更有激情吧~~。不过，像下图的打字练习还是挺有意思的：</p>
+<figure>
+<img src="./img/huovd.png" alt="打字练习" /><figcaption>打字练习</figcaption>
+</figure>
+<p>还是能打出了一堆错误的字符。但是对比了一下大多数人的人，还算不错，至少是盲打。但是，还是存在着很大的提升空间。</p>
+<p>随后，我开始一些错误的练习，如对设计模式和架构的练习。试图去练习一些在生产上用不到的设计模式，以及一些架构模式。而这时就意味着，需要生搬一些设计模式。最后，我开始以项目为目的的练习，这就是为什么我的GitHub上的提交数会有如此多的原因。</p>
+<h3 id="预见性练习">预见性练习</h3>
+<p>还有一种练习比较有意思，算是以工作为导向的练习。当我们预见到我们的项目需要某一些技术，我们可能在未来采用某些技术的时候，我们就需要开始预见性的练习这些技术。</p>
+<p>好的一点是：这些项目可能在未来很受初学者欢迎。</p>
+<h3 id="小结">小结</h3>
+<p>每个人都有自己的方向，都有一个不错的发展路线，分享和创造都是不错的路。</p>
+<p>THE ONLY FAIR IS NOT FAIR . ENJOY CREATE &amp; SHARE.</p>
+<h2 id="天里">365*2-7天里</h2>
+<p>刚毕业的时候，有一段时间我一直困惑于如何去提高编码能力——因为项目上做的东西多数时候和自己想要的是不一样的，我便想着自己去找一些有意思的东西做着玩，在这个过程中边练习技能。</p>
+<blockquote>
+<p>如果你知道自己代码能力不够，为什么不花两年时间去提高这方面的能力呢？</p>
+</blockquote>
+<h3 id="编码的练习">编码的练习</h3>
+<p>编码是一件值得练习的事，你从书中、互联网上看到的那一个个的编程大牛无一不是从一点点的小技能积累起来的。从小接触可以让你有一个好的开始，一段好好的练习也会帮助你更好的前进。</p>
+<p>记得我在最开始练习的时候，我分几个不同的阶段去练习:</p>
+<ul>
+<li>按照《重构：改善即有代码的设计》一书边寻找一些 bad smell 的代码，一边想方设法去让代码变得优雅。</li>
+<li>按照《设计模式》以及《重构与模式》来将代码重构成某种设计模式。</li>
+<li>按照《面向模式的软件架构》去设计一些软件架构。</li>
+</ul>
+<p>而这些并不是一种容易的事，很多时候有一些模式，我们都很难有一个好的实践。只是这些东西都不是一些可以生搬硬套的，我们更需要的是知道有这些东西的存在，以便于在某一天，我们可以从我们的仓库里将这些知识取出来。</p>
+<figure>
+<img src="./img/10000.png" alt="10000 hours" /><figcaption>10000 hours</figcaption>
+</figure>
+<p>我们的刻意练习加上我们的持之以恒总是会取得长足的进步。不过在我们练习之前，你需要有一个目标。这个目标可以是一个 Idea、一个设计模式、一个模仿等等，这些内容都可以以 Issue 的好好管理着。</p>
+<p>在最开始我们下定目标的几天里，我们可以很容易做到这样的事。同样的，我们也可以很容易达到 21 天。只是，我们很容易在 21 天后失去一些目标。所以在练习开始之前，你需要创建一个帮助你提高技术的列表，然后一点点加以提高。比如说：</p>
+<ol type="1">
+<li>尝试使用 React + Redux + Koa 2、或者Angular 2 + TypeScript，这样我们就能凭此来学习新的技术。</li>
+<li>尝试使用 CQRS 架构来设计 CMS，这样我们就可以练习在架构方面的能力。</li>
+</ol>
+<p>在我们想到一点我们可以练习的技术的时候，这就是一个可以变成 Issue 管理的内容，我们就可以针对性的提高。</p>
+<p>通常在这种情况下，我们知道自己不知道什么东西，当我们处于不知道自己不知道、不知道自己知道时，那我们就需要网上的各种技能图谱——如StuQ的技能图谱。</p>
+<figure>
+<img src="./img/skillmap.png" alt="skilmap" /><figcaption>skilmap</figcaption>
+</figure>
+<p>然后了解图谱上的一个个的内容，尽可能依照此构建自己的体系——以让自己走向知道自己不知道的地步，然后我们才依此来展开练习。</p>
+<p>建议试试我们家的Growth哈，地址：http://growth.ren。</p>
+<p>文章的剩下部分就让我分享一下：在这723天里，我创造出了哪些有意思的东西（ps：让我装逼一下）——其实我不仅仅只是 Markdown 写得好</p>
+<h4 id="年">2014年</h4>
+<p>时间：2014.10.08-2014.12.30</p>
+<figure>
+<img src="./img/2014.png" alt="2014.png" /><figcaption>2014.png</figcaption>
+</figure>
+<p>在这一段时间里，我创建的项目大部分都是一些物联网项目：</p>
+<ul>
+<li><a href="https://github.com/phodal/iot-coap">iot-coap</a> 一个基于CoAP协议的物联网</li>
+<li><a href="https://github.com/phodal/designiot">designiot</a> 即电子书《教你设计物联网系统》</li>
+<li><a href="https://github.com/phodal/awesome-iot-document">iot-document</a> 收集一些物联网相关的资料，和Awesome不是一个性质</li>
+<li><a href="https://github.com/phodal/iot">iot</a> 基于PHP框架Laravel的物联网</li>
+<li>iot-android 一个与iot项目相配套的Android程序</li>
+<li>等等</li>
+</ul>
+<p>正是这几个IoT项目，让Packt出版社找到了我，才有了后来和国内外出版社打交道的故事。也开始了技术审阅、翻译、写书的各种故事，想想就觉得这个开头真的很好。</p>
+<p>期间还创建了一个很有意思的Chrome插件，叫onebuttonapp——没错，就是模仿Amazon的一键下单写的。这个插件的目的就是难证当时在项目上用的Backbone、Require.js的这一套可以在插件上好好玩。</p>
+<p>OnMap项目是为了让我用Nokia Lumia 920拍照的照片，可以在地图上显示而创建的项目。</p>
+<p>当然还有其他的一些小项目啦。</p>
+<h4 id="年-1">2015年</h4>
+<figure>
+<img src="./img/2015.png" alt="2015.png" /><figcaption>2015.png</figcaption>
+</figure>
+<p>整个区间就是刷各种前端的技术栈，创建了各种有意思的项目：</p>
+<ul>
+<li><a href="https://github.com/phodal/lettuce">Lettuce框架</a>，一个基于简单的SPA框架</li>
+<li><a href="https://github.com/phodal/echoesworks">echoesworks</a>，一个支持字幕、Markdown、动画的Slide框架</li>
+<li><a href="https://github.com/phodal/diaonan">diaonan</a>，一个支持CoAP、MQTT、HTTP的物联网项目</li>
+<li><a href="https://github.com/phodal/developer">developer</a>，收集各种 Web Developer 成长路线，以及读书图谱</li>
+</ul>
+<p>期间还创建了几个混合应用项目：</p>
+<ul>
+<li><a href="https://github.com/phodal/learning-ionic">learning-ionic</a>，程序语言答人，各种hello,world的小应用</li>
+<li><a href="https://github.com/phodal/ionic-elasticsearch">ionic-elasticsearch</a>, Django ElasticSearch Ionic 打造 GIS 移动应用</li>
+<li><a href="https://github.com/phodal/designiot-app">designiot-app</a>，教你设计物联网APP版</li>
+</ul>
+<p>更多内容可以见我的Idea列表：<a href="https://github.com/phodal/ideas" class="uri">https://github.com/phodal/ideas</a>，我实在是不想写了。</p>
+<h4 id="年-2">2016年</h4>
+<figure>
+<img src="./img/2016.png" alt="2016.png" /><figcaption>2016.png</figcaption>
+</figure>
+<p>我们有了Growth系列的电子书、APP，还有Mole，几个极具代表性的项目就够了。</p>
+<ul>
+<li><a href="https://github.com/phodal/growth">Growth</a>，一款专注于Web开发者成长的应用，涵盖Web开发的流程及技术栈，Web开发的学习路线、成长衡量等各方面。</li>
+<li><a href="https://github.com/phodal/growth-ebook">Growth: 全栈增长工程师指南</a>，一本关于如何成为全栈增长工程师的指南</li>
+<li><a href="https://github.com/phodal/growth-in-action">Growth: 全栈增长工程师实战</a>，在Growth中我们介绍的只是一系列的实践，而Growth实战则会带领读者去履行这些实践</li>
+</ul>
+<h3 id="see-you-again">See you Again</h3>
+<p>停止这次连击，只是为了有一个更好的开始。</p>
+<p>如果你也想提高自己，不妨从创建你的 ideas 项目开始，如我的<a href="https://github.com/phodal/ideas">Ideas</a>项目一样，上面已经有了大量的 Idea。然后，我们还可以依据这一个个的项目，创建出一本电子书，即 <a href="https://github.com/phodal/ideabook">ideabook</a>。</p>
+<h1 id="github-里程碑">GitHub 里程碑</h1>
+<h2 id="写在github-的第-19999-个-star-时">写在GitHub 的第 19999 个 star 时</h2>
+<blockquote>
+<p>Star 虽好，可不要贪杯哦。 两年前在做 Annual Review 订下一年的目标时，想着写一个开源框架。去年订下今年的目标时，仍然继续着这样的想法。今年又要制定下一年的目标，2333~~。</p>
+</blockquote>
+<p>不久前，在 GitHub Ranking 上看到自己的 star 数（star 不是设计用于做“点赞”的，而是用来收藏的）时，发现已经快 20000 了。然后把自己的项目过了一遍，发现没有一个比较好的<strong>代表性框架，</strong>要么是应用，要么是电子书。</p>
+<p>前 8 个项目里，除了 Growth 应用以外，其他的都是电子书内容——六本电子书加起来的 star 数有 <strong>10619</strong>，果然是骗 star 的。我只能尽力地去想想：为什么事情会变成这样了？</p>
+<h3 id="从创建开源框架说起">从创建开源框架说起</h3>
+<p>创建开源框架和创建创建开源项目是不一样的，前者你服务于开发者，后者你服务于用户。</p>
+<p>两年前在做 Annual Review 的时候，想着未来的一年里可以做一个开源框架试试。那时刚毕业不久，对开源世界的各种游戏规则不是很了解：<strong>开源并不是将代码提交上去，然后就会一下子火起来</strong>。虽然我们可以在短期内赚上一些眼球，但是真正要将它采用到项目上的人不多。</p>
+<p>当时，我遇到的最主要的问题是：<strong>想参与到项目的人并没有遇到足够的能力</strong>。你还需要花费大量的时间去教他们，鼓励 GitHub 新手并不是一件容易的事。有时我需要在接受他的 PR 后，再修改他的代码。并且人们提交 PR 可能是出于不同的原因。</p>
+<p>然后，知道了开源世界还有一个游戏规则是：<strong>谁的影响力大，谁就能产生更广泛的影响</strong>。如 Virtual Dom 并不是 Facebook 首创的，但是却因为 FB 火的； 松本行弘在写下 mruby 的 README 时（印象中是这个项目），star 数就已经过 1k 了。这种例子数不胜数，要么是在推广上花了力气，要么个人、公司有着更大的影响力。</p>
+<p>一年前，稍微改变了下策略：暂时以<strong>培养人为主</strong>，同时想着做一个合适的开源框架——只是在今年看来，前端领域已经没有合适的地方可以造轮子了。</p>
+<p>在 GitHub 上有一个很常见的问题是，<strong>大多部分项目的维护者就是发起人</strong>——如果这个发起人发生意外了，那么这个项目怎么办。如果这是一个很火的项目，它就存在着巨大的风险；同时这可能也说明了，缺乏一套合理的机制。</p>
+<p>你的开源项目不仅仅需要一个使用文档，还需要一个相关设计思想的文档、路线图、未来计划等等。</p>
+<p>去年年底写总结的时候，想到可以 RePractise 文章为基础来培养人，于是就有了 Growth 的三个项目：</p>
+<ul>
+<li>应用：<a href="https://github.com/phodal/growth">Growth</a></li>
+<li>电子书：《<a href="https://github.com/phodal/growth-ebook">Growth：全栈增长工程师指南</a>》</li>
+<li>电子书：《<a href="https://github.com/phodal/growth-in-action">Growth：全栈增长工程师实战</a>》</li>
+</ul>
+<p>如今 Growth 已经有了过万的用户，每天活跃的用户数也接近 300 了。第一步看上去很成功，但是下一步怎么走呢？</p>
+<h3 id="下一个开源项目">下一个开源项目</h3>
+<p>后来我开始在思索一个问题，创建一个开源框架是必须的吗？</p>
+<p>在编写 Growth 电子书的时候，我发现一个好的软件工程实践远远比一个易上手的框架重要多了。框架本身是易变的东西，过去你在用 Backbone，现在你在用 React.js；过去你在用 Angular.js，现在你在用 Vue。会不会使用某个框架，并不是区分你是不是一个有经验的开发者的标准。</p>
+<p>一直将焦点关注于<strong>学习不同的框架的使用</strong>是有问题的，一个在校生可以轻松地比你了解某个框架的原理——你白天在工作，而他整天在学习。这时你很容易就失去竞争力了，你需要从框架之外了解更深层次的东西。<strong>一个好的框架并不能让你写出一段好的代码</strong>。</p>
+<blockquote>
+<p>如果中国人的思想不觉悟，即使治好了他们的病，也只是做毫无意义。</p>
+</blockquote>
+<p>这算是我为自己在 GitHub 下的 Markdown 的自辩吧——谁让我一直有写作的冲动呢。</p>
+<p>不过我仍然还有一些想法，只是还没有抽出足够的时间去思考这样的事。</p>
+<p><strong>GNU/Linux 的桌面</strong>。这是几年前的一个想法了，当时 GNU/Linux 的那些操作系统上都没有一个好玩的桌面，不过感觉这个坑太深了，就没有进行了。</p>
+<p><strong>家居智能中心</strong>。我仍然对于大学学的知识有点念念不忘，虽然已经写了一本书，但是硬件还是相当的刺激。唯一的问题是：连房子都没有，怎么做智能家居。</p>
+<p><strong>图形框架</strong>。这是我之前在做一个图形界面的时候，发生没有一个合适的框架可以满足我的要求。然后我就在想，还是自己做一个吧。</p>
+<p>不过，最好的开源项目就是自己平时用的。于是，我开始将写各种工作来提自己使用——如现在在用的这篇微信编辑工具：<a href="https://github.com/phodal/mdpub">mdpub</a>。</p>
+<p>最后，我做了一个简单的 HTML 5 动画来记录这一时刻，作为这一个里程碑的记念：</p>
+<p><a href="https://phodal.github.io/20k/" class="uri">https://phodal.github.io/20k/</a></p>
 </body>
 </html>
