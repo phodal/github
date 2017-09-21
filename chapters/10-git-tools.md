@@ -108,7 +108,26 @@ Difficulty: *
 Set up your git name and email, this is important so that your commits can be identified.
 ```
 
-
+```
+#1: init
+#2: config
+#3: add
+#4: commit
+#5: clone
+#6: clone_to_folder
+#7: ignore
+#8: include
+#9: status
+#10: number_of_files_committed
+#11: rm
+#12: rm_cached
+#13: stash
+#14: rename
+#15: restructure
+#16: log
+#17: tag
+#...
+```
 
 ### Gource
 
