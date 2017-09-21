@@ -88,20 +88,51 @@
 取一个好的名字
 ---
 
+### 保持命令规则
 
+个性化，如同 ID 一般。
 
 挑选好 LICENSE
 ---
 
+事实上，在我们看到的一些外版书籍上，如果拥有代码。那么作者一般就会在前言或者类似的位置里，指明书中代码的版权所属。
+
+如：
+
+> 也许你需要在自己的程序或文档中用到本书的代码，但除非大篇幅地使用，否则不必与我们联系取得授权。例如，用本书中的几段代码编写程序无需请求许可，blabla。
+
 ![License 使用情况](./img/permissive-vs-copylift-license-2.jpg)
+
+### 公有领域
+
+> WTFPL（Do What The Fuck You Want To Public License，中文译名：你他妈的想干嘛就干嘛公共许可证）是一种不太常用的、极度放任的自由软件许可证。它的条款基本等同于贡献到公有领域。[^wtfpl]
+
+[^wtfpl]: https://zh.wikipedia.org/wiki/WTFPL
+
+这取决于
 
 ### GPL
 
-### BSD
+由于 GPL 的传染性，便意味着，他人引用我们的代码时，其所写的代码也需要使用 GPL 开源。即：GPL 是有 “传染性” 的 “病毒” ，因为 GPL 条款规定演绎作品也必须是 GPL 的。
+
+而如果我们只针对的是，他人可以使用库，而不开源，则可以用 LGPL。但是修改库则不适用。
 
 ### MIT
 
-### Creative Common
+因此，一般而言，我使用的是 MIT 协议。至少我保留了一个署名权，即你可以修改我的代码，但是在 LICENSE 里必须加上我的名字。
+
+### Creative Commons
+
+是的，当我写 Markdown 的时候，考虑到未来会以纸质书的形式出现，便会使用 CC-BY-NC-ND 协议：
+
+ - cc -> Creative Commons
+ - by -> 署名（英语：Attribution，by）
+ - NC -> 非商业性使用（英语：NonCommercial）
+ - 禁止演绎 ->（英语：NoDerivs）。
+
+即，任何人可以使用我写的电子书来自由复制、散布、展示及演出，但是不得用于商业用途（作者本人可以）。它可以随意地放在他的博客上，他的各个文章里。但是必须标明出自，并且不得改变、转变或更改本作品。
+
+如果你不介意的话，你可以使用公有领域（Public Domain）。可是这样一来，万一有一天，别人直接拿的作品出书，你就骂爹了。
 
 官方主页
 ---
@@ -1897,11 +1928,7 @@ Release
 Git 与 GitHub 工具推荐
 ===
 
-至于我的日常用的 Git 观看工具，一个是 WebStorm 和 Intellij IDEA 自带的，一个则是 SourceTree。
 
-由于日常用的开发工是 Intellij IDEA 企业版，所以就有点依赖于这个工具了。最常用的功能便是：**修复 Bug 时，对于文件修改的追溯**。了解某行代码修改的原因，对应的修改人等等。
-
-而 SourceTree 则方便用来查看一些非我写的项目，寻找其中的一些问题。个中缘由便是：**Intelli IDEA 刚打开某个项目的时候，需要花费大量的时间 index**，只可惜现有的 SourceTree 客户端都需要登录 Atlassian 账户了。
 
 Git 命令行增强
 ---
@@ -1952,12 +1979,17 @@ $ git-summary
 Intellij IDEA
 ---
 
+
+由于日常用的开发工是 Intellij IDEA 企业版，所以就有点依赖于这个工具了。最常用的功能便是：**修复 Bug 时，对于文件修改的追溯**。了解某行代码修改的原因，对应的修改人等等。
+
 Intellij IDEA
 
 Git、GitHub桌面增强
 ---
 
-### SourceTree
+### SourceTree  
+
+SourceTree 方便用来查看一些非我写的项目，寻找其中的一些问题。个中缘由便是：**Intelli IDEA 刚打开某个项目的时候，需要花费大量的时间 index**，只可惜现有的 SourceTree 客户端都需要登录 Atlassian 账户了。
 
 gitflow 分支合并、查看
 
