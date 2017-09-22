@@ -77,16 +77,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul></li>
 <li><a href="#创建开源项目">创建开源项目</a><ul>
-<li><a href="#取一个好的名字">取一个好的名字</a><ul>
-<li><a href="#保持命令规则">保持命令规则</a></li>
-</ul></li>
+<li><a href="#取一个好的名字">取一个好的名字</a></li>
 <li><a href="#挑选好-license">挑选好 LICENSE</a><ul>
 <li><a href="#公有领域">公有领域</a></li>
 <li><a href="#gpl">GPL</a></li>
 <li><a href="#mit">MIT</a></li>
 <li><a href="#creative-commons">Creative Commons</a></li>
 </ul></li>
-<li><a href="#官方主页">官方主页</a></li>
 </ul></li>
 <li><a href="#git基本知识与github使用">Git基本知识与GitHub使用</a><ul>
 <li><a href="#git">Git</a><ul>
@@ -103,8 +100,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#cla">CLA</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#构建github项目">构建GitHub项目</a><ul>
-<li><a href="#如何用好github">如何用好GitHub</a><ul>
+<li><a href="#构建-github-项目">构建 GitHub 项目</a><ul>
+<li><a href="#如何用好-github">如何用好 GitHub</a><ul>
 <li><a href="#敏捷软件开发">敏捷软件开发</a></li>
 <li><a href="#测试">测试</a></li>
 <li><a href="#ci">CI</a></li>
@@ -129,7 +126,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li><a href="#创建项目文档">创建项目文档</a><ul>
 <li><a href="#readme">README</a></li>
-<li><a href="#在线文档">在线文档</a></li>
+<li><a href="#官方首页与在线文档">官方首页与在线文档</a></li>
 <li><a href="#可用示例">可用示例</a></li>
 </ul></li>
 <li><a href="#改善-github-项目代码质量重构">改善 GitHub 项目代码质量：重构</a><ul>
@@ -311,42 +308,58 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3 id="扩大交际">扩大交际</h3>
 <p>如果我们想创造出更好、强大地框架时，那么认识更多的人可能会带来更多的帮助。有时候会同上面那一点一样的效果</p>
 <h1 id="创建开源项目">创建开源项目</h1>
-<p>人们创建</p>
+<p>人们出于不同的目的来创建开源项目，可不论目的是什么，过程都是一样的。</p>
+<ol type="1">
+<li>首先，我们需要为我们的项目取一个名字。</li>
+<li>然后，为我们的开源项目选择一个合适的 LICENSE</li>
+<li>然后再去创建项目</li>
+</ol>
 <h2 id="取一个好的名字">取一个好的名字</h2>
-<h3 id="保持命令规则">保持命令规则</h3>
-<p>个性化，如同 ID 一般。</p>
+<p>取名字，从来就不是一件容易的事。</p>
+<p>因此，我就长话短说，一般就是取一个有意义的名字，当然没有意义也没有任何问题。</p>
+<p>通常而言，如果自己计划有一系列的开源项目，那么我们可以保持一定的命令规则。</p>
 <h2 id="挑选好-license">挑选好 LICENSE</h2>
-<p>事实上，在我们看到的一些外版书籍上，如果拥有代码。那么作者一般就会在前言或者类似的位置里，指明书中代码的版权所属。</p>
-<p>如：</p>
 <blockquote>
-<p>也许你需要在自己的程序或文档中用到本书的代码，但除非大篇幅地使用，否则不必与我们联系取得授权。例如，用本书中的几段代码编写程序无需请求许可，blabla。</p>
+<p>在二十世纪而七十年代末和八十年代初，为了防止自己的软件被竞争对手所使用，大多数厂家停止分发其软件源代码，并开始使用版权和限制性软件许可证，来限制或者禁止软件源代码的复制或再分配。随后，Richard Matthew Stallman（Richard Matthew Stallman）发起了自由软件运动，他开创了 Copyleft 的概念：使用版权法的原则来保护使用、修改和分发自由软件的权利，并且是描述这些术语的自由软件许可证的主要作者。最为人所称道的是GPL（被z广泛使用的自由软件协议）。<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
 </blockquote>
+<p>（PS：关于自由软件及 RMS 的更多信息、历史，可以阅读《若为自由故：自由软件之父 - 理查德 斯托曼传》）</p>
+<p>随后，便诞生了开源软件的概念，开源的要求比自由软件宽松一些<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>。迄今发布的自由软件源代码都是开源软件，而并非所有的开源软件都是自由软件。这是因为不同的许可（协议）赋予用户不同的权利，如 GPL 协议强制要求开源修改过源码的代码，而宽松一点的 MIT 则不会有这种要求。</p>
+<p>如下是不同开源许可证的市场占有率及使用情况。</p>
 <figure>
 <img src="./img/permissive-vs-copylift-license-2.jpg" alt="License 使用情况" /><figcaption>License 使用情况</figcaption>
 </figure>
+<p>又比如，在我们看到的一些外版书籍上，如果拥有代码。那么作者一般就会在前言或者类似的位置里，指明书中代码的版权所属。如：<code>也许你需要在自己的程序或文档中用到本书的代码，但除非大篇幅地使用，否则不必与我们联系取得授权。例如，用本书中的几段代码编写程序无需请求许可，blabla</code>。</p>
+<p>于是，选择一个合理的 LICENSE，就变成了一个有趣的话题。为此，笔者做了一个如何进行开源协议选型的流程图：</p>
+<p><a href="https://github.com/phodal/licenses"><img src="./img/licenses.png" alt="如何选择 License" /></a></p>
+<p>简单地来说，这些 License 之间是一些权利的区别，如当你把代码放置到公有领域，就意味着任何人可以修改，并且不需要标明出注；可如果你想要别人标明出处及作者，你就需要 MIT 协议；而你希望别人闭源的话，那么你就需要 MPL 协议等等。</p>
+<p>那么，下面让我们简单地介绍一下不同的几个协议。</p>
 <h3 id="公有领域">公有领域</h3>
 <blockquote>
-<p>WTFPL（Do What The Fuck You Want To Public License，中文译名：你他妈的想干嘛就干嘛公共许可证）是一种不太常用的、极度放任的自由软件许可证。它的条款基本等同于贡献到公有领域。<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<p>WTFPL（Do What The Fuck You Want To Public License，中文译名：你他妈的想干嘛就干嘛公共许可证）是一种不太常用的、极度放任的自由软件许可证。它的条款基本等同于贡献到公有领域。<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
 </blockquote>
+<p>这就意味着，对于拿到这些代码的其他人，他们想怎么修改就可以怎么修改。</p>
 <p>这取决于</p>
 <h3 id="gpl">GPL</h3>
 <p>由于 GPL 的传染性，便意味着，他人引用我们的代码时，其所写的代码也需要使用 GPL 开源。即：GPL 是有 “传染性” 的 “病毒” ，因为 GPL 条款规定演绎作品也必须是 GPL 的。</p>
 <p>而如果我们只针对的是，他人可以使用库，而不开源，则可以用 LGPL。但是修改库则不适用。</p>
 <h3 id="mit">MIT</h3>
 <p>因此，一般而言，我使用的是 MIT 协议。至少我保留了一个署名权，即你可以修改我的代码，但是在 LICENSE 里必须加上我的名字。</p>
+<p>选用 MIT 特别有意思，特别是在最近几年里，发生过：</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/25739512">iView “抄袭” Element UI 事件</a></li>
+<li><a href="https://github.com/JackyAndroid/AndroidTVLauncher/issues/22">AndroidTVLauncher “抄袭” 事件</a></li>
+</ul>
+<p>等等。这告诫了我们，如果你不想要有这种经历，那么就不要用 MIT 了。</p>
 <h3 id="creative-commons">Creative Commons</h3>
 <p>是的，当我写 Markdown 的时候，考虑到未来会以纸质书的形式出现，便会使用 CC-BY-NC-ND 协议：</p>
 <ul>
-<li>cc -&gt; Creative Commons</li>
-<li>by -&gt; 署名（英语：Attribution，by）</li>
+<li>CC -&gt; Creative Commons</li>
+<li>BY -&gt; 署名（英语：Attribution，by）</li>
 <li>NC -&gt; 非商业性使用（英语：NonCommercial）</li>
-<li>禁止演绎 -&gt;（英语：NoDerivs）。</li>
+<li>ND -&gt; 禁止演绎（英语：NoDerivs）。</li>
 </ul>
 <p>即，任何人可以使用我写的电子书来自由复制、散布、展示及演出，但是不得用于商业用途（作者本人可以）。它可以随意地放在他的博客上，他的各个文章里。但是必须标明出自，并且不得改变、转变或更改本作品。</p>
 <p>如果你不介意的话，你可以使用公有领域（Public Domain）。可是这样一来，万一有一天，别人直接拿的作品出书，你就骂爹了。</p>
-<h2 id="官方主页">官方主页</h2>
-<p>一个好的例子是 GitHub Pages</p>
-<p>然后，创建</p>
 <h1 id="git基本知识与github使用">Git基本知识与GitHub使用</h1>
 <h2 id="git">Git</h2>
 <p>从一般开发者的角度来看，git有以下功能：</p>
@@ -596,9 +609,9 @@ git push -u origin master</code></pre>
 <img src="./img/eclipse-cla.png" alt="Eclipse CLA" /><figcaption>Eclipse CLA</figcaption>
 </figure>
 <p>他们都要求我签署CLA。</p>
-<h1 id="构建github项目">构建GitHub项目</h1>
-<h2 id="如何用好github">如何用好GitHub</h2>
-<p>如何用好GitHub,并实践一些敏捷软件开发是一个很有意思的事情.我们可以在上面做很多事情,从测试到CI,再到自动部署.</p>
+<h1 id="构建-github-项目">构建 GitHub 项目</h1>
+<h2 id="如何用好-github">如何用好 GitHub</h2>
+<p>如何用好 GitHub，并实践一些敏捷软件开发是一个很有意思的事情.我们可以在上面做很多事情,从测试到CI,再到自动部署.</p>
 <h3 id="敏捷软件开发">敏捷软件开发</h3>
 <p>显然我是在扯淡，这和敏捷软件开发没有什么关系。不过我也不知道瀑布流是怎样的。说说我所知道的一个项目的组成吧:</p>
 <ul>
@@ -1232,7 +1245,7 @@ line 21  col 62   Strings must use singlequote.</code></pre>
 <li>如何参与贡献</li>
 <li>协议</li>
 </ul>
-<h2 id="在线文档">在线文档</h2>
+<h2 id="官方首页与在线文档">官方首页与在线文档</h2>
 <p>很多开源项目都会有自己的网站，并在上面有一个文档，而有的则会放在<a href="https://readthedocs.org/" class="uri">https://readthedocs.org/</a>。</p>
 <blockquote>
 <p>Read the Docs 托管文档，让文档可以被全文搜索和更易查找。您可以导入您使用任何常用的版本控制系统管理的文档，包括 Mercurial、Git、Subversion 和 Bazaar。 我们支持 webhooks，因此可以在您提交代码时自动构建文档。并且同样也支持版本功能，因此您可以构建来自您代码仓库中某个标签或分支的文档。查看完整的功能列表 。</p>
@@ -1356,16 +1369,16 @@ str <span class="op">=</span> <span class="at">tableHandler</span>(str<span clas
 <pre><code>编写测试-&gt;功能代码-&gt;修改测试-&gt;重构</code></pre>
 <p>上次在和buddy聊天的时候，才知道测试在功能简单的时候是后行的，在功能复杂不知道怎么下手的时候是先行的。</p>
 <p>开始之前请原谅我对于Java语言的一些无知，然后，看一下我写的Main函数：</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package com.phodal.learing;</span>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> com.phodal.learing;</span>
 
 <span class="kw">public</span> <span class="kw">class</span> Main {
 
-    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(String[] args) {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
         <span class="dt">int</span> c=<span class="kw">new</span> <span class="fu">Cal</span>().<span class="fu">add</span>(<span class="dv">1</span>,<span class="dv">2</span>);
         <span class="dt">int</span> d=<span class="kw">new</span> <span class="fu">Cal2</span>().<span class="fu">sub</span>(<span class="dv">2</span>,<span class="dv">1</span>);
-        System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
-        System.<span class="fu">out</span>.<span class="fu">println</span>(c);
-        System.<span class="fu">out</span>.<span class="fu">println</span>(d);
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(c);
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(d);
     }
 }</code></pre></div>
 <p>代码写得还好(自我感觉)，先不管Cal和Cal2两个类。大部分都能看懂，除了c,d不知道他们表达的是什么意思，于是。</p>
@@ -1377,16 +1390,16 @@ str <span class="op">=</span> <span class="at">tableHandler</span>(str<span clas
 <li>把光标移到int d中的d，按下shift+f6，输入result_sub</li>
 </ul>
 <p>于是就有</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package com.phodal.learing;</span>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> com.phodal.learing;</span>
 
 <span class="kw">public</span> <span class="kw">class</span> Main {
 
-    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(String[] args) {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
         <span class="dt">int</span> result_add=<span class="kw">new</span> <span class="fu">Cal</span>().<span class="fu">add</span>(<span class="dv">1</span>,<span class="dv">2</span>);
         <span class="dt">int</span> result_sub=<span class="kw">new</span> <span class="fu">Cal2</span>().<span class="fu">sub</span>(<span class="dv">2</span>,<span class="dv">1</span>);
-        System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
-        System.<span class="fu">out</span>.<span class="fu">println</span>(result_add);
-        System.<span class="fu">out</span>.<span class="fu">println</span>(result_sub);
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(result_add);
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(result_sub);
     }
 }</code></pre></div>
 <h3 id="extract-method">Extract Method</h3>
@@ -1398,16 +1411,16 @@ str <span class="op">=</span> <span class="at">tableHandler</span>(str<span clas
 <li>在弹出的窗口中输入mprint</li>
 </ul>
 <p>于是有了</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(String[] args) {
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
     <span class="dt">int</span> result_add=<span class="kw">new</span> <span class="fu">Cal</span>().<span class="fu">add</span>(<span class="dv">1</span>,<span class="dv">2</span>);
     <span class="dt">int</span> result_sub=<span class="kw">new</span> <span class="fu">Cal2</span>().<span class="fu">sub</span>(<span class="dv">2</span>,<span class="dv">1</span>);
-    System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
     <span class="fu">mprint</span>(result_add);
     <span class="fu">mprint</span>(result_sub);
 }
 
 <span class="kw">private</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">mprint</span>(<span class="dt">int</span> result_sub) {
-    System.<span class="fu">out</span>.<span class="fu">println</span>(result_sub);
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(result_sub);
 }</code></pre></div>
 <p>似乎我们不应该这样对待System.out.println，那么让我们内联回去</p>
 <h3 id="inline-method">Inline Method</h3>
@@ -1419,12 +1432,12 @@ str <span class="op">=</span> <span class="at">tableHandler</span>(str<span clas
 <li>选中Inline all invocations and remove the method(2 occurrences) 点确定</li>
 </ul>
 <p>然后我们等于什么也没有做了~~:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(String[] args) {
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
     <span class="dt">int</span> result_add=<span class="kw">new</span> <span class="fu">Cal</span>().<span class="fu">add</span>(<span class="dv">1</span>,<span class="dv">2</span>);
     <span class="dt">int</span> result_sub=<span class="kw">new</span> <span class="fu">Cal2</span>().<span class="fu">sub</span>(<span class="dv">2</span>,<span class="dv">1</span>);
-    System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
-    System.<span class="fu">out</span>.<span class="fu">println</span>(result_add);
-    System.<span class="fu">out</span>.<span class="fu">println</span>(result_sub);
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello,s&quot;</span>);
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(result_add);
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(result_sub);
 }</code></pre></div>
 <p>似乎这个例子不是很好，但是够用来说明了。</p>
 <h3 id="pull-members-up">Pull Members Up</h3>
@@ -1464,7 +1477,7 @@ str <span class="op">=</span> <span class="at">tableHandler</span>(str<span clas
 <h4 id="重构之前">重构之前</h4>
 <p>过多的临时变量会让我们写出更长的函数，函数不应该太多，以便使功能单一。这也是重构的另外的目的所在，只有函数专注于其功能，才会更容易读懂。</p>
 <p>以书中的代码为例</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import java.lang.System;</span>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import</span><span class="im"> java.lang.System;</span>
 
 <span class="kw">public</span> <span class="kw">class</span> replaceTemp {
     <span class="kw">public</span> <span class="dt">void</span> <span class="fu">count</span>() {
@@ -1482,7 +1495,7 @@ str <span class="op">=</span> <span class="at">tableHandler</span>(str<span clas
 <img src="./img/replace.jpg" alt="Replace Temp With Query" /><figcaption>Replace Temp With Query</figcaption>
 </figure>
 <p>便会返回</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import java.lang.System;</span>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import</span><span class="im"> java.lang.System;</span>
 
 <span class="kw">public</span> <span class="kw">class</span> replaceTemp {
     <span class="kw">public</span> <span class="dt">void</span> <span class="fu">count</span>() {
@@ -1509,9 +1522,9 @@ str <span class="op">=</span> <span class="at">tableHandler</span>(str<span clas
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> replaceTemp {
 
     <span class="kw">public</span> <span class="dt">void</span> <span class="fu">method</span>() {
-        String str = <span class="st">&quot;str&quot;</span>;
-        String aString = <span class="fu">returnString</span>().<span class="fu">concat</span>(str);
-        System.<span class="fu">out</span>.<span class="fu">println</span>(aString);
+        <span class="bu">String</span> str = <span class="st">&quot;str&quot;</span>;
+        <span class="bu">String</span> aString = <span class="fu">returnString</span>().<span class="fu">concat</span>(str);
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(aString);
     }
 
 }</code></pre></div>
@@ -1546,9 +1559,9 @@ public class replaceTemp {
   <span class="cf">return</span> <span class="va">res</span>.<span class="at">end</span>(<span class="st">&#39;Unauthorized&#39;</span>)<span class="op">;</span>
 <span class="op">}</span></code></pre></div>
 <p>可是除了HTTP协议，还有MQTT和CoAP。对于MQTT协议来说，那还算好，毕竟自带授权，如:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">mosquitto_pub</span> -u root -P root -h localhost -d -t lettuce -m <span class="st">&quot;Hello, MQTT. This is my first message.&quot;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">mosquitto_pub</span> -u root -P root -h localhost -d -t lettuce -m <span class="st">&quot;Hello, MQTT. This is my first message.&quot;</span></code></pre></div>
 <p>便可以让我们简单地完成这个功能，然而有的协议是没有这样的功能如CoAP协议中是用Option来进行授权的。现在的工具如libcoap只能有如下的简单功能</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap-client</span> -m get coap://127.0.0.1:5683/topics/zero -T</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">coap-client</span> -m get coap://127.0.0.1:5683/topics/zero -T</code></pre></div>
 <p>于是，先写了个测试脚本来验证功能。</p>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> coap     <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;coap&#39;</span>)<span class="op">;</span>
 <span class="kw">var</span> request  <span class="op">=</span> <span class="va">coap</span>.<span class="at">request</span><span class="op">;</span>
@@ -1951,7 +1964,7 @@ Set up your git name and email, this is important so that your commits can be id
 <p><strong>2014年1月1日零时到一时，用户在github上的操作，这里的用户指的是很多。。一共有4814条数据，从commit、create到issues都有。</strong></p>
 <h3 id="数据解析">数据解析</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> json
-<span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
+<span class="cf">for</span> line <span class="kw">in</span> <span class="bu">open</span>(jsonfile):
     line <span class="op">=</span> f.readline()</code></pre></div>
 <p>然后再解析json</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> dateutil.parser
@@ -1964,23 +1977,23 @@ date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;
     dataarray <span class="op">=</span> []
     datacount <span class="op">=</span> <span class="dv">0</span>
 
-    <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
+    <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">open</span>(jsonfile):
         line <span class="op">=</span> f.readline()
         lin <span class="op">=</span> json.loads(line)
         date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
         datacount <span class="op">+=</span> <span class="dv">1</span>
         dataarray.append(date.minute)
 
-    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]
+    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">set</span>(dataarray)]
     f.close()
     <span class="cf">return</span> minuteswithcount</code></pre></div>
 <p>下面这句代码就是将上面的解析为</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">set</span>(dataarray)]</code></pre></div>
 <p>这样的数组以便于解析</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">[(<span class="dv">0</span>, <span class="dv">92</span>), (<span class="dv">1</span>, <span class="dv">67</span>), (<span class="dv">2</span>, <span class="dv">86</span>), (<span class="dv">3</span>, <span class="dv">73</span>), (<span class="dv">4</span>, <span class="dv">76</span>), (<span class="dv">5</span>, <span class="dv">67</span>), (<span class="dv">6</span>, <span class="dv">61</span>), (<span class="dv">7</span>, <span class="dv">71</span>), (<span class="dv">8</span>, <span class="dv">62</span>), (<span class="dv">9</span>, <span class="dv">71</span>), (<span class="dv">10</span>, <span class="dv">70</span>), (<span class="dv">11</span>, <span class="dv">79</span>), (<span class="dv">12</span>, <span class="dv">62</span>), (<span class="dv">13</span>, <span class="dv">67</span>), (<span class="dv">14</span>, <span class="dv">76</span>), (<span class="dv">15</span>, <span class="dv">67</span>), (<span class="dv">16</span>, <span class="dv">74</span>), (<span class="dv">17</span>, <span class="dv">48</span>), (<span class="dv">18</span>, <span class="dv">78</span>), (<span class="dv">19</span>, <span class="dv">73</span>), (<span class="dv">20</span>, <span class="dv">89</span>), (<span class="dv">21</span>, <span class="dv">62</span>), (<span class="dv">22</span>, <span class="dv">74</span>), (<span class="dv">23</span>, <span class="dv">61</span>), (<span class="dv">24</span>, <span class="dv">71</span>), (<span class="dv">25</span>, <span class="dv">49</span>), (<span class="dv">26</span>, <span class="dv">59</span>), (<span class="dv">27</span>, <span class="dv">59</span>), (<span class="dv">28</span>, <span class="dv">58</span>), (<span class="dv">29</span>, <span class="dv">74</span>), (<span class="dv">30</span>, <span class="dv">69</span>), (<span class="dv">31</span>, <span class="dv">59</span>), (<span class="dv">32</span>, <span class="dv">89</span>), (<span class="dv">33</span>, <span class="dv">67</span>), (<span class="dv">34</span>, <span class="dv">66</span>), (<span class="dv">35</span>, <span class="dv">77</span>), (<span class="dv">36</span>, <span class="dv">64</span>), (<span class="dv">37</span>, <span class="dv">71</span>), (<span class="dv">38</span>, <span class="dv">75</span>), (<span class="dv">39</span>, <span class="dv">66</span>), (<span class="dv">40</span>, <span class="dv">62</span>), (<span class="dv">41</span>, <span class="dv">77</span>), (<span class="dv">42</span>, <span class="dv">82</span>), (<span class="dv">43</span>, <span class="dv">95</span>), (<span class="dv">44</span>, <span class="dv">77</span>), (<span class="dv">45</span>, <span class="dv">65</span>), (<span class="dv">46</span>, <span class="dv">59</span>), (<span class="dv">47</span>, <span class="dv">60</span>), (<span class="dv">48</span>, <span class="dv">54</span>), (<span class="dv">49</span>, <span class="dv">66</span>), (<span class="dv">50</span>, <span class="dv">74</span>), (<span class="dv">51</span>, <span class="dv">61</span>), (<span class="dv">52</span>, <span class="dv">71</span>), (<span class="dv">53</span>, <span class="dv">90</span>), (<span class="dv">54</span>, <span class="dv">64</span>), (<span class="dv">55</span>, <span class="dv">67</span>), (<span class="dv">56</span>, <span class="dv">67</span>), (<span class="dv">57</span>, <span class="dv">55</span>), (<span class="dv">58</span>, <span class="dv">68</span>), (<span class="dv">59</span>, <span class="dv">91</span>)]</code></pre></div>
 <h3 id="matplotlib">Matplotlib</h3>
 <p>开始之前需要安装``matplotlib</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> pip install matplotlib</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> pip install matplotlib</code></pre></div>
 <p>然后引入这个库</p>
 <pre><code>  import matplotlib.pyplot as plt</code></pre>
 <p>如上面的那个结果，只需要</p>
@@ -2006,14 +2019,14 @@ date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;
     dataarray <span class="op">=</span> []
     datacount <span class="op">=</span> <span class="dv">0</span>
 
-    <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
+    <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">open</span>(jsonfile):
         line <span class="op">=</span> f.readline()
         lin <span class="op">=</span> json.loads(line)
         date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
         datacount <span class="op">+=</span> <span class="dv">1</span>
         dataarray.append(date.minute)
 
-    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]
+    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">set</span>(dataarray)]
     f.close()
     <span class="cf">return</span> minuteswithcount
 
@@ -2022,7 +2035,7 @@ date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;
     x <span class="op">=</span> []
     y <span class="op">=</span> []
     mwcs <span class="op">=</span> parse_data(files)
-    <span class="cf">for</span> mwc <span class="op">in</span> mwcs:
+    <span class="cf">for</span> mwc <span class="kw">in</span> mwcs:
         x.append(mwc[<span class="dv">0</span>])
         y.append(mwc[<span class="dv">1</span>])
 
@@ -2076,7 +2089,7 @@ draw_date(<span class="st">&quot;data/2014-01-01-0.json&quot;</span>)</code></pr
 <p>重写了一个新的方法用于计算提交数，直至后面才意识到其实我们可以算行数就够了，但是方法上有点hack</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_minutes_counts_with_id(jsonfile):
     datacount, dataarray <span class="op">=</span> handle_json(jsonfile)
-    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="op">in</span> <span class="bu">set</span>(dataarray)]
+    minuteswithcount <span class="op">=</span> [(x, dataarray.count(x)) <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">set</span>(dataarray)]
     <span class="cf">return</span> minuteswithcount
 
 
@@ -2085,7 +2098,7 @@ draw_date(<span class="st">&quot;data/2014-01-01-0.json&quot;</span>)</code></pr
     dataarray <span class="op">=</span> []
     datacount <span class="op">=</span> <span class="dv">0</span>
 
-    <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(jsonfile):
+    <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">open</span>(jsonfile):
         line <span class="op">=</span> f.readline()
         lin <span class="op">=</span> json.loads(line)
         date <span class="op">=</span> dateutil.parser.parse(lin[<span class="st">&quot;created_at&quot;</span>])
@@ -2107,7 +2120,7 @@ draw_date(<span class="st">&quot;data/2014-01-01-0.json&quot;</span>)</code></pr
 <span class="co">    :rtype : object</span>
 <span class="co">    &quot;&quot;&quot;</span>
     monthdaycount <span class="op">=</span> []
-    <span class="cf">for</span> i <span class="op">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">20</span>):
+    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">20</span>):
         <span class="cf">if</span> i <span class="op">&lt;</span> <span class="dv">10</span>:
             filename <span class="op">=</span> <span class="st">&#39;data/2014-02-0&#39;</span> <span class="op">+</span> i.<span class="fu">__str__</span>() <span class="op">+</span> <span class="st">&#39;-0.json&#39;</span>
         <span class="cf">else</span>:
@@ -2142,43 +2155,43 @@ draw_date(<span class="st">&quot;data/2014-01-01-0.json&quot;</span>)</code></pr
     count <span class="op">=</span> <span class="dv">0</span>
     userinfo <span class="op">=</span> []
     condition <span class="op">=</span> <span class="st">&#39;select * from userinfo where owener = </span><span class="ch">\&#39;</span><span class="st">&#39;</span> <span class="op">+</span> <span class="bu">str</span>(username) <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\&#39;</span><span class="st">&#39;</span>
-    <span class="cf">for</span> zero <span class="op">in</span> c.execute(condition):
+    <span class="cf">for</span> zero <span class="kw">in</span> c.execute(condition):
         count <span class="op">+=</span> <span class="dv">1</span>
         userinfo.append(zero)
 
     <span class="cf">return</span> count, userinfo</code></pre></div>
 <p>当我查询<code>gmszone</code>的时候，也就是我自己就会有如下的结果</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;ForkEvent&#39;</span>, u<span class="st">&#39;RESUME&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/RESUME&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;WatchEvent&#39;</span>, u<span class="st">&#39;iot-dashboard&#39;</span>, u<span class="st">&#39;JavaScript&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-dashboard&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;wechat-wordpress&#39;</span>, u<span class="st">&#39;Ruby&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/wechat-wordpress&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;WatchEvent&#39;</span>, u<span class="st">&#39;iot&#39;</span>, u<span class="st">&#39;JavaScript&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;CreateEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;None&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;CreateEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;None&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
-<span class="kw">(u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
-<span class="kw">109</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">(</span><span class="ex">u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;ForkEvent&#39;</span>, u<span class="st">&#39;RESUME&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/RESUME&#39;</span><span class="kw">)</span>
+<span class="kw">(</span><span class="ex">u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;WatchEvent&#39;</span>, u<span class="st">&#39;iot-dashboard&#39;</span>, u<span class="st">&#39;JavaScript&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-dashboard&#39;</span><span class="kw">)</span>
+<span class="kw">(</span><span class="ex">u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;wechat-wordpress&#39;</span>, u<span class="st">&#39;Ruby&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/wechat-wordpress&#39;</span><span class="kw">)</span>
+<span class="kw">(</span><span class="ex">u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;WatchEvent&#39;</span>, u<span class="st">&#39;iot&#39;</span>, u<span class="st">&#39;JavaScript&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot&#39;</span><span class="kw">)</span>
+<span class="kw">(</span><span class="ex">u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;CreateEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;None&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="kw">(</span><span class="ex">u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;CreateEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;None&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="kw">(</span><span class="ex">u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="kw">(</span><span class="ex">u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="kw">(</span><span class="ex">u</span><span class="st">&#39;gmszone&#39;</span>, u<span class="st">&#39;PushEvent&#39;</span>, u<span class="st">&#39;iot-doc&#39;</span>, u<span class="st">&#39;TeX&#39;</span>, u<span class="st">&#39;https://github.com/gmszone/iot-doc&#39;</span><span class="kw">)</span>
+<span class="ex">109</span></code></pre></div>
 <p>一共有109个事件，有<code>Watch</code>,<code>Create</code>,<code>Push</code>,<code>Fork</code>还有其他的， 项目主要有<code>iot</code>,<code>RESUME</code>,<code>iot-dashboard</code>,<code>wechat-wordpress</code>, 接着就是语言了，<code>Tex</code>,<code>Javascript</code>,<code>Ruby</code>,接着就是项目的url了。</p>
 <p>值得注意的是。</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">-rw-r--r--</span>   1 fdhuang staff 905M Apr 12 14:59 userdata.db</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">-rw-r--r--</span>   1 fdhuang staff 905M Apr 12 14:59 userdata.db</code></pre></div>
 <p>这个数据库文件有<strong>905M</strong>，不过查询结果相当让人满意，至少相对于原来的结果来说。</p>
 <p>Python自带了对SQLite3的支持，然而我们还需要安装SQLite3</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">brew</span> install sqlite3</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">brew</span> install sqlite3</code></pre></div>
 <p>或者是</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> port install sqlite3</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> port install sqlite3</code></pre></div>
 <p>或者是Ubuntu的</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> apt-get install sqlite3</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt-get install sqlite3</code></pre></div>
 <p>openSUSE自然就是</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> zypper install sqlite3</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> zypper install sqlite3</code></pre></div>
 <p>不过，用yast2也很不错，不是么。。</p>
 <h3 id="数据导入">数据导入</h3>
 <p>需要注意的是这里是需要python2.7，起源于对gzip的上下文管理器的支持问题</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> handle_gzip_file(filename):
     userinfo <span class="op">=</span> []
     <span class="cf">with</span> gzip.GzipFile(filename) <span class="im">as</span> f:
-        events <span class="op">=</span> [line.decode(<span class="st">&quot;utf-8&quot;</span>, errors<span class="op">=</span><span class="st">&quot;ignore&quot;</span>) <span class="cf">for</span> line <span class="op">in</span> f]
+        events <span class="op">=</span> [line.decode(<span class="st">&quot;utf-8&quot;</span>, errors<span class="op">=</span><span class="st">&quot;ignore&quot;</span>) <span class="cf">for</span> line <span class="kw">in</span> f]
 
-        <span class="cf">for</span> n, line <span class="op">in</span> <span class="bu">enumerate</span>(events):
+        <span class="cf">for</span> n, line <span class="kw">in</span> <span class="bu">enumerate</span>(events):
             <span class="cf">try</span>:
                 event <span class="op">=</span> json.loads(line)
             <span class="cf">except</span>:
@@ -2187,7 +2200,7 @@ draw_date(<span class="st">&quot;data/2014-01-01-0.json&quot;</span>)</code></pr
 
             actor <span class="op">=</span> event[<span class="st">&quot;actor&quot;</span>]
             attrs <span class="op">=</span> event.get(<span class="st">&quot;actor_attributes&quot;</span>, {})
-            <span class="cf">if</span> actor <span class="op">is</span> <span class="va">None</span> <span class="op">or</span> attrs.get(<span class="st">&quot;type&quot;</span>) <span class="op">!=</span> <span class="st">&quot;User&quot;</span>:
+            <span class="cf">if</span> actor <span class="kw">is</span> <span class="va">None</span> <span class="kw">or</span> attrs.get(<span class="st">&quot;type&quot;</span>) <span class="op">!=</span> <span class="st">&quot;User&quot;</span>:
                 <span class="cf">continue</span>
 
             key <span class="op">=</span> actor.lower()
@@ -2207,7 +2220,7 @@ draw_date(<span class="st">&quot;data/2014-01-01-0.json&quot;</span>)</code></pr
     year <span class="op">=</span> <span class="dv">2014</span>
     month <span class="op">=</span> <span class="dv">3</span>
 
-    <span class="cf">for</span> day <span class="op">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">31</span>):
+    <span class="cf">for</span> day <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">31</span>):
         date_re <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&quot;([0-9]</span><span class="sc">{4}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]+)\.json.gz&quot;</span>)
 
         fn_template <span class="op">=</span> os.path.join(<span class="st">&quot;march&quot;</span>,
@@ -2215,7 +2228,7 @@ draw_date(<span class="st">&quot;data/2014-01-01-0.json&quot;</span>)</code></pr
         kwargs <span class="op">=</span> {<span class="st">&quot;year&quot;</span>: year, <span class="st">&quot;month&quot;</span>: month, <span class="st">&quot;day&quot;</span>: day, <span class="st">&quot;n&quot;</span>: <span class="st">&quot;*&quot;</span>}
         filenames <span class="op">=</span> glob.glob(fn_template.<span class="bu">format</span>(<span class="op">**</span>kwargs))
 
-        <span class="cf">for</span> filename <span class="op">in</span> filenames:
+        <span class="cf">for</span> filename <span class="kw">in</span> filenames:
             c.executemany(<span class="st">&#39;INSERT INTO userinfo VALUES (?,?,?,?,?)&#39;</span>, handle_gzip_file(filename))
 
     conn.commit()
@@ -2241,11 +2254,11 @@ pipe <span class="op">=</span> pipe <span class="op">=</span> r.pipeline()
 pipe.zscore(<span class="st">&#39;osrc:user&#39;</span>,<span class="st">&quot;gmszone&quot;</span>)
 pipe.execute()</code></pre></div>
 <p>系统返回了<code>227.0</code>,试试别人。</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">&gt;&gt;&gt;</span> <span class="kw">pipe.zscore</span>(<span class="st">&#39;osrc:user&#39;</span>,<span class="st">&quot;dfm&quot;</span>)
-<span class="kw">&lt;redis.client.StrictPipeline</span> object at 0x104fa7f<span class="kw">50&gt;</span>
-<span class="kw">&gt;&gt;&gt;</span> <span class="kw">pipe.execute</span>()
-[<span class="kw">425.0</span>]
-<span class="kw">&gt;&gt;&gt;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&gt;&gt;&gt;</span> <span class="ex">pipe.zscore</span>(<span class="st">&#39;osrc:user&#39;</span>,<span class="st">&quot;dfm&quot;</span>)
+<span class="op">&lt;</span><span class="ex">redis.client.StrictPipeline</span> object at 0x104fa7f<span class="op">50&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">pipe.execute</span>()
+[<span class="ex">425.0</span>]
+<span class="op">&gt;&gt;&gt;</span></code></pre></div>
 <p>看看主要是在哪一天提交的</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> pipe.hgetall(<span class="st">&#39;osrc:user:gmszone:day&#39;</span>)
 <span class="op">&lt;</span>redis.client.StrictPipeline <span class="bu">object</span> at <span class="bn">0x104fa7f50</span><span class="op">&gt;</span>
@@ -2272,7 +2285,7 @@ pipe.execute()</code></pre></div>
 
     r <span class="op">=</span> redis.StrictRedis(host<span class="op">=</span><span class="st">&#39;localhost&#39;</span>, port<span class="op">=</span><span class="dv">6379</span>, db<span class="op">=</span><span class="dv">0</span>)
     no_pipe <span class="op">=</span> <span class="va">False</span>
-    <span class="cf">if</span> pipe <span class="op">is</span> <span class="va">None</span>:
+    <span class="cf">if</span> pipe <span class="kw">is</span> <span class="va">None</span>:
         pipe <span class="op">=</span> pipe <span class="op">=</span> r.pipeline()
         no_pipe <span class="op">=</span> <span class="va">True</span>
 
@@ -2328,12 +2341,12 @@ pipe.execute()</code></pre></div>
     points[<span class="dv">0</span>] <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (total <span class="op">+</span> <span class="dv">1</span>)
 
     <span class="co"># Week means.</span>
-    <span class="cf">for</span> k, v <span class="op">in</span> results[<span class="dv">1</span>].iteritems():
+    <span class="cf">for</span> k, v <span class="kw">in</span> results[<span class="dv">1</span>].iteritems():
         points[<span class="dv">1</span> <span class="op">+</span> <span class="bu">int</span>(k)] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
 
     <span class="co"># Event types.</span>
     n <span class="op">=</span> <span class="dv">8</span>
-    <span class="cf">for</span> k, v <span class="op">in</span> results[<span class="dv">2</span>]:
+    <span class="cf">for</span> k, v <span class="kw">in</span> results[<span class="dv">2</span>]:
         points[n <span class="op">+</span> evttypes.index(k)] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
 
     <span class="co"># Number of contributions, connections and languages.</span>
@@ -2345,8 +2358,8 @@ pipe.execute()</code></pre></div>
 
     <span class="co"># Top languages.</span>
     n <span class="op">+=</span> <span class="dv">4</span>
-    <span class="cf">for</span> k, v <span class="op">in</span> results[<span class="dv">7</span>]:
-        <span class="cf">if</span> k <span class="op">in</span> langs:
+    <span class="cf">for</span> k, v <span class="kw">in</span> results[<span class="dv">7</span>]:
+        <span class="cf">if</span> k <span class="kw">in</span> langs:
             points[n <span class="op">+</span> langs.index(k)] <span class="op">=</span> <span class="bu">float</span>(v) <span class="op">/</span> total
         <span class="cf">else</span>:
             <span class="co"># Unknown language.</span>
@@ -3016,7 +3029,9 @@ pipe.execute()</code></pre></div>
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>https://zh.wikipedia.org/wiki/WTFPL<a href="#fnref1">↩</a></p></li>
+<li id="fn1"><p>https://zh.wikipedia.org/wiki/%E7%90%86%E6%9F%A5%E5%BE%B7%C2%B7%E6%96%AF%E6%89%98%E6%9B%BC<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>https://www.gnu.org/philosophy/open-source-misses-the-point.zh-cn.html<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>https://zh.wikipedia.org/wiki/WTFPL<a href="#fnref3">↩</a></p></li>
 </ol>
 </section>
 </body>

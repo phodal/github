@@ -38,7 +38,7 @@ README通常会显示在GitHub项目的下面，如下图所示：
 * 如何参与贡献
 * 协议
 
-## 在线文档
+## 官方首页与在线文档
 
 很多开源项目都会有自己的网站，并在上面有一个文档，而有的则会放在[https://readthedocs.org/](https://readthedocs.org/)。
 
