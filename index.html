@@ -66,6 +66,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <nav id="TOC">
 <ul>
 <li><a href="#前言">前言</a><ul>
+<li><a href="#关于作者">关于作者</a></li>
 <li><a href="#我与github的故事">我与GitHub的故事</a><ul>
 <li><a href="#github与收获">GitHub与收获</a></li>
 <li><a href="#github与成长">GitHub与成长</a></li>
@@ -258,6 +259,42 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 </nav>
 <h1 id="前言">前言</h1>
+<h2 id="关于作者">关于作者</h2>
+<p>黄峰达（Phodal Huang）是一个创客、工程师、咨询师和作家。他毕业于西安文理学院电子信息工程专业，现作为一个咨询师就职于 ThoughtWorks 深圳。长期活跃于开源软件社区 GitHub，目前专注于物联网和前端领域。</p>
+<p>作为一个开源软件作者，著有 Growth、Stepping、Lan、Echoesworks 等软件。其中开源学习应用 Growth，广受读者和用户好评，可在 APP Store 及各大 Android 应用商店下载。</p>
+<p>作为一个技术作者，著有《自己动手设计物联网》（电子工业出版社）、《全栈应用开发：精益实践》（电子工业出版社，正在出版）。并在 GitHub 上开源有《Growth: 全栈增长工程师指南》、《GitHub 漫游指南》等七本电子书。</p>
+<p>作为技术专家，他为英国 Packt 出版社审阅有物联网书籍《Learning IoT》、《Smart IoT》，前端书籍《Angular 2 Serices》、《Getting started with Angular》等技术书籍。</p>
+<p>他热爱编程、写作、设计、旅行、hacking，你可以从他的个人网站：<a href="https://www.phodal.com/" class="uri">https://www.phodal.com/</a> 了解到更多的内容。</p>
+<p>其它相关信息：</p>
+<ul>
+<li>微博：<a href="http://weibo.com/phodal" class="uri">http://weibo.com/phodal</a></li>
+<li>GitHub： <a href="https://github.com/phodal" class="uri">https://github.com/phodal</a></li>
+<li>知乎：<a href="https://www.zhihu.com/people/phodal" class="uri">https://www.zhihu.com/people/phodal</a></li>
+<li>SegmentFault：<a href="https://segmentfault.com/u/phodal" class="uri">https://segmentfault.com/u/phodal</a></li>
+</ul>
+<p>当前为预览版，在使用的过程中遇到任何问题请及时与我联系。阅读过程中的问题，不妨在GitHub上提出来： <a href="https://github.com/phodal/fe/issues">Issues</a></p>
+<p>阅读过程中遇到语法错误、拼写错误、技术错误等等，不妨来个Pull Request，这样可以帮助到其他阅读这本电子书的童鞋。</p>
+<p>我的电子书：</p>
+<ul>
+<li>《<a href="https://github.com/phodal/github-roam">GitHub 漫游指南</a>》</li>
+<li>《<a href="https://github.com/phodal/fe">我的职业是前端工程师</a>》</li>
+<li>《<a href="https://github.com/phodal/serverless">Serverless 架构应用开发指南</a>》</li>
+<li>《<a href="https://github.com/phodal/growth-ebook">Growth: 全栈增长工程师指南</a>》</li>
+<li>《<a href="https://github.com/phodal/ideabook">Phodal’s Idea实战指南</a>》</li>
+<li>《<a href="https://github.com/phodal/designiot">一步步搭建物联网系统</a>》</li>
+<li>《<a href="https://github.com/phodal/repractise">RePractise</a>》</li>
+<li>《<a href="https://github.com/phodal/growth-in-action">Growth: 全栈增长工程师实战</a>》</li>
+</ul>
+<p>我的微信公众号:</p>
+<figure>
+<img src="./img/wechat.jpg" alt="作者微信公众号：phodal-weixin" /><figcaption>作者微信公众号：phodal-weixin</figcaption>
+</figure>
+<p>支持作者，可以加入作者的小密圈:</p>
+<figure>
+<img src="./img/xiaomiquan.jpg" alt="小密圈" /><figcaption>小密圈</figcaption>
+</figure>
+<p>或者转账：</p>
+<p><img src="./img/alipay.png" alt="支付宝" /> <img src="./img/wechat-pay.png" alt="微信" /></p>
 <p>我的GitHub主页上写着加入的时间——<code>Joined on Nov 8, 2010</code>，那时才大一，在那之后的那么长的日子里我都没有登录过。也许是因为我学的不是计算机，到了今天——<code>2015.3.9</code>，我才发现这其实是程序员的社交网站。</p>
 <p>过去，曾经有很长的一些时间我试过在GitHub上连击，也试着去了解别人是如何用好这个工具的。当然粉丝在GitHub上也是很重要的。</p>
 <p>在这里，我会试着将我在GitHub上学到的东西一一分享出来。</p>
@@ -700,16 +737,16 @@ git push -u origin master</code></pre>
 <p>本地测试都通过了，于是我们添加了<code>Travis-CI</code>来跑我们的测试</p>
 <h3 id="ci">CI</h3>
 <p>虽然node.js不算是一门语言，但是因为我们用的node，下面的是一个简单的<code>.travis.yml</code>示例:</p>
-<div class="sourceCode"><pre class="sourceCode yml"><code class="sourceCode yaml"><span class="fu">language:</span> node_js
+<div class="sourceCode"><pre class="sourceCode yml"><code class="sourceCode yaml"><span class="fu">language:</span><span class="at"> node_js</span>
 <span class="fu">node_js:</span>
     <span class="kw">-</span> <span class="st">&quot;0.10&quot;</span>
 
 <span class="fu">notifications:</span>
-    <span class="fu">email:</span> false
+    <span class="fu">email:</span><span class="at"> false</span>
 
-<span class="fu">before_install:</span> npm install -g grunt-cli
-<span class="fu">install:</span> npm install
-<span class="fu">after_success:</span> CODECLIMATE_REPO_TOKEN=321480822fc37deb0de70a11931b4cb6a2a3cc411680e8f4569936ac8ffbb0ab codeclimate &lt; coverage/lcov.info</code></pre></div>
+<span class="fu">before_install:</span><span class="at"> npm install -g grunt-cli</span>
+<span class="fu">install:</span><span class="at"> npm install</span>
+<span class="fu">after_success:</span><span class="at"> CODECLIMATE_REPO_TOKEN=321480822fc37deb0de70a11931b4cb6a2a3cc411680e8f4569936ac8ffbb0ab codeclimate &lt; coverage/lcov.info</span></code></pre></div>
 <p>代码来源: <a href="https://github.com/phodal/lettuce" class="uri">https://github.com/phodal/lettuce</a></p>
 <p>我们把这些集成到<code>README.md</code>之后，就有了之前那张图。</p>
 <p>CI对于一个开发者在不同城市开发同一项目上来说是很重要的，这意味着当你添加的部分功能有测试覆盖的时候，项目代码会更加强壮。</p>
@@ -850,12 +887,12 @@ git push -u origin master</code></pre>
 <p>当然函数也是一个对象。</p>
 <h3 id="自动化测试">自动化测试</h3>
 <p>一直习惯用Travis CI，于是也继续用Travis Ci，<code>.travis.yml</code>配置如下所示:</p>
-<div class="sourceCode"><pre class="sourceCode yml"><code class="sourceCode yaml"><span class="fu">language:</span> node_js
+<div class="sourceCode"><pre class="sourceCode yml"><code class="sourceCode yaml"><span class="fu">language:</span><span class="at"> node_js</span>
 <span class="fu">node_js:</span>
   <span class="kw">-</span> <span class="st">&quot;0.10&quot;</span>
 
 <span class="fu">notifications:</span>
-  <span class="fu">email:</span> false
+  <span class="fu">email:</span><span class="at"> false</span>
 
 <span class="fu">branches:</span>
   <span class="fu">only:</span>
@@ -2227,7 +2264,7 @@ draw_date(<span class="st">&quot;data/2014-01-01-0.json&quot;</span>)</code></pr
         date_re <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&quot;([0-9]</span><span class="sc">{4}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]</span><span class="sc">{2}</span><span class="vs">)-([0-9]+)\.json.gz&quot;</span>)
 
         fn_template <span class="op">=</span> os.path.join(<span class="st">&quot;march&quot;</span>,
-                                   <span class="co">&quot;{year}-{month:02d}-{day:02d}-{n}.json.gz&quot;</span>)
+                                   <span class="st">&quot;</span><span class="sc">{year}</span><span class="st">-</span><span class="sc">{month:02d}</span><span class="st">-</span><span class="sc">{day:02d}</span><span class="st">-</span><span class="sc">{n}</span><span class="st">.json.gz&quot;</span>)
         kwargs <span class="op">=</span> {<span class="st">&quot;year&quot;</span>: year, <span class="st">&quot;month&quot;</span>: month, <span class="st">&quot;day&quot;</span>: day, <span class="st">&quot;n&quot;</span>: <span class="st">&quot;*&quot;</span>}
         filenames <span class="op">=</span> glob.glob(fn_template.<span class="bu">format</span>(<span class="op">**</span>kwargs))
 
@@ -2258,7 +2295,7 @@ pipe.zscore(<span class="st">&#39;osrc:user&#39;</span>,<span class="st">&quot;g
 pipe.execute()</code></pre></div>
 <p>系统返回了<code>227.0</code>,试试别人。</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&gt;&gt;&gt;</span> <span class="ex">pipe.zscore</span>(<span class="st">&#39;osrc:user&#39;</span>,<span class="st">&quot;dfm&quot;</span>)
-<span class="op">&lt;</span><span class="ex">redis.client.StrictPipeline</span> object at 0x104fa7f<span class="op">50&gt;</span>
+<span class="op">&lt;</span><span class="ex">redis.client.StrictPipeline</span> object at 0x104fa7f50<span class="op">&gt;</span>
 <span class="op">&gt;&gt;&gt;</span> <span class="ex">pipe.execute</span>()
 [<span class="ex">425.0</span>]
 <span class="op">&gt;&gt;&gt;</span></code></pre></div>
