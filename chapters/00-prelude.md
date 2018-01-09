@@ -21,7 +21,7 @@
  - 知乎：[https://www.zhihu.com/people/phodal](https://www.zhihu.com/people/phodal)
  - SegmentFault：[https://segmentfault.com/u/phodal](https://segmentfault.com/u/phodal)
 
-当前为预览版，在使用的过程中遇到任何问题请及时与我联系。阅读过程中的问题，不妨在GitHub上提出来： [Issues](https://github.com/phodal/fe/issues)
+当前为预览版，在使用的过程中遇到任何问题请及时与我联系。阅读过程中的问题，不妨在GitHub上提出来： [Issues](https://github.com/phodal/github/issues)
 
 阅读过程中遇到语法错误、拼写错误、技术错误等等，不妨来个Pull Request，这样可以帮助到其他阅读这本电子书的童鞋。
 
