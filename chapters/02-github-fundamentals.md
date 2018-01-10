@@ -183,7 +183,7 @@ C | 2
 
 ### 我的第一个PR
 
-我的第一个PR是给一个小的Node的CoAP相关的库的Pull Request。原因比较简单，是因为它的README.md写错了，导致我无法办法进行下一步。
+我的第一个PR是给一个小的Node的CoAP相关的库的Pull Request。原因比较简单，是因为它的README.md写错了，导致我无法进行下一步。
 
 		 const dgram       = require('dgram')
 		-    , coapPacket  = require('coap-packet')
