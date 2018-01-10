@@ -103,7 +103,7 @@ numbers, objects, strings, etc. Lodash’s modular methods are great for:
 
 ![对比其它项目](./img/comparison.png)
 
-当然了，这种事不能太过，要不是会招来一堆黑。
+当然了，这种事不能太过，要不然会招来一堆黑。
 
 ### 安装及hello, world 示例
 
