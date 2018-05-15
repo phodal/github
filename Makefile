@@ -16,8 +16,7 @@ html: markdown
 		--include-before-body $(include_dir)/share.html \
 		--include-after-body $(include_dir)/stats.html \
 		--title-prefix $(title) \
-		--normalize \
-		--smart \
+		-smart \
 		--toc
 
 epub: markdown
