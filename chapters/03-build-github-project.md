@@ -324,7 +324,7 @@ branches:
 这是一种驱动写出更规范js的方法。
 
 
-###Mocha
+### Mocha
 
 > Mocha 是一个优秀的JS测试框架，支持TDD/BDD，结合 should.js/expect/chai/better-assert，能轻松构建各种风格的测试用例。
 
@@ -405,7 +405,7 @@ it('should return book label & url', function () {
 
 这就是个问题了，于是偶然间看到了一个叫code climate的网站。
 
-###Code Climate
+### Code Climate
 
 > Code Climate consolidates the results from a suite of static analysis tools into a single, real-time report, giving your team the information it needs to identify hotspots, evaluate new approaches, and improve code quality.
 
@@ -435,7 +435,7 @@ A |	lib/url_handler.js |	9 |	0	| 5 |	2.2	| 94.1% |	0
 
 ![Coverage][1]
 
-###代码的坏味道
+### 代码的坏味道
 
 于是我们就打开``lib/database/sqlite_helper.js``，因为其中有两个坏味道
 

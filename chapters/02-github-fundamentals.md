@@ -107,7 +107,7 @@ jQuery[^jQuery]在发布版本``2.1.3``，一共有152个commit。我们可以�
 
 > GitHub可以托管各种git库，并提供一个web界面，但与其它像 SourceForge或Google Code这样的服务不同，GitHub的独特卖点在于从另外一个项目进行分支的简易性。为一个项目贡献代码非常简单：首先点击项目站点的“fork”的按钮，然后将代码检出并将修改加入到刚才分出的代码库中，最后通过内建的“pull request”机制向项目负责人申请代码合并。已经有人将GitHub称为代码玩家的MySpace。
 
-### 在GitHub创建项目
+### 在 GitHub 创建项目
 
 接着,我们试试在上面创建一个项目:
 
@@ -139,7 +139,7 @@ git push -u origin master
 	
 如果你完成了上面的步骤之后,那么我想你想知道你需要怎样的项目。
 
-##GitHub流行项目分析
+## GitHub 流行项目分析
 
 之前曾经分析过一些GitHub的用户行为，现在我们先来说说GitHub上的Star吧。(截止: 2015年3月9日23时。)
 

@@ -136,7 +136,7 @@ GitHub连击
 
 这个可以从两部分说起:
 
-####重构Skill Tree
+#### 重构 Skill Tree
 
 原来的是
 
@@ -149,7 +149,7 @@ GitHub连击
 
 代码: [https://github.com/phodal/skillock](https://github.com/phodal/skillock)
 
-####技能树Sherlock
+#### 技能树Sherlock
 
 - D3.js
 - Dagre-D3.js
@@ -311,7 +311,7 @@ GitHub连击
 
 这也是下一个值得提高的地方。
 
-###其他
+### 其他
 
 是时候写这个小结了。从不会写代码，到写代码是从0到1的过程，但是要从1到60都不是一件容易的事。无论是刷GitHub也好(不要是自动提交)，或者是换工作也好，我们都在不断地练习。
 

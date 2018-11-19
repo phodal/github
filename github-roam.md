@@ -324,7 +324,7 @@ jQuery[^jQuery]在发布版本``2.1.3``，一共有152个commit。我们可以�
 
 > GitHub可以托管各种git库，并提供一个web界面，但与其它像 SourceForge或Google Code这样的服务不同，GitHub的独特卖点在于从另外一个项目进行分支的简易性。为一个项目贡献代码非常简单：首先点击项目站点的“fork”的按钮，然后将代码检出并将修改加入到刚才分出的代码库中，最后通过内建的“pull request”机制向项目负责人申请代码合并。已经有人将GitHub称为代码玩家的MySpace。
 
-### 在GitHub创建项目
+### 在 GitHub 创建项目
 
 接着,我们试试在上面创建一个项目:
 
@@ -356,7 +356,7 @@ git push -u origin master
 	
 如果你完成了上面的步骤之后,那么我想你想知道你需要怎样的项目。
 
-##GitHub流行项目分析
+## GitHub 流行项目分析
 
 之前曾经分析过一些GitHub的用户行为，现在我们先来说说GitHub上的Star吧。(截止: 2015年3月9日23时。)
 
@@ -759,7 +759,7 @@ branches:
 这是一种驱动写出更规范js的方法。
 
 
-###Mocha
+### Mocha
 
 > Mocha 是一个优秀的JS测试框架，支持TDD/BDD，结合 should.js/expect/chai/better-assert，能轻松构建各种风格的测试用例。
 
@@ -840,7 +840,7 @@ it('should return book label & url', function () {
 
 这就是个问题了，于是偶然间看到了一个叫code climate的网站。
 
-###Code Climate
+### Code Climate
 
 > Code Climate consolidates the results from a suite of static analysis tools into a single, real-time report, giving your team the information it needs to identify hotspots, evaluate new approaches, and improve code quality.
 
@@ -870,7 +870,7 @@ A |	lib/url_handler.js |	9 |	0	| 5 |	2.2	| 94.1% |	0
 
 ![Coverage][1]
 
-###代码的坏味道
+### 代码的坏味道
 
 于是我们就打开``lib/database/sqlite_helper.js``，因为其中有两个坏味道
 
@@ -1452,7 +1452,7 @@ Windows/Linux:  木有
 
 鼠标: **Refactor** | ``Replace Temp with Query``
 
-####重构之前
+#### 重构之前
 
 过多的临时变量会让我们写出更长的函数，函数不应该太多，以便使功能单一。这也是重构的另外的目的所在，只有函数专注于其功能，才会更容易读懂。
 
@@ -1509,7 +1509,7 @@ public class replaceTemp {
 
 3. 选择``basePrice``再``Inline Method``
 
-####Intellij IDEA重构
+#### Intellij IDEA重构
 
 在Intellij IDEA的文档中对此是这样的例子
 
@@ -1647,7 +1647,7 @@ req.end();
 
      pip install twill
 
-###Twill 登陆测试
+### Twill 登陆测试
 
 1.启动我们的应用。
 
@@ -1694,7 +1694,7 @@ req.end();
 
 发现重定向到首页了。
 
-###Twill 测试脚本
+### Twill 测试脚本
 
 当然我们也可以用脚本直接来测试``login.twill``:
 
@@ -2280,7 +2280,7 @@ draw_date("data/2014-01-01-0.json")
 
 不过这个是osrc的分析结果。
 
-###python github 每周情况分析
+### python github 每周情况分析
 
 看一张分析后的结果
 
@@ -2317,7 +2317,7 @@ draw_date("data/2014-01-01-0.json")
       8474, 7984, 12933, 13504, 13763, 13544, 12940,
       7119, 7346, 13412, 14008, 12555
 
-###Python 数据分析
+### Python 数据分析
 
 重写了一个新的方法用于计算提交数，直至后面才意识到其实我们可以算行数就够了，但是方法上有点hack
 
@@ -2366,7 +2366,7 @@ def get_month_total():
 
 接着我们需要去遍历每个结果，后面的后面会发现这个效率真的是太低了，为什么木有多线程？
 
-###Python Matplotlib图表
+### Python Matplotlib图表
 
 让我们的matplotlib来做这些图表的工作
 
@@ -2469,7 +2469,7 @@ sudo zypper install sqlite3
 
 不过，用yast2也很不错，不是么。。
 
-###数据导入
+### 数据导入
 
 需要注意的是这里是需要python2.7，起源于对gzip的上下文管理器的支持问题
 
@@ -2547,7 +2547,7 @@ date_re = re.compile(r"([0-9]{4})-([0-9]{2})-([0-9]{2})-([0-9]+)\.json.gz")
 
 更好的方案？
 
-###Redis
+### Redis
 
 查询用户事件总数
 
@@ -2596,7 +2596,7 @@ pipe.execute()
 
 到这里我们算是知道了OSRC的数据库部分是如何工作的。
 
-####Redis 查询
+#### Redis 查询
 
 主要代码如下所示
 
@@ -2639,7 +2639,7 @@ def get_vector(user, pipe=None):
 
 osrc最有意思的一部分莫过于flann，当然说的也是系统后台的设计的一个很关键及有意思的部分。
 
-##邻近算法与相似用户
+## 邻近算法与相似用户
 
 邻近算法是在这个分析过程中一个很有意思的东西。
 
@@ -3139,7 +3139,7 @@ GitHub连击
 
 这个可以从两部分说起:
 
-####重构Skill Tree
+#### 重构 Skill Tree
 
 原来的是
 
@@ -3152,7 +3152,7 @@ GitHub连击
 
 代码: [https://github.com/phodal/skillock](https://github.com/phodal/skillock)
 
-####技能树Sherlock
+#### 技能树Sherlock
 
 - D3.js
 - Dagre-D3.js
@@ -3314,7 +3314,7 @@ GitHub连击
 
 这也是下一个值得提高的地方。
 
-###其他
+### 其他
 
 是时候写这个小结了。从不会写代码，到写代码是从0到1的过程，但是要从1到60都不是一件容易的事。无论是刷GitHub也好(不要是自动提交)，或者是换工作也好，我们都在不断地练习。
 

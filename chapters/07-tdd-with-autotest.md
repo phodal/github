@@ -96,7 +96,7 @@ req.end();
 
      pip install twill
 
-###Twill 登陆测试
+### Twill 登陆测试
 
 1.启动我们的应用。
 
@@ -143,7 +143,7 @@ req.end();
 
 发现重定向到首页了。
 
-###Twill 测试脚本
+### Twill 测试脚本
 
 当然我们也可以用脚本直接来测试``login.twill``:
 

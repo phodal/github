@@ -309,7 +309,7 @@ Windows/Linux:  木有
 
 鼠标: **Refactor** | ``Replace Temp with Query``
 
-####重构之前
+#### 重构之前
 
 过多的临时变量会让我们写出更长的函数，函数不应该太多，以便使功能单一。这也是重构的另外的目的所在，只有函数专注于其功能，才会更容易读懂。
 
@@ -366,7 +366,7 @@ public class replaceTemp {
 
 3. 选择``basePrice``再``Inline Method``
 
-####Intellij IDEA重构
+#### Intellij IDEA重构
 
 在Intellij IDEA的文档中对此是这样的例子
 
