@@ -142,6 +142,18 @@
     *   [写在GitHub 的第 19999 个 star 时](http://github.phodal.com/#写在github-的第-19999-个-star-时)
         *   [从创建开源框架说起](http://github.phodal.com/#从创建开源框架说起)
         *   [下一个开源项目](http://github.phodal.com/#下一个开源项目)
+*   [GitHub 寻宝指南](http://github.phodal.com/#github-寻宝指南)
+    *   [寻找 Demo 节省时间](http://github.phodal.com/#寻找-demo-节省时间)
+    *   [寻找脚手架：加快前期开发](http://github.phodal.com/#寻找脚手架加快前期开发)
+    *   [寻找 awesome-xxx：探索可能性](http://github.phodal.com/#寻找-awesome-xxx探索可能性)
+    *   [**模仿轮子**的轮子](http://github.phodal.com/#模仿轮子的轮子)
+    *   [学习资源](http://github.phodal.com/#学习资源)
+    *   [密钥/密码](http://github.phodal.com/#密钥密码)
+    *   [私有、商用的 SDK 或代码](http://github.phodal.com/#私有商用的-sdk-或代码)
+    *   [数据及数据制作工具](http://github.phodal.com/#数据及数据制作工具)
+    *   [结论](#结论)
+*   [FAQ](#faq)
+    *   [如何看待github 项目刷Star行为？](http://github.phodal.com/#如何看待github-项目刷star行为)
 
 ## License
 
