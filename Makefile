@@ -11,28 +11,25 @@ markdown:
 
 html: markdown
 	pandoc -s $(filename).md -t html5 -o index.html -c style.css \
+        --metadata pagetitle=$(title) \
 		--include-in-header $(include_dir)/head.html \
 		--include-before-body $(include_dir)/author.html \
 		--include-before-body $(include_dir)/share.html \
 		--include-after-body $(include_dir)/stats.html \
 		--title-prefix $(title) \
+		--toc-depth=3 \
 		--toc
 
 epub: markdown
-	pandoc -s $(filename).md --normalize --smart -t epub -o $(filename).epub \
+	pandoc -s $(filename).md -t epub -o $(filename).epub \
 		--epub-metadata $(include_dir)/metadata.xml \
-		--epub-stylesheet epub.css \
 		--epub-cover-image img/cover.jpg \
 		--title-prefix $(title) \
-		--normalize \
-		--smart \
 		--toc
 
 rtf: markdown
 	pandoc -s $(filename).md -o $(filename).rtf \
-		--title-prefix $(title) \
-		--normalize \
-		--smart
+		--title-prefix $(title)
 
 pdf: markdown
 	# OS X: http://www.tug.org/mactex/
@@ -42,10 +39,7 @@ pdf: markdown
 		--title-prefix $(title) \
 		--listings -H listings-setup.tex \
 		--template=template.tex \
-		--normalize \
-		--smart \
-		--toc \
-		--latex-engine=`which xelatex`
+		--toc
 
 mobi: epub
 	# Symlink bin: ln -s /path/to/kindlegen /usr/local/bin
