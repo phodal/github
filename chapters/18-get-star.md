@@ -34,7 +34,7 @@ GitHub 是一个非常有意思的地方，也常常变得非常有争议。有�
 
 因此开始之前，我们先看张图就能知道怎么获取流量。如下是《GitHub 漫游指南》最近两周内的流量来源统计（GitHub 通过 Google Analysis 来统计）：
 
-![GitHub 漫游指南](github_traffic.png)
+![GitHub 漫游指南](./img/github_traffic.png)
 
 从上图中可以看出，流量主要来源于几部分：
 
@@ -46,7 +46,7 @@ GitHub 是一个非常有意思的地方，也常常变得非常有争议。有�
 
 总的来说，在这一周里，累计有 1,266 次访问，其中有 735 个独立访客。看这数据不错，而实际上 star 率 就有点低。根据 Star History 网站（https://star-history.t9t.io ） 的统计，在过去的近两个月里，才涨了 38 个 star。
 
-![GitHub 漫游指南 Star 历史](github-star-history.png)
+![GitHub 漫游指南 Star 历史](./img/github-star-history.png)
 
 从我的分析来看，大抵原因有两个：
 
@@ -55,7 +55,7 @@ GitHub 是一个非常有意思的地方，也常常变得非常有争议。有�
 
 而我最近在玩的 New Project Checklist （[https://github.com/phodal/new-project-checklist](https://github.com/phodal/new-project-checklist) 的转化率看上去，还算可以：
 
-![GitHub New Project Checklist](github-new-project-checklist.png)
+![GitHub New Project Checklist](./img/github-new-project-checklist.png)
 
 在 999 个独立访客里，获得了 202 个 star，转化率差不多是 20%——大家真的对这个项目感兴趣。
 
@@ -73,7 +73,7 @@ GitHub 是一个非常有意思的地方，也常常变得非常有争议。有�
 
 实际上，在上一小节里，我们已经介绍了相关的内容。若是想获得来自于 Google 等搜索引擎的访问，那么要掌握的技巧有：
 
-![Google New Project Checklist](google-new-project-checklist.png)
+![Google New Project Checklist](./img/google-new-project-checklist.png)
 
  - 简单实用的项目名。项目名在 Google 搜索结果里是放在最前面的部分，它与 URL 同在。
  - 写好项目的 ``Description``。不管怎样，你一定要为你的项目写好 Description，让看到的人知道它在做什么。
@@ -107,7 +107,7 @@ GitHub 是一个人的简历，**而开源项目的 README，就好像是一个�
 
 **更新状态**。当我在写一个大家感兴趣的开源项目时， 我会在我的社交账号上，如微博、知乎想法，定期的更新相关的状态。诸如：
 
-![微博 MoPass](mopass-weibo.png)
+![微博 MoPass](./img/mopass-weibo.png)
 
 万一有人感兴趣，就会随之而来——主要是我也不知道微博要怎么玩。
 
@@ -141,5 +141,3 @@ GitHub 是一个人的简历，**而开源项目的 README，就好像是一个�
 我们一直在持续变好，打造一个自由的互联网世界，打造一个个自己喜欢的工具。
 
 我们是极客，我们热爱编程，我们热爱分享。
-
-
