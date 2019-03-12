@@ -455,7 +455,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>WTFPL（Do What The Fuck You Want To Public License，中文译名：你他妈的想干嘛就干嘛公共许可证）是一种不太常用的、极度放任的自由软件许可证。它的条款基本等同于贡献到公有领域。<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
 </blockquote>
 <p>这就意味着，对于拿到这些代码的其他人，他们想怎么修改就可以怎么修改。</p>
-<p>这取决于</p>
 <h3 id="gpl">GPL</h3>
 <p>由于 GPL 的传染性，便意味着，他人引用我们的代码时，其所写的代码也需要使用 GPL 开源。即：GPL 是有 “传染性” 的 “病毒” ，因为 GPL 条款规定演绎作品也必须是 GPL 的。</p>
 <p>而如果我们只针对的是，他人可以使用库，而不开源，则可以用 LGPL。但是修改库则不适用。</p>
@@ -476,7 +475,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>ND -&gt; 禁止演绎（英语：NoDerivs）。</li>
 </ul>
 <p>即，任何人可以使用我写的电子书来自由复制、散布、展示及演出，但是不得用于商业用途（作者本人可以）。它可以随意地放在他的博客上，他的各个文章里。但是必须标明出自，并且不得改变、转变或更改本作品。</p>
-<p>如果你不介意的话，你可以使用公有领域（Public Domain）。可是这样一来，万一有一天，别人直接拿的作品出书，你就骂爹了。</p>
+<p>如果你不介意的话，你可以使用公有领域（Public Domain）。可是这样一来，万一有一天，别人直接拿你的作品出书，你就骂爹了。</p>
 <h1 id="git基本知识与github使用">Git基本知识与GitHub使用</h1>
 <h2 id="git">Git</h2>
 <p>从一般开发者的角度来看，git有以下功能：</p>
@@ -1294,7 +1293,7 @@ line 21  col 62   Strings must use singlequote.</code></pre>
 <pre><code>[任务分类] 主要修改组件（可选）：修改内容</code></pre>
 <p>示例 1，<code>[T] tabs: add icons</code> 。其中的 <code>T</code> 表示这是一个技术卡，<code>tabs</code> 表示修改的是 Tabs，<code>add icons</code> 则表示添加了图标。</p>
 <p>示例 2，<code>[SkillTree] detail: add link data</code>。其中的 <code>SkillTree</code> 表示修改的是技能树 Tab 下的内容，<code>detail</code> 则表示修改的是详情页，<code>add link data</code> 则表示是添加了技能的数据</p>
-<p>这样做的主要原因是，它可以轻松也帮我** filter 出相应业务的内容**。</p>
+<p>这样做的主要原因是，它可以轻松也帮我<strong>filter 出相应业务的内容</strong>。</p>
 <p>缺点：要这样做需要团队达到一致，因此付出一些额外的成本。</p>
 <h2 id="开源应用开源库写法">开源应用、开源库写法</h2>
 <p>与我们日常工作稍有不同的是：工作中的 Release 计划一般都是事先安排好的，不需要一些 CHANGELOG 什么的。而开源应用、开源库需要有对应的 CHANELOG，则添加了什么功能、修改了什么等等。毕竟有很多东西是由社区来维护的。</p>
@@ -1324,7 +1323,7 @@ line 21  col 62   Strings must use singlequote.</code></pre>
 </ul>
 <p>同时还对应了 20+ 的 Scope，可以说这种提交比上面的提交更有挑战。</p>
 <p>（以上的 10 个类型，感谢 Google Translate 提供的快速翻译支持）</p>
-<p>而这样做的优点是，它可以轻松地生成一个 CHANGELOG。与些同时还有一个名为 <code>Conventional Commits</code> 的规范，建议采用相似的形式。</p>
+<p>而这样做的优点是，它可以轻松地生成一个 CHANGELOG。与此同时还有一个名为 <code>Conventional Commits</code> 的规范，建议采用相似的形式。</p>
 <h1 id="创建项目文档">创建项目文档</h1>
 <p>我们需要为我们的项目创建一个文档，通常我们可以将核心代码以外的东西都称为文档：</p>
 <ol type="1">
@@ -1424,7 +1423,7 @@ React.render(
 <div class="sourceCode" id="cb36"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb36-1" title="1">regexobject<span class="op">:</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb36-2" title="2">    <span class="dt">headline</span><span class="op">:</span> <span class="ss">/</span><span class="sc">^(\#{1,6})([^\#\n]+)$</span><span class="ss">/m</span><span class="op">,</span></a>
 <a class="sourceLine" id="cb36-3" title="3">    <span class="dt">code</span><span class="op">:</span> <span class="ss">/</span><span class="sc">\s\`\`\`\n?([^`]+)\`\`\`</span><span class="ss">/g</span></a></code></pre></div>
-<p>他会匹配对应的Markdown类型，随后进行替换和处理。而``str```，就是管理口的输入和输出。</p>
+<p>他会匹配对应的Markdown类型，随后进行替换和处理。而<code>str</code>，就是管理口的输入和输出。</p>
 <p>接着，我们就可以对其进行简单的重构。</p>
 <p>(ps: 推荐用WebStrom来做重构，自带重构功能)</p>
 <p>作为一个示例，我们先提出codeHandler方法，即将上面的</p>
@@ -1868,7 +1867,8 @@ beforeEach(function() {
 <ul>
 <li><strong>这个项目做什么？</strong></li>
 <li><strong>它解决了什么问题</strong></li>
-<li><strong>它有什么特性</strong> — <strong>hello, world 示例</strong></li>
+<li><strong>它有什么特性</strong></li>
+<li><strong>hello, world 示例</strong></li>
 </ul>
 <h3 id="这个项目做什么一句话文案">这个项目做什么——一句话文案</h3>
 <p>GitHub 的 Description 是我们在 Hacking News、GitHub Trneding 等等，第一时间看到的介绍。也是我们能快速介绍给别人的东西，如下图所示：</p>
@@ -1890,7 +1890,7 @@ beforeEach(function() {
 </figure>
 <p>以上便是这个项目能解决的问题，不过这个项目能解决的问题倒是比较长，哈哈哈。</p>
 <h3 id="它有什么特性">它有什么特性</h3>
-<p>当我们有 A、B、C 几个不同的框架的时候，作为一个开发人员，就需要对比他们的特性，。如下是 Go 语言实现的 MQTT 示例：</p>
+<p>当我们有 A、B、C 几个不同的框架的时候，作为一个开发人员，就需要对比他们的特性。如下是 Go 语言实现的 MQTT 示例：</p>
 <figure>
 <img src="./img/go-mqtt.png" alt="GO MQTT 示例" /><figcaption>GO MQTT 示例</figcaption>
 </figure>
@@ -3126,10 +3126,10 @@ Set up your git name and email, this is important so that your commits can be id
 <blockquote>
 <p>Star 虽好，可不要贪杯哦。 两年前在做 Annual Review 订下一年的目标时，想着写一个开源框架。去年订下今年的目标时，仍然继续着这样的想法。今年又要制定下一年的目标，2333~~。</p>
 </blockquote>
-<p>不久前，在 GitHub Ranking 上看到自己的 star 数（star 不是设计用于做“点赞”的，而是用来收藏的）时，发现已经快 20000 了。然后把自己的项目过了一遍，发现没有一个比较好的<strong>代表性框架，</strong>要么是应用，要么是电子书。</p>
+<p>不久前，在 GitHub Ranking 上看到自己的 star 数（star 不是设计用于做“点赞”的，而是用来收藏的）时，发现已经快 20000 了。然后把自己的项目过了一遍，发现没有一个比较好的<strong>代表性框架</strong>，要么是应用，要么是电子书。</p>
 <p>前 8 个项目里，除了 Growth 应用以外，其他的都是电子书内容——六本电子书加起来的 star 数有 <strong>10619</strong>，果然是骗 star 的。我只能尽力地去想想：为什么事情会变成这样了？</p>
 <h3 id="从创建开源框架说起">从创建开源框架说起</h3>
-<p>创建开源框架和创建创建开源项目是不一样的，前者你服务于开发者，后者你服务于用户。</p>
+<p>创建开源框架和创建开源项目是不一样的，前者你服务于开发者，后者你服务于用户。</p>
 <p>两年前在做 Annual Review 的时候，想着未来的一年里可以做一个开源框架试试。那时刚毕业不久，对开源世界的各种游戏规则不是很了解：<strong>开源并不是将代码提交上去，然后就会一下子火起来</strong>。虽然我们可以在短期内赚上一些眼球，但是真正要将它采用到项目上的人不多。</p>
 <p>当时，我遇到的最主要的问题是：<strong>想参与到项目的人并没有遇到足够的能力</strong>。你还需要花费大量的时间去教他们，鼓励 GitHub 新手并不是一件容易的事。有时我需要在接受他的 PR 后，再修改他的代码。并且人们提交 PR 可能是出于不同的原因。</p>
 <p>然后，知道了开源世界还有一个游戏规则是：<strong>谁的影响力大，谁就能产生更广泛的影响</strong>。如 Virtual Dom 并不是 Facebook 首创的，但是却因为 FB 火的； 松本行弘在写下 mruby 的 README 时（印象中是这个项目），star 数就已经过 1k 了。这种例子数不胜数，要么是在推广上花了力气，要么个人、公司有着更大的影响力。</p>
@@ -3165,7 +3165,7 @@ Set up your git name and email, this is important so that your commits can be id
 <p>在工作上使用新的技术，和自己平时的练习，终究差得有些远。工作的时候，我们偏向于目标编程，对于速度和时间的要求，要比自己业余时间要高得多。一旦有了这种压力，便会在 GitHub 上寻找相应的 Demo，了解原理、稍微尝试，再引入到项目中。</p>
 <p>这时，便会按<strong>技术栈的关键字搜索，并按更新时间进行排序</strong>，以查找是否有合适的 Demo。</p>
 <p>生命有限 ，如若是每次我们尝试一个新的技术，总得自己编写一个个 Demo。编写多个 Demo，都得花去个半天八小时的时间。如此一算，能花费在其它事情上的时间便更少了。若只是试用官方的 Demo，往往是比较容易的。可我们编写应用的时候，总得结合到当前的场合来。这时整合并不是一个轻松的工作，依赖冲突、引入第三方依赖等。</p>
-<p><strong>温馨提醒</strong>：<strong>对于简单的项目来说，自己直接写 Demo 会更加方便。</strong>尝试项目需要成本，若是需要尝试使用多个项目，那么有可能就浪费时间。</p>
+<p><strong>温馨提醒</strong>：<strong>对于简单的项目来说，自己直接写 Demo 会更加方便。</strong> 尝试项目需要成本，若是需要尝试使用多个项目，那么有可能就浪费时间。</p>
 <h2 id="寻找脚手架加快前期开发">寻找脚手架：加快前期开发</h2>
 <p>无论是后端的微服务架构，还是前端应用，应用的架构正在变得复杂。后端微服务，需要结合一个个的框架，哪怕是 <code>Spring Initializr</code> 这样的工具，也只能帮助我们搭建项目。我们还需要配合其它工具，一起搭建出一个基本的系统。对于前端应用也是类似的，若是 Angular 这样大而全的框架，时间花费倒也是不多。如 React 这种需要组合的、小而美的框架，使用官方的 <code>create-react-app</code> 也很难做出我们想要的东西，寻找一个合适的脚手架是一个更好的选择。</p>
 <p>这时，我们大抵可以，直接使用技术栈 + <code>boilerplate</code> 又或者是 <code>starter</code> 等关键词进行搜索，如 <code>react boilerplate</code>。如果其中找到的组合技术栈，不符合自己的要求，那么再加上相应技术栈的关键字，如 <code>react redux boilerplate</code> 即可。有意思的是，在这时使用 Google 会比 GitHub 方便一些。</p>
@@ -3219,7 +3219,7 @@ Set up your git name and email, this is important so that your commits can be id
 <p>再举个成功的例子，最近我在思考：<strong>新项目的检查清单</strong>，即当我们来到或者开始一个项目的时候，我们需要做哪些事情，对应的还需要考虑什么因素。于是我在 GitHub 上创建了一个名为 New Project Checklist （<a href="https://github.com/phodal/new-project-checklist">https://github.com/phodal/new-project-checklist</a> ） 的项目。我只是按自己的想法，在 README 上写下了要考虑的中英文因素，还没编写 Web 部分，就已经获得了 100+ 的 star。与此同时，因为 Web 部分还没完成，所以我还没在我的博客、专栏上进行宣传。</p>
 <p>我只是写了一个 README，然后 star 就来了。但是，一般情况下，我们需要怎么做呢？</p>
 <h2 id="github-流量分析">GitHub 流量分析</h2>
-<p>实际了，当我们在说获得 star 的时候，我们说的是<strong>为自己的项目做推广</strong>。只是呢，获得 star 是其中的一个结果产物，也就是说，我们在宣传项目的过程中，获得了关注度。至于推广本身来说，不同的人会有不同的看法。</p>
+<p>实际上，当我们在说获得 star 的时候，我们说的是<strong>为自己的项目做推广</strong>。只是呢，获得 star 是其中的一个结果产物，也就是说，我们在宣传项目的过程中，获得了关注度。至于推广本身来说，不同的人会有不同的看法。</p>
 <p>事实上，GitHub 获取 star 与我们日常了解的营销差不多，先将用户吸引到我们的 GitHub 页面，再让用户有关注的动力（这一点太难了）。</p>
 <p>因此开始之前，我们先看张图就能知道怎么获取流量。如下是《GitHub 漫游指南》最近两周内的流量来源统计（GitHub 通过 Google Analysis 来统计）：</p>
 <figure>
@@ -3298,7 +3298,7 @@ Set up your git name and email, this is important so that your commits can be id
 <li><strong>这个项目要怎么用啊？</strong></li>
 </ul>
 <p>是不是写起来很简单？</p>
-<p>未来在其它的文章中，有一些相关的话题，便可以稍微提及一些相关的项目。比如，在这篇文章里，我还介绍了好几个近期的项目。这些文章，除了在我的公从号上，还会发在我的博客（累计 100 万访问量）上，我的知乎专栏上，还有我的……上。它们结合起来，会形成一股强大的力量，即能吸引用户，又能在 SEO 上有一定的提升。</p>
+<p>未来在其它的文章中，有一些相关的话题，便可以稍微提及一些相关的项目。比如，在这篇文章里，我还介绍了好几个近期的项目。这些文章，除了在我的公众号上，还会发在我的博客（累计 100 万访问量）上，我的知乎专栏上，还有我的……上。它们结合起来，会形成一股强大的力量，即能吸引用户，又能在 SEO 上有一定的提升。</p>
 <h3 id="技巧五把握-github-trending">技巧五：把握 GitHub Trending</h3>
 <p>万一，我是说万一，你的项目上了 GitHub Trending。截个图，然后你可以再写一篇文章（ 我的项目是如何上 GitHub Trending，毕竟上 Trending 很简单），发一条微博，写一个想法，录个小视频，大家快来看这是我的项目。</p>
 <p>理论上上 GitHub Trending 会吸引来更多的用户——有大量的网站、自动化微博等，会每天去介绍这些新的上的 Trending 项目，没有意外的话，它会为你带来更多的流量——意味着更多的关注度。</p>
