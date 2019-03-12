@@ -54,7 +54,7 @@ Vue 不是因为好用，而一下子火了。这一点我印象特别深，当�
  - **这个项目做什么？**
  - **它解决了什么问题**
  - **它有什么特性**
- — **hello, world 示例**
+ - **hello, world 示例**
 
 ### 这个项目做什么——一句话文案
 
@@ -84,7 +84,7 @@ Vue 则是：A progressive, incrementally-adoptable JavaScript framework for bui
 
 ### 它有什么特性
 
-当我们有 A、B、C 几个不同的框架的时候，作为一个开发人员，就需要对比他们的特性，。如下是 Go 语言实现的 MQTT 示例：
+当我们有 A、B、C 几个不同的框架的时候，作为一个开发人员，就需要对比他们的特性。如下是 Go 语言实现的 MQTT 示例：
 
 ![GO MQTT 示例](./img/go-mqtt.png)
 

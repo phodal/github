@@ -49,7 +49,7 @@ Git 提交信息及几种不同的规范
 
 示例 2，``[SkillTree] detail: add link data``。其中的 ``SkillTree`` 表示修改的是技能树 Tab 下的内容，``detail`` 则表示修改的是详情页，``add link data`` 则表示是添加了技能的数据
 
-这样做的主要原因是，它可以轻松也帮我** filter 出相应业务的内容**。
+这样做的主要原因是，它可以轻松也帮我**filter 出相应业务的内容**。
 
 缺点：要这样做需要团队达到一致，因此付出一些额外的成本。
 
@@ -90,5 +90,5 @@ Git 提交信息及几种不同的规范
 
 （以上的 10 个类型，感谢 Google Translate 提供的快速翻译支持）
 
-而这样做的优点是，它可以轻松地生成一个 CHANGELOG。与些同时还有一个名为 ``Conventional Commits`` 的规范，建议采用相似的形式。
+而这样做的优点是，它可以轻松地生成一个 CHANGELOG。与此同时还有一个名为 ``Conventional Commits`` 的规范，建议采用相似的形式。
 
