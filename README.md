@@ -1,5 +1,7 @@
 # GitHub 漫游指南
 
+> 漫游，即随意游玩~。
+
 在线阅读: [GitHub 漫游指南](http://github.phodal.com/)， 下载: [pdf](https://github.com/phodal/github-roam/raw/gh-pages/github-roam.pdf)、[mobi](https://github.com/phodal/github-roam/raw/gh-pages/github-roam.mobi)、[epub](https://github.com/phodal/github-roam/raw/gh-pages/github-roam.epub)
 
 2014年，写了《[一步步搭建物联网系统](https://github.com/phodal/designiot)》（电子书）。
@@ -170,6 +172,6 @@
 
 [![Phodal's Book](http://brand.phodal.com/shields/book-small.svg)](https://www.phodal.com/)
 
-© 2015~2016 [Phodal Huang](https://www.phodal.com). This code is distributed under the Creative Commons Attribution-Noncommercial-No Derivative Works 3.0  License. See `LICENSE` in this directory.
+© 2015~2019 [Phodal Huang](https://www.phodal.com). This code is distributed under the Creative Commons Attribution-Noncommercial-No Derivative Works 3.0  License. See `LICENSE` in this directory.
 
 [![待我代码编成,娶你为妻可好](http://brand.phodal.com/slogan/slogan.svg)](http://www.xuntayizhan.com/person/ji-ke-ai-qing-zhi-er-shi-dai-wo-dai-ma-bian-cheng-qu-ni-wei-qi-ke-hao-wan/)
