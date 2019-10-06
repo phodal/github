@@ -1,7 +1,7 @@
 GitHub 里程碑
 ===
 
-写在GitHub 的第 19999 个 Star 时
+写在 GitHub 的第 19999 个 Star 时
 ---
 
 >  Star 虽好，可不要贪杯哦。

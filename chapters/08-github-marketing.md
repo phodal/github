@@ -105,7 +105,7 @@ numbers, objects, strings, etc. Lodash’s modular methods are great for:
 
 当然了，这种事不能太过，要不然会招来一堆黑。
 
-### 安装及hello, world 示例
+### 安装及 hello, world 示例
 
 在我们看完了上面的介绍之后，紧接着接一个 hello, world 的示例。在运行 hello, world 之前，我们可能需要一些额外的安装工作，如：
 

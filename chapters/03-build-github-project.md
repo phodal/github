@@ -2,13 +2,13 @@
 
 ## 如何用好 GitHub
 
-如何用好 GitHub，并实践一些敏捷软件开发是一个很有意思的事情.我们可以在上面做很多事情,从测试到CI,再到自动部署.
+如何用好 GitHub，并实践一些敏捷软件开发是一个很有意思的事情.我们可以在上面做很多事情,从测试到 CI,再到自动部署.
 
 ### 敏捷软件开发
 
 显然我是在扯淡，这和敏捷软件开发没有什么关系。不过我也不知道瀑布流是怎样的。说说我所知道的一个项目的组成吧：
 
- - 看板式管理应用程序（如trello，简单地说就是管理软件功能）
+ - 看板式管理应用程序（如 trello，简单地说就是管理软件功能）
  - CI（持续集成）
  - 测试覆盖率
  - 代码质量（code smell）
@@ -17,11 +17,11 @@
 
 > 你存在，我深深的脑海里
 
-当只有一个人的时候，你只需要明确知道自己想要什么就够了。我们还需要的是CI、测试，以来提升代码的质量。
+当只有一个人的时候，你只需要明确知道自己想要什么就够了。我们还需要的是 CI、测试，以来提升代码的质量。
 
 ### 测试
 
-通常我们都会找Document，如果没有的话，你会找什么？看源代码，还是看测试？
+通常我们都会找 Document，如果没有的话，你会找什么？看源代码，还是看测试？
 
 ```javascript
 it("specifying response when you need it", function (done) {
@@ -53,7 +53,7 @@ it("specifying response when you need it", function (done) {
  - 我不希望在重构的时候发现破坏了原来的功能，而我还一无所知。
  - 我不敢push代码，因为我没有把握。
  
-虽然，我不是TDD的死忠，测试的目的是保证功能正常，TDD没法让我们写出质量更高的代码。但是有时TDD是不错的，可以让我们写出逻辑更简单地代码。
+虽然，我不是 TDD 的死忠，测试的目的是保证功能正常，TDD 没法让我们写出质量更高的代码。但是有时TDD是不错的，可以让我们写出逻辑更简单地代码。
 
 也许你已经知道了``Selenium``、``Jasmine``、``Cucumber``等等的框架，看到过类似于下面的测试
 
@@ -83,7 +83,7 @@ lettuce.js	| 98.58% (209 / 212)| 82.98%(78 / 94) | 100.00% (54 / 54) | 98.58% (2
 
 ### CI
 
-虽然node.js不算是一门语言，但是因为我们用的node，下面的是一个简单的``.travis.yml``示例：
+虽然 node.js 不算是一门语言，但是因为我们用的 node，下面的是一个简单的 ``.travis.yml`` 示例：
 
 ```yml
 language: node_js
@@ -100,21 +100,21 @@ after_success: CODECLIMATE_REPO_TOKEN=321480822fc37deb0de70a11931b4cb6a2a3cc4116
 
 代码来源：[https://github.com/phodal/lettuce](https://github.com/phodal/lettuce)
 
-我们把这些集成到``README.md``之后，就有了之前那张图。
+我们把这些集成到 ``README.md`` 之后，就有了之前那张图。
 
 CI对于一个开发者在不同城市开发同一项目上来说是很重要的，这意味着当你添加的部分功能有测试覆盖的时候，项目代码会更加强壮。
 
 ### 代码质量
 
-像``jslint``这类的工具，只能保证代码在语法上是正确的，但是不能保证你写了一堆bad smell的代码。
+像 ``jslint`` 这类的工具，只能保证代码在语法上是正确的，但是不能保证你写了一堆 bad smell 的代码。
 
  - 重复代码
  - 过长的函数
  - 等等
  
-``Code Climate``是一个与github集成的工具，我们不仅仅可以看到测试覆盖率，还有代码质量。
+``Code Climate`` 是一个与 github 集成的工具，我们不仅仅可以看到测试覆盖率，还有代码质量。
 
-先看看上面的ajax类：
+先看看上面的 ajax 类：
 
 ```javascript
 Lettuce.get = function (url, callback) {
@@ -143,7 +143,7 @@ Lettuce.send = function (url, method, callback, data) {
 
 代码来源：[https://github.com/phodal/lettuce](https://github.com/phodal/lettuce)
 
-在[Code Climate](https://codeclimate.com/github/phodal/lettuce/src/ajax.js)在出现了一堆问题
+在 [Code Climate](https://codeclimate.com/github/phodal/lettuce/src/ajax.js) 在出现了一堆问题
 
  - Missing "use strict" statement. (Line 2)
  - Missing "use strict" statement. (Line 14)
@@ -159,11 +159,11 @@ Lettuce.send = function (url, method, callback, data) {
 
 在之前说到
 
-> 奋斗了近半个月后，将fork的代码读懂、重构、升级版本、调整，添加新功能、添加测试、添加CI、添加分享之后，终于almost finish。
+> 奋斗了近半个月后，将 fork 的代码读懂、重构、升级版本、调整，添加新功能、添加测试、添加 CI、添加分享之后，终于 almost finish。
 
 今天就来说说是怎样做的。
 
-以之前造的[Lettuce](https://github.com/phodal/lettuce)为例，里面有：
+以之前造的 [Lettuce](https://github.com/phodal/lettuce) 为例，里面有：
 
  - 代码质量（Code Climate）
  - CI状态（Travis CI）
@@ -171,7 +171,7 @@ Lettuce.send = function (url, method, callback, data) {
  - 自动化测试（npm test）
  - 文档
 
-按照[Web Developer路线图](https://github.com/phodal/awesome-developer)来说，我们还需要有：
+按照 [Web Developer 路线图](https://github.com/phodal/awesome-developer)来说，我们还需要有：
 
  - 版本管理
  - 自动部署
@@ -180,11 +180,11 @@ Lettuce.send = function (url, method, callback, data) {
 
 ### 代码模块化
 
-在SkillTree的源码里，大致分为三部分：
+在 SkillTree 的源码里，大致分为三部分：
 
- - namespace函数：顾名思义
- - Calculator也就是TalentTree，主要负责解析、生成url，头像，依赖等等
- - Skill 主要是tips部分。
+ - namespace 函数：顾名思义
+ - Calculator 也就是 TalentTree，主要负责解析、生成 url，头像，依赖等等
+ - Skill 主要是 tips 部分。
  
 而这一些都在一个 JS 里，对于一个库来说，是一件好事，但是对于一个项目来说，并非如此。 
 
@@ -193,13 +193,13 @@ Lettuce.send = function (url, method, callback, data) {
  - jQuery
  - Knockout
  
-好在Knockout可以用Require.js进行管理，于是，使用了``Require.js``进行管理：
+好在 Knockout 可以用 Require.js 进行管理，于是，使用了 ``Require.js`` 进行管理：
 
 ```html
 <script type="text/javascript" data-main="app/scripts/main.js" src="app/lib/require.js"></script>
 ```
 
-``main.js``配置如下：
+``main.js`` 配置如下：
 
 ```javascript
 require.config({
@@ -220,7 +220,7 @@ require(['lib/knockout', 'scripts/TalentTree', 'json!data/web.json'], function(k
 });
 ```
 	
-text、JSON 插件主要是用于处理web.json，即用 JSON 来处理技能，于是不同的类到了不同的 JS 文件。
+text、JSON 插件主要是用于处理 web.json，即用 JSON 来处理技能，于是不同的类到了不同的 JS 文件。
 
 	.
 	|____Book.js
@@ -232,7 +232,7 @@ text、JSON 插件主要是用于处理web.json，即用 JSON 来处理技能，
 	|____TalentTree.js
 	|____Utils.js
 	
-加上了后来的推荐阅读书籍等等。而Book和Link都是继承自Doc。
+加上了后来的推荐阅读书籍等等。而 Book 和 Link 都是继承自 Doc。
 
 ```javascript
 define(['scripts/Doc'], function(Doc) {
@@ -246,7 +246,7 @@ define(['scripts/Doc'], function(Doc) {
 });	
 ```
 
-而这里便是后面对其进行重构的内容。Doc类则是Skillock中类的一个缩影
+而这里便是后面对其进行重构的内容。Doc 类则是 Skillock 中类的一个缩影
 
 ```javascript
 define([], function() {
@@ -263,7 +263,7 @@ define([], function() {
 });
 ```
 
-或者说这是一个AMD的Class应该有的样子。考虑到this的隐性绑定，作者用了self=this来避免这个问题。最后Return了这个对象，我们在调用的就需要new一个。大部分在代码中返回的都是对象，除了在Utils类里面返回的是函数：
+或者说这是一个 AMD 的 Class 应该有的样子。考虑到 this 的隐性绑定，作者用了self=this 来避免这个问题。最后 Return 了这个对象，我们在调用的就需要 new 一个。大部分在代码中返回的都是对象，除了在 Utils 类里面返回的是函数：
 
 ```javascript
 return {
@@ -277,7 +277,7 @@ return {
 
 ### 自动化测试
 
-一直习惯用Travis CI，于是也继续用Travis Ci，``.travis.yml``配置如下所示：
+一直习惯用 Travis CI，于是也继续用 Travis Ci，``.travis.yml`` 配置如下所示：
 
 ```yml
 language: node_js
@@ -292,9 +292,9 @@ branches:
     - gh-pages
 ```
 
-使用gh-pages的原因是，我们一push代码的时候，就可以自动测试、部署等等，好处一堆堆的。
+使用 gh-pages 的原因是，我们一 push 代码的时候，就可以自动测试、部署等等，好处一堆堆的。
 
-接着我们需要在``package.json``里面添加脚本
+接着我们需要在 ``package.json`` 里面添加脚本
 
 ```javascript
 "scripts": {
@@ -302,7 +302,7 @@ branches:
   }
 ```
 	  
-这样当我们push代码的时候便会自动跑所有的测试。因为mocha的主要配置是用``mocha.opts``，所以我们还需要配置一下``mocha.opts``
+这样当我们 push 代码的时候便会自动跑所有的测试。因为 mocha 的主要配置是用 ``mocha.opts``，所以我们还需要配置一下 ``mocha.opts``
 
 	--reporter spec
 	--ui bdd
@@ -310,7 +310,7 @@ branches:
 	--colors
 	test/spec	  
 
-最后的``test/spec``是指定测试的目录。
+最后的 ``test/spec`` 是指定测试的目录。
 
 ### Jshint
 
@@ -338,7 +338,7 @@ branches:
 
 ### 测试示例
 
-简单地看一下Book的测试：
+简单地看一下 Book 的测试：
 
 ```javascript
 /* global describe, it */
@@ -377,7 +377,7 @@ describe('Book,Link', function () {
 });
 ```
 
-因为我们用``require.js``来管理浏览器端，在后台写测试来测试的时候，我们也需要用他来管理我们的依赖，这也就是为什么这个测试这么长的原因，多数情况下一个测试类似于这样子的。（用Jasmine似乎会是一个更好的主意，但是用习惯Jasmine了）
+因为我们用 ``require.js`` 来管理浏览器端，在后台写测试来测试的时候，我们也需要用他来管理我们的依赖，这也就是为什么这个测试这么长的原因，多数情况下一个测试类似于这样子的。（用 Jasmine 似乎会是一个更好的主意，但是用习惯 Jasmine 了）
 
 ```javascript
 describe('Book Test', function () {
@@ -403,13 +403,13 @@ it('should return book label & url', function () {
  - 当你写了一大堆代码,你没有意识到里面有一大堆重复。
  - 当你写了一大堆测试,却不知道覆盖率有多少。
 
-这就是个问题了，于是偶然间看到了一个叫code climate的网站。
+这就是个问题了，于是偶然间看到了一个叫 code climate 的网站。
 
 ### Code Climate
 
 > Code Climate consolidates the results from a suite of static analysis tools into a single, real-time report, giving your team the information it needs to identify hotspots, evaluate new approaches, and improve code quality.
 
-Code Climate整合一组静态分析工具的结果到一个单一的，实时的报告，让您的团队需要识别热点，探讨新的方法，提高代码质量的信息。
+Code Climate 整合一组静态分析工具的结果到一个单一的，实时的报告，让您的团队需要识别热点，探讨新的方法，提高代码质量的信息。
 
 简单地来说：
 
@@ -437,7 +437,7 @@ A |	lib/url_handler.js |	9 |	0	| 5 |	2.2	| 94.1% |	0
 
 ### 代码的坏味道
 
-于是我们就打开``lib/database/sqlite_helper.js``，因为其中有两个坏味道
+于是我们就打开 ``lib/database/sqlite_helper.js``，因为其中有两个坏味道
 
 Similar code found in two :expression_statement nodes (mass = 86)
 

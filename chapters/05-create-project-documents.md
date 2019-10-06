@@ -13,13 +13,13 @@
 
 ## README
 
-README通常会显示在GitHub项目的下面，如下图所示：
+README 通常会显示在 GitHub 项目的下面，如下图所示：
 
 ![GitHub README](./img/readme-example.png)
 
-通常一个好的README会让你立马对项目产生兴趣。
+通常一个好的 README 会让你立马对项目产生兴趣。
 
-如下面的内容是React项目的简介：
+如下面的内容是 React 项目的简介：
 
 ![React README](./img/react-intro.png)
 
@@ -29,7 +29,7 @@ README通常会显示在GitHub项目的下面，如下图所示：
 * **Virtual DOM:** React abstracts away the DOM from you, giving a simpler programming model and better performance. React can also render on the server using Node, and it can power native apps using [React Native](https://facebook.github.io/react-native/).
 * **Data flow:** React implements one-way reactive data flow which reduces boilerplate and is easier to reason about than traditional data binding.
 
-通常在这个README里，还会有：
+通常在这个 README 里，还会有：
 
 * 针对人群
 * 安装指南
@@ -46,13 +46,13 @@ README通常会显示在GitHub项目的下面，如下图所示：
 
 在一个开源项目中，良好和专业的文档是相当重要的，有时他可能会比软件还会重要。因为如果一个开源项目好用的话，多数人可能不会去查看软件的代码。这就意味着，多数时候他在和你的文档打交道。文档一般会有：API 文档、 配置文档、帮助文档、用户手册、教程等等
 
-写文档的软件有很多，如Markdown、Doxygen、Docbook等等。
+写文档的软件有很多，如 Markdown、Doxygen、Docbook 等等。
 
 ## 可用示例
 
 一个简单上手的示例非常重要，特别是通常我们是在为着某个目的而去使用一个开源项目的是时候，我们希望能马上使用到我们的项目中。
 
-你希望看到的是，你打开浏览器，输入下面的代码，然后**It Works**：
+你希望看到的是，你打开浏览器，输入下面的代码，然后 **It Works**：
 
 ```
 var HelloMessage = React.createClass({

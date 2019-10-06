@@ -1,13 +1,13 @@
-如何在GitHub"寻找灵感（fork）"
+如何在 GitHub "寻找灵感（fork）"
 ===
 
 > 重造轮子是重新创造一个已有的或是已被其他人优化的基本方法。
 
-最近萌发了一个想法写游戏引擎，之前想着做一个JavaScript前端框架。看看，这个思路是怎么来的。
+最近萌发了一个想法写游戏引擎，之前想着做一个 JavaScript 前端框架。看看，这个思路是怎么来的。
 
-## Lettuce构建过程
+## Lettuce 构建过程
 
-> Lettuce是一个简约的移动开发框架。
+> Lettuce 是一个简约的移动开发框架。
 
 故事的出发点是这样的：``写了很多代码,用的都是框架，最后不知道收获什么了``？事实也是如此，当自己做了一些项目之后，发现最后什么也没有收获到。于是，就想着做一个框架。
 
@@ -15,10 +15,10 @@
 
 有这样的几个前提
 
- - 为什么我只需要jQuery里的选择器、Ajax要引入那么重的库呢？
- - 为什么我只需要一个Template，却想着用Mustache
- - 为什么我需要一个Router，却要用Backbone呢？
- - 为什么我需要的是一个isObject函数，却要用到整个Underscore？
+ - 为什么我只需要 jQuery 里的选择器、Ajax 要引入那么重的库呢？
+ - 为什么我只需要一个 Template，却想着用 Mustache
+ - 为什么我需要一个 Router，却要用 Backbone 呢？
+ - 为什么我需要的是一个 isObject 函数，却要用到整个 Underscore？
 
 我想要的只是一个简单的功能，而我不想引入一个庞大的库。换句话说，我只需要不同库里面的一小部分功能，而不是一个库。
 
@@ -34,12 +34,12 @@
  - Class类（ps：没有一个好的类使用的方式）
  - Template 一个简单的模板引擎
  - Router 用来控制页面的路由 
- - Ajax 基本的Ajax Get/Post请求 
+ - Ajax 基本的 Ajax Get/Post 请求
 
 在做一些实际的项目中，还遇到了这样的一些功能支持：
 
  - Effect 简单的一些页面效果
- - AMD支持
+ - AMD 支持
 
 而我们有一个前提是要保持这个库尽可能的小、同时我们还需要有测试。
 
@@ -49,14 +49,14 @@
 
 #### 生成框架
 
-因为Yeoman可以生成一个简单的轮廓，所以我们可以用它来生成这个项目的骨架。
+因为 Yeoman 可以生成一个简单的轮廓，所以我们可以用它来生成这个项目的骨架。
 
  - Gulp
  - Jasmine
 
 #### 寻找
 
-在GitHub上搜索了一个看到了下面的几个结果：
+在 GitHub 上搜索了一个看到了下面的几个结果：
 
 - [https://github.com/then/promise](https://github.com/then/promise)
 - [https://github.com/reactphp/promise](https://github.com/reactphp/promise)
@@ -64,7 +64,7 @@
 - [https://github.com/petkaantonov/bluebird](https://github.com/petkaantonov/bluebird)
 - [https://github.com/cujojs/when](https://github.com/cujojs/when)
 
-但是显然，他们都太重了。事实上，对于一个库来说，80%的人只需要其中20%的代码。于是，找到了[https://github.com/stackp/promisejs](https://github.com/stackp/promisejs)，看了看用法，这就是我们需要的功能：
+但是显然，他们都太重了。事实上，对于一个库来说，80% 的人只需要其中 20% 的代码。于是，找到了[https://github.com/stackp/promisejs](https://github.com/stackp/promisejs)，看了看用法，这就是我们需要的功能：
 
 ```javascript
 function late(n) {
@@ -94,7 +94,7 @@ late(100).then(
 );
 ```
 
-接着打开看看Promise对象，有我们需要的功能，但是又有一些功能超出我的需求。接着把自己不需要的需求去掉，这里函数最后就变成了
+接着打开看看 Promise 对象，有我们需要的功能，但是又有一些功能超出我的需求。接着把自己不需要的需求去掉，这里函数最后就变成了
 
 ```javascript
 function Promise() {
@@ -131,7 +131,7 @@ var promise = {
 };
 ```
 
-需要注意的是：``License``，不同的软件有不同的License，如MIT、GPL等等。最好能在遵循协议的情况下，使用别人的代码。
+需要注意的是：``License``，不同的软件有不同的 License，如 MIT、GPL 等等。最好能在遵循协议的情况下，使用别人的代码。
 
 ### 实现第二个需求
 
