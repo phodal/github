@@ -8,12 +8,12 @@
 
 显然我是在扯淡，这和敏捷软件开发没有什么关系。不过我也不知道瀑布流是怎样的。说说我所知道的一个项目的组成吧：
 
- - 看板式管理应用程序(如trello，简单地说就是管理软件功能)
- - CI(持续集成)
+ - 看板式管理应用程序（如trello，简单地说就是管理软件功能）
+ - CI（持续集成）
  - 测试覆盖率
- - 代码质量(code smell)
+ - 代码质量（code smell）
  
-对于一个不是远程的团队(如只有一个人的项目) 来说，Trello、Jenkin、Jira不是必需的：
+对于一个不是远程的团队（如只有一个人的项目）来说，Trello、Jenkin、Jira不是必需的：
 
 > 你存在，我深深的脑海里
 
@@ -49,7 +49,7 @@ it("specifying response when you need it", function (done) {
 
 等等，测试是用来干什么的。那么，先说说我为什么会想去写测试吧：
 
- - 我不希望每次做完一个个新功能的时候，再手动地去测试一个个功能。(自动化测试)
+ - 我不希望每次做完一个个新功能的时候，再手动地去测试一个个功能。（自动化测试）
  - 我不希望在重构的时候发现破坏了原来的功能，而我还一无所知。
  - 我不敢push代码，因为我没有把握。
  
@@ -165,10 +165,10 @@ Lettuce.send = function (url, method, callback, data) {
 
 以之前造的[Lettuce](https://github.com/phodal/lettuce)为例，里面有：
 
- - 代码质量(Code Climate)
- - CI状态(Travis CI)
- - 测试覆盖率(96%)
- - 自动化测试(npm test)
+ - 代码质量（Code Climate）
+ - CI状态（Travis CI）
+ - 测试覆盖率（96%）
+ - 自动化测试（npm test）
  - 文档
 
 按照[Web Developer路线图](https://github.com/phodal/awesome-developer)来说，我们还需要有：
@@ -377,7 +377,7 @@ describe('Book,Link', function () {
 });
 ```
 
-因为我们用``require.js``来管理浏览器端，在后台写测试来测试的时候，我们也需要用他来管理我们的依赖，这也就是为什么这个测试这么长的原因，多数情况下一个测试类似于这样子的。(用Jasmine似乎会是一个更好的主意，但是用习惯Jasmine了)
+因为我们用``require.js``来管理浏览器端，在后台写测试来测试的时候，我们也需要用他来管理我们的依赖，这也就是为什么这个测试这么长的原因，多数情况下一个测试类似于这样子的。（用Jasmine似乎会是一个更好的主意，但是用习惯Jasmine了）
 
 ```javascript
 describe('Book Test', function () {

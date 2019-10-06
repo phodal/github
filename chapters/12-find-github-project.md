@@ -1,4 +1,4 @@
-如何在GitHub"寻找灵感(fork)"
+如何在GitHub"寻找灵感（fork）"
 ===
 
 > 重造轮子是重新创造一个已有的或是已被其他人优化的基本方法。
@@ -31,7 +31,7 @@
 这时候我参考了一本电子书《Build JavaScript FrameWork》，加上一些平时的需求，于是很快的就知道自己需要什么样的功能：
 
  - Promise 支持
- - Class类(ps：没有一个好的类使用的方式)
+ - Class类（ps：没有一个好的类使用的方式）
  - Template 一个简单的模板引擎
  - Router 用来控制页面的路由 
  - Ajax 基本的Ajax Get/Post请求 

@@ -108,7 +108,7 @@
         *   [数据导入](http://github.phodal.com/#数据导入)
         *   [Redis](http://github.phodal.com/#redis)
     *   [邻近算法与相似用户](http://github.phodal.com/#邻近算法与相似用户)
-*   [如何在GitHub“寻找灵感(fork)”](http://github.phodal.com/#如何在github寻找灵感fork)
+*   [如何在GitHub“寻找灵感（fork）”](http://github.phodal.com/#如何在github寻找灵感fork)
     *   [Lettuce构建过程](http://github.phodal.com/#lettuce构建过程)
         *   [需求](http://github.phodal.com/#需求)
         *   [计划](http://github.phodal.com/#计划)

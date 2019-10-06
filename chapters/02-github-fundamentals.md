@@ -141,7 +141,7 @@ git push -u origin master
 
 ## GitHub 流行项目分析
 
-之前曾经分析过一些GitHub的用户行为，现在我们先来说说GitHub上的Star吧。(截止：2015年3月9日23时。)
+之前曾经分析过一些GitHub的用户行为，现在我们先来说说GitHub上的Star吧。（截止：2015年3月9日23时。）
 
 用户  | 项目名    | Language | Star | Url
 -----|---------- |----------|------|----

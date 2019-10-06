@@ -50,7 +50,7 @@ while ((stra = micromarkdown.regexobject.mail.exec(str)) !== null) {
 
 选这个做重构的开始，不仅仅是因为之前在写[EchoesWorks](https://github.com/phodal/echoesworks)的时候进行了很多的重构。而且它更适合于``重构到设计模式``的理论。让我们在重构完之后，给作者进行pull request吧。
 
-Markdown的解析过程，有点类似于``Pipe and Filters``模式(架构模式)。
+Markdown的解析过程，有点类似于``Pipe and Filters``模式（架构模式）。
 
 Filter即我们在代码中看到的正规表达式集：
 
@@ -64,7 +64,7 @@ regexobject: {
 
 接着，我们就可以对其进行简单的重构。
 
-(ps：推荐用WebStrom来做重构，自带重构功能)
+（ps：推荐用WebStrom来做重构，自带重构功能）
 
 作为一个示例，我们先提出codeHandler方法，即将上面的
 
@@ -175,7 +175,7 @@ public class Main {
 }
 ```
 	
-代码写得还好(自我感觉)，先不管Cal和Cal2两个类。大部分都能看懂，除了c,d不知道他们表达的是什么意思，于是。
+代码写得还好（自我感觉），先不管Cal和Cal2两个类。大部分都能看懂，除了c,d不知道他们表达的是什么意思，于是。
 
 ### Rename
 
