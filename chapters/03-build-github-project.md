@@ -6,14 +6,14 @@
 
 ### 敏捷软件开发
 
-显然我是在扯淡，这和敏捷软件开发没有什么关系。不过我也不知道瀑布流是怎样的。说说我所知道的一个项目的组成吧:
+显然我是在扯淡，这和敏捷软件开发没有什么关系。不过我也不知道瀑布流是怎样的。说说我所知道的一个项目的组成吧：
 
  - 看板式管理应用程序(如trello，简单地说就是管理软件功能)
  - CI(持续集成)
  - 测试覆盖率
  - 代码质量(code smell)
  
-对于一个不是远程的团队(如只有一个人的项目) 来说，Trello、Jenkin、Jira不是必需的:
+对于一个不是远程的团队(如只有一个人的项目) 来说，Trello、Jenkin、Jira不是必需的：
 
 > 你存在，我深深的脑海里
 
@@ -43,11 +43,11 @@ it("specifying response when you need it", function (done) {
 });
 ```
 
-代码来源: [https://github.com/phodal/lettuce](https://github.com/phodal/lettuce)
+代码来源：[https://github.com/phodal/lettuce](https://github.com/phodal/lettuce)
 
 上面的测试用例，清清楚楚地写明了用法，虽然写得有点扯。
 
-等等，测试是用来干什么的。那么，先说说我为什么会想去写测试吧:
+等等，测试是用来干什么的。那么，先说说我为什么会想去写测试吧：
 
  - 我不希望每次做完一个个新功能的时候，再手动地去测试一个个功能。(自动化测试)
  - 我不希望在重构的时候发现破坏了原来的功能，而我还一无所知。
@@ -71,7 +71,7 @@ it("specifying response when you need it", function (done) {
    ✓ should be able fadeout elements
 ```
 
-代码来源: [https://github.com/phodal/lettuce](https://github.com/phodal/lettuce)
+代码来源：[https://github.com/phodal/lettuce](https://github.com/phodal/lettuce)
 	   
 看上去似乎每个测试都很小，不过补完每一个测试之后我们就得到了测试覆盖率
 
@@ -83,7 +83,7 @@ lettuce.js	| 98.58% (209 / 212)| 82.98%(78 / 94) | 100.00% (54 / 54) | 98.58% (2
 
 ### CI
 
-虽然node.js不算是一门语言，但是因为我们用的node，下面的是一个简单的``.travis.yml``示例:
+虽然node.js不算是一门语言，但是因为我们用的node，下面的是一个简单的``.travis.yml``示例：
 
 ```yml
 language: node_js
@@ -98,7 +98,7 @@ install: npm install
 after_success: CODECLIMATE_REPO_TOKEN=321480822fc37deb0de70a11931b4cb6a2a3cc411680e8f4569936ac8ffbb0ab codeclimate < coverage/lcov.info
 ```
 
-代码来源: [https://github.com/phodal/lettuce](https://github.com/phodal/lettuce)
+代码来源：[https://github.com/phodal/lettuce](https://github.com/phodal/lettuce)
 
 我们把这些集成到``README.md``之后，就有了之前那张图。
 
@@ -114,7 +114,7 @@ CI对于一个开发者在不同城市开发同一项目上来说是很重要的
  
 ``Code Climate``是一个与github集成的工具，我们不仅仅可以看到测试覆盖率，还有代码质量。
 
-先看看上面的ajax类:
+先看看上面的ajax类：
 
 ```javascript
 Lettuce.get = function (url, callback) {
@@ -141,7 +141,7 @@ Lettuce.send = function (url, method, callback, data) {
 };
 ```
 
-代码来源: [https://github.com/phodal/lettuce](https://github.com/phodal/lettuce)
+代码来源：[https://github.com/phodal/lettuce](https://github.com/phodal/lettuce)
 
 在[Code Climate](https://codeclimate.com/github/phodal/lettuce/src/ajax.js)在出现了一堆问题
 
@@ -163,7 +163,7 @@ Lettuce.send = function (url, method, callback, data) {
 
 今天就来说说是怎样做的。
 
-以之前造的[Lettuce](https://github.com/phodal/lettuce)为例，里面有:
+以之前造的[Lettuce](https://github.com/phodal/lettuce)为例，里面有：
 
  - 代码质量(Code Climate)
  - CI状态(Travis CI)
@@ -171,7 +171,7 @@ Lettuce.send = function (url, method, callback, data) {
  - 自动化测试(npm test)
  - 文档
 
-按照[Web Developer路线图](https://github.com/phodal/awesome-developer)来说，我们还需要有:
+按照[Web Developer路线图](https://github.com/phodal/awesome-developer)来说，我们还需要有：
 
  - 版本管理
  - 自动部署
@@ -180,9 +180,9 @@ Lettuce.send = function (url, method, callback, data) {
 
 ### 代码模块化
 
-在SkillTree的源码里，大致分为三部分:
+在SkillTree的源码里，大致分为三部分：
 
- - namespace函数: 顾名思义
+ - namespace函数：顾名思义
  - Calculator也就是TalentTree，主要负责解析、生成url，头像，依赖等等
  - Skill 主要是tips部分。
  
@@ -193,13 +193,13 @@ Lettuce.send = function (url, method, callback, data) {
  - jQuery
  - Knockout
  
-好在Knockout可以用Require.js进行管理，于是，使用了``Require.js``进行管理:
+好在Knockout可以用Require.js进行管理，于是，使用了``Require.js``进行管理：
 
 ```html
 <script type="text/javascript" data-main="app/scripts/main.js" src="app/lib/require.js"></script>
 ```
 
-``main.js``配置如下:
+``main.js``配置如下：
 
 ```javascript
 require.config({
@@ -263,7 +263,7 @@ define([], function() {
 });
 ```
 
-或者说这是一个AMD的Class应该有的样子。考虑到this的隐性绑定，作者用了self=this来避免这个问题。最后Return了这个对象，我们在调用的就需要new一个。大部分在代码中返回的都是对象，除了在Utils类里面返回的是函数:
+或者说这是一个AMD的Class应该有的样子。考虑到this的隐性绑定，作者用了self=this来避免这个问题。最后Return了这个对象，我们在调用的就需要new一个。大部分在代码中返回的都是对象，除了在Utils类里面返回的是函数：
 
 ```javascript
 return {
@@ -277,7 +277,7 @@ return {
 
 ### 自动化测试
 
-一直习惯用Travis CI，于是也继续用Travis Ci，``.travis.yml``配置如下所示:
+一直习惯用Travis CI，于是也继续用Travis Ci，``.travis.yml``配置如下所示：
 
 ```yml
 language: node_js
@@ -316,7 +316,7 @@ branches:
 
 > JSLint定义了一组编码约定，这比ECMA定义的语言更为严格。这些编码约定汲取了多年来的丰富编码经验，并以一条年代久远的编程原则 作为宗旨：能做并不意味着应该做。JSLint会对它认为有的编码实践加标志，另外还会指出哪些是明显的错误，从而促使你养成好的 JavaScript编码习惯。
 
-当我们的js写得不合理的时候，这时测试就无法通过:
+当我们的js写得不合理的时候，这时测试就无法通过：
 
 	line 5   col 25   A constructor name should start with an uppercase letter.
 	line 21  col 62   Strings must use singlequote.
@@ -328,7 +328,7 @@ branches:
 
 > Mocha 是一个优秀的JS测试框架，支持TDD/BDD，结合 should.js/expect/chai/better-assert，能轻松构建各种风格的测试用例。
 
-最后的效果如下所示:
+最后的效果如下所示：
 
     Book,Link
       Book Test
@@ -338,7 +338,7 @@ branches:
 
 ### 测试示例
 
-简单地看一下Book的测试:
+简单地看一下Book的测试：
 
 ```javascript
 /* global describe, it */
@@ -411,7 +411,7 @@ it('should return book label & url', function () {
 
 Code Climate整合一组静态分析工具的结果到一个单一的，实时的报告，让您的团队需要识别热点，探讨新的方法，提高代码质量的信息。
 
-简单地来说:
+简单地来说：
 
 - 对我们的代码评分
 - 找出代码中的坏味道
@@ -431,7 +431,7 @@ B |	lib/rest/rest_helper.js	 | 19	| 62 |	3 |	4.7	| 37.5% |	2
 A |	lib/rest/rest_server.js |	17 |	0 |	2 |	8.6	| 88.9% |	0
 A |	lib/url_handler.js |	9 |	0	| 5 |	2.2	| 94.1% |	0
 
-分享得到的最后的结果是:
+分享得到的最后的结果是：
 
 ![Coverage][1]
 

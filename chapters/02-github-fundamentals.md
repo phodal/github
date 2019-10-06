@@ -72,7 +72,7 @@ Wiki百科上是这么说的
 > GitHub 是一个共享虚拟主机服务，用于存放使用Git版本控制的软件代码和内容项目。它由GitHub公司（曾称Logical Awesome）的开发者Chris Wanstrath、PJ Hyett和Tom Preston-Werner
 使用Ruby on Rails编写而成。
 
-当然让我们看看官方的介绍:
+当然让我们看看官方的介绍：
 
 > GitHub is the best place to share code with friends, co-workers, classmates, and complete strangers. Over eight million people use GitHub to build amazing things together.
 
@@ -92,7 +92,7 @@ Wiki百科上是这么说的
 
 ### 版本管理与软件部署
 
-jQuery[^jQuery]在发布版本``2.1.3``，一共有152个commit。我们可以看到如下的提交信息:
+jQuery[^jQuery]在发布版本``2.1.3``，一共有152个commit。我们可以看到如下的提交信息：
 
  - Ajax: Always use script injection in globalEval …	 bbdfbb4
  - Effects: Reintroduce use of requestAnimationFrame …	 72119e0
@@ -109,15 +109,15 @@ jQuery[^jQuery]在发布版本``2.1.3``，一共有152个commit。我们可以�
 
 ### 在 GitHub 创建项目
 
-接着,我们试试在上面创建一个项目:
+接着,我们试试在上面创建一个项目：
 
 ![GitHub Roam](./img/github-roam-create.jpg)
 
-就会有下面的提醒:
+就会有下面的提醒：
 
 ![GitHub Roam](./img/project-init.jpg)
 
-它提供多种方式的创建方法:
+它提供多种方式的创建方法：
 
 > …or create a new repository on the command line
 
@@ -141,7 +141,7 @@ git push -u origin master
 
 ## GitHub 流行项目分析
 
-之前曾经分析过一些GitHub的用户行为，现在我们先来说说GitHub上的Star吧。(截止: 2015年3月9日23时。)
+之前曾经分析过一些GitHub的用户行为，现在我们先来说说GitHub上的Star吧。(截止：2015年3月9日23时。)
 
 用户  | 项目名    | Language | Star | Url
 -----|---------- |----------|------|----
@@ -151,7 +151,7 @@ angular | angular.js | JavaScript | 36,061 | [https://github.com/angular/angular
 mbostock | d3 | JavaScript | 35,257 | [https://github.com/mbostock/d3](https://github.com/mbostock/d3)
 joyent | node | JavaScript | 35,077 | [https://github.com/joyent/node](https://github.com/joyent/node)
 
-上面列出来的是前5的，看看大于1万个stars的项目的分布，一共有82个:
+上面列出来的是前5的，看看大于1万个stars的项目的分布，一共有82个：
 
 语言 | 项目数
 -----|-----
@@ -166,16 +166,16 @@ Shell | 2
 Go | 2 
 C | 2 
 
-类型分布:
+类型分布：
 
 
- - 库和框架: 如``jQuery`` 
- - 系统: 如``Linux``、``hhvm``、``docker``
- - 配置集: 如``dotfiles``
- - 辅助工具: 如``oh-my-zsh``
- - 工具: 如``Homewbrew``和``Bower``
- - 资料收集: 如``free programming books``，``You-Dont-Know-JS``，``Font-Awesome``
- - 其他:简历如``Resume``
+ - 库和框架：如``jQuery`` 
+ - 系统：如``Linux``、``hhvm``、``docker``
+ - 配置集：如``dotfiles``
+ - 辅助工具：如``oh-my-zsh``
+ - 工具：如``Homewbrew``和``Bower``
+ - 资料收集：如``free programming books``，``You-Dont-Know-JS``，``Font-Awesome``
+ - 其他：简历如``Resume``
  
 ## Pull Request
 

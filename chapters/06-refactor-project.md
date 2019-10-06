@@ -10,7 +10,7 @@
 
 > 为了更好的代码。
 
-在经历了一年多的工作之后，我平时的主要工作就是修Bug。刚开始的时候觉得无聊，后来才发现修Bug需要更好的技术。有时候你可能要面对着一坨一坨的代码，有时候你可能要花几天的时间去阅读代码。而你重写那几十行代码可能只会花上你不到一天的时间。但是如果你没办法理解当时为什么这么做，你的修改只会带来更多的Bug。修Bug，更多的是维护代码。还是前人总结的那句话对:
+在经历了一年多的工作之后，我平时的主要工作就是修Bug。刚开始的时候觉得无聊，后来才发现修Bug需要更好的技术。有时候你可能要面对着一坨一坨的代码，有时候你可能要花几天的时间去阅读代码。而你重写那几十行代码可能只会花上你不到一天的时间。但是如果你没办法理解当时为什么这么做，你的修改只会带来更多的Bug。修Bug，更多的是维护代码。还是前人总结的那句话对：
 
 > 写代码容易，读代码难。
 
@@ -24,11 +24,11 @@
 
 ## 重构uMarkdown
 
-代码及setup请见github: [js-refactor](https://github.com/artisanstack/js-refactor)
+代码及setup请见github：[js-refactor](https://github.com/artisanstack/js-refactor)
 
 ### 代码说明
 
-``uMarkdown``是一个用于将Markdown转化为HTML的库。代码看上去就像一个很典型的过程代码:
+``uMarkdown``是一个用于将Markdown转化为HTML的库。代码看上去就像一个很典型的过程代码：
 
 ```javascript
 /* code */
@@ -52,7 +52,7 @@ while ((stra = micromarkdown.regexobject.mail.exec(str)) !== null) {
 
 Markdown的解析过程，有点类似于``Pipe and Filters``模式(架构模式)。
 
-Filter即我们在代码中看到的正规表达式集:
+Filter即我们在代码中看到的正规表达式集：
 
 ```javascript
 regexobject: {
@@ -64,7 +64,7 @@ regexobject: {
 
 接着，我们就可以对其进行简单的重构。
 
-(ps: 推荐用WebStrom来做重构，自带重构功能)
+(ps：推荐用WebStrom来做重构，自带重构功能)
 
 作为一个示例，我们先提出codeHandler方法，即将上面的
 
@@ -145,7 +145,7 @@ str = tableHandler(str, execStr, strict);
    ✓ should return correctly class name
 ```
 	   
-快来试试吧， [https://github.com/artisanstack/js-refactor](https://github.com/artisanstack/js-refactor)
+快来试试吧，[https://github.com/artisanstack/js-refactor](https://github.com/artisanstack/js-refactor)
 
 是时候讨论这个Refactor利器了，最初看到这个重构的过程是从ThoughtWorks郑大晔校开始的，只是之前对于Java的另外一个编辑器Eclipse的坏感。。这些在目前已经不是很重要了，试试这个公司里面应用广泛的编辑器。
 
@@ -179,9 +179,9 @@ public class Main {
 
 ### Rename
 
-**快捷键:Shift+F6**
+**快捷键：Shift+F6**
 
-**作用:重命名**
+**作用：重命名**
 
  - 把光标丢到int c中的c，按下shift+f6，输入result_add
  - 把光标移到int d中的d，按下shift+f6，输入result_sub
@@ -205,9 +205,9 @@ public class Main {
 	
 ### Extract Method
 
-**快捷键:alt+command+m**
+**快捷键：alt+command+m**
 
-**作用:扩展方法**
+**作用：扩展方法**
 
 - 选中System.out.println(result_add);
 - 按下alt+command+m
@@ -233,15 +233,15 @@ private static void mprint(int result_sub) {
 
 ### Inline Method
 
-**快捷键:alt+command+n**
+**快捷键：alt+command+n**
 
-**作用:内联方法**
+**作用：内联方法**
 
 - 选中main中的mprint
 - alt+command+n
 - 选中Inline all invocations and remove the method(2 occurrences) 点确定
 
-然后我们等于什么也没有做了~~: 
+然后我们等于什么也没有做了~~： 
 
 ```java
 public static void main(String[] args) {
@@ -257,7 +257,7 @@ public static void main(String[] args) {
 
 ### Pull Members Up
 
-开始之前让我们先看看Cal2类:
+开始之前让我们先看看Cal2类：
 
 ```java
 public class Cal2 extends Cal {
@@ -280,7 +280,7 @@ public class Cal {
 }
 ```
 	
-最后的结果，就是将Cal2类中的sub方法，提到父类:
+最后的结果，就是将Cal2类中的sub方法，提到父类：
 
 ```java
 public class Cal {
@@ -301,13 +301,13 @@ public class Cal {
 
 快捷键
 
-Mac:  木有
+Mac：木有
 
-Windows/Linux:  木有
+Windows/Linux：木有
 
-或者: ``Shift``+``alt``+``command``+``T`` 再选择  ``Replace Temp with Query``
+或者：``Shift``+``alt``+``command``+``T`` 再选择  ``Replace Temp with Query``
 
-鼠标: **Refactor** | ``Replace Temp with Query``
+鼠标：**Refactor** | ``Replace Temp with Query``
 
 #### 重构之前
 
@@ -386,7 +386,7 @@ public class replaceTemp {
 
 ``Command``+``Alt``+``Shift``+``T`` 再选中Replace Temp with Query
 
-便会有下面的结果:
+便会有下面的结果：
 
 
 ```javas

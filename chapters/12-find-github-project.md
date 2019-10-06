@@ -9,7 +9,7 @@
 
 > Lettuce是一个简约的移动开发框架。
 
-故事的出发点是这样的:``写了很多代码,用的都是框架，最后不知道收获什么了``?事实也是如此，当自己做了一些项目之后，发现最后什么也没有收获到。于是，就想着做一个框架。
+故事的出发点是这样的：``写了很多代码,用的都是框架，最后不知道收获什么了``?事实也是如此，当自己做了一些项目之后，发现最后什么也没有收获到。于是，就想着做一个框架。
 
 ### 需求
 
@@ -22,21 +22,21 @@
 
 我想要的只是一个简单的功能，而我不想引入一个庞大的库。换句话说，我只需要不同库里面的一小部分功能，而不是一个库。
 
-实际上想要的是:
+实际上想要的是：
 
 > 构建一个库，里面从不同的库里面抽取出不同的函数。
 
 ### 计划
 
-这时候我参考了一本电子书《Build JavaScript FrameWork》，加上一些平时的需求，于是很快的就知道自己需要什么样的功能:
+这时候我参考了一本电子书《Build JavaScript FrameWork》，加上一些平时的需求，于是很快的就知道自己需要什么样的功能：
 
  - Promise 支持
- - Class类(ps:没有一个好的类使用的方式)
+ - Class类(ps：没有一个好的类使用的方式)
  - Template 一个简单的模板引擎
  - Router 用来控制页面的路由 
  - Ajax 基本的Ajax Get/Post请求 
 
-在做一些实际的项目中，还遇到了这样的一些功能支持:
+在做一些实际的项目中，还遇到了这样的一些功能支持：
 
  - Effect 简单的一些页面效果
  - AMD支持
@@ -56,7 +56,7 @@
 
 #### 寻找
 
-在GitHub上搜索了一个看到了下面的几个结果:
+在GitHub上搜索了一个看到了下面的几个结果：
 
 - [https://github.com/then/promise](https://github.com/then/promise)
 - [https://github.com/reactphp/promise](https://github.com/reactphp/promise)
@@ -64,7 +64,7 @@
 - [https://github.com/petkaantonov/bluebird](https://github.com/petkaantonov/bluebird)
 - [https://github.com/cujojs/when](https://github.com/cujojs/when)
 
-但是显然，他们都太重了。事实上，对于一个库来说，80%的人只需要其中20%的代码。于是，找到了[https://github.com/stackp/promisejs](https://github.com/stackp/promisejs)，看了看用法，这就是我们需要的功能:
+但是显然，他们都太重了。事实上，对于一个库来说，80%的人只需要其中20%的代码。于是，找到了[https://github.com/stackp/promisejs](https://github.com/stackp/promisejs)，看了看用法，这就是我们需要的功能：
 
 ```javascript
 function late(n) {
@@ -131,7 +131,7 @@ var promise = {
 };
 ```
 
-需要注意的是: ``License``，不同的软件有不同的License，如MIT、GPL等等。最好能在遵循协议的情况下，使用别人的代码。
+需要注意的是：``License``，不同的软件有不同的License，如MIT、GPL等等。最好能在遵循协议的情况下，使用别人的代码。
 
 ### 实现第二个需求
 

@@ -22,7 +22,7 @@ if (!req.headers.authorization) {
 }
 ```       
        
-可是除了HTTP协议，还有MQTT和CoAP。对于MQTT协议来说，那还算好，毕竟自带授权，如:
+可是除了HTTP协议，还有MQTT和CoAP。对于MQTT协议来说，那还算好，毕竟自带授权，如：
 
 ```bash
 mosquitto_pub -u root -P root -h localhost -d -t lettuce -m "Hello, MQTT. This is my first message."
@@ -57,14 +57,14 @@ req.end();
 
 测试驱动开发是一个很"古老"的程序开发方法，然而由于国内的开发流程的问题——即开发人员负责功能的测试，导致这么好的一项技术没有在国内推广。
 
-测试驱动开发的主要过程是:
+测试驱动开发的主要过程是：
 
 1. 先写功能的测试
 2. 实现功能代码
 3. 提交代码(commit -> 保证功能正常)
 4. 重构功能代码
 
-而对于这样的一个物联网项目来说，我已经有了几个有利的前提:
+而对于这样的一个物联网项目来说，我已经有了几个有利的前提：
 
 1. 已经有了原型
 2. 框架设计
@@ -145,7 +145,7 @@ req.end();
 
 ### Twill 测试脚本
 
-当然我们也可以用脚本直接来测试``login.twill``:
+当然我们也可以用脚本直接来测试``login.twill``：
 
 	go http://127.0.0.1:5000/login
 

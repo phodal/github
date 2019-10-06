@@ -21,7 +21,7 @@ GitHub连击
 
 同时这似乎也意味着，我每天的commit数与之相比多了很多。
 
-在连击20的时候，有这样的问题: *为了commit而commit代码*，最后就放弃了。
+在连击20的时候，有这样的问题：*为了commit而commit代码*，最后就放弃了。
 
 而现在是``为了填坑而commit``，为自己挖了太多的想法。
 
@@ -29,23 +29,23 @@ GitHub连击
 
 当时我需要去印度接受毕业生培训，大概有5周左右，想着总不能空手而归。于是在国庆结束后有了第一次commit，当时旅游归来，想着自己在不同的地方有不同的照片，于是这个repo的名字是 [onmap](https://github.com/phodal/onmap)——将自己的照片显示在地图上的拍摄地点(手机是Lumia 920)。然而，中间因为修改账号的原因，丢失了commit。
 
-再从印度说起，当时主要维护三个repo:
+再从印度说起，当时主要维护三个repo：
 
 - 物联网的CoAP协议
 - [一步步设计物联网系统](https://github.com/phodal/designiot)的电子书
 - 一个Node.js + JS的网站
 
-说说最后一个，最后一个是练习的项目。因为当时培训比较无聊，业余时间比较多，英语不好，加上听不懂印度人的话。晚上基本上是在住的地方默默地写代码，所以当时的目标有这么几个:
+说说最后一个，最后一个是练习的项目。因为当时培训比较无聊，业余时间比较多，英语不好，加上听不懂印度人的话。晚上基本上是在住的地方默默地写代码，所以当时的目标有这么几个：
 
 - TDD
 - 测试覆盖率
 - 代码整洁
 
-这也就是为什么那个repo有这样的一行:
+这也就是为什么那个repo有这样的一行：
 
 ![Repo Status](./img/repo-status.png)
 
-做到98%的覆盖率也算蛮拼的，当然还有Code Climate也达到了4.0，也有了112个commits。因此也带来了一些提高:
+做到98%的覆盖率也算蛮拼的，当然还有Code Climate也达到了4.0，也有了112个commits。因此也带来了一些提高：
 
 - 提高了代码的质量(code climate比jslint更注重重复代码等等一些bad smell)。
 - 对于Mock、Stub、FakesServer等用法有更好的掌握
@@ -53,13 +53,13 @@ GitHub连击
 
 ### 100天的挑战
 
-(ps:从印度回来之后，由于女朋友在泰国实习，有了更多的时间可以看书、写代码)
+(ps：从印度回来之后，由于女朋友在泰国实习，有了更多的时间可以看书、写代码)
 
 有意思的是越到中间的一些时间，commits的次数上去了，除了一些简单的pull request，还有一些新的轮子出现了。
 
 ![Problem](./img/problem.jpg)
 
-这是上一星期的commits，这也就意味着，在一星期里面，我需要在8个repo里切换。而现在我又有了一个新的idea，这时就发现了一堆的问题:
+这是上一星期的commits，这也就意味着，在一星期里面，我需要在8个repo里切换。而现在我又有了一个新的idea，这时就发现了一堆的问题：
 
  - 今天工作在这个repo上，突然发现那个repo上有issue，需要去修复，于是就放下了当前的代码。
  - 在不同的repo间切换容易分散精力
@@ -71,22 +71,22 @@ GitHub连击
 
 在经历了100天之后，似乎整个人都轻松了，毕竟目标是100~200天。似乎到现在，也不会有什么特殊的情怀，除了一些希冀。
 
-当然，对于一个开源项目的作者来说，最好有下面的情况:
+当然，对于一个开源项目的作者来说，最好有下面的情况：
 
 - 很多人知道了这个项目
 - 很多人用它的项目。
 - 在某些可以用这个项目快速解决问题的地方提到了这个项目
 - 提了bug、issue、问题。
-- 提了bug，并解决了。(ps:这是最理想的情况)
+- 提了bug，并解决了。(ps：这是最理想的情况)
 
 
 ## 200天的Showcase
 
-今天是我连续泡在GitHub上的第200天，也是蛮高兴的，终于到达了:
+今天是我连续泡在GitHub上的第200天，也是蛮高兴的，终于到达了：
 
 ![GitHub 200 days](./img/github-200-days.png)
 
-故事的背影是: 去年国庆完后要去印度接受毕业生培训——就是那个神奇的国度。但是在去之前已经在项目待了九个多月，项目上的挑战越来越少，在印度的时间又算是比较多。便给自己设定了一个长期的goal，即100~200天的longest streak。
+故事的背影是：去年国庆完后要去印度接受毕业生培训——就是那个神奇的国度。但是在去之前已经在项目待了九个多月，项目上的挑战越来越少，在印度的时间又算是比较多。便给自己设定了一个长期的goal，即100~200天的longest streak。
 
 或许之前你看到过一篇文章[让我们连击](https://github.com/phodal/github-roam/blob/master/chapters/12-streak-your-github.md)，那时已然140天，只是还是浑浑噩噩。到了今天，渐渐有了一个更清晰地思路。
 
@@ -96,11 +96,11 @@ GitHub连击
 
 上面说到的培训一开始是用Java写的一个网站，有自动测试、CI、CD等等。由于是内部组队培训，代码不能公开等等因素，加之做得无聊。顺手，拿Node.js +RESTify 做了Server，Backbone + RequireJS + jQuery 做了前台的逻辑。于是在那个日子里，也在维护一些旧的repo，如[iot-coap](https://github.com/phodal/iot-coap)、[iot](https://github.com/phodal/iot)，前者是我拿到WebStorm开源License的Repo，后者则是毕业设计。
 
-对于这样一个项目也需要有测试、自动化测试、CI等等。CI用的是Travics-CI。总体的技术构架如下:
+对于这样一个项目也需要有测试、自动化测试、CI等等。CI用的是Travics-CI。总体的技术构架如下：
 
 #### 技术栈
 
-前台:
+前台：
 
 - Backbone 
 - RequireJS
@@ -108,11 +108,11 @@ GitHub连击
 - Mustache
 - Pure CSS
 
-后台:
+后台：
 
 - RESTify
 
-测试:
+测试：
 
 - Jasmine
 - Chai
@@ -122,7 +122,7 @@ GitHub连击
 
 一直写到五星期的培训结束， 只是没有自动部署。想想就觉得可以用github-page的项目多好~~。
 
-过程中还有一些有意思的小项目，如:
+过程中还有一些有意思的小项目，如：
 
 ### google map solr polygon 搜索
 
@@ -130,11 +130,11 @@ GitHub连击
 
 ![google map solr](./img/solr.png)
 
-代码: [https://github.com/phodal/gmap-solr](https://github.com/phodal/gmap-solr)
+代码：[https://github.com/phodal/gmap-solr](https://github.com/phodal/gmap-solr)
 
 ### 技能树
 
-这个可以从两部分说起:
+这个可以从两部分说起：
 
 #### 重构 Skill Tree
 
@@ -147,7 +147,7 @@ GitHub连击
 
 ![Skill Tree](./img/skilltree.jpg)
 
-代码: [https://github.com/phodal/skillock](https://github.com/phodal/skillock)
+代码：[https://github.com/phodal/skillock](https://github.com/phodal/skillock)
 
 #### 技能树Sherlock
 
@@ -161,7 +161,7 @@ GitHub连击
 
 ![Sherlock skill tree](./img/sherlock.png)
 
-代码: [https://github.com/phodal/sherlock](https://github.com/phodal/sherlock)
+代码：[https://github.com/phodal/sherlock](https://github.com/phodal/sherlock)
 
 #### Django Ionic ElasticSearch 地图搜索
 
@@ -172,7 +172,7 @@ GitHub连击
 - Ionic
 - OpenLayers 3
 
-代码: [https://github.com/phodal/django-elasticsearch](https://github.com/phodal/django-elasticsearch)
+代码：[https://github.com/phodal/django-elasticsearch](https://github.com/phodal/django-elasticsearch)
 
 #### 简历生成器
 
@@ -184,7 +184,7 @@ GitHub连击
 - RequireJS
 - Showdown
 
-代码: [https://github.com/phodal/resume](https://github.com/phodal/resume)
+代码：[https://github.com/phodal/resume](https://github.com/phodal/resume)
 
 
 #### Nginx 大数据学习
@@ -195,23 +195,23 @@ GitHub连击
 - Hadoop
 - Pig
 
-代码: [https://github.com/phodal/learning-data/tree/master/nginx](https://github.com/phodal/learning-data/tree/master/nginx)
+代码：[https://github.com/phodal/learning-data/tree/master/nginx](https://github.com/phodal/learning-data/tree/master/nginx)
  
 #### 其他
 
-虽然技术栈上主要集中在Python、JavaScript，当然还有一些Ruby、Pig、Shell、Java的代码，只是我还是习惯用Python和JavaScript。一些用到觉得不错的框架:
+虽然技术栈上主要集中在Python、JavaScript，当然还有一些Ruby、Pig、Shell、Java的代码，只是我还是习惯用Python和JavaScript。一些用到觉得不错的框架：
 
-- Ionic: 开始Hybird移动应用。
-- Django: Python Web开发利器。
-- Flask: Python Web开发小刀。
-- RequireJS: 管理js依赖。
-- Backbone: Model + View + Router。
-- Angluar: ...。
-- Knockout: MVV*。
-- React: 据说会火。
-- Cordova: Hybird应用基础。
+- Ionic：开始Hybird移动应用。
+- Django：Python Web开发利器。
+- Flask：Python Web开发小刀。
+- RequireJS：管理js依赖。
+- Backbone：Model + View + Router。
+- Angluar：...。
+- Knockout：MVV*。
+- React：据说会火。
+- Cordova：Hybird应用基础。
 
-还应该有:
+还应该有
 
 - ElasticSearch
 - Solr
@@ -234,7 +234,7 @@ GitHub连击
 
 练习不到位便意味着，即使你练习的时候是一万小时的两倍，那也是无济于事的。如果你学得比别人晚，在**很长的一段时间里**(可能直到进棺材)输给别人是必然的——落后就要挨打。就好像我等毕业于一所二本垫底的学校里，如果在过去我一直保持着和别人(各种重点)一样的学习速度，那么我只能一直是Loser。
 
-需要注意的是，对你来说考上二本很难，并不是因为你比别人笨。教育资源分配不均的问题，在某种程度上导致了新的阶级制度的出现。如[我的首页](https://www.phodal.com/)说的那样: **THE ONLY FAIR IS NOT FAIR**——唯一公平的是它是不公平的。我们可以做的还有很多——**CREATE & SHARE**。真正的不幸是，因为营养不良导致的教育问题。
+需要注意的是，对你来说考上二本很难，并不是因为你比别人笨。教育资源分配不均的问题，在某种程度上导致了新的阶级制度的出现。如[我的首页](https://www.phodal.com/)说的那样：**THE ONLY FAIR IS NOT FAIR**——唯一公平的是它是不公平的。我们可以做的还有很多——**CREATE & SHARE**。真正的不幸是，因为营养不良导致的教育问题。
 
 于是在想明白了很多事的时候起，便有了Re-Practise这样的计划，而365天只是中间的一个产物。
 
@@ -283,9 +283,9 @@ GitHub连击
 
 ### 技术与框架设计
 
-在上上一篇博客中《[After 500: 写了第500篇博客，然后呢?](https://www.phodal.com/blog/after-500-blogposts-analytics-after-tech/)》也深刻地讨论了下这个问题，技术向来都是后发者优势。对于技术人员来说，也是如此，后发者占据很大的优势。
+在上上一篇博客中《[After 500：写了第500篇博客，然后呢?](https://www.phodal.com/blog/after-500-blogposts-analytics-after-tech/)》也深刻地讨论了下这个问题，技术向来都是后发者优势。对于技术人员来说，也是如此，后发者占据很大的优势。
 
-如果我们只是单纯地把我们的关注点仅仅放置于技术上，那么我们就不具有任何的优势。而依赖于我们的编程经验，我们可以在特定的时候创造一些框架。而架构的设计本身就是一件有意思的事，大抵是因为程序员都喜欢创造。(ps:之前曾经写过这样一篇文章，《[对不起，我并不热爱编程，我只喜欢创造](https://www.phodal.com/blog/sorry-i-don't-like-programming/)》)
+如果我们只是单纯地把我们的关注点仅仅放置于技术上，那么我们就不具有任何的优势。而依赖于我们的编程经验，我们可以在特定的时候创造一些框架。而架构的设计本身就是一件有意思的事，大抵是因为程序员都喜欢创造。(ps：之前曾经写过这样一篇文章，《[对不起，我并不热爱编程，我只喜欢创造](https://www.phodal.com/blog/sorry-i-don't-like-programming/)》)
 
 **创造是一种知识的再掌握过程。**
 
@@ -404,7 +404,7 @@ THE ONLY FAIR IS NOT FAIR . ENJOY CREATE & SHARE.
 
 编码是一件值得练习的事，你从书中、互联网上看到的那一个个的编程大牛无一不是从一点点的小技能积累起来的。从小接触可以让你有一个好的开始，一段好好的练习也会帮助你更好的前进。
 
-记得我在最开始练习的时候，我分几个不同的阶段去练习:
+记得我在最开始练习的时候，我分几个不同的阶段去练习：
 
  - 按照《重构：改善即有代码的设计》一书边寻找一些 bad smell 的代码，一边想方设法去让代码变得优雅。
  - 按照《设计模式》以及《重构与模式》来将代码重构成某种设计模式。
@@ -483,8 +483,8 @@ OnMap项目是为了让我用Nokia Lumia 920拍照的照片，可以在地图上
 我们有了Growth系列的电子书、APP，还有Mole，几个极具代表性的项目就够了。
 
  - [Growth](https://github.com/phodal/growth)，一款专注于Web开发者成长的应用，涵盖Web开发的流程及技术栈，Web开发的学习路线、成长衡量等各方面。
- - [Growth: 全栈增长工程师指南](https://github.com/phodal/growth-ebook)，一本关于如何成为全栈增长工程师的指南
- - [Growth: 全栈增长工程师实战](https://github.com/phodal/growth-in-action)，在Growth中我们介绍的只是一系列的实践，而Growth实战则会带领读者去履行这些实践
+ - [Growth：全栈增长工程师指南](https://github.com/phodal/growth-ebook)，一本关于如何成为全栈增长工程师的指南
+ - [Growth：全栈增长工程师实战](https://github.com/phodal/growth-in-action)，在Growth中我们介绍的只是一系列的实践，而Growth实战则会带领读者去履行这些实践
 
 ### See you Again
 

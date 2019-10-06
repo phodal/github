@@ -53,7 +53,7 @@ GitHub 是一个非常有意思的地方，也常常变得非常有争议。有�
  1. 用户看的都是 GitHub Pages 上的内容
  2. 从数量上来看，受众并不多
 
-而我最近在玩的 New Project Checklist （[https://github.com/phodal/new-project-checklist](https://github.com/phodal/new-project-checklist) 的转化率看上去，还算可以：
+而我最近在玩的 New Project Checklist（[https://github.com/phodal/new-project-checklist](https://github.com/phodal/new-project-checklist) 的转化率看上去，还算可以：
 
 ![GitHub New Project Checklist](./img/github-new-project-checklist.png)
 
