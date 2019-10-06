@@ -220,7 +220,7 @@ require(['lib/knockout', 'scripts/TalentTree', 'json!data/web.json'], function(k
 });
 ```
 	
-text、json插件主要是用于处理web.json，即用json来处理技能，于是不同的类到了不同的 JS 文件。
+text、JSON 插件主要是用于处理web.json，即用 JSON 来处理技能，于是不同的类到了不同的 JS 文件。
 
 	.
 	|____Book.js
