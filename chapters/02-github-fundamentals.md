@@ -151,7 +151,7 @@ angular | angular.js | JavaScript | 36,061 | [https://github.com/angular/angular
 mbostock | d3 | JavaScript | 35,257 | [https://github.com/mbostock/d3](https://github.com/mbostock/d3)
 joyent | node | JavaScript | 35,077 | [https://github.com/joyent/node](https://github.com/joyent/node)
 
-上面列出来的是前5的，看看大于1万个stars的项目的分布，一共有82个：
+上面列出来的是前5的，看看大于1万个 Stars 的项目的分布，一共有82个：
 
 语言 | 项目数
 -----|-----

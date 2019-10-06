@@ -26,7 +26,7 @@
 
 练习新的框架，我总习惯于，**编写一系列相关的 DEMO 项目，然后使用 awesome-xxx 探索可能性。**
 
-Awesome-xxx 系列，是 GitHub 上最容易赚 star 的类型。但凡是有一定知识度的领域、语言、框架等，都有自己的 awesome-xxx 系列的项目，如 awesome-python, awesome-iot, awesome-react 等等。在这样的项目里，都以一定的知识体系整理出来的，从索引和查阅上相应的方便。如果你想进入一个新的领域，会尝试新的东西就搜索 ``awesome xxx`` 吧。
+Awesome-xxx 系列，是 GitHub 上最容易赚 Star 的类型。但凡是有一定知识度的领域、语言、框架等，都有自己的 awesome-xxx 系列的项目，如 awesome-python, awesome-iot, awesome-react 等等。在这样的项目里，都以一定的知识体系整理出来的，从索引和查阅上相应的方便。如果你想进入一个新的领域，会尝试新的东西就搜索 ``awesome xxx`` 吧。
 
 **温馨提醒**：awesome-xxx 只意味着它们包含尽可能多的资料，并不代表它们拥有所有相关的库。
 
