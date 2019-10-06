@@ -205,12 +205,12 @@ public class Main {
 	
 ### Extract Method
 
-**快捷键：alt+command+m**
+**快捷键：Alt+command+m**
 
 **作用：扩展方法**
 
 - 选中System.out.println(result_add);
-- 按下alt+command+m
+- 按下 Alt+command+m
 - 在弹出的窗口中输入mprint
 
 于是有了
@@ -233,12 +233,12 @@ private static void mprint(int result_sub) {
 
 ### Inline Method
 
-**快捷键：alt+command+n**
+**快捷键：Alt+command+n**
 
 **作用：内联方法**
 
 - 选中main中的mprint
-- alt+command+n
+- Alt+command+n
 - 选中Inline all invocations and remove the method(2 occurrences) 点确定
 
 然后我们等于什么也没有做了~~： 
@@ -305,7 +305,7 @@ Mac：木有
 
 Windows/Linux：木有
 
-或者：``Shift``+``alt``+``command``+``T`` 再选择  ``Replace Temp with Query``
+或者：``Shift``+``Alt``+``command``+``T`` 再选择  ``Replace Temp with Query``
 
 鼠标：**Refactor** | ``Replace Temp with Query``
 
