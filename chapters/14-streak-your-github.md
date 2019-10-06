@@ -1,4 +1,4 @@
-GitHub 连击 
+GitHub 连击
 ===
 
 ## 100 天
@@ -472,7 +472,7 @@ OnMap 项目是为了让我用 Nokia Lumia 920 拍照的照片，可以在地图
  
   - [learning-ionic](https://github.com/phodal/learning-ionic)，程序语言答人，各种 hello, world 的小应用
   - [ionic-elasticsearch](https://github.com/phodal/ionic-elasticsearch), Django ElasticSearch Ionic 打造 GIS 移动应用 
-  - [designiot-app](https://github.com/phodal/designiot-app)，教你设计物联网 APP 版
+  - [designiot-app](https://github.com/phodal/designiot-app)，教你设计物联网 App 版
 
 更多内容可以见我的 Idea 列表：[https://github.com/phodal/ideas](https://github.com/phodal/ideas)，我实在是不想写了。
 
@@ -480,7 +480,7 @@ OnMap 项目是为了让我用 Nokia Lumia 920 拍照的照片，可以在地图
 
 ![2016.png](./img/2016.png)
 
-我们有了 Growth 系列的电子书、APP，还有 Mole，几个极具代表性的项目就够了。
+我们有了 Growth 系列的电子书、App，还有 Mole，几个极具代表性的项目就够了。
 
  - [Growth](https://github.com/phodal/growth)，一款专注于 Web 开发者成长的应用，涵盖 Web 开发的流程及技术栈，Web 开发的学习路线、成长衡量等各方面。
  - [Growth：全栈增长工程师指南](https://github.com/phodal/growth-ebook)，一本关于如何成为全栈增长工程师的指南
