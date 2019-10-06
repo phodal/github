@@ -100,7 +100,7 @@
         *   [数据解析](http://github.phodal.com/#数据解析)
         *   [Matplotlib](http://github.phodal.com/#matplotlib)
     *   [每周分析](http://github.phodal.com/#每周分析)
-        *   [python GitHub 每周情况分析](http://github.phodal.com/#python-github-每周情况分析)
+        *   [Python GitHub 每周情况分析](http://github.phodal.com/#python-github-每周情况分析)
         *   [Python 数据分析](http://github.phodal.com/#python-数据分析)
         *   [Python Matplotlib图表](http://github.phodal.com/#python-matplotlib图表)
     *   [存储到数据库中](http://github.phodal.com/#存储到数据库中)

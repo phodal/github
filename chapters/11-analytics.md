@@ -337,7 +337,7 @@ sudo zypper install sqlite3
 
 ### 数据导入
 
-需要注意的是这里是需要python2.7，起源于对gzip的上下文管理器的支持问题
+需要注意的是这里是需要 Python 2.7，起源于对gzip的上下文管理器的支持问题
 
 ```python
 def handle_gzip_file(filename):
@@ -403,7 +403,7 @@ date_re = re.compile(r"([0-9]{4})-([0-9]{2})-([0-9]{2})-([0-9]+)\.json.gz")
 
 不过主要的还是在于``glob.glob``
 
-> glob是python自己带的一个文件操作相关模块，用它可以查找符合自己目的的文件，就类似于Windows下的文件搜索，支持通配符操作。
+> glob是 Python 自己带的一个文件操作相关模块，用它可以查找符合自己目的的文件，就类似于Windows下的文件搜索，支持通配符操作。
 
 这里也就用上了``gzip.GzipFile``又一个不错的东西。
 
