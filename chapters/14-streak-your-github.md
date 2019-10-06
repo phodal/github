@@ -11,7 +11,7 @@ GitHub 连击
 
 在那篇连续冲击 365 天的文章出现之前，我们公司的大大（[https://github.com/dreamhead](https://github.com/dreamhead)）也曾经在公司内部说过，天天 commit 什么的。当然这不是我的动力，在连击 140 天之前
 
-- 给过 google 的``ngx_speed``、``node-coap`` 等项目创建过 pull request
+- 给过 Google 的``ngx_speed``、``node-coap`` 等项目创建过 pull request
 - 也有``free-programming-books``、``free-programming-books-zh_CN``这样的项目。
 - 当然还有一个连击 20 天。
 
@@ -124,11 +124,11 @@ GitHub 连击
 
 过程中还有一些有意思的小项目，如：
 
-### google map solr polygon 搜索
+### Google Maps solr polygon 搜索
 
-[google map solr polygon 搜索](http://www.phodal.com/blog/google-map-width-solr-use-polygon-search/)
+[Google Maps solr polygon 搜索](http://www.phodal.com/blog/google-map-width-solr-use-polygon-search/)
 
-![google map solr](./img/solr.png)
+![Google Maps solr](./img/solr.png)
 
 代码：[https://github.com/phodal/gmap-solr](https://github.com/phodal/gmap-solr)
 
