@@ -283,7 +283,7 @@ GitHub连击
 
 ### 技术与框架设计
 
-在上上一篇博客中《[After 500：写了第500篇博客，然后呢?](https://www.phodal.com/blog/after-500-blogposts-analytics-after-tech/)》也深刻地讨论了下这个问题，技术向来都是后发者优势。对于技术人员来说，也是如此，后发者占据很大的优势。
+在上上一篇博客中《[After 500：写了第500篇博客，然后呢？](https://www.phodal.com/blog/after-500-blogposts-analytics-after-tech/)》也深刻地讨论了下这个问题，技术向来都是后发者优势。对于技术人员来说，也是如此，后发者占据很大的优势。
 
 如果我们只是单纯地把我们的关注点仅仅放置于技术上，那么我们就不具有任何的优势。而依赖于我们的编程经验，我们可以在特定的时候创造一些框架。而架构的设计本身就是一件有意思的事，大抵是因为程序员都喜欢创造。（ps：之前曾经写过这样一篇文章，《[对不起，我并不热爱编程，我只喜欢创造](https://www.phodal.com/blog/sorry-i-don't-like-programming/)》）
 

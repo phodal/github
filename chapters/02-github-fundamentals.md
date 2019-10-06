@@ -77,7 +77,7 @@ Wiki百科上是这么说的
 > GitHub is the best place to share code with friends, co-workers, classmates, and complete strangers. Over eight million people use GitHub to build amazing things together.
 
 
-它还是什么?
+它还是什么？
 
 - 网站
 - 免费博客
@@ -88,7 +88,7 @@ Wiki百科上是这么说的
 - 托管编程环境
 - 写作
 
-等等。看上去像是大餐，但是你还需要了解点什么?
+等等。看上去像是大餐，但是你还需要了解点什么？
 
 ### 版本管理与软件部署
 

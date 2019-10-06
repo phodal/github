@@ -61,7 +61,7 @@
     *   [在线文档](http://github.phodal.com/#在线文档)
     *   [可用示例](http://github.phodal.com/#可用示例)
 *   [改善 GitHub 项目代码质量：重构](http://github.phodal.com/#改善-github-项目代码质量重构)
-    *   [为什么重构?](http://github.phodal.com/#为什么重构)
+    *   [为什么重构？](http://github.phodal.com/#为什么重构)
     *   [重构uMarkdown](http://github.phodal.com/#重构umarkdown)
         *   [代码说明](http://github.phodal.com/#代码说明)
     *   [Intellij Idea重构](http://github.phodal.com/#intellij-idea重构)

@@ -21,7 +21,7 @@
 
 ### 测试
 
-通常我们都会找Document，如果没有的话，你会找什么?看源代码，还是看测试?
+通常我们都会找Document，如果没有的话，你会找什么？看源代码，还是看测试？
 
 ```javascript
 it("specifying response when you need it", function (done) {
