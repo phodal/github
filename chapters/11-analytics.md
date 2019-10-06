@@ -146,7 +146,7 @@ draw_date("data/2014-01-01-0.json")
 
 不过这个是 osrc 的分析结果。
 
-### python GitHub 每周情况分析
+### Python GitHub 每周情况分析
 
 看一张分析后的结果
 
