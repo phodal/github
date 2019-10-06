@@ -186,7 +186,7 @@ Lettuce.send = function (url, method, callback, data) {
  - Calculator也就是TalentTree，主要负责解析、生成url，头像，依赖等等
  - Skill 主要是tips部分。
  
-而这一些都在一个js里，对于一个库来说，是一件好事，但是对于一个项目来说，并非如此。 
+而这一些都在一个 JS 里，对于一个库来说，是一件好事，但是对于一个项目来说，并非如此。 
 
 依赖的库有
 
@@ -220,7 +220,7 @@ require(['lib/knockout', 'scripts/TalentTree', 'json!data/web.json'], function(k
 });
 ```
 	
-text、json插件主要是用于处理web.json，即用json来处理技能，于是不同的类到了不同的js文件。
+text、json插件主要是用于处理web.json，即用json来处理技能，于是不同的类到了不同的 JS 文件。
 
 	.
 	|____Book.js
@@ -316,12 +316,12 @@ branches:
 
 > JSLint定义了一组编码约定，这比ECMA定义的语言更为严格。这些编码约定汲取了多年来的丰富编码经验，并以一条年代久远的编程原则 作为宗旨：能做并不意味着应该做。JSLint会对它认为有的编码实践加标志，另外还会指出哪些是明显的错误，从而促使你养成好的 JavaScript编码习惯。
 
-当我们的js写得不合理的时候，这时测试就无法通过：
+当我们的 JS 写得不合理的时候，这时测试就无法通过：
 
 	line 5   col 25   A constructor name should start with an uppercase letter.
 	line 21  col 62   Strings must use singlequote.
 	
-这是一种驱动写出更规范js的方法。
+这是一种驱动写出更规范 JS 的方法。
 
 
 ### Mocha

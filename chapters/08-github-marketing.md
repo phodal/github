@@ -162,7 +162,7 @@ WTF！
 
 ![Lodash 示例](./img/lodash-code-example.png)
 
-上图是使用了 jsdoc 的 Lodash 示例。
+上图是使用了 JSDoc 的 Lodash 示例。
 
 除了上面的示例，我们还可以录制一些视频，写一些文章说明项目的思考、架构等等。
 

@@ -204,7 +204,7 @@ GitHub连击
 - Ionic：开始Hybird移动应用。
 - Django：Python Web开发利器。
 - Flask：Python Web开发小刀。
-- RequireJS：管理js依赖。
+- RequireJS：管理 JS 依赖。
 - Backbone：Model + View + Router。
 - Angluar：...。
 - Knockout：MVV*。
