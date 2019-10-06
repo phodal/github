@@ -183,8 +183,8 @@ public class Main {
 
 **作用：重命名**
 
- - 把光标丢到int c中的c，按下 Shift+f6，输入result_add
- - 把光标移到int d中的d，按下 Shift+f6，输入result_sub
+ - 把光标丢到int c中的c，按下 Shift + F6，输入result_add
+ - 把光标移到int d中的d，按下 Shift + F6，输入result_sub
 
 于是就有
 
