@@ -124,7 +124,7 @@
         *   [140天的希冀](http://github.phodal.com/#天的希冀)
     *   [200天的Showcase](http://github.phodal.com/#天的showcase)
         *   [一些项目简述](http://github.phodal.com/#一些项目简述)
-        *   [google map solr polygon 搜索](http://github.phodal.com/#google-map-solr-polygon-搜索)
+        *   [Google Maps solr polygon 搜索](http://github.phodal.com/#google-map-solr-polygon-搜索)
         *   [技能树](http://github.phodal.com/#技能树)
     *   [365天](http://github.phodal.com/#天-1)
         *   [编程的基础能力](http://github.phodal.com/#编程的基础能力)
