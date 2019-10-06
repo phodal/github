@@ -24,7 +24,7 @@
 
 ## 重构uMarkdown
 
-代码及setup请见github：[js-refactor](https://github.com/artisanstack/js-refactor)
+代码及setup请见 GitHub：[js-refactor](https://github.com/artisanstack/js-refactor)
 
 ### 代码说明
 

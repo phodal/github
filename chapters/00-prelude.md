@@ -72,13 +72,13 @@
 
 先说说**与技能无关的收获**吧，毕业设计做的是一个《[最小物联网系统](https://github.com/phodal/iot)》，考虑到我们专业老师没有这方面知识，答辩时会带来问题，尽量往这方面靠拢。当我毕业后，这个项目已经有过百个star了，这样易上手的东西还是比较受欢迎的(ps：不过这种硬件相关的项目通常受限于GitHub上硬件开发工程师比较少的困扰)。
 
-毕业后一个月收到PACKT出版社的邮件(ps：他们是在github上找到我的)，内容是关于Review一本[物联网](iot)书籍，即在《[从Review到翻译IT书籍](http://www.phodal.com/blog/review-it-books-with-translate-book/)》中提到的《Learning Internet of Things》。作为一个四级没过的"物联网专家"，去审阅一本英文的物联网书籍。。。
+毕业后一个月收到PACKT出版社的邮件(ps：他们是在 GitHub 上找到我的)，内容是关于Review一本[物联网](iot)书籍，即在《[从Review到翻译IT书籍](http://www.phodal.com/blog/review-it-books-with-translate-book/)》中提到的《Learning Internet of Things》。作为一个四级没过的"物联网专家"，去审阅一本英文的物联网书籍。。。
 
 当然，后来是审阅完了，书上有我的英文简介。
 
 ![Phodal Huang Introduction](./img/phodal-intro.jpg)
 
-一个月前，收到MANNING出版社的邮件(ps：也是在github上)，关于Review一本[物联网](iot)书籍的目录，并提出建议。
+一个月前，收到MANNING出版社的邮件(ps：也是在 GitHub 上)，关于Review一本[物联网](iot)书籍的目录，并提出建议。
 
 也因此带来了其他更多的东西，当然不是这里的主题。在这里，我们就不讨论各种骚扰邮件，或者中文合作。从没有想象过，我也可以在英语世界有一片小天地。
 
@@ -86,7 +86,7 @@
 
 ### GitHub与成长
 
-过去写过一篇《[如何通过github提升自己](http://www.phodal.com/blog/use-github-grow-self/)》的文章，现在只想说三点：
+过去写过一篇《[如何通过 GitHub 提升自己](http://www.phodal.com/blog/use-github-grow-self/)》的文章，现在只想说三点：
 
 1. 测试
 2. 更多的测试

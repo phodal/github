@@ -100,7 +100,7 @@
         *   [数据解析](http://github.phodal.com/#数据解析)
         *   [Matplotlib](http://github.phodal.com/#matplotlib)
     *   [每周分析](http://github.phodal.com/#每周分析)
-        *   [python github 每周情况分析](http://github.phodal.com/#python-github-每周情况分析)
+        *   [python GitHub 每周情况分析](http://github.phodal.com/#python-github-每周情况分析)
         *   [Python 数据分析](http://github.phodal.com/#python-数据分析)
         *   [Python Matplotlib图表](http://github.phodal.com/#python-matplotlib图表)
     *   [存储到数据库中](http://github.phodal.com/#存储到数据库中)
@@ -166,7 +166,7 @@
         *   [技巧五：把握 GitHub Trending](#技巧五把握-github-trending)
         *   [不是技巧的技巧：持续性](#不是技巧的技巧持续性)
 *   [FAQ](#faq)
-    *   [如何看待github 项目刷Star行为？](http://github.phodal.com/#如何看待github-项目刷star行为)
+    *   [如何看待 GitHub 项目刷Star行为？](http://github.phodal.com/#如何看待github-项目刷star行为)
 
 ## License
 
