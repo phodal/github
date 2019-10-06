@@ -64,7 +64,7 @@ regexobject: {
 
 接着，我们就可以对其进行简单的重构。
 
-（ps：推荐用 WebStrom 来做重构，自带重构功能）
+（PS：推荐用 WebStrom 来做重构，自带重构功能）
 
 作为一个示例，我们先提出 codeHandler 方法，即将上面的
 
