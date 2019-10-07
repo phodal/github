@@ -1,8 +1,8 @@
-# GitHub用户分析
+# GitHub 用户分析
 
 ## 生成图表
 
-如何分析用户的数据是一个有趣的问题，特别是当我们有大量的数据的时候。除了``matlab``，我们还可以用``numpy``+``matplotlib``
+如何分析用户的数据是一个有趣的问题，特别是当我们有大量的数据的时候。除了 ``matlab``，我们还可以用 ``numpy`` + ``matplotlib``
 
 数据可以在这边寻找到
 
@@ -12,11 +12,11 @@
 
 ![2014 01 01](./img/2014-01-01.png)
 
-要解析的json文件位于``data/2014-01-01-0.json``，大小6.6M，显然我们可能需要用每次只读一行的策略，这足以解释为什么诸如sublime打开的时候很慢，而现在我们只需要里面的json数据中的创建时间。。
+要解析的 JSON 文件位于``data/2014-01-01-0.json``，大小 6.6M，显然我们可能需要用每次只读一行的策略，这足以解释为什么诸如 sublime 打开的时候很慢，而现在我们只需要里面的 JSON 数据中的创建时间。。
 
 ==, 这个文件代表什么？
 
-**2014年1月1日零时到一时，用户在github上的操作，这里的用户指的是很多。。一共有4814条数据，从commit、create到issues都有。**
+**2014年1月1日零时到一时，用户在 GitHub 上的操作，这里的用户指的是很多。。一共有 4814 条数据，从 commit、create 到 issues 都有。**
 
 ### 数据解析
 
@@ -26,7 +26,7 @@ for line in open(jsonfile):
     line = f.readline()
 ```
 
-然后再解析json
+然后再解析 JSON
 
 ```python
 import dateutil.parser
@@ -35,7 +35,7 @@ lin = json.loads(line)
 date = dateutil.parser.parse(lin["created_at"])
 ```
 
-这里用到了``dateutil``，因为新鲜出炉的数据是string需要转换为``dateutil``，再到数据放到数组里头。最后有就有了``parse_data``
+这里用到了 ``dateutil``，因为新鲜出炉的数据是 string 需要转换为 ``dateutil``，再到数据放到数组里头。最后有就有了 ``parse_data``
 
 ```python
 def parse_data(jsonfile):
@@ -140,13 +140,13 @@ draw_date("data/2014-01-01-0.json")
 
 ![Phodal Huang's Report](./img/phodal-results.png)
 
-这是我的每周情况，显然如果把星期六移到前面的话，随着工作时间的增长，在github上的使用在下降，作为一个
+这是我的每周情况，显然如果把星期六移到前面的话，随着工作时间的增长，在 GitHub 上的使用在下降，作为一个
 
       a fulltime hacker who works best in the evening (around 8 pm).
 
-不过这个是osrc的分析结果。
+不过这个是 osrc 的分析结果。
 
-### python github 每周情况分析
+### Python GitHub 每周情况分析
 
 看一张分析后的结果
 
@@ -177,7 +177,7 @@ draw_date("data/2014-01-01-0.json")
 	├── 2014-02-19-0.json
 	└── 2014-02-20-0.json
 
-我们获取是每天晚上0点时的情况，至于为什么是0点，我想这里的数据量可能会比较少。除去1月1号的情况，就是上面的结果，在只有一周的情况时，总会以为因为在国内那时是假期，但是总觉得不是很靠谱，国内的程序员虽然很多，会在github上活跃的可能没有那么多，直至列出每一周的数据时。
+我们获取是每天晚上0点时的情况，至于为什么是0点，我想这里的数据量可能会比较少。除去1月1号的情况，就是上面的结果，在只有一周的情况时，总会以为因为在国内那时是假期，但是总觉得不是很靠谱，国内的程序员虽然很多，会在 GitHub 上活跃的可能没有那么多，直至列出每一周的数据时。
 
       6570, 7420, 11274, 12073, 12160, 12378, 12897,
       8474, 7984, 12933, 13504, 13763, 13544, 12940,
@@ -259,7 +259,7 @@ if __name__ == '__main__':
 
 ### SQLite3
 
-我们创建了一个名为``userdata.db``的数据库文件，然后创建了一个表，里面有owner,language,eventtype,name url
+我们创建了一个名为 ``userdata.db`` 的数据库文件，然后创建了一个表，里面有 owner, language, eventtype, name url
 
 ```python
 def init_db():
@@ -282,7 +282,7 @@ def get_count(username):
     return count, userinfo
 ```
 
-当我查询``gmszone``的时候，也就是我自己就会有如下的结果
+当我查询 ``gmszone`` 的时候，也就是我自己就会有如下的结果
 
 ```bash
 (u'gmszone', u'ForkEvent', u'RESUME', u'TeX', u'https://github.com/gmszone/RESUME')
@@ -297,9 +297,9 @@ def get_count(username):
 109
 ````
 
-一共有109个事件，有``Watch``,``Create``,``Push``,``Fork``还有其他的，
-项目主要有``iot``,``RESUME``,``iot-dashboard``,``wechat-wordpress``,
-接着就是语言了，``Tex``,``Javascript``,``Ruby``,接着就是项目的url了。
+一共有109个事件，有 ``Watch``, ``Create``, ``Push``, ``Fork`` 还有其他的，
+项目主要有``iot``, ``RESUME``, ``iot-dashboard``, ``wechat-wordpress``,
+接着就是语言了，``Tex``, ``Javascript``, ``Ruby``,接着就是项目的 url 了。
 
 值得注意的是。
 
@@ -307,9 +307,9 @@ def get_count(username):
 -rw-r--r--   1 fdhuang staff 905M Apr 12 14:59 userdata.db
 ```
 
-这个数据库文件有**905M**，不过查询结果相当让人满意，至少相对于原来的结果来说。
+这个数据库文件有 **905M**，不过查询结果相当让人满意，至少相对于原来的结果来说。
 
-Python自带了对SQLite3的支持，然而我们还需要安装SQLite3
+Python 自带了对 SQLite3 的支持，然而我们还需要安装 SQLite3
 
 ```bash
 brew install sqlite3
@@ -321,23 +321,23 @@ brew install sqlite3
 sudo port install sqlite3
 ```
 
-或者是Ubuntu的
+或者是 Ubuntu 的
 
 ```bash
 sudo apt-get install sqlite3
 ```
 
-openSUSE自然就是
+openSUSE 自然就是
 
 ```bash
 sudo zypper install sqlite3
 ```
 
-不过，用yast2也很不错，不是么。。
+不过，用 yast2 也很不错，不是么。。
 
 ### 数据导入
 
-需要注意的是这里是需要python2.7，起源于对gzip的上下文管理器的支持问题
+需要注意的是这里是需要 Python 2.7，起源于对 gzip 的上下文管理器的支持问题
 
 ```python
 def handle_gzip_file(filename):
@@ -389,11 +389,11 @@ def build_db_with_gzip():
     c.close()
 ```
 
-``executemany``可以插入多条数据，对于我们的数据来说，一小时的文件大概有五六千个会符合我们上面的安装，也就是有``actor``又有``type``才是我们需要记录的数据，我们只需要统计用户的那些事件，而非全部的事件。
+``executemany`` 可以插入多条数据，对于我们的数据来说，一小时的文件大概有五六千个会符合我们上面的安装，也就是有 ``actor`` 又有 ``type`` 才是我们需要记录的数据，我们只需要统计用户的那些事件，而非全部的事件。
 
-我们需要去遍历文件，然后找到合适的部分，这里只是要找``2014-03-01``到``2014-03-31``的全部事件，而光这些数据的gz文件就有1.26G，同上面那些解压为json文件显得不合适，只能用遍历来处理。
+我们需要去遍历文件，然后找到合适的部分，这里只是要找``2014-03-01``到``2014-03-31``的全部事件，而光这些数据的 gz 文件就有 1.26G，同上面那些解压为 JSON 文件显得不合适，只能用遍历来处理。
 
-这里参考了osrc项目中的写法，或者说直接复制过来。
+这里参考了 osrc 项目中的写法，或者说直接复制过来。
 
 首先是正规匹配
 
@@ -401,11 +401,11 @@ def build_db_with_gzip():
 date_re = re.compile(r"([0-9]{4})-([0-9]{2})-([0-9]{2})-([0-9]+)\.json.gz")
 ```
 
-不过主要的还是在于``glob.glob``
+不过主要的还是在于 ``glob.glob``
 
-> glob是python自己带的一个文件操作相关模块，用它可以查找符合自己目的的文件，就类似于Windows下的文件搜索，支持通配符操作。
+> glob是 Python 自己带的一个文件操作相关模块，用它可以查找符合自己目的的文件，就类似于Windows下的文件搜索，支持通配符操作。
 
-这里也就用上了``gzip.GzipFile``又一个不错的东西。
+这里也就用上了 ``gzip.GzipFile`` 又一个不错的东西。
 
 最后代码可以见
 
@@ -425,7 +425,7 @@ pipe.zscore('osrc:user',"gmszone")
 pipe.execute()
 ```
 
-系统返回了``227.0``,试试别人。
+系统返回了 ``227.0``,试试别人。
 
 ```bash
 >>> pipe.zscore('osrc:user',"dfm")
@@ -444,7 +444,7 @@ pipe.execute()
 [{'1': '51', '0': '41', '3': '17', '2': '34', '5': '28', '4': '22', '6': '34'}]
 ```
 
-结果大致如下图所示:
+结果大致如下图所示：
 
 ![SMTWTFS](./img/smtwtfs.png)
 
@@ -458,9 +458,9 @@ pipe.execute()
 
 ![Main Event](./img/main-events.png)
 
-蓝色的就是push事件，黄色的是create等等。
+蓝色的就是 push 事件，黄色的是 create 等等。
 
-到这里我们算是知道了OSRC的数据库部分是如何工作的。
+到这里我们算是知道了 OSRC 的数据库部分是如何工作的。
 
 #### Redis 查询
 
@@ -503,13 +503,13 @@ def get_vector(user, pipe=None):
 ['alesdokshanin', 'hjiawei', 'andrewreedy', 'christj6', '1995eaton']
 ```
 
-osrc最有意思的一部分莫过于flann，当然说的也是系统后台的设计的一个很关键及有意思的部分。
+osrc 最有意思的一部分莫过于 flann，当然说的也是系统后台的设计的一个很关键及有意思的部分。
 
 ## 邻近算法与相似用户
 
 邻近算法是在这个分析过程中一个很有意思的东西。
 
->邻近算法，或者说K最近邻(kNN，k-NearestNeighbor)分类算法可以说是整个数据挖掘分类技术中最简单的方法了。所谓K最近邻，就是k个最近的邻居的意思，说的是每个样本都可以用她最接近的k个邻居来代表。
+>邻近算法，或者说K最近邻（kNN，k-NearestNeighbor）分类算法可以说是整个数据挖掘分类技术中最简单的方法了。所谓K最近邻，就是k个最近的邻居的意思，说的是每个样本都可以用她最接近的k个邻居来代表。
 
 换句话说，我们需要一些样本来当作我们的分析资料，这里东西用到的就是我们之前的。
 
@@ -517,7 +517,7 @@ osrc最有意思的一部分莫过于flann，当然说的也是系统后台的�
 [227.0, {'1': '51', '0': '41', '3': '17', '2': '34', '5': '28', '4': '22', '6': '34'}, [('PushEvent', 154.0), ('CreateEvent', 41.0), ('WatchEvent', 18.0), ('GollumEvent', 8.0), ('MemberEvent', 3.0), ('ForkEvent', 2.0), ('ReleaseEvent', 1.0)], 0, 0, 0, 11, [('CSS', 74.0), ('JavaScript', 60.0), ('Ruby', 12.0), ('TeX', 6.0), ('Python', 6.0), ('Java', 5.0), ('C++', 5.0), ('Assembly', 5.0), ('C', 3.0), ('Emacs Lisp', 2.0), ('Arduino', 2.0)]]
 ```
 
-在代码中是构建了一个points.h5的文件来分析每个用户的points，之后再记录到hdf5文件中。
+在代码中是构建了一个 points.h5 的文件来分析每个用户的 points，之后再记录到 hdf5 文件中。
 
 ```
 [ 0.00438596  0.18061674  0.2246696   0.14977974  0.07488987  0.0969163
@@ -532,14 +532,14 @@ osrc最有意思的一部分莫过于flann，当然说的也是系统后台的�
     0.          0.          0.          0.          0.00881057]
 ```
 
-这里分析到用户的大部分行为，再找到与其行为相近的用户，主要的行为有下面这些:
+这里分析到用户的大部分行为，再找到与其行为相近的用户，主要的行为有下面这些：
 
  - 每星期的情况
  - 事件的类型
  - 贡献的数量，连接以及语言
  - 最多的语言
 
-osrc中用于解析的代码
+osrc 中用于解析的代码
 
 ```python
 def parse_vector(results):
@@ -576,7 +576,7 @@ def parse_vector(results):
     return points
 ```
 
-这样也就返回我们需要的点数，然后我们可以用``get_points``来获取这些
+这样也就返回我们需要的点数，然后我们可以用 ``get_points`` 来获取这些
 
 ```python
 def get_points(usernames):
