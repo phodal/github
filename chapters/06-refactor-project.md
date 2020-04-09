@@ -61,6 +61,7 @@ regexobject: {
 ```
 
 他会匹配对应的 Markdown 类型，随后进行替换和处理。而``str``，就是管理口的输入和输出。
+他会匹配对应的 Markdown 类型，随后进行替换和处理。而``str``，就是管理口的输入和输出。
 
 接着，我们就可以对其进行简单的重构。
 
@@ -389,7 +390,7 @@ public class replaceTemp {
 便会有下面的结果：
 
 
-```javas
+```java
 import java.lang.String;
 
 public class replaceTemp {
