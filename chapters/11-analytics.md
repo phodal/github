@@ -69,7 +69,7 @@ minuteswithcount = [(x, dataarray.count(x)) for x in set(dataarray)]
 
 ### Matplotlib
 
-开始之前需要安装``matplotlib
+开始之前需要安装`matplotlib`
 
 ```bash
 sudo pip install matplotlib
