@@ -18,12 +18,14 @@ table, caption, tbody, tfoot, thead, tr, th, td
 }
 
 @page {
-  margin: 5px;
+  
+margin: 5px;
+
 }
 
 p {
     margin-bottom: 9px;
-	line-height: 1.4;
+    line-height: 1.4;
 }
 
 a {
@@ -47,15 +49,15 @@ h5,
 h6 {
     color: #404040;
     line-height: 1.5;
-	margin: 1em 0 0.5em;
-	-webkit-hyphens: none;
-	hyphens: none;
-	adobe-hyphenate: none;
+    margin: 1em 0 0.5em;
+    -webkit-hyphens: none;
+    hyphens: none;
+    adobe-hyphenate: none;
 }
 
 h1 {
     font-size: 220%;
-	margin-bottom: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 h2 {
@@ -115,7 +117,7 @@ code {
     padding: 1px 3px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-	font-size: 85%;
+    font-size: 85%;
 }
 
 pre {
@@ -127,9 +129,9 @@ pre {
     border: 1px solid #d9d9d9;
     white-space: pre-wrap;
     word-wrap: break-word;
-	-webkit-hyphens: none;
-	hyphens: none;
-	adobe-hyphenate: none;
+    -webkit-hyphens: none;
+    hyphens: none;
+    adobe-hyphenate: none;
 }
 
 	pre code {
