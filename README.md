@@ -22,6 +22,10 @@
         *   [方便工作](http://github.phodal.com/#方便工作)
         *   [获得一份工作](http://github.phodal.com/#获得一份工作)
         *   [扩大交际](http://github.phodal.com/#扩大交际)
+        
+*   [参与开源项目]
+    how to  contributed to an open source project 
+
 *   [创建开源项目](http://github.phodal.com/#创建开源项目)
     *   [取一个好的名字](http://github.phodal.com/#取一个好的名字)
     *   [挑选好 LICENSE](http://github.phodal.com/#挑选好-license)
