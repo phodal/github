@@ -12,11 +12,22 @@
   <div id="app">内容加载中</div>
   <script>
     window.$docsify = {
-      name: '',
-      repo: ''
+      name: 'GitHub 漫游指南',
+      repo: 'phodal/github',
+      loadSidebar: true,
+      search: {
+        paths: 'auto',
+        placeholder: {
+          '/': '查找'
+        },
+        noData: {
+          '/': '暂无结果'
+        },
+      }
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>
