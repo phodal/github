@@ -12,7 +12,7 @@
 
 我的微信公众号：
 
-![qrcode](./img/qrcode.jpg)
+![qrcode](./docs/chapter/img/qrcode.jpg)
 
 ## License
 
