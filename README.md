@@ -1,4 +1,4 @@
-#Github 漫游指南
+# Github 漫游指南
 
 2014年，写了一个《[一步步搭建物联网系统](https://github.com/phodal/designiot)》。
 
@@ -8,7 +8,7 @@
 
 但是过了很久都没有动静，今天是2015.10.24，我想是时候完成这个目标了。
 
-##其他
+## 其他
 
 我的微信公众号：
 
@@ -21,4 +21,3 @@
 本作品采用[知识共享署名-非商业性使用 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc/4.0/)进行许可。
 
 © 2015 [Phodal Huang](http://www.phodal.com)。[待我代码编成，娶你为妻可好](http://www.xuntayizhan.com/person/ji-ke-ai-qing-zhi-er-shi-dai-wo-dai-ma-bian-cheng-qu-ni-wei-qi-ke-hao-wan/)。
-
