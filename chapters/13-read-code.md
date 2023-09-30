@@ -31,7 +31,7 @@
 开始之前，我们希望大家对版本号管理有一些基本的认识。
 ## 版本号管理
 
-我最早阅读的开始软件是 Linux，而下面则是 Linux 的 Release 过程：
+我最早阅读的开源软件是 Linux，而下面则是 Linux 的 Release 过程：
 
 ![linux-history.png](./img/linux-history.png)
 
