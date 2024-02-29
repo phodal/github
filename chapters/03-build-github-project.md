@@ -418,18 +418,17 @@ Code Climate 整合一组静态分析工具的结果到一个单一的，实时�
 
 于是，我们先来了个例子
 
-Rating	| Name |	Complexity |	Duplication	| Churn |	C/M	| Coverage |	Smells 
---------|------|--------------|-------------|----------|---------|---------------------
-A |	lib/coap/coap_request_handler.js |	24 |	0 |	6 |	2.6 |	46.4% |	0
-A |	lib/coap/coap_result_helper.js |	14	| 0	| 2 |	3.4 |	80.0% |	0
-A	| lib/coap/coap_server.js |	16 |	0 |	5 |	5.2 |	44.0% |	0
-A	| lib/database/db_factory.js |	8 |	0 |	3 |	3.8 |	92.3% |	0
-A |	lib/database/iot_db.js |	7 |	0 |	6 |	1.0 |	58.8% |	0
-A |	lib/database/mongodb_helper.js |	63 | 0 |	11 |	4.5	 | 35.0%	| 0
-C |	lib/database/sqlite_helper.js |	32 |	86 |	10 |	4.5 |	35.0% |	2
-B |	lib/rest/rest_helper.js	 | 19	| 62 |	3 |	4.7	| 37.5% |	2
-A |	lib/rest/rest_server.js |	17 |	0 |	2 |	8.6	| 88.9% |	0
-A |	lib/url_handler.js |	9 |	0	| 5 |	2.2	| 94.1% |	0
+| Rating | Name                             | Complexity | Duplication | Churn | C/M  | Coverage | Smells |
+| ------ | -------------------------------- | ---------- | ----------- | ----- | ---- | -------- | ------ |
+| A      | lib/coap/coap_request_handler.js | 24         | 0           | 6     | 2.6  | 46.4%    | 0      |
+| A      | lib/coap/coap_result_helper.js   | 14         | 0           | 2     | 3.4  | 80.0%    | 0      |
+| A      | lib/coap/coap_server.js          | 16         | 0           | 5     | 5.2  | 44.0%    | 0      |
+| A      | lib/database/db_factory.js       | 8          | 0           | 3     | 3.8  | 92.3%    | 0      |
+| A      | lib/database/iot_db.js           | 7          | 0           | 6     | 1.0  | 58.8%    | 0      |
+| A      | lib/database/mongodb_helper.js   | 63         | 0           | 11    | 4.5  | 35.0%    | 0      |
+| C      | lib/database/sqlite_helper.js    | 32         | 86          | 10    | 4.5  | 35.0%    | 2      |
+| B      | lib/rest/rest_helper.js          | 19         | 62          | 3     | 4.7  | 37.5%    | 2      |
+| A      | lib/rest/rest_server.js          | 17         | 0           | 2     | 8.6  | 88.9%    | 0      |
 
 分享得到的最后的结果是：
 
